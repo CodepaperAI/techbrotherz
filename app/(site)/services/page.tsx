@@ -1,0 +1,372 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { KeyRound, Laptop, Monitor, ShieldAlert, Smartphone, Tablet, Unlock } from "lucide-react";
+
+import { IconCard } from "@/components/blocks/IconCard";
+import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
+import { PageShell } from "@/components/blocks/PageShell";
+import { Container } from "@/components/primitives/Container";
+import { Heading } from "@/components/primitives/Heading";
+import { PillButton } from "@/components/primitives/PillButton";
+import { Section } from "@/components/primitives/Section";
+import { shouldRenderLink } from "@/lib/routes";
+import { getCoreFaqContext } from "@/lib/content/core-context";
+import { servicesFaqs } from "@/lib/content/core-faqs";
+import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { localBusiness, organization, service, webPage, website } from "@/lib/seo/schema";
+import { SITE, TEL_HREF } from "@/lib/site";
+import { formatPrice } from "@/lib/utils";
+import {
+  getAllFaqs,
+  getAllPricedModels,
+  getFlatServices,
+  getReviewSummary,
+  getSiteSettings,
+  getUnlocking,
+} from "@/sanity/queries";
+
+export const revalidate = 3600;
+
+const PATH = "/services";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Repair Services in Calgary",
+  description:
+    "Every repair TechBrotherz offers in Calgary: phones, iPads, tablets, laptops, desktops, unlocking, virus removal and password reset. Walk in, no appointment.",
+  path: PATH,
+});
+
+interface ServiceCard {
+  icon: typeof Smartphone;
+  title: string;
+  href: string;
+  group: "Phones" | "Tablets" | "Computers";
+  description: string;
+  /** Key into the price lookups built below. */
+  priceKey: string;
+}
+
+const SERVICE_CARDS: ServiceCard[] = [
+  {
+    icon: Smartphone,
+    title: "Cell phone repair",
+    href: "/services/phone-repair",
+    group: "Phones",
+    description:
+      "Screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy, Pixel, LG, Motorola and HTC handsets.",
+    priceKey: "phone-screen",
+  },
+  {
+    icon: Unlock,
+    title: "Phone unlocking",
+    href: "/services/phone-unlocking",
+    group: "Phones",
+    description:
+      "Any Canadian carrier, usually the same day. Ask your carrier first, they are required by the CRTC to do it free on request.",
+    priceKey: "unlocking",
+  },
+  {
+    icon: Tablet,
+    title: "iPad and tablet repair",
+    href: "/services/tablet-repair",
+    group: "Tablets",
+    description:
+      "On older iPads the glass is separate from the picture panel, so a cracked front often costs far less than people expect.",
+    priceKey: "ipad-glass",
+  },
+  {
+    icon: Laptop,
+    title: "Laptop repair",
+    href: "/services/laptop-repair",
+    group: "Computers",
+    description:
+      "Screens, keyboards and charging sockets. Laptop work is stripped down and tested, so it is usually ready the same day.",
+    priceKey: "laptop-screen",
+  },
+  {
+    icon: Monitor,
+    title: "Computer repair",
+    href: "/services/computer-repair",
+    group: "Computers",
+    description:
+      "Desktop diagnostics, clean-ups, Windows installation and hardware fitting, at a flat price agreed before we start.",
+    priceKey: "diagnostics",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Virus removal",
+    href: "/services/virus-removal",
+    group: "Computers",
+    description:
+      "Malware, adware and browser hijackers removed, with security software left in place so it does not come straight back.",
+    priceKey: "virus-removal",
+  },
+  {
+    icon: KeyRound,
+    title: "Computer password reset",
+    href: "/services/password-reset",
+    group: "Computers",
+    description:
+      "Locked out of Windows. We restore access and leave the files on the machine exactly where they are.",
+    priceKey: "password-reset",
+  },
+];
+
+const GROUP_ORDER: ServiceCard["group"][] = ["Phones", "Tablets", "Computers"];
+
+const GROUP_QUESTION: Record<ServiceCard["group"], string> = {
+  Phones: "What phone repairs does TechBrotherz do?",
+  Tablets: "What tablet and iPad repairs does TechBrotherz do?",
+  Computers: "What laptop and computer work does TechBrotherz do?",
+};
+
+export default async function ServicesPage() {
+  const [settings, reviews, models, flatServices, unlocking, allFaqs] = await Promise.all([
+    getSiteSettings(),
+    getReviewSummary(),
+    getAllPricedModels(),
+    getFlatServices(),
+    getUnlocking(),
+    getAllFaqs(),
+  ]);
+
+  const warrantyDays = settings?.warrantyDays ?? 60;
+  const waitMinutes = settings?.typicalWaitMinutes ?? 30;
+
+  /** Cheapest real price for a repair slug, optionally within one brand. */
+  function cheapest(repairSlug: string, brandSlug?: string): number | null {
+    const prices = models
+      .filter((model) => !brandSlug || model.brandSlug === brandSlug)
+      .flatMap((model) =>
+        (model.prices ?? [])
+          .filter((entry) => entry.repair?.slug === repairSlug && typeof entry.price === "number")
+          .map((entry) => entry.price as number),
+      );
+
+    return prices.length > 0 ? Math.min(...prices) : null;
+  }
+
+  const flat = new Map(flatServices.map((entry) => [entry.slug, entry]));
+
+  const priceLookup: Record<string, string | null> = {
+    "phone-screen": formatPrice(cheapest("screen-replacement")),
+    "iphone-screen": formatPrice(cheapest("screen-replacement", "apple-iphone")),
+    "samsung-screen": formatPrice(cheapest("screen-replacement", "samsung-galaxy")),
+    "ipad-glass": formatPrice(cheapest("glass-digitizer", "apple-ipad")),
+    "laptop-screen": formatPrice(flat.get("laptop-screen-replacement")?.price),
+    diagnostics: formatPrice(flat.get("diagnostics")?.price),
+    "virus-removal": formatPrice(flat.get("virus-removal")?.price),
+    "password-reset": formatPrice(flat.get("password-reset")?.price),
+    unlocking: formatPrice(unlocking[0]?.price),
+    quote: null,
+  };
+
+  // FAQ scoping rule, CLAUDE.md Section 8.8. Questions this page can answer
+  // with its own numbers, plus at most two pointers to the canonical
+  // answers on /faq. Only the page-specific ones reach structured data.
+  const coreCtx = await getCoreFaqContext();
+  const faqs = composeFaqs({
+    path: PATH,
+    pageSpecific: servicesFaqs(coreCtx),
+    globalLinks: globalLinks(allFaqs, ["walkin", "pricing"], 2),
+  });
+
+  const schema = [
+    organization(settings ?? {}),
+    website(settings ?? {}),
+    localBusiness(settings ?? {}, reviews),
+    webPage({
+      type: "CollectionPage",
+      name: "Repair services at TechBrotherz in Calgary",
+      description:
+        "Every repair TechBrotherz offers in Calgary, from phone screens to Windows installation.",
+      path: PATH,
+      speakableSelectors: ['[data-speakable="answer"]'],
+    }),
+    ...SERVICE_CARDS.map((card) =>
+      service({
+        name: card.title,
+        description: card.description,
+        path: card.href,
+        serviceType: card.title,
+      }),
+    ),
+    faqs.schema,
+  ];
+
+  return (
+    <PageShell
+      path={PATH}
+      eyebrow="Services"
+      title="Phone, tablet and computer repair services in Calgary"
+      crumbLabel="Services"
+      lead={
+        <>
+          TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          {SITE.city}, {SITE.region}, repairs phones, tablets, laptops and desktop computers, and
+          unlocks phones for any Canadian carrier.
+        </>
+      }
+      answerBox={{
+        answer: `TechBrotherz in Calgary repairs phones, iPads, tablets, laptops and desktop computers, unlocks phones for any Canadian carrier at $35, and removes viruses from $34.99. iPhone screens start at ${priceLookup["iphone-screen"] ?? "a published price"}. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        keyFacts: [
+          { label: "Phone repairs from", value: `${priceLookup["phone-screen"]} for a screen` },
+          {
+            label: "Computer diagnostics",
+            value: `${priceLookup.diagnostics}, quoted before work starts`,
+          },
+          { label: "Carrier unlocking", value: `${priceLookup.unlocking}, usually the same day` },
+          { label: "Typical wait", value: `About ${waitMinutes} minutes on a phone repair` },
+          { label: "Warranty", value: `${warrantyDays} days on every repair` },
+        ],
+        lastUpdated: settings?._updatedAt,
+      }}
+      schema={schema}
+    >
+      {GROUP_ORDER.map((group, index) => {
+        const cards = SERVICE_CARDS.filter((card) => card.group === group);
+        if (cards.length === 0) return null;
+
+        return (
+          <Section
+            key={group}
+            variant={index % 2 === 0 ? "tint" : "light"}
+            className={index === 0 ? "pt-0 md:pt-0 lg:pt-0" : undefined}
+            aria-labelledby={`group-${group}`}
+          >
+            <Heading level={2} id={`group-${group}`} eyebrow={group}>
+              {GROUP_QUESTION[group]}
+            </Heading>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {cards.map((card) => {
+                const from = priceLookup[card.priceKey];
+
+                return (
+                  <IconCard
+                    key={card.title}
+                    icon={card.icon}
+                    title={card.title}
+                    description={`${card.description} ${
+                      from
+                        ? `From ${from}, including the part and the labour.`
+                        : "Priced at the counter."
+                    }`}
+                    {...(shouldRenderLink(card.href)
+                      ? { link: { label: `${card.title} prices and details`, href: card.href } }
+                      : {})}
+                  />
+                );
+              })}
+            </div>
+          </Section>
+        );
+      })}
+
+      {/* ------------------------------------------------- what's included */}
+      <Section aria-labelledby="included-heading">
+        <Heading
+          level={2}
+          id="included-heading"
+          eyebrow="Included"
+          lead="The same four things apply to every repair on this page, whatever the device."
+        >
+          What is included in the price?
+        </Heading>
+
+        <div className="border-tb-border bg-tb-white rounded-card mt-10 overflow-x-auto border">
+          <table className="w-full min-w-[32rem] border-collapse text-left">
+            <caption className="sr-only-caption">
+              What is included in every TechBrotherz repair price
+            </caption>
+            <thead>
+              <tr className="bg-tb-green-soft">
+                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
+                  Included
+                </th>
+                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
+                  What that means
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["The part", "The replacement component itself, whatever the device needs."],
+                [
+                  "The labour",
+                  "The time to fit it. There is no separate bench fee on a phone repair.",
+                ],
+                [
+                  "Testing",
+                  "We test the repair before handing the device back: touch across the whole screen, cameras, speakers and charging.",
+                ],
+                [
+                  `${warrantyDays}-day warranty`,
+                  "Cover on both the part fitted and the workmanship. New accidental damage is not covered.",
+                ],
+              ].map(([label, detail]) => (
+                <tr key={label} className="border-tb-border border-t">
+                  <th
+                    scope="row"
+                    className="text-tb-text px-6 py-4 text-left align-top font-normal"
+                  >
+                    {label}
+                  </th>
+                  <td className="type-body text-tb-muted px-6 py-4">{detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="type-body measure text-tb-muted mt-8">
+          Prices for every device TechBrotherz repairs are published on{" "}
+          <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
+            the full repair price list
+          </Link>
+          . The terms of the {warrantyDays}-day cover are set out on{" "}
+          <Link href="/warranty" className="text-tb-green-deep hover:underline">
+            the warranty page
+          </Link>
+          , and{" "}
+          <Link href="/contact" className="text-tb-green-deep hover:underline">
+            directions to the Calgary shop
+          </Link>{" "}
+          include parking and transit.
+        </p>
+      </Section>
+
+      {/* ------------------------------------------------------------ faqs */}
+      <ScopedFaqs
+        faqs={faqs}
+        id="page-faq-heading"
+        heading="Questions about our repair services"
+        variant="tint"
+      />
+
+      {/* --------------------------------------------------------- cta band */}
+      <Section variant="dark" contained={false}>
+        <Container>
+          <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+            <div>
+              <h2 className="type-h2 text-tb-white">Not sure which repair you need?</h2>
+              <p className="type-lead measure text-tb-muted-dark mt-4">
+                Bring the device to {SITE.street} in {SITE.city}. We will diagnose it at the counter
+                and tell you the price before any work starts.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <PillButton href={TEL_HREF} withArrow={false}>
+                Call {SITE.phone}
+              </PillButton>
+              <PillButton href="/repair-prices" variant="ghostOnDark">
+                See repair prices
+              </PillButton>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </PageShell>
+  );
+}

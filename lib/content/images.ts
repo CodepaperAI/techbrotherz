@@ -1,0 +1,226 @@
+/**
+ * The demo image set.
+ *
+ * Every image here is a placeholder for photography the client has not taken
+ * yet. Two rules govern the set and both matter more than the pictures do.
+ *
+ * 1. **Stock may show the work, never the business.** A photograph of hands
+ *    replacing a screen is a fair illustration of the service. The same
+ *    photograph captioned as our bench, our technician or our shop is invented
+ *    social proof, which this build has refused since Phase 1. Alt text
+ *    describes what the photo shows and never who it is.
+ * 2. **Nothing is load-bearing.** Delete public/demo/ and every page still
+ *    builds and renders, because `hasImage` gates the markup rather than the
+ *    file gating the build.
+ *
+ * Location pages, /about and /contact deliberately carry no photography. A map
+ * and an address are the honest content for a place, and a stock storefront on
+ * a location page is exactly the failure rule 1 exists to prevent.
+ */
+
+import blurData from "@/lib/content/image-blur.json";
+
+export type ImageRatio = "4:3" | "3:2";
+
+export interface DemoImage {
+  slot: string;
+  /** Under public/demo/. */
+  file: string;
+  ratio: ImageRatio;
+  width: number;
+  height: number;
+  /**
+   * Describes the photograph, never the business. "A technician replacing a
+   * phone screen" is fine. "Our technician at the TechBrotherz counter" is not.
+   */
+  alt: string;
+  /** Unsplash photo page, for the manifest and the contact sheet. */
+  sourceUrl: string;
+  photographer: string;
+}
+
+/** Matches scripts/process-images.ts. See the note there on the 1200px cap. */
+const RATIO_SIZE: Record<ImageRatio, { width: number; height: number }> = {
+  "4:3": { width: 1200, height: 900 },
+  "3:2": { width: 1200, height: 800 },
+};
+
+/** Slots processed at a narrower cap than the ratio default. */
+const NARROW: Record<string, number> = { "home-hero": 1000 };
+
+function image(
+  slot: string,
+  ratio: ImageRatio,
+  alt: string,
+  photographer: string,
+  photoId: string,
+): DemoImage {
+  const base = RATIO_SIZE[ratio];
+  const width = NARROW[slot] ?? base.width;
+  return {
+    slot,
+    file: `/demo/${slot}.jpg`,
+    ratio,
+    width,
+    height: Math.round((width * base.height) / base.width),
+    alt,
+    photographer,
+    sourceUrl: `https://unsplash.com/photos/${photoId}`,
+  };
+}
+
+export const IMAGES: Record<string, DemoImage> = {
+  "home-hero": image(
+    "home-hero",
+    "4:3",
+    "A phone held in a repair jig with the back removed, while a precision screwdriver is used on an internal screw",
+    "Revendo",
+    "Q_I49DIzHu8",
+  ),
+  "home-process-1": image(
+    "home-process-1",
+    "4:3",
+    "A phone fully disassembled on a repair mat, with the battery, board, cameras and screws laid out in order",
+    "Fotografia Lui Vlad",
+    "8MCqpmAtBs0",
+  ),
+  "home-process-2": image(
+    "home-process-2",
+    "4:3",
+    "Gloved hands fitting a replacement screen assembly to an opened phone, with the old display alongside",
+    "Vitalijus",
+    "y2QUqmEzjzA",
+  ),
+  "home-process-3": image(
+    "home-process-3",
+    "4:3",
+    "Hands working inside an opened laptop, refitting components before the base panel goes back on",
+    "Albert Vinas",
+    "F3t-AzyTbyU",
+  ),
+  "home-split-individuals": image(
+    "home-split-individuals",
+    "3:2",
+    "A single phone stripped to its parts on a white bench, showing the board, cameras, speaker and screws",
+    "KAT",
+    "YPj0Mi7aQtY",
+  ),
+  "home-split-business": image(
+    "home-split-business",
+    "3:2",
+    "Hands using a precision screwdriver inside an opened laptop, with a second machine on the bench behind",
+    "Samsung Memory",
+    "6RcDLyy0s1I",
+  ),
+  "service-phone-repair": image(
+    "service-phone-repair",
+    "3:2",
+    "Gloved hands replacing the screen assembly on an opened phone at a workbench",
+    "Vitalijus",
+    "y2QUqmEzjzA",
+  ),
+  "service-tablet-repair": image(
+    "service-tablet-repair",
+    "3:2",
+    "The corner of a tablet on a workbench with its SIM and memory card tray removed and set beside it",
+    "Andrey Matveev",
+    "zs29-jZrAQo",
+  ),
+  "service-laptop-repair": image(
+    "service-laptop-repair",
+    "3:2",
+    "The inside of a laptop with the base panel removed, showing the cooling fan, heat pipe and battery",
+    "Francesco Liotti",
+    "nbML7C5qrkw",
+  ),
+  "service-computer-repair": image(
+    "service-computer-repair",
+    "3:2",
+    "An opened laptop chassis showing the mainboard, memory, storage drive and cooling assembly",
+    "Artiom Vallat",
+    "1GntEP783rI",
+  ),
+  "service-phone-unlocking": image(
+    "service-phone-unlocking",
+    "3:2",
+    "A SIM tray removed from a device and resting on the bench beside it",
+    "Andrey Matveev",
+    "zs29-jZrAQo",
+  ),
+  "service-password-reset": image(
+    "service-password-reset",
+    "3:2",
+    "Hands working on an opened laptop with a precision screwdriver and a bit set on the bench",
+    "Samsung Memory",
+    "fxKvHGDICcQ",
+  ),
+  "service-virus-removal": image(
+    "service-virus-removal",
+    "3:2",
+    "A close view of a green circuit board with surface-mounted chips and soldered components",
+    "Chris Ried",
+    "bN5XdU-bap4",
+  ),
+};
+
+/**
+ * Edits applied beyond the crop and resize every slot gets.
+ *
+ * Recorded because the manifest should be auditable: cropping and a light
+ * grade are allowed, compositing and fabricating a scene are not.
+ */
+export const IMAGE_EDITS: Record<string, string> = {
+  "service-tablet-repair":
+    "Cropped from the original and encoded at quality 68 rather than 74, because the wood-grain surface compresses poorly.",
+  "service-phone-unlocking":
+    "A different crop of the same source as service-tablet-repair, framed on the removed tray. Quality 68 for the same reason.",
+  "home-process-2":
+    "Cropped to 4:3 on the point of work. The Apple mark on the battery in frame is incidental to a workshop photograph and is not used as a mark.",
+  "home-process-3":
+    "Cropped to 4:3 from a portrait original. Lenovo and LG component labels are incidental and are not the subject.",
+  "home-split-individuals":
+    "Cropped to 3:2. The Samsung marks on the bezel and board label are incidental to a teardown photograph.",
+  "home-split-business":
+    "Cropped to 3:2 on the hands and tool. The Samsung mark on the drive is incidental.",
+  "service-password-reset":
+    "Cropped to 3:2 on the hands and bit set, which also moves the drive label out of the dominant position.",
+};
+
+/** Slots the manifest lists but which no image met the constraints for. */
+/**
+ * Slots that render an illustration rather than a photograph.
+ *
+ * Not failures. Phase 6.5b replaced the over-broad "no manufacturer marks"
+ * constraint with the narrower rule that actually matters, which filled every
+ * header slot with real photography. What remains illustrated is the set of
+ * repeating category and step markers, where a line drawing in the design
+ * system's own language is a better answer than a stock photograph repeated
+ * across thirty-five cards.
+ */
+export const ILLUSTRATED_SLOTS: { slot: string; reason: string }[] = [
+  {
+    slot: "Service hub process cards, 5 per page across 7 pages",
+    reason:
+      "Thirty-five step cards. Five distinct photographs repeated seven times would read as filler, and thirty-five distinct ones do not exist. The illustrations are diagrams of the step, which is what a process marker should be.",
+  },
+  {
+    slot: "Repair categories: screen, battery, port, camera, keyboard, board, lock, diagnostic",
+    reason:
+      "Category markers, used as a set. Line drawings keep them visually consistent with each other and with the icon set, which photographs from eight different sources cannot.",
+  },
+];
+
+export function demoImage(slot: string): DemoImage | undefined {
+  return IMAGES[slot];
+}
+
+/**
+ * The blur placeholder, or undefined when the demo set is absent.
+ *
+ * Generated at build by scripts/process-images.ts. If public/demo/ is deleted
+ * the JSON stays but the files do not, and `hasImage` is what actually gates
+ * rendering.
+ */
+export function blurFor(slot: string): string | undefined {
+  return (blurData as Record<string, string>)[slot];
+}

@@ -1,0 +1,126 @@
+[
+  {
+    "slug": "diagnostics",
+    "name": "Diagnostics",
+    "price": 24.99,
+    "category": "computer",
+    "order": 10,
+    "turnaroundMinutes": 60,
+    "description": "We test the machine and tell you exactly what has failed and what it costs to fix, for $24.99, before you commit to any repair.",
+    "includes": [
+      "Full hardware test covering drive, memory and power",
+      "A written list of what has failed",
+      "A firm price for the repair before any work starts"
+    ]
+  },
+  {
+    "slug": "windows-installation",
+    "name": "Windows installation",
+    "price": 44.99,
+    "category": "software",
+    "order": 20,
+    "turnaroundMinutes": 120,
+    "description": "A clean Windows installation for $44.99, including Microsoft Office and security software, with all drivers set up so the machine works out of the box.",
+    "includes": [
+      "Clean Windows installation",
+      "Microsoft Office installed",
+      "Security software installed",
+      "All hardware drivers installed and tested"
+    ]
+  },
+  {
+    "slug": "virus-removal",
+    "name": "Virus removal",
+    "price": 34.99,
+    "category": "software",
+    "order": 30,
+    "turnaroundMinutes": 120,
+    "description": "Malware, adware and browser hijackers removed for $34.99, with security software left in place so the machine does not pick the same thing up again.",
+    "includes": [
+      "Full scan and removal of malware and adware",
+      "Browser hijackers and unwanted toolbars removed",
+      "Security software installed and set to update itself"
+    ]
+  },
+  {
+    "slug": "tune-up",
+    "name": "Desktop clean-up and tune-up",
+    "price": 79.99,
+    "category": "computer",
+    "order": 40,
+    "turnaroundMinutes": 180,
+    "description": "A full clean-up and tune-up for $79.99, covering both the software slowing the machine down and the dust cooking it from the inside.",
+    "includes": [
+      "Startup programs and background tasks cleared out",
+      "Dust removed from fans and heatsinks",
+      "Drive health checked and reported",
+      "Windows and driver updates applied"
+    ]
+  },
+  {
+    "slug": "program-installation",
+    "name": "Program installation, each",
+    "price": 24.99,
+    "category": "software",
+    "order": 50,
+    "turnaroundMinutes": 30,
+    "description": "Any single program installed and set up for $24.99, including licensing and first-run configuration."
+  },
+  {
+    "slug": "hardware-installation",
+    "name": "Hardware installation, each",
+    "price": 24.99,
+    "category": "computer",
+    "order": 60,
+    "turnaroundMinutes": 45,
+    "description": "Any single component fitted for $24.99, covering the labour to install memory, a drive or a card. The part itself is extra."
+  },
+  {
+    "slug": "password-reset",
+    "name": "Password reset",
+    "price": 49.99,
+    "category": "software",
+    "order": 70,
+    "turnaroundMinutes": 45,
+    "needsVerification": true,
+    "description": "A locked Windows account reset for $49.99, so you get back into the machine without losing the files on it.",
+    "includes": [
+      "Windows local or Microsoft account access restored",
+      "Files on the machine left in place"
+    ]
+  },
+  {
+    "slug": "laptop-screen-replacement",
+    "name": "Laptop screen replacement",
+    "price": 120,
+    "priceFrom": true,
+    "category": "computer",
+    "order": 80,
+    "turnaroundMinutes": 90,
+    "description": "A cracked or failed laptop screen replaced from $120, including the panel and the labour. The final price depends on the size and resolution of the panel your model takes.",
+    "includes": [
+      "New display panel fitted",
+      "Hinges and cables checked while the machine is open",
+      "60-day warranty on the panel and the work"
+    ]
+  },
+  {
+    "slug": "dc-charging-port-replacement",
+    "name": "DC / charging port replacement",
+    "price": 109.99,
+    "category": "computer",
+    "order": 90,
+    "turnaroundMinutes": 90,
+    "description": "A worn or broken laptop charging socket replaced for $109.99, including stripping the machine down and testing charging under load before reassembly."
+  },
+  {
+    "slug": "laptop-keyboard-replacement",
+    "name": "Laptop keyboard replacement",
+    "price": 69.99,
+    "priceTo": 149.99,
+    "category": "computer",
+    "order": 100,
+    "turnaroundMinutes": 90,
+    "description": "A laptop keyboard replaced for between $69.99 and $149.99. The range is real: on some laptops the keyboard is a separate part, and on others it is riveted into the whole top case, which costs more."
+  }
+]

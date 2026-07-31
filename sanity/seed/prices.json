@@ -1,0 +1,304 @@
+{
+  "_comment": "The printed TechBrotherz price list, transcribed exactly. Every price is CAD and includes the part and the labour. Rows printed once for several models are expanded into one entry per model and joined by a priceGroup, because shared pricing is not a reason to share a URL. Entries flagged needsVerification are on the client's open-questions list.",
+
+  "groups": [
+    {
+      "slug": "iphone-5-family",
+      "name": "iPhone 5, 5S and 5C",
+      "note": "The iPhone 5, 5S and 5C share the same repair prices.",
+      "models": ["iphone-5", "iphone-5s", "iphone-5c"]
+    },
+    {
+      "slug": "iphone-4-family",
+      "name": "iPhone 4 and 4S",
+      "note": "The iPhone 4 and 4S share the same repair prices.",
+      "models": ["iphone-4", "iphone-4s"]
+    },
+    {
+      "slug": "ipad-2-3-4",
+      "name": "iPad 2, 3 and 4",
+      "note": "The iPad 2, 3 and 4 share the same glass replacement price.",
+      "models": ["ipad-2", "ipad-3", "ipad-4"]
+    },
+    {
+      "slug": "ipad-mini-1-2",
+      "name": "iPad Mini 1 and 2",
+      "note": "The iPad Mini and iPad Mini 2 share the same glass replacement price.",
+      "models": ["ipad-mini", "ipad-mini-2"]
+    },
+    {
+      "slug": "lg-g4-g3-g2",
+      "name": "LG G4, G3 and G2",
+      "note": "The LG G4, G3 and G2 share the same screen replacement price.",
+      "models": ["lg-g4", "lg-g3", "lg-g2"]
+    },
+    {
+      "slug": "moto-g-1-2-3",
+      "name": "Moto G, 1st to 3rd generation",
+      "note": "The first three Moto G generations share the same screen replacement price.",
+      "models": ["moto-g-1st-gen", "moto-g-2nd-gen", "moto-g-3rd-gen"]
+    },
+    {
+      "slug": "nexus-5-4",
+      "name": "Nexus 5 and Nexus 4",
+      "note": "The Nexus 5 and Nexus 4 share the same screen replacement price.",
+      "models": ["nexus-5", "nexus-4"]
+    }
+  ],
+
+  "entries": [
+    { "model": "iphone-8-plus", "repair": "screen-replacement", "price": 109.99 },
+    { "model": "iphone-8", "repair": "screen-replacement", "price": 89.99 },
+    { "model": "iphone-7-plus", "repair": "screen-replacement", "price": 99.99 },
+    { "model": "iphone-7", "repair": "screen-replacement", "price": 84.99 },
+
+    { "model": "iphone-6s-plus", "repair": "screen-replacement", "price": 84.99 },
+    { "model": "iphone-6s-plus", "repair": "home-button", "price": 44.99 },
+    { "model": "iphone-6s-plus", "repair": "charging-port-repair", "price": 59 },
+    { "model": "iphone-6s-plus", "repair": "power-button", "price": 59 },
+    { "model": "iphone-6s-plus", "repair": "battery-replacement", "price": 55 },
+    { "model": "iphone-6s-plus", "repair": "earpiece-repair", "price": 45 },
+    { "model": "iphone-6s-plus", "repair": "speaker-repair", "price": 49 },
+    { "model": "iphone-6s-plus", "repair": "front-camera-repair", "price": 49 },
+    { "model": "iphone-6s-plus", "repair": "back-camera-repair", "price": 69 },
+    { "model": "iphone-6s-plus", "repair": "volume-button", "price": 69 },
+    { "model": "iphone-6s-plus", "repair": "lcd-shield-replacement", "price": 69 },
+    { "model": "iphone-6s-plus", "repair": "back-housing-replacement", "price": 99.99 },
+
+    { "model": "iphone-6s", "repair": "screen-replacement", "price": 74.99 },
+    { "model": "iphone-6s", "repair": "home-button", "price": 44.99 },
+    { "model": "iphone-6s", "repair": "charging-port-repair", "price": 59.99 },
+    { "model": "iphone-6s", "repair": "power-button", "price": 59.99 },
+    { "model": "iphone-6s", "repair": "battery-replacement", "price": 49.99 },
+    { "model": "iphone-6s", "repair": "earpiece-repair", "price": 44.99 },
+    { "model": "iphone-6s", "repair": "speaker-repair", "price": 49.99 },
+    { "model": "iphone-6s", "repair": "front-camera-repair", "price": 49.99 },
+    { "model": "iphone-6s", "repair": "back-camera-repair", "price": 69.99 },
+    { "model": "iphone-6s", "repair": "volume-button", "price": 69.99 },
+    { "model": "iphone-6s", "repair": "lcd-shield-replacement", "price": 49.99 },
+    { "model": "iphone-6s", "repair": "back-housing-replacement", "price": 99.99 },
+
+    { "model": "iphone-6-plus", "repair": "screen-replacement", "price": 74.99 },
+    { "model": "iphone-6-plus", "repair": "home-button", "price": 34.99 },
+    { "model": "iphone-6-plus", "repair": "charging-port-repair", "price": 49.99 },
+    { "model": "iphone-6-plus", "repair": "power-button", "price": 69.99 },
+    { "model": "iphone-6-plus", "repair": "battery-replacement", "price": 54.99 },
+    { "model": "iphone-6-plus", "repair": "earpiece-repair", "price": 39.99 },
+    { "model": "iphone-6-plus", "repair": "speaker-repair", "price": 49.99 },
+    { "model": "iphone-6-plus", "repair": "front-camera-repair", "price": 49.99 },
+    { "model": "iphone-6-plus", "repair": "back-camera-repair", "price": 49.99 },
+    { "model": "iphone-6-plus", "repair": "volume-button", "price": 69.99 },
+    { "model": "iphone-6-plus", "repair": "lcd-shield-replacement", "price": 44.99 },
+    { "model": "iphone-6-plus", "repair": "back-housing-replacement", "price": 99.99 },
+
+    { "model": "iphone-6", "repair": "screen-replacement", "price": 69.99 },
+    { "model": "iphone-6", "repair": "home-button", "price": 39.99 },
+    { "model": "iphone-6", "repair": "charging-port-repair", "price": 49.99 },
+    { "model": "iphone-6", "repair": "power-button", "price": 59.99 },
+    { "model": "iphone-6", "repair": "battery-replacement", "price": 49.99 },
+    { "model": "iphone-6", "repair": "earpiece-repair", "price": 39.99 },
+    { "model": "iphone-6", "repair": "speaker-repair", "price": 49.99 },
+    { "model": "iphone-6", "repair": "front-camera-repair", "price": 49.99 },
+    { "model": "iphone-6", "repair": "back-camera-repair", "price": 49.99 },
+    { "model": "iphone-6", "repair": "volume-button", "price": 69.99 },
+    { "model": "iphone-6", "repair": "lcd-shield-replacement", "price": 44.99 },
+    { "model": "iphone-6", "repair": "back-housing-replacement", "price": 99.99 },
+
+    { "model": "iphone-se-1st-gen", "repair": "screen-replacement", "price": 49.99 },
+
+    { "model": "ipad-air", "repair": "glass-digitizer", "price": 89.99 },
+    { "model": "ipad-mini-3", "repair": "glass-digitizer", "price": 129.99 },
+
+    { "model": "galaxy-a5-2017", "repair": "screen-replacement", "price": 179.99 },
+    { "model": "galaxy-a5-2017", "repair": "battery-replacement", "price": 69.99 },
+    { "model": "galaxy-a5-2017", "repair": "back-glass-replacement", "price": 49.99 },
+
+    {
+      "model": "galaxy-s8-plus",
+      "repair": "screen-replacement",
+      "price": 289.99,
+      "needsVerification": true,
+      "note": "Printed below the S8 price. The Plus part is normally dearer, so this pair is being confirmed with the shop."
+    },
+    {
+      "model": "galaxy-s8",
+      "repair": "screen-replacement",
+      "price": 299.99,
+      "needsVerification": true,
+      "note": "Printed above the S8 Plus price. The Plus part is normally dearer, so this pair is being confirmed with the shop."
+    },
+    { "model": "galaxy-s8-plus", "repair": "battery-replacement", "price": 79.99 },
+    { "model": "galaxy-s8", "repair": "battery-replacement", "price": 79.99 },
+    { "model": "galaxy-s8-plus", "repair": "back-glass-replacement", "price": 49.99 },
+    { "model": "galaxy-s8", "repair": "back-glass-replacement", "price": 49.99 },
+
+    { "model": "galaxy-s7-edge", "repair": "screen-replacement", "price": 269.99 },
+    { "model": "galaxy-s7", "repair": "screen-replacement", "price": 249.99 },
+    { "model": "galaxy-s7-edge", "repair": "battery-replacement", "price": 74.99 },
+    { "model": "galaxy-s7", "repair": "battery-replacement", "price": 74.99 },
+    { "model": "galaxy-s7-edge", "repair": "back-glass-replacement", "price": 49.99 },
+    { "model": "galaxy-s7", "repair": "back-glass-replacement", "price": 49.99 },
+
+    { "model": "galaxy-s6-edge", "repair": "screen-replacement", "price": 199.99 },
+    { "model": "galaxy-s6", "repair": "screen-replacement", "price": 189.99 },
+    { "model": "galaxy-s6-edge", "repair": "battery-replacement", "price": 69.99 },
+    { "model": "galaxy-s6", "repair": "battery-replacement", "price": 69.99 },
+    { "model": "galaxy-s6-edge", "repair": "back-glass-replacement", "price": 44.99 },
+    { "model": "galaxy-s6", "repair": "back-glass-replacement", "price": 44.99 },
+
+    { "model": "galaxy-s5-neo", "repair": "screen-replacement", "price": 149.99 },
+    { "model": "galaxy-s5", "repair": "screen-replacement", "price": 149.99 },
+
+    {
+      "model": "galaxy-s4",
+      "repair": "glass-digitizer",
+      "price": 69.99,
+      "note": "Glass only, bonded with LOCA adhesive. Only possible when the picture panel underneath is undamaged."
+    },
+    { "model": "galaxy-s4", "repair": "screen-replacement", "price": 99.99 },
+    { "model": "galaxy-s4", "repair": "charging-port-repair", "price": 49.99 },
+
+    {
+      "model": "galaxy-note-10-plus",
+      "repair": "screen-replacement",
+      "price": 499.99,
+      "needsVerification": true,
+      "note": "Printed under a Note 5 / 4 / 3 / 2 heading on the original list. Model mapping is being confirmed with the shop."
+    },
+    {
+      "model": "galaxy-note-10",
+      "repair": "screen-replacement",
+      "price": 469.99,
+      "needsVerification": true,
+      "note": "Printed under a Note 5 / 4 / 3 / 2 heading on the original list. Model mapping is being confirmed with the shop."
+    },
+    {
+      "model": "galaxy-note-9",
+      "repair": "screen-replacement",
+      "price": 349.99,
+      "needsVerification": true,
+      "note": "Printed as glass replacement under a Note 5 / 4 / 3 / 2 heading. Model mapping is being confirmed with the shop."
+    },
+    {
+      "model": "galaxy-note-8",
+      "repair": "screen-replacement",
+      "price": 329.99,
+      "needsVerification": true,
+      "note": "Printed under a Note 5 / 4 / 3 / 2 heading on the original list. Model mapping is being confirmed with the shop."
+    },
+    {
+      "model": "galaxy-note-5",
+      "repair": "screen-replacement",
+      "price": 249.99,
+      "note": "Printed as glass replacement on the original list."
+    },
+    { "model": "galaxy-note-4", "repair": "screen-replacement", "price": 174.99 },
+    { "model": "galaxy-note-3", "repair": "charging-port-repair", "price": 49.99 },
+    { "model": "galaxy-note-2", "repair": "charging-port-repair", "price": 49.99 },
+
+    { "model": "lg-g6", "repair": "screen-replacement", "price": 140 },
+    { "model": "lg-g5", "repair": "screen-replacement", "price": 120 },
+
+    { "model": "moto-x-play", "repair": "screen-replacement", "price": 110 },
+
+    {
+      "model": "nexus-5x",
+      "repair": "screen-replacement",
+      "price": 120,
+      "needsVerification": true,
+      "note": "Printed as Nexus 5S on the original list. There is no Nexus 5S, so this has been mapped to the Nexus 5X and is being confirmed with the shop."
+    },
+
+    { "model": "htc-one-m9", "repair": "screen-replacement", "price": 120 },
+    { "model": "htc-one-m8", "repair": "screen-replacement", "price": 110 },
+    { "model": "htc-one-m7", "repair": "screen-replacement", "price": 100 }
+  ],
+
+  "groupedEntries": [
+    {
+      "group": "iphone-5-family",
+      "prices": [
+        { "repair": "screen-replacement", "price": 44.99 },
+        { "repair": "home-button", "price": 34.99 },
+        { "repair": "charging-port-repair", "price": 49.99 },
+        { "repair": "power-button", "price": 59.99 },
+        { "repair": "battery-replacement", "price": 44.99 },
+        { "repair": "earpiece-repair", "price": 34.99 },
+        { "repair": "speaker-repair", "price": 44.99 },
+        { "repair": "front-camera-repair", "price": 44.99 },
+        { "repair": "back-camera-repair", "price": 49.99 }
+      ]
+    },
+    {
+      "group": "iphone-4-family",
+      "prices": [
+        { "repair": "screen-replacement", "price": 50 },
+        { "repair": "home-button", "price": 35 },
+        { "repair": "charging-port-repair", "price": 39 },
+        { "repair": "power-button", "price": 49 },
+        { "repair": "battery-replacement", "price": 39 },
+        { "repair": "earpiece-repair", "price": 35 },
+        { "repair": "speaker-repair", "price": 35 },
+        { "repair": "front-camera-repair", "price": 39 },
+        { "repair": "back-camera-repair", "price": 39 }
+      ]
+    },
+    {
+      "group": "ipad-2-3-4",
+      "prices": [{ "repair": "glass-digitizer", "price": 69.99 }]
+    },
+    {
+      "group": "ipad-mini-1-2",
+      "prices": [{ "repair": "glass-digitizer", "price": 79.99 }]
+    },
+    {
+      "group": "lg-g4-g3-g2",
+      "prices": [{ "repair": "screen-replacement", "price": 110 }]
+    },
+    {
+      "group": "moto-g-1-2-3",
+      "prices": [{ "repair": "screen-replacement", "price": 110 }]
+    },
+    {
+      "group": "nexus-5-4",
+      "prices": [{ "repair": "screen-replacement", "price": 100 }]
+    }
+  ],
+
+  "quoteOnly": [
+    {
+      "_comment": "The printed list gives one Call row covering these repairs for the iPhone 8 and 8 Plus together.",
+      "models": ["iphone-8", "iphone-8-plus"],
+      "repairs": [
+        "home-button",
+        "charging-port-repair",
+        "power-button",
+        "battery-replacement",
+        "earpiece-repair",
+        "speaker-repair",
+        "front-camera-repair",
+        "back-camera-repair",
+        "volume-button",
+        "lcd-shield-replacement",
+        "back-housing-replacement"
+      ]
+    },
+    {
+      "_comment": "The printed list gives one Call row covering these repairs for the iPhone 7 and 7 Plus together.",
+      "models": ["iphone-7", "iphone-7-plus"],
+      "repairs": [
+        "home-button",
+        "charging-port-repair",
+        "power-button",
+        "battery-replacement",
+        "earpiece-repair",
+        "speaker-repair",
+        "front-camera-repair",
+        "back-camera-repair",
+        "volume-button",
+        "lcd-shield-replacement",
+        "back-housing-replacement"
+      ]
+    }
+  ]
+}

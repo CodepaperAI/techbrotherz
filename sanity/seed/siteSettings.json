@@ -1,0 +1,32 @@
+{
+  "_id": "siteSettings",
+  "_type": "siteSettings",
+  "brandName": "TechBrotherz",
+  "legalName": "TechBrotherz",
+  "tagline": "Phone and computer repairs, done while you wait",
+  "street": "3317 17 Ave SE",
+  "city": "Calgary",
+  "region": "Alberta",
+  "regionCode": "AB",
+  "country": "Canada",
+  "phone": "(403) 273-8324",
+  "phoneRaw": "+14032738324",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=3317+17+Ave+SE+Calgary+Alberta",
+  "hours": [
+    { "_key": "mon", "day": "Monday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "tue", "day": "Tuesday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "wed", "day": "Wednesday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "thu", "day": "Thursday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "fri", "day": "Friday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "sat", "day": "Saturday", "open": "10:00", "close": "19:00", "closed": false },
+    { "_key": "sun", "day": "Sunday", "open": "11:00", "close": "17:00", "closed": false }
+  ],
+  "warrantyDays": 60,
+  "appointmentPolicy": "No appointment needed, walk-ins welcome",
+  "typicalWaitMinutes": 30,
+  "priceDisclaimer": "All prices include the part and labour, and every repair is covered by a 60-day warranty.",
+  "announcementBar": {
+    "active": false,
+    "text": ""
+  }
+}

@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+/* `on-dark:` styles an element when it sits inside a dark Section.
+   Section variant="dark" sets data-surface="dark", so components adapt with
+   CSS instead of prop drilling, and stay server components. */
+@custom-variant on-dark ([data-surface="dark"] &);
+
+/* ==========================================================================
+   TechBrotherz design tokens
+   The machine-readable source of truth for the design system.
+   The human spec is DESIGN.md. Change values here, nowhere else.
+   ========================================================================== */
+
+@theme {
+  /* --- Colour -------------------------------------------------------------
+     Contrast rules, enforced. See DESIGN.md Section 2.1.
+       - --color-tb-green on cream is ~2.6:1. NEVER body or small text.
+       - Green text on light backgrounds is --color-tb-green-deep (~5.5:1).
+       - Button label on a green fill is --color-tb-ink, never white.
+  */
+  --color-tb-green: #21b24b; /* primary brand, from the logo mark */
+  --color-tb-green-deep: #0f7a30; /* accessible green for TEXT on light */
+  --color-tb-green-press: #17903a; /* button hover / pressed */
+  --color-tb-green-soft: #e9f7ed; /* tinted section and chip background */
+  --color-tb-ink: #0a0d0c; /* dark sections, headings, label on green */
+  --color-tb-ink-2: #141917; /* elevated surface inside dark sections */
+  --color-tb-cream: #f6f5f1; /* page background */
+  --color-tb-white: #ffffff; /* cards */
+  --color-tb-silver: #c4cbd2; /* chrome accent, hairlines and labels on dark */
+  --color-tb-text: #10130f; /* body text on light */
+  --color-tb-muted: #5c6360; /* secondary text on light */
+  --color-tb-muted-dark: #a9b0ac; /* secondary text on dark */
+  --color-tb-border: #e6e4de; /* 1px card and divider borders on light */
+  --color-tb-border-dark: #232b27; /* borders inside dark sections */
+
+  /* --- Typography ------------------------------------------------------- */
+  --font-display: var(--font-display-family), "Satoshi", "Inter", system-ui, sans-serif;
+  --font-sans: var(--font-sans-family), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* --- Radius ----------------------------------------------------------- */
+  --radius-chip: 999px;
+  --radius-input: 12px;
+  --radius-card: 20px;
+  --radius-image: 24px;
+  --radius-panel: 28px;
+
+  /* --- Shadow ------------------------------------------------------------
+     Almost none. This is a flat, calm system. Cards on dark use no shadow.
+  */
+  --shadow-card: 0 1px 2px rgba(10, 13, 12, 0.04);
+  --shadow-lift: 0 4px 16px rgba(10, 13, 12, 0.06);
+  --shadow-nav: 0 1px 0 rgba(10, 13, 12, 0.06);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --container-site: 80rem; /* 1280px */
+
+  /* --- Motion ------------------------------------------------------------
+     Nothing bounces. Nothing parallaxes. Nothing auto-plays.
+  */
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-hover: 180ms;
+  --duration-reveal: 500ms;
+  --duration-accordion: 220ms;
+}
+
+/* --------------------------------------------------------------------------
+   Documented token aliases.
+   DESIGN.md names the tokens --tb-*. Tailwind needs the --color-* / --radius-*
+   namespaces to generate utilities. These aliases let raw CSS and inline styles
+   use the documented names without duplicating a single hex value.
+   -------------------------------------------------------------------------- */
+:root {
+  --tb-green: var(--color-tb-green);
+  --tb-green-deep: var(--color-tb-green-deep);
+  --tb-green-press: var(--color-tb-green-press);
+  --tb-green-soft: var(--color-tb-green-soft);
+  --tb-ink: var(--color-tb-ink);
+  --tb-ink-2: var(--color-tb-ink-2);
+  --tb-cream: var(--color-tb-cream);
+  --tb-white: var(--color-tb-white);
+  --tb-silver: var(--color-tb-silver);
+  --tb-text: var(--color-tb-text);
+  --tb-muted: var(--color-tb-muted);
+  --tb-muted-dark: var(--color-tb-muted-dark);
+  --tb-border: var(--color-tb-border);
+  --tb-border-dark: var(--color-tb-border-dark);
+
+  --tb-r-chip: var(--radius-chip);
+  --tb-r-input: var(--radius-input);
+  --tb-r-card: var(--radius-card);
+  --tb-r-image: var(--radius-image);
+  --tb-r-panel: var(--radius-panel);
+
+  --tb-shadow-card: var(--shadow-card);
+  --tb-shadow-lift: var(--shadow-lift);
+  --tb-shadow-nav: var(--shadow-nav);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Sticky nav is 72px. Anchor targets clear it. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-tb-cream);
+    color: var(--color-tb-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  /* One visible focus ring, everywhere. Never remove an outline without
+     replacing it. DESIGN.md Section 2.2. */
+  :focus-visible {
+    outline: 2px solid var(--color-tb-green-deep);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* On dark surfaces the ring switches to the brighter green for contrast. */
+  [data-surface="dark"] :focus-visible {
+    outline-color: var(--color-tb-green);
+  }
+
+  /* Prices, times and any numeric column align by digit. */
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* A link sitting inside a paragraph must be distinguishable without colour,
+     so body-copy links are underlined at rest rather than on hover only. axe
+     flags the hover-only pattern as link-in-text-block, and it is a real
+     problem for anyone who cannot separate the green from the body text. */
+  p a:not([class*="rounded-chip"]),
+  li a:not([class*="rounded-chip"]),
+  dd a:not([class*="rounded-chip"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+
+  p a:hover,
+  li a:hover,
+  dd a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-tb-green);
+    color: var(--color-tb-ink);
+  }
+}
+
+/* ==========================================================================
+   Type scale
+   Fluid between 375px and 1280px viewports. The clamp endpoints are the
+   mobile and desktop values in the DESIGN.md type scale table.
+   ========================================================================== */
+
+@layer components {
+  .type-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 1.671rem + 3.536vw, 4.5rem); /* 40px -> 72px */
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  .type-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.378rem + 2.652vw, 3.5rem); /* 32px -> 56px */
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .type-h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.146rem + 0.442vw, 1.5rem); /* 20px -> 24px */
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .type-lead {
+    font-size: clamp(1.0625rem, 0.985rem + 0.331vw, 1.25rem); /* 17px -> 20px */
+    font-weight: 400;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .type-body {
+    font-size: clamp(1rem, 0.974rem + 0.11vw, 1.0625rem); /* 16px -> 17px */
+    font-weight: 400;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .type-eyebrow {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .type-caption {
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+/* Body copy caps at 68 characters per line. DESIGN.md Section 3.3. */
+@utility measure {
+  max-width: 68ch;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visually hidden but read by screen readers and crawlers. Used for the
+   <caption> on price tables, which must exist even when not shown. */
+@utility sr-only-caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================================================
+   Scroll reveal
+   Fade in plus rise 16px over 500ms. Staggered by the Reveal component via
+   an inline --reveal-delay. Elements are visible by default so that content
+   is never hidden from crawlers or from users with JavaScript disabled.
+   ========================================================================== */
+
+@layer components {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Only hide once the observer has claimed the element on the client. */
+  .reveal[data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .reveal[data-reveal="shown"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--duration-reveal) var(--ease-soft),
+      transform var(--duration-reveal) var(--ease-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/* ==========================================================================
+   Price list filtering
+
+   The search box on /repair-prices only sets data-hidden. Every row stays in
+   the DOM, so a crawler or a reader without JavaScript sees the complete price
+   list. Nothing is paginated or lazily loaded.
+   ========================================================================== */
+
+[data-price-row][data-hidden="true"],
+[data-price-group][data-hidden="true"],
+[data-brand-group][data-hidden="true"] {
+  display: none;
+}
+
+/* ==========================================================================
+   Reduced motion
+   All transitions, animations and reveals collapse. Content renders at its
+   final state immediately. DESIGN.md Section 5.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal[data-reveal="pending"],
+  .reveal[data-reveal="shown"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Print
+   Price lists get printed and carried into the shop. Make that readable.
+   ========================================================================== */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  nav,
+  footer,
+  [data-print="hide"] {
+    display: none !important;
+  }
+
+  /* FAQ answers print expanded. */
+  [data-accordion-panel] {
+    display: block !important;
+    height: auto !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+  }
+}
+
+/* --------------------------------------------------------------- imagery */
+/* DESIGN.md: radius 24 on images, 20 on cards. Added in the Phase 6.5
+   imagery pass. No new visual language, just the one radius the spec already
+   called for and the two ratios the demo set uses. */
+@utility rounded-image {
+  border-radius: 24px;
+}
+
+@utility aspect-4\/3 {
+  aspect-ratio: 4 / 3;
+}
+
+@utility aspect-3\/2 {
+  aspect-ratio: 3 / 2;
+}

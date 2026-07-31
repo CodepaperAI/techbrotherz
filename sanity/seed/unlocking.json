@@ -1,0 +1,11 @@
+[
+  {
+    "_id": "unlocking.any-canadian-carrier",
+    "carrier": "Any Canadian carrier",
+    "deviceType": "phone",
+    "price": 35,
+    "turnaround": "Usually the same day",
+    "order": 10,
+    "notes": "Covers phones locked to any Canadian carrier, including Rogers, Bell, Telus, Fido, Koodo, Virgin, Freedom, Chatr and Public Mobile. Since December 2017 the CRTC Wireless Code has required Canadian carriers to unlock phones free on request, so ask your carrier first. Bring the phone to us when the carrier will not do it, when the phone came from someone else, or when you want it done while you wait. Unlocking does not erase your data and does not void the manufacturer warranty. A phone reported lost or stolen is on the national blacklist and cannot be unlocked by anyone, including us."
+  }
+]

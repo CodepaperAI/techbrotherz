@@ -1,0 +1,505 @@
+{
+  "_comment": "Per-model content for the legacy Android catalogue. The families that share a printed price, LG G2/G3/G4, Moto G first to third generation, and Nexus 4/5, are deliberately given the most distinct content, because those are the pages most at risk of reading as duplicates.",
+
+  "models": [
+    {
+      "slug": "galaxy-s8-plus",
+      "lastSupportedOs": "Android 9",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S8 Plus was the first big Samsung with an almost bezel-free curved display, and it moved the fingerprint reader to an awkward spot beside the rear camera. Its 6.2 inch curved OLED is bonded to the frame, which is why a screen replacement costs $289.99 rather than the price of a flat panel.",
+      "commonIssues": [
+        "Cracked glass along the curved edge, where this generation is thinnest",
+        "Green or pink vertical lines on the OLED after a drop",
+        "Rear fingerprint reader hard to find beside the camera, a design complaint specific to the S8 generation",
+        "Battery no longer lasting a day",
+        "Cracked rear glass affecting wireless charging"
+      ],
+      "repairNotes": "Samsung bonds the curved OLED panel to the aluminium frame on this generation, so the replacement part is the screen and the frame together rather than a panel alone. That is the single reason a Galaxy screen costs more than an iPhone screen of comparable size.",
+      "verdict": "Hard to justify at $289.99. The Galaxy S8 Plus stopped at Android 9, so it receives no security patches, and the screen repair costs more than many working used handsets. TechBrotherz will do it if the phone has value to you beyond its market price, but for general use the money goes further on a replacement."
+    },
+    {
+      "slug": "galaxy-s8",
+      "lastSupportedOs": "Android 9",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S8 introduced Samsung's Infinity Display and dropped the physical home button that every Galaxy S before it had. Its 5.8 inch curved OLED is smaller than the S8 Plus but replaced as the same kind of bonded screen-and-frame assembly, and its printed price of $299.99 is one we have flagged for the shop to confirm.",
+      "commonIssues": [
+        "Cracked glass on the curved edge",
+        "Burn-in on the OLED from the on-screen navigation bar, this being the first Galaxy S without physical buttons",
+        "Iris scanner failing, a feature unique to the S8 and S9 generations",
+        "Battery degraded past a working day",
+        "Charging port worn"
+      ],
+      "repairNotes": "The S8 was the first Galaxy S to replace the physical home button with on-screen navigation, which is why burn-in along the bottom of the panel is more common on this generation than on the S7 before it. The screen is bonded to the frame and replaced as one assembly.",
+      "verdict": "No, at the printed price. The Galaxy S8 stopped at Android 9 and its listed $299.99 screen exceeds what the handset is worth. This is also one of the prices we have asked the shop to confirm, because it sits above the larger S8 Plus. Either way, at this price a replacement phone is the better spend."
+    },
+    {
+      "slug": "galaxy-s7-edge",
+      "lastSupportedOs": "Android 8",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S7 Edge brought back water resistance and the microSD slot that the S6 had dropped, and its curved 5.5 inch display wraps further round the sides than any Galaxy before it. That curve is exactly where it breaks, and the screen and frame come as one bonded part at $269.99.",
+      "commonIssues": [
+        "Cracked glass on the wrap-around curve, the most exposed edge of any Galaxy of this era",
+        "Water resistance lost after a previous repair, the frame seal being single-use",
+        "Battery degraded, this being a 2016 handset",
+        "Micro USB port worn, this generation predating USB-C on Samsung",
+        "Screen burn-in from static navigation icons"
+      ],
+      "repairNotes": "The S7 generation is rated IP68 from the factory, but that depends on adhesive that is destroyed the first time the phone is opened. TechBrotherz reseals during a repair and will tell you plainly that no shop can restore the original factory rating. This generation also uses micro USB rather than USB-C.",
+      "verdict": "No. The Galaxy S7 Edge stopped at Android 8, which means years without security updates, and a $269.99 screen is far more than the handset is worth in 2026. TechBrotherz will fit one on request, but we would be doing you a disservice not to say that the money is better spent on a newer phone."
+    },
+    {
+      "slug": "galaxy-s7",
+      "lastSupportedOs": "Android 8",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S7 has a flat 5.1 inch display rather than the curve of the S7 Edge beside it, which makes it the more durable of the pair and slightly cheaper to repair at $249.99. It was the model that restored the microSD slot and water resistance after the S6 removed both, and it sold heavily in Canada.",
+      "commonIssues": [
+        "Cracked glass on the flat display, less exposed than the Edge but still a bonded assembly",
+        "Battery degraded after nearly a decade",
+        "Micro USB port worn out",
+        "Camera glass cracked, this model's rear lens sitting nearly flush",
+        "Loudspeaker distorted"
+      ],
+      "repairNotes": "The flat panel on the standard S7 is meaningfully more robust than the S7 Edge's curved glass, and its replacement part is fifty dollars cheaper. The rear camera cover on this model sits almost flush with the body, so it cracks far less often than on phones with a raised camera bump.",
+      "verdict": "No, at $249.99. The Galaxy S7 stopped at Android 8 and the screen repair now costs several times what the phone is worth. If the fault is a battery or a charging port rather than the screen, that is a different conversation and often worth doing. A screen at this price is not."
+    },
+    {
+      "slug": "galaxy-s6-edge",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S6 Edge was Samsung's first dual-curved phone and the model where it abandoned removable batteries and microSD cards. Its curved display broke often enough that it defined the repair economics of the whole generation, and at $199.99 it is still one of the dearer legacy Samsung screens we fit.",
+      "commonIssues": [
+        "Cracked glass on both curved edges, this being Samsung's first dual-curve design",
+        "Battery sealed in and now degraded, the S6 generation removing the user-replaceable battery",
+        "No microSD expansion, a limitation this generation introduced",
+        "Micro USB port worn",
+        "Rear glass cracked"
+      ],
+      "repairNotes": "The S6 generation was where Samsung sealed the battery in and dropped the microSD slot, so a tired S6 Edge cannot be revived by swapping a battery at home the way earlier Galaxy phones could. The dual curve makes the screen assembly the most fragile part of the phone.",
+      "verdict": "No. The Galaxy S6 Edge stopped at Android 7, which is a decade of missed security updates, and its $199.99 screen exceeds the handset's value several times over. This is a phone to retire. TechBrotherz will say that at the counter rather than take the work."
+    },
+    {
+      "slug": "galaxy-s6",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S6 has a flat display where the S6 Edge curves, and it was Samsung's move to a glass and metal body after years of plastic backs. That switch is why the S6 was the first Galaxy S with a back that shatters, and why back glass at $44.99 became a routine repair on this generation.",
+      "commonIssues": [
+        "Cracked rear glass, new to this generation after years of plastic backs",
+        "Cracked front glass on the flat 5.1 inch display",
+        "Battery sealed and degraded, no longer user-replaceable from this model on",
+        "Micro USB port worn",
+        "Home button with fingerprint reader failing"
+      ],
+      "repairNotes": "The S6 was Samsung's first glass-backed Galaxy S, which introduced wireless charging and, at the same time, a second surface that breaks. Rear glass at $44.99 is one of the cheaper repairs on this model, and it is worth doing promptly because loose shards spread.",
+      "verdict": "Only for the cheap repairs. The Galaxy S6 stopped at Android 7 and no longer receives security updates. A $44.99 back glass or a $69.99 battery on a phone still in daily use is defensible. The $189.99 screen is not, because it costs more than the phone is worth."
+    },
+    {
+      "slug": "galaxy-s5-neo",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S5 Neo is the version of the S5 Samsung released a year later with a different processor, sold mainly outside the United States and common in Canada. It keeps the dimpled removable plastic back of the original S5, which means the battery can still be changed by hand and the back does not shatter.",
+      "commonIssues": [
+        "Cracked front glass on the 5.1 inch display",
+        "Charging port flap seal perished, the S5 generation using a physical cover for water resistance",
+        "Battery worn out, though this model's battery is user-replaceable",
+        "Home button with fingerprint swipe sensor failing",
+        "Micro USB 3.0 port worn, an unusual wide connector specific to this generation"
+      ],
+      "repairNotes": "The S5 generation is one of the last Galaxy phones with a removable back and a user-replaceable battery, so a tired S5 Neo often needs nothing more than a new cell that the owner can fit. It also uses the wide micro USB 3.0 connector, which is not the same part as an ordinary micro USB port.",
+      "verdict": "Battery yes, screen no. The Galaxy S5 Neo stopped at Android 7. Its removable battery means a very cheap revival is possible, and that is worth doing on a working phone. A $149.99 screen on a handset from 2015 is not, because it is several times the phone's value."
+    },
+    {
+      "slug": "galaxy-s5",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S5 is the one with the dimpled back. It was Samsung's first water-resistant flagship, achieved with a rubber-sealed charging port flap rather than internal adhesive, and it kept the removable battery that the S6 would drop a year later. It arrives at the counter more often than any other Galaxy of its age.",
+      "commonIssues": [
+        "Cracked front glass on the 5.1 inch display",
+        "Charging port flap lost or perished, which removes the water resistance entirely",
+        "Battery worn, though this model's battery lifts out by hand",
+        "Fingerprint swipe sensor in the home button failing, an early and unreliable design",
+        "Dimpled plastic back cover loose or cracked at the clips"
+      ],
+      "repairNotes": "Water resistance on the S5 depends on a physical rubber flap over the charging port rather than sealed adhesive, so a missing flap means the phone is no longer protected regardless of any repair. The removable back also makes a battery swap the cheapest possible fix on this model.",
+      "verdict": "Battery only. The Galaxy S5 stopped at Android 6, over a decade ago, and no current banking or messaging app will support it. A new battery costs very little and the owner can fit it. A $149.99 screen on a phone this old is not a repair we would recommend."
+    },
+    {
+      "slug": "galaxy-s4",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy S4 is the only phone on the TechBrotherz price list where the glass and the display panel are still priced separately, at $69.99 and $99.99. That is because its layers are not bonded the way every later Galaxy is, so a cracked front with a working picture can be fixed for a third less than a full screen.",
+      "commonIssues": [
+        "Cracked front glass with the picture underneath still perfect, repairable on its own for $69.99",
+        "Failed display panel showing lines or black patches, a different and dearer repair at $99.99",
+        "Micro USB charging port worn, listed separately at $49.99",
+        "Battery worn out, removable on this model",
+        "Plastic back cover cracked at the clips"
+      ],
+      "repairNotes": "The Galaxy S4 is the last model we handle where glass-only replacement is practical on a phone, using LOCA adhesive to bond a new front to the working panel underneath. Every Samsung after it laminates the two together. That is why the S4 has two separate screen prices where every other Galaxy has one.",
+      "verdict": "Only the glass, and only if the picture is intact. The Galaxy S4 stopped at Android 5, more than a decade ago. A $69.99 glass repair on a phone kept for a specific purpose is the one defensible spend here. A $99.99 panel replacement on a handset this old is not."
+    },
+    {
+      "slug": "galaxy-a5-2017",
+      "lastSupportedOs": "Android 8",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy A5 from 2017 was Samsung's mid-range phone that borrowed the flagship's glass sandwich body and water resistance, at roughly half the price. Its screen costs $179.99 to replace, which is high for a mid-range handset and reflects that Samsung used the same bonded OLED construction as its flagships.",
+      "commonIssues": [
+        "Cracked front glass on the bonded OLED",
+        "Cracked rear glass, unusual on a mid-range phone of this era",
+        "Battery degraded, replaceable at $69.99",
+        "USB-C port worn, this being an early mid-range Samsung to adopt it",
+        "Home button with fingerprint reader failing"
+      ],
+      "repairNotes": "The 2017 A5 uses flagship-style bonded OLED construction rather than the cheaper separate-layer panels found in most mid-range phones of its year, which is why its screen price sits closer to a Galaxy S than to a budget handset.",
+      "verdict": "No for the screen, yes for the battery. The A5 stopped at Android 8. At $179.99 a screen costs far more than this mid-range handset is worth now. A $69.99 battery or a $49.99 back glass on a phone still doing a job is a reasonable spend, and we will tell you which category yours falls into."
+    },
+    {
+      "slug": "galaxy-note-10-plus",
+      "lastSupportedOs": "Android 12",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 10 Plus has the largest and most expensive screen on the TechBrotherz legacy price list at $499.99, because it combines a 6.8 inch curved OLED with the extra digitizer layer the S Pen needs. It was also the Note that dropped the headphone socket, which remains a sore point for owners.",
+      "commonIssues": [
+        "Cracked curved glass on the 6.8 inch display, the largest panel we replace",
+        "S Pen no longer registering pressure, a fault of the digitizer layer rather than the glass",
+        "Battery degraded after several years",
+        "Cracked rear glass",
+        "USB-C port worn from fast charging"
+      ],
+      "repairNotes": "A Note screen carries a second digitizer layer behind the display for the S Pen, so a replacement has to restore pen pressure as well as finger touch. That extra layer, combined with the size and the curve, is why this is the dearest screen on our list.",
+      "verdict": "Almost never worth $499.99. The Note 10 Plus stopped at Android 12, and at that price the repair approaches the cost of a good used current-generation phone. If the S Pen has failed but the screen is intact, come in anyway, because that is sometimes a cheaper and separate conversation."
+    },
+    {
+      "slug": "galaxy-note-10",
+      "lastSupportedOs": "Android 12",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 10 is the smaller Note, at 6.3 inches, and the only Note ever released without a microSD slot. Its screen replacement is $469.99, thirty dollars less than the Plus, and like every Note it carries the S Pen digitizer layer behind the display.",
+      "commonIssues": [
+        "Cracked curved glass on the 6.3 inch display",
+        "S Pen pressure sensitivity lost while finger touch still works",
+        "No microSD expansion, unique among Notes to this model",
+        "Battery degraded, this model having a smaller cell than the Plus",
+        "USB-C port worn"
+      ],
+      "repairNotes": "The standard Note 10 has a smaller battery than the Plus and no memory card slot, so storage-full and battery complaints arrive more often on this model than on its larger sibling. The S Pen digitizer is replaced with the screen assembly.",
+      "verdict": "No, at $469.99. The Galaxy Note 10 stopped at Android 12 and the screen repair costs more than the phone fetches. TechBrotherz would rather tell you that than take the job. If the fault is the battery or the charging port, those are worth doing on a Note that is otherwise sound."
+    },
+    {
+      "slug": "galaxy-note-9",
+      "lastSupportedOs": "Android 10",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 9 was the last Note with a headphone socket and the first with a Bluetooth S Pen that worked as a remote shutter. It has the largest battery Samsung had fitted to a Note at the time, which is why Note 9 handsets often still hold a usable charge when their contemporaries do not.",
+      "commonIssues": [
+        "Cracked glass on the 6.4 inch curved display",
+        "S Pen Bluetooth pairing lost, a feature introduced on this model",
+        "Battery still serviceable more often than its contemporaries, thanks to the large cell",
+        "Cracked rear glass",
+        "USB-C port worn"
+      ],
+      "repairNotes": "The Note 9 introduced a Bluetooth S Pen that charges inside the phone, so a pen that no longer acts as a remote may need pairing rather than replacing. It also kept the 3.5 mm headphone socket that the Note 10 removed, which is a repairable part on this model and absent from the next.",
+      "verdict": "No at $349.99, but this one lasts longer than most. The Note 9 stopped at Android 10. Its unusually large battery means many are still usable, so a cheaper repair such as a charging port can be worth doing. The screen is not, because it costs more than the handset."
+    },
+    {
+      "slug": "galaxy-note-8",
+      "lastSupportedOs": "Android 9",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 8 was the model Samsung had to get right, released directly after the Note 7 was withdrawn worldwide over battery fires. Samsung fitted it with a deliberately conservative battery and put it through an eight-point safety check. It was the first Note with dual rear cameras.",
+      "commonIssues": [
+        "Cracked glass on the 6.3 inch curved display",
+        "Battery capacity noticeably small for the phone's size, a deliberate safety decision after the Note 7 recall",
+        "S Pen no longer registering pressure",
+        "Cracked rear glass",
+        "Micro USB era ended here, this model using USB-C"
+      ],
+      "repairNotes": "Samsung fitted the Note 8 with a smaller battery than its size suggests, as a direct response to the Note 7 recall. That means Note 8 owners see battery complaints earlier in the phone's life than Note 9 owners do, and a battery replacement is often the more useful repair on this model.",
+      "verdict": "No for a $329.99 screen. The Note 8 stopped at Android 9. Given its conservative battery, a battery replacement on a Note 8 that is otherwise sound is the repair that actually helps, and it costs a fraction of the screen. We will point you at that instead."
+    },
+    {
+      "slug": "galaxy-note-5",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 5 is the model with the S Pen that could be inserted backwards and jam permanently, a design fault Samsung acknowledged and corrected in later Notes. It was also the first Note with a sealed glass back and no microSD slot, which made it the least popular Note among long-time owners.",
+      "commonIssues": [
+        "S Pen inserted backwards and jammed, a fault specific to this model's slot design",
+        "Cracked glass on the 5.7 inch display",
+        "Sealed battery degraded, this being the first Note without a removable back",
+        "No microSD expansion, dropped on this model",
+        "Micro USB port worn"
+      ],
+      "repairNotes": "The Note 5 slot accepts the S Pen either way round, and inserting it backwards can permanently damage the detection mechanism. If a Note 5 has lost pen detection entirely, that history is usually the reason, and it is a different repair from a cracked screen.",
+      "verdict": "No. The Galaxy Note 5 stopped at Android 7, and a $249.99 screen on a decade-old phone with a known design fault is not a sensible spend. TechBrotherz will free a jammed S Pen and give you an honest assessment, but we would not recommend investing in this handset."
+    },
+    {
+      "slug": "galaxy-note-4",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 4 is the last Note with both a removable battery and a microSD slot, which is exactly why some owners still refuse to give theirs up. Its faux-leather plastic back lifts off by hand, and a flat battery can be swapped in seconds without a single tool.",
+      "commonIssues": [
+        "Cracked glass on the 5.7 inch display, replaced as a panel at $174.99",
+        "Battery worn, but removable by hand on this model",
+        "Micro USB port worn out",
+        "S Pen tip worn or lost",
+        "Plastic back cover loose at the clips"
+      ],
+      "repairNotes": "The Note 4 is the last Note where the owner can replace the battery and expand the storage without any tools. That makes it unusually cheap to keep alive compared with every Note that followed, and it is the reason people hold onto them.",
+      "verdict": "Battery yes, screen borderline. The Note 4 stopped at Android 6, so it is not a phone for banking or messaging. Its removable battery makes a revival almost free, which is worth doing for a specific use. A $174.99 screen on a phone from 2014 is much harder to justify."
+    },
+    {
+      "slug": "galaxy-note-3",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 3 is the one with the stitched faux-leather back, and it used the wide USB 3.0 connector that Samsung fitted to only a handful of phones. That connector is the single most common reason a Note 3 comes to the TechBrotherz counter, and it is the one repair on our list for this model at $49.99.",
+      "commonIssues": [
+        "Wide USB 3.0 charging port failing, the unusual connector specific to this generation",
+        "Battery worn, removable by hand on this model",
+        "Stitched faux-leather back cover peeling at the edges",
+        "S Pen tip worn",
+        "Screen cracked, though we quote that in person for this model"
+      ],
+      "repairNotes": "The Note 3 uses a wide USB 3.0 connector rather than ordinary micro USB, and the two are not interchangeable parts even though an ordinary micro USB cable will fit in one half of the socket. That confusion is why the port on this model wears out early.",
+      "verdict": "Charging port only. The Note 3 stopped at Android 5, over a decade ago. A $49.99 port replacement on a phone someone is keeping for a specific reason is fine. Beyond that, this is a handset at the end of its life and we will say so rather than quote a screen."
+    },
+    {
+      "slug": "galaxy-note-2",
+      "lastSupportedOs": "Android 4.4",
+      "stillReceivesUpdates": false,
+      "intro": "The Galaxy Note 2 is the phone that convinced the industry large screens would sell, at a size that looked absurd in 2012 and ordinary now. It has a removable battery, a microSD slot and an ordinary micro USB port, which makes it the simplest and cheapest of the older Notes to keep running.",
+      "commonIssues": [
+        "Micro USB charging port worn out, the repair we list for this model at $49.99",
+        "Battery worn, removable by hand",
+        "Plastic back cover loose",
+        "S Pen lost or its tip worn",
+        "Screen cracked, quoted in person for this model"
+      ],
+      "repairNotes": "Unlike the Note 3 that followed it, the Note 2 uses an ordinary micro USB connector, so ports and cables are still easy to source. Together with the removable battery and memory card, that makes it the least awkward old Note to maintain.",
+      "verdict": "Charging port only, and only for sentiment. The Note 2 stopped at Android 4.4 well over a decade ago and cannot run any current app. A $49.99 port on a phone being kept as a curiosity is fine. As a working phone, it finished its life years ago."
+    },
+
+    {
+      "slug": "lg-g6",
+      "lastSupportedOs": "Android 9",
+      "stillReceivesUpdates": false,
+      "intro": "The LG G6 abandoned the modular accessory system of the G5 and was the first mainstream phone with an 18 by 9 tall display. It was also LG's first properly water-resistant flagship. At $140 its screen is the dearest of the five LG models TechBrotherz still holds parts for.",
+      "commonIssues": [
+        "Cracked glass on the tall 18 by 9 display, the first mainstream phone with that aspect ratio",
+        "Battery sealed and degraded, the G6 dropping the removable battery of earlier G models",
+        "USB-C port worn",
+        "Rear glass cracked",
+        "Display dimming unevenly with age"
+      ],
+      "repairNotes": "The G6 sealed the battery in and dropped both the modular accessories of the G5 and the removable back of the G4, so unlike its predecessors it cannot be revived with a hand-swapped cell. LG left the phone business in 2021, so remaining parts come from existing stock.",
+      "verdict": "Marginal, and stock is finite. The LG G6 stopped at Android 9, and LG exited the phone business entirely in 2021, so there will be no more parts made. At $140 a screen on a working phone is defensible if you like it, but this is a platform with a hard end date."
+    },
+    {
+      "slug": "lg-g5",
+      "lastSupportedOs": "Android 8",
+      "stillReceivesUpdates": false,
+      "intro": "The LG G5 is the modular one. Its bottom chin slides out so the battery can be swapped or an accessory module fitted, an idea no other mainstream phone tried and which LG abandoned after a single generation. That sliding joint is a mechanical weak point that no other phone we repair has.",
+      "commonIssues": [
+        "Sliding modular chin loose or no longer latching, unique to this model in the entire LG range",
+        "Cracked glass on the 5.3 inch display",
+        "Battery contacts in the removable module worn from repeated swaps",
+        "USB-C port worn",
+        "Rattling from the modular joint"
+      ],
+      "repairNotes": "The G5's removable chin means the battery can be changed in seconds, which is genuinely useful, but the sliding contacts wear and the latch loosens. A G5 that reports a battery fault often has a contact problem at the module rather than a dead cell, and that is worth checking first.",
+      "verdict": "Only if you value the modular battery. The LG G5 stopped at Android 8 and LG has left the phone business. At $120 the screen is affordable, and the swappable battery genuinely extends the phone's life. But there will be no more parts, so treat any spend as short-term."
+    },
+    {
+      "slug": "lg-g4",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The LG G4 is the one with the optional stitched leather back and a well-documented bootloop fault, caused by solder joints failing on the mainboard under heat. LG ran a replacement programme for it. A G4 that will not get past the logo is almost certainly that fault, and it is not a screen problem.",
+      "commonIssues": [
+        "Bootloop, the failure this specific model became known for and which LG acknowledged",
+        "Cracked glass on the 5.5 inch curved display",
+        "Removable battery worn, replaceable by hand on this model",
+        "Micro USB port worn",
+        "Leather back cover peeling if fitted with that option"
+      ],
+      "repairNotes": "The G4 bootloop is a mainboard fault, not a software one, and no screen or battery repair will fix it. TechBrotherz will diagnose it before quoting anything, because it is the one fault on this model where the honest answer is that the phone is beyond economic repair.",
+      "verdict": "Only if it is not bootlooping. The LG G4 stopped at Android 6 and LG has exited phones entirely. If the fault is a cracked screen on an otherwise working handset, $110 is cheap. If it is the bootloop, no repair at this price will help and we will tell you at the counter."
+    },
+    {
+      "slug": "lg-g3",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The LG G3 was the first mainstream phone with a Quad HD display and it introduced LG's laser autofocus, a small module beside the rear camera that measures distance. It kept the rear-mounted buttons and the removable battery, and it ran noticeably warm because of the resolution its processor had to drive.",
+      "commonIssues": [
+        "Running hot and throttling, a consequence of driving a Quad HD panel on this generation's processor",
+        "Cracked glass on the 5.5 inch display",
+        "Laser autofocus module failing, a feature introduced on this model",
+        "Removable battery worn, replaceable by hand",
+        "Rear-mounted power and volume buttons wearing out"
+      ],
+      "repairNotes": "The G3 places its power and volume buttons on the back below the camera rather than on the sides, which is unusual and means a button fault is a different part from any side-button phone. Its laser autofocus module can fail independently of the camera itself.",
+      "verdict": "No, except as a cheap fix on a working phone. The LG G3 stopped at Android 6 and LG has left the market. A $110 screen is inexpensive, and the removable battery helps, but a decade-old phone that runs hot and receives no security updates is not one to invest in."
+    },
+    {
+      "slug": "lg-g2",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The LG G2 was the first phone to put its power and volume buttons on the back, below the camera, because LG argued that is where your index finger already rests. It has no buttons on its sides at all. That single decision defines the phone and every repair conversation about it.",
+      "commonIssues": [
+        "Rear-mounted buttons failing, the only controls this phone has",
+        "Cracked glass on the 5.2 inch display",
+        "Sealed battery degraded, unusually for an LG of this era",
+        "Micro USB port worn",
+        "Screen showing burn-in from static elements"
+      ],
+      "repairNotes": "The G2 has no side buttons whatsoever, so a failed rear button assembly leaves the phone with no physical controls at all. That makes the button repair more urgent on this model than on any other phone we handle, and it is a different part from the G3's rear buttons despite the similar idea.",
+      "verdict": "No. The LG G2 stopped at Android 5 more than a decade ago, and LG no longer makes phones or parts. A $110 screen on a handset of this age cannot be justified for normal use. TechBrotherz will do it if the phone matters to you for a particular reason, but we will say that first."
+    },
+
+    {
+      "slug": "moto-x-play",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The Moto X Play was built around battery life rather than speed, with a 3630 mAh cell that routinely lasted two days when the phone was new. That is still the reason people keep them. It has a water-repellent nano-coating inside rather than a sealed body, so it survives splashes but not immersion.",
+      "commonIssues": [
+        "Cracked glass on the 5.5 inch display",
+        "Battery finally degraded, though this model started with an unusually large cell",
+        "Micro USB port worn out",
+        "Textured rear cover loose at the clips",
+        "Camera glass scratched"
+      ],
+      "repairNotes": "The Moto X Play uses an internal water-repellent coating rather than gaskets, so it tolerates rain but not submersion, and a repair does not change that either way. Its large battery means a X Play often still holds a usable charge when contemporaries do not.",
+      "verdict": "Only for the battery life. The Moto X Play stopped at Android 7. A $110 screen is cheap, and this specific model's battery endurance is genuinely better than its peers, so people keep them as work or site phones. For anything needing current apps, it is finished."
+    },
+    {
+      "slug": "moto-g-3rd-gen",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The third-generation Moto G was the first in the range with a proper IP67 water resistance rating, which no budget phone of 2015 offered. It also introduced the customisable Moto Maker colours. It shares a $110 screen price with the two Moto G generations before it, but not their construction.",
+      "commonIssues": [
+        "Cracked glass on the 5 inch display",
+        "Water resistance lost after opening, this being the first Moto G rated IP67",
+        "Battery worn, sealed on this generation",
+        "Micro USB port worn",
+        "Rear cover clips broken from removal"
+      ],
+      "repairNotes": "The third-generation Moto G is the only one of the three sharing its price that carries an IP67 rating, and that rating depends on seals destroyed when the phone is opened. TechBrotherz will tell you the phone is no longer water resistant after a repair rather than let you assume it still is.",
+      "verdict": "No, other than as a spare. The third-generation Moto G stopped at Android 6. At $110 the screen costs more than the phone is worth. If you need a working spare and already own it, the repair is cheap enough to consider, but do not expect the water resistance back."
+    },
+    {
+      "slug": "moto-g-2nd-gen",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The second-generation Moto G grew to a 5 inch screen and added front-facing stereo speakers and a microSD slot, both of which the first generation lacked. Those speakers are the thing owners mention, because they were unusually good for a budget phone and remain so.",
+      "commonIssues": [
+        "Cracked glass on the 5 inch display",
+        "Front stereo speakers distorting, a feature this generation added",
+        "Battery worn, sealed on this model",
+        "Micro USB port worn",
+        "microSD card slot failing, added on this generation"
+      ],
+      "repairNotes": "The second generation added front-facing stereo speakers and a memory card slot that the first-generation Moto G did not have, so speaker and storage faults on this model are repairs that simply do not exist on its predecessor despite the shared screen price.",
+      "verdict": "No. The second-generation Moto G stopped at Android 6 and a $110 screen exceeds what the handset is worth by a wide margin. TechBrotherz will repair one if you have a reason, but for ordinary use this is a phone to retire rather than to fix."
+    },
+    {
+      "slug": "moto-g-1st-gen",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The first Moto G changed what a budget phone was allowed to be, shipping in 2013 with near-stock Android and prompt updates at a price nobody expected. It has a 4.5 inch screen, no memory card slot and mono sound, all of which the second generation fixed a year later.",
+      "commonIssues": [
+        "Cracked glass on the 4.5 inch display, the smallest of the three Moto G generations we repair",
+        "No storage expansion, this generation having no microSD slot",
+        "Battery worn, sealed on this model",
+        "Micro USB port worn",
+        "Swappable rear shell cracked at the clips"
+      ],
+      "repairNotes": "The first-generation Moto G has a smaller 4.5 inch screen than the two generations that follow it and no memory card slot, so despite sharing a $110 price its screen is a different and smaller part. It also takes interchangeable coloured back shells.",
+      "verdict": "No. The first Moto G stopped at Android 5 and is now more than a decade old with no security updates. At $110 the screen costs several times the handset's value. This is a phone with historical interest rather than a repair we would advise anyone to pay for."
+    },
+
+    {
+      "slug": "nexus-5x",
+      "lastSupportedOs": "Android 8",
+      "stillReceivesUpdates": false,
+      "intro": "The Nexus 5X was made by LG for Google and was the first Nexus with a rear fingerprint reader and a USB-C port. It is also known for a bootloop fault caused by solder failure on the mainboard, the same class of problem that affected LG's own G4 of the same era. Note this model is listed as Nexus 5S on the original price list.",
+      "commonIssues": [
+        "Bootloop caused by mainboard solder failure, the fault this model is known for",
+        "Cracked glass on the 5.2 inch display",
+        "USB-C port worn, this being an early adopter of the connector",
+        "Rear fingerprint reader failing, introduced on this model",
+        "Battery degraded"
+      ],
+      "repairNotes": "The 5X bootloop is a mainboard fault and no screen or battery repair addresses it. TechBrotherz diagnoses that before quoting. This model was also printed as Nexus 5S on the original shop price list, which is a name that never existed, and we have flagged the mapping for the shop to confirm.",
+      "verdict": "Only if it is not bootlooping. The Nexus 5X stopped at Android 8. A $120 screen on a sound handset is defensible for someone who wants stock Android on a small phone. If it bootloops, the honest answer is that the phone is beyond economic repair."
+    },
+    {
+      "slug": "nexus-5",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The Nexus 5 is the one people remember, made by LG for Google in 2013 with a soft-touch plastic back and a price that undercut every flagship of its year. It shipped with stock Android and no carrier software at all, which is why it still has a following among people who dislike manufacturer skins.",
+      "commonIssues": [
+        "Cracked glass on the 5 inch display",
+        "Soft-touch rear coating wearing shiny at the corners, characteristic of this model",
+        "Battery degraded, sealed on this model",
+        "Micro USB port worn",
+        "Loudspeaker quiet, the bottom grille packing with lint easily"
+      ],
+      "repairNotes": "The Nexus 5 uses micro USB and a sealed battery, unlike the Nexus 5X that followed it with USB-C. Its soft-touch back wears smooth with handling rather than cracking, so a scuffed Nexus 5 is cosmetic rather than structural.",
+      "verdict": "Only for the people who want stock Android. The Nexus 5 stopped at Android 6 and receives no security updates. At $100 the screen is among the cheapest we fit, and there is a small group who keep these deliberately. For general use, it is well past its useful life."
+    },
+    {
+      "slug": "nexus-4",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The Nexus 4 has a patterned glass back that catches the light, and it was one of the first phones to support wireless charging out of the box. That glass back is also its defining weakness: it breaks as readily as the front, and it makes the phone slippery enough that many did.",
+      "commonIssues": [
+        "Cracked rear glass, unusually fragile on this model and a common reason it is brought in",
+        "Cracked glass on the 4.7 inch front display",
+        "Battery degraded after more than a decade",
+        "Micro USB port worn",
+        "Phone slipping off surfaces, a genuine complaint about this model's glass back"
+      ],
+      "repairNotes": "The Nexus 4 is glass on both sides at a time when almost no phone was, so it arrives broken on the back at least as often as on the front. Its wireless charging works through that rear glass, so cracked rear glass can also stop the phone charging on a pad.",
+      "verdict": "No. The Nexus 4 stopped at Android 5 and is around thirteen years old. A $100 screen is cheap in isolation, but a phone this old with glass on both sides will simply break again. TechBrotherz will fit one on request and will be honest that it is not a sensible spend."
+    },
+
+    {
+      "slug": "htc-one-m9",
+      "lastSupportedOs": "Android 7",
+      "stillReceivesUpdates": false,
+      "intro": "The HTC One M9 kept the aluminium unibody of the M8 but replaced the depth-sensing dual camera with a single 20 megapixel sensor, a change most reviewers considered a step backwards. It ran hot enough that HTC issued a software update to manage it. Its screen replacement is $120, the dearest of the three HTC models we stock.",
+      "commonIssues": [
+        "Running hot under load, a documented characteristic of this specific model's processor",
+        "Cracked glass on the 5 inch display",
+        "Battery sealed and degraded",
+        "Micro USB port worn",
+        "Aluminium unibody dented at the corners"
+      ],
+      "repairNotes": "The M9's aluminium unibody means the screen is bonded into the body and replaced as an assembly, and a dented frame will stop a new screen seating flat. HTC's thermal update for this model changed how the processor throttles, so an M9 that runs hot is behaving as designed rather than failing.",
+      "verdict": "No. The HTC One M9 stopped at Android 7 and HTC has effectively left the mainstream phone market. At $120 the screen costs more than the handset is worth, and this particular model was not well regarded even when new. We would advise against the spend."
+    },
+    {
+      "slug": "htc-one-m8",
+      "lastSupportedOs": "Android 6",
+      "stillReceivesUpdates": false,
+      "intro": "The HTC One M8 is the one with two rear cameras used for depth rather than zoom, years before that became standard, and with front-facing BoomSound speakers that were the best on any phone of its year. Its curved aluminium back makes it the most comfortable phone of the three HTC models we repair.",
+      "commonIssues": [
+        "Cracked glass on the 5 inch display",
+        "Depth-sensing second camera failing, a feature unique to this model among the HTCs we handle",
+        "Front BoomSound speakers distorting",
+        "Battery sealed and degraded",
+        "Micro USB port worn"
+      ],
+      "repairNotes": "The M8's second rear camera captures depth rather than an image, so it fails in ways that are not obvious: photos still take, but background blur stops working. That is a different diagnosis from a dead main camera and worth mentioning when you bring the phone in.",
+      "verdict": "No, other than affection. The HTC One M8 stopped at Android 6 and receives no updates. At $110 the screen exceeds the phone's value. It remains one of the better-built phones of its era, and people are fond of them, but that is not a reason we would encourage the spend."
+    },
+    {
+      "slug": "htc-one-m7",
+      "lastSupportedOs": "Android 5",
+      "stillReceivesUpdates": false,
+      "intro": "The HTC One M7 was the phone that introduced the aluminium unibody to Android, and its UltraPixel camera used fewer, larger pixels to gather more light rather than chasing a megapixel count. It is the cheapest of the three HTC screens we fit at $100, and the oldest.",
+      "commonIssues": [
+        "Cracked glass on the 4.7 inch display",
+        "UltraPixel camera producing purple-tinted photos, a documented fault specific to this model",
+        "Battery sealed and degraded",
+        "Micro USB port worn",
+        "Aluminium unibody dented"
+      ],
+      "repairNotes": "The M7's UltraPixel camera developed a well-known purple tint fault caused by the sensor's infrared filter degrading. It is a camera module replacement rather than a software fix, and it is a fault essentially unique to this model.",
+      "verdict": "No. The HTC One M7 stopped at Android 5, more than a decade ago. At $100 the screen costs far more than the handset is worth, and the camera fault this model is known for is a separate expense again. This is a phone to keep as a curiosity rather than repair."
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+[
+  {
+    "slug": "screen-replacement",
+    "name": "Screen / LCD replacement",
+    "order": 10,
+    "icon": "smartphone",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone", "tablet", "laptop"],
+    "shortDescription": "A new screen assembly fitted, tested and covered for 60 days.",
+    "longDescription": "A screen replacement swaps the whole front assembly: the glass you touch, the digitizer layer that senses your finger, and the LCD or OLED panel that produces the picture. On most phones these three layers are bonded together and are replaced as one part. TechBrotherz fits the assembly, transfers the earpiece mesh and any brackets from the old screen, then tests touch across the full surface, brightness, the front camera and the proximity sensor before handing the phone back. Most phone screen replacements take about 30 minutes while you wait.",
+    "symptoms": [
+      "The glass is cracked or chipped but the picture is still normal",
+      "Black ink-like patches or coloured blotches spreading across the display",
+      "Vertical or horizontal lines running down the screen",
+      "Part of the screen does not respond to touch, or taps register in the wrong place",
+      "The screen flickers, or the backlight is dark on one edge",
+      "The display is completely black but the phone still rings and vibrates"
+    ]
+  },
+  {
+    "slug": "glass-digitizer",
+    "name": "Glass / digitizer replacement",
+    "order": 15,
+    "icon": "tablet",
+    "estimatedMinutes": 45,
+    "appliesTo": ["tablet"],
+    "shortDescription": "For tablets where only the outer touch glass is broken, not the picture panel.",
+    "longDescription": "On many older iPads and tablets the touch glass is a separate layer sitting above the LCD, so a cracked front can be repaired without replacing the more expensive display panel underneath. A digitizer is the touch-sensitive glass layer above the LCD. TechBrotherz removes the broken glass, clears the old adhesive from the frame, fits a new digitizer and re-seals it. This repair only applies when the picture is still perfect and only the glass is broken. If the LCD underneath shows lines, blotches or a dead area, the panel itself needs replacing and the price is different, so bring the tablet in and we will tell you which one it needs.",
+    "symptoms": [
+      "The front glass is cracked but the picture underneath looks perfect",
+      "Small shards of glass lifting near a corner",
+      "Touch works everywhere except along a cracked line",
+      "The screen registers phantom taps you did not make"
+    ]
+  },
+  {
+    "slug": "battery-replacement",
+    "name": "Battery replacement",
+    "order": 20,
+    "icon": "battery",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone", "tablet", "laptop"],
+    "shortDescription": "A new battery fitted and tested, usually in about 30 minutes.",
+    "longDescription": "Lithium-ion batteries lose usable capacity every charge cycle, and after roughly two years of daily charging most phone batteries hold noticeably less than when new. A worn battery shows up as a phone that drops from 40 percent to nothing, shuts down in the cold, or will not last a working day. TechBrotherz removes the old cell, fits a new battery and tests it through a full charge cycle before you leave. Most phone battery replacements take about 30 minutes. Bring the device in and we will check the battery health first, so you are not paying for a part you do not need.",
+    "symptoms": [
+      "The phone shuts down suddenly at 20 or 30 percent",
+      "Battery drops several percent a minute with the screen off",
+      "The device dies quickly outdoors in Calgary winter temperatures",
+      "The phone only works while plugged in",
+      "The back or screen is bulging, which means the battery has swollen",
+      "The device runs hot while charging"
+    ]
+  },
+  {
+    "slug": "charging-port-repair",
+    "name": "Charging port replacement",
+    "order": 30,
+    "icon": "plug",
+    "estimatedMinutes": 45,
+    "appliesTo": ["phone", "tablet"],
+    "shortDescription": "A new charging port fitted when the cable no longer holds or charges.",
+    "longDescription": "A charging port fails in two ways: the connector itself wears out after thousands of insertions, or lint and pocket debris pack into the bottom of the socket so the cable cannot seat fully. TechBrotherz checks for debris first, because a blocked port often only needs cleaning and that costs nothing. If the port is genuinely worn or the pins are damaged, the port assembly is replaced and the charging speed and data transfer are both tested. On most phones the charging port sits on a flex cable that also carries the microphone, so a failing port can affect calls too.",
+    "symptoms": [
+      "The cable has to be held at an angle to charge",
+      "The cable falls out or does not click into place",
+      "The device charges only sometimes, or stops and starts",
+      "The computer does not recognise the phone when plugged in",
+      "People cannot hear you on calls, because the microphone shares the same flex cable",
+      "Charging is far slower than it used to be"
+    ]
+  },
+  {
+    "slug": "dc-jack-repair",
+    "name": "DC / charging port replacement",
+    "order": 35,
+    "icon": "plug-zap",
+    "estimatedMinutes": 60,
+    "appliesTo": ["laptop"],
+    "shortDescription": "A new DC jack soldered or fitted when a laptop stops charging.",
+    "longDescription": "The DC jack is the socket a laptop charger plugs into. It takes the strain every time the cable is pulled, and on many laptops it is soldered directly to the mainboard, so a loose jack can crack its solder joints and stop charging entirely. TechBrotherz opens the laptop, replaces the jack or its harness, and tests charging under load before reassembly. This repair takes longer than a phone port because the machine has to be stripped down. Bring the charger with you, because a laptop that will not charge is sometimes the charger and not the jack, and that is a much cheaper answer.",
+    "symptoms": [
+      "The laptop only charges when the cable is wiggled or held",
+      "The charging light flickers on and off",
+      "The socket feels loose or moves when the plug is inserted",
+      "The laptop runs on battery only and never charges",
+      "A burning smell or discoloured plastic around the socket"
+    ]
+  },
+  {
+    "slug": "home-button",
+    "name": "Home button replacement",
+    "order": 40,
+    "icon": "circle",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone", "tablet"],
+    "shortDescription": "A new home button fitted when the original stops clicking or responding.",
+    "longDescription": "The home button on older iPhones and iPads is a mechanical switch under a cosmetic cap, and it wears out after years of pressing. On iPhone 5S and newer, the fingerprint sensor is paired to the phone's logic board at the factory, so a replacement button will click and register presses but Touch ID will not work again. TechBrotherz will tell you that before starting, so you can decide whether the repair is worth it. On iPads and on iPhones without a fingerprint sensor, a replacement button restores full function.",
+    "symptoms": [
+      "The button needs several presses to register",
+      "The button feels mushy, stuck, or does not click",
+      "The button does nothing at all",
+      "Touch ID stopped working after a previous repair elsewhere"
+    ]
+  },
+  {
+    "slug": "power-button",
+    "name": "Power button replacement",
+    "order": 50,
+    "icon": "power",
+    "estimatedMinutes": 45,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new power button flex fitted when the button sticks or stops working.",
+    "longDescription": "The power button sits on a thin flex cable that runs along the side of the phone, often sharing the cable with the volume buttons and the flash. The switch itself is tiny and fails from repeated pressing or from a drop that bends the frame. TechBrotherz replaces the flex assembly and tests the button, the volume keys and the flash together, since they usually share one part. A phone with a dead power button can often still be woken by tapping the screen or plugging it in, so the device is usually still usable while you wait for the repair.",
+    "symptoms": [
+      "The button is stuck down or has stopped springing back",
+      "The phone only wakes when plugged in or double-tapped",
+      "The button takes several presses to work",
+      "The phone restarts on its own, as if the button is being held"
+    ]
+  },
+  {
+    "slug": "volume-button",
+    "name": "Volume / vibrate button replacement",
+    "order": 55,
+    "icon": "volume-2",
+    "estimatedMinutes": 45,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new volume and mute switch assembly fitted and tested.",
+    "longDescription": "Volume keys and the mute or vibrate switch usually sit on one flex cable inside the frame. A drop that bends the side rail, or years of pressing, can break the contact so the keys stop responding or stick down. A volume key stuck in the down position also stops the phone from ringing, which people often mistake for a speaker fault. TechBrotherz replaces the assembly and checks the ringer, the mute switch and both volume keys before the phone goes back to you.",
+    "symptoms": [
+      "One or both volume keys do nothing",
+      "The volume changes on its own or runs down to silent",
+      "The mute switch is stuck or feels loose",
+      "The phone will not ring even though the speaker works"
+    ]
+  },
+  {
+    "slug": "earpiece-repair",
+    "name": "Earpiece replacement",
+    "order": 60,
+    "icon": "ear",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new earpiece speaker fitted when calls are quiet or muffled.",
+    "longDescription": "The earpiece is the small speaker at the top of the phone you hold to your ear on a call. It fails from dust packing into the mesh, from water damage, or from the tiny driver wearing out. Before replacing anything, TechBrotherz cleans the mesh, because a blocked earpiece grille is a common and free fix. If the speaker itself is dead, it is replaced and tested on a real call. If the phone is loud on speakerphone but quiet at your ear, the earpiece is the part at fault, not the main speaker.",
+    "symptoms": [
+      "Callers sound quiet or muffled at your ear",
+      "You can only hear a caller on speakerphone",
+      "Crackling or buzzing during calls",
+      "No sound at all from the top of the phone"
+    ]
+  },
+  {
+    "slug": "speaker-repair",
+    "name": "Loud speaker replacement",
+    "order": 65,
+    "icon": "speaker",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new loudspeaker fitted when ringtones and media sound distorted or dead.",
+    "longDescription": "The loudspeaker sits at the bottom of most phones and handles ringtones, speakerphone, music and video. It is the part most exposed to pocket lint and to liquid, so it is a common failure. TechBrotherz cleans the speaker grille first and tests with a tone sweep, since a muffled speaker is often just blocked. If the driver has failed or corroded, the speaker module is replaced and tested on ringtone, media and speakerphone. A phone that is silent on ringtone but fine on a call needs the loudspeaker, not the earpiece.",
+    "symptoms": [
+      "Ringtones and music are quiet, crackly or distorted",
+      "No sound at all from the bottom of the phone",
+      "Sound cuts out at higher volume",
+      "The phone sounds fine on a call but not on speakerphone"
+    ]
+  },
+  {
+    "slug": "front-camera-repair",
+    "name": "Front camera / sensor replacement",
+    "order": 70,
+    "icon": "camera",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new front camera and proximity sensor flex fitted and tested.",
+    "longDescription": "On most phones the front camera shares one flex cable with the proximity sensor and the ambient light sensor, so when the selfie camera fails the screen often stops turning off during calls as well. TechBrotherz replaces the whole flex assembly and tests the camera, the proximity sensor and auto-brightness together. On iPhone X and newer the Face ID components are paired to the phone at the factory and cannot be transferred, so replacing them disables Face ID. We will tell you before starting so you can decide.",
+    "symptoms": [
+      "The selfie camera shows a black screen or will not open",
+      "The screen stays on against your face during a call",
+      "Auto-brightness has stopped working",
+      "Selfie photos are blurry, spotted or hazy"
+    ]
+  },
+  {
+    "slug": "back-camera-repair",
+    "name": "Back camera replacement",
+    "order": 75,
+    "icon": "camera",
+    "estimatedMinutes": 30,
+    "appliesTo": ["phone"],
+    "shortDescription": "A new rear camera module fitted when photos are blurry or the camera fails.",
+    "longDescription": "The rear camera module is the part most affected by a drop, because the lens cover sits proud of the body on most modern phones. A cracked lens cover scatters light and produces hazy or streaked photos even though the camera itself still works, and that is a cheaper repair than the full module. TechBrotherz checks which of the two has failed before quoting. If the module is genuinely dead the assembly is replaced and tested on photo, video, flash and autofocus.",
+    "symptoms": [
+      "Photos are blurry, hazy or streaked in bright light",
+      "The camera app opens to a black screen",
+      "The lens cover glass is cracked or shattered",
+      "The camera will not focus, or rattles when shaken",
+      "The flash fires but the picture stays dark"
+    ]
+  },
+  {
+    "slug": "back-glass-replacement",
+    "name": "Back glass replacement",
+    "order": 80,
+    "icon": "square",
+    "estimatedMinutes": 45,
+    "appliesTo": ["phone"],
+    "shortDescription": "Cracked rear glass removed and replaced, with the frame resealed.",
+    "longDescription": "From the iPhone 8 and the Galaxy S6 onward, phone backs are glass rather than metal, so that wireless charging works through them. Rear glass is bonded to the frame with strong adhesive and usually has to be broken out in pieces and cleared before the new panel goes on. TechBrotherz replaces the glass and reseals the frame. Cracked rear glass is worth fixing sooner rather than later, because loose shards keep spreading and can cut you or let moisture into the phone.",
+    "symptoms": [
+      "The rear glass is cracked, spidered or missing pieces",
+      "Sharp edges catching on your hand or pocket",
+      "Wireless charging has become unreliable",
+      "You can see inside the phone through the back"
+    ]
+  },
+  {
+    "slug": "back-housing-replacement",
+    "name": "Back housing replacement",
+    "order": 85,
+    "icon": "box",
+    "estimatedMinutes": 60,
+    "appliesTo": ["phone"],
+    "shortDescription": "The full rear chassis replaced when the frame itself is bent or damaged.",
+    "longDescription": "A back housing replacement swaps the entire rear chassis rather than just the glass panel, and it is the repair for a phone whose frame is bent, dented or split after a heavy drop. Every internal component is transferred into the new housing, so it takes longer than most repairs, usually about an hour. A bent frame matters beyond looks: it stops a new screen from sitting flat, which is why TechBrotherz will sometimes recommend the housing before a screen replacement rather than after.",
+    "symptoms": [
+      "The frame is visibly bent or twisted",
+      "The screen is lifting away from the body at one corner",
+      "Deep dents along an edge after a drop",
+      "A previous screen repair keeps coming loose"
+    ]
+  },
+  {
+    "slug": "lcd-shield-replacement",
+    "name": "LCD shield replacement",
+    "order": 90,
+    "icon": "shield",
+    "estimatedMinutes": 20,
+    "appliesTo": ["phone"],
+    "shortDescription": "The metal plate behind the display refitted, usually alongside a screen repair.",
+    "longDescription": "The LCD shield is the thin metal plate bonded to the back of the display assembly. It stiffens the screen, spreads heat, and shields the panel from interference from the components underneath. It is usually replaced as part of a screen repair, or on its own when a previous repair elsewhere left it out or bent. Fitting the shield properly matters, because a screen without one flexes, runs hotter and fails sooner.",
+    "symptoms": [
+      "The screen flexes or creaks when pressed",
+      "A previous repair left the display sitting unevenly",
+      "The display has developed pressure marks",
+      "The screen has lifted after a repair done elsewhere"
+    ]
+  },
+  {
+    "slug": "keyboard-replacement",
+    "name": "Keyboard replacement",
+    "order": 95,
+    "icon": "keyboard",
+    "estimatedMinutes": 45,
+    "appliesTo": ["laptop"],
+    "shortDescription": "A new laptop keyboard fitted when keys stick, repeat or stop responding.",
+    "longDescription": "Laptop keyboards fail from spills, from worn key mechanisms, and from ribbon cables working loose. A spill is the urgent case: liquid corrodes the membrane underneath over days, so the sooner the keyboard comes out the better the chance the mainboard underneath is unharmed. TechBrotherz replaces the keyboard and tests every key, the backlight and the trackpad. Price varies by model because on some laptops the keyboard is a separate part and on others it is riveted into the whole top case.",
+    "symptoms": [
+      "Some keys do nothing, or need a hard press",
+      "Keys repeat characters on their own",
+      "A drink was spilled on the laptop",
+      "Keys are physically missing or the mechanism is broken",
+      "The backlight has stopped working"
+    ]
+  }
+]

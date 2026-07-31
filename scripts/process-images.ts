@@ -1,0 +1,154 @@
+/**
+ * Turns the verified Unsplash downloads into the demo set.
+ *
+ * Crops to the ratio each slot needs, caps the long edge at 1600px, encodes at
+ * quality 74, and emits a tiny base64 LQIP so every image has a blur
+ * placeholder. CLS is 0.000 across the whole site and this pass must not be
+ * what breaks it.
+ *
+ * source.unsplash.com was deprecated in 2021 and shut down in 2024, so the
+ * originals are downloaded by hand from unsplash.com and committed under
+ * public/demo/. Nothing on the running site touches an Unsplash URL.
+ *
+ *   pnpm exec tsx scripts/process-images.ts
+ */
+
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import path from "node:path";
+
+import sharp from "sharp";
+
+const SOURCE_DIR = "public/demo/_source";
+const OUT_DIR = "public/demo";
+const LQIP_FILE = "lib/content/image-blur.json";
+
+export interface SlotSpec {
+  /** Output file, without extension. */
+  slot: string;
+  /** Unsplash short id of the source file. */
+  source: string;
+  ratio: "4:3" | "3:2";
+  /** Crop focus, since the interesting part is rarely the centre. */
+  position: "centre" | "top" | "bottom" | "attention";
+  /** Slight cooling where the original is warmer than the rest of the set. */
+  cool?: boolean;
+  /** Override for sources whose texture compresses badly at the default. */
+  quality?: number;
+  /** Narrower cap for a slot that renders small. */
+  maxWidth?: number;
+}
+
+export const SLOTS: SlotSpec[] = [
+  // The LCP element on the site. It renders at 40vw, so ~576 CSS pixels on a
+  // desktop: a 1000px source still covers it at 1.7x and shaves the last of
+  // the LCP budget. Phase 6.5b measured 2.64s against a 2.6s ceiling at 1200px.
+  {
+    slot: "home-hero",
+    source: "Q_I49DIzHu8",
+    ratio: "4:3",
+    position: "attention",
+    maxWidth: 1000,
+    quality: 70,
+  },
+  { slot: "home-process-1", source: "8MCqpmAtBs0", ratio: "4:3", position: "centre" },
+  { slot: "home-process-2", source: "y2QUqmEzjzA", ratio: "4:3", position: "attention" },
+  { slot: "home-process-3", source: "F3t-AzyTbyU", ratio: "4:3", position: "attention" },
+  { slot: "home-split-individuals", source: "YPj0Mi7aQtY", ratio: "3:2", position: "centre" },
+  { slot: "home-split-business", source: "6RcDLyy0s1I", ratio: "3:2", position: "attention" },
+  { slot: "service-phone-repair", source: "y2QUqmEzjzA", ratio: "3:2", position: "attention" },
+  {
+    slot: "service-tablet-repair",
+    source: "zs29-jZrAQo",
+    ratio: "3:2",
+    position: "centre",
+    quality: 68,
+  },
+  { slot: "service-laptop-repair", source: "nbML7C5qrkw", ratio: "3:2", position: "centre" },
+  { slot: "service-computer-repair", source: "1GntEP783rI", ratio: "3:2", position: "centre" },
+  {
+    slot: "service-phone-unlocking",
+    source: "zs29-jZrAQo",
+    ratio: "3:2",
+    position: "attention",
+    quality: 68,
+  },
+  { slot: "service-password-reset", source: "fxKvHGDICcQ", ratio: "3:2", position: "attention" },
+  { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
+];
+
+/*
+ * Sources are capped at 1200px, not 1600px.
+ *
+ * Phase 6.5b measured the home page at 84 against a previous 94, with LCP at
+ * 2.65s past the 2.6s ceiling, once six images were on it. Nothing on this
+ * site renders an image wider than about 720 CSS pixels: the hero is 40vw, the
+ * split blocks 50vw, and the step cards a declared 380px. A 1200px source
+ * still covers the largest slot at 2x, and shipping 1600px was paying for
+ * detail no visitor ever sees.
+ */
+const RATIOS: Record<SlotSpec["ratio"], { w: number; h: number }> = {
+  "4:3": { w: 1200, h: 900 },
+  "3:2": { w: 1200, h: 800 },
+};
+
+async function main() {
+  if (!existsSync(OUT_DIR)) mkdirSync(OUT_DIR, { recursive: true });
+
+  const blur: Record<string, string> = {};
+
+  for (const spec of SLOTS) {
+    const input = path.join(SOURCE_DIR, `${spec.source}.jpg`);
+    if (!existsSync(input)) {
+      console.log(`  SKIP ${spec.slot}: no source at ${input}`);
+      continue;
+    }
+
+    const base = RATIOS[spec.ratio];
+    const target = spec.maxWidth
+      ? { w: spec.maxWidth, h: Math.round((spec.maxWidth * base.h) / base.w) }
+      : base;
+    let pipeline = sharp(readFileSync(input)).resize(target.w, target.h, {
+      fit: "cover",
+      position:
+        spec.position === "attention"
+          ? sharp.strategy.attention
+          : spec.position === "top"
+            ? "top"
+            : spec.position === "bottom"
+              ? "bottom"
+              : "centre",
+    });
+
+    if (spec.cool) {
+      // Pulls a warm original toward the cool neutral grade the rest of the
+      // set has, so nine pictures read as one shoot rather than nine sources.
+      pipeline = pipeline.modulate({ saturation: 0.72 }).tint({ r: 244, g: 248, b: 255 });
+    }
+
+    const outPath = path.join(OUT_DIR, `${spec.slot}.jpg`);
+    await pipeline
+      .jpeg({ quality: spec.quality ?? 74, progressive: true, mozjpeg: true })
+      .toFile(outPath);
+
+    // A 16px wide LQIP is enough for a blur and costs under a kilobyte inline.
+    const lqip = await sharp(readFileSync(input))
+      .resize(16, Math.round((16 * target.h) / target.w), { fit: "cover" })
+      .jpeg({ quality: 40 })
+      .toBuffer();
+
+    blur[spec.slot] = `data:image/jpeg;base64,${lqip.toString("base64")}`;
+
+    const bytes = readFileSync(outPath).byteLength;
+    console.log(
+      `  ${spec.slot.padEnd(26)} ${spec.ratio}  ${target.w}x${target.h}  ${(bytes / 1024).toFixed(0)} KB`,
+    );
+  }
+
+  writeFileSync(LQIP_FILE, `${JSON.stringify(blur, null, 2)}\n`, "utf8");
+  console.log(`\n  blur placeholders written to ${LQIP_FILE}`);
+}
+
+main().catch((error) => {
+  console.error("process-images failed:", error);
+  process.exit(1);
+});

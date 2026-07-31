@@ -1,0 +1,6 @@
+{
+  "path": "./sanity/queries/**/*.ts",
+  "schema": "./sanity/extract.json",
+  "generates": "./sanity/types.ts",
+  "overloadClientMethods": false
+}

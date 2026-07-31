@@ -1,0 +1,369 @@
+{
+  "_comment": "Per-model issues and verdicts for the 30 published modern models. Their introductions were hand-written in Phase 3 and stay as they are. Software support is stated conservatively: where we are not certain a model still receives new OS versions, the verdict says what is known rather than asserting a version number.",
+
+  "models": [
+    {
+      "slug": "iphone-11",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the LCD panel, cheaper to replace than any OLED iPhone of the same year",
+        "Battery health below 80 percent, common on a phone now several years old",
+        "Charging port packed with lint so the cable will not seat",
+        "Rear camera lens cover cracked, producing hazy photos in bright light",
+        "Loudspeaker muffled at the bottom grille"
+      ],
+      "verdict": "Yes, this is one of the best repairs to buy. The iPhone 11 still receives iOS updates, which means banking and messaging apps continue to support it, and its LCD screen is cheaper to replace than the OLED of the 11 Pro beside it. A screen or a battery on a working iPhone 11 is money well spent."
+    },
+    {
+      "slug": "iphone-12",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked Ceramic Shield front, which resists chips better than earlier glass but shatters just as completely",
+        "MagSafe accessories no longer holding after rear glass damage",
+        "Battery health falling after several Calgary winters",
+        "Green or grey tint visible on a dark screen, a known characteristic of some 12 panels",
+        "Charging port worn"
+      ],
+      "verdict": "Yes. The iPhone 12 still receives iOS updates and remains a fully capable phone, so a repair buys real remaining life rather than postponing the inevitable. The one thing to weigh is that back glass on this generation is bonded to the frame and slower to replace than on the iPhone 14."
+    },
+    {
+      "slug": "iphone-13",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass with the display still working",
+        "Face ID dead after a screen replacement done elsewhere without transferring the sensor",
+        "Battery health declining after several years of fast charging",
+        "Charging port intermittent",
+        "Rear camera lens cover cracked"
+      ],
+      "verdict": "Yes, without hesitation. The iPhone 13 still receives iOS updates and has years of app support ahead of it. The one caution is Face ID: have the screen done somewhere that transfers the sensor, because a cheap repair that kills Face ID permanently reduces the phone's value by far more than it saved."
+    },
+    {
+      "slug": "iphone-14",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel",
+        "Cracked rear glass, which is far less involved to replace on this model than on the 12 or 13",
+        "Battery health beginning to decline",
+        "Charging port worn from Lightning cables, this being the last Lightning generation",
+        "Rear camera lens cover cracked"
+      ],
+      "verdict": "Yes. The iPhone 14 still receives iOS updates and is recent enough that a repair clearly beats replacement. Its redesigned internals also mean rear glass damage costs far less to put right than on the two generations before it, so a phone broken on both sides is still worth quoting."
+    },
+    {
+      "slug": "iphone-xr",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked front glass on the LCD panel, the cheapest Face ID iPhone screen we replace",
+        "Battery health well below 80 percent",
+        "Charging port worn after years of use",
+        "Face ID failing after a repair done elsewhere",
+        "Rear single camera lens cover cracked"
+      ],
+      "verdict": "Yes for a cheap repair, with one caveat. The iPhone XR has reached the end of new iOS versions, so it will slowly lose app support over the next few years. Its LCD screen is the cheapest of any Face ID iPhone, which makes a screen or battery repair on a working XR a sound short-term spend rather than a long-term one."
+    },
+    {
+      "slug": "iphone-15",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel",
+        "USB-C port loose or charging intermittently, this being the first USB-C iPhone generation",
+        "Battery capacity dropping after heavy fast charging",
+        "Cracked rear glass",
+        "Rear camera lens cover cracked"
+      ],
+      "verdict": "Yes, clearly. The iPhone 15 is recent, still receives iOS updates and has a long life ahead of it, so any repair is cheaper than replacing it. The only thing worth knowing is that its USB-C port is a different part from every Lightning iPhone, so an older port will not fit."
+    },
+    {
+      "slug": "iphone-12-pro",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel",
+        "LiDAR scanner failing, a component the standard iPhone 12 does not have",
+        "Stainless steel frame scuffed rather than bent, characteristic of the Pro body",
+        "Battery health declining",
+        "Cracked rear glass affecting MagSafe"
+      ],
+      "verdict": "Yes. The iPhone 12 Pro still receives iOS updates and its stainless frame means drops tend to break glass rather than deform the body, which is the more repairable outcome. A screen or battery on a 12 Pro is a straightforward yes; a full rebuild of screen, back and battery together is where the sums stop working."
+    },
+    {
+      "slug": "iphone-13-pro",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the ProMotion panel, dearer than the standard 13 screen",
+        "Face ID lost after a screen repair done without transferring the sensor",
+        "Battery health declining after several years",
+        "Macro camera failing, a feature the standard 13 does not have",
+        "USB port worn"
+      ],
+      "verdict": "Yes, and the screen is worth doing properly. The iPhone 13 Pro still receives iOS updates. Its 120Hz ProMotion panel costs more than the standard 13's, so a cut-price repair that fits a non-ProMotion part will feel noticeably worse. Ask what panel is going in before agreeing to any quote, here or anywhere."
+    },
+    {
+      "slug": "iphone-11-pro",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel, dearer than the larger standard iPhone 11",
+        "Battery health well below 80 percent on a phone of this age",
+        "Charging port worn",
+        "One of the three rear cameras failing while the others work",
+        "Stainless frame scuffed at the corners"
+      ],
+      "verdict": "Yes, but expect to spend more than an iPhone 11 owner. The 11 Pro still receives iOS updates, so the phone has life left. Its OLED screen costs more to replace than the larger standard iPhone 11, which surprises people. If the battery is also tired, price both together before deciding."
+    },
+    {
+      "slug": "iphone-x",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked front glass on Apple's first OLED iPhone panel",
+        "Face ID permanently lost after a previous repair, because the sensor array is paired to the logic board",
+        "Screen burn-in from static interface elements, this being an early OLED",
+        "Battery health well below 80 percent",
+        "Cracked rear glass"
+      ],
+      "verdict": "Marginal. The iPhone X has reached the end of new iOS versions and its early OLED panel is old enough that burn-in is common. A battery on a working X is fine. A screen is harder to justify, particularly if Face ID has already been lost, because that cannot be restored by any repair."
+    },
+    {
+      "slug": "iphone-se-2nd-gen",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the 4.7 inch LCD, one of the quickest iPhone screens to replace",
+        "Home button no longer clicking, and Touch ID unrecoverable if the button is replaced",
+        "Battery health declining, this model having a small cell",
+        "Charging port worn",
+        "Loudspeaker muffled"
+      ],
+      "verdict": "Yes, and it is one of the better-value repairs on the list. The second-generation SE still receives iOS updates despite its iPhone 8 body, so a cheap LCD screen buys genuine remaining life. The one loss to accept is Touch ID if the home button itself has failed, which no repair can restore."
+    },
+    {
+      "slug": "iphone-14-pro",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the always-on ProMotion panel",
+        "Dynamic Island area unresponsive after a drop",
+        "Battery health declining faster than expected, the always-on display keeping the panel lit longer",
+        "48 megapixel main camera lens cover cracked",
+        "USB port worn"
+      ],
+      "verdict": "Yes. The iPhone 14 Pro is recent, still receives iOS updates and is expensive enough that almost any repair beats replacing it. Worth knowing: the always-on display means this panel spends more hours lit than earlier iPhones, so battery health tends to decline a little sooner than owners expect."
+    },
+    {
+      "slug": "iphone-15-pro",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the ProMotion panel",
+        "Action button unresponsive, a control unique to the 15 Pro and later",
+        "USB-C port loose",
+        "Titanium frame scuffed at the edges",
+        "Rear camera lens cover cracked"
+      ],
+      "verdict": "Yes, clearly. The iPhone 15 Pro is current enough that any repair is far cheaper than replacement, and it still receives iOS updates with years to run. Its titanium frame also resists bending better than the stainless of earlier Pro models, so drops more often break glass alone, which is the cheaper outcome."
+    },
+    {
+      "slug": "iphone-12-pro-max",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the largest panel of the 12 range",
+        "Sensor-shift stabilisation failing in the main camera, a mechanism unique to this model in its generation",
+        "Battery health declining",
+        "Cracked rear glass affecting MagSafe",
+        "Charging port worn"
+      ],
+      "verdict": "Yes, though the screen is the dearest of the 12 range. The 12 Pro Max still receives iOS updates. Its sensor-shift camera is more delicate than the optical stabilisation in its siblings, so a hard drop is worth having checked for camera damage as well as glass, before you agree a screen-only quote."
+    },
+    {
+      "slug": "iphone-13-pro-max",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the largest ProMotion panel of the 13 range",
+        "Battery genuinely worn rather than simply heavily used, this model having the largest cell Apple had fitted at the time",
+        "Face ID lost after a screen repair done elsewhere",
+        "Rear camera lens cover cracked",
+        "Charging port worn"
+      ],
+      "verdict": "Yes. The 13 Pro Max still receives iOS updates and remains a capable phone. Because it shipped with an unusually large battery, a 13 Pro Max that no longer lasts a day has genuinely worn its cell rather than simply being used hard, so a battery replacement makes a real and noticeable difference."
+    },
+    {
+      "slug": "iphone-14-pro-max",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the largest and dearest panel of the 14 range",
+        "48 megapixel camera lens cover cracked, which we can often replace on its own",
+        "Dynamic Island area unresponsive after a drop",
+        "Battery health declining with the always-on display",
+        "Cracked rear glass"
+      ],
+      "verdict": "Yes, and check the camera separately. The 14 Pro Max still receives iOS updates and is costly enough that repair clearly beats replacement. Its main camera lens cover sits proud of the body and cracks readily, and replacing just that cover is far cheaper than the whole camera module if the sensor is undamaged."
+    },
+    {
+      "slug": "iphone-xs",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel, frequently mistaken for the visually identical iPhone X",
+        "Face ID permanently lost after a previous repair",
+        "Battery health well below 80 percent",
+        "Screen burn-in from static interface elements",
+        "Charging port worn"
+      ],
+      "verdict": "Marginal, the same call as the iPhone X. The XS has reached the end of new iOS versions. A battery on a sound handset is worth doing. A screen is harder to justify on a phone whose software support has ended, unless you need this specific phone working for a defined period."
+    },
+    {
+      "slug": "iphone-16",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel",
+        "Camera Control button unresponsive, a control introduced on this generation and on its own flex assembly",
+        "USB-C port loose",
+        "Cracked rear glass",
+        "Battery draining faster than expected under heavy use"
+      ],
+      "verdict": "Yes, obviously. The iPhone 16 is current, receives iOS updates and will for years. Any repair is a fraction of replacement cost. The only practical note is that parts for this generation are ordered in rather than stocked, so call ahead and we will tell you the lead time before you travel."
+    },
+
+    {
+      "slug": "galaxy-s21",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked front glass on the bonded OLED panel",
+        "Plastic rear panel scuffed rather than shattered, unlike the glass-backed S20 and S22 either side of it",
+        "In-display fingerprint reader unreliable after a screen repair done without recalibration",
+        "Battery capacity declining",
+        "USB-C port worn"
+      ],
+      "verdict": "Worth it for the cheaper repairs. The Galaxy S21 has reached the end of its Android version upgrades, though it remains usable. Its plastic back means rear damage is cosmetic and cheap, unlike the glass-backed S20 and S22. A screen is the expensive decision and depends on what the handset is worth to you."
+    },
+    {
+      "slug": "galaxy-s22",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the bonded OLED panel",
+        "Battery draining noticeably fast, this model shipping with a smaller cell than the S21 before it",
+        "In-display fingerprint reader failing after a repair without recalibration",
+        "Cracked rear glass, the S22 returning to glass after the plastic S21",
+        "USB-C port worn"
+      ],
+      "verdict": "Yes, and consider the battery first. The Galaxy S22 still receives updates. Samsung fitted it with a smaller battery than the S21, so battery complaints arrive earlier on this model than owners expect, and a battery replacement is often the repair that actually solves the problem rather than the screen."
+    },
+    {
+      "slug": "galaxy-s20",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked glass along the curved edge of the display",
+        "Green tint on the OLED at low brightness, a documented characteristic of some S20 panels",
+        "In-display fingerprint reader unreliable",
+        "Battery capacity declining",
+        "Cracked rear glass"
+      ],
+      "verdict": "Marginal. The Galaxy S20 has reached the end of its Android upgrades, and its curved display is both the most fragile part of the phone and the most expensive to replace. A battery or a charging port on a working S20 is reasonable. A screen is a decision to weigh against what the handset now fetches."
+    },
+    {
+      "slug": "galaxy-s23",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the flat panel, less exposed at the corners than the curved S22 before it",
+        "In-display fingerprint reader needing recalibration after a screen repair",
+        "Battery capacity declining",
+        "Cracked rear glass",
+        "USB-C port worn"
+      ],
+      "verdict": "Yes. The Galaxy S23 still receives updates with years to run, so a repair buys real remaining life. Its flat display is also slightly more robust at the corners than the curved S22, which means fewer repeat visits. This is a phone worth putting a screen into."
+    },
+    {
+      "slug": "galaxy-s10",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked glass on the curved display",
+        "Ultrasonic in-display fingerprint reader failing, an early and unreliable implementation unique to this generation",
+        "Battery capacity well down after several years",
+        "Cracked rear glass",
+        "Screen burn-in from static navigation elements"
+      ],
+      "verdict": "No, other than a cheap fix. The Galaxy S10 has reached the end of its Android upgrades, and its first-generation ultrasonic fingerprint reader was unreliable even when new. A battery on a phone still in daily use is fine. A curved screen replacement costs more than the handset is worth."
+    },
+    {
+      "slug": "galaxy-s24",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass on the flat panel",
+        "In-display fingerprint reader needing recalibration after a screen repair",
+        "Battery capacity declining under heavy use",
+        "Cracked rear glass",
+        "USB-C port worn"
+      ],
+      "verdict": "Yes, clearly. The Galaxy S24 is recent and Samsung has committed to an unusually long update window for this generation, so the phone has years of supported life ahead. Any repair is far cheaper than replacement. Parts are ordered in rather than stocked, so call ahead for a lead time."
+    },
+    {
+      "slug": "galaxy-note-20-ultra",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked glass on the large curved display, the most expensive Note screen we handle",
+        "S Pen no longer registering pressure while finger touch still works",
+        "Battery capacity declining",
+        "Cracked rear glass",
+        "Camera housing glass cracked, this model having a notably large camera bump"
+      ],
+      "verdict": "Rarely. The Note 20 Ultra has reached the end of its Android upgrades, and its combination of a large curved panel and the S Pen digitizer makes it the dearest screen in the Samsung range. If the S Pen has failed but the glass is intact, come in anyway, because that is a separate and cheaper conversation."
+    },
+
+    {
+      "slug": "ipad-9th-gen",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked front glass with the picture underneath perfect, repairable as glass alone on this non-laminated model",
+        "Home button and Touch ID failing, this being the last standard iPad with a home button",
+        "Lightning port loose, this being the last standard iPad before USB-C",
+        "Battery no longer lasting a school day",
+        "Touch dead along a crack line"
+      ],
+      "verdict": "Yes, and it is the best-value iPad repair on the list. The ninth-generation iPad still receives iPadOS updates, and because its glass is not laminated to the display, a cracked front can be fixed for far less than on any Air or Pro. For a school or family tablet this is an easy yes."
+    },
+    {
+      "slug": "ipad-air-4",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Power button failing, which on this generation takes Touch ID down with it",
+        "Front glass shattered across the flat-edge corners, where the 2020 redesign concentrates impact",
+        "A14 processor struggling with newer apps, the main reason owners retire this model",
+        "Charging socket loosened by repeated cable pulls",
+        "Rear camera bump glass chipped"
+      ],
+      "verdict": "Yes, but check the price against what an Air 4 now fetches secondhand. Its A14 processor has aged, values have dropped further than the Air 5, and the display repair is the same cost as its newer sibling. If the tablet is doing a light job well, fix it. If it already feels slow, spending on glass will not fix that."
+    },
+    {
+      "slug": "ipad-air-5",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Front glass shattered while the M1 underneath is untouched, the most common reason an Air 5 reaches us",
+        "Centre Stage front camera no longer tracking during video calls",
+        "Power button failing, which disables the fingerprint reader built into it",
+        "Heavy Apple Pencil users reporting dead zones near an impact point",
+        "Charging socket worn from daily desk use"
+      ],
+      "verdict": "Yes, comfortably. An M1 tablet is still a fast machine and secondhand values reflect that, so a broken Air 5 is worth well above what the repair costs. This is the clearest yes in our whole iPad range: the silicon has years left in it and only the front of the tablet is broken."
+    },
+    {
+      "slug": "ipad-mini-6",
+      "stillReceivesUpdates": true,
+      "commonIssues": [
+        "Cracked laminated display, a change from the separate glass of the Mini 2 and 3",
+        "Touch ID in the power button failing",
+        "USB-C port loose",
+        "Uneven scrolling that owners call jelly scroll, which is normal behaviour on this model and not repairable",
+        "Battery declining"
+      ],
+      "verdict": "Yes, with one thing to rule out first. The iPad Mini 6 still receives iPadOS updates and has no real small-tablet competition. If your complaint is the slightly uneven scrolling known as jelly scroll, that is how this model behaves and no repair changes it. Cracked glass, on the other hand, is well worth fixing."
+    },
+
+    {
+      "slug": "pixel-6",
+      "stillReceivesUpdates": false,
+      "commonIssues": [
+        "Cracked front glass on the OLED panel",
+        "Under-display fingerprint sensor failing after a screen repair done without recalibration",
+        "Rear camera bar glass cracked, a large and exposed strip unique to this Pixel generation",
+        "Battery capacity declining",
+        "Modem dropping signal, a documented complaint on this specific generation"
+      ],
+      "verdict": "Marginal. The Pixel 6 has reached the end of its Android version upgrades though it continues to receive security patches for a period. Its camera bar glass is unusually exposed and cracks readily. A screen repair is worth doing only if you are attached to the phone, because parts are ordered in and the handset's value has fallen."
+    }
+  ]
+}
