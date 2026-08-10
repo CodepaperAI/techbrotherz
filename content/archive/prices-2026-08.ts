@@ -24,6 +24,11 @@
  *
  * Archived 54 models carrying 154 priced repairs,
  * 10 flat services and 1 unlocking entry.
+ *
+ * 2026-08: the client removed LG, Motorola, HTC and Google Nexus from the
+ * catalogue entirely. The rows for those models stay below because this file
+ * is a record, but do not restore them: the shop no longer repairs those
+ * brands, and their URLs 301 to /services/phone-repair.
  */
 
 export const ARCHIVED_MODEL_PRICES = [

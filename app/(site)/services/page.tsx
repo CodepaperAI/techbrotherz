@@ -60,7 +60,7 @@ const SERVICE_CARDS: ServiceEntry[] = [
     href: "/services/phone-repair",
     group: "Phones",
     description:
-      "Screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy, Pixel, LG, Motorola and HTC handsets.",
+      "Screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets.",
     image: "service-phone-repair",
     illustration: "screen",
   },

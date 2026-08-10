@@ -59,14 +59,15 @@ export const SLOTS: SlotSpec[] = [
   { slot: "home-process-3", source: "F3t-AzyTbyU", ratio: "4:3", position: "attention" },
   { slot: "home-split-individuals", source: "YPj0Mi7aQtY", ratio: "3:2", position: "centre" },
   { slot: "home-split-business", source: "6RcDLyy0s1I", ratio: "3:2", position: "attention" },
-  { slot: "service-phone-repair", source: "y2QUqmEzjzA", ratio: "3:2", position: "attention" },
-  {
-    slot: "service-tablet-repair",
-    source: "zs29-jZrAQo",
-    ratio: "3:2",
-    position: "centre",
-    quality: 68,
-  },
+  /*
+   * 2026-08 client change request: the phone card shows an iPhone 16 Pro Max,
+   * the tablet card a recognisable iPad rather than a SIM tray, and the
+   * password reset card must not show a social app. All three go through the
+   * same 3:2 pipeline as the rest of the set, so the media frame is identical
+   * across the service cards.
+   */
+  { slot: "service-phone-repair", source: "LqMK_dwsaxs", ratio: "3:2", position: "attention" },
+  { slot: "service-tablet-repair", source: "7OFnb7NOvjw", ratio: "3:2", position: "attention" },
   { slot: "service-laptop-repair", source: "nbML7C5qrkw", ratio: "3:2", position: "centre" },
   { slot: "service-computer-repair", source: "1GntEP783rI", ratio: "3:2", position: "centre" },
   /*
@@ -85,9 +86,15 @@ export const SLOTS: SlotSpec[] = [
     ratio: "3:2",
     position: "centre",
   },
+  /*
+   * Replaced supplied-password-reset, the Instagram login screen, at the
+   * client's request in 2026-08: no social app branding. The replacement is a
+   * phone showing the welcome screen that follows a factory reset, which is
+   * what the service actually produces.
+   */
   {
     slot: "service-password-reset",
-    source: "supplied-password-reset",
+    source: "imOSfUb6Rg4",
     ratio: "3:2",
     position: "centre",
   },

@@ -10,9 +10,12 @@ import { cn } from "@/lib/utils";
  * names as plain links reads as a footer, and the same fourteen as filled rows
  * reads as coverage, which is the job that section is doing.
  *
- * Renders as a link where a page exists and as a plain row where one does not,
- * because the Phase 6 local-fact rule means several areas are named honestly
- * without having earned a URL of their own.
+ * Renders as a link where a destination exists and as a plain row where one
+ * does not, because the Phase 6 local-fact rule means several areas are named
+ * honestly without having earned a URL of their own. A plain row carries no
+ * arrow and no hover state: the client clicked arrow-bearing rows that went
+ * nowhere and reported the locations as broken, so anything that affords a
+ * click must navigate.
  */
 export interface TileProps {
   children: React.ReactNode;
@@ -45,8 +48,7 @@ export function Tile({ children, href, className }: TileProps) {
   if (!href) {
     return (
       <div className={cn(BASE, className)}>
-        <Arrow />
-        {label}
+        <span className="text-tb-muted type-body font-medium">{children}</span>
       </div>
     );
   }

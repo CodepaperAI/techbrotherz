@@ -64,9 +64,6 @@ import m53 from "@/content/models/galaxy-z-fold-3";
 import m54 from "@/content/models/galaxy-z-fold-4";
 import m55 from "@/content/models/galaxy-z-fold-5";
 import m56 from "@/content/models/galaxy-z-fold-6";
-import m57 from "@/content/models/htc-one-m7";
-import m58 from "@/content/models/htc-one-m8";
-import m59 from "@/content/models/htc-one-m9";
 import m60 from "@/content/models/ipad-10th-gen";
 import m61 from "@/content/models/ipad-2";
 import m62 from "@/content/models/ipad-3";
@@ -140,18 +137,6 @@ import m129 from "@/content/models/iphone-x";
 import m130 from "@/content/models/iphone-xr";
 import m131 from "@/content/models/iphone-xs";
 import m132 from "@/content/models/iphone-xs-max";
-import m133 from "@/content/models/lg-g2";
-import m134 from "@/content/models/lg-g3";
-import m135 from "@/content/models/lg-g4";
-import m136 from "@/content/models/lg-g5";
-import m137 from "@/content/models/lg-g6";
-import m138 from "@/content/models/moto-g-1st-gen";
-import m139 from "@/content/models/moto-g-2nd-gen";
-import m140 from "@/content/models/moto-g-3rd-gen";
-import m141 from "@/content/models/moto-x-play";
-import m142 from "@/content/models/nexus-4";
-import m143 from "@/content/models/nexus-5";
-import m144 from "@/content/models/nexus-5x";
 import m145 from "@/content/models/pixel-6";
 import m146 from "@/content/models/pixel-6-pro";
 import m147 from "@/content/models/pixel-6a";
@@ -222,9 +207,6 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   "galaxy-z-fold-4": m54,
   "galaxy-z-fold-5": m55,
   "galaxy-z-fold-6": m56,
-  "htc-one-m7": m57,
-  "htc-one-m8": m58,
-  "htc-one-m9": m59,
   "ipad-10th-gen": m60,
   "ipad-2": m61,
   "ipad-3": m62,
@@ -298,18 +280,6 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   "iphone-xr": m130,
   "iphone-xs": m131,
   "iphone-xs-max": m132,
-  "lg-g2": m133,
-  "lg-g3": m134,
-  "lg-g4": m135,
-  "lg-g5": m136,
-  "lg-g6": m137,
-  "moto-g-1st-gen": m138,
-  "moto-g-2nd-gen": m139,
-  "moto-g-3rd-gen": m140,
-  "moto-x-play": m141,
-  "nexus-4": m142,
-  "nexus-5": m143,
-  "nexus-5x": m144,
   "pixel-6": m145,
   "pixel-6-pro": m146,
   "pixel-6a": m147,

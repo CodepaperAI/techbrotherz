@@ -73,6 +73,20 @@ function allInternalLinks(html: string): string[] {
   ];
 }
 
+/**
+ * Every internal link with its fragment kept, as [path, fragment] pairs.
+ *
+ * The counting regexes above strip fragments, which is correct for inbound
+ * and outbound counts and is also why a tile linking to a section that does
+ * not exist passed this audit for two phases. The client found it instead.
+ */
+function fragmentLinks(html: string): [string, string][] {
+  return Array.from(html.matchAll(/href="(\/[^"?#]*)#([^"]+)"/g)).map((match) => [
+    normalise(match[1] as string),
+    match[2] as string,
+  ]);
+}
+
 async function main() {
   console.log(`\nInternal link graph, ${BASE}\n`);
 
@@ -152,23 +166,86 @@ async function main() {
   ]);
   const inbound = new Map<string, number>();
   const outbound = new Map<string, number>();
+  const htmlByPath = new Map<string, string>();
+  // target path or path#fragment -> one page that links to it, for reporting
+  const linkedFrom = new Map<string, string>();
+  const anchorTargets = new Map<string, { fragment: string; source: string }>();
+  const unreachable: string[] = [];
 
   console.log(`Crawling ${allPaths.length} pages...`);
 
   for (const path of allPaths) {
     const response = await fetch(`${BASE}${path}`);
-    if (!response.ok) continue;
+    if (!response.ok) {
+      unreachable.push(`${path} returned ${response.status}`);
+      continue;
+    }
     const html = await response.text();
+    htmlByPath.set(path, html);
 
     outbound.set(path, internalLinks(html).length);
 
     for (const target of allInternalLinks(html)) {
       if (target === path) continue;
       inbound.set(target, (inbound.get(target) ?? 0) + 1);
+      if (!linkedFrom.has(target)) linkedFrom.set(target, path);
+    }
+
+    for (const [target, fragment] of fragmentLinks(html)) {
+      const key = `${target}#${fragment}`;
+      if (!anchorTargets.has(key)) anchorTargets.set(key, { fragment, source: path });
     }
   }
 
   let failures = 0;
+
+  /* --- pages that did not respond ----------------------------------- */
+  if (unreachable.length > 0) {
+    failures += unreachable.length;
+    console.log(`\nPages that did not return 200:`);
+    for (const entry of unreachable) console.log(`  FAIL ${entry}`);
+  }
+
+  /* --- dead internal links ------------------------------------------ */
+  // Links pointing outside the crawled set: fetch each once. A link that
+  // resolves only through a redirect is fine for a retired URL, but a 404 is
+  // a failure whichever page carries it.
+  const externalToCrawl = [...linkedFrom.keys()].filter((target) => !htmlByPath.has(target));
+  const deadLinks: string[] = [];
+  for (const target of externalToCrawl) {
+    const response = await fetch(`${BASE}${target}`);
+    if (!response.ok) {
+      deadLinks.push(`${target} (linked from ${linkedFrom.get(target)}) returned ${response.status}`);
+    }
+  }
+  console.log(`\nInternal link targets outside the page list: ${externalToCrawl.length} checked`);
+  if (deadLinks.length > 0) {
+    failures += deadLinks.length;
+    for (const entry of deadLinks) console.log(`  FAIL dead link: ${entry}`);
+  }
+
+  /* --- dead anchors -------------------------------------------------- */
+  // Every href="/path#fragment" must point at an element carrying that id on
+  // the target page. This is the check that would have caught the home-page
+  // neighbourhood tiles pointing nowhere.
+  const deadAnchors: string[] = [];
+  for (const [key, { fragment, source }] of anchorTargets) {
+    const target = key.slice(0, key.length - fragment.length - 1);
+    let html = htmlByPath.get(target);
+    if (html === undefined) {
+      const response = await fetch(`${BASE}${target}`);
+      html = response.ok ? await response.text() : "";
+      htmlByPath.set(target, html);
+    }
+    if (!html.includes(`id="${fragment}"`)) {
+      deadAnchors.push(`${key} (linked from ${source})`);
+    }
+  }
+  console.log(`Anchor targets checked: ${anchorTargets.size}`);
+  if (deadAnchors.length > 0) {
+    failures += deadAnchors.length;
+    for (const entry of deadAnchors) console.log(`  FAIL dead anchor: ${entry}`);
+  }
 
   /* --- outbound on model pages ------------------------------------- */
   const thinOutbound = modelPaths.filter((path) => (outbound.get(path) ?? 0) < MIN_OUTBOUND);

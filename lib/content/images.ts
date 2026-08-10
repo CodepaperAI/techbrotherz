@@ -144,16 +144,16 @@ export const IMAGES: Record<string, DemoImage> = {
   "service-phone-repair": image(
     "service-phone-repair",
     "3:2",
-    "Gloved hands replacing the screen assembly on an opened phone at a workbench",
-    "Vitalijus",
-    "y2QUqmEzjzA",
+    "The back of an iPhone 16 Pro Max in titanium, showing the three rear cameras",
+    "Amanz",
+    "LqMK_dwsaxs",
   ),
   "service-tablet-repair": image(
     "service-tablet-repair",
     "3:2",
-    "The corner of a tablet on a workbench with its SIM and memory card tray removed and set beside it",
-    "Andrey Matveev",
-    "zs29-jZrAQo",
+    "A hand holding an iPad showing its lock screen above a desk with a keyboard",
+    "Henry Ascroft",
+    "7OFnb7NOvjw",
   ),
   "service-laptop-repair": image(
     "service-laptop-repair",
@@ -174,10 +174,12 @@ export const IMAGES: Record<string, DemoImage> = {
     "3:2",
     "A combination padlock closed through a chain-link fence, with the numbered dial in focus",
   ),
-  "service-password-reset": supplied(
+  "service-password-reset": image(
     "service-password-reset",
     "3:2",
-    "A social media login screen on a dark display, with the username and password fields filled in and the characters masked",
+    "A phone lying on a wooden desk showing the welcome screen that follows a factory reset",
+    "Sam Grozyan",
+    "imOSfUb6Rg4",
   ),
   "service-virus-removal": image(
     "service-virus-removal",
@@ -195,12 +197,14 @@ export const IMAGES: Record<string, DemoImage> = {
  * grade are allowed, compositing and fabricating a scene are not.
  */
 export const IMAGE_EDITS: Record<string, string> = {
+  "service-phone-repair":
+    "Replaced at the client's request in 2026-08 with an iPhone 16 Pro Max, photographed from the back where the camera array identifies the model. The Apple mark is incidental to a photograph of the device and is not used as a mark, per the revised Section 8.9 rule.",
   "service-tablet-repair":
-    "Cropped from the original and encoded at quality 68 rather than 74, because the wood-grain surface compresses poorly.",
+    "Replaced at the client's request in 2026-08. The previous frame was a SIM tray beside a tablet corner; this one is a recognisable iPad on its lock screen, with no app branding in frame.",
   "service-phone-unlocking":
-    "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame service-tablet-repair uses, which put two crops of one photograph in the same grid on the home page.",
+    "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame the old service-tablet-repair used, which put two crops of one photograph in the same grid on the home page.",
   "service-password-reset":
-    "Supplied by the client and used at their direction. Already 3:2, so resized only, no crop. Recorded here because it is the one image in the set that does not meet CLAUDE.md Section 8.9: the Instagram wordmark is the dominant element on a plain background, which is the case that rule was written for. The client was shown that position and chose the image. It replaced a photograph of a laptop being opened with a screwdriver, which is not what a password reset involves.",
+    "Replaced in 2026-08 at the client's request: the previous image was the Instagram login screen they had supplied, and the revised instruction is no social app branding. The replacement shows a phone on the welcome screen that follows a factory reset, which is what the password reset service actually produces. The supplied original stays in _source as a record.",
   "home-process-2":
     "Cropped to 4:3 on the point of work. The Apple mark on the battery in frame is incidental to a workshop photograph and is not used as a mark.",
   "home-process-3":

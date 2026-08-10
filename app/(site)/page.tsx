@@ -35,23 +35,25 @@ import { getBrands, getGlobalFaqs, getReviewSummary, getSiteSettings } from "@/l
 /**
  * The areas named on the Calgary location record, rendered as tiles.
  *
- * Only Forest Lawn carries a link, because it is the one neighbourhood that
- * cleared the Phase 6 four-distinct-fact rule and earned a URL. The others are
- * places the shop genuinely serves and can name honestly, without a page
- * pretending to say more about them than we have verified.
+ * Forest Lawn is the one neighbourhood that cleared the Phase 6
+ * four-distinct-fact rule and earned a URL. The areas that became anchored
+ * sections on /locations/calgary link to their section, so every tile that
+ * looks clickable navigates somewhere real. Erin Woods, Penbrooke Meadows and
+ * Marlborough have neither a page nor a section, so they render as plain rows
+ * with no arrow. The link audit verifies each anchor target exists.
  */
 const CALGARY_AREAS: { name: string; href?: string }[] = [
   { name: "Forest Lawn", href: "/locations/calgary/forest-lawn" },
-  { name: "Albert Park" },
-  { name: "Radisson Heights" },
-  { name: "Dover" },
-  { name: "Southview" },
+  { name: "Albert Park", href: "/locations/calgary#albert-park-radisson-heights" },
+  { name: "Radisson Heights", href: "/locations/calgary#albert-park-radisson-heights" },
+  { name: "Dover", href: "/locations/calgary#dover" },
+  { name: "Southview", href: "/locations/calgary#southview" },
   { name: "Erin Woods" },
   { name: "Penbrooke Meadows" },
-  { name: "Inglewood" },
-  { name: "Ogden" },
+  { name: "Inglewood", href: "/locations/calgary#inglewood" },
+  { name: "Ogden", href: "/locations/calgary#ogden" },
   { name: "Marlborough" },
-  { name: "Downtown Calgary" },
+  { name: "Downtown Calgary", href: "/locations/calgary#downtown-calgary" },
 ];
 
 export const revalidate = 3600;
@@ -102,7 +104,7 @@ const SERVICE_CARDS: {
   {
     title: "Phone repair",
     description:
-      "Screens, batteries, charging ports and cameras on iPhone, Samsung, LG, Motorola and HTC. Most take about 30 minutes.",
+      "Screens, batteries, charging ports and cameras on iPhone, Samsung Galaxy and Google Pixel. Most take about 30 minutes.",
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
@@ -465,9 +467,9 @@ export default async function HomePage() {
 
         {/* Neighbourhood tiles, per Phase 8 spec section 6. Every name is one
             already listed on the Calgary location record, so this adds coverage
-            the site already claims rather than a new claim. Only Forest Lawn has
-            earned a page of its own under the Phase 6 four-fact rule, so it is
-            the only tile that links; the rest are plain rows. */}
+            the site already claims rather than a new claim. Forest Lawn links to
+            its page, areas with an anchored section on /locations/calgary link
+            to that section, and the rest are arrowless plain rows. */}
         <h3 className="type-h3 text-tb-ink mt-12">Areas we serve in southeast Calgary</h3>
         <TileGrid className="mt-5">
           {CALGARY_AREAS.map((area) => (

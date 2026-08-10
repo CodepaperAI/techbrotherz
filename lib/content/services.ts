@@ -97,17 +97,17 @@ const phoneRepair: ServiceDef = {
     "samsung-charging-port-repair",
     "samsung-back-glass-replacement",
   ],
-  brandSlugs: ["apple-iphone", "samsung-galaxy", "google-pixel", "lg", "motorola", "htc"],
+  brandSlugs: ["apple-iphone", "samsung-galaxy", "google-pixel"],
   flatSlugs: [],
   deviceTypes: ["phone"],
   localPath: "/phone-repair-calgary",
   siblings: ["/services/tablet-repair", "/services/phone-unlocking"],
   lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy, Google Pixel, LG, Motorola and HTC handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs cell phones while you wait at the counter. Most phone repairs take about ${c.waitMinutes} minutes, no appointment is needed, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and agreed before any work starts, and it covers the part and the labour together.`,
   keyFacts: (c) => [
-    { label: "Handsets", value: "iPhone, Samsung Galaxy, Google Pixel, LG, Motorola, HTC and Nexus" },
+    { label: "Handsets", value: "iPhone, Samsung Galaxy and Google Pixel" },
     { label: "Most common repairs", value: "Screen, then battery, then charging port" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes on a screen` },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
@@ -146,7 +146,7 @@ const phoneRepair: ServiceDef = {
       paragraphs: [
         `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn batteries, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
         "Beyond those five, we replace earpieces, loudspeakers, power buttons, volume buttons and home buttons. Those are smaller jobs, and on most handsets they take under an hour. If a phone has a fault that is not on the list, bring it in and we will tell you honestly whether it is something we can fix or something that needs the manufacturer.",
-        "We work on iPhone, Samsung Galaxy, Google Pixel, Google Nexus, LG, Motorola and HTC handsets. Apple and Samsung make up most of the volume, which is why our published price list is deepest on those two. Other brands are quoted at the counter once we have the model in front of us and know what the part costs.",
+        "We work on iPhone, Samsung Galaxy and Google Pixel handsets. Apple and Samsung make up most of the volume, which is why our published price list is deepest on those two. Pixel repairs are quoted at the counter once we have the model in front of us and know what the part costs.",
       ],
     },
     {
@@ -214,7 +214,7 @@ const phoneRepair: ServiceDef = {
     {
       question: "Which phone brands does TechBrotherz repair?",
       answer:
-        "TechBrotherz in Calgary repairs iPhone, Samsung Galaxy, Google Pixel, Google Nexus, LG, Motorola and HTC phones. Apple and Samsung models are priced individually on the published price list. Other brands are quoted at the counter once the model is identified, because the part cost drives the price.",
+        "TechBrotherz in Calgary repairs iPhone, Samsung Galaxy and Google Pixel phones. Apple and Samsung models are priced individually on the published price list. Pixel repairs are quoted at the counter once the model is identified, because the part cost drives the price.",
     },
     {
       question: "Do I need to back up my phone before a repair?",

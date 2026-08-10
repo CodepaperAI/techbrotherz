@@ -43,6 +43,19 @@ const nextConfig: NextConfig = {
         destination: "/contact",
         permanent: true,
       },
+      {
+        /*
+         * LG, Motorola, HTC and Google Nexus were removed from the catalogue on
+         * the client's instruction, 2026-08. All four hubs and their fifteen
+         * model pages were live, so every URL 301s to the phone repair hub
+         * rather than the home page: it is the page that answers the same
+         * intent. :path* matches zero segments, so one rule covers the hub and
+         * its model pages.
+         */
+        source: "/repair/:brand(lg|motorola|htc|google-nexus)/:path*",
+        destination: "/services/phone-repair",
+        permanent: true,
+      },
     ];
   },
 

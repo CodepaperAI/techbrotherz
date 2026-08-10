@@ -93,11 +93,11 @@ const phoneRepairCalgary: LocalDef = {
     },
   ]),
   lead: (c) =>
-    `${ENTITY}, repairs cell phones from six brands: iPhone, Samsung Galaxy, Google Pixel, Google Nexus, LG, Motorola and HTC. Most repairs take about ${c.waitMinutes} minutes, the quote is free, and no appointment is needed at any time.`,
+    `${ENTITY}, repairs iPhone, Samsung Galaxy and Google Pixel cell phones. Most repairs take about ${c.waitMinutes} minutes, the quote is free, and no appointment is needed at any time.`,
   answer: (c) =>
     `TechBrotherz repairs cell phones in Calgary at 3317 17 Ave SE, open seven days, with no appointment needed. Most phone repairs take about ${c.waitMinutes} minutes at the counter, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and given before any work starts, with the part and the labour together in one figure.`,
   keyFacts: (c) => [
-    { label: "Handsets", value: "iPhone, Samsung Galaxy, Pixel, Nexus, LG, Motorola and HTC" },
+    { label: "Handsets", value: "iPhone, Samsung Galaxy and Google Pixel" },
     { label: "Quote", value: "Free at the counter, before any work starts" },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes` },
@@ -107,8 +107,8 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Which phones does TechBrotherz repair in Calgary?",
       paragraphs: [
-        "TechBrotherz repairs iPhone, Samsung Galaxy, Google Pixel, Google Nexus, LG, Motorola and HTC handsets at its Calgary counter. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
-        `The five repairs that account for nearly every phone brought in are the same across all six brands: cracked screens, worn batteries, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
+        "TechBrotherz repairs iPhone, Samsung Galaxy and Google Pixel handsets at its Calgary counter. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
+        `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn batteries, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
         "Phones from brands outside that list are quoted at the counter once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
       ],
     },

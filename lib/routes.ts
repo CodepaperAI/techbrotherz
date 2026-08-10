@@ -329,34 +329,12 @@ export const ROUTES: RouteDef[] = [
     status: "built",
     parent: "/services",
   },
-  {
-    path: "/repair/google-nexus",
-    label: "Google Nexus repair",
-    tier: "brand",
-    status: "built",
-    parent: "/services",
-  },
-  {
-    path: "/repair/lg",
-    label: "LG repair",
-    tier: "brand",
-    status: "built",
-    parent: "/services",
-  },
-  {
-    path: "/repair/motorola",
-    label: "Motorola repair",
-    tier: "brand",
-    status: "built",
-    parent: "/services",
-  },
-  {
-    path: "/repair/htc",
-    label: "HTC repair",
-    tier: "brand",
-    status: "built",
-    parent: "/services",
-  },
+  /*
+   * LG, Motorola, HTC and Google Nexus were removed on the client's
+   * instruction in 2026-08. Their hub and model URLs 301 to
+   * /services/phone-repair in next.config.ts rather than 404, because all
+   * fifteen model pages and four hubs were live.
+   */
   {
     path: "/repair/laptops-desktops",
     label: "Laptop and desktop repair",

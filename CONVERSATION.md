@@ -15,6 +15,55 @@ Newest entry at the top. Append after every working session and before every con
 **Next:** the agreed next step
 ```
 
+## Session 2026-08-10 — Client change request, session 1: removals, fixes, wordmark, images
+
+**Asked:** session 1 of the client's eleven-item change request: fix the broken location tiles, add the logo and fix the wordmark, remove Motorola, LG, HTC and Google Nexus with 301s, replace three service images, then verify and deploy. Sessions 2 (FRP removal, consoles, accessories) and 3 (Google reviews) explicitly not started.
+
+**Done:**
+
+### The broken locations were an affordance bug, not a routing bug
+
+The client reported "only Forest Lawn works". Diagnosis: the home page's eleven "Areas we serve" tiles all rendered with the same green arrow and hover-ready styling, but only Forest Lawn carried an href. The other ten were plain divs that looked clickable and did nothing. Nothing 404'd, which is why the link audit never fired.
+
+Fix, per the change request: seven areas that exist as anchored sections on /locations/calgary now link to their section (`#dover`, `#southview`, `#inglewood`, `#ogden`, `#downtown-calgary`, and both Albert Park and Radisson Heights to `#albert-park-radisson-heights`). Erin Woods, Penbrooke Meadows and Marlborough have neither a page nor a section, so they stay non-links, and `Tile` now renders a non-link without the arrow and without hover styling so nothing affords a click it cannot honour.
+
+The audit gap is closed too: scripts/link-graph.ts now fails on any internal link that does not return 200, and on any `href="/path#fragment"` whose fragment has no matching `id` on the target page. It also no longer silently skips a page that fails to load. 23 anchor targets checked, zero dead.
+
+### The wordmark
+
+"Tech Brotherz" was `gap-1` on the Logo flex container. Removed; the wordmark is one word everywhere, matching the logo. **The supplied logo JPEGs are not in the repo**; the image swap is blocked until the files arrive, ideally as transparent PNG or SVG. The TODO in Logo.tsx says so.
+
+### The four brands are gone
+
+- 15 models removed from content/data/models.ts (156 to 141), all of them published, plus their 15 prose files and index entries
+- 4 brand defs removed from lib/content/brands.ts (9 to 5), 4 routes from lib/routes.ts, 3 legacy price groups from lib/content/repair-types.ts
+- One redirect rule in next.config.ts covers all 19 URLs: `/repair/:brand(lg|motorola|htc|google-nexus)/:path*` 301s (Next emits 308, equally permanent) to /services/phone-repair
+- Copy scrubbed in lib/content/services.ts, lib/content/local.ts, home and services cards, and the trademark notice. Remaining grep hits are historical comments and the price archive, which keeps its rows as a record with a do-not-restore note
+- CLAUDE.md Section 2.1, the content-model counts and the Tier 4 counts updated
+
+**Similarity after the removal, the number the change request asked for:** the brand tier, the worst tier on the site and a named follow-up in CLAUDE.md, moved from 38.0% median / 63%+ worst pair (nine hubs) to **29.9% median / 45.7% worst pair** (five hubs). Model tier worst pair is 51.4% (iPhone 14 Pro / 14 Pro Max), all pairs under the 70% threshold. The legacy handsets were propping the numbers down, as predicted, but the removal still nets out as the tiers' best figures to date.
+
+### The three images
+
+All three sourced from Unsplash (free tier, not Unsplash+), committed under _source, processed through the standard 3:2 pipeline so the media frame is identical across the service cards:
+
+- service-phone-repair: the back of an iPhone 16 Pro Max in titanium (Amanz, LqMK_dwsaxs), the camera array that identifies the model. Allowed under the revised 8.9 rule
+- service-tablet-repair: a hand holding an iPad on its lock screen (Henry Ascroft, 7OFnb7NOvjw), replacing the SIM-tray corner shot
+- service-password-reset: a phone showing the post-factory-reset welcome screen (Sam Grozyan, imOSfUb6Rg4), replacing the Instagram login screen the client had originally supplied and has now reversed on. No social branding anywhere in the three
+
+### Verification
+
+typecheck, lint, build:clean all clean. Extended link audit: zero dead links, zero dead anchors, zero orphans. Schema audit: no price-less Offers. FAQ scoping: pass. Similarity: pass, figures above. **scripts/test-no-prose-prices.ts now reports zero failures across 143 pages** (the launch-blocker baseline was 76 prose + 55 meta), so the top-of-file launch blocker's guard criterion is met on this build. content-similarity.ts had the same dead /repair-prices scrape link-graph.ts once had; fixed the same way.
+
+**Known pre-existing failure, not fixed here:** /repair/google-pixel/pixel-6 has 1 inbound link against a minimum of 2, because it is the only published Pixel and same-brand sibling links cannot reach it. Predates this session.
+
+**Blocked / open:**
+- Logo files not in the repo; wordmark typeset until they arrive
+- Client questions: brands refused outright or just unpromoted; transparent logo; FRP proof of ownership; console repairs; accessories detail; GBP URL and Maps API key
+- /get-a-quote still unbuilt; pixel-6 inbound-link gap
+
+**Next:** deploy, then session 2 on the client's answers.
+
 ## Session 2026-08-06 — Merge the two device sections, and two leftovers
 
 **Asked:** delete "Which device needs fixing?" and move its photographs into the services grid; clear "and prices" out of every link label and widen the price guard so it catches link text; remove the nav item pointing at the unbuilt guides.

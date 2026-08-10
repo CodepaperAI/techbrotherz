@@ -612,21 +612,6 @@ export const PRICE_GROUPS: PriceGroupDef[] = [
     name: "iPhone 5, 5S and 5C",
     note: "The iPhone 5, 5S and 5C take the same parts.",
   },
-  {
-    models: ["lg-g4", "lg-g3", "lg-g2"],
-    name: "LG G4, G3 and G2",
-    note: "The LG G4, G3 and G2 share the same screen replacement price.",
-  },
-  {
-    models: ["moto-g-1st-gen", "moto-g-2nd-gen", "moto-g-3rd-gen"],
-    name: "Moto G, 1st to 3rd generation",
-    note: "The first three Moto G generations share the same screen replacement price.",
-  },
-  {
-    models: ["nexus-5", "nexus-4"],
-    name: "Nexus 5 and Nexus 4",
-    note: "The Nexus 5 and Nexus 4 share the same screen replacement price.",
-  },
 ] as PriceGroupDef[];
 
 export function priceGroupFor(modelSlug: string): PriceGroupDef | undefined {

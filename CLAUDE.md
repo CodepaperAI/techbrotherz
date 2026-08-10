@@ -21,6 +21,13 @@
 > scripts/test-no-prose-prices.ts` currently reports 76 prose and 55 meta
 > failures. It must report zero.**
 >
+> **2026-08-10 status:** the guard reports **zero failures across 143 pages**
+> on the current build, and the schema audit shows no price-less Offers, so
+> the machinery items above are done or moot on this tree. Still outstanding
+> from the list: `/get-a-quote` has not been built (`/repair-prices` 301s to
+> `/contact` instead). Verify the remaining items before declaring this
+> cleared and removing the block.
+>
 > ## Named follow-up — brand tier similarity
 >
 > The brand tier moved 36.9% to 38.0% when `brandFaqs` was re-grounded off price
@@ -80,7 +87,9 @@ These live in `content/data/site-settings.ts`. Code reads them from there. The t
 
 Do not add any others. Do not imply any others.
 
-Cell phone repair, iPhone repair, Samsung Galaxy repair, LG / Motorola / Nexus / HTC repair, iPad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, smartphone sales.
+Cell phone repair, iPhone repair, Samsung Galaxy repair, Google Pixel repair, iPad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, smartphone sales.
+
+**Removed 2026-08 on the client's instruction:** LG, Motorola, HTC and Google Nexus repair. The four brand hubs and fifteen model pages 301 to `/services/phone-repair`. Open question for the client: refused outright, or still taken at the counter without promotion? If the latter, one line on `/services/phone-repair` can say so.
 
 ---
 
@@ -186,7 +195,7 @@ techbrotherz/
 | File                              | Holds                                                            | Rows |
 | --------------------------------- | ---------------------------------------------------------------- | ---- |
 | `content/data/site-settings.ts`   | The business facts. NAP, hours, warranty, wait time, disclaimer  | 1    |
-| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 156  |
+| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 141  |
 | `content/data/faqs.ts`            | The question bank                                                | 20   |
 | `content/data/flat-services.ts`   | Fixed-price computer services                                    | 10   |
 | `content/data/unlocking.ts`       | Carrier unlocking                                                | 1    |
@@ -194,7 +203,7 @@ techbrotherz/
 | `content/data/testimonials.ts`    | Real reviews only. **Empty, and stays empty until supplied**     | 0    |
 | `content/data/types.ts`           | The types for all of the above, hand written                     | n/a  |
 | `content/models/<slug>.ts`        | Per-model prose: introduction, issues, verdict, repair notes     | 156  |
-| `lib/content/brands.ts`           | The nine brands                                                  | 9    |
+| `lib/content/brands.ts`           | The five brands (nine until the 2026-08 removals)                | 5    |
 | `lib/content/repair-types.ts`     | The sixteen repair types and the price groups                    | 16   |
 | `lib/content/services.ts`, `repairs.ts`, `places.ts`, `core-faqs.ts` | Tier 2, 3, 5 and 6 page copy               | n/a  |
 
@@ -286,7 +295,7 @@ Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.
 
 ### Tier 4 — Programmatic (from `content/data/models.ts`), built
 
-9 brand hubs at `/repair/[brand]`, and 84 model pages at `/repair/[brand]/[model]`, all prerendered. 72 further models are seeded but unpublished, held back until someone writes them content of their own. Every published model carries an introduction, three or more model-specific issues and a verdict.
+5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 72 further models are seeded but unpublished, held back until someone writes them content of their own. Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
 
 ### Tier 5 — Service and place, `/[locality]`, built
 
@@ -679,7 +688,7 @@ So the site ships:
 - **The brand logo slot stays empty and functional.**
 - **The independence notice** in the footer site-wide, and again on `/repair-prices` and every brand hub.
 
-> All product names, logos and brands are the property of their respective owners. TechBrotherz is an independent repair shop and is not affiliated with, authorised by, or endorsed by Apple, Samsung, Google, LG, Motorola, HTC or any other manufacturer.
+> All product names, logos and brands are the property of their respective owners. TechBrotherz is an independent repair shop and is not affiliated with, authorised by, or endorsed by Apple, Samsung, Google or any other manufacturer.
 
 **This is a recommendation, not legal advice.** If the client wants manufacturer logos after understanding the position, that is their call and their liability, and it becomes a one-field upload per brand in the Studio with no code change.
 

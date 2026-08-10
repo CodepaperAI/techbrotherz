@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 export const TRADEMARK_NOTICE =
   "All product names, logos and brands are the property of their respective owners. " +
   "TechBrotherz is an independent repair shop and is not affiliated with, authorised by, " +
-  "or endorsed by Apple, Samsung, Google, LG, Motorola, HTC or any other manufacturer.";
+  "or endorsed by Apple, Samsung, Google or any other manufacturer.";
 
 export interface TrademarkNoticeProps {
   className?: string;

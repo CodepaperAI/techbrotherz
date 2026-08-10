@@ -5,16 +5,19 @@ import { cn } from "@/lib/utils";
 /**
  * Wordmark placeholder.
  *
- * TODO(client): supply the TechBrotherz logo as an SVG. Drop it in
- * public/logo.svg and replace the span below with next/image, keeping the same
- * link wrapper, sizing and aria-label so nothing else changes.
+ * TODO(client): the supplied logo files are JPEGs with baked backgrounds and
+ * have not been committed. Supply a transparent PNG or an SVG, drop it in
+ * public/logo.svg and replace the spans below with next/image, keeping the
+ * same link wrapper, sizing and aria-label so nothing else changes. Until
+ * then this stays a typeset wordmark: one word, TechBrotherz, no gap, per the
+ * logo itself.
  */
 export function Logo({ className, onDark = false }: { className?: string; onDark?: boolean }) {
   return (
     <Link
       href="/"
       aria-label="TechBrotherz, home"
-      className={cn("inline-flex items-baseline gap-1", className)}
+      className={cn("inline-flex items-baseline", className)}
     >
       <span
         className={cn(

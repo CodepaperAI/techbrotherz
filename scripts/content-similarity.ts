@@ -34,7 +34,6 @@ const BASE = process.argv[2] ?? "http://localhost:3100";
 const CORE_PATHS = [
   "/",
   "/services",
-  "/repair-prices",
   "/locations",
   "/about",
   "/warranty",
@@ -94,22 +93,31 @@ async function main() {
 Content similarity across every tier, ${BASE}
 `);
 
-  /* Model pages are discovered from the price list rather than hardcoded, so a
-     model published later is picked up automatically. The other tiers come
-     from the registry and the content modules, which are the source of truth
-     for what exists. */
-  const priceHtml = await (await fetch(`${BASE}/repair-prices`)).text();
+  /* Model pages used to be discovered from /repair-prices, which is deleted
+     and 301s to /contact, so the scrape returned nothing and the script bailed.
+     Same fix as scripts/link-graph.ts: brands from the registry, models from
+     crawling each brand hub, which is the page that carries the catalogue. */
+  const builtBrandPaths = ROUTES.filter(
+    (entry) => entry.tier === "brand" && entry.status === "built",
+  ).map((entry) => entry.path);
 
   const modelPaths = [
     ...new Set(
-      Array.from(priceHtml.matchAll(/href="(\/repair\/[^"/]+\/[^"]+)"/g)).map(
-        (match) => match[1] as string,
-      ),
+      (
+        await Promise.all(
+          builtBrandPaths.map(async (path) => {
+            const html = await (await fetch(`${BASE}${path}`)).text();
+            return Array.from(html.matchAll(/href="(\/repair\/[^"/]+\/[^"#?]+)"/g)).map(
+              (match) => match[1] as string,
+            );
+          }),
+        )
+      ).flat(),
     ),
   ].sort();
 
   if (modelPaths.length === 0) {
-    console.error("No model pages found on /repair-prices. Is the server running?");
+    console.error("No model pages found on any brand hub. Is the server running?");
     process.exit(1);
   }
 
