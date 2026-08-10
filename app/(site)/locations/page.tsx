@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
+import { MapReveal } from "@/components/blocks/MapReveal";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { PageShell } from "@/components/blocks/PageShell";
 import { Card } from "@/components/primitives/Card";
@@ -108,6 +109,16 @@ export default async function LocationsPage() {
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
+
+        {/* Added on client request 2026-08, alongside the switch to a
+            default-loaded map: the index that routes people to the shop
+            should show where the shop is. */}
+        <MapReveal
+          className="mt-6 h-80 md:h-96"
+          src={SITE.googleMapsEmbedUrl}
+          title="Map showing TechBrotherz at 3317 17 Ave SE, Calgary"
+          addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
+        />
 
         {primary?.routeDescription ? (
           <p className="type-body measure text-tb-muted mt-8">{primary.routeDescription}</p>

@@ -541,7 +541,7 @@ That is the worst failure mode in this project so far, because a silently stale 
 
 **Timezone.** `isOpenNow()` in `lib/utils.ts` computes against `America/Edmonton` explicitly using `Intl.DateTimeFormat`, never the server's zone and never the visitor's. The hours table renders on the server so crawlers read it, and only the open or closed badge is computed on the client after mount, so there is no hydration mismatch and no wrong answer for a visitor in another timezone. `pnpm test:timezone` proves identical answers under five system time zones on both sides of the daylight saving change.
 
-**Map embed.** `MapReveal` shows a styled placeholder with the address in real text, and loads the Google Maps iframe only when the visitor clicks. A third-party iframe on every page load costs several hundred kilobytes and commonly wrecks LCP, and the map carries no SEO value: the address text and the `LocalBusiness` structured data are what search engines read.
+**Map embed.** `MapReveal` renders the Google Maps iframe by default, on the client's instruction (2026-08); it was click-to-reveal until then. The performance concern is handled by the iframe's native `loading="lazy"`: every mount sits well below the fold, so the third-party request is deferred until the visitor scrolls near it and the LCP element is never the map. The parent supplies fixed dimensions so nothing shifts when it loads. The map still carries no SEO value: the address text and the `LocalBusiness` structured data are what search engines read, and the address stays in the accessibility tree as real text. Mounted on home, `/contact`, `/locations` and the three place pages.
 
 ### Environment assertion
 
