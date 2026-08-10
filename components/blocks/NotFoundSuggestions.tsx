@@ -101,10 +101,14 @@ export function NotFoundSuggestions({ models, modelRoutesBuilt }: NotFoundSugges
 
       <ul className="divide-tb-border mt-5 divide-y">
         {matches.map((model) => {
-          const href =
-            modelRoutesBuilt && model.brandSlug
+          // The fallback used to be /repair-prices#model-<slug>. That page is
+          // gone, so a 404 offering a link to another 404 is worse than the
+          // brand hub, which lists every model we hold parts for.
+          const href = !model.brandSlug
+            ? "/services"
+            : modelRoutesBuilt
               ? `/repair/${model.brandSlug}/${model.slug}`
-              : `/repair-prices#model-${model.slug}`;
+              : `/repair/${model.brandSlug}`;
 
           return (
             <li key={model.slug}>
@@ -112,7 +116,7 @@ export function NotFoundSuggestions({ models, modelRoutesBuilt }: NotFoundSugges
                 href={href}
                 className="group text-tb-text hover:text-tb-green-deep flex items-center justify-between gap-4 py-3"
               >
-                <span className="group-hover:underline">{model.name} repair prices</span>
+                <span className="group-hover:underline">{model.name} repair details</span>
                 <ArrowUpRight
                   aria-hidden="true"
                   size={16}

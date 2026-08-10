@@ -27,7 +27,7 @@ export function MapReveal({ src, title, addressLine, className }: MapRevealProps
 
   if (loaded) {
     return (
-      <div className={cn("bg-tb-green-soft rounded-image relative overflow-hidden", className)}>
+      <div className={cn("bg-tb-paper-2 rounded-image relative overflow-hidden", className)}>
         <iframe
           src={src}
           title={title}
@@ -45,7 +45,7 @@ export function MapReveal({ src, title, addressLine, className }: MapRevealProps
       onClick={() => setLoaded(true)}
       aria-label={`Load the map showing ${addressLine}`}
       className={cn(
-        "bg-tb-green-soft rounded-image group relative block w-full overflow-hidden text-left",
+        "bg-tb-paper-2 rounded-image group relative block w-full overflow-hidden text-left",
         className,
       )}
     >

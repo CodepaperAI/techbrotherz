@@ -17,19 +17,17 @@ import { Section } from "@/components/primitives/Section";
 import { repairPagesForModel } from "@/lib/content/repairs";
 import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { modelFaqs as buildModelFaqs } from "@/lib/faq/generated";
-import { shouldRenderLink } from "@/lib/routes";
+import { route, shouldRenderLink } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo/metadata";
 import {
-  itemListOfOffers,
   localBusiness,
-  offerFromPriceEntry,
   organization,
   serviceWithContactAction,
   webPage,
   website,
 } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatMinutes, formatPrice } from "@/lib/utils";
+import { formatMinutes } from "@/lib/utils";
 import {
   getAllFaqs,
   getModelBySlug,
@@ -37,9 +35,30 @@ import {
   getRelatedModels,
   getReviewSummary,
   getSiteSettings,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
+
+/**
+ * The Tier 5 local page and the Tier 2 service hub each brand belongs to.
+ *
+ * Mirrors the map on the brand hub. Every phone brand falls to the defaults,
+ * which is why only the exceptions are listed: writing out nine identical rows
+ * would be a table of one fact.
+ */
+const BRAND_LOCAL_PATH: Record<string, string> = {
+  "apple-iphone": "/iphone-screen-repair-calgary",
+  "samsung-galaxy": "/samsung-repair-calgary",
+  "apple-ipad": "/ipad-repair-calgary",
+  "laptops-desktops": "/laptop-repair-calgary",
+};
+const DEFAULT_LOCAL_PATH = "/phone-repair-calgary";
+
+const BRAND_SERVICE_PATH: Record<string, string> = {
+  "apple-ipad": "/services/tablet-repair",
+  "laptops-desktops": "/services/laptop-repair",
+};
+const DEFAULT_SERVICE_PATH = "/services/phone-repair";
 
 /**
  * Prerenders every published model at build time. dynamicParams stays on, so a
@@ -83,13 +102,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
-  const from = formatPrice(model.fromPrice);
-
   return buildMetadata({
     title: model.seoTitle ?? `${model.name} Repair in Calgary`,
     description:
       model.seoDescription ??
-      `${model.name} repair at TechBrotherz in Calgary${from ? `, from ${from}` : ""}. Parts and labour included, 60-day warranty, no appointment needed.`,
+      `${model.name} repair at TechBrotherz in Calgary. Parts and labour included, 60-day warranty, free quote, no appointment needed.`,
     path: `/repair/${brand}/${slug}`,
     noIndex: model.noIndex ?? false,
   });
@@ -107,7 +124,7 @@ export default async function ModelPage({ params }: PageProps) {
     getAllFaqs(),
     getRelatedModels({
       modelId: model._id,
-      brandId: model.brand?._id ?? "",
+      brandSlug: model.brand?.slug ?? "",
       releaseYear: model.releaseYear ?? null,
     }),
   ]);
@@ -118,12 +135,7 @@ export default async function ModelPage({ params }: PageProps) {
   const phoneRaw = settings?.phoneRaw ?? SITE.phoneRaw;
 
   const prices = model.prices ?? [];
-  const priced = prices.filter((entry) => typeof entry.price === "number");
-  const quoteOnly = prices.filter((entry) => entry.quoteOnly || typeof entry.price !== "number");
-  const from = formatPrice(model.fromPrice);
-
-  const headline = priced[0];
-  const headlinePrice = formatPrice(headline?.price);
+  const headline = prices[0];
   const headlineRepair = headline?.repair?.name?.toLowerCase() ?? "repair";
 
   const age = model.releaseYear ? new Date().getFullYear() - model.releaseYear : null;
@@ -147,26 +159,49 @@ export default async function ModelPage({ params }: PageProps) {
   };
   const preferred = categoryForDevice[model.deviceType ?? "phone"] ?? "pricing";
 
+  /*
+   * Phase 8: model pages carry no FAQ block.
+   *
+   * The four questions here were generated from the model's own record, and the
+   * price was what made them differ. Re-grounding them on age, repair count and
+   * software support (Option 1) was tried and measured: the model tier went from
+   * 21.3% to 27.7% median and pairs above 50% went from 45 to 135, because those
+   * fields read alike across similar handsets in a way a price did not.
+   *
+   * So the block is cut rather than rewritten. Model pages already carry an
+   * introduction, model-specific issues, a repair list and a verdict, all of
+   * which measure 0.0% median similarity; a shared FAQ block was adding text
+   * without adding an answer, and duplicating FAQPage nodes across 84 URLs.
+   *
+   * To re-add: raise MODEL_FAQ_COUNT one at a time and re-run the similarity
+   * audit after each. Keep only the questions that hold the tier at 21.5% or
+   * better. Do not re-add as a block.
+   */
+  const MODEL_FAQ_COUNT = 0;
+  const generated = buildModelFaqs({
+    name: model.name ?? "this model",
+    deviceType: model.deviceType,
+    releaseYear: model.releaseYear,
+    brandName: model.brand?.name,
+    currentYear: new Date().getFullYear(),
+    waitMinutes,
+    warrantyDays,
+    phone: settings?.phone ?? SITE.phone,
+    stillReceivesUpdates: model.stillReceivesUpdates,
+    lastSupportedOs: model.lastSupportedOs,
+    prices: prices.map((entry) => ({
+      repairName: entry.repair?.name ?? "Repair",
+      minutes: entry.turnaroundMinutes ?? entry.repair?.estimatedMinutes ?? null,
+    })),
+  }).slice(0, MODEL_FAQ_COUNT);
+
+  /* Scoping requires at least half of a page's questions to be its own, so with
+     no page-specific questions the global teasers go too rather than standing
+     alone. See lib/faq/scoping.ts. */
   const faqs = composeFaqs({
     path,
-    pageSpecific: buildModelFaqs({
-      name: model.name ?? "this model",
-      deviceType: model.deviceType,
-      releaseYear: model.releaseYear,
-      brandName: model.brand?.name,
-      currentYear: new Date().getFullYear(),
-      waitMinutes,
-      warrantyDays,
-      phone: settings?.phone ?? SITE.phone,
-      stillReceivesUpdates: model.stillReceivesUpdates,
-      lastSupportedOs: model.lastSupportedOs,
-      prices: prices.map((entry) => ({
-        repairName: entry.repair?.name ?? "Repair",
-        price: entry.price,
-        minutes: entry.turnaroundMinutes ?? entry.repair?.estimatedMinutes ?? null,
-      })),
-    }),
-    globalLinks: globalLinks(allFaqs, from ? [preferred, "warranty"] : [preferred, "pricing"], 2),
+    pageSpecific: generated,
+    globalLinks: generated.length > 0 ? globalLinks(allFaqs, [preferred, "warranty"], 2) : [],
   });
 
   /** The Tier 3 pages that cover the repairs this model actually gets. */
@@ -177,20 +212,8 @@ export default async function ModelPage({ params }: PageProps) {
 
   /* ------------------------------------------------------------- schema */
 
-  const offers = priced.map((entry) =>
-    offerFromPriceEntry(
-      {
-        repairName: entry.repair?.name ?? "Repair",
-        modelName: model.name,
-        price: entry.price,
-        quoteOnly: entry.quoteOnly,
-        warrantyDays: entry.warrantyDays,
-        url: path,
-      },
-      { phoneRaw, defaultWarrantyDays: warrantyDays },
-    ),
-  );
-
+  /* Phase 8: no Offer nodes. An Offer without a price is invalid, and there are
+     no prices. The Service node with its ContactAction carries the intent. */
   const schema = [
     organization(settings ?? {}),
     website(settings ?? {}),
@@ -198,33 +221,25 @@ export default async function ModelPage({ params }: PageProps) {
     webPage({
       type: "WebPage",
       name: `${model.name} repair in Calgary`,
-      description: `${model.name} repair prices, times and warranty at TechBrotherz in Calgary.`,
+      description: `${model.name} repair, times and warranty at TechBrotherz in Calgary.`,
       path,
       speakableSelectors: ['[data-speakable="answer"]'],
       dateModified: model._updatedAt,
     }),
     // Only priced repairs become Offers. Quote-only repairs are described by
-    // the Service node below, because an Offer without a price is invalid.
-    itemListOfOffers({
-      name: `${model.name} repair prices at TechBrotherz in Calgary`,
-      path,
-      offers,
-    }),
     serviceWithContactAction({
       name: `${model.name} repairs quoted in person`,
       description: `Repairs on the ${model.name} whose price depends on the part supply on the day, quoted at the counter or by phone.`,
       path,
       phoneRaw,
-      repairNames: quoteOnly.map((entry) => entry.repair?.name ?? "Repair"),
+      repairNames: prices.map((entry) => entry.repair?.name ?? "Repair"),
     }),
     faqs.schema,
   ];
 
   /* -------------------------------------------------------------- answer */
 
-  const answer = headlinePrice
-    ? `A ${model.name} ${headlineRepair} at TechBrotherz in Calgary costs ${headlinePrice}, including the part and the labour. Most ${model.deviceType === "tablet" ? "tablet repairs are ready the same day" : `repairs take about ${waitMinutes} minutes while you wait`}, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`
-    : `${model.name} repairs at TechBrotherz in Calgary are quoted in person, because the parts are ordered in and the price depends on supply. Phone ${SITE.phone} with the model and a firm figure follows. Every repair includes the part and the labour and carries a ${warrantyDays}-day warranty.`;
+  const answer = `A ${model.name} ${headlineRepair} at TechBrotherz in Calgary is quoted at the counter, free of charge, before any work starts, with the part and the labour in one figure. Most ${model.deviceType === "tablet" ? "tablet repairs are ready the same day" : `repairs take about ${waitMinutes} minutes while you wait`}, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`;
 
   return (
     <PageShell
@@ -244,8 +259,8 @@ export default async function ModelPage({ params }: PageProps) {
         answer,
         keyFacts: [
           {
-            label: "Price",
-            value: from ? `${from} and up, part and labour included` : "Quoted in person",
+            label: "Quote",
+            value: "Free at the counter, part and labour included",
           },
           {
             label: "Time",
@@ -270,16 +285,13 @@ export default async function ModelPage({ params }: PageProps) {
         <div className="border-tb-border bg-tb-white rounded-card mt-8 overflow-x-auto border">
           <table className="tabular w-full min-w-[36rem] border-collapse text-left">
             <caption className="type-body text-tb-text border-tb-border border-b px-6 py-4 text-left font-medium">
-              {model.name} repair prices at TechBrotherz in Calgary, including the part and the
-              labour
+              {model.name} repairs at TechBrotherz in Calgary, with the part and the labour included
+              in every quote
             </caption>
             <thead>
-              <tr className="bg-tb-green-soft">
+              <tr className="tb-thead">
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                   Repair
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3 md:text-right">
-                  Price (CAD)
                 </th>
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                   Typical time
@@ -291,13 +303,8 @@ export default async function ModelPage({ params }: PageProps) {
             </thead>
             <tbody>
               {prices.map((entry) => {
-                const price = entry.quoteOnly ? null : formatPrice(entry.price);
-
                 return (
-                  <tr
-                    key={entry._id}
-                    className={`border-tb-border border-t ${price ? "" : "bg-tb-cream/60"}`}
-                  >
+                  <tr key={entry._id} className="border-tb-border border-t">
                     <th
                       scope="row"
                       className="text-tb-text px-6 py-3.5 text-left align-top font-normal"
@@ -307,16 +314,6 @@ export default async function ModelPage({ params }: PageProps) {
                         <span className="type-caption text-tb-muted mt-1 block">{entry.note}</span>
                       ) : null}
                     </th>
-                    <td className="text-tb-text px-6 py-3.5 align-top font-medium md:text-right">
-                      {price ?? (
-                        <a
-                          href={TEL_HREF}
-                          className="text-tb-green-deep font-medium hover:underline"
-                        >
-                          Call for quote
-                        </a>
-                      )}
-                    </td>
                     <td className="text-tb-muted px-6 py-3.5 align-top">
                       {formatMinutes(entry.turnaroundMinutes ?? entry.repair?.estimatedMinutes) ??
                         `About ${waitMinutes} minutes`}
@@ -332,10 +329,8 @@ export default async function ModelPage({ params }: PageProps) {
         </div>
 
         <p className="type-caption text-tb-muted mt-4">
-          {settings?.priceDisclaimer ?? SITE.priceDisclaimer}
-          {quoteOnly.length > 0
-            ? ` ${quoteOnly.length} of these repairs are quoted in person, because the part is ordered in and the price moves with supply.`
-            : ""}
+          Every repair includes the part and the labour and carries a {warrantyDays}-day warranty,
+          and the exact figure is quoted free before any work starts.
         </p>
 
         {model.priceGroup?.models && model.priceGroup.models.length > 1 ? (
@@ -356,7 +351,7 @@ export default async function ModelPage({ params }: PageProps) {
                     <li key={entry.slug}>
                       {shouldRenderLink(href) ? (
                         <Link href={href} className="text-tb-green-deep hover:underline">
-                          {entry.name} repair prices
+                          {entry.name} repair details
                         </Link>
                       ) : (
                         <span className="text-tb-muted">{entry.name}</span>
@@ -385,7 +380,7 @@ export default async function ModelPage({ params }: PageProps) {
                   <li key={issue} className="flex items-start gap-3">
                     <span
                       aria-hidden="true"
-                      className="bg-tb-green-soft mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full"
+                      className="bg-tb-paper-2 mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full"
                     >
                       <CheckCircle2 size={14} strokeWidth={1.5} className="text-tb-green-deep" />
                     </span>
@@ -450,8 +445,8 @@ export default async function ModelPage({ params }: PageProps) {
                 </div>
               ) : null}
               <div>
-                <dt className="text-tb-text font-medium">Cheapest repair</dt>
-                <dd>{from ?? "Quoted in person"}</dd>
+                <dt className="text-tb-text font-medium">Repairs offered</dt>
+                <dd>{prices.length}</dd>
               </div>
               <div>
                 <dt className="text-tb-text font-medium">Software</dt>
@@ -507,6 +502,11 @@ export default async function ModelPage({ params }: PageProps) {
              * with only one published model, such as Google Pixel, has no
              * siblings to offer, and without it that page would fall below the
              * six-outbound-link minimum the link audit enforces.
+             *
+             * The local page and the service hub joined the spine when
+             * /repair-prices was deleted and took its spine entry with it.
+             * Both were owed anyway: CLAUDE.md Section 9 rule 4 requires the
+             * matching local page on every model page, and it was missing.
              */
             links={[
               ...siblings
@@ -514,14 +514,30 @@ export default async function ModelPage({ params }: PageProps) {
                   shouldRenderLink(`/repair/${sibling.brandSlug}/${sibling.slug}`),
                 )
                 .map((sibling) => ({
-                  label: `${sibling.name} repair prices`,
+                  label: `${sibling.name} repair details`,
                   href: `/repair/${sibling.brandSlug}/${sibling.slug}`,
                 })),
               {
-                label: `All ${model.brand?.name ?? "device"} repair prices`,
+                label: `Every ${model.brand?.name ?? "device"} we repair`,
                 href: `/repair/${model.brand?.slug}`,
               },
-              { label: "Every repair price we publish", href: "/repair-prices" },
+              {
+                label:
+                  route(BRAND_SERVICE_PATH[brandSlug] ?? DEFAULT_SERVICE_PATH)?.label ??
+                  "Repair services",
+                href: BRAND_SERVICE_PATH[brandSlug] ?? DEFAULT_SERVICE_PATH,
+              },
+              ...(shouldRenderLink(BRAND_LOCAL_PATH[brandSlug] ?? DEFAULT_LOCAL_PATH)
+                ? [
+                    {
+                      label:
+                        route(BRAND_LOCAL_PATH[brandSlug] ?? DEFAULT_LOCAL_PATH)?.label ??
+                        "In Calgary",
+                      href: BRAND_LOCAL_PATH[brandSlug] ?? DEFAULT_LOCAL_PATH,
+                    },
+                  ]
+                : []),
+              { label: "How TechBrotherz quotes a repair", href: "/contact" },
               { label: `Our ${warrantyDays}-day warranty`, href: "/warranty" },
               { label: "All the repair services we offer", href: "/services" },
             ]}

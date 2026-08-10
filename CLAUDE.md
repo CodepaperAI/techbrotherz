@@ -1,5 +1,36 @@
 # CLAUDE.md — TechBrotherz.com Project Brain
 
+> ## LAUNCH BLOCKER — do not launch until this is cleared
+>
+> **The remaining 7a-ii-a price machinery is unfinished.** Every authored content
+> file is clean, but the rendered site still shows prices, because they come from
+> code rather than copy:
+>
+> - the model and service page components interpolating `fromPrice` into
+>   AnswerBoxes and key facts
+> - `lib/faq/generated.ts` in `brandFaqs`, still on the brand hubs
+> - the generated model meta descriptions
+> - `lib/content/hydrate-prices.ts`, `lib/seo/schema.ts` Offer and ItemList
+>   nodes, and the price archive to `content/archive/prices-2026-08.ts`
+> - `/repair-prices` still exists and `/get-a-quote` has not been built
+>
+> `pnpm verify` is red and stays red until this is done. The site looking
+> finished is exactly why this is recorded at the top of the file: the client
+> asked for no prices anywhere, and the visual rebuild makes it easy to forget
+> that the rendered output still has them. **Guard: `pnpm exec tsx
+> scripts/test-no-prose-prices.ts` currently reports 76 prose and 55 meta
+> failures. It must report zero.**
+>
+> ## Named follow-up — brand tier similarity
+>
+> The brand tier moved 36.9% to 38.0% when `brandFaqs` was re-grounded off price
+> in Phase 8. Diagnosis: the same failure that Option 1 hit on model pages. The
+> generated brand answers now lean on model counts, release-year spans and
+> repair-name lists, which read alike across nine hubs in a way a price range did
+> not. The fix that worked on model pages is the same one-line change: cut the
+> generated block and let scoping drop the global teasers with it. Model pages
+> went from 45 pairs above 50% to 2 that way. Not done, not this session.
+
 > **Read this before every task.**
 > Before adding any page or component, re-read [DESIGN.md](DESIGN.md) and the SEO checklist in Section 8 of this file.
 > After every working session, append an entry to [CONVERSATION.md](CONVERSATION.md).
@@ -12,14 +43,14 @@ TechBrotherz is a walk-in cell phone, tablet and computer repair shop in Calgary
 
 1. Rank first for local repair searches in Calgary, Chestermere and Airdrie (classic local SEO).
 2. Get quoted by AI answer engines: ChatGPT, Perplexity, Google AI Overviews, Copilot, Gemini (AEO / GEO).
-3. Let the shop owner manage every brand, model, repair type and price from Sanity Studio without touching code.
+3. Let the shop owner have every brand, model, repair type and price live in one readable file per type, changed in a pull request.
 4. Convert walk-in intent fast: phone, directions, hours and "no appointment needed" always one tap away.
 
 ---
 
 ## 2. Business facts (single source of truth)
 
-These live in the Sanity `siteSettings` singleton. Code reads them from there. The typed fallback lives in `lib/site.ts` and must stay identical to the Sanity values. **Never hardcode NAP anywhere else.**
+These live in `content/data/site-settings.ts`. Code reads them from there. The typed fallback lives in `lib/site.ts` and must stay identical. **Never hardcode NAP anywhere else.**
 
 | Field                        | Value                                                             |
 | ---------------------------- | ----------------------------------------------------------------- |
@@ -57,10 +88,10 @@ Cell phone repair, iPhone repair, Samsung Galaxy repair, LG / Motorola / Nexus /
 
 1. **Never invent a price, certification, review, star rating, customer count or award.** Unknown price means the value is `Call for quote` and the CTA is the phone number.
 2. **Never ship fake social proof.** No fake avatar stacks, no invented "4.9 out of 5" badges, no fake "trusted by" logo clouds. Real trust signals only: 60-day warranty, no appointment required, approximately 30-minute typical wait, all Canadian carriers unlocked, parts and labour included in every price.
-3. **`AggregateRating` schema is only emitted if real Google review data is supplied by the client and stored in Sanity.** Until then the code path stays dormant. See `aggregateRating()` in `lib/seo/schema.ts`, which returns `null` unless the `reviewSummary` singleton is enabled and complete.
+3. **`AggregateRating` schema is only emitted if real Google review data is supplied by the client and written into `content/data/testimonials.ts` and the review summary.** Until then the code path stays dormant. See `aggregateRating()` in `lib/seo/schema.ts`, which returns `null` unless the `reviewSummary` singleton is enabled and complete.
 4. **Currency is CAD. Locale is `en-CA`.** Canadian English spelling, kept natural.
 5. **No em dashes anywhere in user-facing copy.** Use commas, colons or full stops.
-6. **No lorem ipsum in committed code.** Write real copy, or leave a clearly marked `TODO(client)` field in Sanity.
+6. **No lorem ipsum in committed code.** Write real copy, or leave a clearly marked `TODO(client)` note against the field.
 7. **Accessibility floor:** WCAG 2.1 AA contrast, visible keyboard focus, semantic landmarks, `prefers-reduced-motion` respected.
 8. **Every page must be reachable.** No orphans. See Section 9.
 
@@ -74,8 +105,8 @@ Cell phone repair, iPhone repair, Samsung Galaxy repair, LG / Motorola / Nexus /
 | Language   | TypeScript, `strict: true`                                    | 5.x                           |
 | Runtime    | React                                                         | 19.x                          |
 | Styling    | Tailwind CSS v4, tokens in `@theme`                           | 4.x                           |
-| CMS        | Sanity                                                        | v3 (`sanity` + `next-sanity`) |
-| Images     | `@sanity/image-url`, `next/image`                             | latest                        |
+| Content    | TypeScript constants in `content/data/` and `lib/content/`    | n/a                           |
+| Images     | `next/image`, local files under `public/`                     | built in                      |
 | Icons      | `lucide-react`, stroke width 1.5, no other icon set           | latest                        |
 | Fonts      | `next/font`, `display: swap`, self-hosted, subset `latin`     | built in                      |
 | Validation | `zod`                                                         | 3.x                           |
@@ -85,8 +116,7 @@ Cell phone repair, iPhone repair, Samsung Galaxy repair, LG / Motorola / Nexus /
 
 **Rendering rules**
 
-- ISR `export const revalidate = 3600` on all content pages.
-- On-demand revalidation webhook at `/api/revalidate`.
+- Every page is prerendered at build time. There is no data source to revalidate against, so `revalidate` and the webhook are gone.
 - Motion is CSS transitions plus `IntersectionObserver` reveals. **Do not add Framer Motion** unless a section genuinely cannot be done in CSS, and record the reason in CONVERSATION.md.
 - Forms are server actions with `zod` validation, a honeypot field and a rate limit.
 
@@ -100,14 +130,11 @@ techbrotherz/
 │   ├── (site)/                  Public marketing pages. Shares Nav + Footer + StickyCallBar.
 │   │   ├── layout.tsx           Site chrome wrapper.
 │   │   └── page.tsx             Home.
-│   ├── studio/[[...tool]]/      Embedded Sanity Studio (noindex, disallowed in robots).
-│   ├── api/
-│   │   └── revalidate/          On-demand ISR webhook from Sanity.
 │   ├── layout.tsx               Root html/body, fonts, analytics, global JSON-LD.
 │   ├── globals.css              Tailwind v4 import + @theme design tokens. Single token source.
 │   ├── not-found.tsx            404 that suggests nearest model, service and location page.
 │   ├── robots.ts                Dynamic robots.txt.
-│   └── sitemap.ts               Dynamic sitemap.xml from Sanity.
+│   └── sitemap.ts               Dynamic sitemap.xml from the content constants.
 ├── components/
 │   ├── primitives/              Container, Section, Eyebrow, Heading, PillButton, Card, Chip.
 │   ├── blocks/                  PageShell, AnswerBox, PriceTable, PriceFilter, ModelGrid,
@@ -118,26 +145,22 @@ techbrotherz/
 │   ├── seo/                     JsonLd, one script tag holding one @graph.
 │   └── motion/                  Reveal (IntersectionObserver wrapper).
 ├── lib/
-│   ├── site.ts                  Typed business constants. Mirrors Sanity siteSettings exactly.
+│   ├── data/                    The accessor layer. The only thing pages import content from.
+│   ├── site.ts                  Typed business constants. Mirrors content/data/site-settings.ts.
 │   ├── routes.ts                The route registry. Source of truth for built vs pending.
 │   ├── nav.ts                   Header and footer matrices, derived from the registry.
 │   ├── seo/metadata.ts          buildMetadata(), the only place page metadata is assembled.
 │   ├── seo/schema.ts            Every JSON-LD builder, plus compact() and buildGraph().
-│   ├── env-assert.ts            Fails the build when a required server variable is missing.
+│   ├── site-url.ts              The canonical origin, as a constant. No env var required.
 │   ├── rate-limit.ts            Fixed-window limiter for the contact form.
 │   └── utils.ts                 cn(), formatPrice(), formatMinutes(), isOpenNow(), slugify().
-├── sanity/
-│   ├── schemaTypes/             One file per document type. Index in schemaTypes/index.ts.
-│   ├── queries/                 GROQ queries, one file per domain area. Typed returns.
-│   ├── lib/                     client.ts, image.ts, fetch.ts, live.ts.
-│   ├── seed/                    JSON seed data + import script.
-│   └── structure.ts             Custom desk structure: Site, Catalogue, Pages, Content, Locations.
+├── content/
+│   ├── data/                    The content. One file per type, plus hand-written types.ts.
+│   ├── models/                  Per-model prose, one file per slug.
+│   ├── locations/               Tier 6 place copy.
+│   ├── local-inventory.md       Every local fact, with its source. Gates local pages.
+│   └── image-manifest.md        Slot, source, photographer, ratio and alt for each image.
 ├── scripts/
-│   ├── seed.ts                  Imports sanity/seed/*.json into the dataset. Idempotent.
-│   ├── verify-seed.ts           Counts and content hash, proves the seed is idempotent.
-│   ├── prove-validation.ts      Creates invalid docs so the schema guards can be seen firing.
-│   ├── prove-studio-action.ts   Exercises "Add standard repairs" headlessly.
-│   ├── prove-revalidate.ts      Full signed-webhook round trip against a running server.
 │   ├── audit-pages.ts           Status, headings, JSON-LD hygiene, canonicals, page weight.
 │   ├── audit-browser.ts         Hydration, axe, the contact form paths, Lighthouse.
 │   ├── audit-lighthouse.ts      Lighthouse, median of N runs.
@@ -154,67 +177,59 @@ techbrotherz/
 
 ---
 
-## 6. Sanity schema index
+## 6. Content model
 
-Studio at `/studio`. Desk structure groups: **Site**, **Catalogue**, **Pages**, **Content**, **Locations**.
+**There is no CMS and no database.** Every fact the site renders is a TypeScript constant compiled into the build. That is the end of the road Phase 6.9 started down: it collapsed 17 Sanity document types to six under the rule "if the shop owner will not edit it, it does not belong in Sanity", and the remaining six went the same way when the decision was made that nothing is edited through a CMS at all.
 
-| Document type               | Key fields                                                                                                                                                                                                                                                                                               | Consumed by                                                                               |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `siteSettings` (singleton)  | brandName, legalName, tagline, phone, phoneRaw, email, street, city, region, postalCode, country, geo{lat,lng}, googleMapsUrl, googleBusinessUrl, hours[], warrantyDays, appointmentPolicy, typicalWaitMinutes, priceDisclaimer, socialLinks[], defaultOgImage, gaId, gscVerification, announcementBar{} | Every page, Nav, Footer, all JSON-LD, llms.txt                                            |
-| `brand`                     | name, slug, logo, type(phone\|tablet\|computer), intro, seoTitle, seoDescription, order, active                                                                                                                                                                                                          | `/repair/[brand]`, Home brand strip, Footer                                               |
-| `deviceModel`               | name, slug, brand->, deviceType, releaseYear, image, aliases[], popular, discontinued, intro, commonIssues[], seoTitle, seoDescription                                                                                                                                                                   | `/repair/[brand]/[model]`, ModelGrid, Footer col 2                                        |
-| `repairType`                | name, slug, icon, shortDescription, longDescription, estimatedMinutes, appliesTo[], symptoms[], order                                                                                                                                                                                                    | Tier 3 repair-type pages, model price tables                                              |
-| `priceEntry`                | model->, repairType->, price (nullable), quoteOnly, partGrade, turnaroundMinutes, warrantyDays, inStock, note                                                                                                                                                                                            | Model pages, `/repair-prices`, Offer JSON-LD                                              |
-| `flatService`               | name, slug, price, priceFrom, priceTo, category, description, includes[], order                                                                                                                                                                                                                          | `/services/computer-repair`, `/repair-prices`                                             |
-| `unlockingService`          | carrier, deviceType, price, turnaround, notes                                                                                                                                                                                                                                                            | `/services/phone-unlocking`, `/phone-unlocking-calgary`                                   |
-| `location`                  | city, slug, province, isPrimary, neighbourhoods[], distanceKm, driveTimeMinutes, landmarks[], routeDescription, intro, mapEmbedUrl, seoTitle, seoDescription                                                                                                                                             | Tier 5 and Tier 6 pages, `/locations`                                                     |
-| `faq`                       | question, answer (portable text), plainAnswer (string, max 320, required), category, appliesToServices[], appliesToModels[], appliesToLocations[], order, featured                                                                                                                                       | Every FAQ block, `FAQPage` JSON-LD                                                        |
-| `guide`                     | title, slug, excerpt, quickAnswer (40 to 60 words), heroImage, body, author->, publishedAt, updatedAt, faqs[]->, relatedServices[], relatedModels[], relatedLocations[], schemaType, howToSteps[], readingMinutes, seoTitle, seoDescription                                                              | `/guides`, `/guides/[slug]`                                                               |
-| `author`                    | name, role, bio, photo, credentials[], yearsExperience                                                                                                                                                                                                                                                   | Guide author box, `/about`, Article JSON-LD                                               |
-| `servicePage`               | title, slug, serviceType, quickAnswer, heroHeadline, heroSubcopy, body, benefits[], processSteps[], faqs[]->, relatedModels[], relatedGuides[], seoTitle, seoDescription                                                                                                                                 | Tier 2 and Tier 3 pages                                                                   |
-| `testimonial`               | name, rating, text, device, source, sourceUrl, date, verified                                                                                                                                                                                                                                            | Only rendered when `verified: true`. Never fabricated.                                    |
-| `navigation` (singleton)    | header[], footerColumns[]                                                                                                                                                                                                                                                                                | Nav, Footer                                                                               |
-| `redirect`                  | from, to, permanent                                                                                                                                                                                                                                                                                      | `next.config.ts` redirect generation                                                      |
-| `priceGroup`                | name, models[]->, note                                                                                                                                                                                                                                                                                   | Model pages, for families that share one printed price                                    |
-| `reviewSummary` (singleton) | enabled, ratingValue, reviewCount, source, sourceUrl, lastVerified                                                                                                                                                                                                                                       | `AggregateRating` JSON-LD. **Dormant until `enabled` is true and every field is filled.** |
+### Where the content lives
 
-**Global field rules.** Every document with a public URL carries: `slug` (unique, lowercase, hyphenated, validated), `seoTitle` (warns over 60), `seoDescription` (warns over 155), `ogImage` (falls back to `siteSettings.defaultOgImage`), `noIndex` (default false) and `published` (default false). These come from the shared builders in `sanity/schemas/lib/fields.ts`, so a new document type gets them by construction rather than by memory.
+| File                              | Holds                                                            | Rows |
+| --------------------------------- | ---------------------------------------------------------------- | ---- |
+| `content/data/site-settings.ts`   | The business facts. NAP, hours, warranty, wait time, disclaimer  | 1    |
+| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 156  |
+| `content/data/faqs.ts`            | The question bank                                                | 20   |
+| `content/data/flat-services.ts`   | Fixed-price computer services                                    | 10   |
+| `content/data/unlocking.ts`       | Carrier unlocking                                                | 1    |
+| `content/data/locations.ts`       | The eleven places the site describes                             | 11   |
+| `content/data/testimonials.ts`    | Real reviews only. **Empty, and stays empty until supplied**     | 0    |
+| `content/data/types.ts`           | The types for all of the above, hand written                     | n/a  |
+| `content/models/<slug>.ts`        | Per-model prose: introduction, issues, verdict, repair notes     | 156  |
+| `lib/content/brands.ts`           | The nine brands                                                  | 9    |
+| `lib/content/repair-types.ts`     | The sixteen repair types and the price groups                    | 16   |
+| `lib/content/services.ts`, `repairs.ts`, `places.ts`, `core-faqs.ts` | Tier 2, 3, 5 and 6 page copy               | n/a  |
 
-**Validation rules**
+### The accessor layer, `lib/data/`
 
-- `priceEntry` requires either `price` or `quoteOnly === true`, never both and never neither. Enforced on the `price` and `quoteOnly` fields, not at the document root, because Sanity's validator only executes field-level rules.
-- The pair (`model`, `repairType`) is unique. Enforced by an async rule on `repairType` that queries for duplicates.
-- **Thin-content guard on `deviceModel`.** A model can only be published when it has at least one priced `priceEntry`, OR all of: `releaseYear`, three or more `commonIssues`, and an `intro` of 60+ words. This is what stops 100+ near-identical "call for quote" pages becoming a thin-content liability.
-- `needsVerification` on `priceEntry` and `flatService` flags prices carried over from the printed list that the shop has not confirmed. Flagged prices still render normally, they just appear under Catalogue, Prices, Needs verification.
-- All slugs unique, lowercase, hyphenated.
-- `faq.plainAnswer` is required, capped at 320 characters, and rejects long dashes. JSON-LD needs plain text, not portable text.
-- `testimonial.verified` cannot be turned on without a `sourceUrl`.
-- `deviceModel` preview reads "iPhone 8 Plus, Apple iPhone".
+Pages never import a constant directly. They call an accessor, exactly as they did when the data came from GROQ, and the accessors return the same shapes with the same names and signatures. That is deliberate: the move off Sanity changed no page file, because a refactor that changes every consumer is a rewrite in disguise.
 
-Run `pnpm sanity:validate` to check every document in the dataset against these rules.
+| File                     | Replaces                                                       |
+| ------------------------ | -------------------------------------------------------------- |
+| `lib/data/catalogue.ts`  | Every model, brand and price query                              |
+| `lib/data/content.ts`    | FAQs, flat services, unlocking, testimonials                    |
+| `lib/data/locations.ts`  | The three location queries                                      |
+| `lib/data/site.ts`       | Site settings, navigation, review summary, redirects            |
+| `lib/data/index.ts`      | The barrel. The only thing pages import                         |
 
-### 6.1 Queries and cache tags
+Each function names the GROQ query it replaces, so the two can be compared.
 
-All GROQ lives in `sanity/queries/`, typed by `sanity typegen` into `sanity/types.ts`. Application code calls the accessors in `sanity/queries/index.ts`, never the client directly.
+**The orderings are ported, not reinvented.** `order(releaseYear desc, name asc)` is `byYearThenName`, and its string half compares by code point because that is what GROQ does and `localeCompare` quietly disagrees on punctuation. This is not a theoretical concern: the Phase 6.9 pass dropped a tie-break in the brand statistics and a `published` filter in the locations accessor, and both reached rendered pages. Neither was a type error. **The page diff is what catches this class of bug, so run it.**
 
-Every query filters `(published == true || $draft) && !(_id in path("drafts.**"))`. The `$draft` parameter is injected by `sanityFetch`, so no query can forget it and no unpublished document can reach the live site.
+### What went away with the dataset
 
-| Accessor                                                | Tags                                                                           |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `getSiteSettings`, `getNavigation`, `getReviewSummary`  | `global`, `type:<type>`                                                        |
-| `getBrands`                                             | `type:brand`                                                                   |
-| `getBrandBySlug`, `getModelsByBrand`                    | `type:brand`/`type:deviceModel`, `brand:<slug>`                                |
-| `getModelBySlug`                                        | `type:deviceModel`, `deviceModel:<slug>`, `type:priceEntry`, `type:repairType` |
-| `getAllPricedModels`, `getFlatServices`, `getUnlocking` | `prices`, plus the relevant `type:`                                            |
-| `getRelatedModels`, `getPopularModels`                  | `type:deviceModel`                                                             |
-| `getFaqsFor`, `getGlobalFaqs`, `getAllFaqs`             | `type:faq`                                                                     |
-| `getGuideBySlug`, `getServicePageBySlug`                | `type:<type>`, `<type>:<slug>`, `type:faq`                                     |
-| `getLocations`, `getLocationBySlug`                     | `type:location`, `location:<slug>`                                             |
-| `getAllSlugsForSitemap`                                 | `sitemap`                                                                      |
+- **Cache tags, ISR and the revalidation webhook.** A constant cannot go stale.
+- **Draft mode.** Every query carried a `$draft` parameter that relaxed its `published == true` filter for the Studio preview pane. `published` is now simply read at build time.
+- **The read token, and its failure mode.** A missing `SANITY_API_READ_TOKEN` made every query return zero rows and still produced a complete, empty site. A build now either has the content or does not compile.
+- **The build determinism check.** It existed because Next persisted fetch results in `.next/cache` between builds, so a rebuild after a content change could silently serve the old content. There is no fetch cache to go stale.
+- **The write guard.** There is nothing to write to.
+- **`sanity typegen`.** Types are hand written in `content/data/types.ts`, next to the data.
 
-**Revalidation strategy.** `/api/revalidate` verifies the Sanity webhook signature, then revalidates only the tags the changed document can reach. Editing one price refreshes that model page, its brand hub, the price list and the sitemap. It does not drop the cache for the whole site. The webhook projection that makes this possible is documented at the top of `app/api/revalidate/route.ts`.
+### Editing content
 
----
+Change the file, commit, deploy. A price edit is one number in `content/data/models.ts`.
+
+`published: true` is what puts a model on the site; `false` holds it back, which is how 72 seeded models stay unpublished until someone writes them copy. The build fails and names the slug if a model has neither prices nor copy. See the lean-page fallback in Section 8.10.
+
+**The conventions that survived the move, both on purpose.** `slug` is still an object with a `current` string, because that is how every consumer already reads it. And an absent field still means the fact is not known, never blank: there is no postal code, no geo, no founding year and no payment methods in `site-settings.ts`, `compact()` drops absent fields from the structured data, and no page invents them.
 
 ## 7. URL map
 
@@ -267,9 +282,9 @@ A flat namespace, deliberately separate from `/repair/` so a repair slug can nev
 
 `/repairs/{iphone-screen-replacement, iphone-battery-replacement, iphone-charging-port-repair, iphone-camera-repair, iphone-back-glass-replacement}` · `/repairs/{samsung-screen-replacement, samsung-battery-replacement, samsung-back-glass-replacement, samsung-charging-port-repair}` · `/repairs/ipad-screen-replacement` · `/repairs/{laptop-screen-replacement, laptop-keyboard-replacement, laptop-charging-port-repair}` · `/repairs/{windows-installation, computer-tune-up, computer-diagnostics}`
 
-Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.ts`, typed, with every price read from Sanity through `buildPriceContext()` rather than written into the prose. A price change in the Studio moves every sentence that quotes it.
+Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.ts`, typed, with every price read from `content/data/models.ts` through `buildPriceContext()` rather than written into the prose. A price change in the Studio moves every sentence that quotes it.
 
-### Tier 4 — Programmatic (from Sanity), built
+### Tier 4 — Programmatic (from `content/data/models.ts`), built
 
 9 brand hubs at `/repair/[brand]`, and 84 model pages at `/repair/[brand]/[model]`, all prerendered. 72 further models are seeded but unpublished, held back until someone writes them content of their own. Every published model carries an introduction, three or more model-specific issues and a verdict.
 
@@ -321,7 +336,7 @@ So **each shared fact has exactly one page that carries it in full**, and every 
 
 ### Utility
 
-`/sitemap.xml` · `/robots.txt` · `/llms.txt` · `/llms-full.txt` · `/api/revalidate` · `/studio` · `/opensearch.xml` (optional).
+`/sitemap.xml` · `/robots.txt` · `/llms.txt` · `/llms-full.txt` · `/opensearch.xml` (optional).
 
 ### Internal
 
@@ -329,9 +344,6 @@ So **each shared fact has exactly one page that carries it in full**, and every 
 | --------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------ |
 | `/styleguide`                           | built  | Renders every token and component. `noindex`, and excluded from the sitemap and the HTML sitemap.            |
 | `/styleguide/data`                      | built  | Renders live Sanity content through the real components, plus the raw JSON-LD a model page emits. `noindex`. |
-| `/studio`                               | built  | Embedded Sanity Studio. `noindex` and disallowed in `robots.txt`.                                            |
-| `/api/revalidate`                       | built  | Signed Sanity webhook, tag-targeted revalidation.                                                            |
-| `/api/draft-mode/enable` and `/disable` | built  | Studio preview handshake.                                                                                    |
 
 ### 7.1 Cannibalisation guard
 
@@ -374,7 +386,7 @@ Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. The
 - [ ] **Self-contained paragraphs.** Each paragraph makes sense lifted out alone. No "as mentioned above". No pronoun referring across paragraphs. Restate the subject.
 - [ ] **Real `<table>` markup with `<th scope>` wherever prices, times or comparisons appear.** Never a div grid.
 - [ ] **Numbers, not adjectives.** "60-day warranty", "about 30 minutes", "$89.99 including part and labour". Not "fast", "affordable", "great".
-- [ ] **6 to 10 FAQs** pulled from Sanity, filtered to this page's service, model or location.
+- [ ] **6 to 10 FAQs** pulled from `content/data/faqs.ts`, filtered to this page's service, model or location.
 - [ ] **"People also ask" strip** linking to the guides that answer those questions.
 - [ ] Definition patterns where relevant: "A digitizer is the touch-sensitive glass layer above the LCD."
 - [ ] Content reflected into `llms.txt` / `llms-full.txt` if the page is a core service or price page.
@@ -385,7 +397,7 @@ Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. The
 - [ ] **Unique quotable data surfaced as standalone facts,** not buried in prose: our actual prices, the 60-day warranty, the approximately 30-minute typical wait, the no-appointment policy, the $35 carrier unlock.
 - [ ] **External authority cited** where a general claim is made (Apple official repair pricing, CRTC unlocking rules, Statistics Canada). Name the source in text, link with `rel="noopener"`.
 - [ ] **Author and expertise signals.** Every guide has a named author with role and years of experience from the `author` schema. Only state what is true.
-- [ ] **Freshness.** `dateModified` shown on guides and price pages, driven by Sanity.
+- [ ] **Freshness.** `dateModified` shown on guides and price pages, driven by the `_updatedAt` on the content record.
 - [ ] **Comparison tables** where a comparison exists: repair vs replace, third-party vs manufacturer, screen vs LCD, model vs model.
 
 ### 8.5 Keyword to URL map
@@ -496,11 +508,13 @@ Phase 6.5b took three median-of-five samples against one deployment and got 84, 
 
 Phase 5 set `NEXT_PUBLIC_SITE_URL` to the production domain on the deployment, which was right for canonical correctness and left the staging host serving a fully crawlable copy of the site whose canonicals name a domain currently hosting the client's old Wix site.
 
-`middleware.ts` closes it. Any host that is not the canonical host, derived from `NEXT_PUBLIC_SITE_URL` rather than hardcoded, gets `X-Robots-Tag: noindex, nofollow` on every response and a `robots.txt` that disallows everything. localhost is exempt, because it is neither canonical nor reachable by Google, and marking it noindex would make every local audit disagree with production.
+`middleware.ts` closes it. Any host that is not the canonical host, derived from `lib/site-url.ts` rather than named in this file, gets `X-Robots-Tag: noindex, nofollow` on every response and a `robots.txt` that disallows everything. localhost is exempt, because it is neither canonical nor reachable by Google, and marking it noindex would make every local audit disagree with production.
 
 `pnpm test:noindex` asserts **both** directions. A rule that also fired on the real domain would be worse than no rule.
 
-### Build determinism
+### Build determinism (retired)
+
+> **Retired with the dataset.** There is no fetch cache to go stale, because there is no fetch. A build either has the content compiled in or does not compile. Kept because the failure it describes, a silently stale build making every other green check meaningless, is the worst thing that happened in this project and is worth not repeating.
 
 **A build must reflect current content.** Phase 4 shipped one that did not: Next persists fetch results in `.next/cache/fetch-cache` between builds, and a rebuild after reseeding Sanity served the old content while reporting success. Every other check was then reading a site that did not match the database, including the similarity scores, which came back byte-identical after a content rewrite.
 
@@ -517,7 +531,13 @@ That is the worst failure mode in this project so far, because a silently stale 
 
 ### Environment assertion
 
-`lib/env-assert.ts` runs at module load inside `sanity/lib/fetch.ts` and **fails the build** with a clear message when `SANITY_API_READ_TOKEN` is missing. Without it every query silently returns zero rows and the build still succeeds, producing a complete site with no content on it. That happened once in Phase 2, so it is now a build error.
+> **Retired. There is nothing left to assert.** The Sanity credential check went with the dataset, and `NEXT_PUBLIC_SITE_URL` is no longer required: the canonical origin is a constant in `lib/site-url.ts`.
+>
+> The guard existed because the fallback was `http://localhost:3000`, so a production build without the variable emitted localhost as the canonical of every page and the `@id` of every JSON-LD node, rendering perfectly and being quietly uncrawlable. That shipped once, on the first Vercel deploy in Phase 5.
+>
+> **The protection is kept and strengthened rather than dropped.** The fallback is now the real domain, so the failure the guard was written to catch cannot happen at all, and the `middleware.ts` staging noindex no longer has a hole where an unset variable silently disabled it. What went away is the failure mode the guard itself introduced: a build that dies on any hosting project that has not been told a value the repo already knows. That cost one failed deploy on 2026-08-06.
+>
+> `NEXT_PUBLIC_SITE_URL` still overrides when set, which is how the local audits point the whole site at `http://localhost:3100`. **A build needs no environment variables at all.**
 
 ---
 
@@ -613,7 +633,7 @@ Run this on every page before it ships.
 - [ ] **Real `<table>` markup** wherever there is tabular data, with `<caption>` and `<th scope>`.
 - [ ] **Minimum four contextual in-body links** with descriptive anchor text.
 - [ ] **No `TODO(client)` in body prose.** That marker is for factual fields only.
-- [ ] **Prices, times and warranties come from Sanity**, not typed into the copy, so they cannot go stale.
+- [ ] **Prices, times and warranties come from `content/data/`**, not typed into the copy, so they cannot go stale.
 
 ### The voice split
 
@@ -656,7 +676,7 @@ One candidate was still rejected under the revised rule: a shot of memory cards 
 So the site ships:
 
 - **Brand cards with a wordmark set in our own type**, Plus Jakarta Sans, plus a generic device silhouette drawn as an SVG. Not a manufacturer logo, because a logo in a card slot is a logo used as a mark. See `components/blocks/BrandCard.tsx`.
-- **`brand.logo` in Sanity stays empty and functional.**
+- **The brand logo slot stays empty and functional.**
 - **The independence notice** in the footer site-wide, and again on `/repair-prices` and every brand hub.
 
 > All product names, logos and brands are the property of their respective owners. TechBrotherz is an independent repair shop and is not affiliated with, authorised by, or endorsed by Apple, Samsung, Google, LG, Motorola, HTC or any other manufacturer.
@@ -673,7 +693,7 @@ A name and a count made nine cards look identical, so the card carries five thin
 4. **Model count**
 5. **Starting price**, the cheapest priced entry for that brand
 
-The range and the price are what differentiate the cards, and both are real catalogue data read from Sanity. Silhouettes map: every phone brand to `phone`, Apple iPad to `tablet`, laptops and desktops to `laptop`.
+The range and the price are what differentiate the cards, and both are real catalogue data read from `content/data/models.ts`. Silhouettes map: every phone brand to `phone`, Apple iPad to `tablet`, laptops and desktops to `laptop`.
 
 ### The illustration fallback
 
@@ -795,7 +815,9 @@ The concrete case: quote-only rows could not be derived from the device kind. Ev
 
 **The `/repairs/*` cost, accepted deliberately.** Cross-model price questions can no longer be answered by GROQ alone. Those pages project the array and filter nulls in TypeScript. This is the accepted price of the refactor. **Do not try to push it back into GROQ**: ordering and filtering there would mean reintroducing the repair type as a document, which is the thing that made the Catalogue unusable.
 
-### The write-client guard
+### The write-client guard (retired)
+
+> **Retired with the dataset.** There is nothing to write to. Kept because the lesson generalises: the guard was first put on the migration script, a throwaway probe wrote to production anyway because the probe was not the migration script, and the fix was to move the guard down a level to the only place a client could be built. Catching a mistake is not a control.
 
 Part 2 put a guard on the migration script. It worked, and then a throwaway permission probe wrote a document into production anyway, because the probe was not the migration script. It was caught by a census that happened to look one too high.
 
@@ -845,18 +867,7 @@ pnpm lint              # ESLint
 pnpm typecheck         # tsc --noEmit
 pnpm format            # Prettier write
 
-pnpm typegen           # Extract the Sanity schema and regenerate sanity/types.ts
-pnpm seed              # Import sanity/seed/*.json into the dataset (idempotent)
-pnpm seed:reset        # Delete every seeded document first, behind a prompt
-pnpm seed:verify       # Report counts and a content hash, to prove idempotency
-pnpm sanity:validate   # Validate every document in the dataset against the schema
-
-pnpm prove:validation  # Create deliberately invalid docs so the guards can be seen firing
-pnpm prove:action      # Exercise the "Add standard repairs" Studio action headlessly
-pnpm prove:revalidate  # Full webhook round trip against a running server
-
 pnpm link-audit        # Crawl the build, fail on orphans and internal 404s (Phase 8)
-pnpm sanity:deploy     # Deploy the hosted Studio (optional, embedded Studio is primary)
 
 # Verification. Start a production server first: pnpm build && pnpm start
 pnpm audit:pages       # Status, headings, JSON-LD hygiene, canonicals, price list weight
@@ -869,12 +880,9 @@ pnpm test:contrast     # The DESIGN.md contrast rules, as assertions
 pnpm audit:similarity  # Duplicate content across every tier, with a per-tier breakdown
 pnpm audit:words       # Prose word counts for Tier 2 and Tier 3, floor of 900
 pnpm test:faq          # No question and answer pair in structured data on two URLs
-pnpm test:determinism  # Mutates a field, rebuilds, asserts the output changed
 pnpm test:noindex      # Only the canonical host is indexable; staging is not
 pnpm audit:schema      # One graph per page, no holes, no price-less Offer
 pnpm audit:local-facts # Each shared local fact has one home page, no repeated sentences
-pnpm census            # Production document count by type, against the 917 baseline
-pnpm test:write-guard  # No script can build a production write client
 pnpm images:process    # Crop, resize and encode the demo set, plus blur placeholders
 pnpm images:manifest   # Regenerate content/image-manifest.md from lib/content/images.ts
 pnpm audit:weight      # Transfer weight per page, with a before-and-after comparison
@@ -884,32 +892,27 @@ pnpm verify            # Every behavioural check above, in order
 
 Every audit script takes the base URL as its first argument, defaulting to `http://localhost:3100`.
 
-**Run `pnpm typegen` after any schema or query change.** The generated types are committed, and stale types are how a query and its consumer drift apart.
+**There is no typegen step.** The content types are hand written in `content/data/types.ts`, next to the data they describe.
 
 ### Environment variables
 
 Never commit real values. `.env.example` is committed, `.env.local` is git-ignored.
 
-| Variable                            | Purpose                                                                                                                                                                                                                                                                                                     | Required           |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `NEXT_PUBLIC_SITE_URL`              | Canonical origin, e.g. `https://techbrotherz.com`. Used by metadata, sitemap, JSON-LD.                                                                                                                                                                                                                      | yes                |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`     | Sanity project id.                                                                                                                                                                                                                                                                                          | yes (from phase 2) |
-| `NEXT_PUBLIC_SANITY_DATASET`        | Usually `production`.                                                                                                                                                                                                                                                                                       | yes (from phase 2) |
-| `NEXT_PUBLIC_SANITY_API_VERSION`    | Pinned date, e.g. `2024-10-01`.                                                                                                                                                                                                                                                                             | yes (from phase 2) |
-| `SANITY_API_READ_TOKEN`             | Server-side read token. **Required, not optional.** This Sanity project rejects anonymous reads even though the dataset ACL reads "public", so without it every query silently returns empty. Also used for draft previews. Never bundled for the browser, because all reads go through `server-only` code. | **yes**            |
-| `SANITY_API_WRITE_TOKEN`            | Used by `pnpm seed` only. Never exposed to the client.                                                                                                                                                                                                                                                      | seed only          |
-| `SANITY_REVALIDATE_SECRET`          | Shared secret for the `/api/revalidate` webhook. Set the same value in the Sanity webhook settings.                                                                                                                                                                                                         | yes (from phase 2) |
-| `NEXT_PUBLIC_SANITY_PREVIEW_SECRET` | Shared secret for the Studio preview pane handshake. `NEXT_PUBLIC` because the Studio bundle supplies it, so it is visible to anyone who can load `/studio`. It guards drafts against casual access, not against a determined visitor.                                                                      | no                 |
-| `RESEND_API_KEY`                    | Contact form email. **Form degrades gracefully if missing.**                                                                                                                                                                                                                                                | no                 |
-| `CONTACT_TO_EMAIL`                  | Where contact submissions are delivered.                                                                                                                                                                                                                                                                    | no                 |
-| `NEXT_PUBLIC_GA_ID`                 | GA4 measurement id. Analytics is skipped if unset.                                                                                                                                                                                                                                                          | no                 |
-| `NEXT_PUBLIC_GSC_VERIFICATION`      | Google Search Console meta verification token.                                                                                                                                                                                                                                                              | no                 |
+| Variable                       | Purpose                                                                                                                                                            | Required |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| `NEXT_PUBLIC_SITE_URL`         | **Override only.** The canonical origin is the constant `CANONICAL_ORIGIN` in `lib/site-url.ts`, because the site has exactly one and always did. Set this to point a build at another origin, which is what the local audits do with `http://localhost:3100`. Leave it unset in production and on the hosting project. | no       |
+| `RESEND_API_KEY`               | Contact form email. **The form degrades gracefully if missing.**                                                                                                    | no       |
+| `CONTACT_TO_EMAIL`             | Where contact submissions are delivered.                                                                                                                            | no       |
+| `NEXT_PUBLIC_GA_ID`            | GA4 measurement id. Analytics is skipped if unset.                                                                                                                  | no       |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console meta verification token.                                                                                                                      | no       |
+
+**A build needs no credentials.** That is the point of the static content model: there is no token to forget, and therefore no way to produce a complete site with nothing on it.
 
 ---
 
 ## 12. Open questions for the client
 
-**Blocking before Phase 3.** Until answered, use the "site value" column and mark the field `TODO(client)` in Sanity.
+**Blocking before Phase 3.** Until answered, use the "site value" column and mark the field `TODO(client)` where it lives.
 
 | #      | Question                                                                                                                                                                                                                                      | Site value in use until confirmed                                                                                                                   |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1037,6 +1040,7 @@ Consistent off-site data is what makes the entity resolve in Google's and the an
 | 4     | Programmatic: `/repair/[brand]`, `/repair/[brand]/[model]`, the `/repair-prices` refactor, the duplicate-content detector                 | complete |
 | 5     | Service hubs (Tier 2) and repair-type pages (Tier 3) with real long-form copy, the URL revision, and the FAQ scoping rule                 | complete |
 | 6     | Local (Tier 5) and place (Tier 6) pages, the local-fact rule, fact concentration, and the staging noindex fix                             | complete |
+| 6.95  | **Remove the backend.** Six Sanity types become TypeScript constants; the Studio, the webhook, draft mode and the CMS scripts are deleted | complete |
 | 7     | Guides (Tier 7), minimum 1,200 words each                                                                                                 | pending  |
 | 8     | SEO finishing: sitemap, robots, llms.txt, OG images, HTML sitemap, redirects, 404, link audit, Rich Results, Lighthouse 95+               | pending  |
 | 9     | Handover documentation and the off-site GEO action list                                                                                   | pending  |
@@ -1053,12 +1057,35 @@ Consistent off-site data is what makes the entity resolve in Google's and the an
 - `"use client"` only for: `Nav` (scroll state and mobile sheet), `StickyCallBar` (scroll threshold), `FaqAccordion` (disclosure state), `Reveal` (IntersectionObserver), `PriceTable` filters on `/repair-prices`, and form components.
 - Never put `"use client"` on a layout or a page.
 
+### Sizing a change before starting it
+
+**File count sizes a refactor. Error count sizes a decision job.**
+
+A survey that says "10 page files" describes the work as mechanical. A trial
+type strip plus `pnpm typecheck` says how many *decisions* those files contain,
+and a decision is not a line to delete: a price column becomes a turnaround
+column or the table loses a column and its header structure changes.
+
+The two numbers diverge badly. Ten files sounded like one session; the same
+change was 44 decisions across seven templates and was not.
+
+The check costs two minutes: strip the field from the type, run typecheck, count,
+revert. Do it before committing to a scope. It would have caught three
+consecutive under-calls in Phase 7a-ii and Phase 8.
+
+### Pages still needing composition work
+
+Sixteen content templates. Three carry no dark section at all and read as one
+continuous light field: `/contact`, `/privacy-policy`, `/terms`. Twelve carry
+exactly one. Home carries four regions after Phase 8 step 3. So **15 templates**
+need work to alternate surfaces hard, three of them from scratch. Its own phase.
+
 ### Naming
 
 - Components: `PascalCase.tsx`, one component per file, named export plus a default where it is a page.
 - Props interfaces: `ComponentNameProps`, declared above the component.
 - Utilities and hooks: `camelCase.ts`.
-- Sanity schema files: `camelCase.ts` matching the document `name`.
+- Content data files: `kebab-case.ts` under `content/data/`, one per type.
 - GROQ queries: `SCREAMING_SNAKE_CASE` constants ending in `_QUERY`.
 - CSS custom properties: `--tb-*` prefix, always.
 

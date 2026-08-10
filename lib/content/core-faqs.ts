@@ -13,7 +13,6 @@
  */
 
 import type { PageFaq } from "@/lib/faq/scoping";
-import { formatPrice } from "@/lib/utils";
 
 export interface CoreFaqCtx {
   warrantyDays: number;
@@ -22,10 +21,6 @@ export interface CoreFaqCtx {
   modelCount: number;
   brandCount: number;
   repairTypeCount: number;
-  lowestPrice: number | null;
-  highestPrice: number | null;
-  unlockingPrice: number | null;
-  diagnosticsPrice: number | null;
   phone: string;
   street: string;
   city: string;
@@ -55,10 +50,7 @@ export function homeFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How much do repairs at TechBrotherz cost?",
-      answer:
-        c.lowestPrice !== null && c.highestPrice !== null
-          ? `Published repair prices at TechBrotherz in Calgary run from ${formatPrice(c.lowestPrice)} to ${formatPrice(c.highestPrice)} depending on the device and the repair, and every price includes the part and the labour together. Computer diagnostics cost ${formatPrice(c.diagnosticsPrice)} and come off the repair, and carrier unlocking is ${formatPrice(c.unlockingPrice)}.`
-          : `TechBrotherz in Calgary publishes a price for every repair in its catalogue, with the part and the labour included together. Phone ${c.phone} with your device model for a firm figure.`,
+      answer: `Every repair at TechBrotherz in Calgary is quoted at the counter, free of charge, before any work starts, and the quote covers the part and the labour together. What a repair comes to follows the part the device takes, which is why an older handset and a current one are not the same job. Phone ${c.phone} with your device model for a firm figure.`,
     },
     {
       question: "Can TechBrotherz fix my phone the same day?",
@@ -71,7 +63,7 @@ export function servicesFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "How many different repairs does TechBrotherz offer?",
-      answer: `TechBrotherz in Calgary carries out ${c.repairTypeCount} kinds of device repair across phones, tablets and laptops, alongside flat-priced computer work: diagnostics at ${formatPrice(c.diagnosticsPrice)}, Windows installation, clean-ups, virus removal and password resets. Carrier unlocking is ${formatPrice(c.unlockingPrice)} for any Canadian carrier.`,
+      answer: `TechBrotherz in Calgary carries out ${c.repairTypeCount} kinds of device repair across phones, tablets and laptops, alongside computer work quoted per job: diagnostics, Windows installation, clean-ups, virus removal and password resets. Carrier unlocking covers any Canadian carrier.`,
     },
     {
       question: "What is included in a TechBrotherz repair price?",
@@ -87,15 +79,12 @@ export function servicesFaqs(c: CoreFaqCtx): PageFaq[] {
 export function pricesFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
-      question: "How many devices does TechBrotherz publish repair prices for?",
-      answer: `TechBrotherz in Calgary publishes repair prices for ${c.modelCount} device models across ${c.brandCount} brands, each listed with its own figures rather than a single blanket rate. Every published price includes the part and the labour together.`,
+      question: "How many devices does TechBrotherz repair?",
+      answer: `TechBrotherz in Calgary repairs ${c.modelCount} device models across ${c.brandCount} brands, each listed with its own figures rather than a single blanket rate. Every published price includes the part and the labour together.`,
     },
     {
       question: "What is the cheapest repair on this price list?",
-      answer:
-        c.lowestPrice !== null
-          ? `The lowest published repair price at TechBrotherz in Calgary is ${formatPrice(c.lowestPrice)}, and the highest is ${formatPrice(c.highestPrice)}. The spread is driven by what the replacement part costs, which is why an older handset is cheaper to repair than a current one.`
-          : `TechBrotherz quotes repairs at the counter where no price is published, because the part is ordered in. Phone ${c.phone} with your model for a firm figure.`,
+      answer: `A battery on an older handset is usually the smallest job TechBrotherz in Calgary does, and a bonded curved screen on a recent flagship the largest. The spread is driven by what the replacement part costs, which is why an older handset is cheaper to repair than a current one. Phone ${c.phone} with your model and the figure is free.`,
     },
     {
       question: "How current is this repair price list?",
@@ -133,7 +122,7 @@ export function aboutFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How does TechBrotherz price its repairs?",
-      answer: `TechBrotherz prices repairs per device model rather than at a flat rate, because the replacement part is the largest part of the cost and it differs sharply between an older handset and a current one. Published prices run from ${formatPrice(c.lowestPrice)} upward, and every one includes the part and the labour.`,
+      answer: `TechBrotherz quotes repairs per device model rather than at a flat rate, because the replacement part is the largest part of the cost and it differs sharply between an older handset and a current one. Every quote includes the part and the labour, and it is given at the counter before any work starts.`,
     },
   ];
 }

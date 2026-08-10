@@ -9,7 +9,7 @@ import { PillButton } from "@/components/primitives/PillButton";
 import { Section } from "@/components/primitives/Section";
 import { MODEL_ROUTES_BUILT } from "@/lib/routes";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { getModelSearchIndex } from "@/sanity/queries";
+import { getModelSearchIndex } from "@/lib/data";
 
 /**
  * The 404.
@@ -41,7 +41,7 @@ export default async function NotFound() {
               </Heading>
 
               <div className="mt-9 flex flex-wrap gap-3">
-                <PillButton href="/repair-prices">See every repair price</PillButton>
+                <PillButton href="/contact">How quoting works</PillButton>
                 <PillButton href={TEL_HREF} variant="ghost" withArrow={false}>
                   Call {SITE.phone}
                 </PillButton>
@@ -55,7 +55,7 @@ export default async function NotFound() {
                 <h2 className="type-h3 text-tb-text">Where to go instead</h2>
                 <ul className="type-body divide-tb-border mt-4 divide-y">
                   {[
-                    { href: "/repair-prices", label: "Every repair price, by brand and model" },
+                    { href: "/contact", label: "How quoting works and what to bring" },
                     { href: "/services", label: "All repair services we offer" },
                     { href: "/faq", label: "Frequently asked questions" },
                     { href: "/warranty", label: "Our 60-day warranty" },

@@ -11,7 +11,7 @@ export interface ChipProps {
 }
 
 const VARIANT_STYLES: Record<ChipVariant, string> = {
-  soft: "bg-tb-green-soft text-tb-green-deep",
+  soft: "bg-tb-paper-2 text-tb-green-deep",
   solid: "bg-tb-green text-tb-ink",
   dark: "bg-tb-ink-2 text-tb-silver",
 };

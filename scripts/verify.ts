@@ -41,12 +41,6 @@ const CHECKS: Check[] = [
     why: "Open-now answers must not depend on the server's or the visitor's zone.",
   },
   {
-    name: "write-guard",
-    script: "scripts/test-write-guard.ts",
-    needsServer: false,
-    why: "Only the factory can build a write client, so production cannot be written by accident.",
-  },
-  {
     name: "local-facts",
     script: "scripts/audit-local-facts.ts",
     needsServer: false,
@@ -118,12 +112,13 @@ const CHECKS: Check[] = [
     needsServer: true,
     why: "Hydration warnings, axe violations, and the contact form's four paths.",
   },
-  {
-    name: "determinism",
-    script: "scripts/test-build-determinism.ts",
-    needsServer: true,
-    why: "A build must reflect current content. Phase 4 shipped one that did not.",
-  },
+  /*
+   * The determinism check retired with the dataset. It existed because Next
+   * persisted Sanity fetch results in .next/cache between builds, so a rebuild
+   * after a content change could silently serve the old content and still
+   * report success. Content is compiled in now: a build either has it or does
+   * not compile, and there is no fetch cache to go stale.
+   */
 ];
 
 function run(check: Check): boolean {

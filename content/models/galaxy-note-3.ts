@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-3-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 3 is the one with the stitched faux-leather back, and it used the wide USB 3.0 connector that Samsung fitted to only a handful of phones. That connector is the single most common reason a Note 3 comes to the TechBrotherz counter, and it is the one repair on our list for this model at $49.99."
+          "text": "The Galaxy Note 3 is the one with the stitched faux-leather back, and it used the wide USB 3.0 connector that Samsung fitted to only a handful of phones. That connector is the single most common reason a Note 3 comes to the TechBrotherz counter, and it is the one repair still worth doing on this model."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Charging port only. The Note 3 stopped at Android 5, over a decade ago. A $49.99 port replacement on a phone someone is keeping for a specific reason is fine. Beyond that, this is a handset at the end of its life and we will say so rather than quote a screen."
+          "text": "Charging port only. The Note 3 stopped at Android 5, over a decade ago. A port replacement on a phone someone is keeping for a specific reason is fine. Beyond that, this is a handset at the end of its life and we will say so rather than quote a screen."
         }
       ],
       "markDefs": [],

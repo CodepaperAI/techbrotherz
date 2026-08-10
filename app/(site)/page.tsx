@@ -3,26 +3,19 @@ import path from "node:path";
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  Clock,
-  DoorOpen,
-  Laptop,
-  Monitor,
-  ShieldCheck,
-  Smartphone,
-  Tablet,
-  Unlock,
-  KeyRound,
-  Wrench,
-} from "lucide-react";
+import { Clock, DoorOpen, ShieldCheck, Wrench } from "lucide-react";
 
+import { BenefitStrip } from "@/components/blocks/BenefitStrip";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
+import { Ticker } from "@/components/blocks/Ticker";
+import { Tile, TileGrid } from "@/components/blocks/Tile";
 import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { PageShell } from "@/components/blocks/PageShell";
+import { ServiceCard } from "@/components/blocks/ServiceCard";
+import type { RepairSubject } from "@/components/blocks/RepairIllustration";
 import { SplitBlock } from "@/components/blocks/SplitBlock";
 import { StepCard } from "@/components/blocks/StepCard";
-import { TrustStrip } from "@/components/blocks/TrustStrip";
 import { Card } from "@/components/primitives/Card";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
@@ -37,14 +30,29 @@ import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatMinutes, formatPrice } from "@/lib/utils";
-import {
-  getAllPricedModels,
-  getBrands,
-  getGlobalFaqs,
-  getReviewSummary,
-  getSiteSettings,
-} from "@/sanity/queries";
+import { getBrands, getGlobalFaqs, getReviewSummary, getSiteSettings } from "@/lib/data";
+
+/**
+ * The areas named on the Calgary location record, rendered as tiles.
+ *
+ * Only Forest Lawn carries a link, because it is the one neighbourhood that
+ * cleared the Phase 6 four-distinct-fact rule and earned a URL. The others are
+ * places the shop genuinely serves and can name honestly, without a page
+ * pretending to say more about them than we have verified.
+ */
+const CALGARY_AREAS: { name: string; href?: string }[] = [
+  { name: "Forest Lawn", href: "/locations/calgary/forest-lawn" },
+  { name: "Albert Park" },
+  { name: "Radisson Heights" },
+  { name: "Dover" },
+  { name: "Southview" },
+  { name: "Erin Woods" },
+  { name: "Penbrooke Meadows" },
+  { name: "Inglewood" },
+  { name: "Ogden" },
+  { name: "Marlborough" },
+  { name: "Downtown Calgary" },
+];
 
 export const revalidate = 3600;
 
@@ -57,87 +65,100 @@ export const metadata: Metadata = buildMetadata({
   path: PATH,
 });
 
-const SERVICE_CARDS = [
+/**
+ * The one entry point into the repair journey.
+ *
+ * There used to be two sections here doing the same job: a four-card photo grid
+ * asking "which device needs fixing?" and this six-card grid asking "what can we
+ * fix for you?". Both linked to the same service hubs, so the page asked a
+ * visitor to choose a device twice. The photographs were the better half and the
+ * icon wells were the weaker, so the photographs moved into this grid and the
+ * device section went.
+ *
+ * Every card carries a photograph. The last two were drawn until the client
+ * supplied originals for them: the stand-ins had been a second crop of the
+ * frame `service-tablet-repair` uses, which put two crops of one photograph in
+ * this grid, and a laptop being opened with a screwdriver, which is not what a
+ * password reset involves. Both slots now hold the supplied images, on their
+ * hub pages too.
+ *
+ * The `illustration` on each card is still the fallback when public/demo/ is
+ * absent, which is what keeps the demo set from being load-bearing. The frame
+ * is identical either way: see components/blocks/ServiceCard.tsx.
+ *
+ * `service-password-reset` is the one image in the set that does not meet
+ * CLAUDE.md Section 8.9, because the wordmark is the dominant element on a
+ * plain background. The client was shown that position and chose the image.
+ * It is recorded in IMAGE_EDITS so the decision is auditable rather than
+ * silent.
+ */
+const SERVICE_CARDS: {
+  title: string;
+  description: string;
+  href: string;
+  image?: string;
+  illustration: RepairSubject;
+}[] = [
   {
-    icon: Smartphone,
     title: "Phone repair",
     description:
       "Screens, batteries, charging ports and cameras on iPhone, Samsung, LG, Motorola and HTC. Most take about 30 minutes.",
     href: "/services/phone-repair",
+    image: "service-phone-repair",
+    illustration: "screen",
   },
   {
-    icon: Tablet,
     title: "iPad and tablet repair",
     description:
-      "Cracked iPad glass from $69.99. On older iPads the glass alone can be replaced, which costs far less than a full screen.",
-    href: "/services/ipad-repair",
+      "Cracked iPad glass, batteries and charging ports. On older iPads the glass alone can be replaced, which is a much smaller job than a full screen.",
+    href: "/services/tablet-repair",
+    image: "service-tablet-repair",
+    illustration: "screen",
   },
   {
-    icon: Laptop,
     title: "Laptop repair",
     description:
-      "Screen replacement from $120, charging port at $109.99, keyboards between $69.99 and $149.99. Usually ready the same day.",
+      "Screens, charging sockets and keyboards on laptops of every make. Usually ready the same day.",
     href: "/services/laptop-repair",
+    image: "service-laptop-repair",
+    illustration: "keyboard",
   },
   {
-    icon: Monitor,
     title: "Computer repair",
     description:
-      "Diagnostics at $24.99, virus removal at $34.99, and a full clean-up and tune-up at $79.99 including dust removal.",
+      "Diagnostics, virus removal, and a full clean-up and tune-up including dust removal.",
     href: "/services/computer-repair",
+    image: "service-computer-repair",
+    illustration: "board",
   },
   {
-    icon: Unlock,
     title: "Carrier unlocking",
     description:
-      "Any Canadian carrier unlocked for $35, usually the same day. Unlocking does not erase your data.",
+      "Any Canadian carrier unlocked, usually the same day. Unlocking does not erase your data.",
     href: "/services/phone-unlocking",
+    image: "service-phone-unlocking",
+    illustration: "sim",
   },
   {
-    icon: KeyRound,
     title: "Password reset",
     description:
-      "A locked Windows account reset for $49.99, with the files on the machine left exactly where they are.",
+      "A locked Windows account reset, with the files on the machine left exactly where they are.",
     href: "/services/password-reset",
+    image: "service-password-reset",
+    illustration: "lock",
   },
 ];
 
 export default async function HomePage() {
-  const [settings, reviews, brands, models, faqs] = await Promise.all([
+  const [settings, reviews, brands, faqs] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
     getBrands(),
-    getAllPricedModels(),
     getGlobalFaqs(8),
   ]);
 
   const warrantyDays = settings?.warrantyDays ?? 60;
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
-
-  /**
-   * The teaser pulls the eight cheapest priced screen and battery repairs
-   * across iPhone and Samsung, straight from the catalogue. Nothing here is
-   * typed into the copy, so it cannot go stale when a price changes.
-   */
-  const teaser = models
-    .filter((model) => model.brandSlug === "apple-iphone" || model.brandSlug === "samsung-galaxy")
-    .flatMap((model) =>
-      (model.prices ?? [])
-        .filter(
-          (entry) =>
-            typeof entry.price === "number" &&
-            ["screen-replacement", "battery-replacement"].includes(entry.repair?.slug ?? ""),
-        )
-        .map((entry) => ({
-          model: model.name ?? "",
-          modelSlug: model.slug ?? "",
-          repair: entry.repair?.name ?? "",
-          price: entry.price as number,
-          minutes: entry.turnaroundMinutes ?? entry.repair?.estimatedMinutes ?? null,
-        })),
-    )
-    .sort((a, b) => a.price - b.price)
-    .slice(0, 8);
 
   const activeBrands = brands.filter((brand) => (brand.modelCount ?? 0) > 0);
 
@@ -217,7 +238,7 @@ export default async function HomePage() {
       }
       heroActions={
         <>
-          <PillButton href="/repair-prices">See repair prices</PillButton>
+          <PillButton href="/contact">Ask for a quote</PillButton>
           <PillButton href={TEL_HREF} variant="ghostOnDark" withArrow={false}>
             Call {SITE.phone}
           </PillButton>
@@ -225,7 +246,7 @@ export default async function HomePage() {
       }
       heroImage={heroImage}
       answerBox={{
-        answer: `TechBrotherz is a walk-in cell phone and computer repair shop at ${SITE.street} in Calgary. iPhone screen replacements start at $44.99 and Samsung Galaxy screens at $149.99, both including the part and the labour. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a walk-in cell phone and computer repair shop at ${SITE.street} in Calgary. Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           { label: "Phone", value: SITE.phone },
@@ -237,13 +258,19 @@ export default async function HomePage() {
       }}
       schema={schema}
     >
-      {/* ---------------------------------------------------- trust strip */}
-      <Section className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="why-techbrotherz">
+      {/* ------------------------------------------- ticker + benefit strip
+          Phase 8 spec section 6: the ticker sits directly under the hero and
+          the benefit strip follows it. Both are full bleed, so the page breaks
+          to black twice before the first light section rather than running as
+          one continuous field. The TrustStrip that used to sit here carried the
+          same four facts, so it is replaced rather than stacked above them. */}
+      <Ticker />
+      <section aria-labelledby="why-techbrotherz">
         <h2 id="why-techbrotherz" className="sr-only">
           Why customers choose TechBrotherz
         </h2>
-        <TrustStrip />
-      </Section>
+        <BenefitStrip />
+      </section>
 
       {/* ------------------------------------------------------ icon cards */}
       <Section variant="tint" aria-labelledby="how-it-works-heading">
@@ -251,7 +278,6 @@ export default async function HomePage() {
           level={2}
           id="how-it-works-heading"
           eyebrow="Why us"
-          align="centre"
           lead="Four things that are true of every repair TechBrotherz does in Calgary, and that you can hold us to."
         >
           What you get on every repair
@@ -282,13 +308,15 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* -------------------------------------------------------- services */}
+      {/* -------------------------------------------------------- services
+          The single entry point into the repair journey. See SERVICE_CARDS
+          above for why the device grid that used to sit above the ticker is
+          gone and its photographs are here. */}
       <Section aria-labelledby="services-heading">
         <Heading
           level={2}
           id="services-heading"
           eyebrow="Services"
-          align="centre"
           lead="TechBrotherz repairs phones, tablets, laptops and desktop computers, and unlocks phones for any Canadian carrier."
         >
           What can we fix for you?
@@ -296,13 +324,15 @@ export default async function HomePage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICE_CARDS.map((card) => (
-            <IconCard
+            <ServiceCard
               key={card.title}
-              icon={card.icon}
               title={card.title}
               description={card.description}
+              image={card.image}
+              illustration={card.illustration}
+              sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
               {...(shouldRenderLink(card.href)
-                ? { link: { label: `${card.title} details and prices`, href: card.href } }
+                ? { link: { label: `${card.title} details`, href: card.href } }
                 : {})}
             />
           ))}
@@ -321,7 +351,6 @@ export default async function HomePage() {
           level={2}
           id="process-heading"
           eyebrow="How it works"
-          align="centre"
           lead="Three steps, no booking system, and a firm price before any work starts."
         >
           How does a repair at TechBrotherz work?
@@ -340,7 +369,7 @@ export default async function HomePage() {
             illustration="board"
             step={2}
             title="We diagnose and quote"
-            description="We test the device and give you the exact price before any work starts. Computer diagnostics are $24.99."
+            description="We test the device and give you the exact figure before any work starts. The quote is free."
           />
           <StepCard
             {...stepImage("home-process-3")}
@@ -352,74 +381,12 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* --------------------------------------------------- price teaser */}
-      <Section aria-labelledby="popular-prices-heading">
-        <Heading
-          level={2}
-          id="popular-prices-heading"
-          eyebrow="Prices"
-          lead="These are the eight cheapest screen and battery repairs in the TechBrotherz catalogue right now. Every price includes the part and the labour."
-        >
-          How much do the most common repairs cost?
-        </Heading>
-
-        <div className="border-tb-border bg-tb-white rounded-card mt-10 overflow-x-auto border">
-          <table className="tabular w-full min-w-[34rem] border-collapse text-left">
-            <caption className="sr-only-caption">
-              The eight cheapest iPhone and Samsung screen and battery repairs at TechBrotherz in
-              Calgary
-            </caption>
-            <thead>
-              <tr className="bg-tb-green-soft">
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Device
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Repair
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3 md:text-right">
-                  Price (CAD)
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Typical time
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {teaser.map((row) => (
-                <tr key={`${row.modelSlug}-${row.repair}`} className="border-tb-border border-t">
-                  <th scope="row" className="text-tb-text px-6 py-3.5 text-left font-normal">
-                    {row.model}
-                  </th>
-                  <td className="text-tb-muted px-6 py-3.5">{row.repair}</td>
-                  <td className="text-tb-text px-6 py-3.5 font-medium md:text-right">
-                    {formatPrice(row.price)}
-                  </td>
-                  <td className="text-tb-muted px-6 py-3.5">
-                    {formatMinutes(row.minutes) ?? `About ${waitMinutes} minutes`}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="type-caption text-tb-muted mt-4">
-          {settings?.priceDisclaimer ?? SITE.priceDisclaimer}
-        </p>
-
-        <div className="mt-8">
-          <PillButton href="/repair-prices">See every repair price</PillButton>
-        </div>
-      </Section>
-
       {/* --------------------------------------------------- brand strip */}
       <Section variant="tint" aria-labelledby="brands-heading">
         <Heading
           level={2}
           id="brands-heading"
           eyebrow="Brands"
-          align="centre"
           lead="TechBrotherz repairs devices from every major brand sold in Canada, including phones that most shops have stopped stocking parts for."
         >
           Which brands do we repair?
@@ -440,7 +407,6 @@ export default async function HomePage() {
                   silhouette={BRAND_SILHOUETTE[brand.slug ?? ""] ?? "phone"}
                   range={brandRange(brand.oldestModel, brand.newestModel)}
                   modelCount={brand.modelCount}
-                  fromPrice={formatPrice(brand.fromPrice)}
                   linked={shouldRenderLink(href)}
                 />
               </li>
@@ -464,7 +430,7 @@ export default async function HomePage() {
             "Every price includes the part and the labour",
             `${warrantyDays}-day warranty on the part and the workmanship`,
           ]}
-          cta={{ label: "See repair prices", href: "/repair-prices" }}
+          cta={{ label: "Ask for a quote", href: "/contact" }}
           {...splitImage("home-split-individuals")}
         />
 
@@ -475,8 +441,8 @@ export default async function HomePage() {
           heading="Fleets of laptops and phones, kept working"
           lead="Small businesses across southeast Calgary use TechBrotherz for repairs, Windows installs and clean-ups on staff devices."
           checklist={[
-            "Windows installation at $44.99 including Office and security",
-            "Desktop clean-up and tune-up at $79.99 per machine",
+            "Windows installation including Office and security",
+            "Desktop clean-up and tune-up, quoted per machine",
             "Walk in with several devices, no appointment needed",
           ]}
           cta={{ label: "Talk to us about business repairs", href: "/contact" }}
@@ -490,12 +456,26 @@ export default async function HomePage() {
           level={2}
           id="location-heading"
           eyebrow="Find us"
-          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in the Forest Lawn area of southeast Calgary. Street parking runs along 17 Avenue SE outside the shop.`}
+          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in southeast Calgary a few blocks west of Forest Lawn. Street parking runs along 17 Avenue SE outside the shop.`}
         >
           Where is TechBrotherz in Calgary?
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
+
+        {/* Neighbourhood tiles, per Phase 8 spec section 6. Every name is one
+            already listed on the Calgary location record, so this adds coverage
+            the site already claims rather than a new claim. Only Forest Lawn has
+            earned a page of its own under the Phase 6 four-fact rule, so it is
+            the only tile that links; the rest are plain rows. */}
+        <h3 className="type-h3 text-tb-ink mt-12">Areas we serve in southeast Calgary</h3>
+        <TileGrid className="mt-5">
+          {CALGARY_AREAS.map((area) => (
+            <Tile key={area.name} href={area.href}>
+              {area.name}
+            </Tile>
+          ))}
+        </TileGrid>
 
         <p className="type-body measure text-tb-muted mt-8">
           We serve {SITE.city}, Chestermere, Airdrie and the surrounding Alberta communities. See{" "}
@@ -560,8 +540,8 @@ export default async function HomePage() {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See repair prices
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

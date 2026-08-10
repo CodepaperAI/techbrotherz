@@ -62,7 +62,7 @@ function main() {
 
   for (const image of rows) {
     lines.push(
-      `| \`${image.slot}\` | \`${image.file}\` | ${image.ratio} | ${sizeOf(image.file)} | ${image.photographer} | [Unsplash](${image.sourceUrl}) | ${image.alt} | ${IMAGE_EDITS[image.slot] ?? "Crop and resize only"} |`,
+      `| \`${image.slot}\` | \`${image.file}\` | ${image.ratio} | ${sizeOf(image.file)} | ${image.photographer} | ${image.sourceUrl ? `[${image.sourceLabel}](${image.sourceUrl})` : image.sourceLabel} | ${image.alt} | ${IMAGE_EDITS[image.slot] ?? "Crop and resize only"} |`,
     );
   }
 

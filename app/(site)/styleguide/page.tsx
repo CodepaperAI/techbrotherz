@@ -7,11 +7,11 @@ import { FaqAccordion } from "@/components/blocks/FaqAccordion";
 import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { ModelGrid } from "@/components/blocks/ModelGrid";
-import { PriceTable } from "@/components/blocks/PriceTable";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { SplitBlock } from "@/components/blocks/SplitBlock";
 import { StepCard } from "@/components/blocks/StepCard";
 import { TrustStrip } from "@/components/blocks/TrustStrip";
+import { StyleguidePhase8 } from "@/components/blocks/StyleguidePhase8";
 import { Reveal } from "@/components/motion/Reveal";
 import { Card } from "@/components/primitives/Card";
 import { Chip } from "@/components/primitives/Chip";
@@ -53,9 +53,9 @@ const COLOUR_TOKENS = [
     note: "Button hover and pressed.",
   },
   {
-    name: "--tb-green-soft",
+    name: "--tb-paper-2",
     hex: "#E9F7ED",
-    swatch: "bg-tb-green-soft",
+    swatch: "bg-tb-paper-2",
     note: "Tinted sections and chips.",
   },
   {
@@ -70,7 +70,7 @@ const COLOUR_TOKENS = [
     swatch: "bg-tb-ink-2",
     note: "Elevated surface inside dark sections.",
   },
-  { name: "--tb-cream", hex: "#F6F5F1", swatch: "bg-tb-cream", note: "Page background." },
+  { name: "--tb-paper", hex: "#FAFAF8", swatch: "bg-tb-paper", note: "Page background." },
   { name: "--tb-white", hex: "#FFFFFF", swatch: "bg-tb-white", note: "Cards." },
   {
     name: "--tb-silver",
@@ -131,30 +131,10 @@ const SHADOWS = [
 
 /* ------------------------------------------------------- sample block data */
 
-const SAMPLE_PRICE_ROWS = [
-  { repair: "Screen / LCD replacement", price: 109.99, turnaroundMinutes: 30 },
-  { repair: "Battery replacement", price: null, quoteOnly: true, turnaroundMinutes: 30 },
-  { repair: "Charging port replacement", price: null, quoteOnly: true, turnaroundMinutes: 60 },
-  { repair: "Back housing replacement", price: null, quoteOnly: true, turnaroundMinutes: 90 },
-];
-
-const SAMPLE_FLAT_ROWS = [
-  {
-    repair: "Windows installation",
-    price: 44.99,
-    note: "Includes Microsoft Office and security software",
-    turnaroundMinutes: 120,
-  },
-  { repair: "Virus removal", price: 34.99, turnaroundMinutes: 120 },
-  { repair: "Diagnostics", price: 24.99, turnaroundMinutes: 60 },
-  { repair: "Laptop screen replacement", price: 120, from: true, turnaroundMinutes: 90 },
-  { repair: "Laptop keyboard replacement", price: 69.99, priceTo: 149.99, turnaroundMinutes: 90 },
-];
-
 const SAMPLE_MODELS = [
-  { name: "iPhone 8 Plus", href: "/repair/apple-iphone/iphone-8-plus", fromPrice: 109.99 },
-  { name: "iPhone 8", href: "/repair/apple-iphone/iphone-8", fromPrice: 89.99 },
-  { name: "iPhone 7 Plus", href: "/repair/apple-iphone/iphone-7-plus", fromPrice: 99.99 },
+  { name: "iPhone 8 Plus", href: "/repair/apple-iphone/iphone-8-plus" },
+  { name: "iPhone 8", href: "/repair/apple-iphone/iphone-8" },
+  { name: "iPhone 7 Plus", href: "/repair/apple-iphone/iphone-7-plus" },
   { name: "iPhone 13", href: "/repair/apple-iphone/iphone-13", fromPrice: null },
 ];
 
@@ -181,6 +161,8 @@ const SAMPLE_FAQS = [
 export default function StyleguidePage() {
   return (
     <>
+      <StyleguidePhase8 />
+
       <Section className="pt-10 md:pt-14">
         <Breadcrumbs items={[{ label: "Design system" }]} className="mb-8" />
 
@@ -252,7 +234,7 @@ export default function StyleguidePage() {
           <div>
             <p className="type-caption text-tb-muted">.tabular, used in every price column</p>
             <p className="tabular mt-2 text-2xl font-medium">
-              $109.99 Â· $84.99 Â· $44.99 Â· $499.99
+              Free quote Â· Free quote Â· Free quote Â· Free quote
             </p>
           </div>
         </div>
@@ -306,7 +288,7 @@ export default function StyleguidePage() {
         </Heading>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <PillButton href="/repair-prices">Primary</PillButton>
+          <PillButton href="/contact">Primary</PillButton>
           <PillButton href="/services" variant="ghost">
             Ghost
           </PillButton>
@@ -330,7 +312,7 @@ export default function StyleguidePage() {
         <div data-surface="dark" className="rounded-panel bg-tb-ink mt-10 p-8">
           <Eyebrow className="mb-5">On dark</Eyebrow>
           <div className="flex flex-wrap items-center gap-3">
-            <PillButton href="/repair-prices">Primary</PillButton>
+            <PillButton href="/contact">Primary</PillButton>
             <PillButton href="/services" variant="ghostOnDark">
               Ghost on dark
             </PillButton>
@@ -351,9 +333,9 @@ export default function StyleguidePage() {
 
         <AnswerBox
           className="mt-10"
-          answer="TechBrotherz in Calgary charges $109.99 to replace an iPhone 8 Plus screen, and that price includes the part and the labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
+          answer="TechBrotherz in Calgary charges Free quote to replace an iPhone 8 Plus screen, and that price includes the part and the labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
           keyFacts={[
-            { label: "Price", value: "$109.99 CAD, part and labour included" },
+            { label: "Price", value: "Free quote CAD, part and labour included" },
             { label: "Time", value: "About 30 minutes, while you wait" },
             { label: "Warranty", value: "60 days on the part and the workmanship" },
             { label: "Appointment", value: "Not needed, walk in any day we are open" },
@@ -415,7 +397,7 @@ export default function StyleguidePage() {
           <StepCard
             step={2}
             title="We diagnose and quote"
-            description="We test the device and give you the exact price before any work starts. Diagnostics on computers are $24.99."
+            description="We test the device and give you the exact price before any work starts. Diagnostics on computers are Free quote."
           />
           <StepCard
             step={3}
@@ -441,7 +423,7 @@ export default function StyleguidePage() {
             "Every price includes the part and the labour",
             "60-day warranty on the part and the workmanship",
           ]}
-          cta={{ label: "See repair prices", href: "/repair-prices" }}
+          cta={{ label: "Ask for a quote", href: "/contact" }}
         />
 
         <SplitBlock
@@ -451,8 +433,8 @@ export default function StyleguidePage() {
           heading="Fleets of laptops and phones, kept working"
           lead="Small businesses across southeast Calgary use TechBrotherz for repairs, Windows installs and clean-ups on staff devices."
           checklist={[
-            "Windows installation at $44.99 including Office and security",
-            "Desktop clean-up and tune-up at $79.99 per machine",
+            "Windows installation at Free quote including Office and security",
+            "Desktop clean-up and tune-up at Free quote per machine",
             "Walk in with several devices, no appointment needed",
           ]}
           cta={{ label: "Talk to us about business repairs", href: "/contact" }}
@@ -470,21 +452,6 @@ export default function StyleguidePage() {
           PriceTable
         </Heading>
 
-        <PriceTable
-          className="mt-10"
-          caption="iPhone 8 Plus repair prices at TechBrotherz in Calgary"
-          captionVisible
-          rows={SAMPLE_PRICE_ROWS}
-        />
-
-        <PriceTable
-          className="mt-10"
-          caption="Computer and laptop service prices at TechBrotherz in Calgary"
-          captionVisible
-          itemLabel="Service"
-          rows={SAMPLE_FLAT_ROWS}
-          showWarranty={false}
-        />
 
         <h3 className="type-h3 mt-16">ModelGrid</h3>
         <ModelGrid className="mt-6" items={SAMPLE_MODELS} />
@@ -514,7 +481,7 @@ export default function StyleguidePage() {
                 href: "/repair/apple-iphone/iphone-7-plus",
               },
               { label: "iPhone 6S screen replacement", href: "/repair/apple-iphone/iphone-6s" },
-              { label: "All iPhone repair prices", href: "/repair/apple-iphone" },
+              { label: "All iPhone repair", href: "/repair/apple-iphone" },
             ]}
           />
         </div>
@@ -567,7 +534,7 @@ export default function StyleguidePage() {
         <TrustStrip className="mt-14" />
 
         <div className="mt-14 flex flex-wrap justify-center gap-3">
-          <PillButton href="/repair-prices">See repair prices</PillButton>
+          <PillButton href="/contact">Ask for a quote</PillButton>
           <PillButton href={TEL_HREF} variant="ghostOnDark" withArrow={false}>
             Call {SITE.phone}
           </PillButton>

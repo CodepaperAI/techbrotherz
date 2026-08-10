@@ -14,7 +14,6 @@ const BASE = process.argv[2] ?? "http://localhost:3100";
 const PAGES = [
   "/",
   "/services",
-  "/repair-prices",
   "/locations",
   "/faq",
   "/about",
@@ -346,32 +345,23 @@ async function main() {
     if (response.status !== 404) fail(page, `returned ${response.status}, expected 404`);
   }
 
-  /* --- price list depth -------------------------------------------- */
-  const pricesHtml = await (await fetch(`${BASE}/repair-prices`)).text();
-  const rowCount = (pricesHtml.match(/data-price-row=""/g) ?? []).length;
-  const tableCount = (pricesHtml.match(/<table\b/g) ?? []).length;
-  const callForQuote = (pricesHtml.match(/Call for quote/g) ?? []).length;
-  const bytes = Buffer.byteLength(pricesHtml, "utf8");
-
-  const ldMatch = /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i.exec(
-    pricesHtml,
-  );
-  const ldBytes = ldMatch ? Buffer.byteLength(ldMatch[1] ?? "", "utf8") : 0;
-
-  console.log("\n/repair-prices, as served with no JavaScript executed:");
-  console.log(`  price rows in the HTML : ${rowCount}`);
-  console.log(`  tables                 : ${tableCount}`);
-  console.log(`  "Call for quote" cells : ${callForQuote}`);
-  console.log(`  HTML weight            : ${(bytes / 1024).toFixed(1)} KB`);
-  console.log(
-    `  of which JSON-LD       : ${(ldBytes / 1024).toFixed(1)} KB (${Math.round(
-      (ldBytes / bytes) * 100,
-    )} percent)`,
-  );
-  console.log(`  markup weight          : ${((bytes - ldBytes) / 1024).toFixed(1)} KB`);
-
-  if (bytes > 500 * 1024) {
-    console.log("  NOTE: over the 500 KB threshold. Reporting rather than trimming rows.");
+  /* --- retired URLs -------------------------------------------------
+   *
+   * /repair-prices is not a 404 and not a page. It carried the whole price
+   * list, it is deleted, and next.config.ts 301s it to /contact. It was in
+   * PAGES above until that deletion, which made this audit report eight
+   * failures about a page that no longer exists: no h1, no canonical, no
+   * AnswerBox. Asserting the redirect is the check that is actually owed,
+   * because the URL had inbound links and a 301 into a 404 would be worse
+   * than the page it replaced.
+   */
+  console.log();
+  for (const [from, to] of [["/repair-prices", "/contact"]] as const) {
+    const response = await fetch(`${BASE}${from}`, { redirect: "manual" });
+    const target = response.headers.get("location");
+    const ok = (response.status === 301 || response.status === 308) && target === to;
+    console.log(`${from.padEnd(40)} -> ${response.status} ${target ?? ""} ${ok ? "ok" : "FAIL"}`);
+    if (!ok) fail(from, `expected a permanent redirect to ${to}, got ${response.status} ${target}`);
   }
 
   /* --- pending links must not appear in a production build --------- */

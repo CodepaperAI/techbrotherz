@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.lg-g2-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The LG G2 stopped at Android 5 more than a decade ago, and LG no longer makes phones or parts. A $110 screen on a handset of this age cannot be justified for normal use. TechBrotherz will do it if the phone matters to you for a particular reason, but we will say that first."
+          "text": "No. The LG G2 stopped at Android 5 more than a decade ago, and LG no longer makes phones or parts. A screen on a handset of this age cannot be justified for normal use. TechBrotherz will do it if the phone matters to you for a particular reason, but we will say that first."
         }
       ],
       "markDefs": [],

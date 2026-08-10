@@ -22,9 +22,9 @@ const unlockingCalgary: LocalDef = {
   slug: "phone-unlocking-calgary",
   h1: "Phone Unlocking in Calgary",
   eyebrow: "Calgary",
-  seoTitle: "Phone Unlocking Calgary | $35, Ask Your Carrier First",
+    seoTitle: "Phone Unlocking Calgary | Ask Your Carrier First",
   seoDescription:
-    "Phone unlocking in Calgary at TechBrotherz, 3317 17 Ave SE, $35 for any Canadian carrier. Since December 2017 carriers must unlock free on request. Usually same day.",
+        "Phone unlocking in Calgary at TechBrotherz, 3317 17 Ave SE, any Canadian carrier. Since December 2017 carriers must unlock free on request. Usually same day.",
   serviceType: "Phone unlocking",
   city: "Calgary",
   priceSource: { kind: "flat", flatSlugs: [] },
@@ -41,24 +41,24 @@ const unlockingCalgary: LocalDef = {
         "An unlock is a short visit, and 33 Street SE Station on the transitway is outside the door if you are coming by bus.",
     },
   ]),
-  lead: (c) =>
-    `${ENTITY}, unlocks phones from any Canadian carrier for ${c.price("unlocking")}, usually the same day. Before paying anyone, ask your own carrier: since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
-  answer: (c) =>
-    `TechBrotherz unlocks phones in Calgary for ${c.price("unlocking")}, any Canadian carrier, usually the same day, at 3317 17 Ave SE. Ask your carrier first: under the CRTC Wireless Code, every phone sold in Canada since 1 December 2017 must be provided unlocked, and carriers must unlock older phones free on request. Paid unlocking is for secondhand phones, imports, and accounts you no longer hold.`,
-  keyFacts: (c) => [
-    { label: "Price", value: `${c.price("unlocking")}, any Canadian carrier` },
+  lead: () =>
+    `${ENTITY}, unlocks phones from any Canadian carrier, usually the same day. Before paying anyone, ask your own carrier: since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
+  answer: () =>
+    `TechBrotherz unlocks phones in Calgary, any Canadian carrier, usually the same day, at 3317 17 Ave SE. Ask your carrier first: under the CRTC Wireless Code, every phone sold in Canada since 1 December 2017 must be provided unlocked, and carriers must unlock older phones free on request. Paid unlocking is for secondhand phones, imports, and accounts you no longer hold.`,
+  keyFacts: () => [
+    { label: "Carriers", value: "Any Canadian carrier" },
     { label: "Time", value: "Usually the same day" },
     { label: "Ask your carrier first", value: "They must do it free, by CRTC rule" },
     { label: "Bring", value: "The phone and its IMEI" },
     { label: "Blacklisted phones", value: "Cannot be unlocked, by anyone" },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Do you actually need to pay to unlock a phone in Calgary?",
       paragraphs: [
         "Often you do not, and TechBrotherz will tell you that before taking your money. Under the CRTC Wireless Code, as revised in Telecom Regulatory Policy CRTC 2017-200, every mobile device sold in Canada on or after 1 December 2017 must be provided already unlocked. For devices sold before that date, carriers must unlock them free of charge when asked.",
         "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier rather than to a repair shop. It costs nothing and it is your right. Anyone telling you otherwise is either misinformed or hoping you are.",
-        `Paid unlocking exists for the cases that rule does not reach: a phone bought secondhand from someone whose account you cannot access, a phone brought in from another country, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the situations where ${c.price("unlocking")} solves a problem a phone call cannot.`,
+        `Paid unlocking exists for the cases that rule does not reach: a phone bought secondhand from someone whose account you cannot access, a phone brought in from another country, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the situations where a paid unlock solves a problem a phone call cannot.`,
       ],
     },
     {
@@ -108,10 +108,10 @@ const unlockingCalgary: LocalDef = {
       body: "We check the IMEI before taking payment. A blacklisted phone cannot be unlocked by anyone, and finding out costs nothing.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does it cost to unlock a phone in Calgary?",
-      answer: `TechBrotherz in Calgary unlocks phones from any Canadian carrier for ${c.price("unlocking")}, usually the same day, at 3317 17 Ave SE. Before paying, ask your own carrier: under the CRTC Wireless Code they must unlock a phone on your account free of charge on request, and every phone sold in Canada since 1 December 2017 is already unlocked.`,
+      answer: `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day, at 3317 17 Ave SE. Before paying, ask your own carrier: under the CRTC Wireless Code they must unlock a phone on your account free of charge on request, and every phone sold in Canada since 1 December 2017 is already unlocked.`,
     },
     {
       question: "Why would I pay to unlock a phone if my carrier does it free?",
@@ -270,13 +270,13 @@ const chestermerePhones: LocalDef = {
         "Chestermere Boulevard is the western end of the same road: it becomes 17 Avenue SE at the Calgary city limit, and the shop is on it.",
     },
   ]),
-  lead: (c) =>
-    `${ENTITY}, repairs phones for Chestermere customers. The drive is the easy part: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the shop sits on the road you already use, with no highway and no turns. Screens start at ${c.price("phone-screen")}.`,
+  lead: () =>
+    `${ENTITY}, repairs phones for Chestermere customers. The drive is the easy part: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the shop sits on the road you already use, with no highway and no turns.`,
   answer: (c) =>
-    `TechBrotherz repairs phones for Chestermere customers at 3317 17 Ave SE in Calgary, with screens from ${c.price("phone-screen")} including the part and the labour. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so it is one road the whole way. Most repairs take about ${c.waitMinutes} minutes at the counter, no appointment needed, with a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz repairs phones for Chestermere customers at 3317 17 Ave SE in Calgary. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so it is one road the whole way. Most repairs take about ${c.waitMinutes} minutes at the counter, no appointment needed, with a ${c.warrantyDays}-day warranty and a free quote before any work starts.`,
   keyFacts: (c) => [
     { label: "The drive", value: "One road, Chestermere Blvd into 17 Ave SE" },
-    { label: "Screens from", value: `${c.price("phone-screen")}, part and labour` },
+    { label: "The drive", value: "One road, no highway and no turns" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes at the counter` },
     { label: "Appointment", value: "Not needed, walk in during opening hours" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
@@ -293,7 +293,7 @@ const chestermerePhones: LocalDef = {
     {
       heading: "What does a phone repair cost for Chestermere customers?",
       paragraphs: [
-        `Exactly the same as for anyone else. Screens start at ${c.price("phone-screen")} and batteries at ${c.price("phone-battery")}, with the part and the labour together in one figure, priced per model. There is no travel surcharge, no out-of-city rate and no difference in the warranty.`,
+        `Exactly the same as for anyone else. Every repair is quoted per model at the counter, with the part and the labour together in one figure. There is no travel surcharge, no out-of-city rate and no difference in the warranty.`,
         "Every price is published per model rather than quoted when you arrive, which is the point for someone travelling. You can check the figure for your exact handset before deciding whether the drive is worth it, rather than finding out at a counter twenty minutes from home.",
         `Every repair carries the same ${c.warrantyDays}-day warranty on the part and the workmanship. If something is not right afterwards, bring the phone back with the receipt, and that is worth knowing before committing to a repair that is not around the corner.`,
       ],
@@ -340,11 +340,11 @@ const chestermerePhones: LocalDef = {
   faqs: (c) => [
     {
       question: "Where can I get a phone repaired near Chestermere?",
-      answer: `TechBrotherz is at 3317 17 Ave SE in Calgary, on the road Chestermere residents already use: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit. Screens start at ${c.price("phone-screen")} including the part and the labour, and most repairs take about ${c.waitMinutes} minutes at the counter.`,
+      answer: `TechBrotherz is at 3317 17 Ave SE in Calgary, on the road Chestermere residents already use: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit. Most repairs take about ${c.waitMinutes} minutes at the counter, and the quote is free and given before any work starts.`,
     },
     {
       question: "Do Chestermere customers pay more for phone repair?",
-      answer: `No. TechBrotherz charges the same published prices regardless of where a customer travels from, starting at ${c.price("phone-screen")} for a screen. There is no travel surcharge and no out-of-city rate, and every repair carries the same ${c.warrantyDays}-day warranty.`,
+      answer: `No. TechBrotherz quotes the same figures regardless of where a customer travels from. There is no travel surcharge and no out-of-city rate, and every repair carries the same ${c.warrantyDays}-day warranty.`,
     },
     {
       question: "Should I call before driving in from Chestermere?",

@@ -83,8 +83,10 @@ async function main() {
       check("first Tab reaches the skip link", /skip to content/i.test(first.text), first.text);
       check("focused element has a visible focus ring", first.visibleOutline);
 
-      const nav = await tabTo(page, (_id, text) => /repair prices/i.test(text));
-      check("Tab reaches the Repair Prices nav link", nav !== null, nav?.text ?? "not reached");
+      // Was the Repair Prices nav link until that page was deleted. Services
+      // is the first content link in the header now.
+      const nav = await tabTo(page, (_id, text) => /^services$/i.test(text.trim()));
+      check("Tab reaches the Services nav link", nav !== null, nav?.text ?? "not reached");
 
       await page.close();
     }
@@ -175,42 +177,14 @@ async function main() {
       await page.close();
     }
 
-    /* -------------------------------------------------- price filter */
-    console.log("\nPrice list filter");
-    {
-      const page = await browser.newPage();
-      await page.setViewport({ width: 1280, height: 900 });
-      await page.goto(`${BASE}/repair-prices`, { waitUntil: "networkidle0", timeout: 90_000 });
-
-      await page.evaluate(() => document.querySelector<HTMLInputElement>("#price-search")?.focus());
-      const isFocused = await page.evaluate(() => document.activeElement?.id === "price-search");
-      check("the search box can take focus", isFocused);
-
-      await page.keyboard.type("iphone 8 plus");
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      const counts = await page.evaluate(() => ({
-        total: document.querySelectorAll("[data-price-row]").length,
-        visible: document.querySelectorAll('[data-price-row][data-hidden="false"]').length,
-        status: document.querySelector('[aria-live="polite"]')?.textContent ?? "",
-      }));
-
-      // Since the Phase 4 refactor a row is one model, not one repair, so the
-      // expected count is the published model total rather than the 344 price
-      // rows this page used to carry.
-      check(
-        "filtering hides rows without removing them from the DOM",
-        counts.total > counts.visible && counts.total >= 80,
-        `${counts.visible} of ${counts.total} visible`,
-      );
-      check(
-        "the result count is announced",
-        /Showing \d+ of \d+/.test(counts.status),
-        counts.status.trim(),
-      );
-
-      await page.close();
-    }
+    /* -------------------------------------------------- price filter
+     *
+     * Retired with /repair-prices. The block tested the search box, the
+     * row-hiding and the aria-live count on the price list's client-side
+     * filter, and PriceFilter and PriceTable are both deleted. It reported
+     * three failures against a page that 301s, which is noise standing in
+     * front of the checks that still mean something.
+     */
 
     /* ------------------------------------------------- contact form */
     console.log("\nContact form, keyboard only");

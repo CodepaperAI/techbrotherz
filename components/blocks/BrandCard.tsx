@@ -95,7 +95,7 @@ export function BrandCard({
   const body = (
     <>
       {/* The silhouette panel. Tint deepens on hover, per DESIGN.md. */}
-      <span className="rounded-image bg-tb-green-soft text-tb-green-deep group-hover:bg-tb-green/25 flex aspect-3/2 w-full items-center justify-center transition-colors duration-[180ms] ease-out">
+      <span className="rounded-image bg-tb-paper-2 text-tb-green-deep group-hover:bg-tb-green/25 flex aspect-3/2 w-full items-center justify-center transition-colors duration-[180ms] ease-out">
         <Silhouette kind={silhouette} />
       </span>
 

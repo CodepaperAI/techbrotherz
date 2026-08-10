@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s7-edge-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S7 Edge brought back water resistance and the microSD slot that the S6 had dropped, and its curved 5.5 inch display wraps further round the sides than any Galaxy before it. That curve is exactly where it breaks, and the screen and frame come as one bonded part at $269.99."
+          "text": "The Galaxy S7 Edge brought back water resistance and the microSD slot that the S6 had dropped, and its curved 5.5 inch display wraps further round the sides than any Galaxy before it. That curve is exactly where it breaks, and the screen and frame come as one bonded part."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s7-edge-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Galaxy S7 Edge stopped at Android 8, which means years without security updates, and a $269.99 screen is far more than the handset is worth in 2026. TechBrotherz will fit one on request, but we would be doing you a disservice not to say that the money is better spent on a newer phone."
+          "text": "No. The Galaxy S7 Edge stopped at Android 8, which means years without security updates, and a bonded curved screen is far more than the handset is worth in 2026. TechBrotherz will fit one on request, but we would be doing you a disservice not to say that the money is better spent on a newer phone."
         }
       ],
       "markDefs": [],

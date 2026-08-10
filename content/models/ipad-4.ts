@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-4-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad 4 was a mid-cycle refresh released only seven months after the iPad 3, and it was the first full-size iPad with a Lightning connector rather than the 30-pin dock. It shares its $69.99 glass price with the iPad 2 and 3, but not its port, and that difference catches people out when they bring the wrong cable."
+          "text": "The iPad 4 was a mid-cycle refresh released only seven months after the iPad 3, and it was the first full-size iPad with a Lightning connector rather than the 30-pin dock. It shares its glass price with the iPad 2 and 3, but not its port, and that difference catches people out when they bring the wrong cable."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal. The iPad 4 stopped at iPadOS 10 and is now more than a decade old, so app support is very limited. A $69.99 glass repair is cheap enough to be worth it for a tablet that is used for video or as a child's device, but this is not a tablet to invest in beyond that."
+          "text": "Marginal. The iPad 4 stopped at iPadOS 10 and is now more than a decade old, so app support is very limited. A glass repair is cheap enough to be worth it for a tablet that is used for video or as a child's device, but this is not a tablet to invest in beyond that."
         }
       ],
       "markDefs": [],

@@ -17,6 +17,7 @@ import { LOCAL_PAGES } from "../lib/content/local-pages";
 import { PLACES } from "../lib/content/places";
 import { REPAIRS } from "../lib/content/repairs";
 import { SERVICES } from "../lib/content/services";
+import { ROUTES } from "../lib/routes";
 
 const BASE = process.argv[2] ?? "http://localhost:3100";
 const MIN_OUTBOUND = 6;
@@ -75,27 +76,44 @@ function allInternalLinks(html: string): string[] {
 async function main() {
   console.log(`\nInternal link graph, ${BASE}\n`);
 
-  const priceHtml = await (await fetch(`${BASE}/repair-prices`)).text();
+  /*
+   * Both lists used to be scraped off /repair-prices, which carried every
+   * model in one table. That page is deleted and 301s to /contact, so the
+   * scrape silently returned nothing and this script reported on zero model
+   * pages while still printing a pass. A check that quietly stops checking is
+   * worse than no check.
+   *
+   * The brands come from the registry, which is the source of truth for what
+   * is built, and the models come from crawling each brand hub, which is the
+   * page that now carries the full catalogue.
+   */
+  const brandPaths = ROUTES.filter((entry) => entry.tier === "brand" && entry.status === "built")
+    .map((entry) => entry.path)
+    .sort();
+
   const modelPaths = [
     ...new Set(
-      Array.from(priceHtml.matchAll(/href="(\/repair\/[^"/]+\/[^"]+)"/g)).map(
-        (match) => match[1] as string,
-      ),
+      (
+        await Promise.all(
+          brandPaths.map(async (path) => {
+            const html = await (await fetch(`${BASE}${path}`)).text();
+            return Array.from(html.matchAll(/href="(\/repair\/[^"/]+\/[^"#?]+)"/g)).map(
+              (match) => match[1] as string,
+            );
+          }),
+        )
+      ).flat(),
     ),
   ].sort();
 
-  const brandPaths = [
-    ...new Set(
-      Array.from(priceHtml.matchAll(/href="(\/repair\/[^"/]+)"/g))
-        .map((match) => match[1] as string)
-        .filter((path) => path.split("/").length === 3),
-    ),
-  ].sort();
+  if (modelPaths.length === 0) {
+    console.error("No model pages found on any brand hub. Is the server running?");
+    process.exit(1);
+  }
 
   const corePaths = [
     "/",
     "/services",
-    "/repair-prices",
     "/locations",
     "/faq",
     "/about",
@@ -239,7 +257,7 @@ Inbound links per tier:
     );
   }
 
-  /* --- DOM node counts, for the /repair-prices comparison ----------- */
+  /* --- DOM node counts, per template -------------------------------- */
   const browser = await puppeteer.launch({
     executablePath: findChrome(),
     headless: true,
@@ -248,7 +266,7 @@ Inbound links per tier:
   try {
     console.log(`\nDOM node counts:`);
     for (const path of [
-      "/repair-prices",
+      "/services",
       "/repair/apple-iphone",
       "/repair/apple-iphone/iphone-8-plus",
       "/",

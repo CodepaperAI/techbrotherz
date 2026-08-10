@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.lg-g6-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The LG G6 abandoned the modular accessory system of the G5 and was the first mainstream phone with an 18 by 9 tall display. It was also LG's first properly water-resistant flagship. At $140 its screen is the dearest of the five LG models TechBrotherz still holds parts for."
+          "text": "The LG G6 abandoned the modular accessory system of the G5 and was the first mainstream phone with an 18 by 9 tall display. It was also LG's first properly water-resistant flagship. Its screen is the dearest of the five LG models TechBrotherz still repairs."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.lg-g6-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal, and stock is finite. The LG G6 stopped at Android 9, and LG exited the phone business entirely in 2021, so there will be no more parts made. At $140 a screen on a working phone is defensible if you like it, but this is a platform with a hard end date."
+          "text": "Marginal, and the platform has an end date. The LG G6 stopped at Android 9, and LG exited the phone business entirely in 2021, so there will be no more parts made. A screen on a working phone is defensible if you like it, but nothing about this platform gets better from here."
         }
       ],
       "markDefs": [],

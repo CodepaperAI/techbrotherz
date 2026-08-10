@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Battery only. The Galaxy S5 stopped at Android 6, over a decade ago, and no current banking or messaging app will support it. A new battery costs very little and the owner can fit it. A $149.99 screen on a phone this old is not a repair we would recommend."
+          "text": "Battery only. The Galaxy S5 stopped at Android 6, over a decade ago, and no current banking or messaging app will support it. A new battery costs very little and the owner can fit it. A screen on a phone this old is not a repair we would recommend."
         }
       ],
       "markDefs": [],

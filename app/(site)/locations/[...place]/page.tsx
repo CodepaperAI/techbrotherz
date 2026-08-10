@@ -22,12 +22,9 @@ import { localBusiness, organization, service, webPage, website } from "@/lib/se
 import { SITE, TEL_HREF } from "@/lib/site";
 import {
   getAllFaqs,
-  getAllPricedModels,
-  getFlatServices,
   getReviewSummary,
   getSiteSettings,
-  getUnlocking,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -74,12 +71,9 @@ export default async function PlacePage({ params }: PageProps) {
 
   if (!content) notFound();
 
-  const [settings, reviews, models, flatServices, unlocking, allFaqs] = await Promise.all([
+  const [settings, reviews, allFaqs] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
-    getAllPricedModels(),
-    getFlatServices(),
-    getUnlocking(),
     getAllFaqs(),
   ]);
 
@@ -87,7 +81,7 @@ export default async function PlacePage({ params }: PageProps) {
   const warrantyDays = settings?.warrantyDays ?? 60;
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
 
-  const ctx = buildPriceContext({ models, flatServices, unlocking, warrantyDays, waitMinutes });
+  const ctx = buildPriceContext({ warrantyDays, waitMinutes });
 
   const faqs = composeFaqs({
     path,
@@ -273,10 +267,10 @@ export default async function PlacePage({ params }: PageProps) {
         </h2>
         <div className="grid gap-6 lg:grid-cols-2">
           <RelatedLinks
-            title="Prices by device"
+            title="Repairs by device"
             links={[
               ...content.brandPaths.map((href) => ({ label: route(href)?.label ?? href, href })),
-              { label: "Full repair price list", href: "/repair-prices" },
+              { label: "Ask for a quote", href: "/contact" },
             ]}
           />
           <RelatedLinks
@@ -308,8 +302,8 @@ export default async function PlacePage({ params }: PageProps) {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See repair prices
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

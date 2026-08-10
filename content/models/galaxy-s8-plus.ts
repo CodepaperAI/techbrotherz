@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s8-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S8 Plus was the first big Samsung with an almost bezel-free curved display, and it moved the fingerprint reader to an awkward spot beside the rear camera. Its 6.2 inch curved OLED is bonded to the frame, which is why a screen replacement costs $289.99 rather than the price of a flat panel."
+          "text": "The Galaxy S8 Plus was the first big Samsung with an almost bezel-free curved display, and it moved the fingerprint reader to an awkward spot beside the rear camera. Its 6.2 inch curved OLED is bonded to the frame, which is why a screen replacement costs considerably more than a flat panel would."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s8-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Hard to justify at $289.99. The Galaxy S8 Plus stopped at Android 9, so it receives no security patches, and the screen repair costs more than many working used handsets. TechBrotherz will do it if the phone has value to you beyond its market price, but for general use the money goes further on a replacement."
+          "text": "Hard to justify. The Galaxy S8 Plus stopped at Android 9, so it receives no security patches, and the screen repair costs more than many working used handsets. TechBrotherz will do it if the phone has value to you beyond its market price, but for general use the money goes further on a replacement."
         }
       ],
       "markDefs": [],

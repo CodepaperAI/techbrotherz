@@ -18,10 +18,6 @@ import type { PageFaq } from "@/lib/faq/scoping";
 export interface ServiceCtx {
   warrantyDays: number;
   waitMinutes: number;
-  /** Formatted price for a key, or a stated fallback. Never an empty string. */
-  price: (key: string) => string;
-  /** Whether a real price exists, for sentences that only make sense with one. */
-  has: (key: string) => boolean;
 }
 
 export interface ProseSection {
@@ -109,10 +105,10 @@ const phoneRepair: ServiceDef = {
   lead: (c) =>
     `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy, Google Pixel, LG, Motorola and HTC handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
-    `TechBrotherz in Calgary repairs cell phones from ${c.price("phone-screen")} for a screen replacement, including the part and the labour. Most phone repairs take about ${c.waitMinutes} minutes and are done while you wait at the counter. No appointment is needed, every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship, and the price is agreed before any work starts.`,
+    `TechBrotherz in Calgary repairs cell phones while you wait at the counter. Most phone repairs take about ${c.waitMinutes} minutes, no appointment is needed, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and agreed before any work starts, and it covers the part and the labour together.`,
   keyFacts: (c) => [
-    { label: "Screen replacement from", value: `${c.price("phone-screen")}, part and labour` },
-    { label: "Battery replacement from", value: c.price("phone-battery") },
+    { label: "Handsets", value: "iPhone, Samsung Galaxy, Google Pixel, LG, Motorola, HTC and Nexus" },
+    { label: "Most common repairs", value: "Screen, then battery, then charging port" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes on a screen` },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
     { label: "Appointment", value: "Not needed, walk in during opening hours" },
@@ -209,7 +205,7 @@ const phoneRepair: ServiceDef = {
   faqs: (c) => [
     {
       question: "How much does a cell phone repair cost in Calgary?",
-      answer: `Cell phone repairs at TechBrotherz in Calgary start at ${c.price("phone-screen")} for a screen replacement, and every published price includes the part and the labour together. iPhone screens and Samsung Galaxy screens are priced per model on the TechBrotherz repair price list, because the part cost differs sharply between a five-year-old handset and a current one.`,
+      answer: `Cell phone repair at TechBrotherz in Calgary is quoted per handset, free of charge, before any work starts, and every quote covers the part and the labour together. iPhone and Samsung Galaxy screens differ sharply across the range, because the panel in a five-year-old handset and the panel in a current one are not the same part.`,
     },
     {
       question: "Can TechBrotherz fix my phone while I wait?",
@@ -246,12 +242,12 @@ const tabletRepair: ServiceDef = {
   deviceTypes: ["tablet"],
   localPath: "/tablet-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs iPads and Android tablets, replacing cracked glass, failed display panels, worn batteries and charging ports. iPad glass replacement starts at ${c.price("ipad-glass")}, including the part and the labour.`,
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs iPads and Android tablets, replacing cracked glass, failed display panels, worn batteries and charging ports.`,
   answer: (c) =>
-    `TechBrotherz in Calgary repairs iPads and tablets, with iPad glass replacement from ${c.price("ipad-glass")} including the part and the labour. On older iPads the touch glass is a separate layer from the display panel, so a cracked front often costs far less than people expect. Tablet repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz in Calgary repairs iPads and tablets. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. Tablet repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
-    { label: "iPad glass replacement from", value: `${c.price("ipad-glass")}, part and labour` },
+    { label: "Two kinds of screen", value: "Separated glass on older iPads, laminated on recent Air and Pro" },
     { label: "Typical time", value: "Longer than a phone, usually the same day" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
     { label: "Android tablets", value: "Quoted at the counter, model number needed" },
@@ -288,7 +284,7 @@ const tabletRepair: ServiceDef = {
     {
       heading: "Why does iPad glass replacement cost less than an iPhone screen?",
       paragraphs: [
-        `On many iPad models the touch-sensitive glass is a separate component from the display panel underneath, unlike almost every modern phone where the two are laminated into one assembly. If you crack the front of an older iPad and the picture is still perfect, only the glass needs replacing, and that part costs a fraction of a full display. That is why iPad glass replacement at TechBrotherz starts at ${c.price("ipad-glass")}.`,
+        `On many iPad models the touch-sensitive glass is a separate component from the display panel underneath, unlike almost every modern phone where the two are laminated into one assembly. If you crack the front of an older iPad and the picture is still perfect, only the glass needs replacing, and that part is a fraction of a full display. That is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
         "The newer iPad Air and iPad Pro models changed this. Their displays are laminated, with the glass bonded directly to the panel, which removes the air gap and makes the screen look closer to the surface. It also means a crack takes out the whole assembly, and the part is far more expensive. An iPad Pro screen can cost several times what the same repair costs on a base iPad.",
         "This is the first thing we check at the counter, and it is the reason we ask for the model. Two iPads that look nearly identical can be two very different repairs, and quoting one price for both would be guessing.",
       ],
@@ -346,10 +342,10 @@ const tabletRepair: ServiceDef = {
       body: "A tablet that has been in liquid can be opened, cleaned and tested, and often works afterwards, but corrosion keeps spreading. We will attempt it and tell you what we find, without a warranty on the outcome.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does it cost to fix a cracked iPad screen in Calgary?",
-      answer: `iPad glass replacement at TechBrotherz in Calgary starts at ${c.price("ipad-glass")}, including the part and the labour. On older iPad models the touch glass is a separate layer from the display, so a cracked front with a working picture is the cheaper repair. Laminated screens on recent iPad Air and iPad Pro models cost more, because the glass and the panel replace as one assembly.`,
+      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is a separate layer from the display, so a cracked front with a working picture is the smaller repair. Laminated screens on recent iPad Air and iPad Pro models are the larger job, because the glass and the panel replace as one assembly.`,
     },
     {
       question: "Can TechBrotherz replace just the glass on an iPad?",
@@ -379,7 +375,7 @@ const laptopRepair: ServiceDef = {
   eyebrow: "Laptop repair",
   seoTitle: "Laptop Repair Calgary | Screens, Keyboards, Charging Ports",
   seoDescription:
-    "Laptop repair at TechBrotherz in Calgary. Screen replacement from $120, keyboards from $69.99, charging ports $109.99. Parts and labour included, 60-day warranty.",
+        "Laptop repair at TechBrotherz in Calgary. Screens, keyboards and charging sockets, quoted free at the counter. Parts and labour included, 60-day warranty.",
   serviceType: "Laptop repair",
   repairSlugs: [
     "laptop-screen-replacement",
@@ -397,15 +393,15 @@ const laptopRepair: ServiceDef = {
   deviceTypes: ["laptop"],
   localPath: "/laptop-repair-calgary",
   siblings: ["/services/computer-repair", "/services/virus-removal"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs laptops: cracked and failed screens from ${c.price("laptop-screen")}, keyboards from ${c.price("laptop-keyboard")}, and charging sockets at ${c.price("laptop-dc")}. Every price includes the part and the labour.`,
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs laptops: cracked and failed screens, keyboards, charging sockets, storage and memory. Every quote includes the part and the labour.`,
   answer: (c) =>
-    `TechBrotherz in Calgary replaces laptop screens from ${c.price("laptop-screen")}, laptop keyboards from ${c.price("laptop-keyboard")} and laptop charging sockets at ${c.price("laptop-dc")}, with the part and the labour included in every price. Laptop diagnostics cost ${c.price("diagnostics")} and that amount comes off the repair if you go ahead. Most laptop work is finished the same day, and every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz in Calgary replaces laptop screens, keyboards and charging sockets, with the part and the labour in one figure. Laptop diagnostics carry a fixed fee that comes off the repair if you go ahead. Most laptop work is finished the same day, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
-    { label: "Screen replacement", value: `${c.price("laptop-screen")}, part and labour` },
-    { label: "Keyboard replacement", value: c.price("laptop-keyboard-range") },
-    { label: "Charging socket", value: c.price("laptop-dc") },
-    { label: "Diagnostics", value: `${c.price("diagnostics")}, deducted from the repair` },
+    { label: "Repairs", value: "Screens, keyboards, charging sockets, storage and memory" },
+    { label: "What sets the job", value: "The panel or the keyboard fitting, read from the model number" },
+    { label: "Typical time", value: "Most laptop work is finished the same day" },
+    { label: "Diagnostics", value: "A fixed fee, deducted from the repair if you go ahead" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
   ],
   process: [
@@ -416,7 +412,7 @@ const laptopRepair: ServiceDef = {
     },
     {
       title: "We diagnose the fault",
-      body: "Diagnostics cost $24.99, and that amount comes off the price if you go ahead with the repair. It buys a real answer rather than a guess, which matters on a machine with more than one possible cause.",
+      body: "Diagnostics carry a fixed fee, and that fee comes off the bill if you go ahead with the repair. It buys a real answer rather than a guess, which matters on a machine with more than one possible cause.",
       art: "board",
     },
     {
@@ -435,11 +431,11 @@ const laptopRepair: ServiceDef = {
       art: "lock",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "How much does a laptop screen replacement cost in Calgary?",
       paragraphs: [
-        `Laptop screen replacement at TechBrotherz starts at ${c.price("laptop-screen")}, including the part and the labour. Laptop panels are priced by size, resolution and panel type, so a standard HD screen on a mainstream 15-inch machine sits at the bottom of that range, while a high-resolution or touch-enabled panel costs more. We confirm the exact part and its price before any work starts.`,
+        `Laptop panels differ by size, resolution and panel type, so a standard HD screen on a mainstream 15-inch machine sits at the bottom of the range, while a high-resolution or touch-enabled panel sits well above it. TechBrotherz confirms the exact part and what it comes to before any work starts.`,
         "Unlike phones, laptop screens are usually a single panel that is not bonded to a separate touch layer, which makes the replacement itself a cleaner job. The panel unclips from the lid, a ribbon cable comes off, and a new one goes on. The work is straightforward. The variation is entirely in what the specific panel costs.",
         "Bring the laptop with its model number, which is normally on a sticker on the underside. That number tells us the exact panel the machine takes, and it is the difference between a firm price and an estimate.",
       ],
@@ -447,7 +443,7 @@ const laptopRepair: ServiceDef = {
     {
       heading: "Why has my laptop stopped charging?",
       paragraphs: [
-        `A laptop that will not charge has three common causes, and they cost very different amounts to fix. The first is the charger itself, which is the cheapest outcome and the reason we ask you to bring it. The second is the DC socket where the charger plugs in, which works loose over years of the cable being knocked, and which TechBrotherz replaces at ${c.price("laptop-dc")}. The third is the battery, which no longer holds what it should.`,
+        `A laptop that will not charge has three common causes, and they are very different jobs. The first is the charger itself, which is the cheapest outcome and the reason we ask you to bring it. The second is the DC socket where the charger plugs in, which works loose over years of the cable being knocked. The third is the battery, which no longer holds what it should.`,
         "You can often tell the socket from the battery by how the machine behaves. If wiggling the plug makes the charging light flicker, or if the laptop only charges when the cable is held at an angle, that is the socket. If the machine runs perfectly on mains power but dies the moment you unplug it, that is the battery.",
         "Charging socket replacement is soldered work on most laptops, which is why it takes longer than a phone port and why it is priced as its own repair. It is worth doing, because a laptop with a failed socket is otherwise a working machine tethered to a specific cable angle.",
       ],
@@ -455,7 +451,7 @@ const laptopRepair: ServiceDef = {
     {
       heading: "Can a laptop keyboard be replaced, or does the whole laptop need fixing?",
       paragraphs: [
-        `A laptop keyboard can almost always be replaced on its own, and TechBrotherz prices that work from ${c.price("laptop-keyboard")}. The range reflects how the machine is built rather than how bad the keyboard is: on some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly.`,
+        `A laptop keyboard can almost always be replaced on its own. What the work comes to reflects how the machine is built rather than how bad the keyboard is: on some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly.`,
         "Spilled liquid is the most common reason a keyboard needs replacing, and it is the case where time matters most. If something has been spilled on a laptop, shut it down immediately, unplug it, and bring it in rather than trying to dry it out and carry on. Liquid that has reached the board is a different and more serious problem than liquid that has only reached the keyboard.",
         "Individual keys that have come off can sometimes be reseated rather than replaced, and that is worth asking about at the counter before you pay for a whole keyboard. If the clip underneath is intact, a key often goes back on.",
       ],
@@ -463,7 +459,7 @@ const laptopRepair: ServiceDef = {
     {
       heading: "What does a laptop diagnostic actually check?",
       paragraphs: [
-        `A diagnostic at TechBrotherz costs ${c.price("diagnostics")}, and that amount comes off the price if you go ahead with the repair. It exists because some laptop faults have several possible causes and guessing between them wastes your money rather than ours. A machine that will not turn on could be the adapter, the socket, the battery, the board or the storage, and those are five different answers.`,
+        `A diagnostic at TechBrotherz carries a fixed fee, and that fee comes off the bill if you go ahead with the repair. It exists because some laptop faults have several possible causes and guessing between them wastes your money rather than ours. A machine that will not turn on could be the adapter, the socket, the battery, the board or the storage, and those are five different answers.`,
         "The diagnostic checks power delivery from the adapter through to the board, whether the machine posts, whether the storage is detected and healthy, whether the memory passes, and whether the machine is overheating and shutting itself down. At the end of it you get a specific answer and a specific price, not a range.",
         "If the answer is that the machine is not economically worth repairing, we will tell you that, and the diagnostic fee is what you paid to find out rather than the first instalment of a repair that was never going to be worth it.",
       ],
@@ -483,32 +479,32 @@ const laptopRepair: ServiceDef = {
     "Anyone who has spilled liquid on a keyboard and needs it looked at rather than left to dry.",
     "People who want a real diagnosis on a laptop that will not start, before deciding whether to repair or replace.",
   ],
-  limits: (c) => [
+  limits: () => [
     {
       title: "We do not do board-level microsoldering",
       body: "If the diagnostic finds a fault on the mainboard itself rather than a replaceable part, that is specialist work beyond what we do here. You will have paid the diagnostic fee and got a real answer, and we will say so plainly.",
     },
     {
       title: "Liquid damage is a diagnosis, not a fixed repair",
-      body: `A laptop that has had liquid in it gets opened, cleaned and tested, and the ${c.price("diagnostics")} diagnostic tells you where it stands. We cannot quote a repair price for liquid damage before we have seen inside the machine.`,
+      body: `A laptop that has had liquid in it gets opened, cleaned and tested, and the diagnostic tells you where it stands. We cannot quote liquid damage before we have seen inside the machine.`,
     },
     {
       title: "We are not a data recovery lab",
       body: "If a drive has failed mechanically, recovering what is on it needs a clean room and specialist equipment. We can tell you whether the drive is the problem, and we will not pretend we can get the data back.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does laptop screen replacement cost in Calgary?",
-      answer: `Laptop screen replacement at TechBrotherz in Calgary starts at ${c.price("laptop-screen")}, including the part and the labour. The final price depends on the panel your machine takes, because size, resolution and touch capability all change the part cost. TechBrotherz confirms the exact panel and price from the laptop's model number before any work starts.`,
+      answer: `Laptop screen replacement at TechBrotherz in Calgary is quoted once the panel has been identified, free of charge, before any work starts. Size, resolution and touch capability all change the part, while the labour stays broadly the same. TechBrotherz reads the exact panel from the laptop's model number.`,
     },
     {
       question: "How much does TechBrotherz charge to fix a laptop charging port?",
-      answer: `Laptop charging socket replacement at TechBrotherz in Calgary costs ${c.price("laptop-dc")}, including the part and the labour. A socket that has worked loose shows up as a charging light that flickers when the plug is moved, or a laptop that only charges when the cable is held at an angle. The repair is soldered work and takes longer than a phone charging port.`,
+      answer: `Laptop charging socket replacement at TechBrotherz in Calgary is quoted free of charge before any work starts. A socket that has worked loose shows up as a charging light that flickers when the plug is moved, or a laptop that only charges when the cable is held at an angle. The repair is soldered work and takes longer than a phone charging port.`,
     },
     {
       question: "Does TechBrotherz charge for laptop diagnostics?",
-      answer: `Laptop diagnostics at TechBrotherz in Calgary cost ${c.price("diagnostics")}, and that amount is deducted from the price if you go ahead with the repair. The diagnostic checks power delivery, whether the machine posts, storage health, memory and overheating, and it ends with a specific fault and a specific price rather than an estimate.`,
+      answer: `Laptop diagnostics at TechBrotherz in Calgary carry a fixed fee, and that fee is deducted from the bill if you go ahead with the repair. The diagnostic checks power delivery, whether the machine posts, storage health, memory and overheating, and it ends with a specific fault rather than an estimate.`,
     },
     {
       question: "Should I bring my laptop charger in with the laptop?",
@@ -534,7 +530,7 @@ const computerRepair: ServiceDef = {
   eyebrow: "Computer repair",
   seoTitle: "Computer Repair Calgary | Diagnostics, Windows, Tune-Ups",
   seoDescription:
-    "Computer repair at TechBrotherz in Calgary. Diagnostics $24.99, Windows installation $44.99, clean-up and tune-up $79.99. Flat prices agreed before work starts.",
+        "Computer repair at TechBrotherz in Calgary. Diagnostics, Windows installation, clean-up and tune-up. Quoted per job and agreed before work starts.",
   serviceType: "Computer repair",
   repairSlugs: ["windows-installation", "computer-tune-up", "computer-diagnostics"],
   brandSlugs: ["laptops-desktops"],
@@ -550,18 +546,18 @@ const computerRepair: ServiceDef = {
   deviceTypes: ["laptop"],
   localPath: "/computer-repair-calgary",
   siblings: ["/services/laptop-repair", "/services/virus-removal"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs desktop computers and laptops: diagnostics at ${c.price("diagnostics")}, Windows installation at ${c.price("windows-installation")}, and a full clean-up and tune-up at ${c.price("tune-up")}. Every price is flat and agreed before work starts.`,
-  answer: (c) =>
-    `TechBrotherz in Calgary charges ${c.price("diagnostics")} for computer diagnostics, ${c.price("windows-installation")} for a Windows installation including Office and security software, and ${c.price("tune-up")} for a full clean-up and tune-up. Hardware and program installation are ${c.price("hardware-installation")} each. Every price is flat and agreed before work starts, and the diagnostic fee comes off the repair if you go ahead.`,
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs desktop computers and laptops: diagnostics, Windows installation, and a full clean-up and tune-up. Every job is quoted flat and agreed before work starts.`,
+  answer: () =>
+    `TechBrotherz in Calgary quotes computer work per job rather than per hour: diagnostics, a Windows installation including an office suite and security software, a full clean-up and tune-up, and hardware or program installation charged per item. Every figure is flat and agreed before work starts, and the diagnostic fee comes off the repair if you go ahead.`,
   keyFacts: (c) => [
-    { label: "Diagnostics", value: `${c.price("diagnostics")}, deducted from the repair` },
+    { label: "Quoted", value: "Per job, not per hour" },
     {
       label: "Windows installation",
-      value: `${c.price("windows-installation")}, with Office and security`,
+      value: "Includes an office suite and security software",
     },
-    { label: "Clean-up and tune-up", value: c.price("tune-up") },
-    { label: "Hardware installation", value: `${c.price("hardware-installation")} per item` },
+    { label: "Clean-up and tune-up", value: "Startup list, temporary files, updates, cooling and storage health" },
+    { label: "Diagnostics", value: "A fixed fee, deducted from the repair if you go ahead" },
     { label: "Warranty", value: `${c.warrantyDays} days on the work` },
   ],
   process: [
@@ -577,7 +573,7 @@ const computerRepair: ServiceDef = {
     },
     {
       title: "We diagnose it properly",
-      body: "Diagnostics cost $24.99 and come off the repair. Storage health, memory, temperatures, startup load and malware all get checked, because a slow computer usually has a specific cause.",
+      body: "Diagnostics carry a fixed fee that comes off the repair. Storage health, memory, temperatures, startup load and malware all get checked, because a slow computer usually has a specific cause.",
       art: "battery",
     },
     {
@@ -591,19 +587,19 @@ const computerRepair: ServiceDef = {
       art: "lock",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why is my computer so slow?",
       paragraphs: [
         "A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other: a mechanical hard drive that has been failing gradually, a startup list that has collected a dozen programs that all load at boot, a system that has not been updated in a long time, and dust that has blocked the cooling so the processor throttles itself to stay cool.",
-        `A clean-up and tune-up at TechBrotherz costs ${c.price("tune-up")} and addresses all four. The startup list gets cut back to what the machine actually needs, temporary files and leftover installers are cleared out, updates are brought current, the cooling is physically cleaned, and the storage is checked for the early signs of failure that show up long before a drive dies.`,
+        `A clean-up and tune-up at TechBrotherz addresses all four. The startup list gets cut back to what the machine actually needs, temporary files and leftover installers are cleared out, updates are brought current, the cooling is physically cleaned, and the storage is checked for the early signs of failure that show up long before a drive dies.`,
         "The single biggest improvement on an older machine is usually replacing a mechanical hard drive with a solid-state drive. If the diagnostic shows that is what is holding the computer back, we will tell you, because it turns a frustrating machine into a usable one more reliably than any amount of software cleaning.",
       ],
     },
     {
       heading: "What does a Windows installation at TechBrotherz include?",
       paragraphs: [
-        `A Windows installation at TechBrotherz costs ${c.price("windows-installation")} and includes the operating system installed clean, an office suite, and security software set up and running. It is a flat price for the whole job rather than an hourly rate, so a machine that takes longer than expected does not cost you more.`,
+        `A Windows installation at TechBrotherz includes the operating system installed clean, an office suite, and security software set up and running. It is quoted flat for the whole job rather than by the hour, so a machine that takes longer than expected does not come to more.`,
         "A clean installation is the right answer when a computer has accumulated years of software that cannot be untangled, when it has been infected badly enough that removing the infection is not enough, or when the machine is being handed on to someone else. It gives you a system that behaves like a new one on hardware you already own.",
         "Back up your files before a Windows installation, and tell us if there is anything on the machine you need. A clean install replaces what is on the drive. We will always ask before we do it, and we would rather ask twice than assume.",
       ],
@@ -619,7 +615,7 @@ const computerRepair: ServiceDef = {
     {
       heading: "Does TechBrotherz install hardware and programs?",
       paragraphs: [
-        `TechBrotherz installs hardware at ${c.price("hardware-installation")} per item and programs at ${c.price("program-installation")} per item, both flat prices. Hardware installation covers fitting a component you have bought or one we have supplied: a solid-state drive, extra memory, a graphics card, a power supply, a fan or a new optical drive.`,
+        `TechBrotherz installs hardware and programs at a flat figure per item. Hardware installation covers fitting a component you have bought or one we have supplied: a solid-state drive, extra memory, a graphics card, a power supply, a fan or a new optical drive.`,
         "The most common request by far is a solid-state drive going into a machine that still has a mechanical hard drive, usually alongside moving the existing Windows installation onto it so nothing has to be set up again. That is the upgrade that makes the biggest difference to how a computer feels, and it costs far less than replacing the machine.",
         "Program installation is exactly what it sounds like: a flat price per program to have software installed and configured properly rather than left half set up. If you are having several things done at once, ask at the counter and we will tell you the total before we start.",
       ],
@@ -653,14 +649,14 @@ const computerRepair: ServiceDef = {
       body: "The processor generation and security chip requirements are set by Microsoft and are not something a repair can work around. We will tell you where your machine stands rather than sell you work that does not change it.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does computer repair cost in Calgary?",
-      answer: `Computer repair at TechBrotherz in Calgary is priced per job, not per hour. Diagnostics cost ${c.price("diagnostics")} and come off the repair, a Windows installation with an office suite and security software costs ${c.price("windows-installation")}, a full clean-up and tune-up costs ${c.price("tune-up")}, and hardware or program installation is ${c.price("hardware-installation")} per item.`,
+      answer: `Computer repair at TechBrotherz in Calgary is quoted per job, not per hour. The diagnostic fee comes off the repair if you go ahead. A Windows installation includes an office suite and security software, a full clean-up and tune-up covers startup, temporary files, updates, cooling and storage health, and hardware or program installation is charged per item.`,
     },
     {
       question: "What is included in a computer tune-up at TechBrotherz?",
-      answer: `A clean-up and tune-up at TechBrotherz in Calgary costs ${c.price("tune-up")} and covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Those four causes account for most computers that have become slow.`,
+      answer: `A clean-up and tune-up at TechBrotherz in Calgary is quoted as one flat figure and covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Those four causes account for most computers that have become slow.`,
     },
     {
       question: "Do I need to bring my monitor and keyboard in with my desktop?",
@@ -689,9 +685,9 @@ const phoneUnlocking: ServiceDef = {
   slug: "phone-unlocking",
   h1: "Phone Unlocking in Calgary",
   eyebrow: "Unlocking",
-  seoTitle: "Phone Unlocking Calgary | $35, Any Canadian Carrier",
+    seoTitle: "Phone Unlocking Calgary | Any Canadian Carrier",
   seoDescription:
-    "Carrier unlocking at TechBrotherz in Calgary, $35 for any Canadian carrier, usually the same day. Since December 2017 the CRTC requires carriers to unlock free on request.",
+        "Carrier unlocking at TechBrotherz in Calgary for any Canadian carrier, usually the same day. Since December 2017 the CRTC requires carriers to unlock free on request.",
   serviceType: "Phone unlocking",
   repairSlugs: [],
   brandSlugs: ["apple-iphone", "samsung-galaxy"],
@@ -699,12 +695,12 @@ const phoneUnlocking: ServiceDef = {
   deviceTypes: ["phone"],
   localPath: "/phone-unlocking-calgary",
   siblings: ["/services/phone-repair", "/services/password-reset"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier for ${c.price("unlocking")}, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
-  answer: (c) =>
-    `TechBrotherz in Calgary unlocks phones from any Canadian carrier for ${c.price("unlocking")}, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 every phone sold in Canada must be provided unlocked, and carriers must unlock older phones free of charge on request. Paid unlocking is worth it for phones bought secondhand, brought from another country, or on an account you no longer hold.`,
-  keyFacts: (c) => [
-    { label: "Price", value: `${c.price("unlocking")}, any Canadian carrier` },
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
+  answer: () =>
+    `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 every phone sold in Canada must be provided unlocked, and carriers must unlock older phones free of charge on request. Paid unlocking is worth it for phones bought secondhand, brought from another country, or on an account you no longer hold.`,
+  keyFacts: () => [
+    { label: "Carriers", value: "Any Canadian carrier" },
     { label: "Time", value: "Usually the same day" },
     { label: "Ask your carrier first", value: "They must do it free, by CRTC rule" },
     { label: "Phones sold after 1 Dec 2017", value: "Already unlocked, by law" },
@@ -713,7 +709,7 @@ const phoneUnlocking: ServiceDef = {
   process: [
     {
       title: "Check with your carrier first",
-      body: "We will tell you this at the counter too. If the phone is on your own account with a Canadian carrier, they are required to unlock it free of charge. Save your $35 if that route is open to you.",
+      body: "We will tell you this at the counter too. If the phone is on your own account with a Canadian carrier, they are required to unlock it free of charge. Save the money if that route is open to you.",
       art: "lock",
     },
     {
@@ -737,13 +733,13 @@ const phoneUnlocking: ServiceDef = {
       art: "screen",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Do you actually need to pay to unlock a phone in Canada?",
       paragraphs: [
         "Often you do not, and TechBrotherz will tell you that before taking your money. Under the CRTC Wireless Code, as revised in Telecom Regulatory Policy CRTC 2017-200, every mobile device sold in Canada on or after 1 December 2017 must be provided to the customer already unlocked. For devices sold before that date, carriers must unlock them free of charge when the customer asks.",
         "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier, not to a repair shop. It costs nothing and it is your right. Anyone who tells you otherwise is either misinformed or hoping you are.",
-        "Paid unlocking exists for the situations that rule does not reach. A phone bought secondhand from someone whose account you cannot access, a phone brought in from another country where no Canadian rule applies, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the cases where $35 solves a problem that a phone call cannot.",
+        "Paid unlocking exists for the situations that rule does not reach. A phone bought secondhand from someone whose account you cannot access, a phone brought in from another country where no Canadian rule applies, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the cases where paying solves a problem that a phone call cannot.",
       ],
     },
     {
@@ -773,7 +769,7 @@ const phoneUnlocking: ServiceDef = {
     {
       heading: "How long does unlocking take?",
       paragraphs: [
-        `Most unlocks at TechBrotherz are completed the same day. You bring the phone in with its IMEI, we confirm the model and carrier, and in most cases the phone is unlocked before the day is out for ${c.price("unlocking")}.`,
+        `Most unlocks at TechBrotherz are completed the same day. You bring the phone in with its IMEI, we confirm the model and carrier, and in most cases the phone is unlocked before the day is out.`,
         "Some combinations of carrier and model take longer, and a small number cannot be done at all. We check which case you are in before you pay, rather than taking the money and telling you afterwards. If it cannot be done, you do not pay for the attempt.",
         "You will need the IMEI, which is the fifteen-digit number unique to the handset. Dial star-hash-zero-six-hash on the phone and it appears on screen, or find it in the settings under About. It is also printed on the original box and on the SIM tray of some models.",
       ],
@@ -796,13 +792,13 @@ const phoneUnlocking: ServiceDef = {
     },
     {
       title: "Ask your carrier before you pay us",
-      body: "If the phone is on your own Canadian account, your carrier must unlock it free of charge. We would rather tell you that and lose the sale than take $35 for something you can get for nothing.",
+      body: "If the phone is on your own Canadian account, your carrier must unlock it free of charge. We would rather tell you that and lose the sale than charge you for something you can get for nothing.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does it cost to unlock a phone in Calgary?",
-      answer: `TechBrotherz in Calgary unlocks phones from any Canadian carrier for ${c.price("unlocking")}, usually the same day. Before paying, ask your own carrier: under the CRTC Wireless Code, Canadian carriers must unlock a phone on your account free of charge on request, and every phone sold in Canada since 1 December 2017 is already unlocked.`,
+      answer: `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Before paying, ask your own carrier: under the CRTC Wireless Code, Canadian carriers must unlock a phone on your account free of charge on request, and every phone sold in Canada since 1 December 2017 is already unlocked.`,
     },
     {
       question: "Are phones sold in Canada already unlocked?",
@@ -836,9 +832,9 @@ const passwordReset: ServiceDef = {
   slug: "password-reset",
   h1: "Computer Password Reset in Calgary",
   eyebrow: "Password reset",
-  seoTitle: "Computer Password Reset Calgary | $49.99, Files Kept",
+    seoTitle: "Computer Password Reset Calgary | Files Kept",
   seoDescription:
-    "Locked out of Windows? TechBrotherz in Calgary resets computer passwords for $49.99 and leaves your files exactly where they are. Walk in, proof of ownership needed.",
+        "Locked out of Windows? TechBrotherz in Calgary resets computer passwords and leaves your files exactly where they are. Walk in, proof of ownership needed.",
   serviceType: "Computer password reset",
   repairSlugs: [],
   brandSlugs: ["laptops-desktops"],
@@ -846,12 +842,12 @@ const passwordReset: ServiceDef = {
   deviceTypes: ["laptop"],
   localPath: "/computer-repair-calgary",
   siblings: ["/services/computer-repair", "/services/virus-removal"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, resets Windows passwords for ${c.price("password-reset")} and restores access to a computer you are locked out of, leaving every file on the machine exactly where it is.`,
-  answer: (c) =>
-    `TechBrotherz in Calgary resets a Windows computer password for ${c.price("password-reset")}, restoring access to a machine you are locked out of without deleting your files. Proof that the computer is yours is required before any work starts. Most password resets are finished the same day. A Microsoft account password is reset through Microsoft rather than on the machine, and TechBrotherz will tell you which case applies.`,
-  keyFacts: (c) => [
-    { label: "Price", value: `${c.price("password-reset")}, flat` },
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, resets Windows passwords and restores access to a computer you are locked out of, leaving every file on the machine exactly where it is.`,
+  answer: () =>
+    `TechBrotherz in Calgary resets a Windows computer password, restoring access to a machine you are locked out of without deleting your files. Proof that the computer is yours is required before any work starts. Most password resets are finished the same day. A Microsoft account password is reset through Microsoft rather than on the machine, and TechBrotherz will tell you which case applies.`,
+  keyFacts: () => [
+    { label: "What it does", value: "Restores access without deleting your files" },
     { label: "Your files", value: "Left exactly where they are" },
     { label: "Time", value: "Usually the same day" },
     { label: "Proof of ownership", value: "Required before any work starts" },
@@ -870,7 +866,7 @@ const passwordReset: ServiceDef = {
     },
     {
       title: "You approve the flat price",
-      body: "Password reset is $49.99 as a flat price, agreed before we start. If it turns out to be a Microsoft account we cannot reset on the machine, we will tell you and there is nothing to pay.",
+      body: "A password reset is quoted as one flat figure, agreed before we start. If it turns out to be a Microsoft account we cannot reset on the machine, we will tell you and there is nothing to pay.",
       art: "keyboard",
     },
     {
@@ -884,13 +880,13 @@ const passwordReset: ServiceDef = {
       art: "screen",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "What happens to my files during a password reset?",
       paragraphs: [
         "Your files stay exactly where they are. A password reset at TechBrotherz restores access to the account rather than clearing the machine, so documents, photos, programs, browser bookmarks and settings are all untouched. This is the whole point of the service, and it is what separates it from the advice people find online.",
         "That advice is usually to reinstall Windows, which does restore access to the computer, and does so by removing everything that was on it. If the files on the machine matter to you, that is a very expensive way to solve a password problem. Bring it to the counter first.",
-        `A password reset at TechBrotherz costs ${c.price("password-reset")}. A Windows installation costs ${c.price("windows-installation")} and clears the drive. If you were considering the second because you thought it was the only option, it is worth knowing the first exists.`,
+        `A password reset leaves your files where they are. A Windows installation clears the drive. If you were considering the second because you thought it was the only option, it is worth knowing the first exists.`,
       ],
     },
     {
@@ -946,10 +942,10 @@ const passwordReset: ServiceDef = {
       body: "If the machine signs in with an email address, the password lives with Microsoft rather than on the computer. We will show you the recovery process at the counter, and there is nothing to pay.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does a computer password reset cost in Calgary?",
-      answer: `A computer password reset at TechBrotherz in Calgary costs ${c.price("password-reset")} as a flat price, with your files left exactly where they are. Proof that the computer is yours is required before any work starts. Most resets are finished the same day.`,
+      answer: `A computer password reset at TechBrotherz in Calgary is quoted as one flat figure, with your files left exactly where they are. Proof that the computer is yours is required before any work starts. Most resets are finished the same day.`,
     },
     {
       question: "Will a password reset delete my files?",
@@ -977,9 +973,9 @@ const virusRemoval: ServiceDef = {
   slug: "virus-removal",
   h1: "Virus and Malware Removal in Calgary",
   eyebrow: "Virus removal",
-  seoTitle: "Virus Removal Calgary | $34.99, Malware and Pop-Ups",
+    seoTitle: "Virus Removal Calgary | Malware and Pop-Ups",
   seoDescription:
-    "Virus and malware removal at TechBrotherz in Calgary for $34.99, with security software left in place. Pop-ups, browser hijackers and fake warnings dealt with properly.",
+        "Virus and malware removal at TechBrotherz in Calgary, with security software left in place. Pop-ups, browser hijackers and fake warnings dealt with properly.",
   serviceType: "Virus removal",
   repairSlugs: [],
   brandSlugs: ["laptops-desktops"],
@@ -987,18 +983,18 @@ const virusRemoval: ServiceDef = {
   deviceTypes: ["laptop"],
   localPath: "/computer-repair-calgary",
   siblings: ["/services/computer-repair", "/services/password-reset"],
-  lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, removes viruses, malware, adware and browser hijackers from Windows computers for ${c.price("virus-removal")}, and leaves security software in place so the same thing does not come straight back.`,
-  answer: (c) =>
-    `TechBrotherz in Calgary removes viruses and malware from a computer for ${c.price("virus-removal")}, including security software left installed and running afterwards. Pop-ups that will not close, a browser that opens on a page you did not choose, and fake warnings telling you to call a support number are the three most common symptoms. Most virus removals are finished the same day, and your files stay on the machine.`,
-  keyFacts: (c) => [
-    { label: "Price", value: `${c.price("virus-removal")}, flat` },
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, removes viruses, malware, adware and browser hijackers from Windows computers, and leaves security software in place so the same thing does not come straight back.`,
+  answer: () =>
+    `TechBrotherz in Calgary removes viruses and malware from a computer, including security software left installed and running afterwards. Pop-ups that will not close, a browser that opens on a page you did not choose, and fake warnings telling you to call a support number are the three most common symptoms. Most virus removals are finished the same day, and your files stay on the machine.`,
+  keyFacts: () => [
+    { label: "Your files", value: "Documents and photos stay on the machine" },
     { label: "Included", value: "Security software installed and running" },
     { label: "Your files", value: "Left on the machine" },
     { label: "Time", value: "Usually the same day" },
     {
       label: "If it is too far gone",
-      value: `Clean Windows install, ${c.price("windows-installation")}`,
+      value: "A clean Windows install, which clears the drive",
     },
   ],
   process: [
@@ -1028,7 +1024,7 @@ const virusRemoval: ServiceDef = {
       art: "battery",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "How do you know if a computer has a virus?",
       paragraphs: [
@@ -1040,7 +1036,7 @@ const virusRemoval: ServiceDef = {
     {
       heading: "What does virus removal at TechBrotherz include?",
       paragraphs: [
-        `Virus removal at TechBrotherz costs ${c.price("virus-removal")} and covers scanning the machine with more than one engine, removing what is found, clearing the browser extensions and search settings that were changed without your agreement, and dealing with the scheduled tasks and startup entries that quietly reinstall an infection after a reboot.`,
+        `Virus removal at TechBrotherz covers scanning the machine with more than one engine, removing what is found, clearing the browser extensions and search settings that were changed without your agreement, and dealing with the scheduled tasks and startup entries that quietly reinstall an infection after a reboot.`,
         "That last part is what separates a real removal from running a free scanner. Modern adware does not sit in one file waiting to be deleted. It leaves a scheduled task, a startup entry and a browser policy behind, and if those are not cleaned up the machine looks fixed for a day and then goes back to how it was.",
         "Security software is installed and left running when the machine goes home. A computer that has just been cleaned and then handed back with nothing protecting it is a computer that will be back in a few weeks, and that helps nobody.",
       ],
@@ -1048,7 +1044,7 @@ const virusRemoval: ServiceDef = {
     {
       heading: "Will virus removal delete my files?",
       paragraphs: [
-        `Your files stay on the machine. Virus removal at TechBrotherz targets the malicious software and the settings it changed, not your documents and photos. This is different from a clean Windows installation, which costs ${c.price("windows-installation")} and clears the drive entirely.`,
+        `Your files stay on the machine. Virus removal at TechBrotherz targets the malicious software and the settings it changed, not your documents and photos. This is different from a clean Windows installation, which clears the drive entirely.`,
         "There is one honest exception. If a file on the machine is itself the infection, that file gets removed, and occasionally that is something a person downloaded on purpose without knowing what it was. We will tell you what was removed rather than leaving you to discover it.",
         "Ransomware is the case where files are already gone before the machine arrives, because it encrypts them and demands payment. If that is what has happened, removing the malware stops it spreading but does not decrypt what it already took. A backup is the only real answer to ransomware, and that is worth setting up before you need it.",
       ],
@@ -1057,7 +1053,7 @@ const virusRemoval: ServiceDef = {
       heading: "When is a clean install better than removing the infection?",
       paragraphs: [
         "Most infections are removable, and removal is the right answer because it keeps everything on the machine where it is. Adware, browser hijackers, unwanted extensions and the common families of malware all come off cleanly.",
-        `Some do not. If an infection has been present for a long time, if there are several stacked on top of each other, or if what is there has burrowed into the system deeply enough that removing it risks leaving pieces behind, a clean Windows installation at ${c.price("windows-installation")} is the more honest answer. You end up with a machine you can trust rather than one you are hoping about.`,
+        `Some do not. If an infection has been present for a long time, if there are several stacked on top of each other, or if what is there has burrowed into the system deeply enough that removing it risks leaving pieces behind, a clean Windows installation is the more honest answer. You end up with a machine you can trust rather than one you are hoping about.`,
         "We will tell you which case you are in before doing the work, and we will not quietly upsell the more expensive option. If removal will do the job, removal is what you should pay for.",
       ],
     },
@@ -1090,10 +1086,10 @@ const virusRemoval: ServiceDef = {
       body: "If someone was given remote access or paid a fake support line, tell your bank immediately. We can clean the machine and check what was left behind, and the financial side has to go through your bank.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does virus removal cost in Calgary?",
-      answer: `Virus and malware removal at TechBrotherz in Calgary costs ${c.price("virus-removal")} as a flat price, including security software installed and left running afterwards. The work covers scanning with more than one engine, removing what is found, and clearing the startup entries and scheduled tasks that otherwise bring an infection back after a reboot.`,
+      answer: `Virus and malware removal at TechBrotherz in Calgary is quoted as one flat figure, including security software installed and left running afterwards. The work covers scanning with more than one engine, removing what is found, and clearing the startup entries and scheduled tasks that otherwise bring an infection back after a reboot.`,
     },
     {
       question: "Will removing a virus delete my documents and photos?",

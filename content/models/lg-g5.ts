@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.lg-g5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only if you value the modular battery. The LG G5 stopped at Android 8 and LG has left the phone business. At $120 the screen is affordable, and the swappable battery genuinely extends the phone's life. But there will be no more parts, so treat any spend as short-term."
+          "text": "Only if you value the modular battery. The LG G5 stopped at Android 8 and LG has left the phone business. The screen is affordable, and the swappable battery genuinely extends the phone's life. But there will be no more parts made, so treat any spend as short-term."
         }
       ],
       "markDefs": [],

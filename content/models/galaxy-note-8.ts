@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-8-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No for a $329.99 screen. The Note 8 stopped at Android 9. Given its conservative battery, a battery replacement on a Note 8 that is otherwise sound is the repair that actually helps, and it costs a fraction of the screen. We will point you at that instead."
+          "text": "No for a screen. The Note 8 stopped at Android 9. Given its conservative battery, a battery replacement on a Note 8 that is otherwise sound is the repair that actually helps, and it is a fraction of the screen. We will point you at that instead."
         }
       ],
       "markDefs": [],

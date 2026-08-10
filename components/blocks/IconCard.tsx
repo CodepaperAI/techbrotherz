@@ -20,7 +20,7 @@ export function IconCard({ icon: Icon, title, description, link, className }: Ic
     <Card className={cn("flex flex-col", className)}>
       <span
         aria-hidden="true"
-        className="bg-tb-green-soft inline-flex size-14 items-center justify-center rounded-2xl"
+        className="bg-tb-paper-2 rounded-card inline-flex size-14 items-center justify-center"
       >
         <Icon size={28} strokeWidth={1.5} className="text-tb-green-deep" />
       </span>

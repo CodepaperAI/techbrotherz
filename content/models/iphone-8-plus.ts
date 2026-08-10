@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-8-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Worth repairing for a screen or a battery, not worth a major rebuild. The iPhone 8 Plus stopped at iOS 16, so it no longer receives new features and its app support is narrowing year by year. A $109.99 screen on a phone you plan to keep another year is sound. Spending several hundred on a screen, battery and back glass together is money better put toward a replacement."
+          "text": "Worth repairing for a screen or a battery, not worth a major rebuild. The iPhone 8 Plus stopped at iOS 16, so it no longer receives new features and its app support is narrowing year by year. A screen on a phone you plan to keep another year is sound. A screen, a battery and a back glass together is money better put toward a replacement."
         }
       ],
       "markDefs": [],

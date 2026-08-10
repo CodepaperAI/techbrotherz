@@ -26,13 +26,9 @@ const FLOOR = 900;
  * The exact figures do not matter for a word count, and using a fixed context
  * keeps this script runnable without a Sanity connection.
  */
-const ctx = buildPriceContext({
-  models: [],
-  flatServices: [],
-  unlocking: [],
-  warrantyDays: 60,
-  waitMinutes: 30,
-});
+const warrantyDays = 60;
+const waitMinutes = 30;
+const ctx = buildPriceContext({ warrantyDays, waitMinutes });
 
 function count(...parts: (string | undefined | null)[]): number {
   return parts

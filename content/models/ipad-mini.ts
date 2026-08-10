@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The first iPad Mini used the same non-Retina display as the iPad 2, in a body small enough to hold in one hand. It was Apple's answer to the seven inch tablets of the time and it sold heavily. It shares a $79.99 glass price with the Mini 2, though its lower-resolution screen makes it the lighter and thinner of the two."
+          "text": "The first iPad Mini used the same non-Retina display as the iPad 2, in a body small enough to hold in one hand. It was Apple's answer to the seven inch tablets of the time and it sold heavily. It shares a glass price with the Mini 2, though its lower-resolution screen makes it the lighter and thinner of the two."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, except for a child. The first iPad Mini stopped at iPadOS 9 and is around thirteen years old. A $79.99 glass repair on a tablet that can no longer install current apps is hard to justify for an adult. As a cartoon machine that survives being dropped, it still has a use, and we will fit the glass if that is the plan."
+          "text": "No, except for a child. The first iPad Mini stopped at iPadOS 9 and is around thirteen years old. A glass repair on a tablet that can no longer install current apps is hard to justify for an adult. As a cartoon machine that survives being dropped, it still has a use, and we will fit the glass if that is the plan."
         }
       ],
       "markDefs": [],

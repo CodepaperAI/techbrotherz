@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-se-1st-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The first-generation iPhone SE put the iPhone 6S internals into the older iPhone 5S body, which makes it the smallest iPhone Apple has ever sold and the reason people still hold onto them. At $49.99 the screen is the cheapest iPhone repair TechBrotherz does. Owners of these are usually keeping them deliberately because nothing else that small exists."
+          "text": "The first-generation iPhone SE put the iPhone 6S internals into the older iPhone 5S body, which makes it the smallest iPhone Apple has ever sold and the reason people still hold onto them. Its screen is the cheapest iPhone repair TechBrotherz does. Owners of these are usually keeping them deliberately because nothing else that small exists."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-se-1st-gen-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Worth it if the size is why you own it. The first-generation SE stopped at iOS 15, so app support is narrowing, but there is genuinely no modern replacement at this size. A $49.99 screen on a phone you keep specifically because it fits your hand is a reasonable spend. If you are indifferent to size, a newer handset is the better call."
+          "text": "Worth it if the size is why you own it. The first-generation SE stopped at iOS 15, so app support is narrowing, but there is genuinely no modern replacement at this size. A screen on a phone you keep specifically because it fits your hand is a reasonable spend. If you are indifferent to size, a newer handset is the better call."
         }
       ],
       "markDefs": [],

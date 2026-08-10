@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { KeyRound, Laptop, Monitor, ShieldAlert, Smartphone, Tablet, Unlock } from "lucide-react";
 
-import { IconCard } from "@/components/blocks/IconCard";
+import type { RepairSubject } from "@/components/blocks/RepairIllustration";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { PageShell } from "@/components/blocks/PageShell";
+import { ServiceCard } from "@/components/blocks/ServiceCard";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
@@ -16,15 +16,7 @@ import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, service, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatPrice } from "@/lib/utils";
-import {
-  getAllFaqs,
-  getAllPricedModels,
-  getFlatServices,
-  getReviewSummary,
-  getSiteSettings,
-  getUnlocking,
-} from "@/sanity/queries";
+import { getAllFaqs, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -37,130 +29,114 @@ export const metadata: Metadata = buildMetadata({
   path: PATH,
 });
 
-interface ServiceCard {
-  icon: typeof Smartphone;
+/**
+ * The seven service hubs, grouped by device.
+ *
+ * Photograph-led rather than icon-led, matching the home grid. Each card names
+ * the same demo slot its own hub page uses as a header, so a visitor arriving
+ * from here sees the picture they clicked, and there is one place to change an
+ * image rather than two.
+ *
+ * `illustration` is the fallback for a build with public/demo/ deleted, which
+ * is what keeps the demo set from being load-bearing. The media frame is
+ * identical either way: see components/blocks/ServiceCard.tsx.
+ *
+ * The `icon` and `priceKey` fields are gone. `priceKey` indexed price lookups
+ * that no longer exist, and the icons were what the photographs replaced.
+ */
+interface ServiceEntry {
   title: string;
   href: string;
   group: "Phones" | "Tablets" | "Computers";
   description: string;
-  /** Key into the price lookups built below. */
-  priceKey: string;
+  /** Demo slot in lib/content/images.ts. */
+  image: string;
+  illustration: RepairSubject;
 }
 
-const SERVICE_CARDS: ServiceCard[] = [
+const SERVICE_CARDS: ServiceEntry[] = [
   {
-    icon: Smartphone,
     title: "Cell phone repair",
     href: "/services/phone-repair",
     group: "Phones",
     description:
       "Screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy, Pixel, LG, Motorola and HTC handsets.",
-    priceKey: "phone-screen",
+    image: "service-phone-repair",
+    illustration: "screen",
   },
   {
-    icon: Unlock,
     title: "Phone unlocking",
     href: "/services/phone-unlocking",
     group: "Phones",
     description:
       "Any Canadian carrier, usually the same day. Ask your carrier first, they are required by the CRTC to do it free on request.",
-    priceKey: "unlocking",
+    image: "service-phone-unlocking",
+    illustration: "sim",
   },
   {
-    icon: Tablet,
     title: "iPad and tablet repair",
     href: "/services/tablet-repair",
     group: "Tablets",
     description:
       "On older iPads the glass is separate from the picture panel, so a cracked front often costs far less than people expect.",
-    priceKey: "ipad-glass",
+    image: "service-tablet-repair",
+    illustration: "screen",
   },
   {
-    icon: Laptop,
     title: "Laptop repair",
     href: "/services/laptop-repair",
     group: "Computers",
     description:
       "Screens, keyboards and charging sockets. Laptop work is stripped down and tested, so it is usually ready the same day.",
-    priceKey: "laptop-screen",
+    image: "service-laptop-repair",
+    illustration: "keyboard",
   },
   {
-    icon: Monitor,
     title: "Computer repair",
     href: "/services/computer-repair",
     group: "Computers",
     description:
       "Desktop diagnostics, clean-ups, Windows installation and hardware fitting, at a flat price agreed before we start.",
-    priceKey: "diagnostics",
+    image: "service-computer-repair",
+    illustration: "board",
   },
   {
-    icon: ShieldAlert,
     title: "Virus removal",
     href: "/services/virus-removal",
     group: "Computers",
     description:
       "Malware, adware and browser hijackers removed, with security software left in place so it does not come straight back.",
-    priceKey: "virus-removal",
+    image: "service-virus-removal",
+    illustration: "diagnostic",
   },
   {
-    icon: KeyRound,
     title: "Computer password reset",
     href: "/services/password-reset",
     group: "Computers",
     description:
       "Locked out of Windows. We restore access and leave the files on the machine exactly where they are.",
-    priceKey: "password-reset",
+    image: "service-password-reset",
+    illustration: "lock",
   },
 ];
 
-const GROUP_ORDER: ServiceCard["group"][] = ["Phones", "Tablets", "Computers"];
+const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "Tablets", "Computers"];
 
-const GROUP_QUESTION: Record<ServiceCard["group"], string> = {
+const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
   Tablets: "What tablet and iPad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
 };
 
 export default async function ServicesPage() {
-  const [settings, reviews, models, flatServices, unlocking, allFaqs] = await Promise.all([
+  const [settings, reviews, allFaqs] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
-    getAllPricedModels(),
-    getFlatServices(),
-    getUnlocking(),
     getAllFaqs(),
   ]);
 
   const warrantyDays = settings?.warrantyDays ?? 60;
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
-
-  /** Cheapest real price for a repair slug, optionally within one brand. */
-  function cheapest(repairSlug: string, brandSlug?: string): number | null {
-    const prices = models
-      .filter((model) => !brandSlug || model.brandSlug === brandSlug)
-      .flatMap((model) =>
-        (model.prices ?? [])
-          .filter((entry) => entry.repair?.slug === repairSlug && typeof entry.price === "number")
-          .map((entry) => entry.price as number),
-      );
-
-    return prices.length > 0 ? Math.min(...prices) : null;
-  }
-
-  const flat = new Map(flatServices.map((entry) => [entry.slug, entry]));
-
-  const priceLookup: Record<string, string | null> = {
-    "phone-screen": formatPrice(cheapest("screen-replacement")),
-    "iphone-screen": formatPrice(cheapest("screen-replacement", "apple-iphone")),
-    "samsung-screen": formatPrice(cheapest("screen-replacement", "samsung-galaxy")),
-    "ipad-glass": formatPrice(cheapest("glass-digitizer", "apple-ipad")),
-    "laptop-screen": formatPrice(flat.get("laptop-screen-replacement")?.price),
-    diagnostics: formatPrice(flat.get("diagnostics")?.price),
-    "virus-removal": formatPrice(flat.get("virus-removal")?.price),
-    "password-reset": formatPrice(flat.get("password-reset")?.price),
-    unlocking: formatPrice(unlocking[0]?.price),
-    quote: null,
-  };
 
   // FAQ scoping rule, CLAUDE.md Section 8.8. Questions this page can answer
   // with its own numbers, plus at most two pointers to the canonical
@@ -209,14 +185,14 @@ export default async function ServicesPage() {
         </>
       }
       answerBox={{
-        answer: `TechBrotherz in Calgary repairs phones, iPads, tablets, laptops and desktop computers, unlocks phones for any Canadian carrier at $35, and removes viruses from $34.99. iPhone screens start at ${priceLookup["iphone-screen"] ?? "a published price"}. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz in Calgary repairs phones, iPads, tablets, laptops and desktop computers, unlocks phones for any Canadian carrier, and removes viruses and malware. Every job is quoted free at the counter before any work starts. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
-          { label: "Phone repairs from", value: `${priceLookup["phone-screen"]} for a screen` },
+          { label: "Devices", value: "Phones, tablets, laptops and desktop computers" },
           {
             label: "Computer diagnostics",
-            value: `${priceLookup.diagnostics}, quoted before work starts`,
+            value: "A fixed fee, deducted from the repair if you go ahead",
           },
-          { label: "Carrier unlocking", value: `${priceLookup.unlocking}, usually the same day` },
+          { label: "Carrier unlocking", value: "Any Canadian carrier, usually the same day" },
           { label: "Typical wait", value: `About ${waitMinutes} minutes on a phone repair` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
         ],
@@ -240,25 +216,19 @@ export default async function ServicesPage() {
             </Heading>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {cards.map((card) => {
-                const from = priceLookup[card.priceKey];
-
-                return (
-                  <IconCard
-                    key={card.title}
-                    icon={card.icon}
-                    title={card.title}
-                    description={`${card.description} ${
-                      from
-                        ? `From ${from}, including the part and the labour.`
-                        : "Priced at the counter."
-                    }`}
-                    {...(shouldRenderLink(card.href)
-                      ? { link: { label: `${card.title} prices and details`, href: card.href } }
-                      : {})}
-                  />
-                );
-              })}
+              {cards.map((card) => (
+                <ServiceCard
+                  key={card.title}
+                  title={card.title}
+                  description={`${card.description} Quoted free at the counter, with the part and the labour included.`}
+                  image={card.image}
+                  illustration={card.illustration}
+                  sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
+                  {...(shouldRenderLink(card.href)
+                    ? { link: { label: `${card.title} details`, href: card.href } }
+                    : {})}
+                />
+              ))}
             </div>
           </Section>
         );
@@ -281,7 +251,7 @@ export default async function ServicesPage() {
               What is included in every TechBrotherz repair price
             </caption>
             <thead>
-              <tr className="bg-tb-green-soft">
+              <tr className="tb-thead">
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                   Included
                 </th>
@@ -322,8 +292,8 @@ export default async function ServicesPage() {
 
         <p className="type-body measure text-tb-muted mt-8">
           Prices for every device TechBrotherz repairs are published on{" "}
-          <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-            the full repair price list
+          <Link href="/contact" className="text-tb-green-deep hover:underline">
+            how quoting works
           </Link>
           . The terms of the {warrantyDays}-day cover are set out on{" "}
           <Link href="/warranty" className="text-tb-green-deep hover:underline">
@@ -360,8 +330,8 @@ export default async function ServicesPage() {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See repair prices
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

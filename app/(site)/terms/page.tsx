@@ -8,7 +8,7 @@ import { Section } from "@/components/primitives/Section";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { ADDRESS_LINE, SITE, TEL_HREF } from "@/lib/site";
-import { getReviewSummary, getSiteSettings } from "@/sanity/queries";
+import { getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -99,7 +99,8 @@ export default async function TermsPage() {
             you call or come in.
           </p>
           <p>
-            Computer diagnostics are charged at $24.99 and are quoted before the machine is opened.
+            Computer diagnostics carry a fixed fee, quoted before the machine is opened, and that
+            fee is deducted from the bill if you go ahead with the repair.
             If you go ahead with the repair we recommend, that diagnostic finding is what the quote
             is based on.
           </p>
@@ -240,8 +241,8 @@ export default async function TermsPage() {
               the {warrantyDays}-day warranty
             </Link>{" "}
             and{" "}
-            <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-              the repair price list
+            <Link href="/contact" className="text-tb-green-deep hover:underline">
+              how a repair is quoted
             </Link>
             .
           </p>

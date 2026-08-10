@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-10-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 10 is the smaller Note, at 6.3 inches, and the only Note ever released without a microSD slot. Its screen replacement is $469.99, thirty dollars less than the Plus, and like every Note it carries the S Pen digitizer layer behind the display."
+          "text": "The Galaxy Note 10 is the smaller Note, at 6.3 inches, and the only Note ever released without a microSD slot. Its screen replacement costs a little less than the Plus beside it, and like every Note it carries the S Pen digitizer layer behind the display."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-10-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, at $469.99. The Galaxy Note 10 stopped at Android 12 and the screen repair costs more than the phone fetches. TechBrotherz would rather tell you that than take the job. If the fault is the battery or the charging port, those are worth doing on a Note that is otherwise sound."
+          "text": "No. The Galaxy Note 10 stopped at Android 12 and the screen repair costs more than the phone fetches. TechBrotherz would rather tell you that than take the job. If the fault is the battery or the charging port, those are worth doing on a Note that is otherwise sound."
         }
       ],
       "markDefs": [],

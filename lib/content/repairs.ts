@@ -94,7 +94,7 @@ const iphoneScreen: RepairDef = {
   lead: (c) =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
   answer: (c) =>
-    `iPhone screen replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("iphone-screen")} including the part and the labour. The replacement is a complete front assembly with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the counter, and every one carries a ${c.warrantyDays}-day warranty.`,
+    `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the counter. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
   symptoms: [
     "Cracked or shattered glass, even where the picture underneath still works normally.",
     "Black patches, coloured vertical lines, or a white glow spreading across the display.",
@@ -152,7 +152,7 @@ const iphoneScreen: RepairDef = {
     {
       heading: "How much does an iPhone screen replacement cost in Calgary?",
       paragraphs: [
-        `iPhone screen replacement at TechBrotherz in Calgary starts at ${c.price("iphone-screen")} and rises with the model, because the part cost does. The table above lists every iPhone in the catalogue with its own price, and each figure includes the part, the labour, the testing and the ${c.warrantyDays}-day warranty.`,
+        `What an iPhone screen replacement comes to follows the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the counter, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
         "The pattern in that table is worth understanding. Older LCD models are the cheapest, because those panels have been in production for years and supply is plentiful. The OLED models cost more, and the recent Pro models with the largest displays cost the most, because that is what the assemblies cost to buy.",
         "Apple publishes its own out-of-warranty screen service pricing for each model on its support site, which is worth comparing against before you decide where to take a repair. Models showing Call for quote in the table are ones where we order the part in and price it once we know the cost.",
       ],
@@ -184,7 +184,7 @@ const iphoneScreen: RepairDef = {
   faqs: (c) => [
     {
       question: "How much does it cost to replace an iPhone screen in Calgary?",
-      answer: `iPhone screen replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("iphone-screen")}, including the part and the labour. Older LCD models cost the least, OLED and Pro models cost more, because the part cost differs. Every iPhone in the TechBrotherz catalogue has its own published price.`,
+      answer: `iPhone screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPhones with LCD panels are the cheaper repair and Pro models with OLED panels are the dearer one, because the part differs sharply across the range. Every quote covers the part and the labour together, with no separate bench fee.`,
     },
     {
       question: "Does replacing an iPhone screen break Face ID?",
@@ -222,7 +222,7 @@ const iphoneBattery: RepairDef = {
   lead: (c) =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
   answer: (c) =>
-    `iPhone battery replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("iphone-battery")} including the part and the labour. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The repair takes about ${c.waitMinutes} minutes and carries a ${c.warrantyDays}-day warranty.`,
+    `iPhone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the counter and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer lasts a working day on a charge it used to manage comfortably.",
     "It shuts down suddenly at 20% or 30%, or dies in the cold and revives once warm.",
@@ -280,7 +280,7 @@ const iphoneBattery: RepairDef = {
     {
       heading: "How much does an iPhone battery replacement cost in Calgary?",
       paragraphs: [
-        `iPhone battery replacement at TechBrotherz in Calgary starts at ${c.price("iphone-battery")}, with each model priced in the table above, and every price includes the part and the labour. Battery prices vary far less between models than screen prices do, because a battery cell costs broadly similar amounts across the range.`,
+        `An iPhone battery is quoted per model at the counter, and the quote covers the part and the labour together. The range is far narrower than it is for screens, because a battery cell is a broadly similar part whichever iPhone it goes into, while a screen is not.`,
         `The repair takes about ${c.waitMinutes} minutes and is done while you wait. Your data is untouched: a battery replacement does not go near the storage, and nothing needs backing up or restoring afterwards. Back the phone up anyway as a precaution before any repair.`,
         "Apple publishes its own battery service pricing per model on its support site, which is worth checking before deciding where to have the work done. iOS will report a service message about the battery after any non-Apple replacement, in the same way it does for screens.",
       ],
@@ -308,7 +308,7 @@ const iphoneBattery: RepairDef = {
   faqs: (c) => [
     {
       question: "How much does an iPhone battery replacement cost in Calgary?",
-      answer: `iPhone battery replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("iphone-battery")}, including the part and the labour. Battery prices vary much less between iPhone models than screen prices, because the cell itself costs broadly similar amounts across the range.`,
+      answer: `iPhone battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across iPhone models is much narrower than it is for screens, because a battery cell is a broadly similar part across the range. The repair takes about ${c.waitMinutes} minutes at the counter.`,
     },
     {
       question: "How do I know if my iPhone battery needs replacing?",
@@ -346,8 +346,8 @@ const iphonePort: RepairDef = {
   minutes: 45,
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
-  answer: (c) =>
-    `iPhone charging port replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("iphone-port")} including the part and the labour. The repair takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge.`,
+  answer: () =>
+    `iPhone charging port replacement at TechBrotherz in Calgary takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge at all. The quote is free and given before any work starts.`,
   symptoms: [
     "The cable has to be held at an angle, or pressed in, before charging starts.",
     "The phone charges from some cables but not others, or only from certain plugs.",
@@ -362,7 +362,7 @@ const iphonePort: RepairDef = {
     },
     {
       title: "A known-good cable and charger are tried",
-      body: "Cables fail far more often than ports do. Ruling out the accessory before opening the phone is the difference between a $0 answer and an unnecessary repair.",
+      body: "Cables fail far more often than ports do. Ruling out the accessory before opening the phone is the difference between an answer that costs nothing and an unnecessary repair.",
     },
     {
       title: "The display is lifted and the battery disconnected",
@@ -430,10 +430,10 @@ const iphonePort: RepairDef = {
     "When wireless charging works and the phone is close to being replaced anyway.",
     "When the phone has water damage, because corrosion on the board can mimic a failed port and will not be fixed by a new one.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does iPhone charging port repair cost in Calgary?",
-      answer: `iPhone charging port replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("iphone-port")}, including the part and the labour. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced.`,
+      answer: `iPhone charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced and without anything being charged for.`,
     },
     {
       question: "Why does my iPhone only charge when I hold the cable at an angle?",
@@ -462,7 +462,7 @@ const iphoneCamera: RepairDef = {
   eyebrow: "iPhone camera",
   seoTitle: "iPhone Camera Repair Calgary | Front and Rear Prices",
   seoDescription:
-    "iPhone camera repair prices by model at TechBrotherz in Calgary. Front and rear cameras, cracked lens glass, part and labour included, 60-day warranty.",
+    "iPhone camera repair by model at TechBrotherz in Calgary. Front and rear cameras, cracked lens glass, part and labour included, 60-day warranty.",
   serviceType: "iPhone camera repair",
   parentService: "/services/phone-repair",
   source: {
@@ -476,7 +476,7 @@ const iphoneCamera: RepairDef = {
   lead: (c) =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
   answer: (c) =>
-    `iPhone camera repair at TechBrotherz in Calgary is priced per model, starting at ${c.price("iphone-camera")} including the part and the labour. Cracked lens glass over the rear camera is a separate and cheaper repair than replacing the camera module underneath it, and TechBrotherz identifies which one you need at the counter. Most camera repairs take about ${c.waitMinutes} minutes.`,
+    `iPhone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the counter. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
   symptoms: [
     "Photos come out blurry no matter how still the phone is held, or will not focus at all.",
     "The camera app opens to a black frame, or freezes when switching between lenses.",
@@ -559,10 +559,10 @@ const iphoneCamera: RepairDef = {
     "When the phone has been through water, because camera faults are often the first visible sign of wider corrosion.",
     "When the module price on a recent Pro model approaches the cost of a screen on a phone already due for replacement.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does iPhone camera repair cost in Calgary?",
-      answer: `iPhone camera repair at TechBrotherz in Calgary is priced per model and starts at ${c.price("iphone-camera")}, including the part and the labour. Recent Pro models cost more because they carry three separate rear camera modules, each a distinct part. Cracked rear lens glass is a smaller and cheaper repair than replacing the module.`,
+      answer: `iPhone camera repair at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Recent Pro models are the larger job because they carry three separate rear camera modules, each a distinct part. Cracked rear lens glass is a smaller repair than replacing the module underneath it.`,
     },
     {
       question: "Why are my iPhone photos hazy or full of flare?",
@@ -604,8 +604,8 @@ const iphoneBackGlass: RepairDef = {
   minutes: 60,
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
-  answer: (c) =>
-    `iPhone back glass replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("iphone-back-glass")} including the part and the labour. On iPhone 8 through iPhone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From iPhone 12 onwards the panel is designed to come off more cleanly.`,
+  answer: () =>
+    `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From iPhone 12 onwards the panel is designed to come off more cleanly.`,
   symptoms: [
     "Cracked or shattered glass on the back of the phone, with the front undamaged.",
     "Glass fragments lifting away from the frame, sharp enough to catch on a pocket.",
@@ -688,10 +688,10 @@ const iphoneBackGlass: RepairDef = {
     "When the phone is old enough that the labour-heavy repair costs a large share of its used value.",
     "When the front screen also needs replacing, because doing both is worth pricing together before deciding.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does iPhone back glass replacement cost in Calgary?",
-      answer: `iPhone back glass replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("iphone-back-glass")}, including the part and the labour. On iPhone 8 through iPhone 11 the labour dominates the price, because the panel is bonded hard to the frame and has to be removed in pieces.`,
+      answer: `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the labour dominates the job, because the panel is bonded hard to the frame and has to be removed in pieces rather than lifted off.`,
     },
     {
       question: "Why does back glass cost as much as a screen on some iPhones?",
@@ -732,7 +732,7 @@ const samsungScreen: RepairDef = {
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
   answer: (c) =>
-    `Samsung Galaxy screen replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("samsung-screen")} including the part and the labour. Samsung screens cost more than comparable iPhone screens because the OLED panel is bonded to the phone's frame and supplied as one assembly. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty.`,
+    `Samsung Galaxy screen replacement at TechBrotherz in Calgary fits a complete assembly, because Samsung bonds the OLED panel to the phone's frame and supplies the two as one part. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
     "Cracked glass, including cracks that start at a curved edge and spread inward.",
     "Green, pink or black vertical lines running down the display.",
@@ -762,7 +762,7 @@ const samsungScreen: RepairDef = {
       body: "Fresh adhesive goes around the rear panel, and touch across the whole display including the curved edges is checked before the phone leaves.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why do Samsung screens cost more than iPhone screens?",
       paragraphs: [
@@ -790,7 +790,7 @@ const samsungScreen: RepairDef = {
     {
       heading: "How much does a Samsung screen replacement cost in Calgary?",
       paragraphs: [
-        `Samsung Galaxy screen replacement at TechBrotherz in Calgary starts at ${c.price("samsung-screen")}, with each model priced in the table above, and every price includes the part and the labour. The spread between the cheapest and the most expensive Galaxy screen is wider than it is for iPhone, because the range covers everything from small flat A-series displays to large curved Note panels.`,
+        `A Galaxy screen is quoted per model at the counter, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for iPhone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
         "The repair takes about 45 minutes rather than the 30 minutes a typical iPhone screen takes, because of the frame transfer described above. Most Galaxy screen repairs are still done while you wait.",
         "Models showing Call for quote in the table are ones where the assembly is ordered in and priced once we know the cost. Samsung's own service pricing for its current models is published on its Canadian support site and is worth comparing before deciding.",
       ],
@@ -815,10 +815,10 @@ const samsungScreen: RepairDef = {
     "When the phone has water damage that has reached the board, since a new screen does not stop corrosion.",
     "When the screen price on an older curved model is close to the handset's used value.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does a Samsung screen replacement cost in Calgary?",
-      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("samsung-screen")}, including the part and the labour. Galaxy screens cost more than comparable iPhone screens because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
+      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. A Galaxy screen is a larger job than a comparable iPhone screen because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
     },
     {
       question: "Why is a Samsung screen more expensive to replace than an iPhone screen?",
@@ -856,8 +856,8 @@ const samsungBattery: RepairDef = {
   minutes: 45,
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
-  answer: (c) =>
-    `Samsung Galaxy battery replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("samsung-battery")} including the part and the labour. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone. It takes about 45 minutes.`,
+  answer: () =>
+    `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer reaches the end of a day on a charge it used to manage.",
     "It shuts down suddenly with charge still showing, particularly in cold weather.",
@@ -887,7 +887,7 @@ const samsungBattery: RepairDef = {
       body: "New adhesive goes around the rear panel so the phone closes properly. Charging and reported battery health are tested before it leaves.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why can you no longer just swap a Galaxy battery yourself?",
       paragraphs: [
@@ -915,7 +915,7 @@ const samsungBattery: RepairDef = {
     {
       heading: "How much does a Samsung battery replacement cost in Calgary?",
       paragraphs: [
-        `Samsung Galaxy battery replacement at TechBrotherz in Calgary starts at ${c.price("samsung-battery")}, priced per model in the table above, with the part and the labour included in every figure. Battery prices vary much less across the Galaxy range than screen prices do, because the cell itself is a similar cost from model to model.`,
+        `A Galaxy battery is quoted per model at the counter, with the part and the labour in one figure. The range across the Galaxy line is much narrower than it is for screens, because the cell itself is a similar part from model to model and most of the job is the access work.`,
         "Part of the price is the resealing. Fresh adhesive around the rear panel is not optional on a phone that was designed to be sealed, and a battery replacement that skips it leaves a phone with a back that lifts and a gap for dust.",
         "Your data is untouched by a battery replacement. Nothing goes near the storage, and there is nothing to back up or restore afterwards. Back the phone up anyway before any repair, as a precaution.",
       ],
@@ -940,10 +940,10 @@ const samsungBattery: RepairDef = {
     "When the phone also needs a screen, because the two together often approach the handset's used value.",
     "When the phone no longer receives Samsung security updates and is being kept going short term.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does a Samsung battery replacement cost in Calgary?",
-      answer: `Samsung Galaxy battery replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("samsung-battery")}, including the part and the labour. Battery prices vary less across the Galaxy range than screen prices, because the cell costs a similar amount from model to model.`,
+      answer: `Samsung Galaxy battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across the Galaxy line is narrower than it is for screens, because the cell is a similar part from model to model.`,
     },
     {
       question: "Can I replace a Galaxy battery myself?",
@@ -986,7 +986,7 @@ const samsungBackGlass: RepairDef = {
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Samsung Galaxy back glass. On a Galaxy the rear panel is the way into the phone for every internal repair, which means the technique for removing it is the same one used for battery and screen work.`,
   answer: (c) =>
-    `Samsung Galaxy back glass replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("samsung-back-glass")} including the part and the labour. The rear panel is bonded with adhesive around the entire perimeter, so it is heated, cut free, replaced and resealed. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty.`,
+    `Samsung Galaxy back glass replacement at TechBrotherz in Calgary means heating the rear panel, cutting it free of the adhesive that runs around its entire perimeter, fitting the replacement and resealing it. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
     "Cracked or shattered glass on the back of the phone, with the display unaffected.",
     "Glass lifting at a corner or along an edge, catching on hands and pockets.",
@@ -1069,10 +1069,10 @@ const samsungBackGlass: RepairDef = {
     "When a single crack is stable and the phone lives in a case.",
     "When the phone is due for replacement and the back is cosmetic rather than lifting.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does Samsung back glass replacement cost in Calgary?",
-      answer: `Samsung Galaxy back glass replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("samsung-back-glass")}, including the part and the labour. The panel is heated, cut free of its perimeter adhesive, replaced and resealed with fresh adhesive, which takes about 45 minutes.`,
+      answer: `Samsung Galaxy back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The panel is heated, cut free of its perimeter adhesive, replaced and resealed with fresh adhesive, which takes about 45 minutes.`,
     },
     {
       question: "Is only my Samsung camera glass cracked, or the whole back?",
@@ -1110,8 +1110,8 @@ const samsungPort: RepairDef = {
   minutes: 45,
   lead: () =>
     `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy charging ports. On most Galaxy models the USB-C port sits on a small daughterboard of its own, which makes it a cleaner replacement than on phones where the port is soldered directly to the mainboard.`,
-  answer: (c) =>
-    `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is priced per model, starting at ${c.price("samsung-port")} including the part and the labour. On most Galaxy models the USB-C port sits on its own small board that unplugs and replaces as a unit. TechBrotherz clears compacted lint from the socket first, because that alone fixes many charging faults at no cost.`,
+  answer: () =>
+    `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On most Galaxy models the USB-C port sits on its own small board that unplugs and replaces as a unit. TechBrotherz clears compacted lint from the socket first, because that alone fixes many charging faults at no cost.`,
   symptoms: [
     "The cable will not stay in, or falls out when the phone is picked up.",
     "Charging only starts when the cable is pushed in hard or held at an angle.",
@@ -1141,7 +1141,7 @@ const samsungPort: RepairDef = {
       body: "The charging board usually carries the bottom microphone too, so both are checked before the rear panel is resealed.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why is a Galaxy charging port a cleaner repair than on some phones?",
       paragraphs: [
@@ -1169,7 +1169,7 @@ const samsungPort: RepairDef = {
     {
       heading: "How much does a Samsung charging port repair cost in Calgary?",
       paragraphs: [
-        `Samsung Galaxy charging port replacement at TechBrotherz in Calgary starts at ${c.price("samsung-port")}, priced per model in the table above, with the part and the labour included. The repair takes about 45 minutes, most of which is the access work of removing and resealing the rear glass.`,
+        `A Galaxy charging port is quoted per model at the counter, with the part and the labour in one figure. The repair takes about 45 minutes, most of which is the access work of removing and resealing the rear glass rather than the port itself.`,
         "Because the charging board usually carries the bottom microphone as well, this repair sometimes fixes a second problem people had not connected to it. If callers have been saying they cannot hear you clearly and the phone has also been fussy about charging, one part may be behind both.",
         "If wireless charging works normally but no cable charges the phone, that is a clear pointer at the port rather than the battery or the board, and it is worth mentioning at the counter.",
       ],
@@ -1194,10 +1194,10 @@ const samsungPort: RepairDef = {
     "When a known-good cable and charger work fine, since the accessory was the fault.",
     "When the phone has water damage, because corrosion elsewhere can present as a charging fault.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does Samsung charging port repair cost in Calgary?",
-      answer: `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is priced per model and starts at ${c.price("samsung-port")}, including the part and the labour. On most Galaxy models the port sits on its own daughterboard that unplugs and replaces as a unit, and the repair takes about 45 minutes.`,
+      answer: `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On most Galaxy models the port sits on its own daughterboard that unplugs and replaces as a unit, and the repair takes about 45 minutes.`,
     },
     {
       question: "Why does my Galaxy charge slowly but not fast any more?",
@@ -1239,10 +1239,10 @@ const ipadScreen: RepairDef = {
   siblings: ["/repairs/iphone-screen-replacement", "/repairs/laptop-screen-replacement"],
   brandSlug: "apple-ipad",
   minutes: 90,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens from ${c.price("ipad-glass")}. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front often costs far less to fix than people expect.`,
-  answer: (c) =>
-    `iPad glass replacement at TechBrotherz in Calgary starts at ${c.price("ipad-glass")}, including the part and the labour. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent iPad Air and iPad Pro models use a laminated display where both replace as one assembly, which costs considerably more.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
+  answer: () =>
+    `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent iPad Air and iPad Pro models use a laminated display where both replace as one assembly, which is the larger job.`,
   symptoms: [
     "Cracked or shattered front glass while the picture underneath is still perfect.",
     "Touch that has stopped working in one area, or registers presses on its own.",
@@ -1272,11 +1272,11 @@ const ipadScreen: RepairDef = {
       body: "Touch across the whole panel, both cameras, the home button or Face ID, the speakers and charging are all checked before the iPad goes back.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why is iPad glass replacement cheaper than an iPhone screen?",
       paragraphs: [
-        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel beneath it, with an air gap between the two. If the front cracks and the picture is unaffected, only the glass needs replacing, and that part costs a fraction of a full display assembly. That is why iPad glass replacement at TechBrotherz starts at ${c.price("ipad-glass")}.`,
+        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel beneath it, with an air gap between the two. If the front cracks and the picture is unaffected, only the glass needs replacing, and that part is a fraction of a full display assembly. That is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
         "This is the opposite of every modern phone, where the digitiser and the panel are laminated together at the factory and must be replaced as one. The iPad kept the older separated construction on its base models long after phones moved on.",
         "The practical result surprises people regularly: a large cracked iPad screen can cost less to repair than a small cracked phone screen, because the layer that broke is the cheap one.",
       ],
@@ -1300,7 +1300,7 @@ const ipadScreen: RepairDef = {
     {
       heading: "How much does iPad screen repair cost in Calgary?",
       paragraphs: [
-        `iPad glass replacement at TechBrotherz in Calgary starts at ${c.price("ipad-glass")}, with each model priced in the table above and the part and labour included in every figure. The spread across the table is wider than on any other device we repair, because it covers both separated-glass and laminated-display models.`,
+        `iPad glass is quoted per model at the counter, with the part and the labour in one figure. The spread across the iPad range is wider than on any other device TechBrotherz repairs, because it covers both separated-glass and laminated-display models, and those are two different repairs rather than two versions of one.`,
         "The model number is what determines which of those you have, and it is engraved in small print on the back of the iPad. Two tablets that look nearly identical can be very different repairs, which is why we ask rather than assume.",
         "Models showing Call for quote are ones where the assembly is ordered in and priced once we know the cost. Apple publishes its own out-of-warranty iPad service pricing, which is worth comparing before deciding where to have the work done.",
       ],
@@ -1325,10 +1325,10 @@ const ipadScreen: RepairDef = {
     "When a laminated iPad Pro display approaches half the used value of the tablet.",
     "When the iPad has been in liquid, since corrosion continues after the glass is replaced.",
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does it cost to replace an iPad screen in Calgary?",
-      answer: `iPad glass replacement at TechBrotherz in Calgary starts at ${c.price("ipad-glass")}, including the part and the labour, and each model is priced individually. Older iPads with separated glass are the cheaper repair. Laminated iPad Air and iPad Pro displays replace as one assembly and cost considerably more.`,
+      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPads with separated glass are the smaller repair. Laminated iPad Air and iPad Pro displays replace as one assembly and are the larger job.`,
     },
     {
       question: "Which iPad models have laminated screens?",
@@ -1358,18 +1358,18 @@ const laptopScreen: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Laptop Screen Replacement",
   eyebrow: "Laptop screen",
-  seoTitle: "Laptop Screen Replacement Calgary | From $120",
+    seoTitle: "Laptop Screen Replacement Calgary | Free Quote",
   seoDescription:
-    "Laptop screen replacement at TechBrotherz in Calgary from $120, part and labour included. Cracked, black and flickering panels, 60-day warranty, walk in.",
+        "Laptop screen replacement at TechBrotherz in Calgary, part and labour included. Cracked, black and flickering panels, 60-day warranty, walk in.",
   serviceType: "Laptop screen replacement",
   parentService: "/services/laptop-repair",
   source: { kind: "flat", flatSlug: "laptop-screen-replacement" },
   siblings: ["/repairs/laptop-keyboard-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 60,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens from ${c.price("laptop-screen")}, including the part and the labour. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
   answer: (c) =>
-    `Laptop screen replacement at TechBrotherz in Calgary starts at ${c.price("laptop-screen")}, including the part and the labour. The final price depends on the panel your machine takes, because size, resolution and touch capability all change the part cost. Most laptop screens are replaced the same day, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
+    `Laptop screen replacement at TechBrotherz in Calgary is quoted once the panel your machine takes has been identified, because size, resolution and touch capability all change the part. Most laptop screens are replaced the same day, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   symptoms: [
     "Cracked glass or a visible impact mark, usually with spreading dark ink-like patches.",
     "The screen stays black while the machine clearly boots, with fans running and lights on.",
@@ -1399,7 +1399,7 @@ const laptopScreen: RepairDef = {
       body: "The bezel clips back on, and the hinge is checked through its full range so the picture does not flicker when the lid moves.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Is it the screen or the graphics?",
       paragraphs: [
@@ -1411,7 +1411,7 @@ const laptopScreen: RepairDef = {
     {
       heading: "What decides the price of a laptop screen?",
       paragraphs: [
-        `Laptop screen replacement at TechBrotherz starts at ${c.price("laptop-screen")}, and where a specific machine lands depends entirely on the panel it takes. Four things drive that: the physical size, the resolution, whether the panel is touch-enabled, and in some cases the refresh rate and colour specification on machines built for gaming or design work.`,
+        `Where a specific machine lands depends entirely on the panel it takes. Four things drive that: the physical size, the resolution, whether the panel is touch-enabled, and in some cases the refresh rate and colour specification on machines built for gaming or design work.`,
         "A standard HD panel in a mainstream 15-inch laptop is the common case and sits at the bottom of the range. A high-resolution panel, a touch panel, or a high-refresh gaming panel costs substantially more, because those are more expensive parts to buy rather than more expensive work to fit.",
         "The labour is broadly the same across all of them, which is why the model number matters so much for a firm quote. Bring the laptop or the number from the sticker underneath and the price stops being an estimate.",
       ],
@@ -1478,10 +1478,10 @@ const laptopScreen: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does laptop screen replacement cost in Calgary?",
-      answer: `Laptop screen replacement at TechBrotherz in Calgary starts at ${c.price("laptop-screen")}, including the part and the labour. The final price depends on the panel the machine takes: size, resolution and whether it is touch-enabled all change the part cost, while the labour stays broadly the same.`,
+      answer: `Laptop screen replacement at TechBrotherz in Calgary is quoted once the panel has been identified, free of charge, before any work starts. Size, resolution and whether the panel is touch-enabled all change the part, while the labour stays broadly the same whichever panel the machine takes.`,
     },
     {
       question: "How do I know if my laptop screen or graphics card is broken?",
@@ -1509,18 +1509,18 @@ const laptopKeyboard: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Laptop Keyboard Replacement",
   eyebrow: "Laptop keyboard",
-  seoTitle: "Laptop Keyboard Replacement Calgary | From $69.99",
+    seoTitle: "Laptop Keyboard Replacement Calgary | Free Quote",
   seoDescription:
-    "Laptop keyboard replacement at TechBrotherz in Calgary from $69.99 to $149.99, part and labour included. Spills, dead keys and worn keyboards, 60-day warranty.",
+        "Laptop keyboard replacement at TechBrotherz in Calgary, part and labour included. Spills, dead keys and worn keyboards, 60-day warranty.",
   serviceType: "Laptop keyboard replacement",
   parentService: "/services/laptop-repair",
   source: { kind: "flat", flatSlug: "laptop-keyboard-replacement" },
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 45,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards from ${c.price("laptop-keyboard")}. The range reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
-  answer: (c) =>
-    `Laptop keyboard replacement at TechBrotherz in Calgary costs ${c.price("laptop-keyboard-range")}, including the part and the labour. The range depends on construction: on some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly. Most keyboard work is finished the same day.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
+  answer: () =>
+    `Laptop keyboard replacement at TechBrotherz in Calgary is quoted after we have seen how the keyboard is fitted, because that is what the job turns on. On some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly. Most keyboard work is finished the same day.`,
   symptoms: [
     "Keys that do not register, or need pressing hard before they respond.",
     "Keys that repeat characters on their own, or type continuously without being touched.",
@@ -1550,7 +1550,7 @@ const laptopKeyboard: RepairDef = {
       body: "The whole keyboard is checked key by key, along with the backlight and the trackpad, before the machine goes back.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "What should you do about a spill on a laptop keyboard?",
       paragraphs: [
@@ -1562,7 +1562,7 @@ const laptopKeyboard: RepairDef = {
     {
       heading: "Why do keyboard prices vary so much between laptops?",
       paragraphs: [
-        `Laptop keyboard replacement at TechBrotherz ranges from ${c.price("laptop-keyboard")} to ${c.price("laptop-keyboard-max")}, and the spread is about construction rather than quality. On many business laptops the keyboard is a serviceable module: remove a few screws from underneath, and it lifts out from the top with one ribbon cable. That is a quick job with a cheap part.`,
+        `The spread on laptop keyboards is about construction rather than quality. On many business laptops the keyboard is a serviceable module: remove a few screws from underneath, and it lifts out from the top with one ribbon cable. That is a quick job with an inexpensive part.`,
         "On many consumer and thin-and-light machines the keyboard is riveted into the upper case at the factory. It is not designed to be removed at all, so the replacement part is the whole palm rest assembly, complete with the keyboard already fitted, and the machine has to be substantially dismantled to change it.",
         "Neither approach is better to type on. It is purely a manufacturing decision that shows up as a price difference years later at repair time. We identify which one your machine is before quoting.",
       ],
@@ -1629,10 +1629,10 @@ const laptopKeyboard: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does laptop keyboard replacement cost in Calgary?",
-      answer: `Laptop keyboard replacement at TechBrotherz in Calgary costs ${c.price("laptop-keyboard-range")}, including the part and the labour. Where a machine falls in that range depends on construction: a serviceable keyboard module that lifts out from the top costs less than a keyboard riveted into the upper case, which requires replacing the whole palm rest assembly.`,
+      answer: `Laptop keyboard replacement at TechBrotherz in Calgary is quoted once we have seen how the keyboard is fitted, free of charge, before any work starts. A serviceable keyboard module that lifts out from the top is the smaller job. A keyboard riveted into the upper case means replacing the whole palm rest assembly, which is the larger one.`,
     },
     {
       question: "What should I do if I spill a drink on my laptop?",
@@ -1660,18 +1660,18 @@ const laptopPort: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Laptop Charging Port Repair",
   eyebrow: "Laptop charging port",
-  seoTitle: "Laptop Charging Port Repair Calgary | $109.99",
+    seoTitle: "Laptop Charging Port Repair Calgary | Free Quote",
   seoDescription:
-    "Laptop DC charging socket replacement at TechBrotherz in Calgary for $109.99, part and labour included. Loose sockets and laptops that will not charge, 60-day warranty.",
+        "Laptop DC charging socket replacement at TechBrotherz in Calgary, part and labour included. Loose sockets and laptops that will not charge, 60-day warranty.",
   serviceType: "Laptop charging port repair",
   parentService: "/services/laptop-repair",
   source: { kind: "flat", flatSlug: "dc-charging-port-replacement" },
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-keyboard-replacement"],
   minutes: 90,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets for ${c.price("laptop-dc")}, including the part and the labour. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
-  answer: (c) =>
-    `Laptop charging socket replacement at TechBrotherz in Calgary costs ${c.price("laptop-dc")}, including the part and the labour. A socket that has worked loose shows as a charging light that flickers when the plug is moved, or a laptop that only charges at a particular cable angle. The repair is soldered work on most machines, so it takes longer than a phone charging port.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
+  answer: () =>
+    `Laptop charging socket replacement at TechBrotherz in Calgary is quoted free of charge before any work starts. A socket that has worked loose shows as a charging light that flickers when the plug is moved, or a laptop that only charges at a particular cable angle. The repair is soldered work on most machines, so it takes longer than a phone charging port.`,
   symptoms: [
     "The charging light flickers or cuts out when the plug is moved or the cable is nudged.",
     "The laptop only charges when the cable is held at a specific angle.",
@@ -1682,7 +1682,7 @@ const laptopPort: RepairDef = {
   steps: [
     {
       title: "The charger is tested first",
-      body: "Adapters fail more often than sockets, usually where the cable enters the brick. Testing with a known-good charger is the difference between a $0 answer and an unnecessary repair.",
+      body: "Adapters fail more often than sockets, usually where the cable enters the brick. Testing with a known-good charger is the difference between an answer that costs nothing and an unnecessary repair.",
     },
     {
       title: "The socket is checked for movement",
@@ -1701,7 +1701,7 @@ const laptopPort: RepairDef = {
       body: "The machine is charged and run with the battery drawing power before it is closed up, because a cold solder joint shows under load rather than at rest.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Is it the charger, the socket or the battery?",
       paragraphs: [
@@ -1723,7 +1723,7 @@ const laptopPort: RepairDef = {
       paragraphs: [
         "A laptop DC socket is usually soldered to the mainboard rather than sitting on a replaceable module, and reaching the mainboard means dismantling the machine substantially: the bottom cover, the battery, the storage, often the cooling assembly, and sometimes the board itself has to come out.",
         "The soldering is skilled work but not the slow part. Getting to the board and putting the machine back together correctly afterwards is where the time goes, and that is why this is priced and scheduled as a longer repair.",
-        `Laptop charging socket replacement at TechBrotherz costs ${c.price("laptop-dc")}, part and labour included, and is usually a same-day drop-off rather than a wait at the counter.`,
+        `Laptop charging socket replacement is usually a same-day drop-off rather than a wait at the counter, because the machine has to come substantially apart to reach the socket.`,
       ],
     },
     {
@@ -1780,10 +1780,10 @@ const laptopPort: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does laptop charging port repair cost in Calgary?",
-      answer: `Laptop DC charging socket replacement at TechBrotherz in Calgary costs ${c.price("laptop-dc")}, including the part and the labour. The socket is soldered to the mainboard on most machines, so the laptop has to be substantially dismantled to reach it, which is why it is a longer repair than a phone charging port.`,
+      answer: `Laptop DC charging socket replacement at TechBrotherz in Calgary is quoted free of charge before any work starts. The socket is soldered to the mainboard on most machines, so the laptop has to be substantially dismantled to reach it, which is why it is a longer repair than a phone charging port.`,
     },
     {
       question: "How do I know if it is the laptop charger or the charging port?",
@@ -1813,18 +1813,18 @@ const windowsInstallation: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Windows Installation",
   eyebrow: "Windows installation",
-  seoTitle: "Windows Installation Calgary | $44.99 With Office",
+    seoTitle: "Windows Installation Calgary | With Office Included",
   seoDescription:
-    "Windows installed clean at TechBrotherz in Calgary for $44.99, including an office suite and security software. Flat price, agreed before work starts.",
+        "Windows installed clean at TechBrotherz in Calgary, including an office suite and security software. One flat figure, agreed before work starts.",
   serviceType: "Windows installation",
   parentService: "/services/computer-repair",
   source: { kind: "flat", flatSlug: "windows-installation" },
   siblings: ["/repairs/computer-tune-up", "/repairs/computer-diagnostics"],
   minutes: 120,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean for ${c.price("windows-installation")}, including an office suite and security software set up and running. It is a flat price for the whole job, not an hourly rate.`,
-  answer: (c) =>
-    `A Windows installation at TechBrotherz in Calgary costs ${c.price("windows-installation")} and includes the operating system installed clean, an office suite, and security software configured and running. It is a flat price agreed before work starts. A clean install replaces what is on the drive, so back your files up first and tell TechBrotherz what you need kept.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean, including an office suite and security software set up and running. It is quoted as one flat figure for the whole job, not as an hourly rate.`,
+  answer: () =>
+    `A Windows installation at TechBrotherz in Calgary includes the operating system installed clean, an office suite, and security software configured and running. It is quoted as one flat figure agreed before work starts. A clean install replaces what is on the drive, so back your files up first and tell TechBrotherz what you need kept.`,
   symptoms: [
     "The computer has become unstable, crashing or restarting without a clear cause.",
     "An infection has been removed but the machine still does not behave normally.",
@@ -1854,13 +1854,13 @@ const windowsInstallation: RepairDef = {
       body: "Updates are brought current and the computer is used rather than just booted once, so anything missing shows up here rather than at home.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "When is a clean Windows installation the right answer?",
       paragraphs: [
         "There are four situations where it is clearly the right call. A machine that has become unstable in ways that resist diagnosis. A machine that has had an infection removed but still does not behave properly. A machine carrying years of accumulated software that cleaning has not fixed. And a machine being passed to somebody else.",
         "In each of those the common thread is that the problem is the accumulated state of the system rather than a specific fault you can point at. A clean install resets that completely, and it does so on hardware you already own, which is why it costs a fraction of a replacement machine.",
-        `A Windows installation at TechBrotherz costs ${c.price("windows-installation")} as a flat price for the whole job. A machine that takes longer than expected does not cost more, which is the point of pricing it per job rather than per hour.`,
+        `A Windows installation at TechBrotherz is quoted as one flat figure for the whole job. A machine that takes longer than expected does not come to more, which is the point of quoting the job rather than the hour.`,
       ],
     },
     {
@@ -1882,7 +1882,7 @@ const windowsInstallation: RepairDef = {
     {
       heading: "What is included beyond the operating system?",
       paragraphs: [
-        `The ${c.price("windows-installation")} price covers the operating system installed clean, the hardware drivers the machine needs, an office suite, and security software installed and configured. The intention is that the computer comes back ready to use rather than ready to spend an evening setting up.`,
+        `That one figure covers the operating system installed clean, the hardware drivers the machine needs, an office suite, and security software installed and configured. The intention is that the computer comes back ready to use rather than ready to spend an evening setting up.`,
         "Drivers matter more than people expect. A Windows installation without the right drivers gives you a machine where the wireless does not work, the display is at the wrong resolution and the sound is missing. Getting them right is part of the job, not an extra.",
         "If you want specific programs installed beyond that, those are priced separately per program, and it is worth mentioning at the counter so the total is agreed up front rather than added afterwards.",
       ],
@@ -1933,10 +1933,10 @@ const windowsInstallation: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does a Windows installation cost in Calgary?",
-      answer: `A Windows installation at TechBrotherz in Calgary costs ${c.price("windows-installation")} as a flat price, including the operating system installed clean, the hardware drivers, an office suite and security software configured and running. A job that takes longer than expected does not cost more.`,
+      answer: `A Windows installation at TechBrotherz in Calgary is quoted as one flat figure, including the operating system installed clean, the hardware drivers, an office suite and security software configured and running. A job that takes longer than expected does not come to more.`,
     },
     {
       question: "Will a Windows installation delete my files?",
@@ -1964,18 +1964,18 @@ const computerTuneUp: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Computer Clean-Up and Tune-Up",
   eyebrow: "Tune-up",
-  seoTitle: "Computer Tune-Up Calgary | $79.99 Flat",
+    seoTitle: "Computer Tune-Up Calgary | One Flat Figure",
   seoDescription:
-    "Computer clean-up and tune-up at TechBrotherz in Calgary for $79.99. Startup list, temporary files, updates, physical cooling clean and a storage health check.",
+        "Computer clean-up and tune-up at TechBrotherz in Calgary. Startup list, temporary files, updates, physical cooling clean and a storage health check.",
   serviceType: "Computer tune-up",
   parentService: "/services/computer-repair",
   source: { kind: "flat", flatSlug: "tune-up" },
   siblings: ["/repairs/windows-installation", "/repairs/computer-diagnostics"],
   minutes: 120,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers for ${c.price("tune-up")}. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
-  answer: (c) =>
-    `A clean-up and tune-up at TechBrotherz in Calgary costs ${c.price("tune-up")} and covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Everything on the machine stays exactly where it is.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
+  answer: () =>
+    `A clean-up and tune-up at TechBrotherz in Calgary covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Everything on the machine stays exactly where it is, and the job is quoted as one flat figure.`,
   symptoms: [
     "The computer takes minutes to become usable after switching on.",
     "The fan runs loudly and constantly, even when nothing much is open.",
@@ -2005,13 +2005,13 @@ const computerTuneUp: RepairDef = {
       body: "Drive health reporting shows the warning signs that appear long before a drive dies, which turns a future disaster into a planned replacement.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why do computers get slower over time?",
       paragraphs: [
         "Four causes account for almost all of it, and they compound. Programs installed over years add themselves to startup, so more loads at boot and stays resident. Temporary files, old installers and update caches accumulate until the drive is close to full, and a nearly full drive slows down further. Updates fall behind. And dust blocks the cooling.",
         "None of those is dramatic on its own. Together they turn a machine that started in twenty seconds into one that takes three minutes, and because it happened gradually people assume the computer has simply aged rather than that four fixable things have stacked up.",
-        `A clean-up and tune-up at TechBrotherz costs ${c.price("tune-up")} and addresses all four, which is why a machine that felt finished often comes back usable.`,
+        `A clean-up and tune-up at TechBrotherz addresses all four, which is why a machine that felt finished often comes back usable.`,
       ],
     },
     {
@@ -2085,10 +2085,10 @@ const computerTuneUp: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does a computer tune-up cost in Calgary?",
-      answer: `A clean-up and tune-up at TechBrotherz in Calgary costs ${c.price("tune-up")} as a flat price. It covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling, and checking the storage for early signs of failure. Everything on the machine stays where it is.`,
+      answer: `A clean-up and tune-up at TechBrotherz in Calgary is quoted as one flat figure. It covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling, and checking the storage for early signs of failure. Everything on the machine stays where it is.`,
     },
     {
       question: "Why does dust make my computer slow instead of just hot?",
@@ -2116,18 +2116,18 @@ const computerDiagnostics: RepairDef = {
   brandSlug: "laptops-desktops",
   h1: "Computer Diagnostics",
   eyebrow: "Diagnostics",
-  seoTitle: "Computer Diagnostics Calgary | $24.99, Off The Repair",
+    seoTitle: "Computer Diagnostics Calgary | Off The Repair",
   seoDescription:
-    "Computer diagnostics at TechBrotherz in Calgary for $24.99, deducted from the repair if you go ahead. A specific fault and a specific price, not an estimate.",
+        "Computer diagnostics at TechBrotherz in Calgary, deducted from the repair if you go ahead. A specific fault rather than an estimate.",
   serviceType: "Computer diagnostics",
   parentService: "/services/computer-repair",
   source: { kind: "flat", flatSlug: "diagnostics" },
   siblings: ["/repairs/computer-tune-up", "/repairs/windows-installation"],
   minutes: 60,
-  lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for ${c.price("diagnostics")}, and that amount comes off the price if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
-  answer: (c) =>
-    `Computer diagnostics at TechBrotherz in Calgary cost ${c.price("diagnostics")}, and that amount is deducted from the repair if you proceed. The diagnostic checks power delivery, whether the machine posts, storage health, memory and thermal behaviour, and ends with a specific fault and a specific price rather than an estimate. If the machine is not worth repairing, TechBrotherz will say so.`,
+  lead: () =>
+    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for a fixed diagnostic fee, and that fee comes off the bill if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
+  answer: () =>
+    `Computer diagnostics at TechBrotherz in Calgary carry a fixed diagnostic fee, and that fee is deducted from the repair if you proceed. The diagnostic checks power delivery, whether the machine posts, storage health, memory and thermal behaviour, and ends with a specific fault and a specific figure rather than an estimate. If the machine is not worth repairing, TechBrotherz will say so.`,
   symptoms: [
     "The computer will not turn on at all, or turns on and shows nothing.",
     "It restarts or shuts down on its own, without warning or a clear pattern.",
@@ -2157,11 +2157,11 @@ const computerDiagnostics: RepairDef = {
       body: "The diagnostic ends with what is wrong and what fixing it costs, or with an honest recommendation not to repair it.",
     },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why does a diagnostic cost anything?",
       paragraphs: [
-        `A diagnostic at TechBrotherz costs ${c.price("diagnostics")} and comes off the repair if you go ahead, which means it is free whenever it leads to work. It is charged when it does not, and that is deliberate: the value in a diagnostic is the answer, and the answer is worth something even when the answer is do not spend money on this machine.`,
+        `The diagnostic fee comes off the repair if you go ahead, which means it costs nothing whenever it leads to work. It is charged when it does not, and that is deliberate: the value in a diagnostic is the answer, and the answer is worth something even when the answer is do not spend money on this machine.`,
         "A shop that diagnoses for nothing has to recover the time elsewhere, and the usual way that happens is a bias towards finding a repair. Charging a small fee that disappears into the repair removes that pressure and means we can tell you a machine is not worth fixing without it costing us anything.",
         "It also means the diagnostic gets done properly rather than quickly. Tracing a fault through power, storage, memory and thermal behaviour takes time, and time that is paid for is time that gets spent.",
       ],
@@ -2236,10 +2236,10 @@ const computerDiagnostics: RepairDef = {
       ],
     ],
   },
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much do computer diagnostics cost in Calgary?",
-      answer: `Computer diagnostics at TechBrotherz in Calgary cost ${c.price("diagnostics")}, and that amount is deducted from the price if you go ahead with the repair. The diagnostic ends with a specific fault and a specific price rather than an estimate or a range.`,
+      answer: `Computer diagnostics at TechBrotherz in Calgary carry a fixed diagnostic fee, and that fee is deducted from the bill if you go ahead with the repair. The diagnostic ends with a specific fault and a specific figure rather than an estimate or a range.`,
     },
     {
       question: "Why does TechBrotherz charge for a diagnostic?",

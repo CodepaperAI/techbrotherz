@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s7-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S7 has a flat 5.1 inch display rather than the curve of the S7 Edge beside it, which makes it the more durable of the pair and slightly cheaper to repair at $249.99. It was the model that restored the microSD slot and water resistance after the S6 removed both, and it sold heavily in Canada."
+          "text": "The Galaxy S7 has a flat 5.1 inch display rather than the curve of the S7 Edge beside it, which makes it the more durable of the pair and slightly cheaper to repair. It was the model that restored the microSD slot and water resistance after the S6 removed both, and it sold heavily in Canada."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s7-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, at $249.99. The Galaxy S7 stopped at Android 8 and the screen repair now costs several times what the phone is worth. If the fault is a battery or a charging port rather than the screen, that is a different conversation and often worth doing. A screen at this price is not."
+          "text": "No. The Galaxy S7 stopped at Android 8 and the screen repair now costs several times what the phone is worth. If the fault is a battery or a charging port rather than the screen, that is a different conversation and often worth doing. A screen is not."
         }
       ],
       "markDefs": [],

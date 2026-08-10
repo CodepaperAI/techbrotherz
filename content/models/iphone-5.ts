@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The iPhone 5 stopped at iOS 10 and is now well beyond the point where it can run current apps or receive security updates. TechBrotherz can fit a $44.99 screen, and occasionally someone has a good reason, but for any normal use the honest answer is that this phone's working life is over."
+          "text": "No. The iPhone 5 stopped at iOS 10 and is now well beyond the point where it can run current apps or receive security updates. TechBrotherz can fit a screen, and occasionally someone has a good reason, but for any normal use the honest answer is that this phone's working life is over."
         }
       ],
       "markDefs": [],

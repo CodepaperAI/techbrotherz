@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-7-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 7 was the first iPhone rated for water resistance and the first with a solid-state home button. At $84.99 its screen is among the cheapest iPhone repairs TechBrotherz offers. Most iPhone 7 handsets arriving now are long out of their original ownership and are being kept going as backup phones or handed down."
+          "text": "The iPhone 7 was the first iPhone rated for water resistance and the first with a solid-state home button. Its screen is among the cheapest iPhone repairs TechBrotherz offers. Most iPhone 7 handsets arriving now are long out of their original ownership and are being kept going as backup phones or handed down."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-7-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only worth a cheap repair. The iPhone 7 stopped at iOS 15 and is now old enough that app compatibility is a real constraint rather than a theoretical one. An $84.99 screen on a phone that otherwise works is defensible. Anything more than that, on a phone of this age, is better spent on a replacement handset."
+          "text": "Only worth a smaller repair. The iPhone 7 stopped at iOS 15 and is now old enough that app compatibility is a real constraint rather than a theoretical one. A screen on a phone that otherwise works is defensible. Anything more than that, on a phone of this age, is better spent on a replacement handset."
         }
       ],
       "markDefs": [],

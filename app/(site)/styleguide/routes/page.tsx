@@ -59,7 +59,7 @@ export default function RoutesPage() {
           </div>
 
           <div
-            className="bg-tb-green-soft mt-6 h-3 w-full overflow-hidden rounded-full"
+            className="bg-tb-paper-2 mt-6 h-3 w-full overflow-hidden rounded-full"
             role="img"
             aria-label={`${percent} percent of planned routes are built`}
           >
@@ -69,7 +69,7 @@ export default function RoutesPage() {
           <table className="mt-8 w-full text-left">
             <caption className="sr-only-caption">Built and pending routes by tier</caption>
             <thead>
-              <tr className="bg-tb-green-soft">
+              <tr className="tb-thead">
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-4 py-3">
                   Tier
                 </th>

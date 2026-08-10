@@ -16,7 +16,7 @@ import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { getAllFaqs, getLocations, getReviewSummary, getSiteSettings } from "@/sanity/queries";
+import { getAllFaqs, getLocations, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -85,7 +85,7 @@ export default async function LocationsPage() {
         <>
           TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, is on the stretch of 17 Avenue SE known as International
-          Avenue, in the Forest Lawn area of the southeast.
+          Avenue, in the southeast, a few blocks west of Forest Lawn.
         </>
       }
       answerBox={{
@@ -228,9 +228,9 @@ export default async function LocationsPage() {
 
         <p className="type-body measure text-tb-muted mt-8">
           Whichever community you travel from, the repair happens at {SITE.street} in {SITE.city},
-          the price is the one published on{" "}
-          <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-            the repair price list
+          the quote is the one described on{" "}
+          <Link href="/contact" className="text-tb-green-deep hover:underline">
+            how quoting works
           </Link>
           , and the {warrantyDays}-day warranty is the same. Most phone repairs are finished in
           about {waitMinutes} minutes, so travelling in and waiting is usually practical.

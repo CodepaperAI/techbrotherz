@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-10-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 10 Plus has the largest and most expensive screen on the TechBrotherz legacy price list at $499.99, because it combines a 6.8 inch curved OLED with the extra digitizer layer the S Pen needs. It was also the Note that dropped the headphone socket, which remains a sore point for owners."
+          "text": "The Galaxy Note 10 Plus has the largest and most demanding screen of any handset TechBrotherz fits, because it combines a 6.8 inch curved OLED with the extra digitizer layer the S Pen needs. It was also the Note that dropped the headphone socket, which remains a sore point for owners."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-10-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Almost never worth $499.99. The Note 10 Plus stopped at Android 12, and at that price the repair approaches the cost of a good used current-generation phone. If the S Pen has failed but the screen is intact, come in anyway, because that is sometimes a cheaper and separate conversation."
+          "text": "Almost never worth it. The Note 10 Plus stopped at Android 12, so it receives no further updates, and its screen is the dearest repair on the board by a clear margin. If the S Pen has failed but the screen is intact, come in anyway, because that is sometimes a smaller and separate conversation."
         }
       ],
       "markDefs": [],

@@ -54,7 +54,7 @@ const RULES: Rule[] = [
   {
     label: "body text on the page background",
     fg: "tb-text",
-    bg: "tb-cream",
+    bg: "tb-paper",
     expect: "pass",
     minimum: 4.5,
     why: "Default body copy.",
@@ -62,7 +62,7 @@ const RULES: Rule[] = [
   {
     label: "secondary text on the page background",
     fg: "tb-muted",
-    bg: "tb-cream",
+    bg: "tb-paper",
     expect: "pass",
     minimum: 4.5,
     why: "Used for every lead paragraph and caption.",
@@ -70,7 +70,7 @@ const RULES: Rule[] = [
   {
     label: "green TEXT on the page background",
     fg: "tb-green-deep",
-    bg: "tb-cream",
+    bg: "tb-paper",
     expect: "pass",
     minimum: 4.5,
     why: "DESIGN.md 2.1: green text on light is --tb-green-deep, and this is why.",
@@ -78,10 +78,10 @@ const RULES: Rule[] = [
   {
     label: "brand green used as TEXT on the page background",
     fg: "tb-green",
-    bg: "tb-cream",
+    bg: "tb-paper",
     expect: "forbid",
     minimum: 4.5,
-    why: "DESIGN.md 2.1: --tb-green on cream fails AA, so it is fills only, never text.",
+    why: "DESIGN.md 2.1: --tb-green on paper fails AA, so it is fills only, never text.",
   },
   {
     label: "button label on a green fill",
@@ -126,10 +126,10 @@ const RULES: Rule[] = [
   {
     label: "green text on the soft green tint",
     fg: "tb-green-deep",
-    bg: "tb-green-soft",
+    bg: "tb-paper-2",
     expect: "pass",
     minimum: 4.5,
-    why: "Used for every AnswerBox label and table header.",
+    why: "Used for every AnswerBox label and inset panel.",
   },
 ];
 

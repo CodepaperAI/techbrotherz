@@ -25,7 +25,11 @@ const LQIP_FILE = "lib/content/image-blur.json";
 export interface SlotSpec {
   /** Output file, without extension. */
   slot: string;
-  /** Unsplash short id of the source file. */
+  /**
+   * Basename of the original in public/demo/_source/, without the extension.
+   * An Unsplash short id for the demo set, `supplied-*` for an original the
+   * client provided directly.
+   */
   source: string;
   ratio: "4:3" | "3:2";
   /** Crop focus, since the interesting part is rarely the centre. */
@@ -65,14 +69,28 @@ export const SLOTS: SlotSpec[] = [
   },
   { slot: "service-laptop-repair", source: "nbML7C5qrkw", ratio: "3:2", position: "centre" },
   { slot: "service-computer-repair", source: "1GntEP783rI", ratio: "3:2", position: "centre" },
+  /*
+   * Both supplied by the client, and both already 3:2, so `cover` is a
+   * straight downscale and the crop position never comes into play.
+   *
+   * These replaced two stand-ins rather than filling empty slots.
+   * service-phone-unlocking was a second crop of zs29-jZrAQo, the same frame
+   * service-tablet-repair uses, and the two sat in one grid on the home page.
+   * service-password-reset was fxKvHGDICcQ, a laptop being opened with a
+   * screwdriver, which is not what a password reset involves.
+   */
   {
     slot: "service-phone-unlocking",
-    source: "zs29-jZrAQo",
+    source: "supplied-carrier-unlocking",
     ratio: "3:2",
-    position: "attention",
-    quality: 68,
+    position: "centre",
   },
-  { slot: "service-password-reset", source: "fxKvHGDICcQ", ratio: "3:2", position: "attention" },
+  {
+    slot: "service-password-reset",
+    source: "supplied-password-reset",
+    ratio: "3:2",
+    position: "centre",
+  },
   { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
 ];
 

@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.moto-g-2nd-gen-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The second-generation Moto G stopped at Android 6 and a $110 screen exceeds what the handset is worth by a wide margin. TechBrotherz will repair one if you have a reason, but for ordinary use this is a phone to retire rather than to fix."
+          "text": "No. The second-generation Moto G stopped at Android 6 and a screen exceeds what the handset is worth by a wide margin. TechBrotherz will repair one if you have a reason, but for ordinary use this is a phone to retire rather than to fix."
         }
       ],
       "markDefs": [],

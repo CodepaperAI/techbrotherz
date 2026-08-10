@@ -187,7 +187,7 @@ const calgary: PlaceDef = {
       paragraphs: [
         "Everything the shop does happens at this one counter: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
         "That means the same technicians see a device from diagnosis to hand-back, and it means a household can bring several devices in one trip. Phones are usually finished while you wait; tablets and computers are same-day drop-offs.",
-        "Prices are published per device model rather than quoted on the day, so you can check the figure for your exact handset before deciding to come in. The full list is on the repair prices page, and each service page carries the prices relevant to it.",
+        "Every repair is quoted free at the counter before any work starts, so you can check the figure for your exact handset before deciding to come in. The full list is on the repair prices page, and each service page carries the prices relevant to it.",
       ],
     },
   ],

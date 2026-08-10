@@ -51,7 +51,7 @@ export const BRANDS: BrandDef[] = [
         }
       ],
       "seoTitle": "iPhone Repair Prices in Calgary",
-      "seoDescription": "iPhone screen, battery and charging port repair prices at TechBrotherz in Calgary. Parts and labour included, most repairs done in about 30 minutes."
+      "seoDescription": "iPhone screen, battery and charging port repair at TechBrotherz in Calgary. Parts and labour included, most repairs done in about 30 minutes."
     },
     {
       "slug": "apple-ipad",
@@ -101,7 +101,7 @@ export const BRANDS: BrandDef[] = [
         }
       ],
       "seoTitle": "Samsung Galaxy Repair Prices in Calgary",
-      "seoDescription": "Samsung Galaxy screen, battery and back glass repair prices at TechBrotherz in Calgary. Parts and labour included, 60-day warranty."
+      "seoDescription": "Samsung Galaxy screen, battery and back glass repair at TechBrotherz in Calgary. Parts and labour included, 60-day warranty."
     },
     {
       "slug": "google-pixel",
@@ -243,7 +243,7 @@ export const BRANDS: BrandDef[] = [
               "_key": "brand.laptops-desktops-s0",
               "_type": "span",
               "marks": [],
-              "text": "TechBrotherz repairs laptops and desktop computers at 3317 17 Ave SE in Calgary. Diagnostics are $24.99 and tell you exactly what is wrong before you commit to a repair. Common jobs are laptop screen replacement from $120, DC charging port replacement at $109.99, keyboard replacement between $69.99 and $149.99, Windows installation with Office and security at $44.99, and virus removal at $34.99. Laptop repairs usually take longer than phone repairs, so most are ready the same day rather than while you wait."
+              "text": "TechBrotherz repairs laptops and desktop computers at 3317 17 Ave SE in Calgary. Diagnostics carry a fixed fee and tell you exactly what is wrong before you commit to a repair. Common jobs are laptop screen replacement, DC charging port replacement, keyboard replacement, Windows installation with an office suite and security software, and virus removal. Laptop repairs usually take longer than phone repairs, so most are ready the same day rather than while you wait."
             }
           ],
           "markDefs": [],

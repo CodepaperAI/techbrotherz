@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s6-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S6 has a flat display where the S6 Edge curves, and it was Samsung's move to a glass and metal body after years of plastic backs. That switch is why the S6 was the first Galaxy S with a back that shatters, and why back glass at $44.99 became a routine repair on this generation."
+          "text": "The Galaxy S6 has a flat display where the S6 Edge curves, and it was Samsung's move to a glass and metal body after years of plastic backs. That switch is why the S6 was the first Galaxy S with a back that shatters, and why back glass became a routine repair on this generation."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s6-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only for the cheap repairs. The Galaxy S6 stopped at Android 7 and no longer receives security updates. A $44.99 back glass or a $69.99 battery on a phone still in daily use is defensible. The $189.99 screen is not, because it costs more than the phone is worth."
+          "text": "Only for the smaller repairs. The Galaxy S6 stopped at Android 7 and no longer receives security updates. A back glass or a battery on a phone still in daily use is defensible. The screen is not, because it costs more than the phone is worth."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s6-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The S6 was Samsung's first glass-backed Galaxy S, which introduced wireless charging and, at the same time, a second surface that breaks. Rear glass at $44.99 is one of the cheaper repairs on this model, and it is worth doing promptly because loose shards spread."
+          "text": "The S6 was Samsung's first glass-backed Galaxy S, which introduced wireless charging and, at the same time, a second surface that breaks. Rear glass is one of the smaller repairs on this model, and it is worth doing promptly because loose shards spread."
         }
       ],
       "markDefs": [],

@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.nexus-5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only for the people who want stock Android. The Nexus 5 stopped at Android 6 and receives no security updates. At $100 the screen is among the cheapest we fit, and there is a small group who keep these deliberately. For general use, it is well past its useful life."
+          "text": "Only for the people who want stock Android. The Nexus 5 stopped at Android 6 and receives no security updates. Its screen is among the cheapest we fit, and there is a small group who keep these deliberately. For general use, it is well past its useful life."
         }
       ],
       "markDefs": [],

@@ -34,37 +34,52 @@ export type PillButtonProps = PillButtonAsLink | PillButtonAsButton;
  */
 const VARIANT_STYLES: Record<PillButtonVariant, string> = {
   primary: "bg-tb-green text-tb-ink hover:bg-tb-green-press",
-  ghost:
-    "border border-tb-border bg-transparent text-tb-text hover:border-tb-ink hover:bg-tb-white",
-  dark: "bg-tb-ink text-tb-white hover:bg-tb-ink-2",
-  ghostOnDark: "border border-tb-border-dark bg-transparent text-tb-white hover:border-tb-silver",
+  ghost: "border border-tb-ink bg-transparent text-tb-ink hover:bg-tb-ink hover:text-tb-white",
+  dark: "bg-tb-black text-tb-on-black hover:bg-tb-black-2",
+  ghostOnDark:
+    "border border-tb-rule-dark bg-transparent text-tb-on-black hover:border-tb-green hover:text-tb-green",
 };
 
 const SIZE_STYLES: Record<PillButtonSize, string> = {
-  md: "h-12 px-7 text-base md:h-13",
-  sm: "h-10 px-5 text-[0.9375rem]",
+  md: "h-12 px-7 md:h-[3.25rem]",
+  sm: "h-10 px-5",
 };
 
+/*
+ * Phase 8: rectangles at 6px, not 999px pills.
+ *
+ * The name stays PillButton because renaming it would touch every call site in
+ * the app for no behavioural gain, and Phase 8's rule is that markup may change
+ * but content may not. The shape is the point: a pill reads soft and modern, a
+ * rectangle reads direct and commercial, which is what a walk-in shop is.
+ *
+ * Labels are uppercase and letterspaced via .type-btn, applied in CSS, so the
+ * rendered text content is unchanged from the baseline.
+ */
 const BASE =
-  "inline-flex items-center justify-center gap-2 rounded-chip font-medium " +
-  "transition-colors duration-[180ms] ease-out disabled:pointer-events-none disabled:opacity-50";
+  "type-btn rounded-btn inline-flex items-center justify-center gap-2 " +
+  "transition-colors duration-[--duration-hover] ease-[--ease-out] " +
+  "disabled:pointer-events-none disabled:opacity-50";
 
 function isInternal(href: string): boolean {
   return href.startsWith("/") && !href.startsWith("//");
 }
 
 /**
- * The one button in the system. Fully rounded, trailing arrow that nudges 2px
- * on hover. Renders a Next Link for internal routes, an anchor for tel:, mailto:
+ * The one button in the system. A 6px rectangle with an uppercase letterspaced
+ * label. Renders a Next Link for internal routes, an anchor for tel:, mailto:
  * and external URLs, and a button when no href is given.
- * DESIGN.md Section 6.5.
+ *
+ * `withArrow` now defaults to false. Phase 8 keeps the arrow for the hero call
+ * to action only; on every other button it was decoration that made a direct
+ * label read as a soft one. DESIGN.md Section 6.5.
  */
 export function PillButton(props: PillButtonProps) {
   const {
     children,
     variant = "primary",
     size = "md",
-    withArrow = true,
+    withArrow = false,
     className,
     ...rest
   } = props;
@@ -79,7 +94,7 @@ export function PillButton(props: PillButtonProps) {
           aria-hidden="true"
           size={18}
           strokeWidth={1.5}
-          className="transition-transform duration-[180ms] ease-out group-hover:translate-x-0.5"
+          className="transition-transform duration-[--duration-hover] ease-[--ease-out] group-hover:translate-x-0.5 motion-reduce:transition-none"
         />
       ) : null}
     </>

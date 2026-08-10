@@ -25,7 +25,10 @@ const CHROME_CANDIDATES = [
 
 const AUDIT_PAGES = [
   "/",
-  "/repair-prices",
+  // /repair-prices used to sit here. It is a 301 to /contact now, so Lighthouse
+  // measured the redirect hop rather than a page and reported "avoid multiple
+  // page redirects" as the top opportunity on a URL that renders nothing.
+  "/services",
   "/contact",
   // Phase 5 templates: one Tier 2 hub and one Tier 3 repair page, both of
   // which carry tables that keyboard and axe need to see.

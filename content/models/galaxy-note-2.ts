@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Micro USB charging port worn out, the repair we list for this model at $49.99",
+    "Micro USB charging port worn out, the one repair still worth doing on this model",
     "Battery worn, removable by hand",
     "Plastic back cover loose",
     "S Pen lost or its tip worn",
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-2-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Charging port only, and only for sentiment. The Note 2 stopped at Android 4.4 well over a decade ago and cannot run any current app. A $49.99 port on a phone being kept as a curiosity is fine. As a working phone, it finished its life years ago."
+          "text": "Charging port only, and only for sentiment. The Note 2 stopped at Android 4.4 well over a decade ago and cannot run any current app. A port replacement on a phone being kept as a curiosity is fine. As a working phone, it finished its life years ago."
         }
       ],
       "markDefs": [],

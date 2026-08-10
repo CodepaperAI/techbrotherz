@@ -605,12 +605,12 @@ export const PRICE_GROUPS: PriceGroupDef[] = [
   {
     models: ["iphone-4", "iphone-4s"],
     name: "iPhone 4 and 4S",
-    note: "The iPhone 4 and 4S share the same repair prices.",
+    note: "The iPhone 4 and 4S take the same parts.",
   },
   {
     models: ["iphone-5", "iphone-5s", "iphone-5c"],
     name: "iPhone 5, 5S and 5C",
-    note: "The iPhone 5, 5S and 5C share the same repair prices.",
+    note: "The iPhone 5, 5S and 5C take the same parts.",
   },
   {
     models: ["lg-g4", "lg-g3", "lg-g2"],

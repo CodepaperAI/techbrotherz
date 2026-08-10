@@ -1,33 +1,39 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 
 /**
- * Display face.
+ * Display face: Archivo.
  *
- * The reference template's headline face is closest to Satoshi (Fontshare).
- * Satoshi is not on Google Fonts and needs a self-hosted file plus a licence
- * confirmation from the client, tracked as open question 16 in CLAUDE.md.
- * Plus Jakarta Sans is the same geometric-grotesque character and is served
- * self-hosted by next/font/google.
+ * Phase 8 replaced Plus Jakarta Sans, and this is the single change that does
+ * most of the work. Plus Jakarta Sans is a friendly geometric sans at 700; it
+ * reads like a SaaS template because that is what it is used for. Archivo is a
+ * grotesque with a variable width axis, so it can be set heavy and slightly
+ * condensed, which is what every local repair shop headline in the reference
+ * set actually is.
  *
- * To swap to Satoshi later: drop Satoshi-Variable.woff2 into app/fonts/,
- * replace this export with next/font/local, and keep the same variable name.
- * Nothing else in the codebase changes.
+ * Weights 700 to 900 and width 87.5% to 100% are both variable axes, so the
+ * whole range costs one file rather than one file per weight. Headlines are set
+ * at 900 with a condensed width and tight tracking; card headings at 800.
+ *
+ * This also closes open question 16. Satoshi needed a licence confirmation from
+ * the client and a self-hosted file. Archivo is on Google Fonts under the SIL
+ * Open Font License, self-hosted by next/font, so nothing is pending.
  */
-export const displayFont = Plus_Jakarta_Sans({
+export const displayFont = Archivo({
   subsets: ["latin"],
   display: "swap",
-  // Only the weights the display face actually renders: 700 for headings,
-  // 800 for the wordmark. Every extra weight is another file preloaded on the
-  // critical path, competing with the LCP text it is meant to render.
-  weight: ["700", "800"],
+  // `axes` requires the variable weight range rather than a fixed list, so the
+  // whole 100 to 900 range and the width axis arrive in one file. Headings pick
+  // 800 and 900 out of it in globals.css.
+  weight: "variable",
+  axes: ["wdth"],
   variable: "--font-display-family",
-  // Generates a size-adjusted local fallback so the swap causes no layout
-  // shift. CLAUDE.md Section 8.1 targets CLS under 0.05.
+  // Size-adjusted local fallback, so the swap causes no layout shift. The
+  // build has held CLS at 0.000 since Phase 6.5 and this must not regress it.
   adjustFontFallback: true,
   preload: true,
 });
 
-/** Body and UI face. */
+/** Body and UI face. Unchanged: Inter was never the problem. */
 export const bodyFont = Inter({
   subsets: ["latin"],
   display: "swap",

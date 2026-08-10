@@ -21,7 +21,6 @@ import { route, shouldRenderLink } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, service, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatPrice } from "@/lib/utils";
 import {
   getAllFaqs,
   getAllPricedModels,
@@ -30,8 +29,7 @@ import {
   getRepairTypes,
   getReviewSummary,
   getSiteSettings,
-  getUnlocking,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
@@ -70,13 +68,12 @@ export default async function ServicePage({ params }: PageProps) {
 
   if (!content) notFound();
 
-  const [settings, reviews, models, flatServices, unlocking, allFaqs, repairTypes, brands] =
+  const [settings, reviews, models, flatServices, allFaqs, repairTypes, brands] =
     await Promise.all([
       getSiteSettings(),
       getReviewSummary(),
       getAllPricedModels(),
       getFlatServices(),
-      getUnlocking(),
       getAllFaqs(),
       getRepairTypes(),
       getBrands(),
@@ -87,9 +84,6 @@ export default async function ServicePage({ params }: PageProps) {
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
 
   const ctx = buildPriceContext({
-    models,
-    flatServices,
-    unlocking,
     warrantyDays,
     waitMinutes,
   });
@@ -117,10 +111,7 @@ export default async function ServicePage({ params }: PageProps) {
         )
         .flatMap((model) =>
           (model.prices ?? [])
-            .filter(
-              (entry) => entry.repair?.slug === repair.slug && typeof entry.price === "number",
-            )
-            .map((entry) => entry.price as number),
+            .map(() => 0),
         );
 
       return {
@@ -299,7 +290,7 @@ export default async function ServicePage({ params }: PageProps) {
                 {content.serviceType} prices at TechBrotherz in Calgary, part and labour included
               </caption>
               <thead>
-                <tr className="bg-tb-green-soft">
+                <tr className="tb-thead">
                   <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                     Repair
                   </th>
@@ -317,9 +308,6 @@ export default async function ServicePage({ params }: PageProps) {
                     <th scope="row" className="text-tb-text px-6 py-4 text-left font-normal">
                       {row.name}
                     </th>
-                    <td className="type-body text-tb-text px-6 py-4">
-                      From {formatPrice(row.from)}
-                    </td>
                     <td className="type-body text-tb-muted px-6 py-4">
                       {row.minutes ? `About ${row.minutes} minutes` : "Quoted at the counter"}
                     </td>
@@ -330,13 +318,6 @@ export default async function ServicePage({ params }: PageProps) {
                     <th scope="row" className="text-tb-text px-6 py-4 text-left font-normal">
                       {row.name}
                     </th>
-                    <td className="type-body text-tb-text px-6 py-4">
-                      {row.priceTo
-                        ? `${formatPrice(row.price)} to ${formatPrice(row.priceTo)}`
-                        : row.priceFrom
-                          ? `From ${formatPrice(row.price)}`
-                          : formatPrice(row.price)}
-                    </td>
                     <td className="type-body text-tb-muted px-6 py-4">
                       {row.category === "software"
                         ? "Usually the same day"
@@ -350,8 +331,8 @@ export default async function ServicePage({ params }: PageProps) {
 
           <p className="type-body measure text-tb-muted mt-8">
             Prices for every device TechBrotherz repairs are published on{" "}
-            <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-              the full repair price list
+            <Link href="/contact" className="text-tb-green-deep hover:underline">
+              how quoting works
             </Link>
             , and the terms of the {warrantyDays}-day cover are set out on{" "}
             <Link href="/warranty" className="text-tb-green-deep hover:underline">
@@ -411,7 +392,7 @@ export default async function ServicePage({ params }: PageProps) {
                   href={`/repair/${brandSlug}`}
                   className="border-tb-border bg-tb-white rounded-pill hover:border-tb-green-deep inline-flex items-center border px-5 py-2.5 transition-colors duration-[180ms]"
                 >
-                  {brandName.get(brandSlug) ?? brandSlug} repair prices
+                  {brandName.get(brandSlug) ?? brandSlug} repairs
                 </Link>
               </li>
             ))}
@@ -499,7 +480,7 @@ export default async function ServicePage({ params }: PageProps) {
                 .filter((href) => shouldRenderLink(href))
                 .map((href) => ({ label: route(href)?.label ?? href, href })),
               { label: "All repair services", href: "/services" },
-              { label: "Full repair price list", href: "/repair-prices" },
+              { label: "Ask for a quote", href: "/contact" },
             ]}
           />
           <RelatedLinks
@@ -535,8 +516,8 @@ export default async function ServicePage({ params }: PageProps) {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See repair prices
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

@@ -39,7 +39,7 @@ export function SplitBlock({
     <div className={cn("grid items-center gap-10 lg:grid-cols-2 lg:gap-16", className)}>
       <div
         className={cn(
-          "rounded-image bg-tb-green-soft relative aspect-4/3 w-full overflow-hidden",
+          "rounded-image bg-tb-paper-2 relative aspect-4/3 w-full overflow-hidden",
           reverse && "lg:order-2",
         )}
       >
@@ -67,7 +67,7 @@ export function SplitBlock({
             <li key={item} className="flex items-start gap-3">
               <span
                 aria-hidden="true"
-                className="bg-tb-green-soft mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full"
+                className="bg-tb-paper-2 mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full"
               >
                 <Check size={14} strokeWidth={1.5} className="text-tb-green-deep" />
               </span>

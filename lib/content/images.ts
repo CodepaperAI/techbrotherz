@@ -34,8 +34,11 @@ export interface DemoImage {
    * phone screen" is fine. "Our technician at the TechBrotherz counter" is not.
    */
   alt: string;
-  /** Unsplash photo page, for the manifest and the contact sheet. */
+  /** Unsplash photo page, for the manifest and the contact sheet. Empty for a
+   *  client-supplied original, which has no public source page. */
   sourceUrl: string;
+  /** Where the original came from. Drives the manifest's Source column. */
+  sourceLabel: string;
   photographer: string;
 }
 
@@ -65,7 +68,33 @@ function image(
     height: Math.round((width * base.height) / base.width),
     alt,
     photographer,
+    sourceLabel: "Unsplash",
     sourceUrl: `https://unsplash.com/photos/${photoId}`,
+  };
+}
+
+/**
+ * An original the client supplied directly, rather than one downloaded from
+ * Unsplash.
+ *
+ * The photographer is `TODO(client)` rather than blank or invented. The
+ * manifest exists so the set is auditable, and a credit nobody can check is
+ * worse than a credit nobody has supplied yet: see CLAUDE.md Section 3, which
+ * treats an unknown factual field as a TODO and never as an approximation.
+ */
+function supplied(slot: string, ratio: ImageRatio, alt: string): DemoImage {
+  const base = RATIO_SIZE[ratio];
+  const width = NARROW[slot] ?? base.width;
+  return {
+    slot,
+    file: `/demo/${slot}.jpg`,
+    ratio,
+    width,
+    height: Math.round((width * base.height) / base.width),
+    alt,
+    photographer: "TODO(client)",
+    sourceLabel: "Supplied by the client",
+    sourceUrl: "",
   };
 }
 
@@ -140,19 +169,15 @@ export const IMAGES: Record<string, DemoImage> = {
     "Artiom Vallat",
     "1GntEP783rI",
   ),
-  "service-phone-unlocking": image(
+  "service-phone-unlocking": supplied(
     "service-phone-unlocking",
     "3:2",
-    "A SIM tray removed from a device and resting on the bench beside it",
-    "Andrey Matveev",
-    "zs29-jZrAQo",
+    "A combination padlock closed through a chain-link fence, with the numbered dial in focus",
   ),
-  "service-password-reset": image(
+  "service-password-reset": supplied(
     "service-password-reset",
     "3:2",
-    "Hands working on an opened laptop with a precision screwdriver and a bit set on the bench",
-    "Samsung Memory",
-    "fxKvHGDICcQ",
+    "A social media login screen on a dark display, with the username and password fields filled in and the characters masked",
   ),
   "service-virus-removal": image(
     "service-virus-removal",
@@ -173,7 +198,9 @@ export const IMAGE_EDITS: Record<string, string> = {
   "service-tablet-repair":
     "Cropped from the original and encoded at quality 68 rather than 74, because the wood-grain surface compresses poorly.",
   "service-phone-unlocking":
-    "A different crop of the same source as service-tablet-repair, framed on the removed tray. Quality 68 for the same reason.",
+    "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame service-tablet-repair uses, which put two crops of one photograph in the same grid on the home page.",
+  "service-password-reset":
+    "Supplied by the client and used at their direction. Already 3:2, so resized only, no crop. Recorded here because it is the one image in the set that does not meet CLAUDE.md Section 8.9: the Instagram wordmark is the dominant element on a plain background, which is the case that rule was written for. The client was shown that position and chose the image. It replaced a photograph of a laptop being opened with a screwdriver, which is not what a password reset involves.",
   "home-process-2":
     "Cropped to 4:3 on the point of work. The Apple mark on the battery in frame is incidental to a workshop photograph and is not used as a mark.",
   "home-process-3":
@@ -182,8 +209,6 @@ export const IMAGE_EDITS: Record<string, string> = {
     "Cropped to 3:2. The Samsung marks on the bezel and board label are incidental to a teardown photograph.",
   "home-split-business":
     "Cropped to 3:2 on the hands and tool. The Samsung mark on the drive is incidental.",
-  "service-password-reset":
-    "Cropped to 3:2 on the hands and bit set, which also moves the drive label out of the dominant position.",
 };
 
 /** Slots the manifest lists but which no image met the constraints for. */

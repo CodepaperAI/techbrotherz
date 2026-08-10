@@ -50,7 +50,7 @@ export function StepCard({
       {!image && illustration ? (
         <RepairIllustration subject={illustration} ratio="4:3" className="w-full" />
       ) : (
-        <div className="rounded-image bg-tb-green-soft relative aspect-4/3 w-full overflow-hidden">
+        <div className="rounded-image bg-tb-paper-2 relative aspect-4/3 w-full overflow-hidden">
           <Image
             src={photo.src}
             alt={photo.alt}

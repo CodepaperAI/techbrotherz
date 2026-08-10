@@ -53,7 +53,7 @@ export function AnswerBox({ answer, keyFacts, lastUpdated, className }: AnswerBo
   return (
     <div
       className={cn(
-        "rounded-card border-tb-green bg-tb-green-soft border-l-4 p-6 md:p-8",
+        "rounded-card border-tb-green bg-tb-white border-tb-rule border-y border-r border-l-4 p-6 md:p-8",
         className,
       )}
     >

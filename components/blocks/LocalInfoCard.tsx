@@ -1,6 +1,5 @@
 import { MapPin, Phone } from "lucide-react";
 
-import { MapReveal } from "@/components/blocks/MapReveal";
 import { OpenNowBadge } from "@/components/blocks/OpenNowBadge";
 import { Card } from "@/components/primitives/Card";
 import { PillButton } from "@/components/primitives/PillButton";
@@ -15,9 +14,6 @@ export interface LocalInfoCardProps {
   className?: string;
 }
 
-const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
-  `${SITE.street}, ${SITE.city}, ${SITE.region}`,
-)}&output=embed`;
 
 /**
  * Map, full NAP, hours and directions.
@@ -40,13 +36,19 @@ export function LocalInfoCard({
   const SubTitle = headingLevel === 2 ? "h3" : "h4";
 
   return (
-    <Card className={cn("grid gap-8 lg:grid-cols-2 lg:gap-10", className)}>
-      <MapReveal
-        src={MAP_EMBED_SRC}
-        title={`Map showing TechBrotherz at ${SITE.street}, ${SITE.city}`}
-        addressLine={ADDRESS_LINE}
-        className="aspect-4/3 w-full lg:aspect-auto lg:min-h-[22rem]"
-      />
+    <Card className={cn("grid gap-8 p-6 md:p-8 lg:grid-cols-2 lg:gap-10", className)}>
+      {/*
+        Phase 8: no map frame.
+
+        The click-to-load decision from Phase 3 was right on performance and the
+        placeholder was doing the damage: a grey street-grid under "Load the
+        interactive map" reads as a component that has failed, which is what the
+        client saw. The address, the hours and a directions button are the
+        honest content for a place, and they look intentional.
+
+        The proper fix is a real static map image behind the click-to-interactive,
+        which needs a Google or Mapbox key. That is a client question.
+      */}
 
       <div>
         <Title className="type-h3 text-tb-text">{heading}</Title>

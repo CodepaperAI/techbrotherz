@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.moto-g-1st-gen-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The first Moto G stopped at Android 5 and is now more than a decade old with no security updates. At $110 the screen costs several times the handset's value. This is a phone with historical interest rather than a repair we would advise anyone to pay for."
+          "text": "No. The first Moto G stopped at Android 5 and is now more than a decade old with no security updates. Its screen costs several times the handset's value. This is a phone with historical interest rather than a repair we would advise anyone to pay for."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.moto-g-1st-gen-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The first-generation Moto G has a smaller 4.5 inch screen than the two generations that follow it and no memory card slot, so despite sharing a $110 price its screen is a different and smaller part. It also takes interchangeable coloured back shells."
+          "text": "The first-generation Moto G has a smaller 4.5 inch screen than the two generations that follow it and no memory card slot, so despite sharing a screen price with them its panel is a different and smaller part. It also takes interchangeable coloured back shells."
         }
       ],
       "markDefs": [],

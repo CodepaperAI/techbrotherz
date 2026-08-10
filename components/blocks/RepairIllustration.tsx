@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
  */
 
 export type RepairSubject =
-  "screen" | "battery" | "port" | "camera" | "keyboard" | "board" | "lock" | "diagnostic";
+  "screen" | "battery" | "port" | "camera" | "keyboard" | "board" | "lock" | "sim" | "diagnostic";
 
 export interface RepairIllustrationProps {
   subject: RepairSubject;
@@ -104,6 +104,20 @@ function Drawing({ subject }: { subject: RepairSubject }) {
           <line x1="48" y1="46.5" x2="48" y2="50" {...STROKE} />
         </>
       );
+    case "sim":
+      // A SIM tray lifted out of a device, with the ejector pin beside it.
+      // Drawn rather than photographed: the one candidate photograph of a
+      // removed tray is a second crop of the frame the tablet card already
+      // uses, and two crops of one photograph in one grid read as a mistake.
+      return (
+        <>
+          <rect x="18" y="28" width="44" height="18" rx="3" {...STROKE} />
+          <path d="M27 33h10v9H24v-6z" {...STROKE} />
+          <line x1="46" y1="37" x2="56" y2="37" {...STROKE} />
+          <circle cx="76" cy="23" r="4.5" {...STROKE} />
+          <line x1="76" y1="27.5" x2="76" y2="49" {...STROKE} />
+        </>
+      );
     case "diagnostic":
       return (
         <>
@@ -124,6 +138,7 @@ const LABEL: Record<RepairSubject, string> = {
   keyboard: "Keyboard replacement",
   board: "Board-level work",
   lock: "Password and unlocking",
+  sim: "Carrier unlocking",
   diagnostic: "Diagnostics",
 };
 
@@ -131,7 +146,7 @@ export function RepairIllustration({ subject, ratio = "4:3", className }: Repair
   return (
     <div
       className={cn(
-        "rounded-image bg-tb-green-soft text-tb-green-deep flex items-center justify-center overflow-hidden",
+        "rounded-image bg-tb-paper-2 text-tb-green-deep flex items-center justify-center overflow-hidden",
         ratio === "4:3" ? "aspect-4/3" : "aspect-3/2",
         className,
       )}

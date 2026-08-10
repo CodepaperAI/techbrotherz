@@ -29,15 +29,12 @@ import {
   website,
 } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatPrice } from "@/lib/utils";
 import {
   getAllFaqs,
   getAllPricedModels,
-  getFlatServices,
   getReviewSummary,
   getSiteSettings,
-  getUnlocking,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
@@ -76,12 +73,10 @@ export default async function RepairPage({ params }: PageProps) {
 
   if (!content) notFound();
 
-  const [settings, reviews, models, flatServices, unlocking, allFaqs] = await Promise.all([
+  const [settings, reviews, models, allFaqs] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
     getAllPricedModels(),
-    getFlatServices(),
-    getUnlocking(),
     getAllFaqs(),
   ]);
 
@@ -89,7 +84,7 @@ export default async function RepairPage({ params }: PageProps) {
   const warrantyDays = settings?.warrantyDays ?? 60;
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
 
-  const ctx = buildPriceContext({ models, flatServices, unlocking, warrantyDays, waitMinutes });
+  const ctx = buildPriceContext({ warrantyDays, waitMinutes });
 
   /* -------------------------------------------------- cross-model table */
 
@@ -110,13 +105,7 @@ export default async function RepairPage({ params }: PageProps) {
       .filter((model) => model.brandSlug === source.brandSlug)
       .map((model) => {
         const prices = (model.prices ?? [])
-          .filter(
-            (entry) =>
-              entry.repair?.slug &&
-              source.repairSlugs.includes(entry.repair.slug) &&
-              typeof entry.price === "number",
-          )
-          .map((entry) => entry.price as number);
+          .map(() => 0);
 
         // Does the catalogue carry this repair for this model at all, priced or not?
         const offered = (model.prices ?? []).some(
@@ -141,9 +130,6 @@ export default async function RepairPage({ params }: PageProps) {
       .filter((row) => row.price === null)
       .sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   }
-
-  const lowest = rows[0]?.price ?? null;
-  const highest = rows[rows.length - 1]?.price ?? null;
 
   /* ---------------------------------------------------- top models by demand */
   // Newest first is the honest proxy for search demand: we do not have query
@@ -230,13 +216,8 @@ export default async function RepairPage({ params }: PageProps) {
         answer: content.answer(ctx),
         keyFacts: [
           {
-            label: "Price",
-            value:
-              lowest !== null && highest !== null && lowest !== highest
-                ? `${formatPrice(lowest)} to ${formatPrice(highest)} by model`
-                : lowest !== null
-                  ? `${formatPrice(lowest)}, part and labour`
-                  : "Quoted at the counter",
+            label: "Quote",
+            value: "Free at the counter, part and labour included",
           },
           { label: "Typical time", value: `About ${content.minutes} minutes` },
           { label: "Included", value: "The part, the labour and the testing" },
@@ -266,7 +247,7 @@ export default async function RepairPage({ params }: PageProps) {
                 included
               </caption>
               <thead>
-                <tr className="bg-tb-green-soft">
+                <tr className="tb-thead">
                   <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                     Model
                   </th>
@@ -286,7 +267,6 @@ export default async function RepairPage({ params }: PageProps) {
                         {row.model}
                       </Link>
                     </th>
-                    <td className="type-body text-tb-text px-6 py-4">{formatPrice(row.price)}</td>
                     <td className="type-body text-tb-muted px-6 py-4">
                       {row.year ?? "Not stated"}
                     </td>
@@ -332,7 +312,7 @@ export default async function RepairPage({ params }: PageProps) {
             <table className="w-full min-w-[38rem] border-collapse text-left">
               <caption className="sr-only-caption">{content.comparison.caption}</caption>
               <thead>
-                <tr className="bg-tb-green-soft">
+                <tr className="tb-thead">
                   {content.comparison.columns.map((column) => (
                     <th
                       key={column}
@@ -466,8 +446,8 @@ export default async function RepairPage({ params }: PageProps) {
                 {warrantyDays}-day warranty on the part and the workmanship
               </Link>
               . Prices for every device TechBrotherz repairs are on{" "}
-              <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-                the full repair price list
+              <Link href="/contact" className="text-tb-green-deep hover:underline">
+                how quoting works
               </Link>
               .
             </p>
@@ -494,11 +474,9 @@ export default async function RepairPage({ params }: PageProps) {
                   href={row.href}
                   className="border-tb-border bg-tb-white rounded-card hover:border-tb-green-deep block h-full border px-5 py-4 transition-colors duration-[180ms]"
                 >
-                  <span className="text-tb-text block">{row.model} repair prices</span>
+                  <span className="text-tb-text block">{row.model} repair</span>
                   <span className="type-small text-tb-muted mt-1 block">
-                    {row.price !== null
-                      ? `${content.eyebrow} from ${formatPrice(row.price)}`
-                      : "Priced at the counter"}
+                    {content.eyebrow}, quoted free at the counter
                   </span>
                 </Link>
               </li>
@@ -532,13 +510,13 @@ export default async function RepairPage({ params }: PageProps) {
             ]}
           />
           <RelatedLinks
-            title="Prices and practical details"
+            title="Practical details"
             links={[
-              { label: "Full repair price list", href: "/repair-prices" },
+              { label: "Ask for a quote", href: "/contact" },
               ...(content.brandSlug
                 ? [
                     {
-                      label: route(`/repair/${content.brandSlug}`)?.label ?? "Brand repair prices",
+                      label: route(`/repair/${content.brandSlug}`)?.label ?? "Every model we repair",
                       href: `/repair/${content.brandSlug}`,
                     },
                   ]

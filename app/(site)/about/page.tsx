@@ -23,7 +23,7 @@ import {
   getRepairTypes,
   getReviewSummary,
   getSiteSettings,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -143,11 +143,11 @@ export default async function AboutPage() {
             </p>
 
             <p className="type-body measure text-tb-muted mt-4">
-              Every price TechBrotherz charges is published on{" "}
-              <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-                the repair price list
-              </Link>
-              , including the part and the labour. That is unusual in this trade and it is
+              Every repair TechBrotherz carries out is quoted free at the counter, and{" "}
+              <Link href="/contact" className="text-tb-green-deep hover:underline">
+                how quoting works
+              </Link>{" "}
+              is set out in full, including the part and the labour. That is unusual in this trade and it is
               deliberate: you should know what a repair costs before you carry a broken device
               across the city.
             </p>
@@ -255,7 +255,7 @@ export default async function AboutPage() {
         <p className="type-body measure text-tb-muted mt-6">
           Every price on the TechBrotherz site includes the part and the labour, so the figure you
           read is the figure you pay before tax. There is no separate bench fee on a phone repair
-          and no charge to look at a phone. Computer diagnostics are $24.99, and that is quoted
+          and no charge to look at a phone. Computer diagnostics carry a fixed fee, and that is quoted
           before any work starts.
         </p>
 
@@ -290,7 +290,7 @@ export default async function AboutPage() {
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
         <p className="type-body measure text-tb-muted mt-8">
-          The shop sits in the Forest Lawn area of southeast Calgary, on the stretch of 17 Avenue SE
+          The shop sits in southeast Calgary, a few blocks west of Forest Lawn, on the stretch of 17 Avenue SE
           known as International Avenue. See{" "}
           <Link href="/locations" className="text-tb-green-deep hover:underline">
             the areas TechBrotherz serves
@@ -325,8 +325,8 @@ export default async function AboutPage() {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See repair prices
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

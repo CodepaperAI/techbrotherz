@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 /**
- * From Phase 8, legacy Wix URL redirects are generated from the Sanity
- * `redirect` document type and merged into this array at build time.
- * See CLAUDE.md Section 8.1.
+ * Legacy Wix URL redirects land here in Phase 8, written directly into this
+ * array. Client question 17 is the blocker: the current site's URL list has not
+ * been supplied, so there is nothing to map yet. See CLAUDE.md Section 8.1.
  */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -12,24 +12,38 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
 
   images: {
-    // AVIF first, WebP fallback. CLAUDE.md Section 8.1.
+    /*
+     * AVIF first, WebP fallback. CLAUDE.md Section 8.1.
+     *
+     * No remotePatterns: every image is a local file under public/. The site
+     * fetches nothing from a third-party CDN at render time, which is what
+     * keeps LCP under our control.
+     */
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-        pathname: "/images/**",
-      },
-    ],
   },
 
   eslint: {
-    dirs: ["app", "components", "lib", "sanity", "scripts"],
+    dirs: ["app", "components", "content", "lib", "scripts"],
   },
 
   typescript: {
     // Never ship a build that does not typecheck.
     ignoreBuildErrors: false,
+  },
+
+  async redirects() {
+    return [
+      {
+        /*
+         * /repair-prices carried the whole price list and is deleted. It goes to
+         * /contact rather than /get-a-quote, because /get-a-quote does not exist
+         * yet and a 301 into a 404 is worse than the page it replaced.
+         */
+        source: "/repair-prices",
+        destination: "/contact",
+        permanent: true,
+      },
+    ];
   },
 
   async headers() {

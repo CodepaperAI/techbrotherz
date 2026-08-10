@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-3-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs $129.99, noticeably more than the $79.99 of the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
+          "text": "The iPad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs noticeably more than the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal, and the price gap matters. The iPad Mini 3 stopped at iPadOS 12, and its $129.99 glass repair is close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
+          "text": "Marginal, and the gap to a newer Mini matters. The iPad Mini 3 stopped at iPadOS 12, and its glass repair lands close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-3-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Touch ID sensor is why a Mini 3 glass repair costs $129.99 while the near-identical Mini 2 costs $79.99. The sensor is paired to the tablet, so it must be carefully transferred from the broken glass to the new one, and if it was already damaged in the original accident Touch ID cannot be restored."
+          "text": "The Touch ID sensor is why a Mini 3 glass repair costs more than the near-identical Mini 2. The sensor is paired to the tablet, so it must be carefully transferred from the broken glass to the new one, and if it was already damaged in the original accident Touch ID cannot be restored."
         }
       ],
       "markDefs": [],

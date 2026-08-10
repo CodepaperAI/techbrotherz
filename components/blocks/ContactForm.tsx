@@ -129,7 +129,7 @@ export function ContactForm() {
           className={cn(
             "rounded-card flex items-start gap-3 border p-4",
             state.status === "success"
-              ? "border-tb-green bg-tb-green-soft"
+              ? "border-tb-green bg-tb-paper-2"
               : "border-tb-border bg-tb-white",
           )}
         >

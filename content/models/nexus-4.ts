@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.nexus-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Nexus 4 stopped at Android 5 and is around thirteen years old. A $100 screen is cheap in isolation, but a phone this old with glass on both sides will simply break again. TechBrotherz will fit one on request and will be honest that it is not a sensible spend."
+          "text": "No. The Nexus 4 stopped at Android 5 and is around thirteen years old. The screen is cheap in isolation, but a phone this old with glass on both sides will simply break again. TechBrotherz will fit one on request and will be honest that it is not a sensible spend."
         }
       ],
       "markDefs": [],

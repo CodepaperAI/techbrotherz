@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-9-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No at $349.99, but this one lasts longer than most. The Note 9 stopped at Android 10. Its unusually large battery means many are still usable, so a cheaper repair such as a charging port can be worth doing. The screen is not, because it costs more than the handset."
+          "text": "No for a screen, but this one lasts longer than most. The Note 9 stopped at Android 10. Its unusually large battery means many are still usable, so a smaller repair such as a charging port can be worth doing. The screen is not, because it costs more than the handset."
         }
       ],
       "markDefs": [],

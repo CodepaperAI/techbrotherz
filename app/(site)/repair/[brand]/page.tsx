@@ -21,14 +21,14 @@ import { route, shouldRenderLink } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, service, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { formatMinutes, formatPrice } from "@/lib/utils";
+import { formatMinutes } from "@/lib/utils";
 import {
   getAllFaqs,
   getBrandHub,
   getBrandParams,
   getReviewSummary,
   getSiteSettings,
-} from "@/sanity/queries";
+} from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: brand.seoTitle ?? `${brand.name} Repair in Calgary`,
     description:
       brand.seoDescription ??
-      `${brand.name} repair prices at TechBrotherz in Calgary. Parts and labour included, 60-day warranty, no appointment needed.`,
+      `${brand.name} repair at TechBrotherz in Calgary. Parts and labour included, 60-day warranty, no appointment needed.`,
     path: `/repair/${slug}`,
     noIndex: brand.noIndex ?? false,
   });
@@ -104,11 +104,6 @@ export default async function BrandHubPage({ params }: PageProps) {
   const models = brand.models ?? [];
   const awaiting = brand.awaitingPrices ?? [];
 
-  const allFrom = models
-    .map((model) => model.fromPrice)
-    .filter((price): price is number => typeof price === "number");
-  const lowest = allFrom.length > 0 ? Math.min(...allFrom) : null;
-  const highest = allFrom.length > 0 ? Math.max(...allFrom) : null;
 
   const bands = generationBands(models);
 
@@ -138,8 +133,6 @@ export default async function BrandHubPage({ params }: PageProps) {
       brandName: brand.name ?? "this brand",
       modelCount: models.length,
       awaitingCount: awaiting.length,
-      lowest,
-      highest,
       repairNames: relevantRepairs.map((repair) => repair.name ?? "").filter(Boolean),
       warrantyDays,
       waitMinutes,
@@ -204,12 +197,7 @@ export default async function BrandHubPage({ params }: PageProps) {
     faqs.schema,
   ];
 
-  const priceSentence =
-    lowest !== null && highest !== null && lowest !== highest
-      ? `${brand.name} repairs at TechBrotherz in Calgary start at ${formatPrice(lowest)} and run to ${formatPrice(highest)} depending on the model, and every price includes the part and the labour.`
-      : lowest !== null
-        ? `${brand.name} repairs at TechBrotherz in Calgary start at ${formatPrice(lowest)}, including the part and the labour.`
-        : `${brand.name} repairs at TechBrotherz in Calgary are quoted in person, because the parts are ordered in.`;
+  const priceSentence = `${brand.name} repairs at TechBrotherz in Calgary are quoted per model at the counter, free of charge, and every quote includes the part and the labour.`;
 
   return (
     <PageShell
@@ -227,14 +215,8 @@ export default async function BrandHubPage({ params }: PageProps) {
       answerBox={{
         answer: `${priceSentence} Most repairs take about ${waitMinutes} minutes while you wait, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty on the part and the workmanship.`,
         keyFacts: [
-          {
-            label: "Price range",
-            value:
-              lowest !== null && highest !== null
-                ? `${formatPrice(lowest)} to ${formatPrice(highest)} CAD`
-                : "Quoted in person",
-          },
-          { label: "Models with published prices", value: String(models.length) },
+          { label: "Quote", value: "Free at the counter, part and labour included" },
+          { label: "Models repaired", value: String(models.length) },
           { label: "Typical time", value: `About ${waitMinutes} minutes on most repairs` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
           { label: "Appointment", value: "Not needed, walk in during opening hours" },
@@ -278,14 +260,9 @@ export default async function BrandHubPage({ params }: PageProps) {
                 <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {inBand.map((model) => {
                     const href = `/repair/${brandSlug}/${model.slug}`;
-                    const from = formatPrice(model.fromPrice);
-
                     const body = (
                       <>
                         <span className="text-tb-text block font-medium">{model.name}</span>
-                        <span className="type-caption tabular text-tb-muted mt-2 block">
-                          {from ? `from ${from}` : "Call for quote"}
-                        </span>
                         <span className="type-caption text-tb-muted mt-1 block">
                           {model.repairCount} repair{model.repairCount === 1 ? "" : "s"} listed
                         </span>
@@ -328,7 +305,7 @@ export default async function BrandHubPage({ params }: PageProps) {
               {brand.name} repair price summary at TechBrotherz in Calgary
             </caption>
             <thead>
-              <tr className="bg-tb-green-soft">
+              <tr className="tb-thead">
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                   Model
                 </th>
@@ -346,8 +323,6 @@ export default async function BrandHubPage({ params }: PageProps) {
             <tbody>
               {models.map((model) => {
                 const href = `/repair/${brandSlug}/${model.slug}`;
-                const from = formatPrice(model.fromPrice);
-
                 return (
                   <tr key={model._id} className="border-tb-border border-t">
                     <th scope="row" className="text-tb-text px-6 py-3.5 text-left font-normal">
@@ -360,13 +335,6 @@ export default async function BrandHubPage({ params }: PageProps) {
                       )}
                     </th>
                     <td className="text-tb-muted px-6 py-3.5">{model.releaseYear ?? "n/a"}</td>
-                    <td className="text-tb-text px-6 py-3.5 font-medium md:text-right">
-                      {from ?? (
-                        <a href={TEL_HREF} className="text-tb-green-deep hover:underline">
-                          Call for quote
-                        </a>
-                      )}
-                    </td>
                     <td className="text-tb-muted px-6 py-3.5">{model.repairCount}</td>
                   </tr>
                 );
@@ -514,7 +482,7 @@ export default async function BrandHubPage({ params }: PageProps) {
           <RelatedLinks
             title="Where to go next"
             links={[
-              { label: "Every repair price we publish", href: "/repair-prices" },
+              { label: "How TechBrotherz quotes a repair", href: "/contact" },
               ...(shouldRenderLink(localPath)
                 ? [{ label: route(localPath)?.label ?? "In Calgary", href: localPath }]
                 : []),
@@ -540,8 +508,8 @@ export default async function BrandHubPage({ params }: PageProps) {
               <PillButton href={TEL_HREF} withArrow={false}>
                 Call {SITE.phone}
               </PillButton>
-              <PillButton href="/repair-prices" variant="ghostOnDark">
-                See every price
+              <PillButton href="/contact" variant="ghostOnDark">
+                Ask for a quote
               </PillButton>
             </div>
           </div>

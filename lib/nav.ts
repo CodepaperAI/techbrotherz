@@ -48,15 +48,16 @@ function toLinks(paths: string[]): NavLink[] {
 
 /* -------------------------------------------------------------------- header */
 
-const HEADER_PATHS = [
-  "/services",
-  "/repair-prices",
-  "/services/phone-unlocking",
-  "/locations",
-  "/guides",
-  "/about",
-  "/contact",
-];
+/**
+ * Built pages only.
+ *
+ * /guides was here as "Repair guides and answers", flagged "soon". Renaming a
+ * link to a page that does not exist does not make it a link worth having, and
+ * the flag only hides it in production, so in development the header pointed at
+ * a 404 for the sake of a label. It comes back when Phase 7 builds the guides.
+ * /repair-prices went with the price list itself.
+ */
+const HEADER_PATHS = ["/services", "/services/phone-unlocking", "/locations", "/about", "/contact"];
 
 export function headerLinks(): NavLink[] {
   return toLinks(HEADER_PATHS);
@@ -65,36 +66,41 @@ export function headerLinks(): NavLink[] {
 /* -------------------------------------------------------------------- footer */
 
 /**
- * Every column mixes the pages of its tier with at least one page that is
- * already built, so no column collapses to nothing in production while the
- * later tiers are still being built.
+ * Every path here is a built route.
+ *
+ * The matrix used to carry eleven paths that are not in the registry at all:
+ * the pre-Phase-5 service hubs, /repair-prices, the seven Calgary
+ * neighbourhoods and Airdrie cut by the Phase 6 four-fact rule, and four Phase 7
+ * guides. `toLink` dropped every one of them, so production was never wrong,
+ * but the columns were shorter than they read here and development logged a
+ * warning per path on every render. The Phase 6 cuts are replaced by the Tier 5
+ * pages that actually carry that intent.
  */
 const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
   {
     heading: "Repairs",
     paths: [
-      "/services/iphone-repair",
-      "/services/samsung-repair",
-      "/services/ipad-repair",
+      "/services/phone-repair",
       "/services/tablet-repair",
       "/services/laptop-repair",
       "/services/computer-repair",
       "/services/phone-unlocking",
       "/services/password-reset",
+      "/services/virus-removal",
       "/services",
     ],
   },
   {
-    heading: "Prices",
+    heading: "Devices",
     paths: [
       "/repair/apple-iphone",
       "/repair/samsung-galaxy",
       "/repair/apple-ipad",
+      "/repair/google-pixel",
       "/repair/lg",
       "/repair/motorola",
       "/repair/htc",
       "/repair/laptops-desktops",
-      "/repair-prices",
     ],
   },
   {
@@ -102,28 +108,18 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
     paths: [
       "/locations/calgary",
       "/locations/calgary/forest-lawn",
-      "/locations/calgary/southeast-calgary",
-      "/locations/calgary/inglewood",
-      "/locations/calgary/dover",
-      "/locations/calgary/marlborough",
-      "/locations/calgary/ogden",
       "/locations/chestermere",
-      "/locations/airdrie",
+      "/phone-repair-calgary",
+      "/laptop-repair-calgary",
+      "/computer-repair-calgary",
+      "/walk-in-phone-repair-calgary",
+      "/cell-phone-repair-chestermere",
       "/locations",
     ],
   },
   {
     heading: "Learn",
-    paths: [
-      "/guides/iphone-screen-repair-cost-calgary",
-      "/guides/how-to-unlock-a-cell-phone-in-canada",
-      "/guides/ipad-repair-vs-replacement-cost",
-      "/guides/signs-your-laptop-needs-repair",
-      "/faq",
-      "/warranty",
-      "/about",
-      "/contact",
-    ],
+    paths: ["/faq", "/warranty", "/about", "/contact"],
   },
 ];
 
@@ -134,8 +130,13 @@ export function footerColumns(): FooterColumn[] {
   })).filter((column) => column.links.length > 0);
 }
 
+/**
+ * The legal row renders no "soon" flag, so a pending route here reads as an
+ * ordinary link straight to a 404 in development. /sitemap comes back when
+ * Phase 8 builds the HTML sitemap.
+ */
 export function footerLegalLinks(): NavLink[] {
-  return toLinks(["/privacy-policy", "/terms", "/sitemap"]);
+  return toLinks(["/privacy-policy", "/terms"]);
 }
 
 /** Used by the Phase 8 link audit and the /styleguide/routes page. */

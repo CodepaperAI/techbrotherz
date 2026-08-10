@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Almost never worth repairing now. The iPhone 6 Plus stopped receiving updates at iOS 12, which means no security patches and a shrinking set of apps that will still install. We will fit a $74.99 screen if you have a specific reason to keep the phone alive, but for general use the honest answer is that this handset has reached the end and the money is better spent elsewhere."
+          "text": "Almost never worth repairing now. The iPhone 6 Plus stopped receiving updates at iOS 12, which means no security patches and a shrinking set of apps that will still install. We will fit a screen if you have a specific reason to keep the phone alive, but for general use the honest answer is that this handset has reached the end and the money is better spent elsewhere."
         }
       ],
       "markDefs": [],

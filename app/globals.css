@@ -18,48 +18,109 @@
        - Green text on light backgrounds is --color-tb-green-deep (~5.5:1).
        - Button label on a green fill is --color-tb-ink, never white.
   */
-  --color-tb-green: #21b24b; /* primary brand, from the logo mark */
-  --color-tb-green-deep: #0f7a30; /* accessible green for TEXT on light */
-  --color-tb-green-press: #17903a; /* button hover / pressed */
-  --color-tb-green-soft: #e9f7ed; /* tinted section and chip background */
-  --color-tb-ink: #0a0d0c; /* dark sections, headings, label on green */
-  --color-tb-ink-2: #141917; /* elevated surface inside dark sections */
-  --color-tb-cream: #f6f5f1; /* page background */
-  --color-tb-white: #ffffff; /* cards */
-  --color-tb-silver: #c4cbd2; /* chrome accent, hairlines and labels on dark */
-  --color-tb-text: #10130f; /* body text on light */
-  --color-tb-muted: #5c6360; /* secondary text on light */
-  --color-tb-muted-dark: #a9b0ac; /* secondary text on dark */
-  --color-tb-border: #e6e4de; /* 1px card and divider borders on light */
-  --color-tb-border-dark: #232b27; /* borders inside dark sections */
+  /* Surfaces. The system is black-dominant with bright green accents, which is
+     what the client's own logo is. Cream was never in the logo. */
+  --color-tb-black: #0b0c0b; /* dark bands, footer, hero panel */
+  --color-tb-black-2: #161816; /* elevated surface on black */
+  --color-tb-paper: #fafaf8; /* light page background */
+  --color-tb-paper-2: #f1f1ed; /* tiles, inset panels, table stripes */
+  --color-tb-white: #ffffff; /* cards on paper */
+
+  /* Brand */
+  --color-tb-green: #1fb84a; /* rules, arrows, button fills, TEXT ON BLACK */
+  --color-tb-green-deep: #0e7a31; /* the ONLY green for text on light */
+  --color-tb-green-press: #17903a;
+  --color-tb-silver: #c6ccd2; /* hairlines and small labels on black */
+
+  /* Text */
+  --color-tb-ink: #0b0c0b; /* headlines and body on light, label on green */
+  --color-tb-ink-2: #4a5150; /* secondary on light */
+  --color-tb-on-black: #ffffff;
+  --color-tb-on-black-2: #a7aeab;
+
+  /* Lines */
+  --color-tb-rule: #dfdfd8; /* on light */
+  --color-tb-rule-dark: #262a28; /* on black */
+
+  /* --- Legacy names still in use -------------------------------------------
+     tb-cream and tb-green-soft are GONE. They were the Phase 1 pale-green
+     surface language, and aliasing them to near-identical new values is what
+     made the first Phase 8 pass produce no visible change: #F6F5F1 cream and
+     #FAFAF8 paper are the same colour to the eye. The five below are neutral
+     names rather than a look, so they stay until their last consumer goes.
+  */
+  --color-tb-text: #0b0c0b;
+  --color-tb-muted: #4a5150;
+  --color-tb-muted-dark: #a7aeab;
+  --color-tb-border: #dfdfd8;
+  --color-tb-border-dark: #262a28;
 
   /* --- Typography ------------------------------------------------------- */
-  --font-display: var(--font-display-family), "Satoshi", "Inter", system-ui, sans-serif;
+  --font-display: var(--font-display-family), "Archivo", "Inter", system-ui, sans-serif;
   --font-sans: var(--font-sans-family), system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* --- Radius ----------------------------------------------------------- */
+  /* --- Radius -------------------------------------------------------------
+     Rectangles, not pills. A 999px pill reads soft and modern; a 6px rectangle
+     reads direct and commercial, which is what a walk-in repair shop is. Pills
+     survive only on small status chips.
+  */
+  --radius-btn: 6px;
+  --radius-input: 6px;
+  --radius-card: 10px;
+  --radius-tile: 10px;
+  --radius-image: 12px;
   --radius-chip: 999px;
-  --radius-input: 12px;
-  --radius-card: 20px;
-  --radius-image: 24px;
-  --radius-panel: 28px;
+  /* Aliases so anything still asking for the old names resolves to the new
+     geometry rather than silently keeping a 28px corner. */
+  --radius-panel: 12px;
+
+  /* --- Type scale ---------------------------------------------------------
+     Display is Archivo at 800 to 900, tight and slightly condensed. This is the
+     single change that stops the site reading as a SaaS template.
+  */
+  --text-hero: clamp(2.5rem, 6vw, 4.75rem); /* 40 -> 76 */
+  --text-h2: clamp(1.875rem, 3.6vw, 3.25rem); /* 30 -> 52 */
+  --text-h3: clamp(1.1875rem, 1.6vw, 1.375rem); /* 19 -> 22 */
+  --text-lead: clamp(1.0625rem, 1.3vw, 1.1875rem); /* 17 -> 19 */
+  --text-body: clamp(1rem, 1.1vw, 1.0625rem); /* 16 -> 17 */
+  --text-eyebrow: 0.8125rem; /* 13 */
+  --text-btn: 0.9375rem; /* 15 */
+  --text-numeral: clamp(2.75rem, 5vw, 4rem); /* 44 -> 64 */
+
+  --tracking-hero: -0.04em;
+  --tracking-h2: -0.035em;
+  --tracking-h3: -0.02em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-btn: 0.06em;
+
+  --leading-hero: 0.92;
+  --leading-h2: 0.98;
+  --leading-h3: 1.15;
+
+  /* --- Spacing rhythm -----------------------------------------------------
+     Tighter than Phase 1's 128px. More per screen is part of the energy.
+  */
+  --space-section: 6rem; /* 96px desktop */
+  --space-section-sm: 3.5rem; /* 56px mobile */
+  --space-band: 7rem; /* 112px, dark chapter breaks */
 
   /* --- Shadow ------------------------------------------------------------
      Almost none. This is a flat, calm system. Cards on dark use no shadow.
   */
-  --shadow-card: 0 1px 2px rgba(10, 13, 12, 0.04);
-  --shadow-lift: 0 4px 16px rgba(10, 13, 12, 0.06);
-  --shadow-nav: 0 1px 0 rgba(10, 13, 12, 0.06);
+  --shadow-card: 0 1px 2px rgba(11, 12, 11, 0.05);
+  --shadow-lift: 0 4px 14px rgba(11, 12, 11, 0.07);
+  --shadow-nav: 0 1px 0 rgba(11, 12, 11, 0.07);
 
   /* --- Layout ----------------------------------------------------------- */
-  --container-site: 80rem; /* 1280px */
+  --container-site: 77.5rem; /* 1240px */
 
   /* --- Motion ------------------------------------------------------------
      Nothing bounces. Nothing parallaxes. Nothing auto-plays.
   */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-hover: 180ms;
-  --duration-reveal: 500ms;
+  --duration-hover: 160ms;
+  --duration-reveal: 400ms;
   --duration-accordion: 220ms;
 }
 
@@ -70,24 +131,37 @@
    use the documented names without duplicating a single hex value.
    -------------------------------------------------------------------------- */
 :root {
+  --tb-black: var(--color-tb-black);
+  --tb-black-2: var(--color-tb-black-2);
+  --tb-paper: var(--color-tb-paper);
+  --tb-paper-2: var(--color-tb-paper-2);
+  --tb-white: var(--color-tb-white);
+
   --tb-green: var(--color-tb-green);
   --tb-green-deep: var(--color-tb-green-deep);
   --tb-green-press: var(--color-tb-green-press);
-  --tb-green-soft: var(--color-tb-green-soft);
+  --tb-silver: var(--color-tb-silver);
+
   --tb-ink: var(--color-tb-ink);
   --tb-ink-2: var(--color-tb-ink-2);
-  --tb-cream: var(--color-tb-cream);
-  --tb-white: var(--color-tb-white);
-  --tb-silver: var(--color-tb-silver);
-  --tb-text: var(--color-tb-text);
-  --tb-muted: var(--color-tb-muted);
-  --tb-muted-dark: var(--color-tb-muted-dark);
-  --tb-border: var(--color-tb-border);
-  --tb-border-dark: var(--color-tb-border-dark);
+  --tb-on-black: var(--color-tb-on-black);
+  --tb-on-black-2: var(--color-tb-on-black-2);
 
+  --tb-rule: var(--color-tb-rule);
+  --tb-rule-dark: var(--color-tb-rule-dark);
+
+  /* Retired names, aliased so nothing resolves to nothing mid-rebuild. */
+  --tb-text: var(--color-tb-ink);
+  --tb-muted: var(--color-tb-ink-2);
+  --tb-muted-dark: var(--color-tb-on-black-2);
+  --tb-border: var(--color-tb-rule);
+  --tb-border-dark: var(--color-tb-rule-dark);
+
+  --tb-r-btn: var(--radius-btn);
   --tb-r-chip: var(--radius-chip);
   --tb-r-input: var(--radius-input);
   --tb-r-card: var(--radius-card);
+  --tb-r-tile: var(--radius-tile);
   --tb-r-image: var(--radius-image);
   --tb-r-panel: var(--radius-panel);
 
@@ -109,21 +183,41 @@
   }
 
   body {
-    background-color: var(--color-tb-cream);
-    color: var(--color-tb-text);
+    background-color: var(--color-tb-paper);
+    color: var(--color-tb-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
+  /* Archivo is variable on weight and width. Headlines are set heavy and
+     slightly condensed, which is the whole point of the face change: a
+     grotesque at 900/87.5% reads like a repair shop, a geometric sans at 700
+     reads like a template. */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 900;
+    font-stretch: 87.5%;
+    letter-spacing: var(--tracking-h2);
     text-wrap: balance;
+  }
+
+  h3,
+  h4 {
+    font-weight: 800;
+    font-stretch: 92.5%;
+    letter-spacing: var(--tracking-h3);
+    line-height: var(--leading-h3);
+  }
+
+  /* Numbers align by digit wherever they sit in a row, not only in tables. */
+  table,
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 
   /* One visible focus ring, everywhere. Never remove an outline without
@@ -175,35 +269,55 @@
    ========================================================================== */
 
 @layer components {
+  /* Display sizes are Archivo at 800 to 900 with a condensed width axis. The
+     weight and the negative tracking are doing the work: at 900/87.5% with
+     -0.04em the headline reads as a shopfront, at 700/100% it reads as a
+     product page. Rewriting these classes rather than adding new ones is what
+     lets every existing component inherit the new face without its markup
+     changing, which keeps the Phase 8 text diff byte-identical. */
   .type-h1 {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 1.671rem + 3.536vw, 4.5rem); /* 40px -> 72px */
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 0.95;
+    font-size: clamp(2.5rem, 1.586rem + 3.9vw, 4.75rem); /* 40px -> 76px */
+    font-weight: 900;
+    font-stretch: 87.5%;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
     text-wrap: balance;
   }
 
   .type-h2 {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 1.378rem + 2.652vw, 3.5rem); /* 32px -> 56px */
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
+    font-size: clamp(1.875rem, 1.306rem + 2.43vw, 3.25rem); /* 30px -> 52px */
+    font-weight: 900;
+    font-stretch: 87.5%;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
     text-wrap: balance;
   }
 
   .type-h3 {
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 1.146rem + 0.442vw, 1.5rem); /* 20px -> 24px */
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
+    font-size: clamp(1.1875rem, 1.136rem + 0.22vw, 1.375rem); /* 19px -> 22px */
+    font-weight: 800;
+    font-stretch: 92.5%;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     text-wrap: balance;
   }
 
+  /* The big green figure in the numbered why-us list. */
+  .type-numeral {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 2.232rem + 2.21vw, 4rem); /* 44px -> 64px */
+    font-weight: 900;
+    font-stretch: 87.5%;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
   .type-lead {
-    font-size: clamp(1.0625rem, 0.985rem + 0.331vw, 1.25rem); /* 17px -> 20px */
+    font-size: clamp(1.0625rem, 1.011rem + 0.22vw, 1.1875rem); /* 17px -> 19px */
     font-weight: 400;
     line-height: 1.5;
     text-wrap: pretty;
@@ -212,15 +326,26 @@
   .type-body {
     font-size: clamp(1rem, 0.974rem + 0.11vw, 1.0625rem); /* 16px -> 17px */
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.6;
     text-wrap: pretty;
   }
 
+  /* Uppercase is applied in CSS, not in the markup, so the rendered text
+     content stays byte-identical to the baseline while the look changes. */
   .type-eyebrow {
-    font-size: 0.875rem; /* 14px */
-    font-weight: 500;
-    letter-spacing: 0.01em;
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 700;
+    letter-spacing: 0.14em;
     line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .type-btn {
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .type-caption {
@@ -372,4 +497,55 @@
 
 @utility aspect-3\/2 {
   aspect-ratio: 3 / 2;
+}
+
+/* ==========================================================================
+   Ticker
+   Two identical tracks side by side; translating one full track width lands
+   the second exactly where the first began, so the loop has no seam. Paused
+   on hover so a claim can be read, and static under reduced motion, because
+   the claims are content rather than decoration.
+   ========================================================================== */
+
+@keyframes tb-ticker-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.tb-ticker {
+  animation: tb-ticker-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.tb-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tb-ticker {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Table head
+   Phase 8: the header row was a pale green field, which is exactly the surface
+   language the rebuild removes. It is now black with a green underline, so a
+   data table reads as a data table and the accent appears as a line rather
+   than a wash. Centralised here because thirteen tables shared the old class
+   and the decision should live in one place.
+   ========================================================================== */
+
+.tb-thead {
+  background-color: var(--color-tb-black);
+  border-bottom: 3px solid var(--color-tb-green);
+}
+
+.tb-thead th {
+  color: var(--color-tb-on-black);
 }

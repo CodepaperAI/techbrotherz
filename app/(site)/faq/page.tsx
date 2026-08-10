@@ -13,7 +13,7 @@ import { faqAnchor } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { faqPage, localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { getAllFaqs, getReviewSummary, getSiteSettings } from "@/sanity/queries";
+import { getAllFaqs, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -167,7 +167,7 @@ export default async function FaqPage() {
 
         <ul className="type-body divide-tb-border mt-8 grid gap-x-10 divide-y md:grid-cols-2 md:divide-y-0">
           {[
-            { href: "/repair-prices", label: "Every repair price, by brand and model" },
+            { href: "/contact", label: "How quoting works and what to bring" },
             { href: "/services", label: "All repair services TechBrotherz offers" },
             {
               href: `/warranty`,

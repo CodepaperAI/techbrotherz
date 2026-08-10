@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Galaxy Note 5 stopped at Android 7, and a $249.99 screen on a decade-old phone with a known design fault is not a sensible spend. TechBrotherz will free a jammed S Pen and give you an honest assessment, but we would not recommend investing in this handset."
+          "text": "No. The Galaxy Note 5 stopped at Android 7, and a screen on a decade-old phone with a known design fault is not a sensible spend. TechBrotherz will free a jammed S Pen and give you an honest assessment, but we would not recommend investing in this handset."
         }
       ],
       "markDefs": [],

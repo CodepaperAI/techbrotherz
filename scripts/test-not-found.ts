@@ -71,8 +71,11 @@ async function main() {
             text: (node.textContent ?? "").trim(),
             href: node.getAttribute("href") ?? "",
           }))
+          // "repair details" until the price list came out, "repair prices"
+          // before it. Matching the suffix rather than the whole label keeps
+          // this test about the suggestion logic rather than the wording.
           .filter(
-            (entry) => entry.href.includes("/repair/") && entry.text.includes("repair prices"),
+            (entry) => entry.href.includes("/repair/") && entry.text.includes("repair details"),
           ),
       );
 

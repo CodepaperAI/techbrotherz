@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s4-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S4 is the only phone on the TechBrotherz price list where the glass and the display panel are still priced separately, at $69.99 and $99.99. That is because its layers are not bonded the way every later Galaxy is, so a cracked front with a working picture can be fixed for a third less than a full screen."
+          "text": "The Galaxy S4 is the only phone TechBrotherz repairs where the glass and the display panel are still quoted separately. That is because its layers are not bonded the way every later Galaxy is, so a cracked front with a working picture can be fixed for a fraction of a full screen."
         }
       ],
       "markDefs": [],
@@ -27,9 +27,9 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass with the picture underneath still perfect, repairable on its own for $69.99",
-    "Failed display panel showing lines or black patches, a different and dearer repair at $99.99",
-    "Micro USB charging port worn, listed separately at $49.99",
+    "Cracked front glass with the picture underneath still perfect, repairable on its own",
+    "Failed display panel showing lines or black patches, a different and dearer repair",
+    "Micro USB charging port worn, quoted separately from the display",
     "Battery worn out, removable on this model",
     "Plastic back cover cracked at the clips"
   ],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only the glass, and only if the picture is intact. The Galaxy S4 stopped at Android 5, more than a decade ago. A $69.99 glass repair on a phone kept for a specific purpose is the one defensible spend here. A $99.99 panel replacement on a handset this old is not."
+          "text": "Only the glass, and only if the picture is intact. The Galaxy S4 stopped at Android 5, more than a decade ago. A glass-only repair on a phone kept for a specific purpose is the one defensible spend here. A full panel replacement on a handset this old is not."
         }
       ],
       "markDefs": [],

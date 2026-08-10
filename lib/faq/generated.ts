@@ -8,16 +8,15 @@
  *
  * Generating them from the record instead produces answers that are genuinely
  * different per URL, because they carry that model's name, that model's repair
- * list, that model's prices and that model's age. A question whose answer is
- * "the iPhone 8 Plus screen is $109.99 and we also do the battery, charging
- * port and back camera" is not shared text, it is this page's data written out.
+ * list, that model's own repair timings and that model's age. A question whose
+ * answer is "we do four repairs on the iPhone 8 Plus, from about 30 minutes to
+ * about 60" is not shared text, it is this page's data written out.
  *
  * This is also what let Phase 5 remove the shared global answers from model
  * pages entirely rather than trimming them further.
  */
 
 import type { PageFaq } from "@/lib/faq/scoping";
-import { formatPrice } from "@/lib/utils";
 
 /** Joins a list into readable prose: "a, b and c". */
 function list(items: string[]): string {
@@ -48,14 +47,24 @@ export interface ModelFaqInput {
 /**
  * Four questions built from one model's own record.
  *
- * Every answer names the model and quotes at least one figure taken from that
- * model's data, so no two model pages produce the same text.
+ * Every answer names the model and draws at least one detail from that model's
+ * own record, so no two model pages produce the same text.
  */
 export function modelFaqs(input: ModelFaqInput): PageFaq[] {
-  const priced = input.prices.filter((entry) => typeof entry.price === "number");
-  const cheapest = priced.length > 0 ? Math.min(...priced.map((e) => e.price as number)) : null;
-  const cheapestEntry = priced.find((entry) => entry.price === cheapest);
-  const quoted = input.prices.filter((entry) => typeof entry.price !== "number");
+  /*
+   * Phase 7a-ii: the price left, and with it the only thing that made two of
+   * these four answers differ per model. They are re-grounded on what the
+   * model's own record still holds: which repairs the shop does on it, how long
+   * the shortest and longest of those take, its age, and its software support.
+   * Those vary by model in the same way a price did, which is what keeps 84
+   * model pages from carrying one identical FAQ answer and one identical
+   * FAQPage node. See CLAUDE.md Section 8.8.
+   */
+  const withMinutes = input.prices.filter((entry) => typeof entry.minutes === "number");
+  const quickest =
+    withMinutes.length > 0 ? Math.min(...withMinutes.map((e) => e.minutes as number)) : null;
+  const longest =
+    withMinutes.length > 0 ? Math.max(...withMinutes.map((e) => e.minutes as number)) : null;
 
   const isTablet = input.deviceType === "tablet";
   const timing = isTablet
@@ -66,27 +75,24 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
 
   const faqs: PageFaq[] = [];
 
-  /* 1. The headline price, or the honest absence of one. */
-  faqs.push(
-    cheapest !== null && cheapestEntry
-      ? {
-          question: `How much does a ${input.name} repair cost in Calgary?`,
-          answer:
-            `${input.name} repairs at TechBrotherz in Calgary start at ${formatPrice(cheapest)} for a ` +
-            `${cheapestEntry.repairName.toLowerCase()}, including the part and the labour. ` +
-            `TechBrotherz publishes ${priced.length} priced ${priced.length === 1 ? "repair" : "repairs"} ` +
-            `for the ${input.name}, and every one carries a ${input.warrantyDays}-day warranty on the ` +
-            `part and the workmanship.`,
-        }
-      : {
-          question: `How much does a ${input.name} repair cost in Calgary?`,
-          answer:
-            `TechBrotherz quotes ${input.name} repairs at the counter rather than publishing a price, ` +
-            `because the parts are ordered in and the cost depends on supply on the day. Phone ` +
-            `${input.phone} with the model and TechBrotherz will give you a firm figure. Every repair ` +
-            `includes the part and the labour and carries a ${input.warrantyDays}-day warranty.`,
-        },
-  );
+  /* 1. How a repair on this model is quoted, and what shapes the figure. */
+  faqs.push({
+    question: `How much does a ${input.name} repair cost in Calgary?`,
+    answer:
+      `A ${input.name} repair at TechBrotherz in Calgary is quoted at the counter, free of charge, ` +
+      `before any work starts. ` +
+      (input.prices.length > 0
+        ? `TechBrotherz carries out ${input.prices.length} ${input.prices.length === 1 ? "repair" : "different repairs"} ` +
+          `on the ${input.name}, and what each one comes to follows the part that model takes. `
+        : "") +
+      (quickest !== null && longest !== null && quickest !== longest
+        ? `They range from about ${quickest} minutes of work to about ${longest} minutes. `
+        : quickest !== null
+          ? `Most take about ${quickest} minutes. `
+          : "") +
+      `Every quote covers the part and the labour together and carries a ${input.warrantyDays}-day ` +
+      `warranty. Phone ${input.phone} with the model for a firm figure.`,
+  });
 
   /* 2. The actual repair list for this model. */
   const repairNames = input.prices.map((entry) => entry.repairName.toLowerCase());
@@ -96,17 +102,11 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
       answer:
         `TechBrotherz in Calgary carries out ${repairNames.length} ${repairNames.length === 1 ? "repair" : "different repairs"} ` +
         `on the ${input.name}: ${list(repairNames)}. ` +
-        (quoted.length > 0 && priced.length > 0
-          ? `${priced.length} of those carry a published price and ${quoted.length} are quoted at the counter.`
-          : `Each one includes the part and the labour in a single price.`),
+        `Each one is quoted individually and includes the part and the labour in a single figure.`,
     });
   }
 
   /* 3. Timing, tied to this model's own repair durations. */
-  const withMinutes = input.prices.filter((entry) => typeof entry.minutes === "number");
-  const longest =
-    withMinutes.length > 0 ? Math.max(...withMinutes.map((e) => e.minutes as number)) : null;
-
   faqs.push({
     question: `How long does a ${input.name} repair take?`,
     answer:
@@ -130,10 +130,11 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
       (age !== null
         ? `The ${input.name} is about ${age} ${age === 1 ? "year" : "years"} old. `
         : `The ${input.name} is an older model. `) +
-      (cheapest !== null
-        ? `With repairs from ${formatPrice(cheapest)}, it is worth repairing whenever the cost sits below roughly a third of what the ${input.name} is worth used. `
-        : `Because the price is quoted rather than published, ask for the figure first and compare it against what the ${input.name} is worth used. `) +
-      softwareLine,
+      softwareLine +
+      ` Ask for the quote first and set it against what the ${input.name} is worth used, and against ` +
+      `whether the repair buys another year or another month: on a device this age it is common for ` +
+      `the battery and the ${isTablet ? "charging port" : "charging port and buttons"} to be near the ` +
+      `end of their life at the same time.`,
   });
 
   return faqs;
@@ -143,8 +144,6 @@ export interface BrandFaqInput {
   brandName: string;
   modelCount: number;
   awaitingCount: number;
-  lowest: number | null;
-  highest: number | null;
   repairNames: string[];
   warrantyDays: number;
   waitMinutes: number;
@@ -160,17 +159,18 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
   faqs.push({
     question: `How much does ${input.brandName} repair cost in Calgary?`,
     answer:
-      input.lowest !== null && input.highest !== null && input.lowest !== input.highest
-        ? `${input.brandName} repairs at TechBrotherz in Calgary run from ${formatPrice(input.lowest)} to ${formatPrice(input.highest)} depending on the model, and every price includes the part and the labour. TechBrotherz publishes prices for ${input.modelCount} ${input.brandName} models, each listed individually.`
-        : input.lowest !== null
-          ? `${input.brandName} repairs at TechBrotherz in Calgary start at ${formatPrice(input.lowest)}, including the part and the labour, across ${input.modelCount} published models.`
-          : `${input.brandName} repairs at TechBrotherz in Calgary are quoted at the counter, because the parts are ordered in. Phone ${input.phone} with your model for a firm figure.`,
+      `${input.brandName} repairs at TechBrotherz in Calgary are quoted per model at the counter, ` +
+      `free of charge, before any work starts. ` +
+      (input.oldestYear && input.newestYear
+        ? `The ${input.brandName} range TechBrotherz repairs spans releases from ${input.oldestYear} to ${input.newestYear}, and the figure follows the part a given model takes rather than a flat rate across the range. `
+        : `The figure follows the part a given model takes rather than a flat rate across the range. `) +
+      `Phone ${input.phone} with your model for a firm figure.`,
   });
 
   if (input.repairNames.length > 0) {
     faqs.push({
       question: `Which ${input.brandName} repairs does TechBrotherz carry out?`,
-      answer: `TechBrotherz in Calgary carries out ${input.repairNames.length} kinds of repair across the ${input.brandName} range: ${list(input.repairNames.map((name) => name.toLowerCase()))}. Each is priced per model, because the part cost is what drives the difference between an older handset and a current one.`,
+      answer: `TechBrotherz in Calgary carries out ${input.repairNames.length} kinds of repair across the ${input.brandName} range: ${list(input.repairNames.map((name) => name.toLowerCase()))}. Each is quoted per model, because the part is what drives the difference between an older handset and a current one.`,
     });
   }
 
@@ -178,10 +178,10 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
     faqs.push({
       question: `Which ${input.brandName} models does TechBrotherz repair?`,
       answer:
-        `TechBrotherz in Calgary repairs ${input.modelCount} ${input.brandName} models with published prices, spanning releases from ${input.oldestYear} to ${input.newestYear}. ` +
+        `TechBrotherz in Calgary repairs ${input.modelCount} ${input.brandName} models, spanning releases from ${input.oldestYear} to ${input.newestYear}. ` +
         (input.awaitingCount > 0
-          ? `A further ${input.awaitingCount} ${input.awaitingCount === 1 ? "model is" : "models are"} repaired without a published price, quoted at the counter instead.`
-          : `Every model in the range carries its own published price list.`),
+          ? `A further ${input.awaitingCount} ${input.awaitingCount === 1 ? "model is" : "models are"} repaired to order, quoted at the counter once the part is confirmed.`
+          : `Every model in the range is quoted individually at the counter.`),
     });
   }
 

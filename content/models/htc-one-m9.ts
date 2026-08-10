@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.htc-one-m9-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The HTC One M9 kept the aluminium unibody of the M8 but replaced the depth-sensing dual camera with a single 20 megapixel sensor, a change most reviewers considered a step backwards. It ran hot enough that HTC issued a software update to manage it. Its screen replacement is $120, the dearest of the three HTC models we stock."
+          "text": "The HTC One M9 kept the aluminium unibody of the M8 but replaced the depth-sensing dual camera with a single 20 megapixel sensor, a change most reviewers considered a step backwards. It ran hot enough that HTC issued a software update to manage it. Its screen replacement is the dearest of the three HTC models we fit."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.htc-one-m9-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The HTC One M9 stopped at Android 7 and HTC has effectively left the mainstream phone market. At $120 the screen costs more than the handset is worth, and this particular model was not well regarded even when new. We would advise against the spend."
+          "text": "No. The HTC One M9 stopped at Android 7 and HTC has effectively left the mainstream phone market. Its screen costs more than the handset is worth, and this particular model was not well regarded even when new. We would advise against the spend."
         }
       ],
       "markDefs": [],

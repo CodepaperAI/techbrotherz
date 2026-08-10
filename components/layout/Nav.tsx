@@ -24,7 +24,7 @@ function PendingFlag() {
   return (
     <span
       title="This page ships in a later phase. Hidden in production."
-      className="type-caption rounded-chip border-tb-border bg-tb-cream text-tb-muted border px-1.5 py-0.5 text-[0.6875rem] leading-none"
+      className="type-caption rounded-chip border-tb-rule bg-tb-paper-2 text-tb-ink-2 border px-1.5 py-0.5 text-[0.6875rem] leading-none"
     >
       soon
     </span>
@@ -112,7 +112,7 @@ export function Nav() {
       className={cn(
         "sticky top-0 z-50 border-b transition-colors duration-[180ms] ease-out",
         scrolled
-          ? "border-tb-border bg-tb-cream/85 shadow-nav backdrop-blur-md"
+          ? "border-tb-rule bg-tb-white/90 shadow-nav backdrop-blur-md"
           : "border-transparent bg-transparent",
       )}
     >

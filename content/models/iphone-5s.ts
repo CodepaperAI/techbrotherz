@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5s-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Not worth repairing except for sentiment or a very specific need. The iPhone 5S stopped at iOS 12 and is now well over a decade old, with no security updates and very limited app support. TechBrotherz will fit a $44.99 screen if you want the phone working for a particular reason, but we would not recommend it as a phone to rely on."
+          "text": "Not worth repairing except for sentiment or a very specific need. The iPhone 5S stopped at iOS 12 and is now well over a decade old, with no security updates and very limited app support. TechBrotherz will fit a screen if you want the phone working for a particular reason, but we would not recommend it as a phone to rely on."
         }
       ],
       "markDefs": [],

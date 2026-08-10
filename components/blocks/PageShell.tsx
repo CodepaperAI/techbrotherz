@@ -82,18 +82,18 @@ export function PageShell({
           <div className="grid items-stretch gap-6 lg:grid-cols-12">
             <div
               data-surface="dark"
-              className="rounded-panel bg-tb-ink px-7 py-12 md:px-12 md:py-16 lg:col-span-7"
+              className="rounded-panel bg-tb-black/85 px-7 py-12 backdrop-blur-[2px] md:px-12 md:py-16 lg:col-span-7"
             >
               {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
 
-              <h1 className="type-h1 text-tb-white mt-5">{title}</h1>
+              <h1 className="type-h1 text-tb-on-black mt-5">{title}</h1>
 
               {lead ? <p className="type-lead measure text-tb-muted-dark mt-6">{lead}</p> : null}
 
               {heroActions ? <div className="mt-9 flex flex-wrap gap-3">{heroActions}</div> : null}
             </div>
 
-            <div className="bg-tb-green-soft rounded-panel relative min-h-64 overflow-hidden lg:col-span-5">
+            <div className="bg-tb-paper-2 rounded-panel relative min-h-72 overflow-hidden lg:col-span-5 lg:min-h-[30rem]">
               {heroImage ? (
                 <Image
                   src={heroImage.src}

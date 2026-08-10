@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.nexus-5x-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only if it is not bootlooping. The Nexus 5X stopped at Android 8. A $120 screen on a sound handset is defensible for someone who wants stock Android on a small phone. If it bootloops, the honest answer is that the phone is beyond economic repair."
+          "text": "Only if it is not bootlooping. The Nexus 5X stopped at Android 8. A screen on a sound handset is defensible for someone who wants stock Android on a small phone. If it bootloops, the honest answer is that the phone is beyond economic repair."
         }
       ],
       "markDefs": [],

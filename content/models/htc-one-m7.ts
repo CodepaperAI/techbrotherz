@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.htc-one-m7-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The HTC One M7 was the phone that introduced the aluminium unibody to Android, and its UltraPixel camera used fewer, larger pixels to gather more light rather than chasing a megapixel count. It is the cheapest of the three HTC screens we fit at $100, and the oldest."
+          "text": "The HTC One M7 was the phone that introduced the aluminium unibody to Android, and its UltraPixel camera used fewer, larger pixels to gather more light rather than chasing a megapixel count. It is the cheapest of the three HTC screens we fit, and the oldest."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.htc-one-m7-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The HTC One M7 stopped at Android 5, more than a decade ago. At $100 the screen costs far more than the handset is worth, and the camera fault this model is known for is a separate expense again. This is a phone to keep as a curiosity rather than repair."
+          "text": "No. The HTC One M7 stopped at Android 5, more than a decade ago. Even as the cheapest HTC screen we fit, it costs far more than the handset is worth, and the camera fault this model is known for is a separate expense again. This is a phone to keep as a curiosity rather than repair."
         }
       ],
       "markDefs": [],

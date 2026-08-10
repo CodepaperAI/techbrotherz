@@ -38,22 +38,22 @@ const ipadCalgary: LocalDef = {
         "Because iPad work is usually a drop-off rather than a wait, the transitway stop outside at 33 Street SE makes two short trips easy instead of one long one.",
     },
   ]),
-  lead: (c) =>
-    `${ENTITY}, repairs iPads: cracked glass from ${c.price("ipad-glass")}, failed display panels, worn batteries and charging ports. On older iPads the glass is a separate layer from the picture, so a cracked front often costs far less than people expect.`,
+  lead: () =>
+    `${ENTITY}, repairs iPads: cracked glass, failed display panels, worn batteries and charging ports. On older iPads the glass is a separate layer from the picture, so a cracked front is often a smaller repair than people expect.`,
   answer: (c) =>
-    `iPad repair in Calgary at TechBrotherz starts at ${c.price("ipad-glass")} for glass replacement, including the part and the labour. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture is the cheaper repair. iPad work is usually same-day rather than while you wait, and every repair carries a ${c.warrantyDays}-day warranty.`,
+    `iPad repair in Calgary at TechBrotherz is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture is the smaller repair. iPad work is usually same-day rather than while you wait, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
-    { label: "iPad glass from", value: `${c.price("ipad-glass")}, part and labour` },
+    { label: "Models", value: "iPad, iPad Air and iPad Mini" },
     { label: "Time", value: "Usually same day, not while you wait" },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Bring", value: "The model number from the back" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why is iPad repair in Calgary cheaper than people expect?",
       paragraphs: [
-        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel underneath, with an air gap between them. Crack the front of one of those and leave the picture undamaged, and only the glass needs replacing, which is why iPad glass replacement at TechBrotherz starts at ${c.price("ipad-glass")}.`,
+        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel underneath, with an air gap between them. Crack the front of one of those and leave the picture undamaged, and only the glass needs replacing, which is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
         "This is the opposite of every modern phone, where the two layers are laminated together at the factory and replace as one. The base iPad kept the older separated construction long after phones moved on, so a large cracked tablet can cost less to fix than a small cracked handset.",
         "The newer iPad Air and every iPad Pro changed it. Those use laminated displays where the glass is bonded directly to the panel, which looks better and costs considerably more when it breaks. Which one you have is the first thing we check, and it is why we ask for the model.",
       ],
@@ -105,10 +105,10 @@ const ipadCalgary: LocalDef = {
       body: "Laminated assemblies and the most expensive tablet part we fit. Worth pricing carefully against the tablet's value before committing.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does iPad repair cost in Calgary?",
-      answer: `iPad glass replacement at TechBrotherz in Calgary starts at ${c.price("ipad-glass")}, including the part and the labour, priced per model. Older iPads with separated glass are the cheaper repair. Laminated iPad Air and iPad Pro displays replace as one assembly and cost considerably more.`,
+      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPads with separated glass are the smaller repair. Laminated iPad Air and iPad Pro displays replace as one assembly and are the larger job.`,
     },
     {
       question: "Can I wait for an iPad repair in Calgary?",
@@ -156,10 +156,10 @@ const tabletCalgary: LocalDef = {
   lead: () =>
     `${ENTITY}, repairs Android and Windows tablets alongside iPads. Android tablet work is quoted at the counter rather than published in advance, because parts vary enormously between manufacturers and there is no small set of models that covers the market.`,
   answer: (c) =>
-    `TechBrotherz repairs Android and Windows tablets in Calgary alongside iPads, at 3317 17 Ave SE. Android tablet repairs are quoted at the counter once the model number is known, because part costs vary widely by manufacturer. iPad glass starts at ${c.price("ipad-glass")}. Every tablet repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
+    `TechBrotherz repairs Android and Windows tablets in Calgary alongside iPads, at 3317 17 Ave SE. Android tablet repairs are quoted at the counter once the model number is known, because parts vary widely by manufacturer. Every tablet repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   keyFacts: (c) => [
     { label: "Android and Windows tablets", value: "Quoted at the counter" },
-    { label: "iPad glass from", value: c.price("ipad-glass") },
+    { label: "Tablets", value: "iPad and Android tablets" },
     { label: "Bring", value: "The tablet and its model number" },
     { label: "Time", value: "Usually same day once the part is in" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
@@ -248,7 +248,7 @@ const laptopCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Laptop Repair Calgary | Screens, Keyboards, Charging",
   seoDescription:
-    "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens from $120, keyboards from $69.99, charging sockets $109.99. Diagnostics $24.99, off the repair.",
+        "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, keyboards and charging sockets, quoted free at the counter. Diagnostics deducted from the repair.",
   serviceType: "Laptop repair",
   city: "Calgary",
   priceSource: {
@@ -278,18 +278,18 @@ const laptopCalgary: LocalDef = {
         "If you would rather not carry a laptop across a car park, 33 Street SE Station on the transitway is directly outside the shop.",
     },
   ]),
-  lead: (c) =>
-    `${ENTITY}, repairs laptops: screens from ${c.price("laptop-screen")}, keyboards from ${c.price("laptop-keyboard")} and charging sockets at ${c.price("laptop-dc")}. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms as a dead laptop and costs nothing to rule out.`,
-  answer: (c) =>
-    `Laptop repair in Calgary at TechBrotherz starts at ${c.price("laptop-screen")} for a screen, ${c.price("laptop-keyboard")} for a keyboard and ${c.price("laptop-dc")} for a charging socket, with the part and the labour included. Diagnostics cost ${c.price("diagnostics")} and come off the repair. The shop is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
-  keyFacts: (c) => [
-    { label: "Screens from", value: `${c.price("laptop-screen")}, part and labour` },
-    { label: "Keyboards", value: c.price("laptop-keyboard-range") },
-    { label: "Charging socket", value: c.price("laptop-dc") },
-    { label: "Diagnostics", value: `${c.price("diagnostics")}, deducted from the repair` },
+  lead: () =>
+    `${ENTITY}, repairs laptops: screens, keyboards and charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms as a dead laptop and costs nothing to rule out.`,
+  answer: () =>
+    `Laptop repair in Calgary at TechBrotherz covers screens, keyboards and charging sockets, with the part and the labour in one figure. Diagnostics carry a fixed fee that comes off the repair. The shop is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
+  keyFacts: () => [
+    { label: "Bring", value: "The laptop and its charger, so the adapter can be ruled out" },
+    { label: "Repairs", value: "Screens, keyboards, charging sockets, storage and memory" },
+    { label: "Typical time", value: "Most laptop work is finished the same day" },
+    { label: "Diagnostics", value: "A fixed fee, deducted from the repair if you go ahead" },
     { label: "Bring", value: "The laptop and its charger" },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why bring the charger to a laptop repair?",
       paragraphs: [
@@ -301,7 +301,7 @@ const laptopCalgary: LocalDef = {
     {
       heading: "What does a laptop diagnostic in Calgary actually check?",
       paragraphs: [
-        `A diagnostic at TechBrotherz costs ${c.price("diagnostics")} and comes off the price if you go ahead with the repair, which makes it free whenever it leads to work. It is charged when it does not, and that is deliberate: the value is the answer, and the answer is worth something even when it is do not spend money on this machine.`,
+        `A diagnostic at TechBrotherz carries a fixed fee that comes off the bill if you go ahead with the repair, which makes it cost nothing whenever it leads to work. It is charged when it does not, and that is deliberate: the value is the answer, and the answer is worth something even when it is do not spend money on this machine.`,
         "It traces power delivery from the adapter through to the board, checks whether the machine posts, reads the drive's own health reporting for the reallocated sectors that appear long before a drive fails, tests memory, and watches thermal behaviour under load rather than at idle.",
         "At the end you get a specific fault and a specific price rather than a range. A laptop that will not turn on has at least five plausible causes costing very different amounts, and replacing parts in order of likelihood is a strategy that works eventually and is expensive on the way there.",
       ],
@@ -345,10 +345,10 @@ const laptopCalgary: LocalDef = {
       body: "Shut it down immediately, unplug it, turn it upside down and bring it in. Do not switch it back on to test it.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does laptop repair cost in Calgary?",
-      answer: `Laptop repair at TechBrotherz in Calgary starts at ${c.price("laptop-screen")} for a screen, ${c.price("laptop-keyboard-range")} for a keyboard and ${c.price("laptop-dc")} for a charging socket, with the part and the labour included. Diagnostics cost ${c.price("diagnostics")} and are deducted from the repair if you proceed.`,
+      answer: `Laptop repair at TechBrotherz in Calgary covers screens, keyboards and charging sockets, quoted free of charge before any work starts with the part and the labour in one figure. Diagnostics carry a fixed fee that is deducted from the repair if you proceed.`,
     },
     {
       question: "Should I bring my charger to a laptop repair?",
@@ -372,7 +372,7 @@ const computerCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Computer Repair Calgary | Flat Prices, No Hourly Rate",
   seoDescription:
-    "Computer repair in Calgary at TechBrotherz, 3317 17 Ave SE. Diagnostics $24.99, Windows installation $44.99, tune-up $79.99. Flat prices agreed before work starts.",
+        "Computer repair in Calgary at TechBrotherz, 3317 17 Ave SE. Diagnostics, Windows installation and tune-ups, quoted per job and agreed before work starts.",
   serviceType: "Computer repair",
   city: "Calgary",
   priceSource: {
@@ -404,23 +404,23 @@ const computerCalgary: LocalDef = {
         "A desktop tower is one thing you probably will drive with, though the 33 Street SE transitway stop outside is there for the collection trip.",
     },
   ]),
-  lead: (c) =>
-    `${ENTITY}, repairs desktop computers and laptops at flat prices agreed before work starts: diagnostics at ${c.price("diagnostics")}, Windows installation at ${c.price("windows-installation")}, and a full clean-up and tune-up at ${c.price("tune-up")}. Bring the tower alone, we have monitors and keyboards here to test with.`,
-  answer: (c) =>
-    `Computer repair in Calgary at TechBrotherz is priced per job rather than per hour: ${c.price("diagnostics")} for diagnostics, ${c.price("windows-installation")} for a Windows installation with an office suite and security software, and ${c.price("tune-up")} for a clean-up and tune-up. The shop is at 3317 17 Ave SE. Bring the tower alone, and the price is agreed before anything starts.`,
-  keyFacts: (c) => [
-    { label: "Diagnostics", value: `${c.price("diagnostics")}, deducted from the repair` },
-    { label: "Windows installation", value: c.price("windows-installation") },
-    { label: "Clean-up and tune-up", value: c.price("tune-up") },
+  lead: () =>
+    `${ENTITY}, repairs desktop computers and laptops at flat figures agreed before work starts: diagnostics, Windows installation, and a full clean-up and tune-up. Bring the tower alone, we have monitors and keyboards here to test with.`,
+  answer: () =>
+    `Computer repair in Calgary at TechBrotherz is quoted per job rather than per hour, covering diagnostics, a Windows installation with an office suite and security software, and a clean-up and tune-up. The shop is at 3317 17 Ave SE. Bring the tower alone, and the figure is agreed before anything starts.`,
+  keyFacts: () => [
+    { label: "Bring", value: "The tower alone, monitors and keyboards are here to test with" },
+    { label: "Quoted", value: "Per job, not per hour" },
+    { label: "Diagnostics", value: "A fixed fee, deducted from the repair if you go ahead" },
     { label: "Bring", value: "The tower only, we have screens here" },
     { label: "Pricing", value: "Flat per job, never hourly" },
   ],
-  sections: (c) => [
+  sections: () => [
     {
       heading: "Why is computer repair priced per job rather than per hour?",
       paragraphs: [
         "Because an hourly rate makes the customer carry the risk of a job taking longer than expected, and on computer work it frequently does. A flat price means a Windows installation that runs into an awkward driver problem costs exactly what was quoted, and the person absorbing that is us rather than you.",
-        `So diagnostics are ${c.price("diagnostics")}, a Windows installation with an office suite and security software is ${c.price("windows-installation")}, a clean-up and tune-up is ${c.price("tune-up")}, and hardware or program installation is ${c.price("hardware-installation")} per item. Those are the totals, agreed at the counter before anything begins.`,
+        `So a diagnostic, a Windows installation with an office suite and security software, a clean-up and tune-up, and hardware or program installation per item are each quoted as one figure for the whole job. Those are the totals, agreed at the counter before anything begins.`,
         "It also removes the incentive to work slowly, which is worth saying plainly. Nobody here benefits from a job taking three hours instead of one, so the machine gets done properly and gets done.",
       ],
     },
@@ -428,7 +428,7 @@ const computerCalgary: LocalDef = {
       heading: "Why has my computer become so slow?",
       paragraphs: [
         "Almost never one dramatic fault. Usually four ordinary ones stacked: a startup list that has collected a dozen programs over the years, temporary files and old installers filling the drive, updates that have fallen months behind, and dust blocking the cooling so the processor throttles itself to stay cool.",
-        `A clean-up and tune-up at ${c.price("tune-up")} addresses all four, including the physical cleaning no software utility can do. Dust packed into a heatsink stops heat escaping, so the processor hits its limit sooner and slows down deliberately, which is why a machine feels fine for five minutes and then drags.`,
+        `A clean-up and tune-up addresses all four, including the physical cleaning no software utility can do. Dust packed into a heatsink stops heat escaping, so the processor hits its limit sooner and slows down deliberately, which is why a machine feels fine for five minutes and then drags.`,
         "The single biggest improvement on an older machine is usually replacing a mechanical hard drive with a solid-state one. If the diagnostic shows that is the real limit, we will tell you, because it turns a frustrating computer into a usable one more reliably than any amount of software cleaning.",
       ],
     },
@@ -471,10 +471,10 @@ const computerCalgary: LocalDef = {
       body: "The single biggest improvement on an older tower, and far cheaper than replacing the machine.",
     },
   ],
-  faqs: (c) => [
+  faqs: () => [
     {
       question: "How much does computer repair cost in Calgary?",
-      answer: `Computer repair at TechBrotherz in Calgary is priced per job, not per hour. Diagnostics are ${c.price("diagnostics")} and come off the repair, a Windows installation with an office suite and security software is ${c.price("windows-installation")}, a clean-up and tune-up is ${c.price("tune-up")}, and hardware or program installation is ${c.price("hardware-installation")} per item.`,
+      answer: `Computer repair at TechBrotherz in Calgary is quoted per job, not per hour. The diagnostic fee comes off the repair if you go ahead. A Windows installation includes an office suite and security software, a clean-up and tune-up covers startup, temporary files, updates, cooling and storage health, and hardware or program installation is charged per item.`,
     },
     {
       question: "Do I need to bring my monitor and keyboard to the shop?",

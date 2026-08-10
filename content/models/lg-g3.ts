@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.lg-g3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, except as a cheap fix on a working phone. The LG G3 stopped at Android 6 and LG has left the market. A $110 screen is inexpensive, and the removable battery helps, but a decade-old phone that runs hot and receives no security updates is not one to invest in."
+          "text": "No, except as a small fix on a working phone. The LG G3 stopped at Android 6 and LG has left the market. The screen is inexpensive, and the removable battery helps, but a decade-old phone that runs hot and receives no security updates is not one to invest in."
         }
       ],
       "markDefs": [],

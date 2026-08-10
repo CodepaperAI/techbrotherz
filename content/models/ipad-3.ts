@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, other than as a child's tablet. The iPad 3 stopped at iPadOS 9, and its short production life means it was already behind when it was new. A $69.99 glass repair keeps a video-watching tablet alive for a child, which is a fair reason. For anything requiring a current app, it is finished."
+          "text": "No, other than as a child's tablet. The iPad 3 stopped at iPadOS 9, and its short production life means it was already behind when it was new. A glass repair keeps a video-watching tablet alive for a child, which is a fair reason. For anything requiring a current app, it is finished."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.ipad-3-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad 3 is heavier and thicker than both the iPad 2 before it and the iPad 4 after it, because of the larger battery needed to drive its Retina panel. Its glass and digitizer are a separate layer from the display, so a cracked front is a $69.99 glass repair rather than a full screen."
+          "text": "The iPad 3 is heavier and thicker than both the iPad 2 before it and the iPad 4 after it, because of the larger battery needed to drive its Retina panel. Its glass and digitizer are a separate layer from the display, so a cracked front is a glass repair rather than a full screen."
         }
       ],
       "markDefs": [],

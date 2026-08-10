@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked glass on the 5.7 inch display, replaced as a panel at $174.99",
+    "Cracked glass on the 5.7 inch display, which replaces as a whole panel",
     "Battery worn, but removable by hand on this model",
     "Micro USB port worn out",
     "S Pen tip worn or lost",
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Battery yes, screen borderline. The Note 4 stopped at Android 6, so it is not a phone for banking or messaging. Its removable battery makes a revival almost free, which is worth doing for a specific use. A $174.99 screen on a phone from 2014 is much harder to justify."
+          "text": "Battery yes, screen borderline. The Note 4 stopped at Android 6, so it is not a phone for banking or messaging. Its removable battery makes a revival almost free, which is worth doing for a specific use. A full screen on a phone from 2014 is much harder to justify."
         }
       ],
       "markDefs": [],

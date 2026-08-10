@@ -15,6 +15,152 @@ Newest entry at the top. Append after every working session and before every con
 **Next:** the agreed next step
 ```
 
+## Session 2026-08-06 — Merge the two device sections, and two leftovers
+
+**Asked:** delete "Which device needs fixing?" and move its photographs into the services grid; clear "and prices" out of every link label and widen the price guard so it catches link text; remove the nav item pointing at the unbuilt guides.
+
+**Done:** all three, plus the stale-reference debris the first two uncovered.
+
+### The two sections are one
+
+The home page asked a visitor to choose a device twice: a four-card photo grid under "Which device needs fixing?" and a six-card icon grid under "What can we fix for you?", both linking to the same seven service hubs. The device section is deleted, `components/blocks/DeviceGrid.tsx` with it, and the photographs moved into the services grid.
+
+`components/blocks/ServiceCard.tsx` is new and its point is the single media frame: same 3:2 ratio, same image radius, same inset inside the card padding, same hover, whether the card renders a photograph or a line drawing. A grid of matched frames reads as intentional. A 3:2 photo next to a square icon well reads as broken, which is the failure the merge exists to remove, so neither branch is allowed its own geometry.
+
+**All six cards carry a photograph.** Four did immediately. The last two were drawn for part of the session and then filled from originals the client supplied mid-session.
+
+The Phase 6.5b note said no usable photograph existed for unlocking or password reset. Re-tested under the relaxed rule, both existing candidates failed for reasons that were not the trademark rule: `service-phone-unlocking` was a second crop of the same frame as `service-tablet-repair`, two cards above it in the same grid, and `service-password-reset` showed a laptop being opened with a precision screwdriver, which is not what a password reset involves. A `sim` subject was added to `RepairIllustration` so the two drawings were not the same padlock twice.
+
+The client then supplied a combination padlock on a chain-link fence and an Instagram login screen. Both are exactly 3:2, so they resize into the frame with no crop, and both **replaced the slot images rather than being added alongside**, so the hub pages are corrected too and the duplicate-crop problem is gone at the source. The `sim` and `lock` drawings stay as the fallback for a build with `public/demo/` deleted, which is what keeps the demo set non-load-bearing.
+
+**One of the two does not meet CLAUDE.md Section 8.9, and that is recorded rather than quietly absorbed.** The Instagram wordmark is the dominant element on a plain background, which is the exact case the rule was written for and the reason the Samsung memory-card shot was rejected in 6.5b. Section 8.9 also says the trademark position is a recommendation and the client's call. The position was put to them, they chose the image, and `IMAGE_EDITS["service-password-reset"]` in `lib/content/images.ts` states all of that, so the manifest carries the decision and not just the file.
+
+**`/services` followed.** Its seven cards were the last service grid still on icon wells, and they now use the same `ServiceCard` and the same media frame, each naming the demo slot its own hub page already uses as a header. One image per service, not two, and a visitor arriving from the grid sees the picture they clicked. The individual `/services/[service]` pages needed nothing: they already carry a header photograph and illustrated step cards.
+
+`IconCard` stays in use, on the home page's "What you get on every repair" row. Those four are walk-in policy, turnaround, parts and labour and the warranty: abstractions with nothing to photograph, which is what an icon is for. The change was never "icons are worse", it was that a service has a picture and a policy does not.
+
+Two dead fields went with the rewrite. `priceKey` on the `/services` card type indexed price lookups that no longer exist, and `icon` was what the photographs replaced. The local `ServiceCard` interface became `ServiceEntry`, because the imported component now owns that name.
+
+`lib/content/images.ts` grew a `supplied()` constructor beside `image()`, because a client original has no Unsplash page and no known photographer. It sets `photographer: "TODO(client)"` and an empty `sourceUrl`, and the manifest renders "Supplied by the client" instead of a dead Unsplash link. **Attribution is still owed on both**, and a credit nobody can check would have been worse than a TODO.
+
+The link labels also gained `mt-auto`, so six links sit on one line per row rather than six heights.
+
+### tablet-repair versus ipad-repair
+
+`/services/ipad-repair` **does not exist and never has.** It is one of the pre-Phase-5 URLs listed in `EXPECTED_404` in `scripts/audit-pages.ts`, and it 404s. `/services/tablet-repair` is the canonical route: registered, built, and the one the `/services` page and `DeviceGrid` both linked to.
+
+The home page was the only place linking to the dead one. Production never emitted it, because `shouldRenderLink` gates on the registry and an unregistered path is not built, so the card rendered with no link at all; in development it pointed at a 404. **Removing the device section orphaned nothing.** The card now links to `/services/tablet-repair` and the grid is complete.
+
+### "and prices", and what the guard could not see
+
+Six home cards read "Phone repair details and prices" and so on, months after the prices came out. `scripts/test-no-prose-prices.ts` could not see it: it looks for a dollar sign followed by digits, and there is no dollar sign in "and prices".
+
+The guard now has a third check, over the whole document rather than `<main>`, because the header and footer are where that phrasing survives longest. Every anchor, button and `aria-label` is read and must not contain the word. Two exemptions, both deliberate: a label containing a question mark is FAQ content rather than a promise about a destination, and a same-document `#` link cannot promise another page's content. Without them the real failures drown in FAQ questions about pricing policy, whose answers the prose pass already checks.
+
+It found 27 pages on its first run. All fixed: the six home cards, "See every price" on nine brand hubs, "Every repair price we publish", "{model} repair prices" across the model tier and the 404 suggestions, "{Brand} repair prices" on seven service hubs, "the repair price list" on `/about`, `/locations`, `/warranty` and `/terms`, and two RelatedLinks headings.
+
+### The nav item
+
+`/guides` was in `HEADER_PATHS` as "Repair guides and answers", flagged `soon`. Renaming a link does not make a link to a page that does not exist worth having. Removed, along with the four `/guides/*` entries in the footer's Learn column and `/sitemap` in the legal row, which renders no flag at all and so read as an ordinary link straight to a 404 in development. All come back when the pages do.
+
+While in `lib/nav.ts`: the matrix carried **eleven paths that are not in the route registry at all** — `/repair-prices`, the three pre-Phase-5 service hubs, the seven Calgary neighbourhoods and Airdrie cut by the Phase 6 four-fact rule, and the four guides. `toLink` dropped every one, so production was never wrong, but the columns were shorter than they read and development logged a warning per path per render. The Phase 6 cuts are replaced by the Tier 5 pages that actually carry that intent.
+
+### The audits had stopped auditing
+
+Deleting `/repair-prices` left five scripts pointing at it, and two of them were failing open rather than loud.
+
+- **`scripts/link-graph.ts` discovered every model page by scraping `/repair-prices`.** That URL 301s, so the scrape returned nothing and the script reported on **zero model pages while printing a pass**. Brands now come from the registry and models from crawling the brand hubs, and it exits non-zero if the model list is empty. It immediately found two real failures.
+- **`scripts/audit-pages.ts`** listed `/repair-prices` as a page and reported eight failures about a page that no longer exists: no h1, no canonical, no AnswerBox. It now asserts the 301 to `/contact` instead, which is the check actually owed on a URL that had inbound links.
+- **`scripts/test-keyboard.ts`** tested the deleted price filter's search box, row hiding and aria-live count, and tabbed for a "Repair Prices" nav link. Block retired, nav check repointed at Services.
+- **`scripts/test-not-found.ts`** matched suggestions on the text "repair prices", so the rename broke it. Matches "repair details" now.
+- **`scripts/audit-browser.ts`** ran Lighthouse against `/repair-prices`, measuring a redirect hop and reporting "avoid multiple page redirects" as the top opportunity on a URL that renders nothing. Swapped for `/services`.
+
+**Both link-graph failures were real and pre-existing.** `/repair/google-pixel/pixel-6` is the only published Pixel, so it has no siblings, and the fixed spine on the model page had dropped to four outbound links when `/repair-prices` left it. The Tier 5 local page and the Tier 2 service hub joined the spine, which takes every model to six or more and closes a rule that was owed anyway: CLAUDE.md Section 9 rule 4 requires the matching local page on every model page and it was missing site-wide.
+
+### NEXT_PUBLIC_SITE_URL is gone, and the site is deployed
+
+The first deploy to a new Vercel project failed the build outright: `lib/env-assert.ts` threw because `NEXT_PUBLIC_SITE_URL` was unset. The guard was doing exactly what it was written to do, and the right answer was still to delete it.
+
+**The variable bought no flexibility.** The site has exactly one canonical origin and always did, so configuring a constant through a hosting provider only created a way for a build to die on any project that had not been told a value already written in this file. `lib/site-url.ts` now holds `CANONICAL_ORIGIN = "https://techbrotherz.com"`, `lib/site.ts` and `lib/utils.ts` read it, and `lib/env-assert.ts` is deleted.
+
+**The protection it provided is kept and strengthened, which is the only reason this was safe.** The guard existed because the fallback was `http://localhost:3000`, and a build that quietly used it emitted localhost as the canonical of every page and the `@id` of every JSON-LD node, rendering perfectly and being uncrawlable. The fallback is now the real domain, so **that failure cannot happen at all** rather than being caught after the fact. `middleware.ts` also loses a hole: with the variable unset the staging noindex silently did nothing, on exactly the deployments most likely to be missing it. Verified by building with `.env.local` moved aside: 146 pages, canonical `https://techbrotherz.com`, and no `localhost:300` anywhere in the output.
+
+`NEXT_PUBLIC_SITE_URL` still overrides when set, which is how the local audits point the whole site at `http://localhost:3100`. **A build now needs no environment variables at all.** The variable was also removed from the Vercel project, so the repo constant is the single source of truth.
+
+**Deployed to https://techbrothers.vercel.app.** Note this is a **new project on a different team** — `vercel` was re-linked interactively and answered "link to existing project? no", so it is not the Phase 5 `techbrotherz` project on the client's account. Nothing carried over from that project, which is why the variable was missing in the first place.
+
+**Measured on the deployment, median of 5, and it clears the target for the first time:**
+
+| Page | Perf | A11y | BP | LCP | CLS | TBT |
+| --- | --- | --- | --- | --- | --- | --- |
+| `/` | **96** | 100 | 100 | 2.65s | 0.000 | 77ms |
+| `/services/laptop-repair` | **97** | 100 | 100 | 2.20s | 0.000 | 141ms |
+| `/repairs/iphone-screen-replacement` | **98** | 100 | 100 | 1.72s | 0.000 | 72ms |
+
+Every category at or above 95 on the median run, against Phase 6's 92 to 96. SEO reads 66 to 69 because this host is deliberately noindexed; `audit-lighthouse` recognises that and does not apply the SEO target. **Do not "fix" it by removing the noindex.** LCP still misses the 2.0s target in Section 8.1 on the home page at 2.65s, though the repair page reaches 1.72s.
+
+Verified against the deployment, not just localhost: `test-staging-noindex` passes all five assertions including "canonical points at techbrotherz.com", plus `test-no-prose-prices`, `audit-pages`, `validate-schema`, `test-no-placeholders` and `link-graph` over all 138 pages.
+
+### One build was silently corrupt
+
+Rebuilding while `next start` held `.next` open produced an output whose prerendered HTML for `[locality]` and `locations/[...place]` was missing: every Tier 5 and Tier 6 URL returned 404 with `NoFallbackError`, and `pnpm build` had reported success. `audit-pages` caught it. Stopping the server, deleting `.next` outright and rebuilding fixed it. **On Windows, stop the server before building anything you intend to measure**, because `build:clean` only clears the fetch cache and does not protect against this.
+
+**Files touched:** `app/(site)/page.tsx`, `app/(site)/about/page.tsx`, `app/(site)/locations/page.tsx`, `app/(site)/locations/[...place]/page.tsx`, `app/(site)/warranty/page.tsx`, `app/(site)/terms/page.tsx`, `app/(site)/services/[service]/page.tsx`, `app/(site)/repairs/[repair]/page.tsx`, `app/(site)/repair/[brand]/page.tsx`, `app/(site)/repair/[brand]/[model]/page.tsx`, `components/blocks/ServiceCard.tsx` (new), `components/blocks/RepairIllustration.tsx`, `components/blocks/NotFoundSuggestions.tsx`, `components/blocks/DeviceGrid.tsx` (deleted), `lib/nav.ts`, `scripts/test-no-prose-prices.ts`, `scripts/link-graph.ts`, `scripts/audit-pages.ts`, `scripts/audit-browser.ts`, `scripts/test-keyboard.ts`, `scripts/test-not-found.ts`, `lib/content/images.ts`, `lib/content/image-blur.json`, `scripts/process-images.ts`, `scripts/build-image-manifest.ts`, `content/image-manifest.md`, `public/demo/service-phone-unlocking.jpg`, `public/demo/service-password-reset.jpg`, `public/demo/_source/supplied-carrier-unlocking.jpg`, `public/demo/_source/supplied-password-reset.jpg`.
+
+**Verified**, all against a build made from a deleted `.next` with the server stopped: `typecheck`, `lint`, `build` (146 pages) clean. `test-no-prose-prices` **passes in full**, prose, meta and link text. `audit-pages`, `validate-schema`, `test-faq-scoping`, `test-keyboard`, `test-not-found`, `test-contrast`, `test-no-placeholders`, `test-staging-noindex` all pass. axe **0 violations** on seven templates, 0 hydration warnings, 0 console errors. **CLS 0.000** on every page measured. Home LCP measured 2.44s, 2.90s and 3.0s across three separate `next start` sessions on the same code, which is the variance CLAUDE.md Section 12.1 describes and the reason localhost figures are not treated as a measurement of the site.
+
+**`/services` now carries seven images, 408 KB, the largest image payload on the site**, and it did not cost anything measurable: 93 performance, LCP 3.0s and CLS 0 put it in the same band as every other page. Every card image on both grids is below the fold and `loading="lazy"`, so none of them is ever the LCP element; the home hero still is.
+
+**Blocked / open:**
+
+- **The deployment is on a new project, not the client's.** `shivani-patels-projects-4d983f8e/techbrothers`, aliased to `techbrothers.vercel.app`. The Phase 5 project `techbrotherz` on the client's account is now unlinked and its `techbrotherz.vercel.app` deployment is stale. Decide which is the real staging host before the domain is pointed anywhere.
+- **`/repair/google-pixel/pixel-6` still has one inbound link**, against an internal minimum of two. It is not an orphan and there are no internal 404s. `/repair-prices` was the one page that linked all 84 models, and its replacement is the HTML sitemap at `/sitemap`, which CLAUDE.md Section 9 rule 9 calls the orphan insurance policy and which Phase 8 has not built. Rule 7, "every service hub links to its top 6 popular models", would also close it and is likewise unimplemented.
+- **The `WebSite` `SearchAction` in `lib/seo/schema.ts` still points at `/repair-prices?q=`**, a URL that 301s to a page with no search. Left alone because the fix is a decision, not an edit: either the site gets a search page or the `SearchAction` comes out, and CLAUDE.md Section 8.2 currently requires it.
+- **Attribution for both supplied images.** `photographer` is `TODO(client)` on `service-phone-unlocking` and `service-password-reset`, and the manifest says "Supplied by the client" where the others link a source page. If they came from a stock library, the licence and the credit both need recording before launch.
+- **The ten Tier 3 h1s still read "... Prices"**, for example "iPhone Screen Replacement Prices", and prose across the site still discusses pricing. Both are the 7a-ii work, not link text, and changing an h1 moves the title, the meta description and the keyword map with it.
+
+**Next:** confirm which Vercel project is the real one, then Phase 7 guides.
+
+## Session 2026-08-04 — Remove the backend, ship a static site
+
+**Asked:** "we do not need any backend here please remove the backend we need a static site just remove the sanity part"
+
+**Done:** Sanity is gone. Six document types became TypeScript constants, the query layer became an accessor layer over them, and the Studio, the revalidation webhook, draft mode, the seed and migration scripts and ten packages were deleted. 188 documents, zero images. `pnpm build` needs no credentials.
+
+This is the end of the road Phase 6.9 started down. That phase collapsed 17 types to six under "if the shop owner will not edit it, it does not belong in Sanity"; the answer here was that nothing is edited through a CMS at all, so the six followed.
+
+**The approach was the same one Phase 6.9 used, and for the same reason.** The accessors keep their names, signatures and returned shapes, so no page file changed. A refactor that changes every consumer is a rewrite in disguise, and a rewrite cannot be diffed against a baseline.
+
+**The diff is the evidence, and it also fixed the outstanding Phase 6.9 regressions.** Against `snapshots/before/`, all 143 content pages:
+
+- 51 byte-identical on the content surface
+- 92 differing only in an `_updatedAt` timestamp, which the price migration necessarily bumped
+- **zero price-table changes**, checked as ordered cell lists: no reordering, no row-count change, no value change, quote-only rows included
+
+The four regressions reported at the end of Phase 6.9 are all closed, and three of them were caused by the same mistake: reimplementing a GROQ ordering or filter by hand and losing a clause.
+
+| Was wrong | Why | Now |
+| --------- | --- | --- |
+| 18 model pages rendered "ipad-3" instead of "iPad 3" | `hydrateModel` took an optional name lookup no caller passed | Names come from a slug map built over the model constant |
+| 9 brand hubs lost their "Last updated" line | The brand document that carried `_updatedAt` became a code constant | Newest model `_updatedAt`, falling back to flat services for laptops-desktops, which has no models |
+| Home showed "to Moto X Play" instead of "to Moto G (3rd gen)" | `order(releaseYear desc, name asc)` lost its name tie-break | `byYearThenName`, comparing by code point because GROQ does and `localeCompare` disagrees on punctuation |
+| /contact and /locations listed five unpublished neighbourhoods | `NEAREST_LOCATIONS_QUERY` filtered `published` and ordered by `distanceKm`; the Phase 6.9 constant kept neither, and only Calgary and Forest Lawn are published | Both restored, and locations re-exported as whole documents rather than a projection |
+
+**One regression was mine, introduced during this session and caught by the same diff.** The export script stripped `_type` recursively to drop Sanity bookkeeping, which also stripped it from the portable-text blocks inside every FAQ answer. `/faq` rendered "[@portabletext/react] Unknown block type undefined" and lost 5,900 characters. Restored `_type` on 48 blocks and 48 spans. Nothing else in the export used portable text, and the locations export was written differently and was unaffected.
+
+**Verification:** `pnpm typecheck` and `pnpm lint` clean, 148 routes build, `audit:schema` passes 13 templates with no price-less Offers, `test:faq` passes with every question unique to one URL, `link-graph` reports no orphans, `test:no-placeholders` passes.
+
+**What retired with the dataset,** all recorded in CLAUDE.md rather than quietly dropped: cache tags and ISR, draft mode, the read token and its silent-empty-site failure mode, the build determinism check, `sanity typegen`, and the write-client guard. `lib/env-assert.ts` survived by being repointed at `NEXT_PUBLIC_SITE_URL`, the one variable that still fails silently: a production build without it emits localhost canonicals and is quietly uncrawlable, which shipped once on the first Vercel deploy.
+
+**Files touched:** added `content/data/{types,site-settings,models,faqs,flat-services,unlocking,testimonials,locations}.ts` and `lib/data/{index,catalogue,content,locations,site}.ts`; deleted `sanity/`, `app/studio/`, `app/api/`, `sanity.config.ts`, `sanity.cli.ts`, `lib/content/locations.ts` and 14 scripts; repointed 19 page imports; rewrote `lib/env-assert.ts`; edited `next.config.ts`, `package.json`, `.env.example`, `scripts/verify.ts`, `lib/site.ts`, `CLAUDE.md`, `README.md`.
+
+**Left open, and needing a decision:**
+
+1. **The Sanity project still exists**, with production untouched at 917 documents. Nothing reads it. Delete it when you are satisfied the site is correct, and revoke the two tokens pasted into chat during Phase 6.9, which should be rotated regardless.
+2. **`.env.local` still names a Sanity project and dataset.** Harmless, unread, and worth tidying.
+3. **The 92 pages whose "Last updated" moved to 31 July** say the migration day, not the day the content changed. Unavoidable, and worth knowing before the client asks.
+4. **Vercel still has the Sanity environment variables set** and will keep building fine without them being removed.
+
 ---
 
 ## Session 2026-08-01 — Phase 6.9 part 3, safety controls

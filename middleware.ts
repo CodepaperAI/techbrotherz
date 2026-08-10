@@ -1,5 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+import { siteUrl } from "@/lib/site-url";
+
 /**
  * Keeps non-canonical hosts out of the index.
  *
@@ -15,17 +17,20 @@ import { NextResponse, type NextRequest } from "next/server";
  * disallows everything. The canonical host is untouched, so nothing has to be
  * remembered or reverted at launch.
  *
- * The comparison is derived from NEXT_PUBLIC_SITE_URL rather than naming any
+ * The comparison is derived from the canonical origin rather than naming any
  * deployment host, so this keeps working for preview URLs, branch URLs, custom
  * staging domains and anything else that appears later.
+ *
+ * That origin is now a constant rather than an environment variable, which
+ * closes the one hole this file had: with the variable unset the protection
+ * silently did nothing, on exactly the deployments most likely to be missing
+ * it. See lib/site-url.ts.
  */
 
 /** The one host allowed to be indexed, taken from the canonical origin. */
 function canonicalHost(): string | null {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL;
-  if (!raw) return null;
   try {
-    return new URL(raw).host.toLowerCase();
+    return new URL(siteUrl()).host.toLowerCase();
   } catch {
     return null;
   }

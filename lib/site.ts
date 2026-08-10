@@ -1,8 +1,10 @@
+import { siteUrl } from "./site-url";
+
 /**
  * TechBrotherz business facts, the single source of truth in code.
  *
- * From Phase 2 the Sanity `siteSettings` singleton becomes primary and this
- * module is the typed fallback and default. Values here must stay identical to
+ * `content/data/site-settings.ts` is primary and this module is the typed
+ * fallback and default. Values here must stay identical to
  * the table in CLAUDE.md Section 2, character for character.
  *
  * NAP consistency is absolute: name, address and phone must match everywhere,
@@ -93,11 +95,8 @@ export const SITE = {
   ],
 } as const;
 
-/** Canonical origin, no trailing slash. */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(
-  /\/$/,
-  "",
-);
+/** Canonical origin, no trailing slash. See lib/site-url.ts. */
+export const SITE_URL = siteUrl();
 
 /** `tel:` href built from the E.164 number. */
 export const TEL_HREF = `tel:${SITE.phoneRaw}`;

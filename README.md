@@ -87,94 +87,55 @@ Check progress at **/styleguide/routes**, which lists built and pending counts p
 
 ---
 
-## For the shop owner: how to edit the words on a page
+## For the shop owner: how the content works
 
-Prices, questions, device details and location content are all edited in the Studio at **techbrotherz.com/studio**, and the website picks the changes up within seconds.
+There is no login and no admin panel. Every price, model, question and business fact is a file in this repository, and changing one is a small edit plus a deploy. That is a deliberate trade: you give up editing from a browser, and in exchange nothing can silently go stale, the site cannot break because a database was unreachable, and every change is reviewable before it goes live.
 
-| What you want to change | Where in the Studio |
-|---|---|
-| A repair price | Catalogue, then Prices |
-| Your address, phone, hours or warranty length | Site, then Site settings |
-| A question and its answer | Content, then Questions |
-| The description of a device model | Catalogue, then Device models |
-| A brand introduction, shown above its price tables | Catalogue, then Brands |
-| Directions and drive times for an area | Locations |
-
-Anything in Site settings appears in many places at once. Change the phone number there and it updates in the header, the footer, every price table, the contact page and the data Google reads, all together. That is deliberate: a phone number that is right in one place and wrong in another is worse than either.
-
-Headings, introductions and the fixed wording of pages such as the warranty page live in the code rather than the Studio, so ask a developer to change those.
-
----
-
-## For the shop owner: how to add a new phone and its prices
-
-Everything on the website is edited at **techbrotherz.com/studio**. You never need to touch code.
-
-### Adding a phone model
-
-1. Open the Studio and click **Catalogue**, then **Device models**, then **All models, A to Z**.
-2. Click the **+** button at the top of the list to create a new model.
-3. Fill in the **Content** tab:
-   - **Model name**, exactly as customers say it, for example "iPhone 17 Pro".
-   - **Brand**, picked from the list.
-   - **Kind of device**: phone, tablet, laptop or desktop.
-   - **Year released**.
-   - **Other names customers use**: nicknames and model numbers such as "iphone17pro" or "A1234". These help people find the page, so add as many as you know.
-   - **Common problems with this model**: three or more real faults you see on it.
-   - **Introduction**: two short paragraphs, at least 60 words.
-4. Open the **Settings** tab and check the **Web address** looks right, for example `iphone-17-pro`.
-5. Click **Publish** at the bottom.
-
-### Why the Publish button sometimes refuses
-
-Every published model gets its own page on the website. That page has to be worth visiting on its own, so the Studio will not let you publish a model until it has four things:
-
-| What | Why |
-|---|---|
-| **A release year** | The page uses it to work out how old the device is, which feeds the "is it worth repairing" answer. |
-| **Three or more common problems** | Real faults you see on that model. This is what makes the page useful rather than a price list. |
-| **An introduction of at least 60 words** | About that specific handset. What it is, what breaks on it, what is different about repairing it. |
-| **A verdict of at least 40 words** | An honest answer on whether it is still worth fixing. If the answer is no, say no. |
-
-Prices alone are not enough, and that is deliberate. If three models carry the same prices and the same words with only the name changed, Google treats all three as low quality and it can hold back the rest of the site with them. **One good page beats three near-identical ones.**
-
-The most important field is the introduction, and the one rule is: write about *that* device. Copying another model's introduction and changing the name is worse than leaving it empty. If you genuinely cannot think of anything true to say about a model that is not also true of the one beside it, leave it unpublished and tell your developer. That is the right answer, not a failure.
-
-A check runs on every release that compares all the model pages against each other and fails if any two are too alike, so this rule is enforced rather than hoped for.
-
-### Adding all the prices at once
-
-1. With the model open, click the **arrow next to the Publish button** at the bottom of the screen.
-2. Choose **Add standard repairs**.
-
-That creates a price row for every repair that applies to this kind of device, so a phone gets all thirteen in one click. Each row starts as **Call for quote**.
-
-### Setting a price
-
-1. Go to **Catalogue**, then **Prices**, then **Quote only, no price set**.
-2. Click a row.
-3. Type the price into **Price in CAD**, including the part and the labour, and turn **Quote in person** off.
-4. Click **Publish**.
-
-A price row must have either a price or "Quote in person" turned on. It can never be left blank, because the page would have nothing to show. A row without a price shows "Call for quote" with your phone number, never an empty cell.
+Ask your developer for any of these. Each is a few minutes of work.
 
 ### Changing a price
 
-Go to **Catalogue**, then **Prices**, then **By brand**, and pick the brand. Click the row, change the number, click **Publish**. The website updates within a few seconds. No one needs to redeploy anything.
+`content/data/models.ts` holds every phone, tablet and laptop, each with the repairs offered on it:
+
+```ts
+{
+  "name": "iPhone 8 Plus",
+  "slug": { "current": "iphone-8-plus" },
+  "brandSlug": "apple-iphone",
+  "published": true,
+  "repairs": [
+    { "repair": "screen-replacement", "price": 89.99 },
+    { "repair": "battery-replacement", "price": 59.99 },
+    { "repair": "back-glass-replacement" }
+  ]
+}
+```
+
+Change `89.99` and the new figure appears everywhere that price is quoted: the model page, the full price list, the iPhone hub, the screen-replacement page and the structured data search engines read.
+
+**A repair with no `price` renders "Call for quote".** That is why the third entry above has no number. Never invent one to fill the gap.
+
+### Adding a phone
+
+Add an entry with the same shape. Set `published: true` when you want it live.
+
+The build refuses a model that has neither prices nor written copy, and tells you which one. A model with prices but no copy still gets a real page: prices, what is included, warranty, turnaround and a call to action. Short and honest rather than padded. The full page follows when the copy is written.
+
+### The business facts
+
+`content/data/site-settings.ts` holds the address, phone number, hours, warranty and typical wait. **Change these in one place only.** The address and phone appear in dozens of places including the structured data, and they must match your Google Business Profile character for character. Getting that wrong is the single easiest way to hurt local ranking.
+
+### Questions
+
+`content/data/faqs.ts`. Each needs a `plainAnswer` of 320 characters or fewer, because that is the version search engines quote.
 
 ### Prices that need checking
 
-**Catalogue**, then **Prices**, then **Needs verification** lists every price carried over from the printed list that has not been confirmed yet. Work through it when you have a moment. Confirming a price is just turning the **Needs checking** switch off.
+Some entries carry `"needsVerification": true`. Those were read off the printed price list and never confirmed. They render normally. Confirming them is a one-word deletion.
 
-### Models waiting for prices
+### Ratings and reviews
 
-**Catalogue**, then **Device models**, then **Modern models awaiting prices** lists every recent phone and tablet whose pages are built but not yet live, because they have no prices. Add the prices, then publish the model, and the page goes live.
-
-### Ratings
-
-The site shows no star rating anywhere. It will not show one until real Google review numbers are entered under **Site**, then **Review summary**, and the switch is turned on. That is deliberate: an invented rating is a legal and reputational risk, and Google penalises it.
-
----
+`content/data/testimonials.ts` is empty and will stay empty until you supply real Google reviews with links. **No star rating, review count or testimonial will ever be put on this site unless it is real and verifiable.** This is not a technical limit, it is a decision, and it is the right one.
 
 ## Project documentation
 

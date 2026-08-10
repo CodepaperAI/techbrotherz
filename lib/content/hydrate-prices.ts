@@ -19,7 +19,6 @@ import { priceGroupFor, repairType, type RepairTypeDef } from "@/lib/content/rep
 
 export interface RawRepair {
   repair?: string | null;
-  price?: number | null;
   partGrade?: string | null;
   turnaroundMinutes?: number | null;
   warrantyDays?: number | null;
@@ -30,8 +29,12 @@ export interface RawRepair {
 
 /** The shape every price table, Offer builder and model page already expects. */
 export interface HydratedPrice {
-  price: number | null;
-  quoteOnly: boolean;
+  /**
+   * A stable synthetic id. There is no price document to carry one now, and
+   * pages use it as a React key, so it is derived from the model and repair
+   * slugs, which are unique together by construction.
+   */
+  _id: string;
   partGrade: string | null;
   turnaroundMinutes: number | null;
   warrantyDays: number | null;
@@ -77,11 +80,8 @@ export function hydrateRepairs(
     .filter((entry): entry is RawRepair => Boolean(entry?.repair))
     .map((entry) => {
       const def = repairType(entry.repair as string);
-      const hasPrice = typeof entry.price === "number";
-
       return {
-        price: hasPrice ? (entry.price as number) : null,
-        quoteOnly: !hasPrice,
+        _id: `price.${modelSlug ?? "model"}.${entry.repair}`,
         partGrade: entry.partGrade ?? null,
         turnaroundMinutes: entry.turnaroundMinutes ?? null,
         warrantyDays: entry.warrantyDays ?? null,
@@ -100,10 +100,4 @@ export function hydrateRepairs(
     });
 }
 
-/** Lowest real price, or null where every repair on the model is quoted. */
-export function fromPrice(prices: readonly HydratedPrice[]): number | null {
-  const real = prices
-    .map((entry) => entry.price)
-    .filter((price): price is number => typeof price === "number");
-  return real.length > 0 ? Math.min(...real) : null;
-}
+

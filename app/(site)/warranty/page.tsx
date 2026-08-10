@@ -14,7 +14,7 @@ import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { getAllFaqs, getReviewSummary, getSiteSettings } from "@/sanity/queries";
+import { getAllFaqs, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
@@ -113,7 +113,7 @@ export default async function WarrantyPage() {
               What the {warrantyDays}-day TechBrotherz warranty covers and excludes
             </caption>
             <thead>
-              <tr className="bg-tb-green-soft">
+              <tr className="tb-thead">
                 <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                   Situation
                 </th>
@@ -273,11 +273,11 @@ export default async function WarrantyPage() {
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">
-          Every price published on{" "}
-          <Link href="/repair-prices" className="text-tb-green-deep hover:underline">
-            the TechBrotherz repair price list
-          </Link>{" "}
-          already includes that cover, so there is nothing extra to add at the counter. The same
+          Every quote given at the counter, as described on{" "}
+          <Link href="/contact" className="text-tb-green-deep hover:underline">
+            how TechBrotherz quotes a repair
+          </Link>
+          , already includes that cover, so there is nothing extra to add at the counter. The same
           applies to every service on{" "}
           <Link href="/services" className="text-tb-green-deep hover:underline">
             the repair services page

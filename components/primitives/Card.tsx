@@ -18,8 +18,9 @@ const PADDING = {
 } as const;
 
 /**
- * White fill, 1px border, 20px radius, near-invisible shadow. Inside a dark
- * Section the border and shadow drop away and the white fill does the work.
+ * White fill, 1px rule, 10px radius, no shadow at rest. On hover the rule goes
+ * green and the card lifts 2px, which is the whole interaction: no shadow bloom,
+ * no scale. Inside a dark Section the rule drops away and the fill does the work.
  * DESIGN.md Section 6.6.
  */
 export function Card({
@@ -32,11 +33,13 @@ export function Card({
   return (
     <Tag
       className={cn(
-        "rounded-card bg-tb-white text-tb-text shadow-card",
-        "border-tb-border on-dark:border-transparent on-dark:shadow-none border",
+        "rounded-card bg-tb-white text-tb-ink",
+        "border-tb-rule on-dark:border-tb-rule-dark border",
         PADDING[padding],
         interactive &&
-          "hover:shadow-lift on-dark:hover:shadow-none transition-shadow duration-[180ms] ease-out",
+          "hover:border-tb-green hover:-translate-y-0.5 on-dark:hover:border-tb-green " +
+            "transition-[transform,border-color] duration-[--duration-hover] ease-[--ease-out] " +
+            "motion-reduce:transition-none motion-reduce:hover:translate-y-0",
         className,
       )}
     >

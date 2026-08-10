@@ -17,7 +17,7 @@ import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { ADDRESS_LINE, SITE, TEL_HREF } from "@/lib/site";
-import { getAllFaqs, getLocations, getReviewSummary, getSiteSettings } from "@/sanity/queries";
+import { getAllFaqs, getLocations, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 

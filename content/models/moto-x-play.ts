@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.moto-x-play-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only for the battery life. The Moto X Play stopped at Android 7. A $110 screen is cheap, and this specific model's battery endurance is genuinely better than its peers, so people keep them as work or site phones. For anything needing current apps, it is finished."
+          "text": "Only for the battery life. The Moto X Play stopped at Android 7. Its screen is inexpensive, and this specific model's battery endurance is genuinely better than its peers, so people keep them as work or site phones. For anything needing current apps, it is finished."
         }
       ],
       "markDefs": [],

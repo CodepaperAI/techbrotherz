@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.lg-g4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only if it is not bootlooping. The LG G4 stopped at Android 6 and LG has exited phones entirely. If the fault is a cracked screen on an otherwise working handset, $110 is cheap. If it is the bootloop, no repair at this price will help and we will tell you at the counter."
+          "text": "Only if it is not bootlooping. The LG G4 stopped at Android 6 and LG has exited phones entirely. If the fault is a cracked screen on an otherwise working handset, the repair is inexpensive. If it is the bootloop, no screen will help and we will tell you at the counter."
         }
       ],
       "markDefs": [],

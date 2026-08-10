@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.moto-g-3rd-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The third-generation Moto G was the first in the range with a proper IP67 water resistance rating, which no budget phone of 2015 offered. It also introduced the customisable Moto Maker colours. It shares a $110 screen price with the two Moto G generations before it, but not their construction."
+          "text": "The third-generation Moto G was the first in the range with a proper IP67 water resistance rating, which no budget phone of 2015 offered. It also introduced the customisable Moto Maker colours. It shares a screen price with the two Moto G generations before it, but not their construction."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.moto-g-3rd-gen-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, other than as a spare. The third-generation Moto G stopped at Android 6. At $110 the screen costs more than the phone is worth. If you need a working spare and already own it, the repair is cheap enough to consider, but do not expect the water resistance back."
+          "text": "No, other than as a spare. The third-generation Moto G stopped at Android 6, and its screen costs more than the phone is worth. If you need a working spare and already own it, the repair is cheap enough to consider, but do not expect the water resistance back."
         }
       ],
       "markDefs": [],

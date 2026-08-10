@@ -25,8 +25,8 @@ export interface SectionProps {
 }
 
 const VARIANT_STYLES: Record<SectionVariant, string> = {
-  light: "bg-tb-cream text-tb-text",
-  tint: "bg-tb-green-soft text-tb-text",
+  light: "bg-tb-paper text-tb-ink",
+  tint: "bg-tb-paper-2 text-tb-ink",
   dark: "bg-tb-ink text-tb-white",
 };
 
@@ -55,7 +55,7 @@ export function Section({
       data-surface={isDark ? "dark" : "light"}
       className={cn(
         VARIANT_STYLES[variant],
-        isDark ? "py-[88px] md:py-28 lg:py-36" : "py-[72px] md:py-24 lg:py-32",
+        isDark ? "py-14 md:py-28" : "py-14 md:py-24",
         className,
       )}
     >

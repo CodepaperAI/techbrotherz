@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.htc-one-m8-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, other than affection. The HTC One M8 stopped at Android 6 and receives no updates. At $110 the screen exceeds the phone's value. It remains one of the better-built phones of its era, and people are fond of them, but that is not a reason we would encourage the spend."
+          "text": "No, other than affection. The HTC One M8 stopped at Android 6 and receives no updates. Its screen exceeds the phone's value. It remains one of the better-built phones of its era, and people are fond of them, but that is not a reason we would encourage the spend."
         }
       ],
       "markDefs": [],

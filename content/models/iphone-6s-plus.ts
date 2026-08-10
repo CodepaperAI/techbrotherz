@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Repair only if the phone owes you nothing. The iPhone 6S Plus stopped at iOS 15 and is now roughly a decade old. An $84.99 screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
+          "text": "Repair only if the phone owes you nothing. The iPhone 6S Plus stopped at iOS 15 and is now roughly a decade old. A screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-plus-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The 6S generation uses a stronger aluminium alloy than the 6, so a 6S Plus is far less likely to arrive bent than its predecessor. TechBrotherz carries the full component range for this model, including the metal LCD shield at $69, which many shops no longer stock."
+          "text": "The 6S generation uses a stronger aluminium alloy than the 6, so a 6S Plus is far less likely to arrive bent than its predecessor. TechBrotherz still fits the full component range for this model, including the metal LCD shield that many shops no longer replace."
         }
       ],
       "markDefs": [],

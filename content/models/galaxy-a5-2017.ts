@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-a5-2017-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy A5 from 2017 was Samsung's mid-range phone that borrowed the flagship's glass sandwich body and water resistance, at roughly half the price. Its screen costs $179.99 to replace, which is high for a mid-range handset and reflects that Samsung used the same bonded OLED construction as its flagships."
+          "text": "The Galaxy A5 from 2017 was Samsung's mid-range phone that borrowed the flagship's glass sandwich body and water resistance, at roughly half the price. Its screen is expensive to replace for a mid-range handset, because Samsung used the same bonded OLED construction as its flagships."
         }
       ],
       "markDefs": [],
@@ -29,7 +29,7 @@ const content: ModelContent = {
   "commonIssues": [
     "Cracked front glass on the bonded OLED",
     "Cracked rear glass, unusual on a mid-range phone of this era",
-    "Battery degraded, replaceable at $69.99",
+    "Battery degraded, and a replacement is one of the smaller repairs on this handset",
     "USB-C port worn, this being an early mid-range Samsung to adopt it",
     "Home button with fingerprint reader failing"
   ],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-a5-2017-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No for the screen, yes for the battery. The A5 stopped at Android 8. At $179.99 a screen costs far more than this mid-range handset is worth now. A $69.99 battery or a $49.99 back glass on a phone still doing a job is a reasonable spend, and we will tell you which category yours falls into."
+          "text": "No for the screen, yes for the battery. The A5 stopped at Android 8, so it receives no security updates. A screen on a mid-range handset of this age costs far more than the phone justifies now. A battery or a back glass on a phone still doing a job is a reasonable spend, and we will tell you which category yours falls into."
         }
       ],
       "markDefs": [],
