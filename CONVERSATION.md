@@ -15,6 +15,32 @@ Newest entry at the top. Append after every working session and before every con
 **Next:** the agreed next step
 ```
 
+## Session 2026-08-10 (later) — Client change request, session 2: logos, FRP, repair menu, reviews link
+
+**Asked:** the client supplied the logo files and answered part of the outstanding questions in one message: use the logos, add carrier unlocking and FRP removal, confirm the Motorola/LG/HTC/Nexus removal (already done in session 1), surface battery / back glass / charging port / earpiece / loudspeaker as repair options, and gave the Google Maps reviews URL.
+
+**Done:**
+
+### The logo is real now
+
+The client supplied transparent background-removed PNGs (the auto-traced SVG versions were also sent but are lower fidelity). Both processed with sharp: trimmed, resized to 3x display size, palette-compressed to 13 KB each. `public/logo-on-light.png` (dark wordmark) renders in the white header, `public/logo-on-dark.png` (white wordmark) in the dark footer and mobile sheet. `Logo.tsx` now renders `next/image` with explicit dimensions; the typeset two-span wordmark is gone. The link keeps the accessible name so the image alt stays empty.
+
+### FRP removal, on the unlocking page
+
+`/services/phone-unlocking` became "Phone Unlocking and FRP Removal in Calgary": new section explaining what Factory Reset Protection is, the legitimate lockout cases, and the non-negotiable proof-of-ownership requirement, in the same register as the blacklist stance. New key fact, a limits card, a whoFor row, and a fifth page-specific FAQ. The exact list of accepted proof documents is still the client's to answer; the copy says "such as the original receipt" and tells people to phone ahead, which is honest without inventing policy.
+
+### The wider repair menu on model pages
+
+All five options already existed as repair types; the gap was display. Every phone model page now names, under its price table, whichever of battery / back glass / charging port / earpiece / loudspeaker its own table does not carry, quoted at the counter. Only the genuinely absent ones are listed so the sentence never contradicts the table. Non-phones get a generic "not in the table is not off the menu" line.
+
+### Google reviews, first step
+
+`googleReviewsUrl` added to site settings, types and `SITE`, with the client's Maps listing URL (tracking query params stripped). "Read our reviews on Google" now sits under the directions link in the footer, site-wide. **AggregateRating stays dormant**: the URL is supplied but the rating and count are not verified numbers, and ground rule 3 requires real supplied data. The full review wall (session 3) needs either a Maps API key or the numbers copied in by hand.
+
+**Blocked / open:** FRP accepted-proof list; gaming consoles (which repairs?); accessories detail; review rating/count or API key.
+
+**Next:** consoles and accessories pages once the client answers; review wall once numbers or key arrive.
+
 ## Session 2026-08-10 — Client change request, session 1: removals, fixes, wordmark, images
 
 **Asked:** session 1 of the client's eleven-item change request: fix the broken location tiles, add the logo and fix the wordmark, remove Motorola, LG, HTC and Google Nexus with 301s, replace three service images, then verify and deploy. Sessions 2 (FRP removal, consoles, accessories) and 3 (Google reviews) explicitly not started.

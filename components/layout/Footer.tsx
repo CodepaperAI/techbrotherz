@@ -79,6 +79,14 @@ export function Footer() {
             >
               Get directions to our Calgary shop
             </a>
+            <a
+              href={SITE.googleReviewsUrl}
+              target="_blank"
+              rel="noopener"
+              className="text-tb-green mt-2 block font-medium hover:underline"
+            >
+              Read our reviews on Google
+            </a>
           </div>
 
           {/* Link columns */}

@@ -1,43 +1,34 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
 /**
- * Wordmark placeholder.
+ * The client-supplied logo, in the variant matching the surface behind it.
  *
- * TODO(client): the supplied logo files are JPEGs with baked backgrounds and
- * have not been committed. Supply a transparent PNG or an SVG, drop it in
- * public/logo.svg and replace the spans below with next/image, keeping the
- * same link wrapper, sizing and aria-label so nothing else changes. Until
- * then this stays a typeset wordmark: one word, TechBrotherz, no gap, per the
- * logo itself.
+ * Two files, both supplied 2026-08: logo-on-light.png carries the dark
+ * wordmark for the white header, logo-on-dark.png the white wordmark for the
+ * dark footer and the mobile sheet. Both are transparent PNGs processed to 3x
+ * the display size. The wordmark reads TechBrotherZ as one word, which is why
+ * the typeset two-span fallback this component used to render is gone.
+ *
+ * The link carries the accessible name, so the image is decorative and its
+ * alt stays empty: a screen reader announces "TechBrotherz, home" once.
  */
 export function Logo({ className, onDark = false }: { className?: string; onDark?: boolean }) {
   return (
     <Link
       href="/"
       aria-label="TechBrotherz, home"
-      className={cn("inline-flex items-baseline", className)}
+      className={cn("inline-flex items-center", className)}
     >
-      <span
-        className={cn(
-          "font-display text-xl font-extrabold tracking-tight",
-          onDark ? "text-tb-white" : "text-tb-ink",
-        )}
-      >
-        Tech
-      </span>
-      {/* --tb-green on cream is 2.55:1, which fails AA for text. This is real
-          text in the DOM, not an image of a logo, so the contrast rule applies
-          to it. Green text on light is --tb-green-deep. DESIGN.md Section 2.1. */}
-      <span
-        className={cn(
-          "font-display text-xl font-extrabold tracking-tight",
-          onDark ? "text-tb-green" : "text-tb-green-deep",
-        )}
-      >
-        Brotherz
-      </span>
+      <Image
+        src={onDark ? "/logo-on-dark.png" : "/logo-on-light.png"}
+        alt=""
+        width={95}
+        height={44}
+        priority={!onDark}
+      />
     </Link>
   );
 }

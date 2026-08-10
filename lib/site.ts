@@ -78,6 +78,9 @@ export const SITE = {
 
   /** Google Maps link. Replaced with the Business Profile URL once claimed. */
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=3317+17+Ave+SE+Calgary+Alberta",
+  /** The listing with the reviews tab open. Supplied by the client 2026-08. */
+  googleReviewsUrl:
+    "https://www.google.com/maps/place/TechBrotherz/@51.0366821,-113.9869842,17z/data=!3m1!5s0x53717ae7a5d4f8d7:0xb018a331a11900ca!4m8!3m7!1s0x53717ae777fa04f7:0xe21ea3f908974600!8m2!3d51.0366821!4d-113.9869842!9m1!1b1!16s%2Fg%2F1ptx_hp3y!18m1!1e1",
   /** Unconfirmed, see CLAUDE.md open question 8. */
   googleBusinessUrl: null as string | null,
 

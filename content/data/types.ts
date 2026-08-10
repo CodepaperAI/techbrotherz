@@ -53,6 +53,8 @@ export interface SiteSettingsDoc {
   phoneRaw: string;
   email?: string;
   googleMapsUrl?: string;
+  /** The Google Maps listing with the reviews tab open. Supplied 2026-08. */
+  googleReviewsUrl?: string;
   googleBusinessUrl?: string;
   socialLinks?: { platform: string; url: string }[];
   hours: OpeningHours[];

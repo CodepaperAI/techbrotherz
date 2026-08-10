@@ -77,6 +77,25 @@ interface PageProps {
   params: Promise<{ brand: string; model: string }>;
 }
 
+/**
+ * The wider phone repair menu the client asked to surface on every model
+ * (2026-08): battery, back glass, charging port, earpiece, loudspeaker. A
+ * model page names whichever of these its own table does not already carry.
+ */
+const EXTRA_PHONE_REPAIRS: { slug: string; label: string }[] = [
+  { slug: "battery-replacement", label: "batteries" },
+  { slug: "back-glass-replacement", label: "back glass" },
+  { slug: "charging-port-repair", label: "charging ports" },
+  { slug: "earpiece-repair", label: "earpieces" },
+  { slug: "speaker-repair", label: "loudspeakers" },
+];
+
+/** "a, b and c" from a list of words. */
+function listWords(words: string[]): string {
+  if (words.length <= 1) return words[0] ?? "";
+  return `${words.slice(0, -1).join(", ")} and ${words[words.length - 1]}`;
+}
+
 /** One lookup shared by generateMetadata and the page itself. */
 async function loadModel(brand: string, slug: string) {
   const model = await getModelBySlug(slug);
@@ -137,6 +156,11 @@ export default async function ModelPage({ params }: PageProps) {
   const prices = model.prices ?? [];
   const headline = prices[0];
   const headlineRepair = headline?.repair?.name?.toLowerCase() ?? "repair";
+
+  const listedRepairSlugs = new Set(prices.map((entry) => entry.repair?.slug));
+  const missingPhoneRepairs = EXTRA_PHONE_REPAIRS.filter(
+    (entry) => !listedRepairSlugs.has(entry.slug),
+  ).map((entry) => entry.label);
 
   const age = model.releaseYear ? new Date().getFullYear() - model.releaseYear : null;
 
@@ -331,6 +355,18 @@ export default async function ModelPage({ params }: PageProps) {
         <p className="type-caption text-tb-muted mt-4">
           Every repair includes the part and the labour and carries a {warrantyDays}-day warranty,
           and the exact figure is quoted free before any work starts.
+        </p>
+
+        {/* The table lists the repairs curated for this model. The client asked
+            (2026-08) for the wider menu to be visible on every model, so the
+            options the table does not carry are named here and quoted at the
+            counter, rather than padded into the table as identical rows on
+            every page. Only the ones genuinely absent are listed, so the
+            sentence never contradicts the table above it. */}
+        <p className="type-body text-tb-muted mt-4">
+          {model.deviceType === "phone" && missingPhoneRepairs.length > 0
+            ? `A repair that is not in the table is not off the menu. TechBrotherz also replaces ${listWords(missingPhoneRepairs)} on the ${model.name}, quoted free at the counter once we have the phone in front of us.`
+            : `A repair that is not in the table is not off the menu. Bring the ${model.name} to the counter and TechBrotherz will quote the fault it actually has, free, before any work starts.`}
         </p>
 
         {model.priceGroup?.models && model.priceGroup.models.length > 1 ? (

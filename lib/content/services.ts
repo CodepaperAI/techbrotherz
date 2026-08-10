@@ -683,11 +683,11 @@ const computerRepair: ServiceDef = {
 
 const phoneUnlocking: ServiceDef = {
   slug: "phone-unlocking",
-  h1: "Phone Unlocking in Calgary",
+  h1: "Phone Unlocking and FRP Removal in Calgary",
   eyebrow: "Unlocking",
-    seoTitle: "Phone Unlocking Calgary | Any Canadian Carrier",
+    seoTitle: "Phone Unlocking & FRP Removal Calgary",
   seoDescription:
-        "Carrier unlocking at TechBrotherz in Calgary for any Canadian carrier, usually the same day. Since December 2017 the CRTC requires carriers to unlock free on request.",
+        "Carrier unlocking for any Canadian carrier and Google FRP removal at TechBrotherz in Calgary. Carriers must unlock free on request; FRP needs proof of ownership.",
   serviceType: "Phone unlocking",
   repairSlugs: [],
   brandSlugs: ["apple-iphone", "samsung-galaxy"],
@@ -698,12 +698,12 @@ const phoneUnlocking: ServiceDef = {
   lead: () =>
     `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
   answer: () =>
-    `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 every phone sold in Canada must be provided unlocked, and carriers must unlock older phones free of charge on request. Paid unlocking is worth it for phones bought secondhand, brought from another country, or on an account you no longer hold.`,
+    `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 carriers must unlock phones free of charge on request. TechBrotherz also removes Google Factory Reset Protection (FRP) from Android phones, and proof of ownership is required before that work starts.`,
   keyFacts: () => [
     { label: "Carriers", value: "Any Canadian carrier" },
     { label: "Time", value: "Usually the same day" },
     { label: "Ask your carrier first", value: "They must do it free, by CRTC rule" },
-    { label: "Phones sold after 1 Dec 2017", value: "Already unlocked, by law" },
+    { label: "FRP removal", value: "Android Google lock, proof of ownership required" },
     { label: "Blacklisted phones", value: "Cannot be unlocked, by anyone" },
   ],
   process: [
@@ -767,6 +767,14 @@ const phoneUnlocking: ServiceDef = {
       ],
     },
     {
+      heading: "Can TechBrotherz remove Factory Reset Protection (FRP)?",
+      paragraphs: [
+        "Factory Reset Protection is the Google account lock built into Android. When a phone is factory reset without first being signed out of its Google account, the phone refuses to finish setting up until that account's credentials are entered. It exists to make a stolen phone worthless, and it catches legitimate owners too: a secondhand phone reset by a seller who forgot to sign out, or your own phone after a reset when the account password is long forgotten.",
+        "TechBrotherz removes FRP from Android phones in that situation, and proof of ownership is required before any work starts. That requirement is not negotiable, for the same reason a blacklisted phone cannot be unlocked: the lock exists to protect owners, and we will not defeat it for a phone that cannot be shown to be yours. Bring what you have, such as the original receipt, and phone (403) 273-8324 ahead of the trip to confirm it is enough.",
+        "If the phone still has the Google account signed in and you simply cannot remember the password, try Google's own account recovery first, because that route is free. FRP removal is for the case where the phone is already reset and stuck at the verification screen.",
+      ],
+    },
+    {
       heading: "How long does unlocking take?",
       paragraphs: [
         `Most unlocks at TechBrotherz are completed the same day. You bring the phone in with its IMEI, we confirm the model and carrier, and in most cases the phone is unlocked before the day is out.`,
@@ -779,12 +787,16 @@ const phoneUnlocking: ServiceDef = {
     "Anyone who has bought a phone secondhand and cannot reach the original account holder to have it unlocked.",
     "People who have brought a phone from another country and want it working on a Canadian network.",
     "Anyone switching carriers who wants to keep the handset they already own.",
-    "Travellers who want to use a local SIM abroad rather than paying roaming rates.",
+    "Anyone locked out of their own Android phone by Factory Reset Protection after a reset, who can show the phone is theirs.",
   ],
   limits: () => [
     {
       title: "Blacklisted phones cannot be unlocked",
       body: "A handset reported lost or stolen sits on the shared national IMEI database. No shop and no carrier can unlock it, and it will not work on a Canadian network. We check this before you pay.",
+    },
+    {
+      title: "FRP removal requires proof of ownership",
+      body: "Factory Reset Protection exists to make a stolen phone worthless, and we will not defeat it for a phone that cannot be shown to be yours. Bring proof of ownership, such as the original receipt, and call ahead to confirm what you have is enough.",
     },
     {
       title: "Activation Lock is not carrier lock",
@@ -801,11 +813,6 @@ const phoneUnlocking: ServiceDef = {
       answer: `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Before paying, ask your own carrier: under the CRTC Wireless Code, Canadian carriers must unlock a phone on your account free of charge on request, and every phone sold in Canada since 1 December 2017 is already unlocked.`,
     },
     {
-      question: "Are phones sold in Canada already unlocked?",
-      answer:
-        "Yes, if sold on or after 1 December 2017. The CRTC Wireless Code requires that all mobile devices sold in Canada from that date be provided unlocked. Phones sold before that date can be unlocked free of charge by the carrier on request. TechBrotherz checks whether a phone is already unlocked before charging anything.",
-    },
-    {
       question: "Can TechBrotherz unlock a phone reported lost or stolen?",
       answer:
         "No. A phone reported lost or stolen is blacklisted on the national IMEI database shared by Canadian carriers, and no repair shop or carrier can unlock or reactivate it. TechBrotherz checks the IMEI before taking payment, so a blacklisted phone is identified before you spend anything.",
@@ -814,6 +821,11 @@ const phoneUnlocking: ServiceDef = {
       question: "Does unlocking a phone erase my data or void the warranty?",
       answer:
         "No. Carrier unlocking removes a network restriction and changes nothing else on the handset. It does not erase data, does not alter the operating system, does not sign you out of your Apple or Google account, and does not affect the manufacturer's warranty. It is a network permission rather than a modification to the phone.",
+    },
+    {
+      question: "Can TechBrotherz remove a Google account lock (FRP) from my phone?",
+      answer:
+        "Yes. TechBrotherz in Calgary removes Factory Reset Protection from Android phones that are stuck at the Google account verification screen after a reset. Proof of ownership is required before any work starts, because the lock exists to protect owners and TechBrotherz will not defeat it on a phone that cannot be shown to be yours.",
     },
   ],
   globalCategories: ["unlocking", "walkin"],
