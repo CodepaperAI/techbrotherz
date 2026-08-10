@@ -412,8 +412,8 @@ const computerCalgary: LocalDef = {
     { label: "Bring", value: "The tower alone, monitors and keyboards are here to test with" },
     { label: "Quoted", value: "Per job, not per hour" },
     { label: "Diagnostics", value: "A fixed fee, deducted from the repair if you go ahead" },
-    { label: "Bring", value: "The tower only, we have screens here" },
-    { label: "Pricing", value: "Flat per job, never hourly" },
+    { label: "Covers", value: "Diagnostics, Windows installation, tune-ups, hardware fitting" },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
   ],
   sections: () => [
     {
@@ -444,6 +444,7 @@ const computerCalgary: LocalDef = {
       heading: "What should you bring for computer repair in Calgary?",
       paragraphs: [
         "For a desktop, the tower alone. We have monitors, keyboards and mice here to test with, so there is no need to disconnect a whole setup and carry it in. Bring the power cable if it is a non-standard one, and mention any password needed to log into the machine.",
+        "For a laptop, bring the machine and its charger together. A laptop that will not power on or charge is sometimes the charger's fault rather than the computer's, and testing with your own charger answers that in the first minute rather than after a diagnostic.",
         "Tell us what the computer is doing and when it started. Slow, noisy, restarting, showing a specific error, refusing to boot. What the machine does and what changed just before narrows the diagnosis faster than any test we can run.",
         "If there is anything on the machine you cannot lose, say so at the counter. Most computer work leaves your files exactly where they are, but a clean Windows installation replaces what is on the drive, and that is the one job where getting it wrong is not recoverable.",
       ],

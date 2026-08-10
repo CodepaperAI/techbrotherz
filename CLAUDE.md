@@ -87,7 +87,7 @@ These live in `content/data/site-settings.ts`. Code reads them from there. The t
 
 Do not add any others. Do not imply any others.
 
-Cell phone repair, iPhone repair, Samsung Galaxy repair, Google Pixel repair, iPad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, Google FRP removal (proof of ownership required, added 2026-08 on the client's instruction), smartphone sales.
+Cell phone repair, iPhone repair, Samsung Galaxy repair, Google Pixel repair, iPad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, Google FRP removal (proof of ownership required, added 2026-08 on the client's instruction), game console repair (Xbox One, Xbox Series X and S, PS4, PS5, Nintendo Switch, added 2026-08 on the client's instruction; the client has not said which console repairs are carried out, so the page is diagnose-first and claims no specific fix and no price), phone / iPad / tablet accessories (cases, tempered glass, screen protectors, privacy screen protectors, added 2026-08 on the client's instruction; no prices and no stock claims, the phone number is the stock check), smartphone sales.
 
 **Removed 2026-08 on the client's instruction:** LG, Motorola, HTC and Google Nexus repair. The four brand hubs and fifteen model pages 301 to `/services/phone-repair`. Open question for the client: refused outright, or still taken at the counter without promotion? If the latter, one line on `/services/phone-repair` can say so.
 
@@ -258,6 +258,7 @@ Status legend: `built` / `pending`. Update this table as pages ship.
 | `/about`          | built                                            |
 | `/contact`        | built                                            |
 | `/warranty`       | built                                            |
+| `/accessories`    | built, added 2026-08 on the client's instruction |
 | `/privacy-policy` | built, **needs a lawyer's review before launch** |
 | `/terms`          | built, **needs a lawyer's review before launch** |
 | `/guides`         | pending, ships in Phase 7 with its articles      |
@@ -281,7 +282,9 @@ Nothing was ever live at the old Tier 2 and Tier 3 URLs, so **no redirects are n
 
 Device categories and non-device services only. No brand-specific hubs.
 
-`/services/phone-repair` · `/services/tablet-repair` · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal`
+`/services/phone-repair` · `/services/tablet-repair` · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal` · `/services/game-console-repair`
+
+`/services/game-console-repair` (added 2026-08) is the one hub with no price table, no covered-repairs grid and no brand links, because consoles have no models in `content/data/models.ts` and no confirmed repair list. It is diagnose-first by design until the client says which console repairs they actually carry out.
 
 `/services/data-backup` stays unbuilt until open question 9 is answered.
 
@@ -425,6 +428,8 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/services/phone-unlocking`                        | how to unlock a cell phone               | unlock phone canada, frp removal calgary      |
 | `/services/password-reset`                         | computer password reset                  | windows password reset service                |
 | `/services/virus-removal`                          | virus removal service                    | computer malware removal                      |
+| `/services/game-console-repair`                    | game console repair calgary              | xbox repair calgary, ps5 repair calgary, nintendo switch repair calgary |
+| `/accessories`                                     | phone accessories calgary                | screen protector calgary, privacy screen protector, phone cases calgary |
 | `/repairs/iphone-screen-replacement`               | iphone screen replacement                | iphone screen repair cost                     |
 | `/repairs/iphone-battery-replacement`              | iphone battery replacement               | iphone battery repair                         |
 | `/repairs/iphone-charging-port-repair`             | iphone charging port repair              | iphone will not charge                        |

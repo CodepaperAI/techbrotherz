@@ -47,7 +47,7 @@ export const metadata: Metadata = buildMetadata({
 interface ServiceEntry {
   title: string;
   href: string;
-  group: "Phones" | "Tablets" | "Computers";
+  group: "Phones" | "Tablets" | "Computers" | "Consoles";
   description: string;
   /** Demo slot in lib/content/images.ts. */
   image: string;
@@ -118,14 +118,24 @@ const SERVICE_CARDS: ServiceEntry[] = [
     image: "service-password-reset",
     illustration: "lock",
   },
+  {
+    title: "Game console repair",
+    href: "/services/game-console-repair",
+    group: "Consoles",
+    description:
+      "Xbox One, Xbox Series X and S, PS4, PS5 and Nintendo Switch. Diagnosed first, with the price agreed before any work starts.",
+    image: "service-game-console-repair",
+    illustration: "port",
+  },
 ];
 
-const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "Tablets", "Computers"];
+const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "Tablets", "Computers", "Consoles"];
 
 const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
   Tablets: "What tablet and iPad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
+  Consoles: "What game console repairs does TechBrotherz do?",
 };
 
 export default async function ServicesPage() {

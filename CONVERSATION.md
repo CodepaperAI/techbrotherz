@@ -15,6 +15,32 @@ Newest entry at the top. Append after every working session and before every con
 **Next:** the agreed next step
 ```
 
+## Session 2026-08-10 (fourth) — Game console repair and the accessories shelf
+
+**Asked:** two WhatsApp forwards from the client: "In repairs please add Gaming consoles XBox, XBox 1 series PS4 ps5 Nintendo Switch" and "Apart from repairs Please add phones, iPads and tablet accessories- cases, tamper glass, screen protectors and privacy screen protectors".
+
+**Done:**
+
+### /services/game-console-repair, the eighth Tier 2 hub
+
+Xbox One, Xbox Series X and Series S, PlayStation 4, PlayStation 5, Nintendo Switch. The client named the consoles but not which repairs they carry out on them, so the page is deliberately diagnose-first: it names the consoles, describes the common faults as symptoms people bring in (HDMI port, heat, disc drives, Joy-Con drift, no power), and never claims a specific fix or a price. Every section says the console is diagnosed before quoting and no work starts before the figure is agreed. 1,308 words of prose, clearing the 900 floor. It is the one hub with no price table, no covered-repairs grid and no brand links, because consoles have no models in the catalogue; the template handles all three absences with existing guards, zero template changes. A "Consoles" group joined the /services index grid, with the port illustration standing in until a photograph clears the trademark rule.
+
+### /accessories, a what-we-stock page rather than a shop
+
+Cases, tempered glass, film screen protectors and privacy screen protectors, for phones, iPads and tablets. No prices, no cart, and no per-model stock claims: the page says stock varies and the phone number is the stock check, which is the honest version of a retail page for a walk-in counter. Definition patterns for the protector types, a real comparison table (film vs tempered vs privacy), and an honest-limits column saying plainly what the page does not promise. One claim to flag to the client: the page says a protector bought at the counter is fitted at the counter, which is standard practice for a shop that replaces screens but was not explicitly confirmed. Added to the header nav (six items now) and the footer Devices column.
+
+### Housekeeping found on the way
+
+- The footer Devices column still listed /repair/lg, /repair/motorola and /repair/htc; `toLink` was silently dropping them since the brand removal. Cleaned out.
+- /computer-repair-calgary sat at 890 words, ten under the floor, a residue of the price scrub. One genuine paragraph added (bring the laptop with its charger, and why), plus its keyFacts had "Bring the tower" twice and "Quoted"/"Pricing" saying the same thing; deduplicated.
+- The word floor, similarity, FAQ scoping, schema, pages, placeholders, noindex, not-found, keyboard, contrast, timezone and local-facts checks all pass. Similarity: service tier median 5.8% across 8 pages, site worst pair 52.7%, nothing near the 70% threshold.
+
+**Verify status:** 12 of 14. The two failures are pre-existing and documented: /repair/google-pixel/pixel-6 has one inbound link (only published Pixel, sibling links are same-brand), and audit-browser's Lighthouse-95 target fails on localhost, which CLAUDE.md records as measurement noise, not the site. The contact-form paths inside the browser audit pass; a mid-session failure there was the shop's own rate limiter correctly refusing three audit submissions inside one window.
+
+**Decisions:** console pricing is quote-after-diagnosis by design, not a gap. An early draft claimed "no charge for being told a repair is not worth doing", which invents a free-diagnosis policy; both instances were cut before commit.
+
+**Blocked / open:** which console repairs the shop actually performs (page tightens when answered); confirmation that counter-fitting of protectors is offered; plus the standing items (FRP proof list, review numbers or Maps API key, removed-brands policy).
+
 ## Session 2026-08-10 (third) — Every area tile navigates, and the map exists
 
 **Asked:** the client flagged that some location tiles still go nowhere (Erin Woods, Penbrooke Meadows, Marlborough rendered as arrowless plain rows), and that there should be a map pointing at the shop.

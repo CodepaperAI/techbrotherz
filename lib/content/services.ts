@@ -1123,6 +1123,155 @@ const virusRemoval: ServiceDef = {
   sources: [],
 };
 
+/* ------------------------------------------------------ game console repair */
+
+/**
+ * Added on the client's instruction 2026-08: "In repairs please add Gaming
+ * consoles XBox, XBox 1 series PS4 ps5 Nintendo Switch". The client named the
+ * consoles but not which repairs they carry out on them, so this page names
+ * the consoles and the diagnose-first process, describes the common faults as
+ * symptoms people bring in, and never claims a specific fix or a price.
+ * When the client confirms the repair list, the sections tighten up.
+ */
+const gameConsoleRepair: ServiceDef = {
+  slug: "game-console-repair",
+  h1: "Game Console Repair in Calgary",
+  eyebrow: "Console repair",
+  seoTitle: "Game Console Repair Calgary | Xbox, PS5, Switch",
+  seoDescription:
+    "Game console repair at TechBrotherz in Calgary: Xbox One, Xbox Series X and S, PS4, PS5 and Nintendo Switch. Diagnosed first, price agreed before any work.",
+  serviceType: "Game console repair",
+  repairSlugs: [],
+  brandSlugs: [],
+  flatSlugs: [],
+  deviceTypes: [],
+  localPath: "/locations/calgary",
+  siblings: ["/services/computer-repair", "/services/phone-repair"],
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, takes in game consoles for repair: the Xbox One, the Xbox Series X and Series S, the PlayStation 4 and 5, and the Nintendo Switch. Every console is diagnosed first, and the price is agreed before any work starts.`,
+  answer: (c) =>
+    `TechBrotherz in Calgary repairs game consoles, including the Xbox One, Xbox Series X and Series S, PlayStation 4, PlayStation 5 and Nintendo Switch. Every console is diagnosed before a price is quoted, no work starts until the price is agreed, and completed repairs carry a ${c.warrantyDays}-day warranty. No appointment is needed.`,
+  keyFacts: (c) => [
+    { label: "Consoles", value: "Xbox One, Xbox Series X and S, PS4, PS5, Nintendo Switch" },
+    { label: "How pricing works", value: "Diagnosed first, one figure agreed before any work" },
+    { label: "Warranty", value: `${c.warrantyDays} days on every repair` },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
+    { label: "Your games and saves", value: "A hardware repair does not touch your account" },
+  ],
+  process: [
+    {
+      title: "Tell us what the console is doing",
+      body: "No picture on the television, a fan that roars and then the console shuts down, discs that will not read, a controller that drifts, or a console that will not power on at all. The symptom narrows the fault before the case is even open.",
+      art: "diagnostic",
+    },
+    {
+      title: "We diagnose it properly",
+      body: "The console is opened and tested to find the actual fault rather than the most common one. A console that shows no picture can be a port, a board fault or a power problem, and the price differs between them.",
+      art: "board",
+    },
+    {
+      title: "You approve one figure",
+      body: "The diagnosis becomes a single quoted price covering the part and the labour, and nothing happens to the console until you have agreed it. If the honest answer is that the repair is not worth the cost, that is what you will hear.",
+      art: "screen",
+    },
+    {
+      title: "We do the repair and test it",
+      body: "The console is repaired, reassembled and tested doing the thing it came in failing to do: outputting a picture, reading a disc, holding a connection, staying cool under load.",
+      art: "port",
+    },
+    {
+      title: "You collect it with the warranty",
+      body: "Completed console repairs are covered by the same warranty as every other repair at the counter. Bring it straight back if the fault returns inside that period.",
+      art: "battery",
+    },
+  ],
+  sections: (c) => [
+    {
+      heading: "Which game consoles does TechBrotherz repair?",
+      paragraphs: [
+        "TechBrotherz in Calgary takes in the consoles people actually own: the Xbox One family, the Xbox Series X and Series S, the PlayStation 4 in its original, Slim and Pro versions, the PlayStation 5 in both disc and digital editions, and the Nintendo Switch, including the Switch Lite and the OLED model.",
+        "Console repair works differently from phone repair at the same counter. Phone repairs are published as fixed prices per model because the same screen goes into the same handset every time. Console faults vary more, so a console is diagnosed first and quoted as one figure before any work starts, rather than priced off a list.",
+        "If your console is older than the ones named here, phone the shop before you travel. Whether an older console can be repaired depends on the fault and on whether the part can still be sourced, and that is a two-minute conversation rather than a wasted trip.",
+      ],
+    },
+    {
+      heading: "What are the most common console faults?",
+      paragraphs: [
+        "The single most common console fault brought in anywhere is a damaged HDMI port. A console that powers on but shows no picture on the television, or only shows one when the cable is held at an angle, usually has a port that has been bent by the plug being knocked or forced. The port sits directly on the main board, which is why it is a workshop job rather than a swap.",
+        "Heat is the second family of faults. A fan that has become loud, a console that shuts itself down partway through a session, or one that feels hot enough to worry about is usually choked with dust inside, sometimes with thermal paste that has dried out over the years. Left alone, heat problems get worse rather than better.",
+        "The rest are specific to the machine: disc drives that no longer accept or read discs on the PlayStation and Xbox, Joy-Con sticks that drift on the Nintendo Switch, controllers that will not hold a connection, and consoles that will not power on at all. Each of these is a different diagnosis, which is exactly why the console is diagnosed before it is quoted.",
+      ],
+    },
+    {
+      heading: "How does console repair pricing work?",
+      paragraphs: [
+        "A console repair at TechBrotherz is diagnosed first and quoted as one figure that includes the part and the labour, agreed with you before any work starts. There is no list of console prices on this site because publishing one honestly is not possible: the same symptom can have faults at very different costs behind it.",
+        "No picture on the screen is the clearest example. That symptom can be a bent HDMI port, a failed component behind the port, or a fault elsewhere on the board, and those are different amounts of work. Quoting after diagnosis means the figure you agree to is for the fault your console actually has.",
+        "If the diagnosis shows the repair costs more than the console is sensibly worth, you will be told that plainly, with the diagnosis explained, and you decide what happens next. A shop that talks someone into repairing a console they should replace is not one they come back to.",
+      ],
+    },
+    {
+      heading: "Is an older console worth repairing?",
+      paragraphs: [
+        "Often yes, and for a reason that does not apply to phones: a console library. A PlayStation 4 with years of purchased games, saves and a familiar controller is worth more to its owner than its resale price suggests, and a single repair that keeps it running is usually far cheaper than replacing the console and re-buying anything that does not carry forward.",
+        "The honest exceptions are faults that sit deep in the main processor or memory of the console, where the repair is either not economical or not reliable enough to stand behind. If the diagnosis lands there, TechBrotherz says so rather than selling a repair that is likely to come back.",
+        "Digital purchases and game saves live with your Xbox, PlayStation or Nintendo account, not inside the console's fault. A hardware repair does not sign you out of anything, and if a console does have to be replaced, signing in on the new machine brings your library with it.",
+      ],
+    },
+    {
+      heading: "What should you bring in with the console?",
+      paragraphs: [
+        "Bring the console and its power lead. Several faults, especially a console that will not turn on, can sit in the power supply or the lead rather than the console itself, and testing with your own lead answers that immediately. For the original Xbox One, which has an external power brick, bring the brick too.",
+        "If the problem involves the picture, bring the HDMI cable you use at home. A damaged cable produces the same symptom as a damaged port at a fraction of the cost, and it is checked first precisely because it is the cheap answer.",
+        `If the problem involves a controller or a Joy-Con, bring that as well, since the fault can be in the controller, the console or the pairing between them. Discs and games can stay at home. Completed repairs are covered by the ${c.warrantyDays}-day warranty, and no work starts before you have agreed the price.`,
+      ],
+    },
+  ],
+  whoFor: [
+    "Anyone whose console powers on but shows no picture, or only shows one when the cable sits at an angle.",
+    "People whose console has become loud, runs hot, or shuts itself down partway through playing.",
+    "Nintendo Switch owners with sticks that drift, or a console that no longer charges reliably.",
+    "Anyone told a console is not fixable who wants a diagnosis and a straight answer before replacing it.",
+  ],
+  limits: () => [
+    {
+      title: "Diagnosis comes before any promise",
+      body: "TechBrotherz does not quote console repairs sight unseen, because the same symptom can have faults at very different costs behind it. The console is diagnosed first, and the quote is for the fault it actually has.",
+    },
+    {
+      title: "Some faults are not worth fixing, and we say so",
+      body: "A fault deep in the console's main processor can cost more to repair than the console is worth. When the diagnosis lands there, you get that answer and the reasons, not a bill.",
+    },
+    {
+      title: "No modifications or account work",
+      body: "TechBrotherz repairs hardware faults. It does not modify consoles, unlock them to run copied games, or recover suspended platform accounts. Account problems are handled by Microsoft, Sony or Nintendo.",
+    },
+  ],
+  faqs: (c) => [
+    {
+      question: "Does TechBrotherz repair game consoles in Calgary?",
+      answer:
+        "Yes. TechBrotherz at 3317 17 Ave SE in Calgary takes in the Xbox One, Xbox Series X and Series S, PlayStation 4, PlayStation 5 and Nintendo Switch for repair. Every console is diagnosed first, the price is agreed before any work starts, and no appointment is needed.",
+    },
+    {
+      question: "How much does a game console repair cost in Calgary?",
+      answer:
+        "TechBrotherz quotes console repairs after diagnosis rather than from a price list, because the same symptom can have faults at very different costs behind it. The quote is one figure covering the part and the labour, agreed before any work starts. If the repair is not worth the console's value, that is the answer given.",
+    },
+    {
+      question: "Can a broken HDMI port on a PS5 or Xbox be fixed?",
+      answer:
+        "A damaged HDMI port is the most common console fault brought in to TechBrotherz in Calgary, and it shows up as no picture on the television from a console that otherwise powers on. Bring the console and your HDMI cable: the cable is checked first because it produces the same symptom at a fraction of the cost, and the console is diagnosed and quoted before any work starts.",
+    },
+    {
+      question: "Do console repairs come with a warranty?",
+      answer: `Yes. Console repairs at TechBrotherz in Calgary carry the same ${c.warrantyDays}-day warranty as every repair at the counter. If the repaired fault returns inside that period, bring the console straight back.`,
+    },
+  ],
+  globalCategories: ["walkin", "warranty"],
+  sources: [],
+};
+
 /* -------------------------------------------------------------------- index */
 
 export const SERVICES: ServiceDef[] = [
@@ -1130,6 +1279,7 @@ export const SERVICES: ServiceDef[] = [
   tabletRepair,
   laptopRepair,
   computerRepair,
+  gameConsoleRepair,
   phoneUnlocking,
   passwordReset,
   virusRemoval,

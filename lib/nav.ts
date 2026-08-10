@@ -57,7 +57,14 @@ function toLinks(paths: string[]): NavLink[] {
  * a 404 for the sake of a label. It comes back when Phase 7 builds the guides.
  * /repair-prices went with the price list itself.
  */
-const HEADER_PATHS = ["/services", "/services/phone-unlocking", "/locations", "/about", "/contact"];
+const HEADER_PATHS = [
+  "/services",
+  "/services/phone-unlocking",
+  "/accessories",
+  "/locations",
+  "/about",
+  "/contact",
+];
 
 export function headerLinks(): NavLink[] {
   return toLinks(HEADER_PATHS);
@@ -87,20 +94,21 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
       "/services/phone-unlocking",
       "/services/password-reset",
       "/services/virus-removal",
+      "/services/game-console-repair",
       "/services",
     ],
   },
   {
+    // LG, Motorola and HTC were removed with their brands in 2026-08; toLink
+    // was silently dropping them, so the paths went too.
     heading: "Devices",
     paths: [
       "/repair/apple-iphone",
       "/repair/samsung-galaxy",
       "/repair/apple-ipad",
       "/repair/google-pixel",
-      "/repair/lg",
-      "/repair/motorola",
-      "/repair/htc",
       "/repair/laptops-desktops",
+      "/accessories",
     ],
   },
   {

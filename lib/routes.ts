@@ -104,6 +104,14 @@ export const ROUTES: RouteDef[] = [
     status: "built",
     parent: "/",
   },
+  {
+    path: "/accessories",
+    label: "Phone, iPad and tablet accessories",
+    navLabel: "Accessories",
+    tier: "core",
+    status: "built",
+    parent: "/",
+  },
   { path: "/privacy-policy", label: "Privacy policy", tier: "core", status: "built", parent: "/" },
   { path: "/terms", label: "Terms of service", tier: "core", status: "built", parent: "/" },
 
@@ -175,6 +183,14 @@ export const ROUTES: RouteDef[] = [
   {
     path: "/services/virus-removal",
     label: "Virus removal",
+    tier: "service-hub",
+    status: "built",
+    parent: "/services",
+  },
+  {
+    path: "/services/game-console-repair",
+    label: "Game console repair",
+    navLabel: "Consoles",
     tier: "service-hub",
     status: "built",
     parent: "/services",
