@@ -120,6 +120,33 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     ],
   },
   {
+    id: "erin-woods",
+    name: "Erin Woods",
+    verified: false,
+    paragraphs: [
+      "Erin Woods is one of the southeast Calgary communities TechBrotherz serves from the counter at 3317 17 Ave SE. The destination is the same as for every area on this page: the avenue at 33 Street.",
+      "Phone before you set out and we will confirm the part for your device is in stock, so the trip from Erin Woods is one journey rather than two.",
+    ],
+  },
+  {
+    id: "penbrooke-meadows",
+    name: "Penbrooke Meadows",
+    verified: false,
+    paragraphs: [
+      "Penbrooke Meadows sits in the same corner of southeast Calgary as the shop, and its residents are exactly who a walk-in counter on 17 Avenue SE exists for.",
+      "What is certain is short: the shop is at 3317 17 Ave SE, every quote is free and given before any work starts, and most phone repairs take about 30 minutes while you wait.",
+    ],
+  },
+  {
+    id: "marlborough",
+    name: "Marlborough",
+    verified: false,
+    paragraphs: [
+      "Marlborough is north of the shop, across Memorial Drive around Marlborough Mall and 36 Street NE. Customers make the trip down because the counter quotes before working and most phone repairs finish in about 30 minutes.",
+      "A repair from Marlborough is usually a single visit: bring the device in, get the quote at the counter, and wait while the work is done.",
+    ],
+  },
+  {
     id: "airdrie",
     name: "Airdrie",
     verified: true,

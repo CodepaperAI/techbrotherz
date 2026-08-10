@@ -50,6 +50,15 @@ function normalise(href: string): string {
   return trimmed === "" ? "/" : trimmed;
 }
 
+/**
+ * Build internals and API routes are not content links. /_next/ asset URLs in
+ * particular can surface from escaped script payloads and would send the
+ * dead-link check chasing hashed filenames that are not part of the graph.
+ */
+function isContentLink(href: string): boolean {
+  return !href.startsWith("/api") && !href.startsWith("/_next");
+}
+
 /** Internal hrefs inside <main>, so chrome links are not double counted. */
 function internalLinks(html: string): string[] {
   const main = /<main[^>]*>([\s\S]*?)<\/main>/i.exec(html)?.[1] ?? html;
@@ -57,7 +66,7 @@ function internalLinks(html: string): string[] {
     ...new Set(
       Array.from(main.matchAll(/href="(\/[^"#?]*)/g))
         .map((match) => normalise(match[1] as string))
-        .filter((href) => !href.startsWith("/api")),
+        .filter(isContentLink),
     ),
   ];
 }
@@ -68,7 +77,7 @@ function allInternalLinks(html: string): string[] {
     ...new Set(
       Array.from(html.matchAll(/href="(\/[^"#?]*)/g))
         .map((match) => normalise(match[1] as string))
-        .filter((href) => !href.startsWith("/api")),
+        .filter(isContentLink),
     ),
   ];
 }

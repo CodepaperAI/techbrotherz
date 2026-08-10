@@ -47,7 +47,11 @@ export interface SiteSettingsDoc {
   /** Unanswered client question 10. Absent until supplied, never guessed. */
   postalCode?: string;
   country: string;
-  /** Unanswered client question 12. Absent keeps `geo` out of the schema. */
+  /**
+   * Read from the client's own Google Maps listing URL, supplied 2026-08,
+   * which is the source open question 12 anticipated. Feeds the
+   * `GeoCoordinates` node on `LocalBusiness`.
+   */
   geo?: { lat: number; lng: number };
   phone: string;
   phoneRaw: string;

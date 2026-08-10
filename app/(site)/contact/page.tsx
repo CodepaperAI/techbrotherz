@@ -4,6 +4,7 @@ import { Bus, Car, MapPin, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/ContactForm";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
+import { MapReveal } from "@/components/blocks/MapReveal";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { PageShell } from "@/components/blocks/PageShell";
 import { Card } from "@/components/primitives/Card";
@@ -145,6 +146,14 @@ export default async function ContactPage() {
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
+
+        {/* Click-to-load map, added on client request 2026-08. */}
+        <MapReveal
+          className="mt-6 h-80 md:h-96"
+          src={SITE.googleMapsEmbedUrl}
+          title="Map showing TechBrotherz at 3317 17 Ave SE, Calgary"
+          addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
+        />
       </Section>
 
       {/* ------------------------------------------------------------ form */}

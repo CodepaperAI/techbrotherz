@@ -43,8 +43,12 @@ export const SITE = {
   country: "Canada",
   countryCode: "CA",
 
-  /** Coordinates unconfirmed, see CLAUDE.md open question 12. */
-  geo: null as { lat: number; lng: number } | null,
+  /**
+   * Storefront coordinates, read from the client's own Google Maps listing
+   * URL (supplied 2026-08), the source open question 12 anticipated. Mirrors
+   * content/data/site-settings.ts.
+   */
+  geo: { lat: 51.0366821, lng: -113.9869842 } as { lat: number; lng: number } | null,
 
   /** Display form. Use this in every piece of visible copy. */
   phone: "(403) 273-8324",
@@ -78,6 +82,12 @@ export const SITE = {
 
   /** Google Maps link. Replaced with the Business Profile URL once claimed. */
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=3317+17+Ave+SE+Calgary+Alberta",
+  /**
+   * Keyless Google Maps embed for MapReveal. Query-based so the pin carries
+   * the business listing rather than a bare coordinate marker.
+   */
+  googleMapsEmbedUrl:
+    "https://maps.google.com/maps?q=TechBrotherz+3317+17+Ave+SE+Calgary+AB&z=16&output=embed",
   /** The listing with the reviews tab open. Supplied by the client 2026-08. */
   googleReviewsUrl:
     "https://www.google.com/maps/place/TechBrotherz/@51.0366821,-113.9869842,17z/data=!3m1!5s0x53717ae7a5d4f8d7:0xb018a331a11900ca!4m8!3m7!1s0x53717ae777fa04f7:0xe21ea3f908974600!8m2!3d51.0366821!4d-113.9869842!9m1!1b1!16s%2Fg%2F1ptx_hp3y!18m1!1e1",

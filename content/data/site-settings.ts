@@ -21,6 +21,10 @@ export const SITE_SETTINGS: SiteSettingsDoc = {
   "brandName": "TechBrotherz",
   "city": "Calgary",
   "country": "Canada",
+  "geo": {
+    "lat": 51.0366821,
+    "lng": -113.9869842
+  },
   "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=3317+17+Ave+SE+Calgary+Alberta",
   "googleReviewsUrl": "https://www.google.com/maps/place/TechBrotherz/@51.0366821,-113.9869842,17z/data=!3m1!5s0x53717ae7a5d4f8d7:0xb018a331a11900ca!4m8!3m7!1s0x53717ae777fa04f7:0xe21ea3f908974600!8m2!3d51.0366821!4d-113.9869842!9m1!1b1!16s%2Fg%2F1ptx_hp3y!18m1!1e1",
   "hours": [

@@ -11,6 +11,7 @@ import { Ticker } from "@/components/blocks/Ticker";
 import { Tile, TileGrid } from "@/components/blocks/Tile";
 import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
+import { MapReveal } from "@/components/blocks/MapReveal";
 import { PageShell } from "@/components/blocks/PageShell";
 import { ServiceCard } from "@/components/blocks/ServiceCard";
 import type { RepairSubject } from "@/components/blocks/RepairIllustration";
@@ -36,11 +37,9 @@ import { getBrands, getGlobalFaqs, getReviewSummary, getSiteSettings } from "@/l
  * The areas named on the Calgary location record, rendered as tiles.
  *
  * Forest Lawn is the one neighbourhood that cleared the Phase 6
- * four-distinct-fact rule and earned a URL. The areas that became anchored
- * sections on /locations/calgary link to their section, so every tile that
- * looks clickable navigates somewhere real. Erin Woods, Penbrooke Meadows and
- * Marlborough have neither a page nor a section, so they render as plain rows
- * with no arrow. The link audit verifies each anchor target exists.
+ * four-distinct-fact rule and earned a URL. Every other area anchors to its
+ * section on /locations/calgary, so every tile navigates somewhere real. The
+ * link audit verifies each anchor target exists.
  */
 const CALGARY_AREAS: { name: string; href?: string }[] = [
   { name: "Forest Lawn", href: "/locations/calgary/forest-lawn" },
@@ -48,11 +47,11 @@ const CALGARY_AREAS: { name: string; href?: string }[] = [
   { name: "Radisson Heights", href: "/locations/calgary#albert-park-radisson-heights" },
   { name: "Dover", href: "/locations/calgary#dover" },
   { name: "Southview", href: "/locations/calgary#southview" },
-  { name: "Erin Woods" },
-  { name: "Penbrooke Meadows" },
+  { name: "Erin Woods", href: "/locations/calgary#erin-woods" },
+  { name: "Penbrooke Meadows", href: "/locations/calgary#penbrooke-meadows" },
   { name: "Inglewood", href: "/locations/calgary#inglewood" },
   { name: "Ogden", href: "/locations/calgary#ogden" },
-  { name: "Marlborough" },
+  { name: "Marlborough", href: "/locations/calgary#marlborough" },
   { name: "Downtown Calgary", href: "/locations/calgary#downtown-calgary" },
 ];
 
@@ -465,11 +464,21 @@ export default async function HomePage() {
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
+        {/* Click-to-load map, added on client request 2026-08. The placeholder
+            costs nothing; the iframe loads only when asked, which is what keeps
+            the LCP budget intact. components/blocks/MapReveal.tsx. */}
+        <MapReveal
+          className="mt-6 h-80 md:h-96"
+          src={SITE.googleMapsEmbedUrl}
+          title="Map showing TechBrotherz at 3317 17 Ave SE, Calgary"
+          addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
+        />
+
         {/* Neighbourhood tiles, per Phase 8 spec section 6. Every name is one
             already listed on the Calgary location record, so this adds coverage
             the site already claims rather than a new claim. Forest Lawn links to
-            its page, areas with an anchored section on /locations/calgary link
-            to that section, and the rest are arrowless plain rows. */}
+            its page and every other area anchors to its section on
+            /locations/calgary. */}
         <h3 className="type-h3 text-tb-ink mt-12">Areas we serve in southeast Calgary</h3>
         <TileGrid className="mt-5">
           {CALGARY_AREAS.map((area) => (

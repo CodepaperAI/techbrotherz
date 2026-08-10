@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
+import { MapReveal } from "@/components/blocks/MapReveal";
 import { PageShell } from "@/components/blocks/PageShell";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
@@ -144,6 +145,15 @@ export default async function PlacePage({ params }: PageProps) {
         <div className="mt-10">
           <LocalInfoCard heading="TechBrotherz" headingLevel={3} />
         </div>
+
+        {/* Click-to-load map, added on client request 2026-08. A place page is
+            the one template where a map is content rather than decoration. */}
+        <MapReveal
+          className="mt-6 h-80 md:h-96"
+          src={SITE.googleMapsEmbedUrl}
+          title="Map showing TechBrotherz at 3317 17 Ave SE, Calgary"
+          addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
+        />
       </Section>
 
       {/* ---------------------------------------------------------- prose */}

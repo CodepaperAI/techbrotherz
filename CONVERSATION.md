@@ -15,6 +15,32 @@ Newest entry at the top. Append after every working session and before every con
 **Next:** the agreed next step
 ```
 
+## Session 2026-08-10 (third) — Every area tile navigates, and the map exists
+
+**Asked:** the client flagged that some location tiles still go nowhere (Erin Woods, Penbrooke Meadows, Marlborough rendered as arrowless plain rows), and that there should be a map pointing at the shop.
+
+**Done:**
+
+### The last three areas got sections
+
+Erin Woods, Penbrooke Meadows and Marlborough now have anchored sections on /locations/calgary, following the Dover/Ogden honest-unverified pattern: each states what is certain (the destination, the quote-first policy, the 30-minute wait; Marlborough gets its placement across Memorial Drive by Marlborough Mall, which the location record's landmarks carry) and the `verified: false` footer says plainly that directions are unpublished because unverified. The paragraphs do not repeat the footer. All eleven home tiles now navigate somewhere real; the link audit verifies 26 anchor targets, zero dead.
+
+### The map was built in Phase 3 and never mounted
+
+`MapReveal` (click-to-load Google Maps iframe, placeholder-first to protect LCP) existed in components/blocks/ but was used by zero pages. It now renders on the home "Find us" section, on all three place pages, and on /contact, using a keyless query-based embed URL so the pin carries the business listing. The click-to-load design is unchanged: the iframe still costs nothing until asked for.
+
+### Geo coordinates, finally
+
+Open question 12 asked for exact coordinates "or confirm we can read them from the Google Business Profile". The reviews URL the client supplied is that profile, and carries 51.0366821, -113.9869842. `geo` is now in site settings and `GeoCoordinates` is emitted on every `LocalBusiness` node. Question 12 marked answered.
+
+### Audit refinement
+
+The dead-link check from session 1 flagged a `/_next/static/css/` hash surfaced from an escaped script payload. Build internals are not content links, so the audit now excludes `/api` and `/_next` in one place.
+
+**Operational note, second occurrence:** an incremental `pnpm build` served pre-edit prerenders again despite fresh sources. The webpack cache on this machine is not trustworthy after any interrupted build. **Standing rule: delete `.next` entirely before any build whose output will be verified or deployed.**
+
+**Blocked / open:** unchanged (FRP proof list, consoles, accessories, review numbers/API key). Pre-existing pixel-6 single-inbound-link gap remains.
+
 ## Session 2026-08-10 (later) — Client change request, session 2: logos, FRP, repair menu, reviews link
 
 **Asked:** the client supplied the logo files and answered part of the outstanding questions in one message: use the logos, add carrier unlocking and FRP removal, confirm the Motorola/LG/HTC/Nexus removal (already done in session 1), surface battery / back glass / charging port / earpiece / loudspeaker as repair options, and gave the Google Maps reviews URL.
