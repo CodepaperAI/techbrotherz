@@ -155,6 +155,11 @@ export const IMAGES: Record<string, DemoImage> = {
     "Henry Ascroft",
     "7OFnb7NOvjw",
   ),
+  "service-game-console-repair": supplied(
+    "service-game-console-repair",
+    "3:2",
+    "A hand holding a game controller in front of a television showing a driving game",
+  ),
   "service-laptop-repair": image(
     "service-laptop-repair",
     "3:2",
@@ -205,6 +210,8 @@ export const IMAGE_EDITS: Record<string, string> = {
     "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame the old service-tablet-repair used, which put two crops of one photograph in the same grid on the home page.",
   "service-password-reset":
     "Replaced in 2026-08 at the client's request: the previous image was the Instagram login screen they had supplied, and the revised instruction is no social app branding. The replacement shows a phone on the welcome screen that follows a factory reset, which is what the password reset service actually produces. The supplied original stays in _source as a record.",
+  "service-game-console-repair":
+    "Supplied by the client in 2026-08 for the game console page. Already 3:2 at 1920x1280, so resized only, no crop. The Sony wordmark on the controller is incidental to a photograph of gameplay and is not used as a mark, per the revised Section 8.9 rule. The supplied filename (pexels-playstation-1845880_1920.jpg) indicates a stock original, Pixabay photo 1845880; the photographer credit is unverified, so it stays TODO(client) rather than guessed.",
   "home-process-2":
     "Cropped to 4:3 on the point of work. The Apple mark on the battery in frame is incidental to a workshop photograph and is not used as a mark.",
   "home-process-3":

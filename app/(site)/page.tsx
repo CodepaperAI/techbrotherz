@@ -132,13 +132,18 @@ const SERVICE_CARDS: {
     image: "service-computer-repair",
     illustration: "board",
   },
+  /*
+   * Replaced the carrier unlocking card on the client's instruction 2026-08,
+   * when the console page shipped. Unlocking keeps its header nav slot and its
+   * footer link, so the home grid swap loses it nothing site-wide.
+   */
   {
-    title: "Carrier unlocking",
+    title: "Game console repair",
     description:
-      "Any Canadian carrier unlocked, usually the same day. Unlocking does not erase your data.",
-    href: "/services/phone-unlocking",
-    image: "service-phone-unlocking",
-    illustration: "sim",
+      "Xbox One, Xbox Series X and S, PS4, PS5 and Nintendo Switch. Diagnosed first, with the price agreed before any work starts.",
+    href: "/services/game-console-repair",
+    image: "service-game-console-repair",
+    illustration: "port",
   },
   {
     title: "Password reset",
@@ -318,7 +323,7 @@ export default async function HomePage() {
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, tablets, laptops and desktop computers, and unlocks phones for any Canadian carrier."
+          lead="TechBrotherz repairs phones, tablets, laptops, desktop computers and game consoles, and unlocks phones for any Canadian carrier."
         >
           What can we fix for you?
         </Heading>

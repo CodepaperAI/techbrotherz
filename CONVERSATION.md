@@ -39,6 +39,10 @@ Cases, tempered glass, film screen protectors and privacy screen protectors, for
 
 **Decisions:** console pricing is quote-after-diagnosis by design, not a gap. An early draft claimed "no charge for being told a repair is not worth doing", which invents a free-diagnosis policy; both instances were cut before commit.
 
+### Follow-up in the same session: the console image, and the home grid swap
+
+The client supplied a photograph for the console page (a hand holding a controller in front of a driving game) and asked for the game console card to replace the carrier unlocking card in the home repairs grid. Done: the original went through the standard pipeline (`supplied-game-console` in `_source`, 1920x1280 so exactly 3:2, straight downscale to 1200x800 at 43 KB with LQIP), the slot registered in `lib/content/images.ts` with the manifest regenerated, and both the home card and the /services index card now carry it. The Sony wordmark on the controller is incidental to a gameplay photograph and is not used as a mark, per the revised Section 8.9 rule; the supplied filename indicates a stock original (Pixabay 1845880), so the photographer credit stays TODO(client) rather than guessed. Carrier unlocking keeps its header nav slot and footer link, so the home swap costs it no site-wide inbound link; the services section lead now names consoles. Placeholders test passes; home and /services prerenders verified to carry the image.
+
 **Blocked / open:** which console repairs the shop actually performs (page tightens when answered); confirmation that counter-fitting of protectors is offered; plus the standing items (FRP proof list, review numbers or Maps API key, removed-brands policy).
 
 ## Session 2026-08-10 (third) — Every area tile navigates, and the map exists

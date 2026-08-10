@@ -99,6 +99,16 @@ export const SLOTS: SlotSpec[] = [
     position: "centre",
   },
   { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
+  /*
+   * Supplied by the client 2026-08 for the game console page. The original is
+   * 1920x1280, exactly 3:2, so cover is a straight downscale.
+   */
+  {
+    slot: "service-game-console-repair",
+    source: "supplied-game-console",
+    ratio: "3:2",
+    position: "centre",
+  },
 ];
 
 /*
