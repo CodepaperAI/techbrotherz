@@ -48,8 +48,9 @@ const RATIO_SIZE: Record<ImageRatio, { width: number; height: number }> = {
   "3:2": { width: 1200, height: 800 },
 };
 
-/** Slots processed at a narrower cap than the ratio default. */
-const NARROW: Record<string, number> = { "home-hero": 1000 };
+/** Slots processed at a narrower cap than the ratio default. The phone-repair
+ *  cap is the supplied original's own width, so it is never upscaled. */
+const NARROW: Record<string, number> = { "home-hero": 1000, "service-phone-repair": 738 };
 
 function image(
   slot: string,
@@ -141,12 +142,10 @@ export const IMAGES: Record<string, DemoImage> = {
     "Samsung Memory",
     "6RcDLyy0s1I",
   ),
-  "service-phone-repair": image(
+  "service-phone-repair": supplied(
     "service-phone-repair",
     "3:2",
-    "The back of an iPhone 16 Pro Max in titanium, showing the three rear cameras",
-    "Amanz",
-    "LqMK_dwsaxs",
+    "An iPhone shown in exploded view, with the screen, frame, camera assembly and back glass separated in layers",
   ),
   "service-tablet-repair": image(
     "service-tablet-repair",
@@ -203,7 +202,7 @@ export const IMAGES: Record<string, DemoImage> = {
  */
 export const IMAGE_EDITS: Record<string, string> = {
   "service-phone-repair":
-    "Replaced at the client's request in 2026-08 with an iPhone 16 Pro Max, photographed from the back where the camera array identifies the model. The Apple mark is incidental to a photograph of the device and is not used as a mark, per the revised Section 8.9 rule.",
+    "Replaced a second time at the client's request in 2026-08 with a supplied exploded-view render of an iPhone Pro, which shows the device in exactly the layers a repair separates. The 16:9 original sits on pure black, so it is padded to 3:2 rather than cropped, which would clip the outer layers, and the slot is capped at the original's 738px width rather than upscaled. The Apple mark on the back glass is incidental to an image of the device, per the revised Section 8.9 rule. The image appears to be manufacturer marketing imagery supplied by the client; using it is the client's call, recorded here so the decision is auditable. A higher-resolution original would sharpen the service page's wide rendering. The previous Unsplash original (LqMK_dwsaxs) stays in _source.",
   "service-tablet-repair":
     "Replaced at the client's request in 2026-08. The previous frame was a SIM tray beside a tablet corner; this one is a recognisable iPad on its lock screen, with no app branding in frame.",
   "service-phone-unlocking":

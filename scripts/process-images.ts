@@ -36,6 +36,12 @@ export interface SlotSpec {
   position: "centre" | "top" | "bottom" | "attention";
   /** Slight cooling where the original is warmer than the rest of the set. */
   cool?: boolean;
+  /**
+   * Pad to the ratio with this background instead of cropping. For a source
+   * on a solid ground (a render on pure black), extending the canvas keeps
+   * the whole composition where a crop would clip its edges.
+   */
+  pad?: string;
   /** Override for sources whose texture compresses badly at the default. */
   quality?: number;
   /** Narrower cap for a slot that renders small. */
@@ -66,7 +72,21 @@ export const SLOTS: SlotSpec[] = [
    * same 3:2 pipeline as the rest of the set, so the media frame is identical
    * across the service cards.
    */
-  { slot: "service-phone-repair", source: "LqMK_dwsaxs", ratio: "3:2", position: "attention" },
+  /*
+   * Replaced again on the client's instruction 2026-08: an iPhone exploded
+   * into its repair layers, which is the service the card advertises. The
+   * supplied original is 738x415 on pure black, so it is padded to 3:2 rather
+   * than cropped (the outer layers reach the frame edges) and capped at its
+   * native width rather than upscaled to 1200.
+   */
+  {
+    slot: "service-phone-repair",
+    source: "supplied-iphone-teardown",
+    ratio: "3:2",
+    position: "centre",
+    pad: "#000000",
+    maxWidth: 738,
+  },
   { slot: "service-tablet-repair", source: "7OFnb7NOvjw", ratio: "3:2", position: "attention" },
   { slot: "service-laptop-repair", source: "nbML7C5qrkw", ratio: "3:2", position: "centre" },
   { slot: "service-computer-repair", source: "1GntEP783rI", ratio: "3:2", position: "centre" },
@@ -143,7 +163,8 @@ async function main() {
       ? { w: spec.maxWidth, h: Math.round((spec.maxWidth * base.h) / base.w) }
       : base;
     let pipeline = sharp(readFileSync(input)).resize(target.w, target.h, {
-      fit: "cover",
+      fit: spec.pad ? "contain" : "cover",
+      background: spec.pad,
       position:
         spec.position === "attention"
           ? sharp.strategy.attention
