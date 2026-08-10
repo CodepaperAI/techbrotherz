@@ -107,16 +107,20 @@ export const SLOTS: SlotSpec[] = [
     position: "centre",
   },
   /*
-   * Replaced supplied-password-reset, the Instagram login screen, at the
-   * client's request in 2026-08: no social app branding. The replacement is a
-   * phone showing the welcome screen that follows a factory reset, which is
-   * what the service actually produces.
+   * Replaced a second time on the client's instruction 2026-08 with a supplied
+   * graphic of Google's FRP verification screens. 839x673 on pure white, so
+   * padded to 3:2 rather than cropped, and capped near native width. See the
+   * IMAGE_EDITS note: the Google padlock graphic is a mark used as a design
+   * element, which Section 8.9 recommends against; recorded as the client's
+   * call.
    */
   {
     slot: "service-password-reset",
-    source: "imOSfUb6Rg4",
+    source: "supplied-frp-unlock",
     ratio: "3:2",
     position: "centre",
+    pad: "#ffffff",
+    maxWidth: 1010,
   },
   { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
   /*

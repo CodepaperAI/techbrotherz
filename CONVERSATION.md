@@ -39,6 +39,10 @@ Cases, tempered glass, film screen protectors and privacy screen protectors, for
 
 **Decisions:** console pricing is quote-after-diagnosis by design, not a gap. An early draft claimed "no charge for being told a repair is not worth doing", which invents a free-diagnosis policy; both instances were cut before commit.
 
+### Follow-up in the same session: the password reset image
+
+The client supplied a graphic of Google's FRP verification screens (the "Verify your account" prompt and a green unlocked-padlock motif carrying the Google G) for the password reset slot. Used as instructed, with two positions recorded in IMAGE_EDITS rather than silently: the Google mark inside the padlock is a manufacturer logo used as a design element, the case Section 8.9 recommends against and leaves as the client's call; and the image depicts Android FRP verification while the slot fronts the Windows computer password reset, so it may belong better on the phone unlocking page, which carries FRP removal, a one-line move if the client agrees. Same pipeline treatment as the teardown: pure white ground, padded to 3:2 rather than cropped, capped near native width. The stale home page comment about this slot (written for the Instagram image, made false by the welcome-screen replacement) is accurate again and was updated to name the current image.
+
 ### Follow-up in the same session: the phone repair image
 
 The client supplied an exploded-view render of an iPhone Pro for the phone repair slot, replacing the iPhone 16 Pro Max rear from the previous change request. Two adjustments the pipeline needed: the 16:9 original sits on pure black, so a new `pad` option extends the canvas to 3:2 instead of cropping (a crop would clip the outer layers), and the slot is capped at the original's 738px width instead of upscaling to 1200, because a soft upscale is worse than a smaller sharp image. Renders on the home card, the /services card and the phone repair page. The image appears to be manufacturer marketing imagery; using it is the client's call and is recorded in IMAGE_EDITS. A higher-resolution original would sharpen the service page's wide rendering, worth asking for.

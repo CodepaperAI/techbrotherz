@@ -88,10 +88,10 @@ export const metadata: Metadata = buildMetadata({
  * is identical either way: see components/blocks/ServiceCard.tsx.
  *
  * `service-password-reset` is the one image in the set that does not meet
- * CLAUDE.md Section 8.9, because the wordmark is the dominant element on a
- * plain background. The client was shown that position and chose the image.
- * It is recorded in IMAGE_EDITS so the decision is auditable rather than
- * silent.
+ * CLAUDE.md Section 8.9: the supplied FRP graphic uses the Google mark as a
+ * design element inside its padlock motif. The client chose the image with
+ * that position on record. It is recorded in IMAGE_EDITS so the decision is
+ * auditable rather than silent.
  */
 const SERVICE_CARDS: {
   title: string;
