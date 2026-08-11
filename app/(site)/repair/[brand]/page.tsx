@@ -64,27 +64,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 }
 
-/** Groups models into decades-free, human generation bands by release year. */
-function generationBands(models: { releaseYear: number | null }[]) {
-  const years = models.map((model) => model.releaseYear ?? 0).filter(Boolean);
-  if (years.length === 0) return [] as { label: string; from: number; to: number }[];
-
-  const newest = Math.max(...years);
-  const oldest = Math.min(...years);
-
-  const bands: { label: string; from: number; to: number }[] = [];
-  for (let top = newest; top >= oldest; top -= 3) {
-    const bottom = Math.max(top - 2, oldest);
-    bands.push({
-      label: bottom === top ? `${top}` : `${bottom} to ${top}`,
-      from: bottom,
-      to: top,
-    });
-    if (bottom === oldest) break;
-  }
-  return bands;
-}
-
 export default async function BrandHubPage({ params }: PageProps) {
   const { brand: brandSlug } = await params;
   const brand = await getBrandHub(brandSlug);
@@ -103,9 +82,6 @@ export default async function BrandHubPage({ params }: PageProps) {
 
   const models = brand.models ?? [];
   const awaiting = brand.awaitingPrices ?? [];
-
-
-  const bands = generationBands(models);
 
   /** Repair types that apply to the kinds of device in this brand. */
   const deviceTypes = new Set<string>(models.map((model) => model.deviceType ?? "phone"));
@@ -240,113 +216,49 @@ export default async function BrandHubPage({ params }: PageProps) {
           level={2}
           id="models-heading"
           eyebrow="Models"
-          lead="Newest first. Every model links to its own page with the full price table, the common faults and an honest answer on whether it is still worth repairing."
+          lead="Newest first. Every model links to its own page with its full repair list, the common faults and an honest answer on whether it is still worth repairing."
         >
           Which {brand.name} models do we repair?
         </Heading>
 
-        <div className="mt-12 space-y-12">
-          {bands.map((band) => {
-            const inBand = models.filter(
-              (model) =>
-                (model.releaseYear ?? 0) >= band.from && (model.releaseYear ?? 0) <= band.to,
+        {/* One flat grid, newest first. The release-year band headings went on
+            the client's instruction 2026-08: no year labels in the listings. */}
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {models.map((model) => {
+            const href = `/repair/${brandSlug}/${model.slug}`;
+            const body = (
+              <>
+                <span className="text-tb-text block font-medium">{model.name}</span>
+                <span className="type-caption text-tb-muted mt-1 block">
+                  {model.repairCount} repair{model.repairCount === 1 ? "" : "s"} listed
+                </span>
+              </>
             );
-            if (inBand.length === 0) return null;
 
             return (
-              <div key={band.label}>
-                <h3 className="type-h3 text-tb-text">{band.label}</h3>
-
-                <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {inBand.map((model) => {
-                    const href = `/repair/${brandSlug}/${model.slug}`;
-                    const body = (
-                      <>
-                        <span className="text-tb-text block font-medium">{model.name}</span>
-                        <span className="type-caption text-tb-muted mt-1 block">
-                          {model.repairCount} repair{model.repairCount === 1 ? "" : "s"} listed
-                        </span>
-                      </>
-                    );
-
-                    return (
-                      <li key={model._id}>
-                        {shouldRenderLink(href) ? (
-                          <Link
-                            href={href}
-                            className="border-tb-border bg-tb-white hover:border-tb-ink rounded-card block h-full border p-5 transition-colors duration-[180ms] ease-out"
-                          >
-                            {body}
-                          </Link>
-                        ) : (
-                          <div className="border-tb-border bg-tb-white rounded-card block h-full border p-5">
-                            {body}
-                          </div>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+              <li key={model._id}>
+                {shouldRenderLink(href) ? (
+                  <Link
+                    href={href}
+                    className="border-tb-border bg-tb-white hover:border-tb-ink rounded-card block h-full border p-5 transition-colors duration-[180ms] ease-out"
+                  >
+                    {body}
+                  </Link>
+                ) : (
+                  <div className="border-tb-border bg-tb-white rounded-card block h-full border p-5">
+                    {body}
+                  </div>
+                )}
+              </li>
             );
           })}
-        </div>
+        </ul>
       </Section>
 
-      {/* ------------------------------------------------- price summary */}
-      <Section variant="tint" aria-labelledby="summary-heading">
-        <Heading level={2} id="summary-heading" eyebrow="At a glance">
-          What does each {brand.name} model cost to repair?
-        </Heading>
-
-        <div className="border-tb-border bg-tb-white rounded-card mt-8 overflow-x-auto border">
-          <table className="tabular w-full min-w-[34rem] border-collapse text-left">
-            <caption className="type-body text-tb-text border-tb-border border-b px-6 py-4 text-left font-medium">
-              {brand.name} repair price summary at TechBrotherz in Calgary
-            </caption>
-            <thead>
-              <tr className="tb-thead">
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Model
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Released
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3 md:text-right">
-                  Repairs from (CAD)
-                </th>
-                <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                  Repairs listed
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {models.map((model) => {
-                const href = `/repair/${brandSlug}/${model.slug}`;
-                return (
-                  <tr key={model._id} className="border-tb-border border-t">
-                    <th scope="row" className="text-tb-text px-6 py-3.5 text-left font-normal">
-                      {shouldRenderLink(href) ? (
-                        <Link href={href} className="text-tb-green-deep hover:underline">
-                          {model.name}
-                        </Link>
-                      ) : (
-                        model.name
-                      )}
-                    </th>
-                    <td className="text-tb-muted px-6 py-3.5">{model.releaseYear ?? "n/a"}</td>
-                    <td className="text-tb-muted px-6 py-3.5">{model.repairCount}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="type-caption text-tb-muted mt-4">
-          {settings?.priceDisclaimer ?? SITE.priceDisclaimer}
-        </p>
-      </Section>
+      {/* The price-summary table that sat here was removed 2026-08. After the
+          price scrub it carried only a release-year column, which the client
+          asked to remove, under headers that still promised prices. The model
+          grid above already lists every model with its repair count. */}
 
       {/* -------------------------------------------------- repair types */}
       {relevantRepairs.length > 0 ? (
@@ -432,7 +344,7 @@ export default async function BrandHubPage({ params }: PageProps) {
             level={2}
             id="awaiting-heading"
             eyebrow="Also repaired"
-            lead="We repair these models too. They do not have their own pages yet because we have not published prices for them, and we would rather say that than put up a page with nothing on it."
+            lead="We repair these models too. They do not have their own pages yet because we have not written them up properly, and we would rather say that than put up a page with nothing on it."
           >
             What about the {brand.name} models not listed above?
           </Heading>

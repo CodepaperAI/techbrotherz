@@ -275,8 +275,8 @@ export default async function ModelPage({ params }: PageProps) {
         <>
           TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, repairs the {model.name}
-          {model.releaseYear ? `, released in ${model.releaseYear}` : ""}. Every price below
-          includes the part and the labour.
+          {age !== null && age >= 2 ? `, now about ${age} years old` : ""}. Every repair
+          is quoted free at the counter, with the part and the labour in one figure.
         </>
       }
       answerBox={{
@@ -446,8 +446,10 @@ export default async function ModelPage({ params }: PageProps) {
                 </li>
               </ul>
 
+              {/* The release-year chip went on the client's instruction 2026-08:
+                  no year labels in the listings. Age still argues the verdict in
+                  prose, where it carries reasoning rather than a number. */}
               <div className="mt-6 flex flex-wrap gap-2">
-                {model.releaseYear ? <Chip>Released {model.releaseYear}</Chip> : null}
                 {model.lastSupportedOs ? (
                   <Chip variant={model.stillReceivesUpdates ? "soft" : "dark"}>
                     {model.stillReceivesUpdates

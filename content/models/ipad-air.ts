@@ -29,7 +29,7 @@ const content: ModelContent = {
   "commonIssues": [
     "Cracked front glass with the picture underneath still perfect, the repair this model is most often brought in for",
     "Touch failing along a crack line",
-    "Battery no longer lasting a full day, this model being from 2013",
+    "Battery no longer lasting a full day, this model being more than a decade old",
     "Lightning port loose after years of use",
     "Home button worn out"
   ],

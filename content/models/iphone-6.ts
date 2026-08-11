@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only for a specific purpose. The iPhone 6 stopped at iOS 12 and no longer receives security updates, so we would not recommend it for banking or messaging. As a music player, a car phone or a spare kept in a drawer, a screen or a battery still makes sense. As a main phone in 2026, it does not."
+          "text": "Only for a specific purpose. The iPhone 6 stopped at iOS 12 and no longer receives security updates, so we would not recommend it for banking or messaging. As a music player, a car phone or a spare kept in a drawer, a screen or a battery still makes sense. As a main phone today, it does not."
         }
       ],
       "markDefs": [],

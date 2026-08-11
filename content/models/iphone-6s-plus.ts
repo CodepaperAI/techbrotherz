@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the iPhone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone from 2015, so almost any fault on a 6S Plus can be quoted from the published price list rather than ordered in."
+          "text": "The iPhone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the iPhone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone this far into its life, so almost any fault on a 6S Plus can be quoted on the spot at the counter rather than waiting on an ordered part."
         }
       ],
       "markDefs": [],

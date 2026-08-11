@@ -129,7 +129,7 @@ export default async function ContactPage() {
             <Car aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
             <h3 className="type-h3 text-tb-text mt-4">Parking</h3>
             <p className="type-body text-tb-muted mt-2">
-              Street parking runs along 17 Avenue SE outside the shop, so you can pull up, drop the
+              Parking is free in the plaza in front of the store, so you can pull in, drop the
               device off and wait.
             </p>
             <PillButton href={SITE.googleMapsUrl} size="sm" className="mt-4">

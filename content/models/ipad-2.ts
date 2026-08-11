@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-2-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad 2 is the thinnest of the three iPads that share one glass price, because it has no Retina panel and therefore no large battery to fit around. It was sold for an unusually long time, into 2014, which is why so many are still in circulation. Its non-Retina screen makes it the lightest and the easiest of the three to open."
+          "text": "The iPad 2 is the thinnest of the three iPads that share one glass price, because it has no Retina panel and therefore no large battery to fit around. It was sold for an unusually long time after its debut, which is why so many are still in circulation. Its non-Retina screen makes it the lightest and the easiest of the three to open."
         }
       ],
       "markDefs": [],

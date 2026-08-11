@@ -174,15 +174,15 @@ const calgary: PlaceDef = {
     { fact: "international-avenue", treatment: "full" },
   ]),
   lead: () =>
-    "TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in southeast Calgary, sits on International Avenue at 33 Street, with Albert Park and Radisson Heights to the north and Southview to the south. 33 Street SE Station, on the dedicated 17 Avenue Transitway, is outside the door.",
+    "TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in southeast Calgary, sits in a plaza on International Avenue at 33 Street, with Albert Park and Radisson Heights to the north and Southview to the south. Parking in front of the store is free, and 33 Street SE Station, on the dedicated 17 Avenue Transitway, is outside the door.",
   answer: (c) =>
-    `TechBrotherz is at 3317 17 Ave SE in southeast Calgary, on International Avenue at 33 Street, between Albert Park/Radisson Heights and Southview. 33 Street SE Station on the 17 Avenue Transitway is outside the shop, so it is reachable by MAX Purple without a car. No appointment is needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty.`,
-  keyFacts: (c) => [
+    `TechBrotherz is at 3317 17 Ave SE in southeast Calgary, in a plaza on International Avenue at 33 Street. Parking in front of the store is free, and 33 Street SE Station on the 17 Avenue Transitway is outside the shop for MAX Purple. No appointment is needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty.`,
+  keyFacts: () => [
     { label: "Address", value: "3317 17 Ave SE, Calgary, Alberta" },
     { label: "On", value: "International Avenue, at 33 Street SE" },
+    { label: "Parking", value: "Free, in the plaza in front of the store" },
     { label: "Transit", value: "33 Street SE Station, MAX Purple, outside" },
     { label: "Appointment", value: "Not needed, walk in during opening hours" },
-    { label: "Warranty", value: `${c.warrantyDays} days on every repair` },
   ],
   sections: () => [
     {
@@ -202,6 +202,14 @@ const calgary: PlaceDef = {
       ],
     },
     {
+      heading: "Where do you park at TechBrotherz?",
+      paragraphs: [
+        "Parking at TechBrotherz is free, in the plaza directly in front of the store. The shop sits in a plaza off 17 Avenue SE at 33 Street, so you pull in, park in front of the door and bring the device to the counter. There is no meter, no ticket and no fee.",
+        "The free plaza parking pairs with how the shop actually works. Most phone repairs are finished in about 30 minutes, so the usual visit is to park, hand the device over and wait, and the car does not move until the repair is done. For a desktop tower drop-off, parking in front of the store means carrying the machine a few steps rather than a block.",
+        "If you would rather not drive at all, the transit answer is on this page too: 33 Street SE Station on the 17 Avenue Transitway is outside the shop.",
+      ],
+    },
+    {
       heading: "What is International Avenue?",
       paragraphs: [
         "International Avenue is the Business Revitalization Zone along 17 Avenue SE, running from 26 Street to 61 Street SE. It was created in 1993 to revitalise the former town of Forest Lawn, annexed by Calgary in 1961, and it now covers more than 400 merchants across 35 blocks.",
@@ -214,7 +222,7 @@ const calgary: PlaceDef = {
       paragraphs: [
         "Everything the shop does happens at this one counter: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
         "That means the same technicians see a device from diagnosis to hand-back, and it means a household can bring several devices in one trip. Phones are usually finished while you wait; tablets and computers are same-day drop-offs.",
-        "Every repair is quoted free at the counter before any work starts, so you can check the figure for your exact handset before deciding to come in. The full list is on the repair prices page, and each service page carries the prices relevant to it.",
+        "Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure, and nothing begins until you agree to it. Phone the shop with your exact model and the fault and you will have the figure before you travel.",
       ],
     },
   ],
@@ -405,7 +413,7 @@ const chestermere: PlaceDef = {
       heading: "What should Chestermere customers do before driving in?",
       paragraphs: [
         "Phone ahead and confirm the part for your model is in stock. That single call is what decides whether the trip is one journey or two, and it is free.",
-        "Check the published price for your exact model first. Every iPhone and Galaxy in the catalogue has its own figure, so you can decide whether the repair is worth doing before you decide whether the drive is worth making.",
+        "Ask for the price on that same call. Every repair is quoted as one figure with the part and the labour included, so you can decide whether the repair is worth doing before you decide whether the drive is worth making.",
         "Bring the charger for a laptop or desktop, and back up any device before a repair. Those apply to everyone, and they matter more when the shop is a drive away rather than around the corner.",
       ],
     },
@@ -414,7 +422,7 @@ const chestermere: PlaceDef = {
       paragraphs: [
         "Because we could not verify one worth printing. The route is certain: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit at 116 Street SE, and the shop is on that avenue at 33 Street. The minutes are not, because published figures measure city centre to city centre rather than your street to our counter, and 17 Avenue SE traffic varies enormously by time of day.",
         "A wrong drive time on a local page is the kind of small inaccuracy that tells a reader the rest of the page might be guessed too. It would be easy to write about twenty minutes and it would be a guess, so the page gives you the route and leaves the timing to a map and your own knowledge of the road.",
-        "The same applies to parking, which is not published here for the same reason. Phone the shop and ask: the counter can tell you where to leave the car and roughly how long the run in takes at the hour you are planning to travel, which is better information than any figure we could put on this page.",
+        "Parking, at least, is simple: it is free in the plaza in front of the store, so the only unknown in the trip is the road, not where to leave the car when you arrive.",
       ],
     },
     {

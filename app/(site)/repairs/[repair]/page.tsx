@@ -7,7 +7,6 @@ import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { StepCard } from "@/components/blocks/StepCard";
 import { Card } from "@/components/primitives/Card";
-import { Chip } from "@/components/primitives/Chip";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
@@ -134,10 +133,9 @@ export default async function RepairPage({ params }: PageProps) {
   /* ---------------------------------------------------- top models by demand */
   // Newest first is the honest proxy for search demand: we do not have query
   // volume data, and pretending otherwise would be inventing a signal.
-  const topModels = [...rows, ...quoteOnly]
-    .filter((row) => row.year !== null)
-    .sort((a, b) => (b.year ?? 0) - (a.year ?? 0))
-    .slice(0, 6);
+  const allModels = [...rows, ...quoteOnly].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+
+  const topModels = allModels.filter((row) => row.year !== null).slice(0, 6);
 
   /* --------------------------------------------------------------- faqs */
   const faqs = composeFaqs({
@@ -228,80 +226,47 @@ export default async function RepairPage({ params }: PageProps) {
       }}
       schema={schema}
     >
-      {/* ---------------------------------------------- cross-model prices */}
-      {rows.length > 0 && (
+      {/* ------------------------------------------------ models covered.
+          This was a price table until the price scrub, and a broken one after
+          it: a "Price" header over a release-year column. Rebuilt 2026-08 as a
+          model list, newest first with no year labels, per the client's
+          instruction. */}
+      {allModels.length > 0 && (
         <Section className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="prices-heading">
           <Heading
             level={2}
             id="prices-heading"
             eyebrow="Every model"
-            lead="Sorted from cheapest, and every price includes the part and the labour. Each model name links to that handset's full repair list."
+            lead="Quoted per model at the counter, as one figure with the part and the labour included. Newest models first, and each name links to that handset's full repair list."
           >
             How much does this repair cost on each model?
           </Heading>
 
-          <div className="border-tb-border bg-tb-white rounded-card mt-10 overflow-x-auto border">
-            <table className="w-full min-w-[34rem] border-collapse text-left">
-              <caption className="sr-only-caption">
-                {content.serviceType} prices by model at TechBrotherz in Calgary, part and labour
-                included
-              </caption>
-              <thead>
-                <tr className="tb-thead">
-                  <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                    Model
-                  </th>
-                  <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                    Price
-                  </th>
-                  <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                    Released
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((row) => (
-                  <tr key={row.href} className="border-tb-border border-t">
-                    <th scope="row" className="px-6 py-4 text-left font-normal">
-                      <Link href={row.href} className="text-tb-text hover:text-tb-green-deep">
-                        {row.model}
-                      </Link>
-                    </th>
-                    <td className="type-body text-tb-muted px-6 py-4">
-                      {row.year ?? "Not stated"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <p className="type-body measure text-tb-muted mt-6">
+            TechBrotherz prices this repair per model, because the part differs across the range.
+            Call {SITE.phone} with your exact model and you will have the figure before you travel,
+            free of charge, and nothing starts at the counter until you have agreed it.
+          </p>
 
-          {quoteOnly.length > 0 && (
-            <div className="mt-8">
-              <h3 className="type-h3 text-tb-text">Models quoted at the counter</h3>
-              <p className="type-body measure text-tb-muted mt-2">
-                TechBrotherz carries out this repair on the models below and does not publish a
-                price for them, because the part is ordered in and priced when we know the cost.
-                Call {SITE.phone} for a figure before you come down.
-              </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {quoteOnly.map((row) => (
-                  <li key={row.href}>
-                    <Link href={row.href}>
-                      <Chip>{row.model}</Chip>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {allModels.map((row) => (
+              <li key={row.href}>
+                <Link
+                  href={row.href}
+                  className="border-tb-border bg-tb-white hover:border-tb-ink rounded-card block h-full border p-5 transition-colors duration-[180ms] ease-out"
+                >
+                  <span className="text-tb-text block font-medium">{row.model}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Section>
       )}
 
       {/* ------------------------------------------------ comparison table */}
       {content.comparison && (
         <Section
-          className={rows.length === 0 ? "pt-0 md:pt-0 lg:pt-0" : undefined}
+          className={allModels.length === 0 ? "pt-0 md:pt-0 lg:pt-0" : undefined}
           aria-labelledby="comparison-heading"
         >
           <Heading level={2} id="comparison-heading" eyebrow="Compared">

@@ -2,6 +2,36 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-11 — Batch 2, session 1b: About, parking, service area, years out of the listings
+
+**Asked:** the sequenced batch-2 request, session 1b only: About page from the client's verified copy, the parking answer (free, in front of the store, in the plaza) on the pages that need it, one service-area version, and release years out of the phone repair listings as labels while age-bearing prose survives as relative age.
+
+**Done:**
+
+### About
+
+Family-owned is now in the lead, the AnswerBox, the who-we-are prose and a key fact, with no duration claimed because the founding year is still missing. The verified device list (phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers, game consoles) is on the page: consoles and unlocking link to their pages, MacBooks and gaming computers are named without links until their pages exist. Unlocking now names screen locks and FRP with the proof-of-ownership condition. The rewrite went ahead now rather than waiting for session 2, because naming-without-linking covers the gap and the page was carrying worse problems: "prices published in full", "every price on the site" and "where a model shows Call for quote" all survived the price scrub as false claims, and are now rewritten to the quote-at-counter reality.
+
+### Parking, verified at last
+
+Open question 19 closed: free parking in front of the store, in the plaza, sourced to the owner. Carried in full in a new "Where do you park at TechBrotherz?" section on /locations/calgary, one line on /contact, the home find-us lead, the /locations index (answer, key fact, CTA), the Tier 5 template's parking card (which had said "we could not verify"), the global FAQ answer and both location routeDescriptions. The plaza is used as a locating fact, not just an amenity. Space count and time limits remain unknown and unstated. The Chestermere page's "same applies to parking" disclaimer became the answer.
+
+### Service area
+
+One version confirmed everywhere: "Calgary, Chestermere, Airdrie and the surrounding Alberta communities", matching `areaServed`. One short-form key fact on /locations was aligned to it; nothing else diverged.
+
+### Years out of the listings
+
+Labels removed, 5 template sites: the release-year band headings on the brand hubs (the "2022 to 2024" the client saw; the grid is now one flat list, newest first), the brand hub summary table's Released column, the Tier 3 table's Released column, the model page's "Released YYYY" chip, and the model lead's ", released in YYYY" (now ", now about N years old", computed so it cannot go stale). Generated brand FAQs no longer print year spans; they state a duration instead. Prose: 13 sentences across 11 model files rephrased from absolute years to relative age, none deleted; 3 mentions kept because "(2017)" is part of the Galaxy A5's product name. **Counts: 5 label sites removed, 2 generated-FAQ templates rephrased, 13 prose sentences rephrased, 3 kept as product identity.**
+
+### Stale price copy, found in the sweep's path
+
+Both year-bearing tables turned out to be broken price-scrub leftovers: headers still said "Price" and "Repairs from (CAD)" with years and repair counts rendering under the wrong columns. The brand hub summary table is deleted (the model grid above it already carries everything it had left); the Tier 3 table became a models-covered grid under the same cost H2, answered quote-first. Also fixed on the way: the Calgary place page's "the full list is on the repair prices page", Chestermere's "check the published price", the awaiting-models lead's "we have not published prices for them", and iphone-6s-plus's "published price list".
+
+**Verify:** 12 of 14, identical to before the session. The two failures are the pre-existing pixel-6 single-inbound-link gap and the browser audit's localhost Lighthouse target. Zero orphans, zero internal 404s, words/similarity/faq/schema/local-facts all pass.
+
+**Blocked / open:** founding year (blocks any duration claim), the session-2 service pages (now six: FRP, screen lock unlocking, consoles repair list, gaming computers, MacBook, accessories content), and the standing client questions. The iPad rename and latest-model seeding are deliberately not in this session; the keyword-map report goes to the agency before the rename ships.
+
 **Template**
 
 ```markdown

@@ -93,7 +93,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     "order": 10,
     "province": "Alberta",
     "published": true,
-    "routeDescription": "TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary. 17 Avenue SE runs east to west across the whole southeast, so most of the city reaches the shop on one road without turning off. Street parking runs along 17 Avenue SE outside the shop.",
+    "routeDescription": "TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary. 17 Avenue SE runs east to west across the whole southeast, so most of the city reaches the shop on one road without turning off. Parking is free in the plaza in front of the store.",
     "seoDescription": "Walk-in phone, tablet and computer repair at 3317 17 Ave SE in Calgary. Most repairs about 30 minutes, parts and labour included, 60-day warranty.",
     "seoTitle": "Phone and Computer Repair in Calgary",
     "slug": {
@@ -198,7 +198,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": true,
-    "routeDescription": "TechBrotherz is inside Forest Lawn. The shop sits at 3317 17 Ave SE, on the stretch of 17 Avenue SE known as International Avenue, so most of Forest Lawn is a short walk or a two minute drive away. Street parking runs along 17 Avenue SE outside the shop.",
+    "routeDescription": "TechBrotherz is inside Forest Lawn. The shop sits at 3317 17 Ave SE, on the stretch of 17 Avenue SE known as International Avenue, so most of Forest Lawn is a short walk or a two minute drive away. Parking is free in the plaza in front of the store.",
     "seoDescription": "TechBrotherz is on International Avenue in Forest Lawn at 3317 17 Ave SE. Walk in, no appointment, most repairs about 30 minutes.",
     "seoTitle": "Phone Repair in Forest Lawn, Calgary",
     "slug": {

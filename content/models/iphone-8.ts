@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-8-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Usually worth it, because the repair is small relative to almost any replacement. A screen on a working phone is easy to justify even in 2026, particularly as a spare or a child's first phone. The limit is iOS 16: apps are steadily dropping support for it, so treat this as a phone with one or two useful years left rather than one you invest heavily in."
+          "text": "Usually worth it, because the repair is small relative to almost any replacement. A screen on a working phone is easy to justify even at this point in its life, particularly as a spare or a child's first phone. The limit is iOS 16: apps are steadily dropping support for it, so treat this as a phone with one or two useful years left rather than one you invest heavily in."
         }
       ],
       "markDefs": [],

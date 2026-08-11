@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The iPhone 4 stopped at iOS 7, which is more than a decade without security updates, and effectively no current app will run on it. We keep parts because people occasionally restore one, and that is the only reason to repair an iPhone 4 in 2026. As a phone, its working life ended years ago."
+          "text": "No. The iPhone 4 stopped at iOS 7, which is more than a decade without security updates, and effectively no current app will run on it. We keep parts because people occasionally restore one, and that is the only reason to repair an iPhone 4 today. As a phone, its working life ended years ago."
         }
       ],
       "markDefs": [],

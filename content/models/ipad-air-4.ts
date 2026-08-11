@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-air-4-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the iPhone 12, which was quick in 2020 and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
+          "text": "The iPad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the iPhone 12, which was quick at launch and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
         }
       ],
       "markDefs": [],
@@ -28,7 +28,7 @@ const content: ModelContent = {
   ],
   "commonIssues": [
     "Power button failing, which on this generation takes Touch ID down with it",
-    "Front glass shattered across the flat-edge corners, where the 2020 redesign concentrates impact",
+    "Front glass shattered across the flat-edge corners, where the squared-off redesign concentrates impact",
     "A14 processor struggling with newer apps, the main reason owners retire this model",
     "Charging socket loosened by repeated cable pulls",
     "Rear camera bump glass chipped"

@@ -90,13 +90,16 @@ export default async function LocationsPage() {
         </>
       }
       answerBox={{
-        answer: `TechBrotherz has one shop, at ${SITE.street} in Calgary, on International Avenue in Forest Lawn. It serves Calgary, Chestermere, Airdrie and the surrounding Alberta communities. There is street parking outside, the MAX Purple bus rapid transit line runs along 17 Avenue SE, and no appointment is needed to walk in.`,
+        answer: `TechBrotherz has one shop, at ${SITE.street} in Calgary, in a plaza on International Avenue. It serves Calgary, Chestermere, Airdrie and the surrounding Alberta communities. Parking in front of the store is free, the MAX Purple bus rapid transit line runs along 17 Avenue SE, and no appointment is needed to walk in.`,
         keyFacts: [
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           { label: "Area", value: "Forest Lawn, on International Avenue in southeast Calgary" },
           { label: "Transit", value: "MAX Purple runs the length of 17 Avenue SE" },
-          { label: "Parking", value: "Street parking along 17 Avenue SE outside the shop" },
-          { label: "Service area", value: "Calgary, Chestermere, Airdrie and surrounding Alberta" },
+          { label: "Parking", value: "Free, in the plaza in front of the store" },
+          {
+            label: "Service area",
+            value: "Calgary, Chestermere, Airdrie and the surrounding Alberta communities",
+          },
         ],
         lastUpdated: settings?._updatedAt,
       }}
@@ -262,8 +265,8 @@ export default async function LocationsPage() {
             <div>
               <h2 className="type-h2 text-tb-white">Come in to {SITE.street}</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
-                Street parking runs along 17 Avenue SE outside the shop, and MAX Purple stops close
-                by. No appointment is needed at any time.
+                Parking is free in the plaza in front of the store, and MAX Purple stops close by.
+                No appointment is needed at any time.
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">

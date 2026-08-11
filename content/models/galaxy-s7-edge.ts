@@ -29,7 +29,7 @@ const content: ModelContent = {
   "commonIssues": [
     "Cracked glass on the wrap-around curve, the most exposed edge of any Galaxy of this era",
     "Water resistance lost after a previous repair, the frame seal being single-use",
-    "Battery degraded, this being a 2016 handset",
+    "Battery degraded, this being a handset approaching a decade old",
     "Micro USB port worn, this generation predating USB-C on Samsung",
     "Screen burn-in from static navigation icons"
   ],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s7-edge-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Galaxy S7 Edge stopped at Android 8, which means years without security updates, and a bonded curved screen is far more than the handset is worth in 2026. TechBrotherz will fit one on request, but we would be doing you a disservice not to say that the money is better spent on a newer phone."
+          "text": "No. The Galaxy S7 Edge stopped at Android 8, which means years without security updates, and a bonded curved screen costs far more than the handset is now worth. TechBrotherz will fit one on request, but we would be doing you a disservice not to say that the money is better spent on a newer phone."
         }
       ],
       "markDefs": [],

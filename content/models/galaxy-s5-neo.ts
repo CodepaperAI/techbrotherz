@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s5-neo-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Battery yes, screen no. The Galaxy S5 Neo stopped at Android 7. Its removable battery means a very cheap revival is possible, and that is worth doing on a working phone. A screen on a handset from 2015 is not, because it is several times the phone's value."
+          "text": "Battery yes, screen no. The Galaxy S5 Neo stopped at Android 7. Its removable battery means a very cheap revival is possible, and that is worth doing on a working phone. A screen on a handset this old is not, because it is several times the phone's value."
         }
       ],
       "markDefs": [],

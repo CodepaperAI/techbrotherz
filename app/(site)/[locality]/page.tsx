@@ -194,9 +194,8 @@ export default async function LocalPage({ params }: PageProps) {
             <Card>
               <h3 className="type-h3 text-tb-text">Parking</h3>
               <p className="type-body text-tb-muted mt-2">
-                We have not published parking details because we could not verify them, and a wrong
-                answer about parking wastes your trip. Phone {SITE.phone} and ask, and we will tell
-                you exactly where to leave the car.
+                Parking is free in the plaza in front of the store, so you can pull in, park at the
+                door and bring the device straight to the counter.
               </p>
             </Card>
           </div>

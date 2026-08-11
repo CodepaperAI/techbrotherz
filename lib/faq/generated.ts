@@ -161,8 +161,10 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
     answer:
       `${input.brandName} repairs at TechBrotherz in Calgary are quoted per model at the counter, ` +
       `free of charge, before any work starts. ` +
-      (input.oldestYear && input.newestYear
-        ? `The ${input.brandName} range TechBrotherz repairs spans releases from ${input.oldestYear} to ${input.newestYear}, and the figure follows the part a given model takes rather than a flat rate across the range. `
+      // Year spans went 2026-08 on the client's no-years instruction; the span
+      // is stated as a duration rather than as release years.
+      (input.oldestYear && input.newestYear && input.newestYear > input.oldestYear
+        ? `The ${input.brandName} range TechBrotherz repairs spans ${input.newestYear - input.oldestYear} years of releases, and the figure follows the part a given model takes rather than a flat rate across the range. `
         : `The figure follows the part a given model takes rather than a flat rate across the range. `) +
       `Phone ${input.phone} with your model for a firm figure.`,
   });
@@ -178,7 +180,7 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
     faqs.push({
       question: `Which ${input.brandName} models does TechBrotherz repair?`,
       answer:
-        `TechBrotherz in Calgary repairs ${input.modelCount} ${input.brandName} models, spanning releases from ${input.oldestYear} to ${input.newestYear}. ` +
+        `TechBrotherz in Calgary repairs ${input.modelCount} ${input.brandName} models, from the oldest models still worth fixing to the newest in the catalogue. ` +
         (input.awaitingCount > 0
           ? `A further ${input.awaitingCount} ${input.awaitingCount === 1 ? "model is" : "models are"} repaired to order, quoted at the counter once the part is confirmed.`
           : `Every model in the range is quoted individually at the counter.`),

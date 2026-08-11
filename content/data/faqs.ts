@@ -773,7 +773,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.where-are-you-and-is-there-parking-s1",
             "marks": [],
-            "text": "There is street parking along 17 Avenue SE outside the shop. If you are coming by transit, the MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between downtown Calgary and East Hills, with stops close to the shop.",
+            "text": "Parking is free in the plaza in front of the store. If you are coming by transit, the MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between downtown Calgary and East Hills, with stops close to the shop.",
             "_type": "span"
           }
         ],
@@ -785,7 +785,7 @@ export const FAQ_DOCS: FaqDoc[] = [
     "category": "location",
     "featured": true,
     "order": 160,
-    "plainAnswer": "TechBrotherz is at 3317 17 Ave SE in Calgary, on the stretch of 17 Avenue SE known as International Avenue, a few blocks west of Forest Lawn. Street parking runs along 17 Avenue SE outside the shop, and the MAX Purple bus rapid transit line runs the length of the same street.",
+    "plainAnswer": "TechBrotherz is at 3317 17 Ave SE in Calgary, on the stretch of 17 Avenue SE known as International Avenue, a few blocks west of Forest Lawn. Parking is free in the plaza in front of the store, and the MAX Purple bus rapid transit line runs the length of the same street.",
     "published": true,
     "question": "Where is TechBrotherz and is there parking?"
   },

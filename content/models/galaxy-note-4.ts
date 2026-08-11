@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Battery yes, screen borderline. The Note 4 stopped at Android 6, so it is not a phone for banking or messaging. Its removable battery makes a revival almost free, which is worth doing for a specific use. A full screen on a phone from 2014 is much harder to justify."
+          "text": "Battery yes, screen borderline. The Note 4 stopped at Android 6, so it is not a phone for banking or messaging. Its removable battery makes a revival almost free, which is worth doing for a specific use. A full screen on a handset this old is much harder to justify."
         }
       ],
       "markDefs": [],

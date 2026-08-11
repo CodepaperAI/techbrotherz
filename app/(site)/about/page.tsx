@@ -32,7 +32,7 @@ const PATH = "/about";
 export const metadata: Metadata = buildMetadata({
   title: "About TechBrotherz, Calgary",
   description:
-    "TechBrotherz is a walk-in cell phone, tablet and computer repair shop at 3317 17 Ave SE in Calgary. What we repair, how we price it, and the 60-day warranty.",
+    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair shop at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
   path: PATH,
 });
 
@@ -92,15 +92,16 @@ export default async function AboutPage() {
       crumbLabel="About"
       lead={
         <>
-          TechBrotherz is a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}, on the stretch of 17 Avenue SE known as International Avenue.
-          One shop, one counter, and prices published in full.
+          TechBrotherz is a local, family-owned walk-in cell phone and computer repair shop at{" "}
+          {SITE.street} in {SITE.city}, {SITE.region}, on the stretch of 17 Avenue SE known as
+          International Avenue. One shop, one counter, and every repair quoted free before any work
+          starts.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz is a walk-in cell phone, tablet and computer repair shop at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads, tablets, laptops and desktops, and unlocks phones for any Canadian carrier. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a local, family-owned walk-in repair shop at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and game consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
-          { label: "What we are", value: "A walk-in repair shop, one location in Calgary" },
+          { label: "What we are", value: "A local, family-owned walk-in shop, one Calgary location" },
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           {
             label: "Devices",
@@ -122,10 +123,10 @@ export default async function AboutPage() {
         <div className="mt-6 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="type-body measure text-tb-muted">
-              TechBrotherz is a repair shop, not a chain and not a mail-in service. There is one
-              counter, at {SITE.street} in {SITE.city}, and the person who takes your device in is
-              the person who repairs it. You can watch a phone screen replacement happen if you want
-              to.
+              TechBrotherz is a family-owned repair shop, not a chain and not a mail-in service.
+              There is one counter, at {SITE.street} in {SITE.city}, and the person who takes your
+              device in is the person who repairs it. You can watch a phone screen replacement
+              happen if you want to.
             </p>
 
             {yearsTrading && foundedYear ? (
@@ -193,11 +194,20 @@ export default async function AboutPage() {
         </Heading>
 
         <p className="type-body measure text-tb-muted mt-6">
-          We repair cell phones, iPads and tablets, laptops and desktop computers. That covers
-          screens, batteries, charging ports, cameras, buttons and back glass on phones, and
-          screens, keyboards, charging sockets, Windows installation, virus removal and clean-ups on
-          computers. The shop also unlocks phones for any Canadian carrier and resets Windows
-          passwords.
+          We repair cell phones, iPads and tablets, laptops and desktop computers, MacBooks and
+          gaming computers, and{" "}
+          <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
+            game consoles
+          </Link>
+          , including the Xbox, PlayStation and Nintendo Switch ranges. That covers screens,
+          batteries, charging ports, cameras, buttons and back glass on phones, and screens,
+          keyboards, charging sockets, Windows installation, virus removal and clean-ups on
+          computers. The shop also{" "}
+          <Link href="/services/phone-unlocking" className="text-tb-green-deep hover:underline">
+            unlocks phones
+          </Link>
+          , covering any Canadian carrier, screen locks and Google FRP with proof of ownership, and
+          resets Windows passwords.
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">
@@ -253,17 +263,18 @@ export default async function AboutPage() {
         </Heading>
 
         <p className="type-body measure text-tb-muted mt-6">
-          Every price on the TechBrotherz site includes the part and the labour, so the figure you
-          read is the figure you pay before tax. There is no separate bench fee on a phone repair
-          and no charge to look at a phone. Computer diagnostics carry a fixed fee, and that is quoted
+          Every repair TechBrotherz carries out is quoted free at the counter before any work
+          starts, as one figure that includes the part and the labour, so the number you agree to
+          is the number you pay before tax. There is no separate bench fee on a phone repair and no
+          charge to look at a phone. Computer diagnostics carry a fixed fee, and that is quoted
           before any work starts.
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">
-          Where a model shows Call for quote, the part is ordered in rather than held in stock and
-          the price moves with supply. TechBrotherz would rather show that honestly than publish a
-          number it might not be able to honour when you arrive. Call {SITE.phone} with the model
-          and you will get a firm figure.
+          Quoting at the counter rather than from a printed list is deliberate: part costs move
+          with supply, and TechBrotherz would rather give you a firm figure it can honour than a
+          published number it cannot. Call {SITE.phone} with the model and the fault and you will
+          get that figure before you travel.
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">

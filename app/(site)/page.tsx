@@ -462,7 +462,7 @@ export default async function HomePage() {
           level={2}
           id="location-heading"
           eyebrow="Find us"
-          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in southeast Calgary a few blocks west of Forest Lawn. Street parking runs along 17 Avenue SE outside the shop.`}
+          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in southeast Calgary a few blocks west of Forest Lawn. Parking is free in the plaza in front of the store.`}
         >
           Where is TechBrotherz in Calgary?
         </Heading>

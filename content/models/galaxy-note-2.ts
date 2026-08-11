@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-2-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 2 is the phone that convinced the industry large screens would sell, at a size that looked absurd in 2012 and ordinary now. It has a removable battery, a microSD slot and an ordinary micro USB port, which makes it the simplest and cheapest of the older Notes to keep running."
+          "text": "The Galaxy Note 2 is the phone that convinced the industry large screens would sell, at a size that looked absurd when it launched and ordinary now. It has a removable battery, a microSD slot and an ordinary micro USB port, which makes it the simplest and cheapest of the older Notes to keep running."
         }
       ],
       "markDefs": [],
