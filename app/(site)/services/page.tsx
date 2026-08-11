@@ -47,7 +47,7 @@ export const metadata: Metadata = buildMetadata({
 interface ServiceEntry {
   title: string;
   href: string;
-  group: "Phones" | "Tablets" | "Computers" | "Consoles";
+  group: "Phones" | "iPads" | "Computers" | "Consoles";
   description: string;
   /** Demo slot in lib/content/images.ts. */
   image: string;
@@ -74,9 +74,9 @@ const SERVICE_CARDS: ServiceEntry[] = [
     illustration: "sim",
   },
   {
-    title: "iPad and tablet repair",
-    href: "/services/tablet-repair",
-    group: "Tablets",
+    title: "iPad repair",
+    href: "/services/ipad-repair",
+    group: "iPads",
     description:
       "On older iPads the glass is separate from the picture panel, so a cracked front often costs far less than people expect.",
     image: "service-tablet-repair",
@@ -129,11 +129,11 @@ const SERVICE_CARDS: ServiceEntry[] = [
   },
 ];
 
-const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "Tablets", "Computers", "Consoles"];
+const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "iPads", "Computers", "Consoles"];
 
 const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
-  Tablets: "What tablet and iPad repairs does TechBrotherz do?",
+  iPads: "What iPad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
   Consoles: "What game console repairs does TechBrotherz do?",
 };

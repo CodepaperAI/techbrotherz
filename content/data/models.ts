@@ -2296,6 +2296,266 @@ export const MODEL_DOCS: ModelDoc[] = [
     },
     "stillReceivesUpdates": false
   },
+  /*
+   * The 2024 to 2026 iPad range, seeded 2026-08 on the client's instruction.
+   * Lineup verified against Apple's current range before seeding: iPad (A16),
+   * iPad Mini (A17 Pro), iPad Air M2/M3/M4 in 11 and 13 inch, iPad Pro M4 and
+   * M5 in 11 and 13 inch. All quote-only and unpublished until each has
+   * model-specific content, per the Phase 4 thin-content rule; they render as
+   * "Also repaired" chips on the iPad hub meanwhile.
+   */
+  {
+    "_id": "model.ipad-11th-gen",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad 2025", "ipad a16"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad 11th gen",
+    "noIndex": false,
+    "popular": true,
+    "published": false,
+    "releaseYear": 2025,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-11th-gen" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-mini-7",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad mini a17 pro", "ipad mini 2024"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Mini 7",
+    "noIndex": false,
+    "popular": true,
+    "published": false,
+    "releaseYear": 2024,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-mini-7" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-11-m2",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air m2", "ipad air 2024"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 11 (M2)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2024,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-11-m2" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-13-m2",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air 13 m2", "ipad air 13 2024"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 13 (M2)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2024,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-13-m2" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-11-m3",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air m3", "ipad air 2025"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 11 (M3)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2025,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-11-m3" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-13-m3",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air 13 m3", "ipad air 13 2025"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 13 (M3)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2025,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-13-m3" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-11-m4",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air m4", "ipad air 2026"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 11 (M4)",
+    "noIndex": false,
+    "popular": true,
+    "published": false,
+    "releaseYear": 2026,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-11-m4" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-air-13-m4",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad air 13 m4", "ipad air 13 2026"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Air 13 (M4)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2026,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-air-13-m4" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-pro-11-m4",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad pro 11 2024", "ipad pro m4"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Pro 11 (M4)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2024,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-pro-11-m4" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-pro-13-m4",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad pro 13 2024", "ipad pro 13 m4"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Pro 13 (M4)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2024,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-pro-13-m4" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-pro-11-m5",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad pro 11 2025", "ipad pro m5"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Pro 11 (M5)",
+    "noIndex": false,
+    "popular": true,
+    "published": false,
+    "releaseYear": 2025,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-pro-11-m5" },
+    "stillReceivesUpdates": true
+  },
+  {
+    "_id": "model.ipad-pro-13-m5",
+    "_updatedAt": "2026-08-11T00:00:00Z",
+    "aliases": ["ipad pro 13 2025", "ipad pro 13 m5"],
+    "brandSlug": "apple-ipad",
+    "deviceType": "tablet",
+    "discontinued": false,
+    "name": "iPad Pro 13 (M5)",
+    "noIndex": false,
+    "popular": false,
+    "published": false,
+    "releaseYear": 2025,
+    "repairs": [
+      { "_key": "back-camera-repair", "repair": "back-camera-repair" },
+      { "_key": "battery-replacement", "repair": "battery-replacement" },
+      { "_key": "charging-port-repair", "repair": "charging-port-repair" },
+      { "_key": "screen-replacement", "repair": "screen-replacement" }
+    ],
+    "slug": { "current": "ipad-pro-13-m5" },
+    "stillReceivesUpdates": true
+  },
   {
     "_id": "model.ipad-2",
     "_updatedAt": "2026-07-31T19:22:01Z",

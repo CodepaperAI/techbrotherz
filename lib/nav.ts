@@ -88,7 +88,7 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
     heading: "Repairs",
     paths: [
       "/services/phone-repair",
-      "/services/tablet-repair",
+      "/services/ipad-repair",
       "/services/laptop-repair",
       "/services/computer-repair",
       "/services/phone-unlocking",

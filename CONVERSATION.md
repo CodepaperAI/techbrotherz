@@ -2,6 +2,24 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-11 (later) — The iPad rename, and the current iPad range seeded
+
+**Asked:** "add iPad, all the models of it, remove tablet, and deploy" — the go-ahead for the recommended rename from the batch-2 doc.
+
+**Done:**
+
+### iPad leads everywhere
+
+`/services/tablet-repair` is renamed to `/services/ipad-repair` with a permanent redirect from the old URL (Next emits 308, SEO-equivalent to the site's other 301s). The def's H1, title, serviceType, eyebrow and copy lead with iPad; the "Android and Windows tablets" section and FAQ survive as the one supporting mention that holds the tablet term. `/tablet-repair-calgary` is retired and 301s to `/ipad-repair-calgary`, which already carried the "ipad repair calgary" keyword; its LocalDef is deleted and the Android-tablet story lives on the service page. Cards, nav, footer, siblings, the model-page service mapping, the repairs parent, the audit page lists and the /services group heading ("iPads") all follow. The audit's must-404 list needed one edit: `/services/ipad-repair` was on it from the Phase 5 brand-hub removal, and it is now a real page.
+
+**Keyword map change, for the record:** `/services/ipad-repair` takes "ipad repair" as primary (was "tablet repair", with ipad repair as supporting); "tablet repair calgary" is forfeited as a primary keyword with the Tier 5 retirement, held only by the supporting "android tablet repair" mention. This is the trade the batch-2 doc priced in.
+
+### The current iPad range, verified then seeded
+
+Twelve models seeded after verifying Apple's current lineup (web-checked, not guessed): iPad 11th gen (A16, 2025), iPad Mini 7 (A17 Pro, 2024), iPad Air 11 and 13 in M2 (2024), M3 (2025) and M4 (2026), and iPad Pro 11 and 13 in M4 (2024) and M5 (2025). All quote-only and `published: false` per the Phase 4 thin-content rule, so they render as "Also repaired" chips on the iPad hub until each gets model-specific content. **Catalogue: 141 to 153 models, 69 published (unchanged), 84 seeded awaiting copy.**
+
+**Verify:** pages, words (the renamed hub carries 1,303 words), similarity, faq, schema, local-facts all pass; links carries only the pre-existing pixel-6 gap; browser is the localhost Lighthouse noise. Redirects tested on the build: both old URLs 308 to their iPad equivalents. Deployed.
+
 ## Session 2026-08-11 — Batch 2, session 1b: About, parking, service area, years out of the listings
 
 **Asked:** the sequenced batch-2 request, session 1b only: About page from the client's verified copy, the parking answer (free, in front of the store, in the plaza) on the pages that need it, one service-area version, and release years out of the phone repair listings as labels while age-bearing prose survives as relative age.

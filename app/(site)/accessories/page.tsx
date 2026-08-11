@@ -285,7 +285,7 @@ export default async function AccessoriesPage() {
               </p>
               <p className="type-body text-tb-muted">
                 The same applies to tablets. An{" "}
-                <Link href="/services/tablet-repair" className="text-tb-green-deep hover:underline">
+                <Link href="/services/ipad-repair" className="text-tb-green-deep hover:underline">
                   iPad screen repair
                 </Link>{" "}
                 is one of the larger jobs the shop quotes, and an iPad in a decent case with glass
@@ -357,7 +357,7 @@ export default async function AccessoriesPage() {
             title="If the damage is already done"
             links={[
               { label: "Cell phone repair", href: "/services/phone-repair" },
-              { label: "Tablet and iPad repair", href: "/services/tablet-repair" },
+              { label: "iPad repair", href: "/services/ipad-repair" },
               { label: "All repair services", href: "/services" },
             ]}
           />

@@ -38,7 +38,7 @@ const PROGRAMMATIC_PAGES = [
  */
 const TIER_2_3_PAGES = [
   "/services/phone-repair",
-  "/services/tablet-repair",
+  "/services/ipad-repair",
   "/services/laptop-repair",
   "/services/computer-repair",
   "/services/phone-unlocking",
@@ -78,9 +78,10 @@ const EXPECTED_404 = [
   "/locations/calgary/ogden",
   // The pre-Phase-5 Tier 2 and Tier 3 URLs. Nothing was ever live at these,
   // so they 404 rather than redirect. CLAUDE.md Section 7.
+  // (/services/ipad-repair left this list 2026-08: the tablet hub was renamed
+  // onto it, so it is now a real page and /services/tablet-repair 301s to it.)
   "/services/iphone-repair",
   "/services/samsung-repair",
-  "/services/ipad-repair",
   "/services/iphone-repair/screen-replacement",
   "/services/computer-repair/tune-up",
   // Unpublished model: seeded but held back for want of written content.

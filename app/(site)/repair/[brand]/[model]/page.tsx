@@ -55,7 +55,7 @@ const BRAND_LOCAL_PATH: Record<string, string> = {
 const DEFAULT_LOCAL_PATH = "/phone-repair-calgary";
 
 const BRAND_SERVICE_PATH: Record<string, string> = {
-  "apple-ipad": "/services/tablet-repair",
+  "apple-ipad": "/services/ipad-repair",
   "laptops-desktops": "/services/laptop-repair",
 };
 const DEFAULT_SERVICE_PATH = "/services/phone-repair";

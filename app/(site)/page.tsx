@@ -109,10 +109,10 @@ const SERVICE_CARDS: {
     illustration: "screen",
   },
   {
-    title: "iPad and tablet repair",
+    title: "iPad repair",
     description:
       "Cracked iPad glass, batteries and charging ports. On older iPads the glass alone can be replaced, which is a much smaller job than a full screen.",
-    href: "/services/tablet-repair",
+    href: "/services/ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
   },

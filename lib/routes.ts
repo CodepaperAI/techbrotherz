@@ -142,10 +142,14 @@ export const ROUTES: RouteDef[] = [
     status: "built",
     parent: "/services",
   },
+  /*
+   * Renamed from /services/tablet-repair on the client's instruction 2026-08:
+   * iPad leads. The old URL 301s here in next.config.ts.
+   */
   {
-    path: "/services/tablet-repair",
-    label: "Tablet and iPad repair",
-    navLabel: "Tablets",
+    path: "/services/ipad-repair",
+    label: "iPad repair",
+    navLabel: "iPads",
     tier: "service-hub",
     status: "built",
     parent: "/services",
@@ -271,7 +275,7 @@ export const ROUTES: RouteDef[] = [
     label: "iPad screen replacement",
     tier: "repair-type",
     status: "built",
-    parent: "/services/tablet-repair",
+    parent: "/services/ipad-repair",
   },
   {
     path: "/repairs/laptop-screen-replacement",
@@ -396,13 +400,11 @@ export const ROUTES: RouteDef[] = [
     status: "built",
     parent: "/locations",
   },
-  {
-    path: "/tablet-repair-calgary",
-    label: "Tablet repair in Calgary",
-    tier: "local",
-    status: "built",
-    parent: "/locations",
-  },
+  /*
+   * /tablet-repair-calgary was retired 2026-08 with the iPad rename; it 301s
+   * to /ipad-repair-calgary in next.config.ts, which already carried the
+   * "ipad repair calgary" keyword.
+   */
   {
     path: "/laptop-repair-calgary",
     label: "Laptop repair in Calgary",

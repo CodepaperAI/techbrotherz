@@ -25,10 +25,10 @@ const ipadCalgary: LocalDef = {
     brandSlugs: ["apple-ipad"],
     repairSlugs: ["glass-digitizer", "screen-replacement", "battery-replacement"],
   },
-  servicePath: "/services/tablet-repair",
+  servicePath: "/services/ipad-repair",
   repairPaths: ["/repairs/ipad-screen-replacement"],
   brandPaths: ["/repair/apple-ipad"],
-  siblings: ["/tablet-repair-calgary", "/phone-repair-calgary"],
+  siblings: ["/phone-repair-calgary", "/laptop-repair-calgary"],
   placePaths: ["/locations/calgary"],
   facts: checkFactUse("/ipad-repair-calgary", [
     {
@@ -124,122 +124,6 @@ const ipadCalgary: LocalDef = {
   globalCategories: ["ipad", "warranty"],
 };
 
-/* =================================================== tablet repair calgary */
-
-const tabletCalgary: LocalDef = {
-  slug: "tablet-repair-calgary",
-  h1: "Tablet Repair in Calgary",
-  eyebrow: "Calgary",
-  seoTitle: "Tablet Repair Calgary | Android and Windows Tablets",
-  seoDescription:
-    "Tablet repair in Calgary at TechBrotherz, 3317 17 Ave SE. Android and Windows tablets quoted at the counter, iPads priced per model, 60-day warranty.",
-  serviceType: "Tablet repair",
-  city: "Calgary",
-  priceSource: {
-    kind: "catalogue",
-    brandSlugs: ["apple-ipad"],
-    repairSlugs: ["glass-digitizer", "screen-replacement"],
-  },
-  servicePath: "/services/tablet-repair",
-  repairPaths: ["/repairs/ipad-screen-replacement"],
-  brandPaths: ["/repair/apple-ipad"],
-  siblings: ["/ipad-repair-calgary", "/laptop-repair-calgary"],
-  placePaths: ["/locations/calgary"],
-  facts: checkFactUse("/tablet-repair-calgary", [
-    {
-      fact: "transitway",
-      treatment: "mention",
-      sentence:
-        "Carrying a tablet on transit is easy enough, and 33 Street SE Station is on the transitway immediately outside.",
-    },
-  ]),
-  lead: () =>
-    `${ENTITY}, repairs Android and Windows tablets alongside iPads. Android tablet work is quoted at the counter rather than published in advance, because parts vary enormously between manufacturers and there is no small set of models that covers the market.`,
-  answer: (c) =>
-    `TechBrotherz repairs Android and Windows tablets in Calgary alongside iPads, at 3317 17 Ave SE. Android tablet repairs are quoted at the counter once the model number is known, because parts vary widely by manufacturer. Every tablet repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
-  keyFacts: (c) => [
-    { label: "Android and Windows tablets", value: "Quoted at the counter" },
-    { label: "Tablets", value: "iPad and Android tablets" },
-    { label: "Bring", value: "The tablet and its model number" },
-    { label: "Time", value: "Usually same day once the part is in" },
-    { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
-  ],
-  sections: () => [
-    {
-      heading: "Why are Android tablet repairs quoted rather than published?",
-      paragraphs: [
-        "Because a published price list would mislead more often than it helped. Android tablet parts vary enormously between manufacturers and model years, and unlike iPads there is no small set of models that covers most of the market. Samsung, Lenovo, Amazon and a dozen others all build differently.",
-        "So TechBrotherz identifies the exact part first, tells you what it costs and how long it takes, and you decide from there. That is slower than reading a number off a page, and it is the only way to give a figure we can stand behind. Inventing a range to look decisive would be worse.",
-        "If the part is not available at a sensible price, we say so rather than taking the job. On some budget tablets the replacement screen costs more than the tablet is worth, and you are better off knowing that in two minutes at the counter than after a week of waiting.",
-      ],
-    },
-    {
-      heading: "What should you bring for a tablet repair in Calgary?",
-      paragraphs: [
-        "The tablet and its model number. On most Android tablets the number is printed on the back or listed in the settings under About, and it is what identifies the exact panel or battery the device takes. Without it, any quote is a guess dressed up as a price.",
-        "The charger is worth bringing for a tablet that will not power on, in the same way it is for a laptop. A failed charger produces symptoms identical to a dead device, and ruling it out takes two minutes with the charger on the counter rather than a paid diagnostic.",
-        "Back the tablet up first. Screen, glass, battery and port work does not touch the storage, and your apps and files stay where they are, but a current backup is what protects you if something unexpected appears once the device is open.",
-      ],
-    },
-    {
-      heading: "What tablet repairs does TechBrotherz carry out?",
-      paragraphs: [
-        "The same four that dominate every tablet: cracked glass, failed display panels, batteries that no longer hold a charge, and charging ports worn out by years of cable insertion. Those account for nearly every tablet that comes through the door regardless of who made it.",
-        "The work is also the same shape regardless of brand. Tablet glass is sealed to the frame with adhesive around the whole perimeter, which has to be warmed, cut through and cleaned off before a new panel can bond, and the thin frame bends if it is handled unevenly.",
-        "That is why tablet repairs are same-day drop-offs rather than counter work. We give a realistic time when the tablet is dropped off, and if the part has to be ordered in we say so before you leave it rather than calling with the news afterwards.",
-      ],
-    },
-    {
-      heading: "Is a cheap tablet worth repairing?",
-      paragraphs: [
-        "Sometimes not, and we will tell you when that is the case. On budget Android tablets the replacement display can cost a large share of what the tablet sells for new, and at that point a repair is money spent on a device that was inexpensive by design.",
-        "The calculation changes on mid-range and premium tablets, and on any tablet doing a specific job well. A Galaxy Tab used daily for work, or a tablet mounted permanently in a kitchen, is worth fixing on the same arithmetic as a phone: repair beats replacement when the cost sits well below the used value.",
-        "Bring it in and we will give you the figure and the honest read together. A quote that ends with a recommendation not to spend the money is a legitimate outcome, and it costs nothing to get one.",
-      ],
-    },
-    {
-      heading: "How long does it take to get a tablet part in?",
-      paragraphs: [
-        "For common iPad glass and the Galaxy Tab panels we see most often, parts are generally on the shelf and the repair is a same-day drop-off. For anything less common the part is ordered in, and that usually means a day or two rather than a week.",
-        "We check availability and tell you before you leave the tablet, not after. That is the single most useful thing to know when deciding whether to leave a device, and finding out by phone call two days later is the outcome we are trying to avoid.",
-        "If a part turns out to be unavailable at a sensible price, we say so and you take the tablet home having paid nothing. On some budget models that is the honest outcome, and it is better delivered in two minutes at the counter than after a week of waiting.",
-      ],
-    },
-  ],
-  localMix: [
-    {
-      title: "Samsung Galaxy Tab screens",
-      body: "The most common non-Apple tablet we see in Calgary, and one where the part is usually available at a sensible price.",
-    },
-    {
-      title: "Budget tablets not worth fixing",
-      body: "On some inexpensive models the panel costs more than the tablet. We say so at the counter rather than taking the job.",
-    },
-    {
-      title: "Charging ports on older tablets",
-      body: "Years of cable insertion wears the socket. Often the only fault on a device that is otherwise fine.",
-    },
-  ],
-  faqs: () => [
-    {
-      question: "Does TechBrotherz repair Android tablets in Calgary?",
-      answer:
-        "Yes. TechBrotherz at 3317 17 Ave SE repairs Android and Windows tablets alongside iPads. Android tablet repairs are quoted at the counter once the model number is known, because parts vary widely between manufacturers and model years and no published list would be accurate across them.",
-    },
-    {
-      question: "Why will TechBrotherz not publish Android tablet prices?",
-      answer:
-        "Because a published list would mislead more often than it helped. Unlike iPads, Android tablets have no small set of models covering most of the market, and part costs vary enormously by manufacturer. TechBrotherz identifies the exact part first, then gives a figure it can stand behind.",
-    },
-    {
-      question: "Is it worth repairing a cheap tablet?",
-      answer:
-        "Sometimes not. On budget Android tablets the replacement display can cost a large share of the tablet's new price, and TechBrotherz will say so at the counter rather than take the job. On mid-range and premium tablets, repair beats replacement on the same arithmetic as a phone.",
-    },
-  ],
-  globalCategories: ["walkin", "pricing"],
-};
-
 /* =================================================== laptop repair calgary */
 
 const laptopCalgary: LocalDef = {
@@ -268,7 +152,7 @@ const laptopCalgary: LocalDef = {
     "/repairs/laptop-charging-port-repair",
   ],
   brandPaths: ["/repair/laptops-desktops"],
-  siblings: ["/computer-repair-calgary", "/tablet-repair-calgary"],
+  siblings: ["/computer-repair-calgary", "/ipad-repair-calgary"],
   placePaths: ["/locations/calgary"],
   facts: checkFactUse("/laptop-repair-calgary", [
     {
@@ -491,9 +375,9 @@ const computerCalgary: LocalDef = {
   globalCategories: ["walkin", "pricing"],
 };
 
-export const LOCAL_DEVICES: LocalDef[] = [
-  ipadCalgary,
-  tabletCalgary,
-  laptopCalgary,
-  computerCalgary,
-];
+/*
+ * tabletCalgary was retired 2026-08 with the iPad rename; /tablet-repair-calgary
+ * 301s to /ipad-repair-calgary. The Android-tablets story lives on
+ * /services/ipad-repair as the supporting section.
+ */
+export const LOCAL_DEVICES: LocalDef[] = [ipadCalgary, laptopCalgary, computerCalgary];

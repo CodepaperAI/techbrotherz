@@ -101,7 +101,7 @@ const phoneRepair: ServiceDef = {
   flatSlugs: [],
   deviceTypes: ["phone"],
   localPath: "/phone-repair-calgary",
-  siblings: ["/services/tablet-repair", "/services/phone-unlocking"],
+  siblings: ["/services/ipad-repair", "/services/phone-unlocking"],
   lead: (c) =>
     `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
@@ -228,24 +228,30 @@ const phoneRepair: ServiceDef = {
 
 /* ----------------------------------------------------------- tablet repair */
 
-const tabletRepair: ServiceDef = {
-  slug: "tablet-repair",
-  h1: "iPad and Tablet Repair in Calgary",
-  eyebrow: "Tablet repair",
-  seoTitle: "iPad and Tablet Repair Calgary | TechBrotherz",
+/*
+ * Renamed from tablet-repair on the client's instruction 2026-08: iPad leads
+ * everywhere. The old /services/tablet-repair URL 301s here in next.config.ts.
+ * "Android and Windows tablets" survives as one supporting section and FAQ,
+ * which holds the tablet term without diluting the iPad emphasis.
+ */
+const ipadRepair: ServiceDef = {
+  slug: "ipad-repair",
+  h1: "iPad Repair in Calgary",
+  eyebrow: "iPad repair",
+  seoTitle: "iPad Repair Calgary | Glass, Screens and Batteries",
   seoDescription:
-    "iPad and tablet repair at TechBrotherz in Calgary. Cracked glass, screens, batteries and charging ports, parts and labour included, 60-day warranty, walk in.",
-  serviceType: "Tablet repair",
+    "iPad repair at TechBrotherz in Calgary. Cracked glass, screens, batteries and charging ports, parts and labour included, 60-day warranty, walk in.",
+  serviceType: "iPad repair",
   repairSlugs: ["ipad-screen-replacement"],
   brandSlugs: ["apple-ipad"],
   flatSlugs: [],
   deviceTypes: ["tablet"],
-  localPath: "/tablet-repair-calgary",
+  localPath: "/ipad-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs iPads and Android tablets, replacing cracked glass, failed display panels, worn batteries and charging ports.`,
+    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same counter.`,
   answer: (c) =>
-    `TechBrotherz in Calgary repairs iPads and tablets. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. Tablet repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz in Calgary repairs iPads of every generation. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. iPad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
     { label: "Two kinds of screen", value: "Separated glass on older iPads, laminated on recent Air and Pro" },
     { label: "Typical time", value: "Longer than a phone, usually the same day" },
@@ -314,9 +320,9 @@ const tabletRepair: ServiceDef = {
       ],
     },
     {
-      heading: "What is included in a tablet repair price?",
+      heading: "What is included in an iPad repair price?",
       paragraphs: [
-        `Every tablet repair price at TechBrotherz includes the replacement part, the labour to fit it, fresh adhesive to seal the device back up, testing before it is handed over, and a ${c.warrantyDays}-day warranty on the part and the workmanship. There is no separate bench fee and no diagnostic charge on a repair we go on to carry out.`,
+        `Every iPad repair quote at TechBrotherz includes the replacement part, the labour to fit it, fresh adhesive to seal the device back up, testing before it is handed over, and a ${c.warrantyDays}-day warranty on the part and the workmanship. There is no separate bench fee and no diagnostic charge on a repair we go on to carry out.`,
         "The warranty covers a part that fails and work that was not done properly. It does not cover a new crack, because a tablet that has been dropped again is a new repair rather than a failure of the last one. If something is not right after a repair, bring it back with the receipt.",
         "We do not touch the storage in your tablet during a glass, screen, battery or port replacement, and your apps and files stay exactly where they are. Back the tablet up anyway before any repair, because that is what protects you if something unexpected turns up once the device is open.",
       ],
@@ -1276,7 +1282,7 @@ const gameConsoleRepair: ServiceDef = {
 
 export const SERVICES: ServiceDef[] = [
   phoneRepair,
-  tabletRepair,
+  ipadRepair,
   laptopRepair,
   computerRepair,
   gameConsoleRepair,

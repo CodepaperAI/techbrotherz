@@ -1230,7 +1230,7 @@ const ipadScreen: RepairDef = {
   seoDescription:
     "iPad glass and screen replacement prices by model at TechBrotherz in Calgary. Part and labour included, 60-day warranty, walk in, no appointment needed.",
   serviceType: "iPad screen replacement",
-  parentService: "/services/tablet-repair",
+  parentService: "/services/ipad-repair",
   source: {
     kind: "catalogue",
     brandSlug: "apple-ipad",

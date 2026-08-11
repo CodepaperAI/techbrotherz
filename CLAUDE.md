@@ -197,7 +197,7 @@ techbrotherz/
 | File                              | Holds                                                            | Rows |
 | --------------------------------- | ---------------------------------------------------------------- | ---- |
 | `content/data/site-settings.ts`   | The business facts. NAP, hours, warranty, wait time, disclaimer  | 1    |
-| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 141  |
+| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 153  |
 | `content/data/faqs.ts`            | The question bank                                                | 20   |
 | `content/data/flat-services.ts`   | Fixed-price computer services                                    | 10   |
 | `content/data/unlocking.ts`       | Carrier unlocking                                                | 1    |
@@ -284,7 +284,7 @@ Nothing was ever live at the old Tier 2 and Tier 3 URLs, so **no redirects are n
 
 Device categories and non-device services only. No brand-specific hubs.
 
-`/services/phone-repair` · `/services/tablet-repair` · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal` · `/services/game-console-repair`
+`/services/phone-repair` · `/services/ipad-repair` (renamed from `/services/tablet-repair` 2026-08 on the client's instruction; the old URL 301s) · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal` · `/services/game-console-repair`
 
 `/services/game-console-repair` (added 2026-08) is the one hub with no price table, no covered-repairs grid and no brand links, because consoles have no models in `content/data/models.ts` and no confirmed repair list. It is diagnose-first by design until the client says which console repairs they actually carry out.
 
@@ -300,13 +300,15 @@ Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.
 
 ### Tier 4 — Programmatic (from `content/data/models.ts`), built
 
-5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 72 further models are seeded but unpublished, held back until someone writes them content of their own. Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
+5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 84 further models are seeded but unpublished, held back until someone writes them content of their own (the 12 seeded 2026-08 are the current iPad range: iPad 11th gen, Mini 7, Air M2/M3/M4 in both sizes, Pro M4 and M5 in both sizes, lineup verified before seeding). Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
 
 ### Tier 5 — Service and place, `/[locality]`, built
 
 Ten pages, differentiating on **service**, which is the axis the Phase 5 repair tier proved works.
 
-`/phone-repair-calgary` · `/iphone-screen-repair-calgary` · `/samsung-repair-calgary` · `/ipad-repair-calgary` · `/tablet-repair-calgary` · `/laptop-repair-calgary` · `/computer-repair-calgary` · `/phone-unlocking-calgary` · `/walk-in-phone-repair-calgary` · `/cell-phone-repair-chestermere`
+`/phone-repair-calgary` · `/iphone-screen-repair-calgary` · `/samsung-repair-calgary` · `/ipad-repair-calgary` · `/laptop-repair-calgary` · `/computer-repair-calgary` · `/phone-unlocking-calgary` · `/walk-in-phone-repair-calgary` · `/cell-phone-repair-chestermere`
+
+Nine pages since 2026-08: `/tablet-repair-calgary` was retired with the iPad rename and 301s to `/ipad-repair-calgary`, forfeiting "tablet repair calgary" as a primary keyword on the client's instruction.
 
 Cut in Phase 6: `/same-day-phone-repair-calgary` merged into the walk-in page (they differed by modifier, not service), `/laptop-repair-chestermere` (a second page leaning on the same single road fact), and both Airdrie pages (see below).
 
@@ -424,7 +426,7 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/repair-prices`                                   | phone repair prices calgary              | cell phone repair cost calgary                |
 | `/warranty`                                        | phone repair warranty                    | 60 day repair warranty                        |
 | `/services/phone-repair`                           | cell phone repair                        | phone repair service, mobile phone repair     |
-| `/services/tablet-repair`                          | tablet repair                            | ipad repair, android tablet repair            |
+| `/services/ipad-repair`                            | ipad repair                              | ipad screen repair, android tablet repair     |
 | `/services/laptop-repair`                          | laptop repair                            | notebook repair                               |
 | `/services/computer-repair`                        | computer repair                          | desktop pc repair                             |
 | `/services/phone-unlocking`                        | how to unlock a cell phone               | unlock phone canada, frp removal calgary      |
@@ -454,7 +456,6 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/iphone-screen-repair-calgary`                    | iphone screen repair calgary             | cracked iphone screen calgary                 |
 | `/samsung-repair-calgary`                          | samsung repair calgary                   | samsung screen repair calgary                 |
 | `/ipad-repair-calgary`                             | ipad repair calgary                      | ipad screen repair calgary                    |
-| `/tablet-repair-calgary`                           | tablet repair calgary                    | android tablet repair calgary                 |
 | `/laptop-repair-calgary`                           | laptop repair calgary                    | laptop screen repair calgary                  |
 | `/computer-repair-calgary`                         | computer repair calgary                  | pc repair calgary                             |
 | `/phone-unlocking-calgary`                         | phone unlocking calgary                  | unlock phone calgary                          |
