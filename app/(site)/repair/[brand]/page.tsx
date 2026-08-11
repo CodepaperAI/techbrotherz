@@ -9,7 +9,6 @@ import { TrademarkNotice } from "@/components/blocks/TrademarkNotice";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { RichText } from "@/components/blocks/RichText";
 import { Card } from "@/components/primitives/Card";
-import { Chip } from "@/components/primitives/Chip";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
@@ -82,6 +81,22 @@ export default async function BrandHubPage({ params }: PageProps) {
 
   const models = brand.models ?? [];
   const awaiting = brand.awaitingPrices ?? [];
+
+  /* Published pages and quote-only seeds in one grid, newest first. */
+  const gridModels = [
+    ...models.map((model) => ({
+      name: model.name,
+      year: model.releaseYear ?? 0,
+      href: `/repair/${brandSlug}/${model.slug}`,
+      caption: `${model.repairCount} repair${model.repairCount === 1 ? "" : "s"} listed`,
+    })),
+    ...awaiting.map((model) => ({
+      name: model.name,
+      year: model.releaseYear ?? 0,
+      href: null as string | null,
+      caption: "Quoted at the counter",
+    })),
+  ].sort((a, b) => b.year - a.year || (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
 
   /** Repair types that apply to the kinds of device in this brand. */
   const deviceTypes = new Set<string>(models.map((model) => model.deviceType ?? "phone"));
@@ -216,30 +231,30 @@ export default async function BrandHubPage({ params }: PageProps) {
           level={2}
           id="models-heading"
           eyebrow="Models"
-          lead="Newest first. Every model links to its own page with its full repair list, the common faults and an honest answer on whether it is still worth repairing."
+          lead="Newest first. Models with their own page link through to the full repair list, the common faults and an honest verdict; the newest arrivals are quoted at the counter while their pages are written."
         >
           Which {brand.name} models do we repair?
         </Heading>
 
-        {/* One flat grid, newest first. The release-year band headings went on
-            the client's instruction 2026-08: no year labels in the listings. */}
+        {/* One flat grid, newest first, published pages and quote-only models
+            together. The seeded current range sits at the top of this grid
+            rather than in a chip list at the bottom, because "which models do
+            you repair" is exactly the question the newest handsets answer.
+            Client instruction 2026-08. */}
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {models.map((model) => {
-            const href = `/repair/${brandSlug}/${model.slug}`;
+          {gridModels.map((model) => {
             const body = (
               <>
                 <span className="text-tb-text block font-medium">{model.name}</span>
-                <span className="type-caption text-tb-muted mt-1 block">
-                  {model.repairCount} repair{model.repairCount === 1 ? "" : "s"} listed
-                </span>
+                <span className="type-caption text-tb-muted mt-1 block">{model.caption}</span>
               </>
             );
 
             return (
-              <li key={model._id}>
-                {shouldRenderLink(href) ? (
+              <li key={model.name}>
+                {model.href && shouldRenderLink(model.href) ? (
                   <Link
-                    href={href}
+                    href={model.href}
                     className="border-tb-border bg-tb-white hover:border-tb-ink rounded-card block h-full border p-5 transition-colors duration-[180ms] ease-out"
                   >
                     {body}
@@ -253,6 +268,12 @@ export default async function BrandHubPage({ params }: PageProps) {
             );
           })}
         </ul>
+
+        <p className="type-body measure text-tb-muted mt-8">
+          A model without its own page yet is still repaired at the same counter: call {SITE.phone}{" "}
+          and it is quoted while you are on the phone, with the {warrantyDays}-day warranty and the
+          parts-and-labour pricing the same as every other repair we do.
+        </p>
       </Section>
 
       {/* The price-summary table that sat here was removed 2026-08. After the
@@ -337,37 +358,9 @@ export default async function BrandHubPage({ params }: PageProps) {
         </ol>
       </Section>
 
-      {/* --------------------------------------------- awaiting prices */}
-      {awaiting.length > 0 ? (
-        <Section aria-labelledby="awaiting-heading">
-          <Heading
-            level={2}
-            id="awaiting-heading"
-            eyebrow="Also repaired"
-            lead="We repair these models too. They do not have their own pages yet because we have not written them up properly, and we would rather say that than put up a page with nothing on it."
-          >
-            What about the {brand.name} models not listed above?
-          </Heading>
-
-          <div className="mt-8 flex flex-wrap gap-2">
-            {awaiting.map((model) => (
-              <Chip key={model.name} variant="soft">
-                {model.name}
-              </Chip>
-            ))}
-          </div>
-
-          <p className="type-body measure text-tb-muted mt-8">
-            Call {SITE.phone} with any of these and we will quote it while you are on the phone. The{" "}
-            {warrantyDays}-day warranty and the parts-and-labour pricing are the same as every other
-            repair we do.
-          </p>
-
-          <PillButton href={TEL_HREF} className="mt-8" withArrow={false}>
-            Call {SITE.phone} for a quote
-          </PillButton>
-        </Section>
-      ) : null}
+      {/* The "also repaired" chip section that sat here merged into the model
+          grid above 2026-08: the quote-only models now sit in the grid itself,
+          newest first, where a visitor actually looks for them. */}
 
       {/* ---------------------------------------------------------- faqs */}
       <ScopedFaqs

@@ -2,6 +2,17 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-11 (fourth) — The new models made visible where people look
+
+**Asked:** the client's screenshots showed the hub grid still topping out at iPhone 16 and the home brand cards still reading "iPhone 4 to iPhone 16" and "Galaxy Note 2 to Galaxy S24". The seeded models existed but only as chips at the bottom of the hub, and the card statistics counted published pages only.
+
+**Done:** two visibility changes, with the thin-content rule untouched, no new pages published.
+
+1. **The hub model grid now carries the whole catalogue, newest first.** Published models render as linked cards with their repair counts; quote-only seeds render as unlinked cards captioned "Quoted at the counter". The iPhone 17 family, the S26 range and the Pixel 10 family now open their grids instead of hiding in a chip list, and the redundant "Also repaired" section is gone, its call-to-quote copy folded under the grid.
+2. **`getBrands` statistics cover the whole catalogue rather than published pages only**, so the home and hub cards read "iPhone 4 to iPhone 17e", "Galaxy Note 2 to Galaxy S26", "iPad 2 to iPad Air 11 (M4)", with counts to match. The shop repairs a seeded quote-only model just as it repairs a published one, so the old range was simply out of date as a claim. Model pages themselves stay gated on `published`, as before.
+
+Pages, links (pixel-6 only) and similarity audits pass. Deployed.
+
 ## Session 2026-08-11 (third) — The current iPhone, Galaxy and Pixel ranges seeded
 
 **Asked:** the previous seeding covered only iPads; the client wants the latest Apple, Samsung and Google handsets too.

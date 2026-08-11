@@ -70,10 +70,16 @@ export interface BrandWithStats extends BrandDef {
  * label is a statement about years. Ties break on name ascending, which is what
  * `order(releaseYear desc, name asc)[0]` did and what the Phase 6.9 version
  * dropped, turning "to Moto G (3rd gen)" into "to Moto X Play".
+ *
+ * Counts and ranges cover the whole catalogue, published or not (changed
+ * 2026-08 when the current ranges were seeded): the shop repairs a seeded
+ * quote-only model just as it repairs a published one, and a card claiming
+ * "iPhone 4 to iPhone 16" the week the 17 range is taken at the counter is
+ * simply out of date. Model PAGES stay gated on published, as before.
  */
 export async function getBrands(): Promise<BrandWithStats[]> {
   return activeBrands().map((brand) => {
-    const mine = LIVE_MODELS.filter((doc) => doc.brandSlug === brand.slug);
+    const mine = MODEL_DOCS.filter((doc) => doc.brandSlug === brand.slug);
     const dated = mine
       .filter((doc) => typeof doc.releaseYear === "number")
       .sort(byYearThenName);
