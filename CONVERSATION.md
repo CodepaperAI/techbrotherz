@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-11 (third) — The current iPhone, Galaxy and Pixel ranges seeded
+
+**Asked:** the previous seeding covered only iPads; the client wants the latest Apple, Samsung and Google handsets too.
+
+**Done:** 23 models seeded after verifying all three lineups (web-checked, not guessed): iPhone 16e, iPhone 17, iPhone Air (the official name; "iphone 17 air" kept as an alias), iPhone 17 Pro, 17 Pro Max and 17e; Galaxy S25 Edge, Z Fold 7, Z Flip 7 and Z Flip 7 FE, the S26, S26 Plus and S26 Ultra, and the Z Fold 8, Z Fold 8 Ultra and Z Flip 8; Pixel 9 Pro XL, 9 Pro Fold, 9a, and the Pixel 10, 10 Pro, 10 Pro XL and 10 Pro Fold. **Pixel 11 and Pixel 10a are deliberately not seeded**: the Pixel 11 event is announced but the phones are unreleased, and the 10a could not be confirmed shipped, and an unverified model name is exactly the error the brief forbids. All 23 are quote-only and unpublished per the thin-content rule, rendering as "Also repaired" chips on their brand hubs. **Catalogue: 153 to 176 models, 69 published, 107 seeded awaiting copy.** The A-series gap (nothing newer than the A54) was noticed and left: the client asked for latest flagships, and the volume mid-rangers are a cheap follow-up when asked. Pages, FAQ scoping and link audits pass; pixel-6 remains the one known link gap. Deployed.
+
 ## Session 2026-08-11 (later) — The iPad rename, and the current iPad range seeded
 
 **Asked:** "add iPad, all the models of it, remove tablet, and deploy" — the go-ahead for the recommended rename from the batch-2 doc.

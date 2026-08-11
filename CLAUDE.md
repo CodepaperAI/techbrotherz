@@ -197,7 +197,7 @@ techbrotherz/
 | File                              | Holds                                                            | Rows |
 | --------------------------------- | ---------------------------------------------------------------- | ---- |
 | `content/data/site-settings.ts`   | The business facts. NAP, hours, warranty, wait time, disclaimer  | 1    |
-| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 153  |
+| `content/data/models.ts`          | Every device model, with its offered repairs and prices inline   | 176  |
 | `content/data/faqs.ts`            | The question bank                                                | 20   |
 | `content/data/flat-services.ts`   | Fixed-price computer services                                    | 10   |
 | `content/data/unlocking.ts`       | Carrier unlocking                                                | 1    |
@@ -300,7 +300,7 @@ Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.
 
 ### Tier 4 — Programmatic (from `content/data/models.ts`), built
 
-5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 84 further models are seeded but unpublished, held back until someone writes them content of their own (the 12 seeded 2026-08 are the current iPad range: iPad 11th gen, Mini 7, Air M2/M3/M4 in both sizes, Pro M4 and M5 in both sizes, lineup verified before seeding). Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
+5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 107 further models are seeded but unpublished, held back until someone writes them content of their own. The 35 seeded 2026-08 are the verified current ranges: the iPad 11th gen, Mini 7, Air M2/M3/M4 and Pro M4/M5; the iPhone 16e, 17, Air, 17 Pro, 17 Pro Max and 17e; the Galaxy S25 Edge, S26, S26 Plus, S26 Ultra, Z Fold 7 and 8, Z Fold 8 Ultra, Z Flip 7, 7 FE and 8; and the Pixel 9 Pro XL, 9 Pro Fold, 9a and the Pixel 10 family. Pixel 11 and Pixel 10a are deliberately not seeded: neither was released and confirmed at the time. Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
 
 ### Tier 5 — Service and place, `/[locality]`, built
 
