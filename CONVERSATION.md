@@ -2,6 +2,20 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 — The skyline hero ships, and three logo directions to choose from
+
+**Asked:** the agency brief said source a licensed skyline and skip the client's file; the client's direct instruction, relayed after it, said use their file with no further verification. The direct instruction wins and is recorded here rather than silently followed.
+
+**Done:**
+
+### The skyline hero, with the client's image
+
+Full-bleed skyline behind the hero text, replacing the split panel; the screwdriver photograph is out. The client-supplied 1600x900 composite is served at native size (never upscaled), encoded at quality 72 to 225 KB, with a blur placeholder, priority loading and the file recorded in the image manifest. The IMAGE_EDITS note keeps both reservations on record: the resolution is below the earlier 2000px floor, and the ownership is unconfirmed (question 26 stands). The scrim does the contrast work: 60% black across the image plus a near-solid left gradient under the text, so the skyline reads as atmosphere and the scrim is also what makes the softness invisible. Below 640px the photograph is dropped and the solid black panel returns, since a wide skyline crops badly to portrait. Contrast, placeholder, pages and link audits all pass; CLS stays 0.000 by construction (absolutely positioned background, fixed layout).
+
+### Three logo directions, compared on /styleguide
+
+Because two reductions of the cartoon character have shown that characters do not survive 40px, three directions are built side by side with the current mark as a fourth column, at 32, 40, 64 and 128px in both colourways, with compact and full lockups: A, wordmark-led with a TB monogram drawn as strokes in a green square; B, a phone outline crossed by a green screwdriver, two shapes and one accent; C, the capital Z as the mark, the one distinctive element of the existing brand. All share the Archivo wordmark with the capital Z, green "Tech" (green-deep on light per the contrast rule). Nothing is wired into the header; the current mark stays until a direction is chosen.
+
 ## Session 2026-08-13 (fifth) — The client's mark as vector, the GBP service areas, full device coverage
 
 **Asked:** the sequenced logo/hero/areas/content brief.

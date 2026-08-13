@@ -6,7 +6,9 @@ import { Breadcrumbs } from "@/components/blocks/Breadcrumbs";
 import { FaqAccordion } from "@/components/blocks/FaqAccordion";
 import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
-import { Logo } from "@/components/layout/Logo";
+import { Logo, Mark } from "@/components/layout/Logo";
+import { ConceptMark, LogoConcept } from "@/components/blocks/LogoConcepts";
+import { cn } from "@/lib/utils";
 import { ModelGrid } from "@/components/blocks/ModelGrid";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { SplitBlock } from "@/components/blocks/SplitBlock";
@@ -201,6 +203,91 @@ export default function StyleguidePage() {
             <Logo variant="icon" onDark />
           </div>
         </div>
+      </Section>
+
+      {/* ------------------------------------------------ logo directions */}
+      <Section variant="tint" aria-labelledby="logo-directions">
+        <Heading
+          level={2}
+          id="logo-directions"
+          eyebrow="Brand"
+          lead="Three candidate directions beside the current mark, at every size that matters, in both colourways. Nothing is wired into the header until one is chosen. components/blocks/LogoConcepts.tsx."
+        >
+          Logo directions, compared
+        </Heading>
+
+        {(["light", "dark"] as const).map((surface) => {
+          const onDark = surface === "dark";
+          return (
+            <div
+              key={surface}
+              {...(onDark ? { "data-surface": "dark" } : {})}
+              className={
+                onDark
+                  ? "bg-tb-ink rounded-card mt-8 p-8"
+                  : "border-tb-border bg-tb-white rounded-card mt-8 border p-8"
+              }
+            >
+              <p className={onDark ? "type-eyebrow text-tb-silver" : "type-eyebrow text-tb-muted"}>
+                On {surface}
+              </p>
+              <div className="mt-6 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+                {[
+                  { key: "current", label: "Current mark" },
+                  { key: "a", label: "A · Wordmark and TB monogram" },
+                  { key: "b", label: "B · Phone and screwdriver" },
+                  { key: "c", label: "C · The Z mark" },
+                ].map((column) => (
+                  <div key={column.key}>
+                    <h3
+                      className={cn(
+                        "type-h3",
+                        onDark ? "text-tb-white" : "text-tb-text",
+                      )}
+                    >
+                      {column.label}
+                    </h3>
+                    <div className="mt-4 flex items-end gap-4">
+                      {[32, 40, 64, 128].map((px) =>
+                        column.key === "current" ? (
+                          <Mark key={px} size={px} />
+                        ) : (
+                          <ConceptMark
+                            key={px}
+                            direction={column.key as "a" | "b" | "c"}
+                            size={px}
+                            onDark={onDark}
+                          />
+                        ),
+                      )}
+                    </div>
+                    <div className="mt-6 space-y-4">
+                      {column.key === "current" ? (
+                        <>
+                          <Logo variant="compact" onDark={onDark} />
+                          <Logo variant="full" onDark={onDark} />
+                        </>
+                      ) : (
+                        <>
+                          <LogoConcept
+                            direction={column.key as "a" | "b" | "c"}
+                            variant="compact"
+                            onDark={onDark}
+                          />
+                          <LogoConcept
+                            direction={column.key as "a" | "b" | "c"}
+                            variant="full"
+                            onDark={onDark}
+                          />
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </Section>
 
       {/* -------------------------------------------------------- colour */}

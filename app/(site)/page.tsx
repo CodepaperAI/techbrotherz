@@ -251,15 +251,16 @@ export default async function HomePage() {
   ];
 
   /*
-   * The demo hero, when the demo set is present. Deleting public/demo/ falls
-   * back to the placeholder rather than breaking the layout. lib/content/images.ts
+   * The skyline hero background, used on the client's explicit instruction
+   * (see the IMAGE_EDITS note on this slot). When the file is absent the hero
+   * degrades to the solid black panel, so the demo set stays non-load-bearing.
    */
-  const hero = demoImage("home-hero");
-  const heroOnDisk =
-    hero && existsSync(path.join(process.cwd(), "public", hero.file.replace(/^\//, "")));
-  const heroImage = heroOnDisk
-    ? { src: hero.file, alt: hero.alt, blurDataURL: blurFor("home-hero") }
-    : { src: "/placeholder-photo.svg", alt: "", unoptimized: true };
+  const skyline = demoImage("home-hero-skyline");
+  const skylineOnDisk =
+    skyline && existsSync(path.join(process.cwd(), "public", skyline.file.replace(/^\//, "")));
+  const heroBackground = skylineOnDisk
+    ? { src: skyline.file, blurDataURL: blurFor("home-hero-skyline") }
+    : undefined;
 
   const schema = [
     organization(settings ?? {}),
@@ -302,7 +303,7 @@ export default async function HomePage() {
           </PillButton>
         </>
       }
-      heroImage={heroImage}
+      heroBackground={heroBackground}
       heroOverlap={
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {[

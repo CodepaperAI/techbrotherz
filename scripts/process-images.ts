@@ -31,7 +31,7 @@ export interface SlotSpec {
    * client provided directly.
    */
   source: string;
-  ratio: "4:3" | "3:2";
+  ratio: "4:3" | "3:2" | "16:9";
   /** Crop focus, since the interesting part is rarely the centre. */
   position: "centre" | "top" | "bottom" | "attention";
   /** Slight cooling where the original is warmer than the rest of the set. */
@@ -133,6 +133,18 @@ export const SLOTS: SlotSpec[] = [
     ratio: "3:2",
     position: "centre",
   },
+  /*
+   * The hero skyline, client-supplied and used on explicit instruction with
+   * provenance unconfirmed (question 26). 1600x900 native, never upscaled.
+   */
+  {
+    slot: "home-hero-skyline",
+    source: "supplied-calgary-skyline",
+    ratio: "16:9",
+    position: "centre",
+    quality: 72,
+    maxWidth: 1600,
+  },
 ];
 
 /*
@@ -148,6 +160,7 @@ export const SLOTS: SlotSpec[] = [
 const RATIOS: Record<SlotSpec["ratio"], { w: number; h: number }> = {
   "4:3": { w: 1200, h: 900 },
   "3:2": { w: 1200, h: 800 },
+  "16:9": { w: 1600, h: 900 },
 };
 
 async function main() {

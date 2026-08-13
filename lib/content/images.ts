@@ -20,7 +20,7 @@
 
 import blurData from "@/lib/content/image-blur.json";
 
-export type ImageRatio = "4:3" | "3:2";
+export type ImageRatio = "4:3" | "3:2" | "16:9";
 
 export interface DemoImage {
   slot: string;
@@ -46,6 +46,8 @@ export interface DemoImage {
 const RATIO_SIZE: Record<ImageRatio, { width: number; height: number }> = {
   "4:3": { width: 1200, height: 900 },
   "3:2": { width: 1200, height: 800 },
+  /* The hero background. 1600 is the supplied original's native width. */
+  "16:9": { width: 1600, height: 900 },
 };
 
 /** Slots processed at a narrower cap than the ratio default. The phone-repair
@@ -163,6 +165,11 @@ export const IMAGES: Record<string, DemoImage> = {
     "3:2",
     "A hand holding a game controller in front of a television showing a driving game",
   ),
+  "home-hero-skyline": supplied(
+    "home-hero-skyline",
+    "16:9",
+    "An aerial view of downtown Calgary at dusk, with the Bow River curving around the city centre",
+  ),
   "service-laptop-repair": image(
     "service-laptop-repair",
     "3:2",
@@ -211,6 +218,8 @@ export const IMAGE_EDITS: Record<string, string> = {
     "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame the old service-tablet-repair used, which put two crops of one photograph in the same grid on the home page.",
   "service-password-reset":
     "Replaced a second time on the client's instruction in 2026-08 with a supplied graphic of Google's FRP verification screens and an unlocked-padlock motif. Two positions recorded so the decision is auditable. First, the Google logo inside the padlock is a manufacturer mark used as a design element, which is the case Section 8.9 recommends against; the choice is the client's, as that section provides. Second, the image depicts Android FRP verification while this slot fronts the Windows computer password reset; it may belong better on the phone unlocking page, which carries the FRP removal service, and moving it is a one-line change. The 839x673 original sits on pure white, so it is padded to 3:2 rather than cropped and capped near native width. The previous original (imOSfUb6Rg4, the post-reset welcome screen) stays in _source.",
+  "home-hero-skyline":
+    "The Calgary skyline behind the home hero, supplied by the client via WhatsApp and used on their explicit instruction 2026-08 with no further verification, as directed. Two positions stay on record rather than silent: the file is 1600x900, below the 2000px floor the earlier brief set for a full-bleed hero, and it appears to be a commercial composite whose ownership is unconfirmed (CLAUDE.md question 26). Served at native size, never upscaled, behind a 60 percent black scrim plus a text-side gradient, which is also what keeps the softness invisible. Encoded at quality 72, 225 KB.",
   "service-game-console-repair":
     "Supplied by the client in 2026-08 for the game console page. Already 3:2 at 1920x1280, so resized only, no crop. The Sony wordmark on the controller is incidental to a photograph of gameplay and is not used as a mark, per the revised Section 8.9 rule. The supplied filename (pexels-playstation-1845880_1920.jpg) indicates a stock original, Pixabay photo 1845880; the photographer credit is unverified, so it stays TODO(client) rather than guessed.",
   "home-process-2":

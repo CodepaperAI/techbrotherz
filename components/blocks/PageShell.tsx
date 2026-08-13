@@ -42,6 +42,13 @@ export interface PageShellProps {
   heroActions?: ReactNode;
   heroImage?: { src: string; alt: string; unoptimized?: boolean; blurDataURL?: string };
   /**
+   * Hero layout only: a photograph behind the whole hero, under a dark scrim,
+   * replacing the split-panel image. Below 640px the photograph is dropped and
+   * the solid black panel returns, because a wide skyline crops badly to
+   * portrait. The scrim is what guarantees text contrast, not the photo.
+   */
+  heroBackground?: { src: string; blurDataURL?: string };
+  /**
    * Hero layout only: content that straddles the hero's bottom edge, half in
    * the black and half in the light. The home page puts the stat cards here.
    * Static layout, so it costs nothing in CLS.
@@ -69,6 +76,7 @@ export function PageShell({
   layout = "default",
   heroActions,
   heroImage,
+  heroBackground,
   heroOverlap,
   children,
 }: PageShellProps) {
@@ -94,12 +102,40 @@ export function PageShell({
       <>
         <JsonLd graph={graph} />
 
-        <section data-surface="dark" className="bg-tb-black">
+        <section data-surface="dark" className="bg-tb-black relative overflow-hidden">
+          {/* The photograph, under a scrim that guarantees contrast whatever
+              the image does: 60% black overall, near-solid where the text
+              sits. Dropped below sm, where the solid panel returns. The image
+              is decorative; the address and copy carry the information. */}
+          {heroBackground ? (
+            <>
+              <div className="absolute inset-0 hidden sm:block">
+                <Image
+                  src={heroBackground.src}
+                  alt=""
+                  fill
+                  priority
+                  quality={75}
+                  sizes="(min-width: 640px) 100vw, 1px"
+                  className="object-cover"
+                  {...(heroBackground.blurDataURL
+                    ? { placeholder: "blur" as const, blurDataURL: heroBackground.blurDataURL }
+                    : {})}
+                />
+              </div>
+              <div aria-hidden="true" className="bg-tb-black/60 absolute inset-0 hidden sm:block" />
+              <div
+                aria-hidden="true"
+                className="from-tb-black/85 via-tb-black/45 absolute inset-0 hidden bg-gradient-to-r to-transparent sm:block"
+              />
+            </>
+          ) : null}
+
           <Container
-            className={`pt-10 md:pt-12 ${heroOverlap ? "pb-24 md:pb-28" : "pb-12 md:pb-16"}`}
+            className={`relative pt-10 md:pt-12 ${heroOverlap ? "pb-24 md:pb-28" : "pb-12 md:pb-16"}`}
           >
             <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-              <div className="py-2 lg:col-span-7">
+              <div className={`py-2 ${heroBackground ? "lg:col-span-8" : "lg:col-span-7"}`}>
                 {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
 
                 {/* Slightly under the type-h1 ceiling so the H1 holds two
@@ -115,22 +151,25 @@ export function PageShell({
                 ) : null}
               </div>
 
-              <div className="bg-tb-ink rounded-panel relative min-h-56 overflow-hidden lg:col-span-5 lg:min-h-[22rem]">
-                {heroImage ? (
-                  <Image
-                    src={heroImage.src}
-                    alt={heroImage.alt}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover"
-                    {...(heroImage.blurDataURL
-                      ? { placeholder: "blur" as const, blurDataURL: heroImage.blurDataURL }
-                      : {})}
-                    {...(heroImage.unoptimized ? { unoptimized: true } : {})}
-                  />
-                ) : null}
-              </div>
+              {/* The split-panel photograph, only when no background is set. */}
+              {!heroBackground ? (
+                <div className="bg-tb-ink rounded-panel relative min-h-56 overflow-hidden lg:col-span-5 lg:min-h-[22rem]">
+                  {heroImage ? (
+                    <Image
+                      src={heroImage.src}
+                      alt={heroImage.alt}
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover"
+                      {...(heroImage.blurDataURL
+                        ? { placeholder: "blur" as const, blurDataURL: heroImage.blurDataURL }
+                        : {})}
+                      {...(heroImage.unoptimized ? { unoptimized: true } : {})}
+                    />
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </Container>
         </section>

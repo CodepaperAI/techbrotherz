@@ -28,7 +28,7 @@ import { cn } from "@/lib/utils";
 
 export type LogoVariant = "full" | "compact" | "icon";
 
-function Mark({ size = 40 }: { size?: number }) {
+export function Mark({ size = 40 }: { size?: number }) {
   return (
     <svg viewBox="0 0 64 64" width={size} height={size} aria-hidden="true" className="shrink-0">
       <circle cx="32" cy="32" r="30" className="fill-tb-green" />
