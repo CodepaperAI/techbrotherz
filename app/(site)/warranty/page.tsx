@@ -223,7 +223,7 @@ export default async function WarrantyPage() {
         </div>
 
         <p className="type-body measure text-tb-muted mt-10">
-          If you cannot get to the shop quickly, call {SITE.phone} and tell us what has happened.
+          If you cannot get to the Store quickly, call {SITE.phone} and tell us what has happened.
           Getting the fault recorded inside the {warrantyDays} days is what matters, and we can
           arrange when you bring the device in from there.
         </p>
@@ -267,8 +267,8 @@ export default async function WarrantyPage() {
 
         <p className="type-body measure text-tb-muted mt-6">
           Aftermarket phone parts vary in quality, and a small proportion of any batch fails early
-          whoever fits them. The question worth asking a repair shop is not whether that ever
-          happens, but what the shop does when it does. TechBrotherz answers that with a number:{" "}
+          whoever fits them. The question worth asking a repair Store is not whether that ever
+          happens, but what the Store does when it does. TechBrotherz answers that with a number:{" "}
           {warrantyDays} days, on the part and the work, at no charge.
         </p>
 

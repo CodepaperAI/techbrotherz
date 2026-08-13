@@ -19,7 +19,7 @@ export type DayName =
 
 export interface OpeningHours {
   day: DayName;
-  /** 24-hour "HH:mm" in the shop's local time, America/Edmonton. */
+  /** 24-hour "HH:mm" in the Store's local time, America/Edmonton. */
   open: string;
   close: string;
   closed: boolean;
@@ -76,7 +76,7 @@ export const SITE = {
   priceDisclaimer:
     "All prices include the part and labour, and every repair is covered by a 60-day warranty.",
 
-  serviceArea: ["Calgary", "Chestermere", "Airdrie", "and surrounding Alberta communities"],
+  serviceArea: ["Calgary", "Chestermere", "Airdrie", "and surrounding Calgary communities"],
   /** Used verbatim in JSON-LD areaServed. */
   areaServed: ["Calgary", "Chestermere", "Airdrie"],
 
@@ -119,7 +119,7 @@ export const TEL_HREF = `tel:${SITE.phoneRaw}`;
  * page. Repeating it verbatim across the site is what builds the entity in an
  * answer engine's index. CLAUDE.md Section 8.4.
  */
-export const ENTITY_SENTENCE = `TechBrotherz, a walk-in cell phone and computer repair shop at ${SITE.street} in ${SITE.city}, ${SITE.region}`;
+export const ENTITY_SENTENCE = `TechBrotherz, a walk-in cell phone and computer repair Store at ${SITE.street} in ${SITE.city}, ${SITE.region}`;
 
 /** Single-line address used in the footer, contact card and JSON-LD. */
 export const ADDRESS_LINE = [SITE.street, SITE.city, SITE.regionCode, SITE.postalCode]

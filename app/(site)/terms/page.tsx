@@ -74,7 +74,7 @@ export default async function TermsPage() {
               the privacy policy
             </Link>{" "}
             before the site goes live. Several points below, in particular the uncollected device
-            period and the limitation of liability, need a lawyer&rsquo;s eye and the shop
+            period and the limitation of liability, need a lawyer&rsquo;s eye and the Store
             owner&rsquo;s decision before they are relied on.
           </p>
         </Card>
@@ -185,7 +185,7 @@ export default async function TermsPage() {
             TechBrotherz is responsible for the repair it carries out and for the part it fits, on
             the terms of the {warrantyDays}-day warranty. TechBrotherz is not responsible for data
             loss on a device that was not backed up, for pre-existing faults it did not cause, or
-            for damage that occurs after the device leaves the shop.
+            for damage that occurs after the device leaves the Store.
           </p>
           <p>
             Liquid damage is a special case, and TechBrotherz says so openly rather than in small
@@ -209,7 +209,7 @@ export default async function TermsPage() {
 
         <div className="type-body measure text-tb-muted mt-6 space-y-4">
           <p>
-            Prices on this website are kept current from the shop&rsquo;s own price list and are
+            Prices on this website are kept current from the Store&rsquo;s own price list and are
             shown in Canadian dollars including the part and the labour. TechBrotherz aims to keep
             every figure accurate, and the price confirmed at the counter is the price that applies.
           </p>

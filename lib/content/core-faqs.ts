@@ -29,10 +29,10 @@ export interface CoreFaqCtx {
 }
 
 function updatedPhrase(iso?: string | null): string {
-  if (!iso) return "The list is maintained in the shop's own system and updated as prices change.";
+  if (!iso) return "The list is maintained in the Store's own system and updated as prices change.";
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) {
-    return "The list is maintained in the shop's own system and updated as prices change.";
+    return "The list is maintained in the Store's own system and updated as prices change.";
   }
   const formatted = date.toLocaleDateString("en-CA", {
     year: "numeric",
@@ -88,7 +88,7 @@ export function pricesFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How current is this repair price list?",
-      answer: `${updatedPhrase(c.updatedAt)} Prices on this page are read directly from the TechBrotherz catalogue rather than typed into the page, so a price change in the shop's system appears here without the page being rewritten.`,
+      answer: `${updatedPhrase(c.updatedAt)} Prices on this page are read directly from the TechBrotherz catalogue rather than typed into the page, so a price change in the Store's system appears here without the page being rewritten.`,
     },
   ];
 }
@@ -97,11 +97,11 @@ export function locationsFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "Which areas does TechBrotherz serve?",
-      answer: `TechBrotherz repairs devices for customers across Calgary, Chestermere, Airdrie and the surrounding Alberta communities, from a single shop at ${c.street} in ${c.city}. There is no mail-in or callout service: repairs are carried out at the counter.`,
+      answer: `TechBrotherz repairs devices for customers across Calgary, Chestermere, Airdrie and the surrounding Calgary communities, from a single Store at ${c.street} in ${c.city}. There is no mail-in or callout service: repairs are carried out at the counter.`,
     },
     {
       question: "Does TechBrotherz have more than one location?",
-      answer: `No. TechBrotherz operates one shop, at ${c.street} in ${c.city}, Alberta. Every repair is carried out there, which is why the same technicians see the device from diagnosis to hand-back. Phone ${c.phone} to check stock before travelling from outside Calgary.`,
+      answer: `No. TechBrotherz operates one Store, at ${c.street} in ${c.city}, Alberta. Every repair is carried out there, which is why the same technicians see the device from diagnosis to hand-back. Phone ${c.phone} to check stock before travelling from outside Calgary.`,
     },
     {
       question: "Is it worth driving to TechBrotherz from Chestermere or Airdrie?",
@@ -114,7 +114,7 @@ export function aboutFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "What is TechBrotherz?",
-      answer: `TechBrotherz is a walk-in cell phone, tablet and computer repair shop at ${c.street} in ${c.city}, Alberta. It repairs ${c.modelCount} published device models across ${c.brandCount} brands, unlocks phones for Canadian carriers, and carries out computer work at flat prices agreed before the job starts.`,
+      answer: `TechBrotherz is a walk-in cell phone, tablet and computer repair Store at ${c.street} in ${c.city}, Alberta. It repairs ${c.modelCount} published device models across ${c.brandCount} brands, unlocks phones for Canadian carriers, and carries out computer work at flat prices agreed before the job starts.`,
     },
     {
       question: "What does TechBrotherz not do?",
@@ -131,7 +131,7 @@ export function contactFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "What is the fastest way to reach TechBrotherz?",
-      answer: `Phone ${c.phone} during opening hours. That reaches the counter directly, which is the quickest way to confirm a price, check whether a part is in stock, or ask whether a repair is one TechBrotherz carries out. The contact form on this page reaches the same shop and is answered during opening hours.`,
+      answer: `Phone ${c.phone} during opening hours. That reaches the counter directly, which is the quickest way to confirm a price, check whether a part is in stock, or ask whether a repair is one TechBrotherz carries out. The contact form on this page reaches the same Store and is answered during opening hours.`,
     },
     {
       question: "What should I bring when I come in for a repair?",

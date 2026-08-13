@@ -53,7 +53,7 @@ export default async function AccessoriesPage() {
       {
         question: "Do you have a case or protector for my exact model?",
         answer:
-          "TechBrotherz stocks accessories for the phone, iPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the shop asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
+          "TechBrotherz stocks accessories for the phone, iPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the Store asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
       },
       {
         question: "Will TechBrotherz fit a screen protector bought at the counter?",
@@ -93,7 +93,7 @@ export default async function AccessoriesPage() {
       crumbLabel="Accessories"
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, stocks the accessories that stop devices coming back to the
           repair counter: cases, tempered glass, film screen protectors and privacy screen
           protectors for phones, iPads and tablets.
@@ -271,7 +271,7 @@ export default async function AccessoriesPage() {
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <Heading level={2} id="why-heading" eyebrow="The repair counter's view">
-              Why buy a case from a repair shop?
+              Why buy a case from a repair Store?
             </Heading>
             <div className="measure mt-8 space-y-5">
               <p className="type-body text-tb-muted">
@@ -288,7 +288,7 @@ export default async function AccessoriesPage() {
                 <Link href="/services/ipad-repair" className="text-tb-green-deep hover:underline">
                   iPad screen repair
                 </Link>{" "}
-                is one of the larger jobs the shop quotes, and an iPad in a decent case with glass
+                is one of the larger jobs the Store quotes, and an iPad in a decent case with glass
                 on the front is a repair that mostly never happens.
               </p>
               <p className="type-body text-tb-muted">
@@ -319,7 +319,7 @@ export default async function AccessoriesPage() {
                 <h3 className="type-h3 text-tb-text">No online ordering</h3>
                 <p className="type-body text-tb-muted mt-2">
                   TechBrotherz is a walk-in counter, not a web store. Accessories are bought at the
-                  shop, where the fit on your actual device can be checked before you pay.
+                  Store, where the fit on your actual device can be checked before you pay.
                 </p>
               </Card>
               <Card>

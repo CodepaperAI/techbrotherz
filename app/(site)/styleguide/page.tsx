@@ -142,7 +142,7 @@ const SAMPLE_FAQS = [
   {
     question: "Do I need an appointment for a phone repair in Calgary?",
     answer:
-      "No. TechBrotherz is a walk-in shop at 3317 17 Ave SE in Calgary. Come in during opening hours and most repairs are finished in about 30 minutes while you wait.",
+      "No. TechBrotherz is a walk-in Store at 3317 17 Ave SE in Calgary. Come in during opening hours and most repairs are finished in about 30 minutes while you wait.",
   },
   {
     question: "How long does an iPhone screen replacement take?",
@@ -351,7 +351,7 @@ export default function StyleguidePage() {
           level={2}
           id="trust"
           eyebrow="Blocks"
-          lead="The honest replacement for the reference template's fake rating badge and logo cloud. Only facts the shop can stand behind."
+          lead="The honest replacement for the reference template's fake rating badge and logo cloud. Only facts the Store can stand behind."
         >
           TrustStrip
         </Heading>
@@ -417,7 +417,7 @@ export default function StyleguidePage() {
           className="mt-12"
           eyebrow="For individuals"
           heading="One device, fixed while you wait"
-          lead="Bring a cracked phone, a slow laptop or a tablet that will not charge to our Calgary shop and leave with it working."
+          lead="Bring a cracked phone, a slow laptop or a tablet that will not charge to our Calgary Store and leave with it working."
           checklist={[
             "Most phone repairs finished in about 30 minutes",
             "Every price includes the part and the labour",

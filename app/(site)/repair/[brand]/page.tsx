@@ -198,7 +198,7 @@ export default async function BrandHubPage({ params }: PageProps) {
       crumbLabel={brand.name ?? "Brand"}
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, publishes a price for every {brand.name} model it holds parts
           for. Pick your model below for its full price table.
         </>
@@ -393,7 +393,7 @@ export default async function BrandHubPage({ params }: PageProps) {
                 : []),
               { label: `Our ${warrantyDays}-day warranty`, href: "/warranty" },
               { label: "All repair services we offer", href: "/services" },
-              { label: "Directions to the Calgary shop", href: "/contact" },
+              { label: "Directions to the Calgary Store", href: "/contact" },
             ]}
           />
         </div>

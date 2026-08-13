@@ -6,7 +6,7 @@
  *
  * 1. **Stock may show the work, never the business.** A photograph of hands
  *    replacing a screen is a fair illustration of the service. The same
- *    photograph captioned as our bench, our technician or our shop is invented
+ *    photograph captioned as our bench, our technician or our Store is invented
  *    social proof, which this build has refused since Phase 1. Alt text
  *    describes what the photo shows and never who it is.
  * 2. **Nothing is load-bearing.** Delete public/demo/ and every page still

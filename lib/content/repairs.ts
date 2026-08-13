@@ -11,7 +11,7 @@
  * iPhone or Samsung repairs, and a screen page and a battery page written from
  * the same outline would read as the same page. Each entry therefore leads
  * with what is genuinely different about that repair, not with a restatement
- * of the shop's policies. Phase 4's similarity detector runs over these pages
+ * of the Store's policies. Phase 4's similarity detector runs over these pages
  * for exactly this reason.
  */
 
@@ -92,7 +92,7 @@ const iphoneScreen: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
   answer: (c) =>
     `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the counter. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
   symptoms: [
@@ -220,7 +220,7 @@ const iphoneBattery: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
   answer: (c) =>
     `iPhone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the counter and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
   symptoms: [
@@ -345,7 +345,7 @@ const iphonePort: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
   answer: () =>
     `iPhone charging port replacement at TechBrotherz in Calgary takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge at all. The quote is free and given before any work starts.`,
   symptoms: [
@@ -474,7 +474,7 @@ const iphoneCamera: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
   answer: (c) =>
     `iPhone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the counter. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
   symptoms: [
@@ -603,7 +603,7 @@ const iphoneBackGlass: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
   answer: () =>
     `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From iPhone 12 onwards the panel is designed to come off more cleanly.`,
   symptoms: [
@@ -730,7 +730,7 @@ const samsungScreen: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
   answer: (c) =>
     `Samsung Galaxy screen replacement at TechBrotherz in Calgary fits a complete assembly, because Samsung bonds the OLED panel to the phone's frame and supplies the two as one part. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
@@ -855,7 +855,7 @@ const samsungBattery: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
   answer: () =>
     `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
   symptoms: [
@@ -984,7 +984,7 @@ const samsungBackGlass: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Samsung Galaxy back glass. On a Galaxy the rear panel is the way into the phone for every internal repair, which means the technique for removing it is the same one used for battery and screen work.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Samsung Galaxy back glass. On a Galaxy the rear panel is the way into the phone for every internal repair, which means the technique for removing it is the same one used for battery and screen work.`,
   answer: (c) =>
     `Samsung Galaxy back glass replacement at TechBrotherz in Calgary means heating the rear panel, cutting it free of the adhesive that runs around its entire perimeter, fitting the replacement and resealing it. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
@@ -1044,7 +1044,7 @@ const samsungBackGlass: RepairDef = {
     {
       heading: "Will the phone still be water resistant afterwards?",
       paragraphs: [
-        "Not to its original rating, and no repair shop can honestly promise otherwise. Water resistance on a Galaxy depends on factory-applied seals and adhesive compressed under controlled conditions, and once that seal has been cut through, what goes back is a good seal rather than a certified one.",
+        "Not to its original rating, and no repair Store can honestly promise otherwise. Water resistance on a Galaxy depends on factory-applied seals and adhesive compressed under controlled conditions, and once that seal has been cut through, what goes back is a good seal rather than a certified one.",
         "TechBrotherz uses fresh adhesive around the entire perimeter and clamps the phone while it sets, which gives a properly closed phone that will handle rain and splashes the way you would expect. What it will not do is guarantee the phone against submersion.",
         "This is true of every repair on a sealed phone, at every shop, and anyone who tells you a repaired phone keeps its original water rating is overselling. Treat a repaired phone as water resistant rather than waterproof.",
       ],
@@ -1109,7 +1109,7 @@ const samsungPort: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy charging ports. On most Galaxy models the USB-C port sits on a small daughterboard of its own, which makes it a cleaner replacement than on phones where the port is soldered directly to the mainboard.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy charging ports. On most Galaxy models the USB-C port sits on a small daughterboard of its own, which makes it a cleaner replacement than on phones where the port is soldered directly to the mainboard.`,
   answer: () =>
     `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On most Galaxy models the USB-C port sits on its own small board that unplugs and replaces as a unit. TechBrotherz clears compacted lint from the socket first, because that alone fixes many charging faults at no cost.`,
   symptoms: [
@@ -1240,7 +1240,7 @@ const ipadScreen: RepairDef = {
   brandSlug: "apple-ipad",
   minutes: 90,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
   answer: () =>
     `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent iPad Air and iPad Pro models use a laminated display where both replace as one assembly, which is the larger job.`,
   symptoms: [
@@ -1367,7 +1367,7 @@ const laptopScreen: RepairDef = {
   siblings: ["/repairs/laptop-keyboard-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
   answer: (c) =>
     `Laptop screen replacement at TechBrotherz in Calgary is quoted once the panel your machine takes has been identified, because size, resolution and touch capability all change the part. Most laptop screens are replaced the same day, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   symptoms: [
@@ -1518,7 +1518,7 @@ const laptopKeyboard: RepairDef = {
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
   answer: () =>
     `Laptop keyboard replacement at TechBrotherz in Calgary is quoted after we have seen how the keyboard is fitted, because that is what the job turns on. On some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly. Most keyboard work is finished the same day.`,
   symptoms: [
@@ -1669,7 +1669,7 @@ const laptopPort: RepairDef = {
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-keyboard-replacement"],
   minutes: 90,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
   answer: () =>
     `Laptop charging socket replacement at TechBrotherz in Calgary is quoted free of charge before any work starts. A socket that has worked loose shows as a charging light that flickers when the plug is moved, or a laptop that only charges at a particular cable angle. The repair is soldered work on most machines, so it takes longer than a phone charging port.`,
   symptoms: [
@@ -1822,7 +1822,7 @@ const windowsInstallation: RepairDef = {
   siblings: ["/repairs/computer-tune-up", "/repairs/computer-diagnostics"],
   minutes: 120,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean, including an office suite and security software set up and running. It is quoted as one flat figure for the whole job, not as an hourly rate.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean, including an office suite and security software set up and running. It is quoted as one flat figure for the whole job, not as an hourly rate.`,
   answer: () =>
     `A Windows installation at TechBrotherz in Calgary includes the operating system installed clean, an office suite, and security software configured and running. It is quoted as one flat figure agreed before work starts. A clean install replaces what is on the drive, so back your files up first and tell TechBrotherz what you need kept.`,
   symptoms: [
@@ -1973,7 +1973,7 @@ const computerTuneUp: RepairDef = {
   siblings: ["/repairs/windows-installation", "/repairs/computer-diagnostics"],
   minutes: 120,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
   answer: () =>
     `A clean-up and tune-up at TechBrotherz in Calgary covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Everything on the machine stays exactly where it is, and the job is quoted as one flat figure.`,
   symptoms: [
@@ -2125,7 +2125,7 @@ const computerDiagnostics: RepairDef = {
   siblings: ["/repairs/computer-tune-up", "/repairs/windows-installation"],
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for a fixed diagnostic fee, and that fee comes off the bill if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
+    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for a fixed diagnostic fee, and that fee comes off the bill if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
   answer: () =>
     `Computer diagnostics at TechBrotherz in Calgary carry a fixed diagnostic fee, and that fee is deducted from the repair if you proceed. The diagnostic checks power delivery, whether the machine posts, storage health, memory and thermal behaviour, and ends with a specific fault and a specific figure rather than an estimate. If the machine is not worth repairing, TechBrotherz will say so.`,
   symptoms: [

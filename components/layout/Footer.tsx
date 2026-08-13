@@ -77,7 +77,7 @@ export function Footer() {
               rel="noopener"
               className="text-tb-green mt-5 inline-block font-medium hover:underline"
             >
-              Get directions to our Calgary shop
+              Get directions to our Calgary Store
             </a>
             <a
               href={SITE.googleReviewsUrl}

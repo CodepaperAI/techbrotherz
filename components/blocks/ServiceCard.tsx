@@ -22,6 +22,8 @@ export interface ServiceCardProps {
    */
   image?: string;
   illustration: RepairSubject;
+  /** Small tag chips under the description, e.g. Screen, Battery, Charging port. */
+  tags?: string[];
   /** Trailing link. Anchor text is the full page name, never "read more". */
   link?: { label: string; href: string };
   sizes?: string;
@@ -42,6 +44,7 @@ export function ServiceCard({
   description,
   image,
   illustration,
+  tags,
   link,
   sizes = "(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw",
   className,
@@ -73,6 +76,19 @@ export function ServiceCard({
 
       <h3 className="type-h3 text-tb-text mt-6">{title}</h3>
       <p className="type-body text-tb-muted mt-3">{description}</p>
+
+      {tags && tags.length > 0 ? (
+        <ul className="mt-4 flex flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="type-caption border-tb-border text-tb-muted rounded-chip border px-2.5 py-1"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       {/* mt-auto, so the six links sit on one line across a row whatever the
           description length. Six cards with the link floating at six heights is

@@ -32,7 +32,7 @@ const PATH = "/about";
 export const metadata: Metadata = buildMetadata({
   title: "About TechBrotherz, Calgary",
   description:
-    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair shop at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
+    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair Store at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
   path: PATH,
 });
 
@@ -75,9 +75,9 @@ export default async function AboutPage() {
     localBusiness(settings ?? {}, reviews),
     webPage({
       type: "AboutPage",
-      name: "About TechBrotherz, a walk-in repair shop in Calgary",
+      name: "About TechBrotherz, a walk-in repair Store in Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, tablet and computer repair shop at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, tablet and computer repair Store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -92,16 +92,16 @@ export default async function AboutPage() {
       crumbLabel="About"
       lead={
         <>
-          TechBrotherz is a local, family-owned walk-in cell phone and computer repair shop at{" "}
+          TechBrotherz is a local, family-owned walk-in cell phone and computer repair Store at{" "}
           {SITE.street} in {SITE.city}, {SITE.region}, on the stretch of 17 Avenue SE known as
-          International Avenue. One shop, one counter, and every repair quoted free before any work
+          International Avenue. One Store, one counter, and every repair quoted free before any work
           starts.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz is a local, family-owned walk-in repair shop at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and game consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a local, family-owned walk-in repair Store at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and game consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
-          { label: "What we are", value: "A local, family-owned walk-in shop, one Calgary location" },
+          { label: "What we are", value: "A local, family-owned walk-in Store, one Calgary location" },
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           {
             label: "Devices",
@@ -123,7 +123,7 @@ export default async function AboutPage() {
         <div className="mt-6 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="type-body measure text-tb-muted">
-              TechBrotherz is a family-owned repair shop, not a chain and not a mail-in service.
+              TechBrotherz is a family-owned repair Store, not a chain and not a mail-in service.
               There is one counter, at {SITE.street} in {SITE.city}, and the person who takes your
               device in is the person who repairs it. You can watch a phone screen replacement
               happen if you want to.
@@ -137,7 +137,7 @@ export default async function AboutPage() {
             ) : null}
 
             <p className="type-body measure text-tb-muted mt-4">
-              The shop works on walk-ins rather than appointments, because most of what comes
+              The Store works on walk-ins rather than appointments, because most of what comes
               through the door is urgent: a cracked screen on the way to work, a laptop that will
               not start the night before something is due. Most phone screen and battery repairs are
               finished in about {waitMinutes} minutes, so people wait rather than come back.
@@ -156,7 +156,7 @@ export default async function AboutPage() {
 
           <div className="lg:col-span-5">
             <Card>
-              <h3 className="type-h3 text-tb-text">The shop in numbers</h3>
+              <h3 className="type-h3 text-tb-text">The Store in numbers</h3>
               <dl className="type-body mt-5 space-y-3">
                 {[
                   ["Brands repaired", String(brands.length)],
@@ -202,7 +202,7 @@ export default async function AboutPage() {
           , including the Xbox, PlayStation and Nintendo Switch ranges. That covers screens,
           batteries, charging ports, cameras, buttons and back glass on phones, and screens,
           keyboards, charging sockets, Windows installation, virus removal and clean-ups on
-          computers. The shop also{" "}
+          computers. The Store also{" "}
           <Link href="/services/phone-unlocking" className="text-tb-green-deep hover:underline">
             unlocks phones
           </Link>
@@ -293,7 +293,7 @@ export default async function AboutPage() {
           level={2}
           id="area-heading"
           eyebrow="Service area"
-          lead={`TechBrotherz serves ${SITE.city}, Chestermere, Airdrie and the surrounding Alberta communities from one shop on International Avenue.`}
+          lead={`TechBrotherz serves ${SITE.city}, Chestermere, Airdrie and the surrounding Calgary communities from one Store on International Avenue.`}
         >
           Where does TechBrotherz operate?
         </Heading>
@@ -301,7 +301,7 @@ export default async function AboutPage() {
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
         <p className="type-body measure text-tb-muted mt-8">
-          The shop sits in southeast Calgary, a few blocks west of Forest Lawn, on the stretch of 17 Avenue SE
+          The Store sits in southeast Calgary, a few blocks west of Forest Lawn, on the stretch of 17 Avenue SE
           known as International Avenue. See{" "}
           <Link href="/locations" className="text-tb-green-deep hover:underline">
             the areas TechBrotherz serves
@@ -326,7 +326,7 @@ export default async function AboutPage() {
         <Container>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="type-h2 text-tb-white">Come and see the shop</h2>
+              <h2 className="type-h2 text-tb-white">Come and see the Store</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
                 We are at {SITE.street} in {SITE.city}, open seven days a week. Walk in during
                 opening hours, no appointment needed.

@@ -80,7 +80,7 @@ export async function submitContact(
   if (!apiKey || !to) {
     // Not the visitor's problem, so do not show them an error. The submission
     // is logged so nothing is silently lost, and they are given the phone
-    // number, which is the faster route to a repair shop anyway.
+    // number, which is the faster route to a repair Store anyway.
     console.warn(
       "[contact] RESEND_API_KEY or CONTACT_TO_EMAIL is not set, so this message was not emailed.",
       { name, contact, device, message },
@@ -122,7 +122,7 @@ export async function submitContact(
 
     return {
       status: "success",
-      message: `Thank you, your message has been sent. TechBrotherz will reply as soon as the shop is free. If it is urgent, call ${SITE.phone}.`,
+      message: `Thank you, your message has been sent. TechBrotherz will reply as soon as the Store is free. If it is urgent, call ${SITE.phone}.`,
     };
   } catch (error) {
     console.error("[contact] Sending failed.", error);

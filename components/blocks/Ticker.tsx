@@ -1,12 +1,12 @@
 import { SITE } from "@/lib/site";
 
 /**
- * A thin black band scrolling the shop's verified claims.
+ * A thin black band scrolling the Store's verified claims.
  *
  * Every entry has to be a fact from CLAUDE.md Section 2. There is no "trusted
  * by hundreds", no rating and no award, because none of those exist. What is
  * here is the warranty, the walk-in policy, the free quote and the typical
- * wait, which are the strongest things the shop can actually say and which no
+ * wait, which are the strongest things the Store can actually say and which no
  * competitor in the reference set commits to in writing.
  *
  * Two identical tracks make the loop seamless: the animation translates one

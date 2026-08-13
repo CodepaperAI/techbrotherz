@@ -273,7 +273,7 @@ export default async function ModelPage({ params }: PageProps) {
       crumbLabel={model.name ?? "Model"}
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, repairs the {model.name}
           {age !== null && age >= 2 ? `, now about ${age} years old` : ""}. Every repair
           is quoted free at the counter, with the part and the labour in one figure.

@@ -57,17 +57,18 @@ function toLinks(paths: string[]): NavLink[] {
  * a 404 for the sake of a label. It comes back when Phase 7 builds the guides.
  * /repair-prices went with the price list itself.
  */
-const HEADER_PATHS = [
-  "/services",
-  "/services/phone-unlocking",
-  "/accessories",
-  "/locations",
-  "/about",
-  "/contact",
-];
-
+/**
+ * Reworked 2026-08 to mirror the reference site's single-page shape: Services,
+ * Reviews and Hours are anchors into the home page sections (real ids the link
+ * audit verifies), and the rest are pages. "/#section" works from any page.
+ */
 export function headerLinks(): NavLink[] {
-  return toLinks(HEADER_PATHS);
+  const anchors: NavLink[] = [
+    { label: "Services", href: "/#services", pending: false },
+    { label: "Reviews", href: "/#reviews", pending: false },
+    { label: "Hours", href: "/#hours", pending: false },
+  ];
+  return [...anchors, ...toLinks(["/locations", "/blog", "/about", "/contact"])];
 }
 
 /* -------------------------------------------------------------------- footer */
@@ -127,7 +128,7 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
   },
   {
     heading: "Learn",
-    paths: ["/faq", "/warranty", "/about", "/contact"],
+    paths: ["/blog", "/faq", "/warranty", "/about", "/contact"],
   },
 ];
 

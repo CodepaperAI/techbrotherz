@@ -159,9 +159,9 @@ export default async function LocalPage({ params }: PageProps) {
           level={2}
           id="here-heading"
           eyebrow="Getting here"
-          lead="One shop, one counter, and the address every page on this site gives."
+          lead="One Store, one counter, and the address every page on this site gives."
         >
-          Where is the shop and how do you get to it?
+          Where is the Store and how do you get to it?
         </Heading>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">

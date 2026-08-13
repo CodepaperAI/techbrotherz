@@ -263,7 +263,7 @@ Status legend: `built` / `pending`. Update this table as pages ship.
 | `/accessories`    | built, added 2026-08 on the client's instruction |
 | `/privacy-policy` | built, **needs a lawyer's review before launch** |
 | `/terms`          | built, **needs a lawyer's review before launch** |
-| `/guides`         | pending, ships in Phase 7 with its articles      |
+| `/blog`           | built 2026-08 with the first three articles; the guides tier ships here, at the client's word for it |
 | `/sitemap` (HTML) | pending, Phase 8                                 |
 
 ### The four templates and what each one answers
@@ -464,13 +464,13 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/locations/calgary`                               | repair shop 17 ave se calgary            | international avenue repair shop              |
 | `/locations/calgary/forest-lawn`                   | phone repair forest lawn                 | repair shop international avenue calgary      |
 | `/locations/chestermere`                           | repair shop near chestermere             | chestermere phone repair drive                |
-| `/guides/how-to-unlock-a-cell-phone-in-canada`     | how to unlock a cell phone               | unlock phone canada legally                   |
-| `/guides/ipad-repair-vs-replacement-cost`          | ipad repair vs replacement cost          | is it worth repairing an ipad                 |
-| `/guides/signs-your-laptop-needs-repair`           | signs your laptop needs repair           | laptop problems, when to repair a laptop      |
-| `/guides/iphone-screen-repair-cost-calgary`        | iphone screen repair cost calgary        | how much to fix iphone screen calgary         |
-| `/guides/how-long-does-a-phone-screen-repair-take` | how long does a phone screen repair take | phone screen repair time                      |
-| `/guides/phone-water-damage-what-to-do-first`      | phone water damage what to do            | wet phone first steps                         |
-| `/guides/cracked-screen-vs-broken-lcd-difference`  | cracked screen vs broken lcd             | digitizer vs lcd difference                   |
+| `/blog/how-to-unlock-a-cell-phone-in-canada`     | how to unlock a cell phone               | unlock phone canada legally                   |
+| `/blog/ipad-repair-vs-replacement-cost`          | ipad repair vs replacement cost          | is it worth repairing an ipad                 |
+| `/blog/signs-your-laptop-needs-repair`           | signs your laptop needs repair           | laptop problems, when to repair a laptop      |
+| `/blog/iphone-screen-repair-cost-calgary`        | iphone screen repair cost calgary        | how much to fix iphone screen calgary         |
+| `/blog/how-long-does-a-phone-screen-repair-take` | how long does a phone screen repair take | phone screen repair time                      |
+| `/blog/phone-water-damage-what-to-do-first`      | phone water damage what to do            | wet phone first steps                         |
+| `/blog/cracked-screen-vs-broken-lcd-difference`  | cracked screen vs broken lcd             | digitizer vs lcd difference                   |
 
 _(Rows for the remaining Tier 3, 5, 6 and 7 URLs are added as those pages are built. A page does not ship without a row here.)_
 
@@ -858,7 +858,7 @@ The site must behave as one tightly connected graph.
 8. **Footer link matrix** gives every important page a site-wide link. See DESIGN.md Section on Footer.
 9. **HTML sitemap at `/sitemap`** lists every URL grouped by tier. This is the orphan insurance policy.
 10. **`scripts/link-audit.ts`** crawls the built site and fails CI if any page has fewer than 2 inbound internal links or any internal link 404s.
-11. **Reciprocal cross-linking between competing intents.** Example: `/guides/ipad-repair-vs-replacement-cost` links to `/services/ipad-repair` and `/ipad-repair-calgary`, and both link back.
+11. **Reciprocal cross-linking between competing intents.** Example: `/blog/ipad-repair-vs-replacement-cost` links to `/services/ipad-repair` and `/ipad-repair-calgary`, and both link back.
 
 ---
 

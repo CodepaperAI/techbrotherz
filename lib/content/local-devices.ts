@@ -159,13 +159,13 @@ const laptopCalgary: LocalDef = {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "If you would rather not carry a laptop across a car park, 33 Street SE Station on the transitway is directly outside the shop.",
+        "If you would rather not carry a laptop across a car park, 33 Street SE Station on the transitway is directly outside the Store.",
     },
   ]),
   lead: () =>
     `${ENTITY}, repairs laptops: screens, keyboards and charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms as a dead laptop and costs nothing to rule out.`,
   answer: () =>
-    `Laptop repair in Calgary at TechBrotherz covers screens, keyboards and charging sockets, with the part and the labour in one figure. Diagnostics carry a fixed fee that comes off the repair. The shop is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
+    `Laptop repair in Calgary at TechBrotherz covers screens, keyboards and charging sockets, with the part and the labour in one figure. Diagnostics carry a fixed fee that comes off the repair. The Store is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
   keyFacts: () => [
     { label: "Bring", value: "The laptop and its charger, so the adapter can be ruled out" },
     { label: "Repairs", value: "Screens, keyboards, charging sockets, storage and memory" },
@@ -291,7 +291,7 @@ const computerCalgary: LocalDef = {
   lead: () =>
     `${ENTITY}, repairs desktop computers and laptops at flat figures agreed before work starts: diagnostics, Windows installation, and a full clean-up and tune-up. Bring the tower alone, we have monitors and keyboards here to test with.`,
   answer: () =>
-    `Computer repair in Calgary at TechBrotherz is quoted per job rather than per hour, covering diagnostics, a Windows installation with an office suite and security software, and a clean-up and tune-up. The shop is at 3317 17 Ave SE. Bring the tower alone, and the figure is agreed before anything starts.`,
+    `Computer repair in Calgary at TechBrotherz is quoted per job rather than per hour, covering diagnostics, a Windows installation with an office suite and security software, and a clean-up and tune-up. The Store is at 3317 17 Ave SE. Bring the tower alone, and the figure is agreed before anything starts.`,
   keyFacts: () => [
     { label: "Bring", value: "The tower alone, monitors and keyboards are here to test with" },
     { label: "Quoted", value: "Per job, not per hour" },
@@ -362,7 +362,7 @@ const computerCalgary: LocalDef = {
       answer: `Computer repair at TechBrotherz in Calgary is quoted per job, not per hour. The diagnostic fee comes off the repair if you go ahead. A Windows installation includes an office suite and security software, a clean-up and tune-up covers startup, temporary files, updates, cooling and storage health, and hardware or program installation is charged per item.`,
     },
     {
-      question: "Do I need to bring my monitor and keyboard to the shop?",
+      question: "Do I need to bring my monitor and keyboard to the Store?",
       answer:
         "No. Bring the tower alone to TechBrotherz at 3317 17 Ave SE. Monitors, keyboards and mice are here for testing, so there is no need to disconnect and carry a full setup. Bring the power cable if it is a non-standard one, and mention any login password.",
     },

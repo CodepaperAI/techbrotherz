@@ -3,7 +3,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 /**
  * Per-model SEO copy, moved out of Sanity in Phase 6.9.
  *
- * Rule 1: if the shop owner will not edit it, it does not belong in a CMS.
+ * Rule 1: if the Store owner will not edit it, it does not belong in a CMS.
  * Eighty-four model introductions, their common-issue lists and their
  * repair-or-replace verdicts are copy we wrote, and the similarity detector
  * and the word-count check run over it in a pull request. Behind a CMS it was

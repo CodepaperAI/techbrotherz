@@ -57,7 +57,7 @@ const unlockingCalgary: LocalDef = {
       heading: "Do you actually need to pay to unlock a phone in Calgary?",
       paragraphs: [
         "Often you do not, and TechBrotherz will tell you that before taking your money. Under the CRTC Wireless Code, as revised in Telecom Regulatory Policy CRTC 2017-200, every mobile device sold in Canada on or after 1 December 2017 must be provided already unlocked. For devices sold before that date, carriers must unlock them free of charge when asked.",
-        "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier rather than to a repair shop. It costs nothing and it is your right. Anyone telling you otherwise is either misinformed or hoping you are.",
+        "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier rather than to a repair Store. It costs nothing and it is your right. Anyone telling you otherwise is either misinformed or hoping you are.",
         `Paid unlocking exists for the cases that rule does not reach: a phone bought secondhand from someone whose account you cannot access, a phone brought in from another country, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the situations where a paid unlock solves a problem a phone call cannot.`,
       ],
     },
@@ -121,7 +121,7 @@ const unlockingCalgary: LocalDef = {
     {
       question: "Can a blacklisted phone be unlocked in Calgary?",
       answer:
-        "No. A phone reported lost or stolen sits on the national IMEI database shared by Canadian carriers, and no repair shop or carrier can unlock or reactivate it. TechBrotherz checks the IMEI before taking payment, so a blacklisted phone is identified before you spend anything.",
+        "No. A phone reported lost or stolen sits on the national IMEI database shared by Canadian carriers, and no repair Store or carrier can unlock or reactivate it. TechBrotherz checks the IMEI before taking payment, so a blacklisted phone is identified before you spend anything.",
     },
   ],
   globalCategories: ["unlocking", "walkin"],
@@ -172,7 +172,7 @@ const walkInCalgary: LocalDef = {
       heading: "What does no appointment actually mean here?",
       paragraphs: [
         "It means there is nothing to book and nothing to wait for before you come. TechBrotherz has no appointment system, no online booking form and no callback queue. You arrive during opening hours, describe what the phone is doing, and it gets looked at in front of you at the counter.",
-        "That is the operating model rather than a concession to people who did not book. A repair shop that runs on appointments has to hold slots open and turn away the person whose screen broke this morning. A walk-in shop takes that person, which is most people, because nobody plans to crack a screen.",
+        "That is the operating model rather than a concession to people who did not book. A repair Store that runs on appointments has to hold slots open and turn away the person whose screen broke this morning. A walk-in Store takes that person, which is most people, because nobody plans to crack a screen.",
         "The honest limit is that on a busy Saturday there may be repairs ahead of yours. We tell you that at the counter along with a realistic time, rather than letting you discover it after an hour of waiting.",
       ],
     },
@@ -203,7 +203,7 @@ const walkInCalgary: LocalDef = {
     {
       heading: "What happens if something is wrong after the repair?",
       paragraphs: [
-        "Bring the device back with the receipt. Every repair carries a 60-day warranty on both the part and the workmanship, and a walk-in shop is the easy case for that: there is no claim form, no appointment and no posting anything anywhere. You come in and we look at it.",
+        "Bring the device back with the receipt. Every repair carries a 60-day warranty on both the part and the workmanship, and a walk-in Store is the easy case for that: there is no claim form, no appointment and no posting anything anywhere. You come in and we look at it.",
         "The faults the warranty is there for are a screen developing dead touch areas, a battery that will not hold the charge it should, or a port working loose. Those are part or workmanship failures and they are put right at no charge.",
         "What it does not cover is new damage. A phone dropped again is a fresh repair rather than a failure of the last one, and we will say so rather than pretend otherwise. New liquid damage is the same. Everything else within 60 days is ours to fix.",
       ],
@@ -267,11 +267,11 @@ const chestermerePhones: LocalDef = {
       fact: "chestermere-road",
       treatment: "mention",
       sentence:
-        "Chestermere Boulevard is the western end of the same road: it becomes 17 Avenue SE at the Calgary city limit, and the shop is on it.",
+        "Chestermere Boulevard is the western end of the same road: it becomes 17 Avenue SE at the Calgary city limit, and the Store is on it.",
     },
   ]),
   lead: () =>
-    `${ENTITY}, repairs phones for Chestermere customers. The drive is the easy part: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the shop sits on the road you already use, with no highway and no turns.`,
+    `${ENTITY}, repairs phones for Chestermere customers. The drive is the easy part: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the Store sits on the road you already use, with no highway and no turns.`,
   answer: (c) =>
     `TechBrotherz repairs phones for Chestermere customers at 3317 17 Ave SE in Calgary. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so it is one road the whole way. Most repairs take about ${c.waitMinutes} minutes at the counter, no appointment needed, with a ${c.warrantyDays}-day warranty and a free quote before any work starts.`,
   keyFacts: (c) => [
@@ -286,7 +286,7 @@ const chestermerePhones: LocalDef = {
       heading: "Is it worth driving from Chestermere for a phone repair?",
       paragraphs: [
         "That is a fair question and it deserves a straight answer rather than a sales pitch. You are choosing between a drive into Calgary and whatever is closer to home, and the honest case for making the trip rests on three things: the price is published per model rather than quoted on the day, most repairs are done while you wait, and the drive is genuinely simple.",
-        "The simplicity matters more than it sounds. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the shop is on the road you already drive rather than somewhere that needs a route worked out. There is no highway section and no navigating unfamiliar streets.",
+        "The simplicity matters more than it sounds. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, so the Store is on the road you already drive rather than somewhere that needs a route worked out. There is no highway section and no navigating unfamiliar streets.",
         `If the repair is a screen or a battery on a stocked model, it is about ${c.waitMinutes} minutes at the counter, so the trip is one journey rather than two. Call ahead to confirm the part for your model is in stock and the trip is worth making. That is the honest version, and the call is what makes the difference.`,
       ],
     },
@@ -311,13 +311,13 @@ const chestermerePhones: LocalDef = {
       paragraphs: [
         "The same mix as everyone else, weighted toward the repairs worth planning a trip around. Cracked screens dominate, followed by batteries that no longer last a day, and those are precisely the two finished while you wait.",
         "Charging ports come third and are the repair most often avoidable. Compacted pocket lint stops the cable seating and looks exactly like a failed port, so we check and clear the socket before quoting a replacement. On a trip in from out of town, that is sometimes the whole visit and nothing to pay.",
-        "For anything beyond a phone, the same shop handles tablets, laptops and desktop computers, so a trip can cover more than one device. Bring model numbers where you have them and chargers for anything that will not power on.",
+        "For anything beyond a phone, the same Store handles tablets, laptops and desktop computers, so a trip can cover more than one device. Bring model numbers where you have them and chargers for anything that will not power on.",
       ],
     },
     {
       heading: "What else can you bring on the same trip?",
       paragraphs: [
-        "Everything the shop repairs happens at one counter, so a trip in from Chestermere can cover more than one device. Phones, iPads, Android and Windows tablets, laptops and desktop towers are all handled in the same visit, along with carrier unlocking and computer work.",
+        "Everything the Store repairs happens at one counter, so a trip in from Chestermere can cover more than one device. Phones, iPads, Android and Windows tablets, laptops and desktop towers are all handled in the same visit, along with carrier unlocking and computer work.",
         "That changes the arithmetic on a drive. One journey for a cracked phone is a reasonable errand; one journey for a cracked phone, a laptop that will not charge and a tablet with a dead battery is a genuinely efficient trip. Bring model numbers where you have them and chargers for anything that will not power on.",
         "The one thing worth splitting out is computer work, which is a drop-off rather than a wait. If you are bringing a tower as well as a phone, the phone can be done while you wait and the tower collected on a later trip, or we can call when it is ready.",
       ],

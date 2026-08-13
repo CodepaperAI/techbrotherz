@@ -27,7 +27,7 @@ const PATH = "/contact";
 export const metadata: Metadata = buildMetadata({
   title: "Contact TechBrotherz in Calgary",
   description:
-    "Call (403) 273-8324 or walk in to 3317 17 Ave SE, Calgary. Opening hours, directions, parking and transit for the TechBrotherz repair shop.",
+    "Call (403) 273-8324 or walk in to 3317 17 Ave SE, Calgary. Opening hours, directions, parking and transit for the TechBrotherz repair Store.",
   path: PATH,
 });
 
@@ -61,7 +61,7 @@ export default async function ContactPage() {
       type: "ContactPage",
       name: "Contact TechBrotherz in Calgary",
       description:
-        "Phone, address, opening hours and directions for the TechBrotherz repair shop at 3317 17 Ave SE in Calgary.",
+        "Phone, address, opening hours and directions for the TechBrotherz repair Store at 3317 17 Ave SE in Calgary.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -76,13 +76,13 @@ export default async function ContactPage() {
       crumbLabel="Contact"
       lead={
         <>
-          TechBrotherz is a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          TechBrotherz is a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}. Calling is the fastest way to check a part is in stock before
           you travel.
         </>
       }
       answerBox={{
-        answer: `Call TechBrotherz on ${SITE.phone}, or walk in to ${SITE.street} in Calgary. The shop is open Monday to Saturday from 10:00 AM to 7:00 PM and Sunday from 11:00 AM to 5:00 PM. No appointment is needed, and most phone repairs take about ${waitMinutes} minutes while you wait.`,
+        answer: `Call TechBrotherz on ${SITE.phone}, or walk in to ${SITE.street} in Calgary. The Store is open Monday to Saturday from 10:00 AM to 7:00 PM and Sunday from 11:00 AM to 5:00 PM. No appointment is needed, and most phone repairs take about ${waitMinutes} minutes while you wait.`,
         keyFacts: [
           { label: "Phone", value: SITE.phone },
           { label: "Address", value: ADDRESS_LINE },
@@ -103,7 +103,7 @@ export default async function ContactPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Card>
             <Phone aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Call the shop</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Call the Store</h3>
             <p className="type-body text-tb-muted mt-2">
               The fastest way to check a part is in stock and get a firm price before you travel.
             </p>
@@ -187,7 +187,7 @@ export default async function ContactPage() {
                 <span>
                   The MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between
                   downtown Calgary and East Hills, with stops along International Avenue close to
-                  the shop.
+                  the Store.
                 </span>
               </p>
 
@@ -237,7 +237,7 @@ export default async function ContactPage() {
       <ScopedFaqs
         faqs={faqs}
         id="page-faq-heading"
-        heading="Questions about visiting the shop"
+        heading="Questions about visiting the Store"
         variant="light"
       />
     </PageShell>

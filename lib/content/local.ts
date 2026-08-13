@@ -4,7 +4,7 @@
  * These lead with the service and ground it in the place, because service is
  * the axis that differentiates: the Phase 5 repair tier produced a 16.5% worst
  * pair from one template, while the brand hubs, differentiated only by which
- * catalogue they list, reached 63.0%. Eleven pages about one shop would have
+ * catalogue they list, reached 63.0%. Eleven pages about one Store would have
  * gone the way of the brand hubs if the place had been asked to carry them.
  *
  * The shared local facts are concentrated rather than repeated. See
@@ -57,7 +57,7 @@ export interface LocalDef {
   globalCategories: string[];
 }
 
-export const ENTITY = "TechBrotherz, a walk-in repair shop at 3317 17 Ave SE in southeast Calgary";
+export const ENTITY = "TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in southeast Calgary";
 
 /* ==================================================== phone repair calgary */
 
@@ -89,7 +89,7 @@ const phoneRepairCalgary: LocalDef = {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "The shop is a few steps from 33 Street SE Station on the 17 Avenue Transitway, so a phone repair does not need a car.",
+        "The Store is a few steps from 33 Street SE Station on the 17 Avenue Transitway, so a phone repair does not need a car.",
     },
   ]),
   lead: (c) =>
@@ -123,7 +123,7 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Do you need an appointment for phone repair in Calgary?",
       paragraphs: [
-        "No. TechBrotherz is a walk-in shop, and that is the whole operating model rather than a concession. Come to the counter during opening hours, describe what the phone is doing, and it gets diagnosed in front of you. There is no booking form, no queue system and no callback.",
+        "No. TechBrotherz is a walk-in Store, and that is the whole operating model rather than a concession. Come to the counter during opening hours, describe what the phone is doing, and it gets diagnosed in front of you. There is no booking form, no queue system and no callback.",
         `Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait, which means a cracked screen is a single trip rather than a drop-off and a return journey. Charging port work takes longer, usually around 45 minutes, because the phone has to come apart further.`,
         "On a busy Saturday there may be repairs ahead of yours, and we will tell you that honestly at the counter rather than letting you discover it after an hour. If you have somewhere to be, say so and we will give you a realistic time.",
       ],
@@ -161,8 +161,8 @@ const phoneRepairCalgary: LocalDef = {
   ],
   faqs: (c) => [
     {
-      question: "Where is the nearest phone repair shop in southeast Calgary?",
-      answer: `TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary, a few steps from 33 Street SE Station on the 17 Avenue Transitway. It is a walk-in shop with no appointment needed, and most phone repairs are finished in about ${c.waitMinutes} minutes at the counter.`,
+      question: "Where is the nearest phone repair Store in southeast Calgary?",
+      answer: `TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary, a few steps from 33 Street SE Station on the 17 Avenue Transitway. It is a walk-in Store with no appointment needed, and most phone repairs are finished in about ${c.waitMinutes} minutes at the counter.`,
     },
     {
       question: "How much does it cost to fix a phone screen in Calgary?",
@@ -322,7 +322,7 @@ const samsungCalgary: LocalDef = {
   lead: () =>
     `${ENTITY}, repairs Samsung Galaxy phones: screens, batteries and charging ports. A Galaxy screen is a bigger job than a comparable iPhone screen, and the reason is structural rather than a markup.`,
   answer: (c) =>
-    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The shop is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
+    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The Store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
   keyFacts: (c) => [
     { label: "Galaxy models", value: "Galaxy S, Galaxy Note and Galaxy A series" },
     { label: "Why Galaxy screens differ", value: "The OLED panel is bonded to the frame and supplied as one assembly" },

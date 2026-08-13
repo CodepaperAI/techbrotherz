@@ -3,45 +3,49 @@ import path from "node:path";
 
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Clock, DoorOpen, ShieldCheck, Wrench } from "lucide-react";
+import { Star } from "lucide-react";
 
-import { BenefitStrip } from "@/components/blocks/BenefitStrip";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { Ticker } from "@/components/blocks/Ticker";
 import { Tile, TileGrid } from "@/components/blocks/Tile";
-import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { MapReveal } from "@/components/blocks/MapReveal";
+import { NumberedList } from "@/components/blocks/NumberedList";
+import { OpenNowBadge } from "@/components/blocks/OpenNowBadge";
 import { PageShell } from "@/components/blocks/PageShell";
 import { ServiceCard } from "@/components/blocks/ServiceCard";
 import type { RepairSubject } from "@/components/blocks/RepairIllustration";
-import { SplitBlock } from "@/components/blocks/SplitBlock";
-import { StepCard } from "@/components/blocks/StepCard";
 import { Card } from "@/components/primitives/Card";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
 import { Section } from "@/components/primitives/Section";
-import { shouldRenderLink } from "@/lib/routes";
-import { BRAND_SILHOUETTE, BrandCard, brandRange } from "@/components/blocks/BrandCard";
+import { route, shouldRenderLink } from "@/lib/routes";
 import { blurFor, demoImage } from "@/lib/content/images";
 import { getCoreFaqContext } from "@/lib/content/core-context";
 import { homeFaqs } from "@/lib/content/core-faqs";
 import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
-import { SITE, TEL_HREF } from "@/lib/site";
-import { getBrands, getGlobalFaqs, getReviewSummary, getSiteSettings } from "@/lib/data";
+import { SITE, TEL_HREF, groupedHours } from "@/lib/site";
+import {
+  getBrandHub,
+  getGlobalFaqs,
+  getReviewSummary,
+  getSiteSettings,
+  getTestimonials,
+} from "@/lib/data";
 
 /**
  * The areas named on the Calgary location record, rendered as tiles.
  *
  * Forest Lawn is the one neighbourhood that cleared the Phase 6
  * four-distinct-fact rule and earned a URL. Every other area anchors to its
- * section on /locations/calgary, so every tile navigates somewhere real. The
- * link audit verifies each anchor target exists.
+ * section on /locations/calgary or links a real page, so every tile navigates
+ * somewhere real. The link audit verifies each anchor target exists.
  */
 const CALGARY_AREAS: { name: string; href?: string }[] = [
+  { name: "SE Calgary", href: "/locations/calgary" },
   { name: "Forest Lawn", href: "/locations/calgary/forest-lawn" },
   { name: "Albert Park", href: "/locations/calgary#albert-park-radisson-heights" },
   { name: "Radisson Heights", href: "/locations/calgary#albert-park-radisson-heights" },
@@ -53,6 +57,30 @@ const CALGARY_AREAS: { name: string; href?: string }[] = [
   { name: "Ogden", href: "/locations/calgary#ogden" },
   { name: "Marlborough", href: "/locations/calgary#marlborough" },
   { name: "Downtown Calgary", href: "/locations/calgary#downtown-calgary" },
+  { name: "Chestermere", href: "/locations/chestermere" },
+  { name: "Airdrie", href: "/locations" },
+];
+
+/** The service pill strip directly under the hero, mirroring the reference. */
+const SERVICE_PILLS: { label: string; href: string }[] = [
+  { label: "iPhone Repair", href: "/repair/apple-iphone" },
+  { label: "Samsung Repair", href: "/repair/samsung-galaxy" },
+  { label: "iPad Repair", href: "/services/ipad-repair" },
+  { label: "Laptop Repair", href: "/services/laptop-repair" },
+  { label: "Computer Repair", href: "/services/computer-repair" },
+  { label: "Unlocking", href: "/services/phone-unlocking" },
+];
+
+/** Brands the Store actually services. No manufacturer logos, names only. */
+const BRAND_NAMES: { label: string; href: string }[] = [
+  { label: "iPhone", href: "/repair/apple-iphone" },
+  { label: "iPad", href: "/repair/apple-ipad" },
+  { label: "Samsung Galaxy", href: "/repair/samsung-galaxy" },
+  { label: "Google Pixel", href: "/repair/google-pixel" },
+  { label: "MacBook", href: "/services/laptop-repair" },
+  { label: "HP", href: "/services/laptop-repair" },
+  { label: "Dell", href: "/services/laptop-repair" },
+  { label: "Lenovo", href: "/services/laptop-repair" },
 ];
 
 export const revalidate = 3600;
@@ -60,38 +88,21 @@ export const revalidate = 3600;
 const PATH = "/";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Cell Phone & Computer Repair in Calgary",
+  title: "Cell Phone & Computer Repair in SE Calgary",
   description:
-    "Walk-in phone, tablet and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Parts and labour included, 60-day warranty.",
+    "Walk-in phone, iPad and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Free quote before any work, 60-day warranty.",
   path: PATH,
 });
 
 /**
- * The one entry point into the repair journey.
- *
- * There used to be two sections here doing the same job: a four-card photo grid
- * asking "which device needs fixing?" and this six-card grid asking "what can we
- * fix for you?". Both linked to the same service hubs, so the page asked a
- * visitor to choose a device twice. The photographs were the better half and the
- * icon wells were the weaker, so the photographs moved into this grid and the
- * device section went.
- *
- * Every card carries a photograph. The last two were drawn until the client
- * supplied originals for them: the stand-ins had been a second crop of the
- * frame `service-tablet-repair` uses, which put two crops of one photograph in
- * this grid, and a laptop being opened with a screwdriver, which is not what a
- * password reset involves. Both slots now hold the supplied images, on their
- * hub pages too.
- *
- * The `illustration` on each card is still the fallback when public/demo/ is
- * absent, which is what keeps the demo set from being load-bearing. The frame
- * is identical either way: see components/blocks/ServiceCard.tsx.
+ * The one entry point into the repair journey. Every card carries a photograph
+ * with the illustration as the fallback when public/demo/ is absent, which is
+ * what keeps the demo set from being load-bearing.
  *
  * `service-password-reset` is the one image in the set that does not meet
  * CLAUDE.md Section 8.9: the supplied FRP graphic uses the Google mark as a
  * design element inside its padlock motif. The client chose the image with
- * that position on record. It is recorded in IMAGE_EDITS so the decision is
- * auditable rather than silent.
+ * that position on record, in IMAGE_EDITS.
  */
 const SERVICE_CARDS: {
   title: string;
@@ -99,6 +110,7 @@ const SERVICE_CARDS: {
   href: string;
   image?: string;
   illustration: RepairSubject;
+  tags: string[];
 }[] = [
   {
     title: "Phone repair",
@@ -107,6 +119,7 @@ const SERVICE_CARDS: {
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
+    tags: ["Screen", "Battery", "Charging port"],
   },
   {
     title: "iPad repair",
@@ -115,6 +128,7 @@ const SERVICE_CARDS: {
     href: "/services/ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
+    tags: ["Glass", "Battery", "Charging port"],
   },
   {
     title: "Laptop repair",
@@ -123,6 +137,7 @@ const SERVICE_CARDS: {
     href: "/services/laptop-repair",
     image: "service-laptop-repair",
     illustration: "keyboard",
+    tags: ["Screen", "Keyboard", "DC jack"],
   },
   {
     title: "Computer repair",
@@ -131,12 +146,17 @@ const SERVICE_CARDS: {
     href: "/services/computer-repair",
     image: "service-computer-repair",
     illustration: "board",
+    tags: ["Diagnostics", "Tune-up", "Windows"],
   },
-  /*
-   * Replaced the carrier unlocking card on the client's instruction 2026-08,
-   * when the console page shipped. Unlocking keeps its header nav slot and its
-   * footer link, so the home grid swap loses it nothing site-wide.
-   */
+  {
+    title: "Carrier unlocking",
+    description:
+      "Any Canadian carrier unlocked, usually the same day. Unlocking does not erase your data.",
+    href: "/services/phone-unlocking",
+    image: "service-phone-unlocking",
+    illustration: "sim",
+    tags: ["All carriers", "Screen lock", "FRP"],
+  },
   {
     title: "Game console repair",
     description:
@@ -144,6 +164,7 @@ const SERVICE_CARDS: {
     href: "/services/game-console-repair",
     image: "service-game-console-repair",
     illustration: "port",
+    tags: ["Xbox", "PlayStation", "Switch"],
   },
   {
     title: "Password reset",
@@ -152,25 +173,34 @@ const SERVICE_CARDS: {
     href: "/services/password-reset",
     image: "service-password-reset",
     illustration: "lock",
+    tags: ["Windows", "Files kept", "Same day"],
+  },
+  {
+    title: "Virus removal",
+    description:
+      "Malware, adware and browser hijackers removed, with security software left running so it does not come straight back.",
+    href: "/services/virus-removal",
+    image: "service-virus-removal",
+    illustration: "diagnostic",
+    tags: ["Malware", "Pop-ups", "Protection"],
   },
 ];
 
 export default async function HomePage() {
-  const [settings, reviews, brands, faqs] = await Promise.all([
+  const [settings, reviews, faqs, testimonials, iphoneHub, samsungHub] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
-    getBrands(),
     getGlobalFaqs(8),
+    getTestimonials(6),
+    getBrandHub("apple-iphone"),
+    getBrandHub("samsung-galaxy"),
   ]);
 
   const warrantyDays = settings?.warrantyDays ?? 60;
   const waitMinutes = settings?.typicalWaitMinutes ?? 30;
+  const hours = groupedHours();
 
-  const activeBrands = brands.filter((brand) => (brand.modelCount ?? 0) > 0);
-
-  // FAQ scoping rule, CLAUDE.md Section 8.8. The home page previously emitted
-  // eight site-wide questions into its FAQPage graph, all of which also sat
-  // in the graph on /faq. Now it answers three questions only it can answer.
+  // FAQ scoping rule, CLAUDE.md Section 8.8.
   const coreCtx = await getCoreFaqContext();
   const scopedFaqs = composeFaqs({
     path: PATH,
@@ -179,10 +209,63 @@ export default async function HomePage() {
   });
 
   /*
+   * The service directory, the reference site's strongest SEO element: four
+   * columns of deep links above the footer. Model links come from the live
+   * catalogue, so only published pages are ever linked.
+   */
+  const directory: { heading: string; links: { label: string; href: string }[] }[] = [
+    {
+      heading: "Common repairs",
+      links: [
+        "/repairs/iphone-screen-replacement",
+        "/repairs/iphone-battery-replacement",
+        "/repairs/iphone-charging-port-repair",
+        "/repairs/iphone-back-glass-replacement",
+        "/repairs/samsung-screen-replacement",
+        "/repairs/samsung-battery-replacement",
+        "/repairs/samsung-charging-port-repair",
+        "/repairs/ipad-screen-replacement",
+      ]
+        .filter((href) => shouldRenderLink(href))
+        .map((href) => ({ label: route(href)?.label ?? href, href }))
+        // The one published Pixel. Sibling links are same-brand, so without
+        // this the page sits below the two-inbound-links floor.
+        .concat([{ label: "Google Pixel 6 repair", href: "/repair/google-pixel/pixel-6" }]),
+    },
+    {
+      heading: "iPhone models",
+      links: (iphoneHub?.models ?? []).slice(0, 8).map((model) => ({
+        label: `${model.name} repair`,
+        href: `/repair/apple-iphone/${model.slug}`,
+      })),
+    },
+    {
+      heading: "Samsung models",
+      links: (samsungHub?.models ?? []).slice(0, 8).map((model) => ({
+        label: `${model.name} repair`,
+        href: `/repair/samsung-galaxy/${model.slug}`,
+      })),
+    },
+    {
+      heading: "Laptops and computers",
+      links: [
+        "/services/laptop-repair",
+        "/services/computer-repair",
+        "/repairs/laptop-screen-replacement",
+        "/repairs/laptop-keyboard-replacement",
+        "/repairs/laptop-charging-port-repair",
+        "/repairs/windows-installation",
+        "/repairs/computer-tune-up",
+        "/repairs/computer-diagnostics",
+      ]
+        .filter((href) => shouldRenderLink(href))
+        .map((href) => ({ label: route(href)?.label ?? href, href })),
+    },
+  ];
+
+  /*
    * The demo hero, when the demo set is present. Deleting public/demo/ falls
-   * back to the placeholder rather than breaking the layout, because the demo
-   * imagery is a stand-in for photography the client has not taken yet and
-   * must not be load-bearing. lib/content/images.ts
+   * back to the placeholder rather than breaking the layout. lib/content/images.ts
    */
   const hero = demoImage("home-hero");
   const heroOnDisk =
@@ -191,38 +274,15 @@ export default async function HomePage() {
     ? { src: hero.file, alt: hero.alt, blurDataURL: blurFor("home-hero") }
     : { src: "/placeholder-photo.svg", alt: "", unoptimized: true };
 
-  /*
-   * Image props for the step and split blocks, present only when the demo set
-   * is on disk. Spreading an empty object leaves the component on its own
-   * fallback, so deleting public/demo/ degrades cleanly rather than breaking.
-   */
-  function onDisk(slot: string) {
-    const entry = demoImage(slot);
-    if (!entry) return null;
-    return existsSync(path.join(process.cwd(), "public", entry.file.replace(/^\//, "")))
-      ? entry
-      : null;
-  }
-
-  function stepImage(slot: string) {
-    const entry = onDisk(slot);
-    return entry ? { image: { src: entry.file, alt: entry.alt } } : {};
-  }
-
-  function splitImage(slot: string) {
-    const entry = onDisk(slot);
-    return entry ? { image: { src: entry.file, alt: entry.alt } } : {};
-  }
-
   const schema = [
     organization(settings ?? {}),
     website(settings ?? {}),
     localBusiness(settings ?? {}, reviews),
     webPage({
       type: "WebPage",
-      name: "Cell phone and computer repair in Calgary",
+      name: "Cell phone and computer repair in SE Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, tablet and computer repair shop at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, iPad and computer repair Store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -233,26 +293,28 @@ export default async function HomePage() {
     <PageShell
       path={PATH}
       layout="hero"
-      eyebrow="Calgary"
+      eyebrow="SE Calgary's walk-in repair Store"
       title="Phone and computer repairs, done while you wait"
       lead={
         <>
-          TechBrotherz is a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}. No appointment is needed, most repairs take about{" "}
-          {waitMinutes} minutes, and every price includes the part and the labour.
+          TechBrotherz is a local, family-owned walk-in repair Store at {SITE.street} in{" "}
+          {SITE.city}, {SITE.region}, fixing phones, iPads, laptops, desktops and game consoles. No
+          appointment is needed, and every repair is quoted free before any work starts.
         </>
       }
       heroActions={
         <>
-          <PillButton href="/contact">Ask for a quote</PillButton>
-          <PillButton href={TEL_HREF} variant="ghostOnDark" withArrow={false}>
+          <PillButton href={TEL_HREF} withArrow={false}>
             Call {SITE.phone}
+          </PillButton>
+          <PillButton href="/contact" variant="ghostOnDark">
+            Get a quote
           </PillButton>
         </>
       }
       heroImage={heroImage}
       answerBox={{
-        answer: `TechBrotherz is a walk-in cell phone and computer repair shop at ${SITE.street} in Calgary. Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a walk-in cell phone and computer repair Store at ${SITE.street} in Calgary. Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           { label: "Phone", value: SITE.phone },
@@ -264,66 +326,68 @@ export default async function HomePage() {
       }}
       schema={schema}
     >
-      {/* ------------------------------------------- ticker + benefit strip
-          Phase 8 spec section 6: the ticker sits directly under the hero and
-          the benefit strip follows it. Both are full bleed, so the page breaks
-          to black twice before the first light section rather than running as
-          one continuous field. The TrustStrip that used to sit here carried the
-          same four facts, so it is replaced rather than stacked above them. */}
-      <Ticker />
-      <section aria-labelledby="why-techbrotherz">
-        <h2 id="why-techbrotherz" className="sr-only">
-          Why customers choose TechBrotherz
+      {/* ------------------------------------------------- service pill row */}
+      <nav aria-label="Popular repair services" className="border-tb-border bg-tb-white border-b">
+        <Container className="flex flex-wrap items-center justify-center gap-2 py-4">
+          {SERVICE_PILLS.filter((pill) => shouldRenderLink(pill.href)).map((pill) => (
+            <Link
+              key={pill.href + pill.label}
+              href={pill.href}
+              className="type-caption border-tb-border text-tb-text rounded-pill hover:border-tb-green-deep hover:text-tb-green-deep border px-4 py-2 font-medium transition-colors duration-[180ms]"
+            >
+              {pill.label}
+            </Link>
+          ))}
+        </Container>
+      </nav>
+
+      {/* ------------------------------------------------------- stat cards */}
+      <Section variant="tint" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" className="sr-only">
+          What every repair at TechBrotherz comes with
         </h2>
-        <BenefitStrip />
-      </section>
-
-      {/* ------------------------------------------------------ icon cards */}
-      <Section variant="tint" aria-labelledby="how-it-works-heading">
-        <Heading
-          level={2}
-          id="how-it-works-heading"
-          eyebrow="Why us"
-          lead="Four things that are true of every repair TechBrotherz does in Calgary, and that you can hold us to."
-        >
-          What you get on every repair
-        </Heading>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <IconCard
-            icon={DoorOpen}
-            title="Walk in"
-            description={`No appointment and no booking system. Come in during opening hours and TechBrotherz starts on your device when you arrive.`}
-          />
-          <IconCard
-            icon={Clock}
-            title="About 30 minutes"
-            description={`Most phone screen and battery repairs are finished in about ${waitMinutes} minutes, so you can wait in the shop.`}
-          />
-          <IconCard
-            icon={Wrench}
-            title="Parts and labour included"
-            description="Every price on this site includes both the part and the labour. There is no separate bench fee on a phone repair."
-          />
-          <IconCard
-            icon={ShieldCheck}
-            title={`${warrantyDays}-day warranty`}
-            description={`Every repair is covered for ${warrantyDays} days on both the part fitted and the work done.`}
-            link={{ label: `What the ${warrantyDays}-day warranty covers`, href: "/warranty" }}
-          />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              stat: `${waitMinutes} min`,
+              label: "Most repairs",
+              body: "Most phone screen and battery repairs are finished while you wait.",
+            },
+            {
+              stat: `${warrantyDays} days`,
+              label: "Warranty",
+              body: "Every repair is covered on the part fitted and the work done.",
+            },
+            {
+              stat: "Walk in",
+              label: "No appointment",
+              body: "There is no booking system. Come in during opening hours any day.",
+            },
+            {
+              stat: "7 days",
+              label: "Open every day",
+              body: "Monday to Saturday 10 to 7, Sunday 11 to 5, every week.",
+            },
+          ].map((card) => (
+            <Card key={card.label}>
+              <p className="type-numeral text-tb-green-deep">{card.stat}</p>
+              <h3 className="type-h3 text-tb-text mt-3">{card.label}</h3>
+              <p className="type-body text-tb-muted mt-2">{card.body}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 
-      {/* -------------------------------------------------------- services
-          The single entry point into the repair journey. See SERVICE_CARDS
-          above for why the device grid that used to sit above the ticker is
-          gone and its photographs are here. */}
-      <Section aria-labelledby="services-heading">
+      {/* ----------------------------------------------------------- ticker */}
+      <Ticker />
+
+      {/* -------------------------------------------------------- services */}
+      <Section id="services" aria-labelledby="services-heading" className="scroll-mt-24">
         <Heading
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, tablets, laptops, desktop computers and game consoles, and unlocks phones for any Canadian carrier."
+          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and game consoles in SE Calgary, and unlocks phones for any Canadian carrier."
         >
           What can we fix for you?
         </Heading>
@@ -336,6 +400,7 @@ export default async function HomePage() {
               description={card.description}
               image={card.image}
               illustration={card.illustration}
+              tags={card.tags}
               sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
               {...(shouldRenderLink(card.href)
                 ? { link: { label: `${card.title} details`, href: card.href } }
@@ -351,6 +416,79 @@ export default async function HomePage() {
         </div>
       </Section>
 
+      {/* --------------------------------------------------- brand strip */}
+      <Section variant="tint" aria-labelledby="brands-heading">
+        <Heading
+          level={2}
+          id="brands-heading"
+          eyebrow="Brands"
+          lead="TechBrotherz repairs devices from every major brand sold in Canada, including phones that most shops have stopped stocking parts for."
+        >
+          Which brands do we repair?
+        </Heading>
+
+        {/* Names set in our own type, never manufacturer logos. CLAUDE.md 8.9. */}
+        <ul className="mt-10 flex flex-wrap gap-3">
+          {BRAND_NAMES.map((brand) => (
+            <li key={brand.label}>
+              <Link
+                href={brand.href}
+                className="border-tb-border bg-tb-white text-tb-text rounded-pill hover:border-tb-green-deep block border px-6 py-3 font-medium transition-colors duration-[180ms]"
+              >
+                {brand.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="type-body measure text-tb-muted mt-8">
+          Each phone brand links to its model catalogue, with every handset we repair listed newest
+          first. MacBooks, HP, Dell and Lenovo machines go through{" "}
+          <Link href="/services/laptop-repair" className="text-tb-green-deep hover:underline">
+            laptop repair
+          </Link>
+          .
+        </p>
+      </Section>
+
+      {/* ------------------------------------------------------ why us */}
+      <Section aria-labelledby="why-us-heading">
+        <Heading
+          level={2}
+          id="why-us-heading"
+          eyebrow="Why us"
+          lead="Five things that are true of every repair TechBrotherz does in Calgary, and that you can hold us to."
+        >
+          Why bring your device to TechBrotherz?
+        </Heading>
+
+        <NumberedList
+          className="mt-12"
+          items={[
+            {
+              title: `${waitMinutes}-minute repairs`,
+              body: `Most phone screen and battery repairs are finished in about ${waitMinutes} minutes at the counter, so you wait rather than come back.`,
+            },
+            {
+              title: "All brands and devices",
+              body: "iPhone, Samsung Galaxy, Google Pixel, iPads, laptops, desktops and game consoles, at one counter.",
+            },
+            {
+              title: "Free quote before any work",
+              body: "The device is diagnosed and the figure agreed before anything starts. The number you approve is the number you pay.",
+            },
+            {
+              title: "Locally and family owned",
+              body: "One Store, one counter, and the person who takes your device in is the person who repairs it.",
+            },
+            {
+              title: `${warrantyDays}-day warranty`,
+              body: `Every repair is covered for ${warrantyDays} days on both the part fitted and the work done.`,
+            },
+          ]}
+        />
+      </Section>
+
       {/* --------------------------------------------------------- process */}
       <Section variant="dark" aria-labelledby="process-heading">
         <Heading
@@ -363,115 +501,121 @@ export default async function HomePage() {
         </Heading>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          <StepCard
-            {...stepImage("home-process-1")}
-            illustration="diagnostic"
-            step={1}
-            title="Walk in or call"
-            description={`Bring the device to ${SITE.street}, or call ${SITE.phone} first to check the part for your model is in stock.`}
-          />
-          <StepCard
-            {...stepImage("home-process-2")}
-            illustration="board"
-            step={2}
-            title="We diagnose and quote"
-            description="We test the device and give you the exact figure before any work starts. The quote is free."
-          />
-          <StepCard
-            {...stepImage("home-process-3")}
-            illustration="screen"
-            step={3}
-            title={`Repair and ${warrantyDays}-day warranty`}
-            description={`Most repairs take about ${waitMinutes} minutes. You leave with a ${warrantyDays}-day warranty on the part and the work.`}
-          />
+          {[
+            {
+              step: "01",
+              title: "Walk in or call",
+              body: `Bring the device to ${SITE.street}, or call ${SITE.phone} first to check the part for your model is in stock.`,
+            },
+            {
+              step: "02",
+              title: "Free quote",
+              body: "We test the device and give you the exact figure before any work starts. Nothing begins until you agree to it.",
+            },
+            {
+              step: "03",
+              title: "Repaired while you wait",
+              body: `Most repairs take about ${waitMinutes} minutes, and you leave with a ${warrantyDays}-day warranty on the part and the work.`,
+            },
+          ].map((item) => (
+            <div key={item.step} className="border-tb-border-dark rounded-card border p-8">
+              <span aria-hidden="true" className="type-numeral text-tb-green">
+                {item.step}
+              </span>
+              <h3 className="type-h3 text-tb-white mt-4">{item.title}</h3>
+              <p className="type-body text-tb-muted-dark mt-3">{item.body}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
-      {/* --------------------------------------------------- brand strip */}
-      <Section variant="tint" aria-labelledby="brands-heading">
+      {/* --------------------------------------------------------- reviews */}
+      <Section id="reviews" aria-labelledby="reviews-heading" className="scroll-mt-24">
         <Heading
           level={2}
-          id="brands-heading"
-          eyebrow="Brands"
-          lead="TechBrotherz repairs devices from every major brand sold in Canada, including phones that most shops have stopped stocking parts for."
+          id="reviews-heading"
+          eyebrow="Reviews"
+          lead="Reviews of TechBrotherz live on the Store's Google listing, written by real customers on their own accounts."
         >
-          Which brands do we repair?
+          What do customers say about TechBrotherz?
         </Heading>
 
-        {/* Silhouette, wordmark, model range, count and starting price. The
-            range and the price are what stop nine cards looking identical, and
-            both are real catalogue data. No manufacturer logos: see
-            components/blocks/BrandCard.tsx. */}
-        <ul className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-          {activeBrands.map((brand) => {
-            const href = `/repair/${brand.slug}`;
-            return (
-              <li key={brand._id}>
-                <BrandCard
-                  name={brand.name ?? "Devices"}
-                  href={href}
-                  silhouette={BRAND_SILHOUETTE[brand.slug ?? ""] ?? "phone"}
-                  range={brandRange(brand.oldestModel, brand.newestModel)}
-                  modelCount={brand.modelCount}
-                  linked={shouldRenderLink(href)}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {testimonials.length > 0 ? (
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((entry) => (
+              <Card key={entry._id}>
+                {typeof entry.rating === "number" ? (
+                  <div
+                    className="flex gap-0.5"
+                    role="img"
+                    aria-label={`Rated ${entry.rating} out of 5`}
+                  >
+                    {Array.from({ length: entry.rating }, (_, i) => (
+                      <Star
+                        key={i}
+                        aria-hidden="true"
+                        size={16}
+                        strokeWidth={1.5}
+                        className="fill-tb-green-deep text-tb-green-deep"
+                      />
+                    ))}
+                  </div>
+                ) : null}
+                <p className="type-body text-tb-text mt-4">{entry.text}</p>
+                <p className="type-caption text-tb-muted mt-4">{entry.name}</p>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <p className="type-body measure text-tb-muted mt-8">
+            TechBrotherz does not write, buy or paste reviews onto this site. Read what customers
+            actually say on the Google listing below, and if we have repaired something for you, an
+            honest review there helps the next person decide.
+          </p>
+        )}
+
+        <div className="mt-8">
+          <PillButton href={SITE.googleReviewsUrl}>Read our reviews on Google</PillButton>
+        </div>
       </Section>
 
-      {/* --------------------------------------------- individuals / business */}
-      <Section aria-labelledby="who-we-help-heading">
-        <h2 id="who-we-help-heading" className="sr-only">
-          Who TechBrotherz repairs devices for
-        </h2>
+      {/* ----------------------------------------------------------- hours */}
+      <Section id="hours" variant="tint" aria-labelledby="hours-heading" className="scroll-mt-24">
+        <div className="flex flex-wrap items-center gap-4">
+          <Heading level={2} id="hours-heading" eyebrow="Store hours">
+            When is TechBrotherz open?
+          </Heading>
+          <OpenNowBadge />
+        </div>
 
-        <SplitBlock
-          eyebrow="For individuals"
-          heading="One device, fixed while you wait"
-          lead="Bring a cracked phone, a slow laptop or a tablet that will not charge to the Calgary shop and leave with it working."
-          checklist={[
-            `Most phone repairs finished in about ${waitMinutes} minutes`,
-            "Every price includes the part and the labour",
-            `${warrantyDays}-day warranty on the part and the workmanship`,
-          ]}
-          cta={{ label: "Ask for a quote", href: "/contact" }}
-          {...splitImage("home-split-individuals")}
-        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {hours.map((row) => (
+            <Card key={row.label}>
+              <h3 className="type-h3 text-tb-text">{row.label}</h3>
+              <p className="type-numeral text-tb-green-deep mt-3">{row.value}</p>
+            </Card>
+          ))}
+        </div>
 
-        <SplitBlock
-          className="mt-24"
-          reverse
-          eyebrow="For businesses"
-          heading="Fleets of laptops and phones, kept working"
-          lead="Small businesses across southeast Calgary use TechBrotherz for repairs, Windows installs and clean-ups on staff devices."
-          checklist={[
-            "Windows installation including Office and security",
-            "Desktop clean-up and tune-up, quoted per machine",
-            "Walk in with several devices, no appointment needed",
-          ]}
-          cta={{ label: "Talk to us about business repairs", href: "/contact" }}
-          {...splitImage("home-split-business")}
-        />
+        <p className="type-body measure text-tb-muted mt-8">
+          Open seven days a week at {SITE.street}. No appointment at any time: walk in during the
+          hours above and TechBrotherz starts on your device when you arrive.
+        </p>
       </Section>
 
-      {/* -------------------------------------------------------- location */}
-      <Section variant="tint" aria-labelledby="location-heading">
+      {/* -------------------------------------------------- service areas */}
+      <Section aria-labelledby="location-heading">
         <Heading
           level={2}
           id="location-heading"
-          eyebrow="Find us"
-          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in southeast Calgary a few blocks west of Forest Lawn. Parking is free in the plaza in front of the store.`}
+          eyebrow="Service areas"
+          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in SE Calgary a few blocks west of Forest Lawn. Parking is free in the plaza in front of the Store.`}
         >
-          Where is TechBrotherz in Calgary?
+          Where is TechBrotherz in SE Calgary?
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
-        {/* Click-to-load map, added on client request 2026-08. The placeholder
-            costs nothing; the iframe loads only when asked, which is what keeps
-            the LCP budget intact. components/blocks/MapReveal.tsx. */}
         <MapReveal
           className="mt-6 h-80 md:h-96"
           src={SITE.googleMapsEmbedUrl}
@@ -479,12 +623,9 @@ export default async function HomePage() {
           addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
         />
 
-        {/* Neighbourhood tiles, per Phase 8 spec section 6. Every name is one
-            already listed on the Calgary location record, so this adds coverage
-            the site already claims rather than a new claim. Forest Lawn links to
-            its page and every other area anchors to its section on
-            /locations/calgary. */}
-        <h3 className="type-h3 text-tb-ink mt-12">Areas we serve in southeast Calgary</h3>
+        {/* Every tile navigates somewhere real: a page, or an anchored section
+            on /locations/calgary that the link audit verifies. */}
+        <h3 className="type-h3 text-tb-ink mt-12">Areas we serve from SE Calgary</h3>
         <TileGrid className="mt-5">
           {CALGARY_AREAS.map((area) => (
             <Tile key={area.name} href={area.href}>
@@ -494,11 +635,11 @@ export default async function HomePage() {
         </TileGrid>
 
         <p className="type-body measure text-tb-muted mt-8">
-          We serve {SITE.city}, Chestermere, Airdrie and the surrounding Alberta communities. See{" "}
+          We serve {SITE.city}, Chestermere, Airdrie and the surrounding Calgary communities. See{" "}
           <Link href="/locations" className="text-tb-green-deep hover:underline">
             the areas we serve
           </Link>{" "}
-          for drive times, or{" "}
+          for routes, or{" "}
           <Link href="/contact" className="text-tb-green-deep hover:underline">
             directions and opening hours
           </Link>
@@ -511,7 +652,7 @@ export default async function HomePage() {
         faqs={scopedFaqs}
         id="home-faq-heading"
         heading="Common questions about repairs in Calgary"
-        lead="The questions customers ask most before bringing a device in to the Calgary shop."
+        lead="The questions customers ask most before bringing a device in to the Calgary Store."
         variant="light"
         aside={
           <Card>
@@ -532,8 +673,8 @@ export default async function HomePage() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-tb-green-deep hover:underline">
-                  About the TechBrotherz shop
+                <Link href="/blog" className="text-tb-green-deep hover:underline">
+                  Repair guides and answers
                 </Link>
               </li>
             </ul>
@@ -548,8 +689,9 @@ export default async function HomePage() {
             <div>
               <h2 className="type-h2 text-tb-white">Walk in today, no appointment needed</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
-                We are at {SITE.street} in {SITE.city}, open seven days a week. Most phone repairs
-                are done in about {waitMinutes} minutes while you wait.
+                {SITE.street}, {SITE.city}. Monday to Saturday 10:00 AM to 7:00 PM, Sunday 11:00 AM
+                to 5:00 PM. Most phone repairs are done in about {waitMinutes} minutes while you
+                wait.
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
@@ -557,11 +699,37 @@ export default async function HomePage() {
                 Call {SITE.phone}
               </PillButton>
               <PillButton href="/contact" variant="ghostOnDark">
-                Ask for a quote
+                Get a quote
               </PillButton>
             </div>
           </div>
         </Container>
+      </Section>
+
+      {/* --------------------------------------------- service directory */}
+      <Section aria-labelledby="directory-heading">
+        <h2 id="directory-heading" className="type-eyebrow text-tb-green-deep">
+          Find your repair
+        </h2>
+        <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {directory.map((column) => (
+            <nav key={column.heading} aria-label={column.heading}>
+              <h3 className="type-h3 text-tb-text">{column.heading}</h3>
+              <ul className="mt-4 space-y-2.5">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="type-body text-tb-muted hover:text-tb-green-deep transition-colors duration-[180ms]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
       </Section>
     </PageShell>
   );

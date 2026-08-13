@@ -103,7 +103,7 @@ const phoneRepair: ServiceDef = {
   localPath: "/phone-repair-calgary",
   siblings: ["/services/ipad-repair", "/services/phone-unlocking"],
   lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs cell phones while you wait at the counter. Most phone repairs take about ${c.waitMinutes} minutes, no appointment is needed, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and agreed before any work starts, and it covers the part and the labour together.`,
   keyFacts: (c) => [
@@ -249,7 +249,7 @@ const ipadRepair: ServiceDef = {
   localPath: "/ipad-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same counter.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same counter.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs iPads of every generation. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. iPad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
@@ -400,7 +400,7 @@ const laptopRepair: ServiceDef = {
   localPath: "/laptop-repair-calgary",
   siblings: ["/services/computer-repair", "/services/virus-removal"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs laptops: cracked and failed screens, keyboards, charging sockets, storage and memory. Every quote includes the part and the labour.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, repairs laptops: cracked and failed screens, keyboards, charging sockets, storage and memory. Every quote includes the part and the labour.`,
   answer: (c) =>
     `TechBrotherz in Calgary replaces laptop screens, keyboards and charging sockets, with the part and the labour in one figure. Laptop diagnostics carry a fixed fee that comes off the repair if you go ahead. Most laptop work is finished the same day, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
@@ -553,7 +553,7 @@ const computerRepair: ServiceDef = {
   localPath: "/computer-repair-calgary",
   siblings: ["/services/laptop-repair", "/services/virus-removal"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, repairs desktop computers and laptops: diagnostics, Windows installation, and a full clean-up and tune-up. Every job is quoted flat and agreed before work starts.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, repairs desktop computers and laptops: diagnostics, Windows installation, and a full clean-up and tune-up. Every job is quoted flat and agreed before work starts.`,
   answer: () =>
     `TechBrotherz in Calgary quotes computer work per job rather than per hour: diagnostics, a Windows installation including an office suite and security software, a full clean-up and tune-up, and hardware or program installation charged per item. Every figure is flat and agreed before work starts, and the diagnostic fee comes off the repair if you go ahead.`,
   keyFacts: (c) => [
@@ -702,7 +702,7 @@ const phoneUnlocking: ServiceDef = {
   localPath: "/phone-unlocking-calgary",
   siblings: ["/services/phone-repair", "/services/password-reset"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
   answer: () =>
     `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 carriers must unlock phones free of charge on request. TechBrotherz also removes Google Factory Reset Protection (FRP) from Android phones, and proof of ownership is required before that work starts.`,
   keyFacts: () => [
@@ -744,7 +744,7 @@ const phoneUnlocking: ServiceDef = {
       heading: "Do you actually need to pay to unlock a phone in Canada?",
       paragraphs: [
         "Often you do not, and TechBrotherz will tell you that before taking your money. Under the CRTC Wireless Code, as revised in Telecom Regulatory Policy CRTC 2017-200, every mobile device sold in Canada on or after 1 December 2017 must be provided to the customer already unlocked. For devices sold before that date, carriers must unlock them free of charge when the customer asks.",
-        "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier, not to a repair shop. It costs nothing and it is your right. Anyone who tells you otherwise is either misinformed or hoping you are.",
+        "So if the phone is on your own account with a Canadian carrier, the first call should be to that carrier, not to a repair Store. It costs nothing and it is your right. Anyone who tells you otherwise is either misinformed or hoping you are.",
         "Paid unlocking exists for the situations that rule does not reach. A phone bought secondhand from someone whose account you cannot access, a phone brought in from another country where no Canadian rule applies, a phone from a carrier that no longer operates, or a device where the original account holder is simply not contactable. Those are the cases where paying solves a problem that a phone call cannot.",
       ],
     },
@@ -821,7 +821,7 @@ const phoneUnlocking: ServiceDef = {
     {
       question: "Can TechBrotherz unlock a phone reported lost or stolen?",
       answer:
-        "No. A phone reported lost or stolen is blacklisted on the national IMEI database shared by Canadian carriers, and no repair shop or carrier can unlock or reactivate it. TechBrotherz checks the IMEI before taking payment, so a blacklisted phone is identified before you spend anything.",
+        "No. A phone reported lost or stolen is blacklisted on the national IMEI database shared by Canadian carriers, and no repair Store or carrier can unlock or reactivate it. TechBrotherz checks the IMEI before taking payment, so a blacklisted phone is identified before you spend anything.",
     },
     {
       question: "Does unlocking a phone erase my data or void the warranty?",
@@ -861,7 +861,7 @@ const passwordReset: ServiceDef = {
   localPath: "/computer-repair-calgary",
   siblings: ["/services/computer-repair", "/services/virus-removal"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, resets Windows passwords and restores access to a computer you are locked out of, leaving every file on the machine exactly where it is.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, resets Windows passwords and restores access to a computer you are locked out of, leaving every file on the machine exactly where it is.`,
   answer: () =>
     `TechBrotherz in Calgary resets a Windows computer password, restoring access to a machine you are locked out of without deleting your files. Proof that the computer is yours is required before any work starts. Most password resets are finished the same day. A Microsoft account password is reset through Microsoft rather than on the machine, and TechBrotherz will tell you which case applies.`,
   keyFacts: () => [
@@ -1002,7 +1002,7 @@ const virusRemoval: ServiceDef = {
   localPath: "/computer-repair-calgary",
   siblings: ["/services/computer-repair", "/services/password-reset"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, removes viruses, malware, adware and browser hijackers from Windows computers, and leaves security software in place so the same thing does not come straight back.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, removes viruses, malware, adware and browser hijackers from Windows computers, and leaves security software in place so the same thing does not come straight back.`,
   answer: () =>
     `TechBrotherz in Calgary removes viruses and malware from a computer, including security software left installed and running afterwards. Pop-ups that will not close, a browser that opens on a page you did not choose, and fake warnings telling you to call a support number are the three most common symptoms. Most virus removals are finished the same day, and your files stay on the machine.`,
   keyFacts: () => [
@@ -1154,7 +1154,7 @@ const gameConsoleRepair: ServiceDef = {
   localPath: "/locations/calgary",
   siblings: ["/services/computer-repair", "/services/phone-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair shop at 3317 17 Ave SE in Calgary, Alberta, takes in game consoles for repair: the Xbox One, the Xbox Series X and Series S, the PlayStation 4 and 5, and the Nintendo Switch. Every console is diagnosed first, and the price is agreed before any work starts.`,
+    `TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, takes in game consoles for repair: the Xbox One, the Xbox Series X and Series S, the PlayStation 4 and 5, and the Nintendo Switch. Every console is diagnosed first, and the price is agreed before any work starts.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs game consoles, including the Xbox One, Xbox Series X and Series S, PlayStation 4, PlayStation 5 and Nintendo Switch. Every console is diagnosed before a price is quoted, no work starts until the price is agreed, and completed repairs carry a ${c.warrantyDays}-day warranty. No appointment is needed.`,
   keyFacts: (c) => [
@@ -1197,7 +1197,7 @@ const gameConsoleRepair: ServiceDef = {
       paragraphs: [
         "TechBrotherz in Calgary takes in the consoles people actually own: the Xbox One family, the Xbox Series X and Series S, the PlayStation 4 in its original, Slim and Pro versions, the PlayStation 5 in both disc and digital editions, and the Nintendo Switch, including the Switch Lite and the OLED model.",
         "Console repair works differently from phone repair at the same counter. Phone repairs are published as fixed prices per model because the same screen goes into the same handset every time. Console faults vary more, so a console is diagnosed first and quoted as one figure before any work starts, rather than priced off a list.",
-        "If your console is older than the ones named here, phone the shop before you travel. Whether an older console can be repaired depends on the fault and on whether the part can still be sourced, and that is a two-minute conversation rather than a wasted trip.",
+        "If your console is older than the ones named here, phone the Store before you travel. Whether an older console can be repaired depends on the fault and on whether the part can still be sourced, and that is a two-minute conversation rather than a wasted trip.",
       ],
     },
     {

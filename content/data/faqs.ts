@@ -129,7 +129,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.do-i-need-an-appointment-s0",
             "marks": [],
-            "text": "No appointment is needed. TechBrotherz is a walk-in shop at 3317 17 Ave SE in Calgary, and we start on your device when you arrive.",
+            "text": "No appointment is needed. TechBrotherz is a walk-in Store at 3317 17 Ave SE in Calgary, and we start on your device when you arrive.",
             "_type": "span"
           }
         ],
@@ -155,7 +155,7 @@ export const FAQ_DOCS: FaqDoc[] = [
     "category": "walkin",
     "featured": true,
     "order": 60,
-    "plainAnswer": "No. TechBrotherz is a walk-in shop at 3317 17 Ave SE in Calgary. Come in during opening hours and we start on the spot. Most phone screen and battery repairs are finished in about 30 minutes while you wait. There is no booking system and no queue to join in advance.",
+    "plainAnswer": "No. TechBrotherz is a walk-in Store at 3317 17 Ave SE in Calgary. Come in during opening hours and we start on the spot. Most phone screen and battery repairs are finished in about 30 minutes while you wait. There is no booking system and no queue to join in advance.",
     "published": true,
     "question": "Do I need an appointment for a phone repair in Calgary?"
   },
@@ -223,7 +223,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.do-you-need-my-passcode-s1",
             "marks": [],
-            "text": "Most repairs take about 30 minutes, so you are welcome to stay in the shop and unlock the phone yourself for testing. If you would rather not share a passcode at all, say so when you drop the device off and we will test everything we can without it and explain what we could not check.",
+            "text": "Most repairs take about 30 minutes, so you are welcome to stay in the Store and unlock the phone yourself for testing. If you would rather not share a passcode at all, say so when you drop the device off and we will test everything we can without it and explain what we could not check.",
             "_type": "span"
           }
         ],
@@ -235,7 +235,7 @@ export const FAQ_DOCS: FaqDoc[] = [
     "category": "data",
     "featured": false,
     "order": 120,
-    "plainAnswer": "For most repairs we need to unlock the device to test it afterwards, for example to check touch across a new screen or to confirm a camera works. You can stay in the shop while we do it. If you would rather not share the passcode, tell us and we will test what we can without it.",
+    "plainAnswer": "For most repairs we need to unlock the device to test it afterwards, for example to check touch across a new screen or to confirm a camera works. You can stay in the Store while we do it. If you would rather not share the passcode, tell us and we will test what we can without it.",
     "published": true,
     "question": "Do you need my passcode to repair my phone?"
   },
@@ -331,7 +331,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.find-reputable-ipad-repair-canada-s2",
             "marks": [],
-            "text": "TechBrotherz publishes every price on this site, includes the part and the labour in each one, and covers every repair for 60 days. The shop is at 3317 17 Ave SE in Calgary and you can walk in during opening hours without an appointment.",
+            "text": "TechBrotherz publishes every price on this site, includes the part and the labour in each one, and covers every repair for 60 days. The Store is at 3317 17 Ave SE in Calgary and you can walk in during opening hours without an appointment.",
             "_type": "span"
           }
         ],
@@ -345,7 +345,7 @@ export const FAQ_DOCS: FaqDoc[] = [
     "order": 30,
     "plainAnswer": "Look for four things: prices published in writing before you hand the tablet over, a warranty stated in days rather than vaguely, a real street address you can walk into, and a shop willing to tell you when a repair is not worth buying. TechBrotherz publishes every price and warrants every repair for 60 days.",
     "published": true,
-    "question": "How do I find a reputable iPad repair shop in Canada that offers fair pricing?"
+    "question": "How do I find a reputable iPad repair Store in Canada that offers fair pricing?"
   },
   {
     "_id": "faq.how-long-does-a-repair-take",
@@ -357,7 +357,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.how-long-does-a-repair-take-s0",
             "marks": [],
-            "text": "Most phone screen and battery replacements take about 30 minutes, and you are welcome to wait in the shop while the work is done. Charging port, camera and button repairs usually take 30 to 45 minutes.",
+            "text": "Most phone screen and battery replacements take about 30 minutes, and you are welcome to wait in the Store while the work is done. Charging port, camera and button repairs usually take 30 to 45 minutes.",
             "_type": "span"
           }
         ],
@@ -773,7 +773,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.where-are-you-and-is-there-parking-s1",
             "marks": [],
-            "text": "Parking is free in the plaza in front of the store. If you are coming by transit, the MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between downtown Calgary and East Hills, with stops close to the shop.",
+            "text": "Parking is free in the plaza in front of the store. If you are coming by transit, the MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between downtown Calgary and East Hills, with stops close to the Store.",
             "_type": "span"
           }
         ],

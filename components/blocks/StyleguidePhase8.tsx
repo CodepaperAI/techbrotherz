@@ -31,7 +31,7 @@ const SURFACES = [
 ];
 
 const WHY = [
-  { title: "Walk in, no appointment", body: "The shop takes repairs during opening hours. There is no booking system to work around." },
+  { title: "Walk in, no appointment", body: "The Store takes repairs during opening hours. There is no booking system to work around." },
   { title: "A free quote first", body: "The figure is agreed at the counter before any work starts, with the part and the labour together." },
   { title: "Most repairs while you wait", body: "Phone repairs take about 30 minutes. Laptops and tablets are usually same day." },
   { title: "Sixty days of cover", body: "Every repair carries a 60-day warranty on the part and the workmanship." },

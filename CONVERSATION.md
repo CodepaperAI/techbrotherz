@@ -2,6 +2,39 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-13 — Match the reference site: the home rebuild, Store, blog
+
+**Asked:** the urgent match-the-reference brief. The reference is a single-page site; ours keeps its 143-page architecture and rebuilds the home page to carry every section the reference has, in order, with header anchors. Plus the text fixes and the blog.
+
+**Done:**
+
+### The text fixes
+
+- **"shop" is "Store"** wherever it names the business: 237 replacements across pages, content modules, FAQs, location records, JSON-LD descriptions and the entity sentence in lib/site.ts. Generic uses ("no shop can decrypt", "any shop", "shopping district") kept, reviewed by hand. Capitalised mid-sentence exactly as the client wrote it.
+- **Service area** is now "Calgary, Chestermere, Airdrie and surrounding Calgary communities" site-wide, flagged for confirmation since the client's wording was ambiguous; `areaServed` in schema is unchanged and consistent.
+- **No misspellings existed** in user-facing content; the repo folder (c:\techbrothers) and the Vercel project alias (techbrothers.vercel.app) carry the old spelling as infrastructure names, flagged rather than changed under deadline.
+- **SE Calgary** leads the hero eyebrow, the services lead, the areas heading and the home title tag.
+
+### The home page, sixteen sections in the reference's order
+
+Sticky header (Services, Reviews and Hours are anchors into the page, then Locations, Blog, About, Contact), service pill row, hero with the SE Calgary eyebrow and Call plus Get a Quote, four stat cards (30 min, 60 days, walk in, 7 days, every one verified), the ticker, the services grid now at eight photo cards each with tag chips, brands as a wrapped name list (iPhone through Lenovo, no manufacturer logos), why-us as the numbered 01 to 05 list (no "no fix no fee": we charge a diagnostic fee on computers), the three-step process, the reviews section, the hours section split weekday and weekend with the open-now badge, service areas with the map, free-parking line and 14 tiles that all navigate somewhere real, the scoped FAQ, the CTA band with phone, hours and address, and the service directory: four columns, 33 deep links, every one resolving. The SplitBlock section was dropped, being the one block with no counterpart in the reference order.
+
+### Reviews, the honest version
+
+The section exists, is anchored from the header, and renders real testimonials the moment `content/data/testimonials.ts` has any. While it is empty it says plainly that reviews live on the Google listing and links there with the client's own reviews URL. No placeholder stars, no invented counts. When Jenish sends the Google data, it is a data change.
+
+### The blog, finally
+
+/blog is live with three real articles, not stubs: how to unlock a cell phone in Canada (1,426 words, cites the CRTC Wireless Code), signs your laptop needs repair (1,702 words), and phone water damage first steps (1,658 words, with HowTo schema). Each carries Article schema with the organisation as author (no invented byline; question 7 is still unanswered), an AnswerBox, page-specific FAQs that pass the scoping audit, internal links to the relevant service pages, and a CTA. The guides registry tier moved from /guides/ to /blog/ paths; the remaining eleven planned articles stay pending. Blog is in the header and footer.
+
+### The link audit is fully green for the first time
+
+The service directory gave the lone published Pixel its second inbound link, closing the pixel-6 gap that had been the one standing links failure since the brand removals. Zero orphans, zero dead anchors, zero internal 404s, and the three header anchors verified against real ids on the home page.
+
+**Verify:** 13 of 14 checks green; the one failure is the browser audit's Lighthouse-95 target on localhost, documented as measurement noise. Deployed.
+
+**Flagged for the client:** the service-area wording ("surrounding Calgary communities" reads oddly against Chestermere and Airdrie, which are not Calgary communities; say the word and it reverts to "surrounding Alberta communities" in one sweep), and the repo folder plus vercel.app alias spelling.
+
 ## Session 2026-08-11 (fourth) — The new models made visible where people look
 
 **Asked:** the client's screenshots showed the hub grid still topping out at iPhone 16 and the home brand cards still reading "iPhone 4 to iPhone 16" and "Galaxy Note 2 to Galaxy S24". The seeded models existed but only as chips at the bottom of the hub, and the card statistics counted published pages only.

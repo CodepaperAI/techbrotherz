@@ -8,7 +8,7 @@ import { SITE } from "@/lib/site";
  * "trusted by" logo cloud.
  *
  * NEVER add a star rating, an avatar stack, a customer count or an award to
- * this component. Every item must be a fact the shop can stand behind.
+ * this component. Every item must be a fact the Store can stand behind.
  * If the client supplies verified Google review data, a real rating may be
  * added as a fifth item and only then.
  * CLAUDE.md Section 3, DESIGN.md Section 6.15.

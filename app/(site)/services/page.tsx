@@ -189,7 +189,7 @@ export default async function ServicesPage() {
       crumbLabel="Services"
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair shop at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, repairs phones, tablets, laptops and desktop computers, and
           unlocks phones for any Canadian carrier.
         </>
@@ -311,7 +311,7 @@ export default async function ServicesPage() {
           </Link>
           , and{" "}
           <Link href="/contact" className="text-tb-green-deep hover:underline">
-            directions to the Calgary shop
+            directions to the Calgary Store
           </Link>{" "}
           include parking and transit.
         </p>

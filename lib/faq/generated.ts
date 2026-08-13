@@ -54,7 +54,7 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
   /*
    * Phase 7a-ii: the price left, and with it the only thing that made two of
    * these four answers differ per model. They are re-grounded on what the
-   * model's own record still holds: which repairs the shop does on it, how long
+   * model's own record still holds: which repairs the Store does on it, how long
    * the shortest and longest of those take, its age, and its software support.
    * Those vary by model in the same way a price did, which is what keeps 84
    * model pages from carrying one identical FAQ answer and one identical

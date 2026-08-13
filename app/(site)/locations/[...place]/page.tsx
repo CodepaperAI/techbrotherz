@@ -136,7 +136,7 @@ export default async function PlacePage({ params }: PageProps) {
         <Heading
           level={2}
           id="nap-heading"
-          eyebrow="The shop"
+          eyebrow="The Store"
           lead="One address, one counter, and the same details on every page of this site."
         >
           Address, hours and directions
@@ -207,7 +207,7 @@ export default async function PlacePage({ params }: PageProps) {
             level={2}
             id="areas-heading"
             eyebrow="Areas we serve"
-            lead="Sections rather than separate pages, because a page needs facts of its own and these are neighbourhoods around one shop."
+            lead="Sections rather than separate pages, because a page needs facts of its own and these are neighbourhoods around one Store."
           >
             Which areas does TechBrotherz serve?
           </Heading>
