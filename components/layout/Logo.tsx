@@ -58,9 +58,10 @@ export function Logo({ className, onDark = false }: { className?: string; onDark
           TechBrother
           <span className={onDark ? "text-tb-green" : "text-tb-green-deep"}>z</span>
         </span>
+        {/* Hidden on the narrowest screens, where it wraps to two lines. */}
         <span
           className={cn(
-            "mt-1 text-[0.5625rem] leading-none font-semibold tracking-[0.13em] uppercase",
+            "mt-1 hidden text-[0.5625rem] leading-none font-semibold tracking-[0.13em] uppercase sm:block",
             onDark ? "text-tb-muted-dark" : "text-tb-muted",
           )}
         >
