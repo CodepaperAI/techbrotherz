@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-13 (third) — Skyline hero: stopped at the gate
+
+**Asked:** replace the hero with the client's Calgary skyline photograph behind a scrim, with a hard stop condition: report and halt if the image is under about 2000px wide or artefacted.
+
+**Done:** the stop condition fired, so the hero build did not happen and the solid black hero stays. The supplied file is 1600x900 at 516 KB, under the threshold, and it is visibly a professionally produced composite, most likely a commercial marketing render (a development visualization sits glowing at its centre), which makes the provenance question sharper than a normal client photo. Both questions are now in CLAUDE.md (26: skyline ownership or licence, with the alternative of sourcing a licensed skyline; 27: what logo change is actually wanted, plus the still-outstanding vector original). The logo rendering issue was re-verified against the live deployment rather than the local files this time: the deployed PNG has fully transparent corners and renders clean, so the pale box the client sees is almost certainly a cached earlier deploy. Nothing user-facing changed; no deploy needed.
+
 ## Session 2026-08-13 (later) — Hero rebuild: Calgary in the H1, full-bleed black
 
 **Asked:** the surgical hero brief. City in the H1, hero full-bleed and genuinely black, shorter, stat cards overlapping the boundary, no duplicate copy, logo box, Calgary highlighted in a few headings.
