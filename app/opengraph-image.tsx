@@ -32,19 +32,20 @@ export default function OpengraphImage() {
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <div
-          style={{
-            width: 28,
-            height: 28,
-            borderRadius: 999,
-            backgroundColor: "#21B24B",
-            display: "flex",
-          }}
-        />
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        {/* The mark from components/layout/Logo.tsx, colours literal because
+            ImageResponse cannot read CSS custom properties. */}
+        <svg viewBox="0 0 64 64" width="44" height="44">
+          <circle cx="32" cy="32" r="30" fill="#21B24B" />
+          <rect x="22.5" y="12.5" width="19" height="39" rx="5" fill="#0A0D0C" />
+          <circle cx="27.8" cy="27" r="4.1" fill="none" stroke="#FFFFFF" strokeWidth="2.4" />
+          <circle cx="36.2" cy="27" r="4.1" fill="none" stroke="#FFFFFF" strokeWidth="2.4" />
+          <path d="M31.2 26.4h1.6" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" />
+          <path d="M28.5 45.5h7" stroke="#FFFFFF" strokeWidth="2.6" strokeLinecap="round" />
+        </svg>
         <div style={{ display: "flex", fontSize: 34, fontWeight: 800, letterSpacing: "-0.02em" }}>
-          <span style={{ color: "#FFFFFF" }}>Tech</span>
-          <span style={{ color: "#21B24B" }}>Brotherz</span>
+          <span style={{ color: "#21B24B" }}>Tech</span>
+          <span style={{ color: "#FFFFFF" }}>BrotherZ</span>
         </div>
       </div>
 

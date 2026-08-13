@@ -21,6 +21,7 @@ import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
 import { Section } from "@/components/primitives/Section";
 import { route, shouldRenderLink } from "@/lib/routes";
+import { SERVICE_AREAS } from "@/lib/content/service-areas";
 import { blurFor, demoImage } from "@/lib/content/images";
 import { getCoreFaqContext } from "@/lib/content/core-context";
 import { homeFaqs } from "@/lib/content/core-faqs";
@@ -36,29 +37,15 @@ import {
   getTestimonials,
 } from "@/lib/data";
 
-/**
- * The areas named on the Calgary location record, rendered as tiles.
- *
- * Forest Lawn is the one neighbourhood that cleared the Phase 6
- * four-distinct-fact rule and earned a URL. Every other area anchors to its
- * section on /locations/calgary or links a real page, so every tile navigates
- * somewhere real. The link audit verifies each anchor target exists.
+/*
+ * The service-area tiles come from the client's Google Business Profile list,
+ * one shared module driving the schema, both tile grids and the footer.
+ * Airdrie keeps its tile via the honest section route. Every tile navigates
+ * somewhere real; the link audit verifies each anchor target exists.
  */
 const CALGARY_AREAS: { name: string; href?: string }[] = [
-  { name: "SE Calgary", href: "/locations/calgary" },
-  { name: "Forest Lawn", href: "/locations/calgary/forest-lawn" },
-  { name: "Albert Park", href: "/locations/calgary#albert-park-radisson-heights" },
-  { name: "Radisson Heights", href: "/locations/calgary#albert-park-radisson-heights" },
-  { name: "Dover", href: "/locations/calgary#dover" },
-  { name: "Southview", href: "/locations/calgary#southview" },
-  { name: "Erin Woods", href: "/locations/calgary#erin-woods" },
-  { name: "Penbrooke Meadows", href: "/locations/calgary#penbrooke-meadows" },
-  { name: "Inglewood", href: "/locations/calgary#inglewood" },
-  { name: "Ogden", href: "/locations/calgary#ogden" },
-  { name: "Marlborough", href: "/locations/calgary#marlborough" },
-  { name: "Downtown Calgary", href: "/locations/calgary#downtown-calgary" },
-  { name: "Chestermere", href: "/locations/chestermere" },
-  { name: "Airdrie", href: "/locations" },
+  ...SERVICE_AREAS,
+  { name: "Airdrie", href: "/locations/calgary#airdrie" },
 ];
 
 /** The service pill strip directly under the hero, mirroring the reference. */

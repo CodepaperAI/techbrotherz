@@ -16,6 +16,7 @@
  * array. See buildGraph and components/seo/JsonLd.tsx.
  */
 
+import { AREA_SERVED as AREA_SERVED_NAMES } from "@/lib/content/service-areas";
 import { SITE_URL } from "@/lib/site";
 
 /* ------------------------------------------------------------------ compact */
@@ -66,8 +67,15 @@ const SCHEMA_DAY: Record<string, string> = {
   Sunday: "https://schema.org/Sunday",
 };
 
-const AREA_SERVED = ["Calgary", "Chestermere", "Airdrie"].map((name) => ({
-  "@type": "City",
+/*
+ * The client's Google Business Profile service-area list, authoritative since
+ * 2026-08, plus Airdrie which the site prose has claimed since Phase 6.
+ * lib/content/service-areas.ts is the single source. Neighbourhoods are
+ * Places rather than Cities; the four actual municipalities keep City.
+ */
+const CITIES = new Set(["Calgary", "Chestermere", "Airdrie", "Strathmore"]);
+const AREA_SERVED = AREA_SERVED_NAMES.map((name) => ({
+  "@type": CITIES.has(name) ? "City" : "Place",
   name,
 }));
 

@@ -146,7 +146,7 @@ const phoneRepair: ServiceDef = {
       paragraphs: [
         `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn batteries, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
         "Beyond those five, we replace earpieces, loudspeakers, power buttons, volume buttons and home buttons. Those are smaller jobs, and on most handsets they take under an hour. If a phone has a fault that is not on the list, bring it in and we will tell you honestly whether it is something we can fix or something that needs the manufacturer.",
-        "We work on iPhone, Samsung Galaxy and Google Pixel handsets. Apple and Samsung make up most of the volume, which is why our published price list is deepest on those two. Pixel repairs are quoted at the counter once we have the model in front of us and know what the part costs.",
+        "We work on iPhone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same counter. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the counter once we have the model in front of us and know what the part costs.",
       ],
     },
     {

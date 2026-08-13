@@ -112,15 +112,23 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
       "/accessories",
     ],
   },
+  /*
+   * The "Areas we serve" column is rendered by Footer.tsx directly from the
+   * Google Business Profile list in lib/content/service-areas.ts (2026-08),
+   * because its entries are anchored sections rather than registry paths. The
+   * Tier 5 service-area pages that used to sit in it moved here so they keep
+   * their site-wide inbound link.
+   */
   {
-    heading: "Areas we serve",
+    heading: "Repair near you",
     paths: [
-      "/locations/calgary",
-      "/locations/calgary/forest-lawn",
-      "/locations/chestermere",
       "/phone-repair-calgary",
+      "/iphone-screen-repair-calgary",
+      "/samsung-repair-calgary",
+      "/ipad-repair-calgary",
       "/laptop-repair-calgary",
       "/computer-repair-calgary",
+      "/phone-unlocking-calgary",
       "/walk-in-phone-repair-calgary",
       "/cell-phone-repair-chestermere",
       "/locations",

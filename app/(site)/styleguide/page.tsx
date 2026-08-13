@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/blocks/Breadcrumbs";
 import { FaqAccordion } from "@/components/blocks/FaqAccordion";
 import { IconCard } from "@/components/blocks/IconCard";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
+import { Logo } from "@/components/layout/Logo";
 import { ModelGrid } from "@/components/blocks/ModelGrid";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { SplitBlock } from "@/components/blocks/SplitBlock";
@@ -173,6 +174,33 @@ export default function StyleguidePage() {
         >
           Design system
         </Heading>
+      </Section>
+
+      {/* ---------------------------------------------------------- logo */}
+      <Section className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="logo">
+        <Heading
+          level={2}
+          id="logo"
+          eyebrow="Brand"
+          lead="The client's mark redrawn as vector: circle, phone, glasses, and the TechBrotherZ wordmark with its capital Z. Three variants, two colourways, no baked backgrounds. components/layout/Logo.tsx."
+        >
+          Logo
+        </Heading>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="border-tb-border bg-tb-white rounded-card space-y-8 border p-8">
+            <p className="type-eyebrow text-tb-muted">On light</p>
+            <Logo variant="full" />
+            <Logo variant="compact" />
+            <Logo variant="icon" />
+          </div>
+          <div data-surface="dark" className="bg-tb-ink rounded-card space-y-8 p-8">
+            <p className="type-eyebrow text-tb-silver">On dark</p>
+            <Logo variant="full" onDark />
+            <Logo variant="compact" onDark />
+            <Logo variant="icon" onDark />
+          </div>
+        </div>
       </Section>
 
       {/* -------------------------------------------------------- colour */}

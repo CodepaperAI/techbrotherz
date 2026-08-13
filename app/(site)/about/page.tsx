@@ -19,8 +19,6 @@ import { SITE, TEL_HREF } from "@/lib/site";
 import {
   getAllFaqs,
   getAuthors,
-  getBrands,
-  getRepairTypes,
   getReviewSummary,
   getSiteSettings,
 } from "@/lib/data";
@@ -37,11 +35,9 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default async function AboutPage() {
-  const [settings, reviews, brands, repairTypes, authors, allFaqs] = await Promise.all([
+  const [settings, reviews, authors, allFaqs] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
-    getBrands(),
-    getRepairTypes(),
     getAuthors(),
     getAllFaqs(),
   ]);
@@ -105,7 +101,7 @@ export default async function AboutPage() {
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           {
             label: "Devices",
-            value: `${brands.length} brands and ${repairTypes.length} repair types`,
+            value: "Phones of every brand, iPads, laptops, desktops, game consoles",
           },
           { label: "Typical wait", value: `About ${waitMinutes} minutes on most phone repairs` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
@@ -159,8 +155,8 @@ export default async function AboutPage() {
               <h3 className="type-h3 text-tb-text">The Store in numbers</h3>
               <dl className="type-body mt-5 space-y-3">
                 {[
-                  ["Brands repaired", String(brands.length)],
-                  ["Types of repair", String(repairTypes.length)],
+                  ["Open", "7 days a week"],
+                  ["Quotes", "Free, before any work"],
                   ["Warranty", `${warrantyDays} days`],
                   ["Typical wait", `About ${waitMinutes} minutes`],
                   ["Appointments", "Never required"],
@@ -194,8 +190,9 @@ export default async function AboutPage() {
         </Heading>
 
         <p className="type-body measure text-tb-muted mt-6">
-          We repair cell phones, iPads and tablets, laptops and desktop computers, MacBooks and
-          gaming computers, and{" "}
+          We repair cell phones of every brand, iPhone, Samsung Galaxy, Google Pixel, and Motorola,
+          LG and other Android handsets, along with iPads and tablets, laptops and desktop
+          computers, MacBooks and gaming machines, and{" "}
           <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
             game consoles
           </Link>

@@ -190,14 +190,19 @@ export default async function ServicesPage() {
       lead={
         <>
           TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}, repairs phones, tablets, laptops and desktop computers, and
-          unlocks phones for any Canadian carrier.
+          {SITE.city}, {SITE.region}, repairs iPhones, Samsung, Google Pixel, Motorola, LG and
+          other Android phones, iPads, laptops including MacBooks and gaming laptops, desktop
+          computers including gaming towers, and game consoles, and unlocks phones for any Canadian
+          carrier.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz in Calgary repairs phones, iPads, tablets, laptops and desktop computers, unlocks phones for any Canadian carrier, and removes viruses and malware. Every job is quoted free at the counter before any work starts. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz in Calgary repairs iPhones, Samsung, Google Pixel, Motorola, LG and other Android phones, iPads, laptops and MacBooks, desktop computers and gaming machines, and game consoles, and unlocks phones for any Canadian carrier. Every job is quoted free at the counter before any work starts, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
-          { label: "Devices", value: "Phones, tablets, laptops and desktop computers" },
+          {
+            label: "Devices",
+            value: "Phones of every brand, iPads, laptops, desktops, game consoles",
+          },
           {
             label: "Computer diagnostics",
             value: "A fixed fee, deducted from the repair if you go ahead",

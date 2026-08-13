@@ -2,6 +2,30 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-13 (fifth) — The client's mark as vector, the GBP service areas, full device coverage
+
+**Asked:** the sequenced logo/hero/areas/content brief.
+
+**Done:**
+
+### §1 The logo, redrawn from the client's own mark
+
+The in-house mark from the previous session is replaced by a vector reproduction of the client's actual brand: the green circle, the phone character simplified to its essential silhouette (circle, phone, glasses, one home-key line; the antenna, hand and keypad detail do not survive 40px), and the TechBrotherZ wordmark with its capital Z, "Tech" in green and "BrotherZ" in ink, inverted on dark. Three variants in one component (full with the CellPhone / Computer Repair strapline for the footer, compact for the header, icon alone for small placements; the compact header collapses to the icon on the narrowest screens). Favicon.ico (PNG-in-ICO, hand-assembled), apple-icon.png and the OG image mark all regenerated from the icon variant, and all six variant-colourway combinations render on /styleguide under a new Brand section.
+
+### §2 The skyline hero: the gate fired again
+
+Same image, same answer as the previous session: 1600x900 at 516 KB, under the 2000px floor, and visibly a commercial composite of unconfirmed provenance. Not built; the solid black hero stays; question 26 stands.
+
+### §3 The service areas, from the Google Business Profile list
+
+`lib/content/service-areas.ts` is the one module driving all four surfaces: areaServed in the LocalBusiness schema (19 entries: the 17 profile areas with Forest Lawn and Forest Heights split, plus Airdrie kept from the site's standing claims), the home tile grid, a new tile grid on /locations, and a footer "Areas we serve" column rendered from the same list. Five new honest sections on /locations/calgary: Applewood Park and Ramsay with routes derived from established corridor facts, Strathmore with the Trans-Canada-past-Chestermere route, and Bragg Creek and Mînî Thnî written plainly as communities outside Calgary the Store serves customers from, with no invented routes or drive times and the phone as the fallback. Forest Heights already had its section. The Tier 5 pages that lived in the old footer areas column moved to a "Repair near you" column so no page lost its site-wide inbound link; the link audit stays fully green with zero orphans and zero dead anchors. The Airdrie section's stale "published price list" line was corrected in passing.
+
+### §0, §4, §5 Device coverage, and the reconciliation
+
+Motorola and LG are named in the /services intro, AnswerBox and the phone-repair page prose as device coverage quoted at the counter; the brand hubs stay deleted and the 301s intact; HTC and Nexus are not restored. Recorded as question 28, a reconciliation for the client to confirm. The /services and About copy now cover the full client list including MacBooks, gaming laptops, gaming towers and game consoles, with unbuilt services named without links. "5 brands and 16 repair types" is gone from the About key facts, and the "Store in numbers" card dropped its two data-model rows for facts a person would say. Question 29 records T2A 0R2 from the profile list, unused until the client confirms it is the store's postal code.
+
+All audits green: links (fully), pages, local-facts, FAQ scoping, contrast, words, similarity. Deployed.
+
 ## Session 2026-08-13 (fourth) — A new logo, designed in-house
 
 **Asked:** the client wants a different logo.

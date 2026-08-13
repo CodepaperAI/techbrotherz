@@ -4,6 +4,7 @@ import { MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { TrademarkNotice } from "@/components/blocks/TrademarkNotice";
 import { Container } from "@/components/primitives/Container";
+import { SERVICE_AREAS } from "@/lib/content/service-areas";
 import { footerColumns, footerLegalLinks } from "@/lib/nav";
 import { shouldRenderLink } from "@/lib/routes";
 import { ADDRESS_LINE, SITE, TEL_HREF, groupedHours } from "@/lib/site";
@@ -25,7 +26,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Logo onDark />
+            <Logo onDark variant="full" />
 
             <p className="type-body text-tb-muted-dark mt-5 max-w-sm">
               Walk-in cell phone, tablet and computer repair in Calgary. Parts and labour included,
@@ -90,7 +91,26 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
+          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4 xl:grid-cols-5">
+            {/* The Google Business Profile service areas, every link real:
+                a page or an anchored section. lib/content/service-areas.ts */}
+            <nav aria-label="Areas we serve">
+              <h2 className="type-eyebrow text-tb-silver">Areas we serve</h2>
+              <ul className="mt-4 space-y-2.5">
+                {[...SERVICE_AREAS, { name: "Airdrie", href: "/locations/calgary#airdrie" }].map(
+                  (area) => (
+                    <li key={area.name}>
+                      <Link
+                        href={area.href}
+                        className="text-tb-muted-dark hover:text-tb-white inline-flex items-center gap-1.5 transition-colors duration-[180ms] ease-out"
+                      >
+                        {area.name}
+                      </Link>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </nav>
             {columns.map((column) => (
               <nav key={column.heading} aria-label={column.heading}>
                 <h2 className="type-eyebrow text-tb-silver">{column.heading}</h2>

@@ -147,13 +147,58 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     ],
   },
   {
+    id: "applewood-park",
+    name: "Applewood Park",
+    verified: true,
+    paragraphs: [
+      "Applewood Park sits at the eastern end of the 17 Avenue SE corridor, near where MAX Purple finishes its run at East Hills. The trip in is the simplest kind: west along the avenue the Store sits on, with no turns to remember.",
+      "The transitway makes this one of the areas that can reach the counter without a car: the same MAX Purple line that ends near Applewood stops at 33 Street SE Station outside the door.",
+    ],
+  },
+  {
+    id: "ramsay",
+    name: "Ramsay",
+    verified: true,
+    paragraphs: [
+      "Ramsay sits beside Inglewood in the inner southeast, and the trip out is the same one Inglewood makes: east along 17 Avenue SE, across Deerfoot Trail and Barlow Trail, to the Store at 33 Street.",
+      "MAX Purple runs that corridor in its own median lanes, so from this end of the avenue the bus is often the simpler answer than parking twice.",
+    ],
+  },
+  {
+    id: "strathmore",
+    name: "Strathmore",
+    verified: true,
+    paragraphs: [
+      "Strathmore is a town east of Calgary, not a neighbourhood, and TechBrotherz serves customers who make the drive in. The route follows the Trans-Canada Highway west past Chestermere, and from Chestermere the road into the city is the one the Chestermere page describes: Chestermere Boulevard becoming 17 Avenue SE at the city limit.",
+      "For a trip this length, phone first. The counter will confirm the part for your device is in stock and give you the figure before you set out, so the journey is one visit rather than two.",
+    ],
+  },
+  {
+    id: "bragg-creek",
+    name: "Bragg Creek",
+    verified: false,
+    paragraphs: [
+      "Bragg Creek is a hamlet in the foothills southwest of Calgary, on the opposite side of the city from the Store, and TechBrotherz serves customers who come in from there. We have not published a route because we could not verify one worth printing across a drive of that length.",
+      "Phone the counter before travelling: the part gets confirmed in stock, the quote is given over the phone, and a long trip stays a single one.",
+    ],
+  },
+  {
+    id: "mini-thni",
+    name: "Mînî Thnî",
+    verified: false,
+    paragraphs: [
+      "Mînî Thnî, on the Stoney Nakoda Nation lands west of Calgary along the Trans-Canada Highway, is one of the communities TechBrotherz serves customers from. It is a genuine drive across the city, and we would rather say that plainly than pretend otherwise.",
+      "Phone before setting out and the counter will confirm the part is in stock and quote the repair, so the trip is worth making before you make it.",
+    ],
+  },
+  {
     id: "airdrie",
     name: "Airdrie",
     verified: true,
     paragraphs: [
       "TechBrotherz repairs devices for Airdrie customers, and it is worth being straight about the trip. Airdrie is north of Calgary and the Store is in the southeast, so this is a real drive down Deerfoot Trail rather than a quick errand, and 17 Avenue SE crosses Deerfoot on the way in.",
       "Airdrie's own ICE transit routes 901 and 902 run to downtown Calgary rather than to 17 Avenue SE, and route 900 reaches Rundle CTrain station via CrossIron Mills on weekends and holidays, so transit means a transfer.",
-      "The reasons someone makes the trip anyway are the published price list, the 60-day warranty and not needing an appointment. There is no Airdrie page on this site because we could not write one with enough verified local detail to be worth reading, and we would rather say that than pad it.",
+      "The reasons someone makes the trip anyway are the free quote before any work, the 60-day warranty and not needing an appointment. There is no Airdrie page on this site because we could not write one with enough verified local detail to be worth reading, and we would rather say that than pad it.",
     ],
   },
 ];

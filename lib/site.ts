@@ -77,7 +77,11 @@ export const SITE = {
     "All prices include the part and labour, and every repair is covered by a 60-day warranty.",
 
   serviceArea: ["Calgary", "Chestermere", "Airdrie", "and surrounding Calgary communities"],
-  /** Used verbatim in JSON-LD areaServed. */
+  /**
+   * JSON-LD areaServed now reads the Google Business Profile list in
+   * lib/content/service-areas.ts (2026-08). This short form remains for
+   * display copy only.
+   */
   areaServed: ["Calgary", "Chestermere", "Airdrie"],
 
   /** Google Maps link. Replaced with the Business Profile URL once claimed. */

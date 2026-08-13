@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { MapReveal } from "@/components/blocks/MapReveal";
+import { Tile, TileGrid } from "@/components/blocks/Tile";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { PageShell } from "@/components/blocks/PageShell";
 import { Card } from "@/components/primitives/Card";
@@ -14,6 +15,7 @@ import { shouldRenderLink } from "@/lib/routes";
 import { getCoreFaqContext } from "@/lib/content/core-context";
 import { locationsFaqs } from "@/lib/content/core-faqs";
 import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
+import { SERVICE_AREAS } from "@/lib/content/service-areas";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
 import { SITE, TEL_HREF } from "@/lib/site";
@@ -126,6 +128,19 @@ export default async function LocationsPage() {
         {primary?.routeDescription ? (
           <p className="type-body measure text-tb-muted mt-8">{primary.routeDescription}</p>
         ) : null}
+
+        {/* The Google Business Profile service-area list, 2026-08. Every tile
+            navigates to a page or an anchored section; none is a dead link. */}
+        <h3 className="type-h3 text-tb-ink mt-12">Every area we serve</h3>
+        <TileGrid className="mt-5">
+          {[...SERVICE_AREAS, { name: "Airdrie", href: "/locations/calgary#airdrie" }].map(
+            (area) => (
+              <Tile key={area.name} href={area.href}>
+                {area.name}
+              </Tile>
+            ),
+          )}
+        </TileGrid>
       </Section>
 
       {/* ------------------------------------------------- neighbourhoods */}
