@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-13 (fourth) — A new logo, designed in-house
+
+**Asked:** the client wants a different logo.
+
+**Done:** a new mark designed in the site's own design language and shipped: a rounded square in --tb-green holding a phone outline with a repair checkmark, drawn in --tb-ink because dark-on-green is the site's rule for green fills; beside it "TechBrotherz" typeset in the display face with the closing z in green (the one identity cue carried over from the old wordmark), and the exact SITE.descriptor line beneath in letterspaced caps. It is pure SVG and real text inside Logo.tsx: no image requests, no raster, crisp at every size, correct light and dark variants verified by screenshot in the header and footer, and the wordmark is now machine-readable text rather than pixels. The favicon was redrawn to match the mark. The client-supplied PNGs stay untouched in public/ so reverting is a one-line change if the client prefers the old mark once they see this one; question 27 now asks them to confirm the new mark. This also closes the long-outstanding "no vector logo" problem by construction.
+
 ## Session 2026-08-13 (third) — Skyline hero: stopped at the gate
 
 **Asked:** replace the hero with the client's Calgary skyline photograph behind a scrim, with a hard stop condition: report and halt if the image is under about 2000px wide or artefacted.
