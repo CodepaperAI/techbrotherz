@@ -33,15 +33,19 @@ export default function OpengraphImage() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-        {/* The mark from components/layout/Logo.tsx, colours literal because
-            ImageResponse cannot read CSS custom properties. */}
+        {/* The Z mark from components/layout/Logo.tsx, dark colourway since
+            the card is on ink. Colours literal because ImageResponse cannot
+            read CSS custom properties. */}
         <svg viewBox="0 0 64 64" width="44" height="44">
-          <circle cx="32" cy="32" r="30" fill="#21B24B" />
-          <rect x="22.5" y="12.5" width="19" height="39" rx="5" fill="#0A0D0C" />
-          <circle cx="27.8" cy="27" r="4.1" fill="none" stroke="#FFFFFF" strokeWidth="2.4" />
-          <circle cx="36.2" cy="27" r="4.1" fill="none" stroke="#FFFFFF" strokeWidth="2.4" />
-          <path d="M31.2 26.4h1.6" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" />
-          <path d="M28.5 45.5h7" stroke="#FFFFFF" strokeWidth="2.6" strokeLinecap="round" />
+          <rect width="64" height="64" rx="16" fill="#21B24B" />
+          <path
+            d="M18 20h28L18 44h28"
+            fill="none"
+            stroke="#0A0D0C"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
         <div style={{ display: "flex", fontSize: 34, fontWeight: 800, letterSpacing: "-0.02em" }}>
           <span style={{ color: "#21B24B" }}>Tech</span>

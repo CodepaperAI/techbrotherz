@@ -28,18 +28,24 @@ import { cn } from "@/lib/utils";
 
 export type LogoVariant = "full" | "compact" | "icon";
 
-export function Mark({ size = 40 }: { size?: number }) {
+/**
+ * The Z mark, direction C from the /styleguide comparison, wired in on the
+ * client's request 2026-08 after they rejected the character reproduction.
+ * The capital Z is the one distinctive element of the TechBrotherZ name, and
+ * it survives any size. On light: ink square, green Z. On dark: green square,
+ * ink Z, because dark-on-green is the site's rule for green fills.
+ */
+export function Mark({ size = 40, onDark = false }: { size?: number; onDark?: boolean }) {
   return (
     <svg viewBox="0 0 64 64" width={size} height={size} aria-hidden="true" className="shrink-0">
-      <circle cx="32" cy="32" r="30" className="fill-tb-green" />
-      {/* The phone character, reduced to its silhouette. */}
-      <rect x="22.5" y="12.5" width="19" height="39" rx="5" className="fill-tb-ink" />
-      {/* The glasses, the recognisable element. */}
-      <circle cx="27.8" cy="27" r="4.1" strokeWidth="2.4" className="fill-none stroke-tb-white" />
-      <circle cx="36.2" cy="27" r="4.1" strokeWidth="2.4" className="fill-none stroke-tb-white" />
-      <path d="M31.2 26.4h1.6" strokeWidth="2.4" strokeLinecap="round" className="stroke-tb-white" />
-      {/* The home key, a nod to the original keypad without its detail. */}
-      <path d="M28.5 45.5h7" strokeWidth="2.6" strokeLinecap="round" className="stroke-tb-white" />
+      <rect width="64" height="64" rx="16" className={onDark ? "fill-tb-green" : "fill-tb-ink"} />
+      <path
+        d="M18 20h28L18 44h28"
+        strokeWidth="9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={cn("fill-none", onDark ? "stroke-tb-ink" : "stroke-tb-green")}
+      />
     </svg>
   );
 }
@@ -59,7 +65,7 @@ export function Logo({
       aria-label="TechBrotherz, home"
       className={cn("inline-flex items-center gap-2.5", className)}
     >
-      <Mark size={variant === "icon" ? 40 : variant === "full" ? 46 : 40} />
+      <Mark size={variant === "icon" ? 40 : variant === "full" ? 46 : 40} onDark={onDark} />
 
       {variant !== "icon" ? (
         <span className={cn("flex-col", variant === "compact" ? "hidden sm:flex" : "flex")}>

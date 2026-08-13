@@ -123,10 +123,13 @@ export function PageShell({
                     : {})}
                 />
               </div>
-              <div aria-hidden="true" className="bg-tb-black/60 absolute inset-0 hidden sm:block" />
+              {/* Lightened on the client's request 2026-08 so the city reads
+                  through. The text side keeps a near-solid gradient, which is
+                  what the contrast actually rests on. */}
+              <div aria-hidden="true" className="bg-tb-black/35 absolute inset-0 hidden sm:block" />
               <div
                 aria-hidden="true"
-                className="from-tb-black/85 via-tb-black/45 absolute inset-0 hidden bg-gradient-to-r to-transparent sm:block"
+                className="from-tb-black/80 via-tb-black/35 absolute inset-0 hidden bg-gradient-to-r to-transparent sm:block"
               />
             </>
           ) : null}

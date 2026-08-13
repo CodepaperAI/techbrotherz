@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 (later) — Lighter scrim, and the Z mark chosen
+
+**Asked:** the client wants the skyline more visible and rejected the redrawn character mark ("make something other").
+
+**Done:** the scrim dropped from 60% to 35% overall with the text-side gradient softened from 85/45 to 80/35, so the city, the river and the lights read clearly on the right while the headline still sits on a near-solid ground; the contrast audit passes. Direction C from the /styleguide comparison, the Z mark, is wired in everywhere: header and footer (ink square with green Z on light, green square with ink Z on dark, per the dark-on-green rule), favicon.ico, icon.svg, apple-icon.png and the OG card mark. The comparison section on /styleguide still shows all directions, so A and B remain one line away if the client changes their mind. Question 27's answer is now: the Z mark, pending the client seeing it live.
+
 ## Session 2026-08-14 — The skyline hero ships, and three logo directions to choose from
 
 **Asked:** the agency brief said source a licensed skyline and skip the client's file; the client's direct instruction, relayed after it, said use their file with no further verification. The direct instruction wins and is recorded here rather than silently followed.
