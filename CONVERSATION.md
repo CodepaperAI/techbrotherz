@@ -2,6 +2,22 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-13 (later) — Hero rebuild: Calgary in the H1, full-bleed black
+
+**Asked:** the surgical hero brief. City in the H1, hero full-bleed and genuinely black, shorter, stat cards overlapping the boundary, no duplicate copy, logo box, Calgary highlighted in a few headings.
+
+**Done:**
+
+- **H1 is "Phone and computer repair in SE Calgary"**, the city in --tb-green on the black, two lines at 1440 (the hero H1 runs slightly under the type-h1 ceiling, 40 to 62px, to hold two lines in the seven-column hero). Eyebrow became "Walk-in repair Store · No appointment". No superlatives.
+- **The grey had a cause**: the old hero was `bg-tb-black/85` with a backdrop blur inside a rounded contained panel, and 85% black over cream is grey by arithmetic. The hero is now a full-bleed section at solid `--tb-black`, edge to edge, content in the container.
+- **Shorter**: subcopy cut to the prescribed two lines (address, 30 minutes, warranty), image panel reduced, and the hero plus the stat cards plus the top of the AnswerBox all sit inside one 1440x900 viewport, verified by screenshot.
+- **The stat cards straddle the hero boundary** via a new `heroOverlap` slot on PageShell: the hero carries extra bottom padding and the card row pulls up with a negative margin. Purely static layout, so CLS stays 0.000 by construction. The separate stats section is gone, which also shortens the page.
+- **No stutter**: the hero subcopy is now the short summary and the AnswerBox stays full and self-contained per the Phase 4 rule, so the pair reads as summary then detail.
+- **The logo box could not be reproduced**: both public/logo-*.png files measure genuinely transparent (corner alpha 0) and the rendered header is clean at zoom. The client most likely saw a cached earlier deploy that used a different asset. A transparent SVG or higher-resolution PNG stays on the client question list regardless.
+- **Calgary in three more headings**, the city word in --tb-green-deep on light surfaces per the contrast rule (--tb-green is reserved for the dark hero): "What can we fix for you in Calgary?", "Why Calgary chooses TechBrotherz", "Serving SE Calgary and beyond". Hours untouched. Four mentions total on the page, counting the H1.
+
+Contrast, pages, links (still fully green) and FAQ audits pass; typecheck, lint, clean build clean. Deployed, screenshots at 1440 and 390 in snapshots/shots/hero-final-*.
+
 ## Session 2026-08-13 — Match the reference site: the home rebuild, Store, blog
 
 **Asked:** the urgent match-the-reference brief. The reference is a single-page site; ours keeps its 143-page architecture and rebuilds the home page to carry every section the reference has, in order, with header anchors. Plus the text fixes and the blog.

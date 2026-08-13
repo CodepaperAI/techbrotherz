@@ -293,13 +293,16 @@ export default async function HomePage() {
     <PageShell
       path={PATH}
       layout="hero"
-      eyebrow="SE Calgary's walk-in repair Store"
-      title="Phone and computer repairs, done while you wait"
+      eyebrow="Walk-in repair Store · No appointment"
+      title={
+        <>
+          Phone and computer repair in <span className="text-tb-green">SE Calgary</span>
+        </>
+      }
       lead={
         <>
-          TechBrotherz is a local, family-owned walk-in repair Store at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}, fixing phones, iPads, laptops, desktops and game consoles. No
-          appointment is needed, and every repair is quoted free before any work starts.
+          Walk in at {SITE.street}. Most repairs take about {waitMinutes} minutes and every one
+          carries a {warrantyDays}-day warranty.
         </>
       }
       heroActions={
@@ -313,6 +316,38 @@ export default async function HomePage() {
         </>
       }
       heroImage={heroImage}
+      heroOverlap={
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {[
+            {
+              stat: `${waitMinutes} min`,
+              label: "Most repairs",
+              body: "Screens and batteries finished while you wait.",
+            },
+            {
+              stat: `${warrantyDays} days`,
+              label: "Warranty",
+              body: "On the part fitted and the work done, every repair.",
+            },
+            {
+              stat: "Walk in",
+              label: "No appointment",
+              body: "No booking system. Come in during opening hours.",
+            },
+            {
+              stat: "7 days",
+              label: "Open every day",
+              body: "Mon to Sat 10 to 7, Sunday 11 to 5.",
+            },
+          ].map((card) => (
+            <Card key={card.label} className="shadow-sm">
+              <p className="type-numeral text-tb-green-deep">{card.stat}</p>
+              <p className="type-h3 text-tb-text mt-2">{card.label}</p>
+              <p className="type-caption text-tb-muted mt-1.5">{card.body}</p>
+            </Card>
+          ))}
+        </div>
+      }
       answerBox={{
         answer: `TechBrotherz is a walk-in cell phone and computer repair Store at ${SITE.street} in Calgary. Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
@@ -341,43 +376,6 @@ export default async function HomePage() {
         </Container>
       </nav>
 
-      {/* ------------------------------------------------------- stat cards */}
-      <Section variant="tint" aria-labelledby="stats-heading">
-        <h2 id="stats-heading" className="sr-only">
-          What every repair at TechBrotherz comes with
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              stat: `${waitMinutes} min`,
-              label: "Most repairs",
-              body: "Most phone screen and battery repairs are finished while you wait.",
-            },
-            {
-              stat: `${warrantyDays} days`,
-              label: "Warranty",
-              body: "Every repair is covered on the part fitted and the work done.",
-            },
-            {
-              stat: "Walk in",
-              label: "No appointment",
-              body: "There is no booking system. Come in during opening hours any day.",
-            },
-            {
-              stat: "7 days",
-              label: "Open every day",
-              body: "Monday to Saturday 10 to 7, Sunday 11 to 5, every week.",
-            },
-          ].map((card) => (
-            <Card key={card.label}>
-              <p className="type-numeral text-tb-green-deep">{card.stat}</p>
-              <h3 className="type-h3 text-tb-text mt-3">{card.label}</h3>
-              <p className="type-body text-tb-muted mt-2">{card.body}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
       {/* ----------------------------------------------------------- ticker */}
       <Ticker />
 
@@ -389,7 +387,7 @@ export default async function HomePage() {
           eyebrow="Services"
           lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and game consoles in SE Calgary, and unlocks phones for any Canadian carrier."
         >
-          What can we fix for you?
+          What can we fix for you in <span className="text-tb-green-deep">Calgary</span>?
         </Heading>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -457,9 +455,9 @@ export default async function HomePage() {
           level={2}
           id="why-us-heading"
           eyebrow="Why us"
-          lead="Five things that are true of every repair TechBrotherz does in Calgary, and that you can hold us to."
+          lead="Five things that are true of every repair TechBrotherz does, and that you can hold us to."
         >
-          Why bring your device to TechBrotherz?
+          Why <span className="text-tb-green-deep">Calgary</span> chooses TechBrotherz
         </Heading>
 
         <NumberedList
@@ -609,9 +607,9 @@ export default async function HomePage() {
           level={2}
           id="location-heading"
           eyebrow="Service areas"
-          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, in SE Calgary a few blocks west of Forest Lawn. Parking is free in the plaza in front of the Store.`}
+          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, a few blocks west of Forest Lawn. Parking is free in the plaza in front of the Store.`}
         >
-          Where is TechBrotherz in SE Calgary?
+          Serving <span className="text-tb-green-deep">SE Calgary</span> and beyond
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
