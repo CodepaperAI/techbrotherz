@@ -184,7 +184,7 @@ export default function StyleguidePage() {
           level={2}
           id="logo"
           eyebrow="Brand"
-          lead="The client's mark redrawn as vector: circle, phone, glasses, and the TechBrotherZ wordmark with its capital Z. Three variants, two colourways, no baked backgrounds. components/layout/Logo.tsx."
+          lead="The client's original logo, restored at their request 2026-08 and re-exported from the higher-resolution originals at 3x display size. Light and dark variants, transparent backgrounds. components/layout/Logo.tsx."
         >
           Logo
         </Heading>

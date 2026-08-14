@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 (third) — The original logo, restored bigger
+
+**Asked:** use the client's original logo, larger.
+
+**Done:** the original raster lockup is back in the header and footer, displayed at 132x61 and 160x74 against the old 95x44, re-exported from the higher-resolution Downloads originals at 200px tall (roughly 3x display) so the bigger render stays crisp. The favicon, touch icon and OG-card mark are now the character circle cropped from the original (fixed-coordinate crop; a green-pixel bounding box failed first because the wordmark's "Tech" is also green). The Z mark and the two other directions stay on /styleguide for reference; question 27 closes as: the original logo, kept. The logo saga ends where it began, with better source files.
+
 ## Session 2026-08-14 (later) — Lighter scrim, and the Z mark chosen
 
 **Asked:** the client wants the skyline more visible and rejected the redrawn character mark ("make something other").
