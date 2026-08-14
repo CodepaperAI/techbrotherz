@@ -109,27 +109,38 @@ export function PageShell({
               is decorative; the address and copy carry the information. */}
           {heroBackground ? (
             <>
-              <div className="absolute inset-0 hidden sm:block">
+              {/* On phones the wide skyline shows as a tighter crop centred on
+                  the downtown cluster rather than being dropped, on the
+                  client's request 2026-08. */}
+              <div className="absolute inset-0">
                 <Image
                   src={heroBackground.src}
                   alt=""
                   fill
                   priority
                   quality={75}
-                  sizes="(min-width: 640px) 100vw, 1px"
-                  className="object-cover"
+                  sizes="100vw"
+                  className="object-cover [object-position:45%_32%]"
                   {...(heroBackground.blurDataURL
                     ? { placeholder: "blur" as const, blurDataURL: heroBackground.blurDataURL }
                     : {})}
                 />
               </div>
-              {/* Lightened on the client's request 2026-08 so the city reads
-                  through. The text side keeps a near-solid gradient, which is
-                  what the contrast actually rests on. */}
-              <div aria-hidden="true" className="bg-tb-black/35 absolute inset-0 hidden sm:block" />
+              {/* The scrims carry the contrast, not the photo. Desktop: a
+                  light overall wash plus a near-solid text-side gradient.
+                  Mobile: a heavier wash plus a vertical gradient, because the
+                  text spans the full width there. */}
+              <div
+                aria-hidden="true"
+                className="bg-tb-black/55 sm:bg-tb-black/35 absolute inset-0"
+              />
               <div
                 aria-hidden="true"
                 className="from-tb-black/80 via-tb-black/35 absolute inset-0 hidden bg-gradient-to-r to-transparent sm:block"
+              />
+              <div
+                aria-hidden="true"
+                className="from-tb-black/75 via-tb-black/35 to-tb-black/20 absolute inset-0 bg-gradient-to-b sm:hidden"
               />
             </>
           ) : null}
