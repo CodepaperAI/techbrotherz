@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, Phone, X } from "lucide-react";
 
 import { Logo } from "@/components/layout/Logo";
@@ -177,7 +178,12 @@ export function Nav() {
         </div>
       </Container>
 
+      {/* Portalled to <body>: the scrolled header's backdrop-blur creates a
+          CSS containing block, which traps a fixed-position child inside the
+          72px header strip. Rendered from the body, inset-0 always means the
+          viewport. */}
       {menuOpen ? (
+        createPortal(
         <div
           ref={sheetRef}
           role="dialog"
@@ -224,7 +230,9 @@ export function Nav() {
               {SITE.appointmentPolicy}
             </p>
           </Container>
-        </div>
+        </div>,
+        document.body,
+        )
       ) : null}
     </header>
   );
