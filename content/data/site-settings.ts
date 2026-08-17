@@ -84,6 +84,23 @@ export const SITE_SETTINGS: SiteSettingsDoc = {
   "priceDisclaimer": "All prices include the part and labour, and every repair is covered by a 60-day warranty.",
   "region": "Alberta",
   "regionCode": "AB",
+  /*
+   * The Store's real Google rating, read from the client's own listing (the
+   * one whose URL they supplied) as displayed on Google's own embed card,
+   * verified 2026-08-14 by loading the embed and reading the card:
+   * "TechBrotherz ... 4.8 ★ (732)". Not invented, not estimated, and dated so
+   * staleness is visible. A snapshot rather than a live feed: the Places API
+   * key (question 8) upgrades this to auto-refreshing data. Re-verify and
+   * update lastVerified whenever these numbers are touched.
+   */
+  "reviewSummary": {
+    "enabled": true,
+    "ratingValue": 4.8,
+    "reviewCount": 732,
+    "source": "Google",
+    "sourceUrl": "https://www.google.com/maps/place/TechBrotherz/@51.0366821,-113.9869842,17z/data=!3m1!5s0x53717ae7a5d4f8d7:0xb018a331a11900ca!4m8!3m7!1s0x53717ae777fa04f7:0xe21ea3f908974600!8m2!3d51.0366821!4d-113.9869842!9m1!1b1!16s%2Fg%2F1ptx_hp3y!18m1!1e1",
+    "lastVerified": "2026-08-14"
+  },
   "street": "3317 17 Ave SE",
   "tagline": "Phone and computer repairs, done while you wait",
   "typicalWaitMinutes": 30,

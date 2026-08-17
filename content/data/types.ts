@@ -73,6 +73,11 @@ export interface SiteSettingsDoc {
   gaId?: string;
   gscVerification?: string;
   announcementBar?: { active: boolean; text: string; href?: string };
+  /**
+   * The real Google review data, question 8. Every field must be present and
+   * `enabled` true before anything renders or is emitted; see ReviewSummary.
+   */
+  reviewSummary?: ReviewSummary;
 }
 
 /* ---------------------------------------------------------- catalogue */

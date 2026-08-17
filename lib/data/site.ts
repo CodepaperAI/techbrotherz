@@ -30,15 +30,18 @@ export async function getNavigation(): Promise<null> {
 }
 
 /**
- * Dormant until the client supplies real Google review data.
+ * The real Google review data, read from the reviewSummary on siteSettings.
  *
- * `aggregateRating()` in lib/seo/schema.ts returns null unless this is enabled
- * and complete, so no AggregateRating is ever emitted. Do not fill this in with
- * an estimate: a fabricated rating is the single most damaging thing that could
- * be put on this site.
+ * Populated 2026-08-14 with the figures displayed on the client's own listing
+ * (4.8, 732 at verification), dated in the record. `aggregateRating()` and
+ * RatingBadge still gate on every field being present, so clearing the record
+ * returns the site to showing nothing. Do not ever fill the record with an
+ * estimate: a fabricated rating is the single most damaging thing that could
+ * be put on this site, and scripts/test-no-fake-rating.ts fails the build if
+ * a rating literal appears outside the data file.
  */
 export async function getReviewSummary(): Promise<ReviewSummary | null> {
-  return null;
+  return SITE_SETTINGS.reviewSummary ?? null;
 }
 
 /**

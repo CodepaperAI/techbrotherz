@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 (fifth) — The rating badge lights up, with the real number
+
+**Asked:** the client sent the reference's "5.0 Facebook review rating" card and wants the same in our hero.
+
+**Done:** the design was already built and dormant; what it needed was data, and the client's own listing carries it publicly. Loaded Google's embed for their listing and read the card directly: **4.8 stars, 732 reviews**, verified 2026-08-14. That went into `siteSettings.reviewSummary` as a dated snapshot (the one place review data legitimately lives, excluded from the hardcoded-rating guard by design), `getReviewSummary()` now returns it, and everything gated on it lit at once: the hero stat row's fourth slot swapped from the hours card to the rating badge, the badge above the reviews section renders, and `AggregateRating` emits in the schema for the first time. Not the 5.0 the client pointed at, because that is the reference's number, not theirs; 4.8 with 732 real reviews is checkable in two taps and stronger than an unverifiable 5.0. The guard passed throughout: no rating literal exists outside the data file. Standing ask unchanged: a restricted Places API key turns the dated snapshot into auto-refreshing data.
+
 ## Session 2026-08-14 (fourth) — The honest rating badge, buy and sell, the brand strip
 
 **Asked:** the reviews/buy-sell/brands brief. The client wants a 5.0 rating block like the reference's; the honest version ships instead.
