@@ -2,6 +2,26 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 (fourth) — The honest rating badge, buy and sell, the brand strip
+
+**Asked:** the reviews/buy-sell/brands brief. The client wants a 5.0 rating block like the reference's; the honest version ships instead.
+
+**Done:**
+
+### RatingBadge, armed but dormant
+
+Built on the same ReviewSummary that gates `aggregateRating()`: large rating numeral, five stars, the real count, and the link to the Google listing. Placed twice, in the hero stat row (taking the fourth card's slot the moment data exists; the hours card holds it meanwhile) and above the reviews section. It renders nothing while `getReviewSummary()` returns null: no placeholder, no zero, no literal anywhere. A new guard, `scripts/test-no-fake-rating.ts`, joined `pnpm verify` and fails the build if a literal star rating or review count ever appears in app/, components/ or lib/, so the temptation to hardcode a 5.0 under pressure now breaks CI instead of shipping. When the client's Place ID and key land, the badge shows whatever the real figure is; if that is 5.0 they get exactly what they asked for, and if it is 4.6, 4.6 with a real count beats an unverifiable 5.0.
+
+### Buy and sell, the sixth point
+
+The why-us list gains "We buy and sell phones. Bring yours in for a quote at the counter, whether you are selling it, replacing it, or deciding between the two." No refurbished claim, no instant-quote claim, no trade-in claim, because none is confirmed; question 30 asks for the specifics (new vs refurbished, trade-ins, whether "sell my phone calgary" deserves a page). Selling has been in the brief since Phase 1; buying is the new confirmation.
+
+### The brand strip at full width
+
+The home chip strip (the card grid folded into it back in the reference-match session, so there is one brand section, not two) now carries all seventeen confirmed names: iPhone, iPad, MacBook, Samsung Galaxy, Google Pixel, Motorola, LG, HP, Dell, Lenovo, ASUS, Acer, PlayStation 4 and 5, Xbox, Xbox Series, Nintendo Switch. Text only, no logos; every chip links to the page that covers it (phone hubs, laptop repair, console repair), nothing dead. OnePlus deliberately absent, per the brief, as question 31.
+
+Guard, links, typecheck, lint, clean build all green. Deployed.
+
 ## Session 2026-08-14 (third) — The original logo, restored bigger
 
 **Asked:** use the client's original logo, larger.

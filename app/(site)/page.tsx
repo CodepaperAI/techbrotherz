@@ -12,6 +12,7 @@ import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { MapReveal } from "@/components/blocks/MapReveal";
 import { NumberedList } from "@/components/blocks/NumberedList";
 import { OpenNowBadge } from "@/components/blocks/OpenNowBadge";
+import { RatingBadge } from "@/components/blocks/RatingBadge";
 import { PageShell } from "@/components/blocks/PageShell";
 import { ServiceCard } from "@/components/blocks/ServiceCard";
 import type { RepairSubject } from "@/components/blocks/RepairIllustration";
@@ -58,16 +59,32 @@ const SERVICE_PILLS: { label: string; href: string }[] = [
   { label: "Unlocking", href: "/services/phone-unlocking" },
 ];
 
-/** Brands the Store actually services. No manufacturer logos, names only. */
+/**
+ * Brands the Store services, every one confirmed by the client's own device
+ * list ("laptops of every make" covers the PC names; the console page covers
+ * the console names). Text chips only, no manufacturer logos, per the
+ * standing trademark rule. OnePlus is deliberately absent: the client has not
+ * named it, so it stays under "other Android phones" until they do
+ * (CLAUDE.md question 31). Each chip links to the page that covers it.
+ */
 const BRAND_NAMES: { label: string; href: string }[] = [
   { label: "iPhone", href: "/repair/apple-iphone" },
   { label: "iPad", href: "/repair/apple-ipad" },
+  { label: "MacBook", href: "/services/laptop-repair" },
   { label: "Samsung Galaxy", href: "/repair/samsung-galaxy" },
   { label: "Google Pixel", href: "/repair/google-pixel" },
-  { label: "MacBook", href: "/services/laptop-repair" },
+  { label: "Motorola", href: "/services/phone-repair" },
+  { label: "LG", href: "/services/phone-repair" },
   { label: "HP", href: "/services/laptop-repair" },
   { label: "Dell", href: "/services/laptop-repair" },
   { label: "Lenovo", href: "/services/laptop-repair" },
+  { label: "ASUS", href: "/services/laptop-repair" },
+  { label: "Acer", href: "/services/laptop-repair" },
+  { label: "PlayStation 4", href: "/services/game-console-repair" },
+  { label: "PlayStation 5", href: "/services/game-console-repair" },
+  { label: "Xbox", href: "/services/game-console-repair" },
+  { label: "Xbox Series", href: "/services/game-console-repair" },
+  { label: "Nintendo Switch", href: "/services/game-console-repair" },
 ];
 
 export const revalidate = 3600;
@@ -322,11 +339,17 @@ export default async function HomePage() {
               label: "No appointment",
               body: "No booking system. Come in during opening hours.",
             },
-            {
-              stat: "7 days",
-              label: "Open every day",
-              body: "Mon to Sat 10 to 7, Sunday 11 to 5.",
-            },
+            /* The fourth slot belongs to the Google rating the moment real
+               data arrives; until then the hours card holds it. */
+            ...(reviews?.enabled
+              ? []
+              : [
+                  {
+                    stat: "7 days",
+                    label: "Open every day",
+                    body: "Mon to Sat 10 to 7, Sunday 11 to 5.",
+                  },
+                ]),
           ].map((card) => (
             <Card key={card.label} className="shadow-sm">
               <p className="type-numeral text-tb-green-deep">{card.stat}</p>
@@ -334,6 +357,11 @@ export default async function HomePage() {
               <p className="type-caption text-tb-muted mt-1.5">{card.body}</p>
             </Card>
           ))}
+          {reviews?.enabled ? (
+            <Card className="shadow-sm">
+              <RatingBadge reviews={reviews} />
+            </Card>
+          ) : null}
         </div>
       }
       answerBox={{
@@ -428,12 +456,16 @@ export default async function HomePage() {
         </ul>
 
         <p className="type-body measure text-tb-muted mt-8">
-          Each phone brand links to its model catalogue, with every handset we repair listed newest
-          first. MacBooks, HP, Dell and Lenovo machines go through{" "}
+          Each chip links to the page that covers it: the phone brands to their model catalogues,
+          the computer makes to{" "}
           <Link href="/services/laptop-repair" className="text-tb-green-deep hover:underline">
             laptop repair
           </Link>
-          .
+          , and the consoles to{" "}
+          <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
+            game console repair
+          </Link>
+          . An Android phone not named here is still taken at the same counter, quoted per model.
         </p>
       </Section>
 
@@ -443,7 +475,7 @@ export default async function HomePage() {
           level={2}
           id="why-us-heading"
           eyebrow="Why us"
-          lead="Five things that are true of every repair TechBrotherz does, and that you can hold us to."
+          lead="Six things that are true of TechBrotherz, and that you can hold us to."
         >
           Why <span className="text-tb-green-deep">Calgary</span> chooses TechBrotherz
         </Heading>
@@ -470,6 +502,13 @@ export default async function HomePage() {
             {
               title: `${warrantyDays}-day warranty`,
               body: `Every repair is covered for ${warrantyDays} days on both the part fitted and the work done.`,
+            },
+            /* Confirmed by the client 2026-08: the Store buys and sells
+               phones. Nothing here claims refurbished stock or instant
+               trade-in quotes, because neither is confirmed. */
+            {
+              title: "We buy and sell phones",
+              body: "Bring yours in for a quote at the counter, whether you are selling it, replacing it, or deciding between the two.",
             },
           ]}
         />
@@ -525,6 +564,8 @@ export default async function HomePage() {
         >
           What do customers say about TechBrotherz?
         </Heading>
+
+        <RatingBadge reviews={reviews} className="mt-8" />
 
         {testimonials.length > 0 ? (
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

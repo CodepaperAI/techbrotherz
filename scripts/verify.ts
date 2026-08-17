@@ -53,6 +53,12 @@ const CHECKS: Check[] = [
     why: "Every Tier 2 and Tier 3 page carries at least 900 words of real prose.",
   },
   {
+    name: "no-fake-rating",
+    script: "scripts/test-no-fake-rating.ts",
+    needsServer: false,
+    why: "No star rating or review count is hardcoded; both flow from live data or render nothing.",
+  },
+  {
     name: "pages",
     script: "scripts/audit-pages.ts",
     needsServer: true,
