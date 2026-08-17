@@ -20,7 +20,7 @@ const PATH = "/blog";
 export const metadata: Metadata = buildMetadata({
   title: "Repair Guides and Answers | TechBrotherz Blog",
   description:
-    "Straight answers on phone, laptop and computer problems from the TechBrotherz counter in Calgary: unlocking, water damage, laptop faults and when repair beats replacement.",
+    "Straight answers on phone, laptop and computer problems from the TechBrotherz Store in Calgary: unlocking, water damage, laptop faults and when repair beats replacement.",
   path: PATH,
 });
 
@@ -44,7 +44,7 @@ export default async function BlogIndexPage() {
       type: "CollectionPage",
       name: "Repair guides and answers from TechBrotherz",
       description:
-        "Guides on phone, laptop and computer problems, written by the TechBrotherz repair counter in Calgary.",
+        "Guides on phone, laptop and computer problems, written by the TechBrotherz repair Store in Calgary.",
       path: PATH,
     }),
   ];
@@ -57,16 +57,16 @@ export default async function BlogIndexPage() {
       crumbLabel="Blog"
       lead={
         <>
-          Straight answers from the counter at TechBrotherz, a walk-in cell phone and computer
-          repair Store at {SITE.street} in {SITE.city}, {SITE.region}: what actually fixes a
+          Straight answers from the Store at TechBrotherz, a walk-in cell phone and computer
+          repair store at {SITE.street} in {SITE.city}, {SITE.region}: what actually fixes a
           problem, what does not, and when a repair is not worth your money.
         </>
       }
       answerBox={{
         answer:
-          "The TechBrotherz blog answers the questions customers actually ask at the counter of the Calgary repair Store: how to unlock a phone in Canada, which laptop symptoms mean repair, and what to do first with a wet phone. Every article is written by the Store itself, under the same no-invented-facts rule as the rest of this site.",
+          "The TechBrotherz blog answers the questions customers actually ask at the Store of the Calgary repair store: how to unlock a phone in Canada, which laptop symptoms mean repair, and what to do first with a wet phone. Every article is written by the store itself, under the same no-invented-facts rule as the rest of this site.",
         keyFacts: [
-          { label: "Written by", value: "The TechBrotherz counter, not generated filler" },
+          { label: "Written by", value: "The TechBrotherz Store, not generated filler" },
           { label: "Articles", value: `${BLOG_POSTS.length} published, more from the planned list follow` },
           { label: "Sponsored content", value: "None, ever" },
           { label: "A question the blog does not answer", value: `Call ${SITE.phone}` },
@@ -108,7 +108,7 @@ export default async function BlogIndexPage() {
         </div>
 
         <p className="type-body measure text-tb-muted mt-10">
-          More guides from the planned list follow. Every article is written by the Store rather
+          More guides from the planned list follow. Every article is written by the store rather
           than generated filler, which is why the list grows a few at a time.
         </p>
       </Section>

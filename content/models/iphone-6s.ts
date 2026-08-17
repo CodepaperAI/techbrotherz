@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 6S is the model Apple ran a public battery replacement programme for, after unexpected shutdowns on ageing cells became widespread. That history matters at the counter: an iPhone 6S that shuts down at thirty percent almost always needs a battery rather than anything more serious. Its screen is one of the cheaper repairs TechBrotherz does."
+          "text": "The iPhone 6S is the model Apple ran a public battery replacement programme for, after unexpected shutdowns on ageing cells became widespread. That history matters at the Store: an iPhone 6S that shuts down at thirty percent almost always needs a battery rather than anything more serious. Its screen is one of the cheaper repairs TechBrotherz does."
         }
       ],
       "markDefs": [],

@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s6-edge-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Galaxy S6 Edge stopped at Android 7, which is a decade of missed security updates, and its curved screen is one of the dearest legacy repairs on the board, several times the handset's value. This is a phone to retire. TechBrotherz will say that at the counter rather than take the work."
+          "text": "No. The Galaxy S6 Edge stopped at Android 7, which is a decade of missed security updates, and its curved screen is one of the dearest legacy repairs on the board, several times the handset's value. This is a phone to retire. TechBrotherz will say that at the Store rather than take the work."
         }
       ],
       "markDefs": [],

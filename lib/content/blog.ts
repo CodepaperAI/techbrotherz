@@ -46,17 +46,17 @@ const unlockCanada: BlogPost = {
   title: "How to Unlock a Cell Phone in Canada",
   seoTitle: "How to Unlock a Cell Phone in Canada | Free by Law",
   seoDescription:
-    "Since 2017 Canadian carriers must unlock your phone free on request. When that works, when it does not, and what a repair Store can do that a carrier cannot.",
+    "Since 2017 Canadian carriers must unlock your phone free on request. When that works, when it does not, and what a repair store can do that a carrier cannot.",
   datePublished: "2026-08-13",
   summary:
     "Your carrier must unlock your phone free of charge, by law. Here is how to ask, and what to do in the cases where the carrier route does not work.",
-  lead: "Unlocking a phone in Canada is free by law when your carrier does it, and that is the route to try first. TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, unlocks phones every week, and most of that work is the cases the carrier route cannot reach: imported handsets, closed accounts and carriers that no longer exist.",
+  lead: "Unlocking a phone in Canada is free by law when your carrier does it, and that is the route to try first. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, unlocks phones every week, and most of that work is the cases the carrier route cannot reach: imported handsets, closed accounts and carriers that no longer exist.",
   answer:
-    "Since December 1, 2017, the CRTC's Wireless Code requires Canadian carriers to unlock their customers' phones free of charge, and new phones must be sold unlocked. For imported handsets, closed accounts and defunct carriers, TechBrotherz in Calgary unlocks phones at the counter, usually the same day, without touching the data on the phone.",
+    "Since December 1, 2017, the CRTC's Wireless Code requires Canadian carriers to unlock their customers' phones free of charge, and new phones must be sold unlocked. For imported handsets, closed accounts and defunct carriers, TechBrotherz in Calgary unlocks phones at the Store, usually the same day, without touching the data on the phone.",
   keyFacts: [
     { label: "Carrier route", value: "Free by law since December 2017, for their own customers" },
-    { label: "Store route", value: "Imported phones, closed accounts, defunct carriers" },
-    { label: "Time", value: "Usually the same day at the counter" },
+    { label: "store route", value: "Imported phones, closed accounts, defunct carriers" },
+    { label: "Time", value: "Usually the same day at the Store" },
     { label: "Your data", value: "Untouched by an unlock" },
     { label: "Blacklisted phones", value: "Cannot be unlocked by anyone" },
   ],
@@ -74,7 +74,7 @@ const unlockCanada: BlogPost = {
       paragraphs: [
         "If the phone was bought new in Canada from December 1, 2017 onward, it is almost certainly already unlocked. The CRTC's Wireless Code required carriers to sell all new devices unlocked from that date, so a phone bought new from a Canadian carrier in the last several years has no lock to remove.",
         "The quickest test costs nothing: put a SIM card from a different carrier into the phone. If the phone registers on that network and can make a call, it is unlocked. If it shows a message asking for an unlock code, or refuses the SIM, it is locked.",
-        "The phones that are still locked in practice are older Canadian handsets from before December 2017, phones bought from carriers in other countries, and some prepaid or budget devices sold abroad. Those are exactly the phones that turn up at the TechBrotherz counter.",
+        "The phones that are still locked in practice are older Canadian handsets from before December 2017, phones bought from carriers in other countries, and some prepaid or budget devices sold abroad. Those are exactly the phones that turn up at the TechBrotherz Store.",
       ],
     },
     {
@@ -82,14 +82,14 @@ const unlockCanada: BlogPost = {
       paragraphs: [
         "Since December 2017, the CRTC's Wireless Code requires Canadian carriers to unlock a customer's phone free of charge, on request. Before that rule, carriers charged an unlocking fee, commonly around fifty dollars. If your phone is locked to a Canadian carrier and you have an account with them, this is the route to use, because it costs nothing.",
         "Call the carrier or use their online chat, say you want your device unlocked, and have the phone's IMEI number ready. The IMEI is the phone's serial number for network purposes: dial *#06# on any phone and it appears on screen. The carrier verifies the account and either unlocks the phone remotely or gives you a code to enter.",
-        "The catch is the word customer. The carrier's obligation runs to its own subscribers. If the account was closed years ago, if you bought the phone secondhand and were never their customer, or if the carrier has shut down or been absorbed into another brand, the free route gets slow, complicated, or impossible. That is where a repair Store comes in.",
+        "The catch is the word customer. The carrier's obligation runs to its own subscribers. If the account was closed years ago, if you bought the phone secondhand and were never their customer, or if the carrier has shut down or been absorbed into another brand, the free route gets slow, complicated, or impossible. That is where a repair store comes in.",
       ],
     },
     {
-      heading: "When is a repair Store the practical route?",
+      heading: "When is a repair store the practical route?",
       paragraphs: [
-        "TechBrotherz in Calgary unlocks phones that the carrier route cannot reach: handsets imported from another country and locked to a foreign network, phones locked to brands that no longer operate, and secondhand phones where the original account holder is long gone. The phone is unlocked at the counter, usually the same day, and your data is not touched.",
-        "The service covers any Canadian carrier and most foreign locks, and it is quoted before any work starts. Bring the phone, and if possible know which network it is locked to. The counter can confirm whether the unlock is possible and what it costs before you commit to anything.",
+        "TechBrotherz in Calgary unlocks phones that the carrier route cannot reach: handsets imported from another country and locked to a foreign network, phones locked to brands that no longer operate, and secondhand phones where the original account holder is long gone. The phone is unlocked at the Store, usually the same day, and your data is not touched.",
+        "The service covers any Canadian carrier and most foreign locks, and it is quoted before any work starts. Bring the phone, and if possible know which network it is locked to. The Store can confirm whether the unlock is possible and what it costs before you commit to anything.",
         "One honest boundary: if your phone is locked to a Canadian carrier and you are still their customer, TechBrotherz will tell you to phone them first, because the carrier is required to do it free. Paying for an unlock you are legally entitled to at no charge is a bad deal, and we would rather say so than take the job.",
       ],
     },
@@ -111,12 +111,12 @@ const unlockCanada: BlogPost = {
     {
       question: "Does unlocking a phone delete your data?",
       answer:
-        "No. A carrier unlock removes the network restriction and nothing else. Photos, messages, apps and settings all stay exactly where they are, whether the unlock is done by the carrier remotely or at the TechBrotherz counter in Calgary.",
+        "No. A carrier unlock removes the network restriction and nothing else. Photos, messages, apps and settings all stay exactly where they are, whether the unlock is done by the carrier remotely or at the TechBrotherz Store in Calgary.",
     },
     {
       question: "Can TechBrotherz unlock a phone bought in another country?",
       answer:
-        "Usually, yes. Imported handsets locked to foreign networks are the most common unlocking job at the TechBrotherz counter in Calgary, because the free Canadian carrier route only covers Canadian carriers and their own customers. Bring the phone in, and the unlock is quoted before any work starts and usually done the same day.",
+        "Usually, yes. Imported handsets locked to foreign networks are the most common unlocking job at the TechBrotherz Store in Calgary, because the free Canadian carrier route only covers Canadian carriers and their own customers. Bring the phone in, and the unlock is quoted before any work starts and usually done the same day.",
     },
     {
       question: "Do you need the original SIM card to unlock a phone?",
@@ -149,15 +149,15 @@ const laptopSigns: BlogPost = {
   datePublished: "2026-08-13",
   summary:
     "Most laptops announce their failures in advance. Here are the symptoms worth acting on, the ones that mean back up today, and the ones that are cheaper to fix than people expect.",
-  lead: "Most laptops do not die suddenly; they announce what is failing weeks in advance, in heat, noise and slowdowns. TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, sees the same symptoms at the counter every week, and this is what each one usually means and when it is worth acting.",
+  lead: "Most laptops do not die suddenly; they announce what is failing weeks in advance, in heat, noise and slowdowns. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, sees the same symptoms at the Store every week, and this is what each one usually means and when it is worth acting.",
   answer:
-    "A laptop usually announces failure in advance. A loud fan and heat mean blocked cooling, a clicking noise means back the drive up today, working only when plugged in means a worn battery, and a plug that needs an angle means a failing charging jack. TechBrotherz in Calgary diagnoses laptops at the counter and quotes every repair free.",
+    "A laptop usually announces failure in advance. A loud fan and heat mean blocked cooling, a clicking noise means back the drive up today, working only when plugged in means a worn battery, and a plug that needs an angle means a failing charging jack. TechBrotherz in Calgary diagnoses laptops at the Store and quotes every repair free.",
   keyFacts: [
     { label: "Loud fan, hot deck", value: "Blocked cooling, gets worse not better" },
     { label: "Clicking noise", value: "Back up the same day, the drive may be failing" },
     { label: "Only works plugged in", value: "A worn battery, usually a simple replacement" },
     { label: "Stop immediately", value: "Liquid, burning smells, or a swollen battery" },
-    { label: "Every quote", value: "Free at the counter before any work starts" },
+    { label: "Every quote", value: "Free at the Store before any work starts" },
   ],
   sections: [
     {
@@ -180,14 +180,14 @@ const laptopSigns: BlogPost = {
       heading: "Is it the battery, the charger or the charging port?",
       paragraphs: [
         "A laptop that only works when plugged in has a worn-out battery, and on most models the battery is a straightforward replacement. A battery that drains in an hour, or shows different percentages minutes apart, is telling the same story. Batteries are consumables: several years of daily charging uses one up in the normal course of life.",
-        "A laptop that will not charge at all has three suspects: the charger, the charging port, and the battery, in that order of cost. The charger is the cheap answer, which is why TechBrotherz asks you to bring yours in with the laptop: testing with your own charger settles it in the first minute at the counter.",
+        "A laptop that will not charge at all has three suspects: the charger, the charging port, and the battery, in that order of cost. The charger is the cheap answer, which is why TechBrotherz asks you to bring yours in with the laptop: testing with your own charger settles it in the first minute at the Store.",
         "If the plug has to sit at an angle to charge, or wiggling the cable makes the charge light flicker, the DC jack inside the laptop has worked loose. That is a real repair rather than an accessory swap, and it is worth doing promptly, because a loose jack can damage the board it is soldered to.",
       ],
     },
     {
       heading: "Which screen and keyboard symptoms mean repair?",
       paragraphs: [
-        "A cracked laptop screen is unambiguous, and it is usually a cheaper repair than people expect because the panel is a standard part on most models. Lines across the display, a picture that flickers when the lid moves, or a dark screen with a faint image behind it all point at the panel or its cable, and all are diagnosable at the counter.",
+        "A cracked laptop screen is unambiguous, and it is usually a cheaper repair than people expect because the panel is a standard part on most models. Lines across the display, a picture that flickers when the lid moves, or a dark screen with a faint image behind it all point at the panel or its cable, and all are diagnosable at the Store.",
         "One test is worth doing before assuming the worst: plug the laptop into an external monitor or a television. If the picture is perfect on the external screen, the fault is the panel or its cable, not the graphics hardware, and the repair is the smaller one.",
         "Keyboards fail a few keys at a time, usually after a spill or years of crumbs. On most laptops the keyboard is a replaceable part, and replacing it beats living with a dead letter. If several keys stopped working at once immediately after a spill, act quickly, because what killed the keys may still be spreading underneath them.",
       ],
@@ -197,7 +197,7 @@ const laptopSigns: BlogPost = {
       paragraphs: [
         "Three symptoms justify shutting the machine down and bringing it in rather than pushing on. Liquid in the laptop, even if it seems to have survived: corrosion works over days, and a machine that is powered on while wet is being actively damaged. A hot smell or any smell of burning: that is not a symptom to monitor. And a clicking mechanical drive, because every hour of use is a gamble with your files.",
         "A swollen battery is the fourth. If the trackpad has started clicking strangely, the case no longer sits flat, or there is a visible bulge, the battery inside is expanding and needs replacing promptly. Do not press on it, and do not keep charging it.",
-        "None of these symptoms mean the laptop is finished. They mean the order of operations matters: stop, back up if the machine will still safely run, and get it diagnosed. TechBrotherz quotes the repair free at the counter, and if the honest answer is that the machine is not worth fixing, that is the answer you get.",
+        "None of these symptoms mean the laptop is finished. They mean the order of operations matters: stop, back up if the machine will still safely run, and get it diagnosed. TechBrotherz quotes the repair free at the Store, and if the honest answer is that the machine is not worth fixing, that is the answer you get.",
       ],
     },
     {
@@ -205,7 +205,7 @@ const laptopSigns: BlogPost = {
       paragraphs: [
         "The arithmetic is the same as for a phone: set the repair quote against what the laptop is actually worth and what replacing it would really cost, including the hours of setting up a new machine. A battery, a screen or a keyboard on an otherwise good laptop is almost always worth doing, because each is a small fraction of replacement cost.",
         "Age changes the answer less than people think, with one exception: a laptop that cannot run a supported version of Windows is living on borrowed time for banking and email, whatever its hardware condition. That is a software boundary rather than a wear problem, and it is checked as part of a diagnostic.",
-        "The honest cases where replacement wins: a budget laptop needing a screen and a battery and a drive all at once, or damage to the main board where the repair is not economical. TechBrotherz says so at the counter when that is the situation, because a quote that ends with a recommendation not to spend the money is a legitimate outcome.",
+        "The honest cases where replacement wins: a budget laptop needing a screen and a battery and a drive all at once, or damage to the main board where the repair is not economical. TechBrotherz says so at the Store when that is the situation, because a quote that ends with a recommendation not to spend the money is a legitimate outcome.",
       ],
     },
   ],
@@ -213,7 +213,7 @@ const laptopSigns: BlogPost = {
     {
       question: "How do you know if a laptop fan is failing?",
       answer:
-        "A failing laptop fan is loud at idle, rattles, or has gone completely silent while the machine runs hot. Any of the three means the cooling system needs attention, because a processor that cannot shed heat deliberately slows itself down and sustained heat shortens the life of the whole machine. A cleaning and fan check at TechBrotherz in Calgary is quoted free at the counter.",
+        "A failing laptop fan is loud at idle, rattles, or has gone completely silent while the machine runs hot. Any of the three means the cooling system needs attention, because a processor that cannot shed heat deliberately slows itself down and sustained heat shortens the life of the whole machine. A cleaning and fan check at TechBrotherz in Calgary is quoted free at the Store.",
     },
     {
       question: "Why does my laptop only work when plugged in?",
@@ -251,9 +251,9 @@ const waterDamage: BlogPost = {
   datePublished: "2026-08-13",
   summary:
     "The first ten minutes decide more than the next ten days. What actually helps a wet phone, why rice does nothing, and what a proper cleanup involves.",
-  lead: "A phone that has been in water is not dead, but the clock is running, and what you do in the first ten minutes matters more than anything a repair bench can do a week later. TechBrotherz, a walk-in cell phone and computer repair Store at 3317 17 Ave SE in Calgary, Alberta, sees water-damaged phones every week, and the ones that survive are the ones that were handled right at the start.",
+  lead: "A phone that has been in water is not dead, but the clock is running, and what you do in the first ten minutes matters more than anything a repair bench can do a week later. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, sees water-damaged phones every week, and the ones that survive are the ones that were handled right at the start.",
   answer:
-    "Power a wet phone off immediately, do not charge it, and skip the rice, which cannot reach the water inside a sealed phone. Corrosion rather than the water itself is what kills phones over the following days, so a prompt board cleanup at TechBrotherz in Calgary is what changes the outcome. No honest Store guarantees liquid damage.",
+    "Power a wet phone off immediately, do not charge it, and skip the rice, which cannot reach the water inside a sealed phone. Corrosion rather than the water itself is what kills phones over the following days, so a prompt board cleanup at TechBrotherz in Calgary is what changes the outcome. No honest store guarantees liquid damage.",
   keyFacts: [
     { label: "First step", value: "Power off, and do not charge it" },
     { label: "Rice", value: "A myth that wastes the days that matter" },
@@ -281,7 +281,7 @@ const waterDamage: BlogPost = {
     {
       heading: "Why did the phone work at first and then die?",
       paragraphs: [
-        "This is the most common water damage story at the counter: the phone survived the dunk, worked for a week, then faded out. Corrosion explains it. Water leaves mineral deposits on the board, those deposits keep reacting with metal and current after the water is gone, and connections fail one by one over days or weeks.",
+        "This is the most common water damage story at the Store: the phone survived the dunk, worked for a week, then faded out. Corrosion explains it. Water leaves mineral deposits on the board, those deposits keep reacting with metal and current after the water is gone, and connections fail one by one over days or weeks.",
         "That is why a phone that seems fine after a soaking is still worth bringing in. Opened promptly, the board can be cleaned with isopropyl alcohol and inspected under magnification before corrosion has eaten anything. Opened a month later, the question is no longer cleaning but which parts the corrosion has already taken.",
         "A charging port that fails soon after a soaking, a battery that suddenly drains, a screen with new marks behind the glass or a speaker that sounds muffled are all the same process at different landing points. The earlier the cleanup, the fewer of them happen.",
       ],
@@ -290,15 +290,15 @@ const waterDamage: BlogPost = {
       heading: "What does a proper water damage cleanup involve?",
       paragraphs: [
         "The phone is opened, the battery is disconnected, and the board is cleaned with high-purity isopropyl alcohol, which displaces water and dissolves the residue it left. The board is inspected under magnification for corrosion at the connectors and shields, affected areas are cleaned mechanically, and the phone is reassembled and tested once dry.",
-        "TechBrotherz will tell you honestly that no water damage repair carries a guarantee of success, here or anywhere. Liquid damage is the one repair no honest Store promises, because the outcome depends on what got in, where it reached and how long it sat. What a prompt cleanup does is move the odds substantially in the phone's favour.",
-        "If the phone matters mostly for what is on it, say so at the counter, because that changes the goal. A phone too far gone to save can often still be brought back long enough to get photos and messages off it, and that is sometimes the outcome that actually matters.",
+        "TechBrotherz will tell you honestly that no water damage repair carries a guarantee of success, here or anywhere. Liquid damage is the one repair no honest store promises, because the outcome depends on what got in, where it reached and how long it sat. What a prompt cleanup does is move the odds substantially in the phone's favour.",
+        "If the phone matters mostly for what is on it, say so at the Store, because that changes the goal. A phone too far gone to save can often still be brought back long enough to get photos and messages off it, and that is sometimes the outcome that actually matters.",
       ],
     },
     {
       heading: "Is a water-resistant phone actually waterproof?",
       paragraphs: [
         "No phone is waterproof. The ratings on recent phones, IP67 or IP68, mean the phone resisted fresh water in a laboratory test when it was new. Those seals age, weaken with every drop and every summer in a hot car, and were never rated for salt water, pool chemicals or soap in the first place.",
-        "Water resistance is also the first casualty of any opened phone. Once a phone has been opened for a screen or battery replacement, at any repair Store, the factory seal is replaced with adhesive that is good but not laboratory-rated. Treat any repaired phone as rain-resistant rather than swim-ready, whatever it was rated at new.",
+        "Water resistance is also the first casualty of any opened phone. Once a phone has been opened for a screen or battery replacement, at any repair store, the factory seal is replaced with adhesive that is good but not laboratory-rated. Treat any repaired phone as rain-resistant rather than swim-ready, whatever it was rated at new.",
         "The practical rule: a rating is a margin of safety for accidents, not an invitation. A phone that has been in water is a phone that has been in water, whatever the box said, and the checklist at the top of this page applies to all of them.",
       ],
     },
@@ -322,7 +322,7 @@ const waterDamage: BlogPost = {
     },
     {
       name: "Get it cleaned promptly",
-      text: "Bring the phone to a repair counter for an isopropyl cleanup and board inspection within a day or two, before corrosion sets in.",
+      text: "Bring the phone to a repair Store for an isopropyl cleanup and board inspection within a day or two, before corrosion sets in.",
     },
   ],
   faqs: [
@@ -334,7 +334,7 @@ const waterDamage: BlogPost = {
     {
       question: "Can a phone that got wet be repaired?",
       answer:
-        "Often, yes, if it is treated quickly. A prompt cleanup at TechBrotherz in Calgary involves opening the phone, disconnecting the battery, cleaning the board with high-purity isopropyl alcohol and inspecting it under magnification. No honest Store guarantees the outcome of liquid damage, because it depends on what got in and how long it sat, but early treatment moves the odds substantially.",
+        "Often, yes, if it is treated quickly. A prompt cleanup at TechBrotherz in Calgary involves opening the phone, disconnecting the battery, cleaning the board with high-purity isopropyl alcohol and inspecting it under magnification. No honest store guarantees the outcome of liquid damage, because it depends on what got in and how long it sat, but early treatment moves the odds substantially.",
     },
     {
       question: "How long do you have before water damage becomes permanent?",

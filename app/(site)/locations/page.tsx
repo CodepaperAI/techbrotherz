@@ -69,7 +69,7 @@ export default async function LocationsPage() {
     localBusiness(settings ?? {}, reviews),
     webPage({
       type: "CollectionPage",
-      name: "Areas TechBrotherz serves from its Calgary Store",
+      name: "Areas TechBrotherz serves from its Calgary store",
       description:
         "TechBrotherz is at 3317 17 Ave SE in Calgary and serves Calgary, Chestermere, Airdrie and the surrounding Calgary communities.",
       path: PATH,
@@ -86,13 +86,13 @@ export default async function LocationsPage() {
       crumbLabel="Locations"
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, is on the stretch of 17 Avenue SE known as International
           Avenue, in the southeast, a few blocks west of Forest Lawn.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz has one Store, at ${SITE.street} in Calgary, in a plaza on International Avenue. It serves Calgary, Chestermere, Airdrie and the surrounding Calgary communities. Parking in front of the store is free, the MAX Purple bus rapid transit line runs along 17 Avenue SE, and no appointment is needed to walk in.`,
+        answer: `TechBrotherz has one store, at ${SITE.street} in Calgary, in a plaza on International Avenue. It serves Calgary, Chestermere, Airdrie and the surrounding Calgary communities. Parking in front of the store is free, the MAX Purple bus rapid transit line runs along 17 Avenue SE, and no appointment is needed to walk in.`,
         keyFacts: [
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           { label: "Area", value: "Forest Lawn, on International Avenue in southeast Calgary" },
@@ -107,17 +107,17 @@ export default async function LocationsPage() {
       }}
       schema={schema}
     >
-      {/* ------------------------------------------------------- the Store */}
+      {/* ------------------------------------------------------- the store */}
       <Section variant="tint" className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="the-shop-heading">
-        <Heading level={2} id="the-shop-heading" eyebrow="The Store">
-          Where exactly is the TechBrotherz Store?
+        <Heading level={2} id="the-shop-heading" eyebrow="The store">
+          Where exactly is the TechBrotherz store?
         </Heading>
 
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
         {/* Added on client request 2026-08, alongside the switch to a
-            default-loaded map: the index that routes people to the Store
-            should show where the Store is. */}
+            default-loaded map: the index that routes people to the store
+            should show where the store is. */}
         <MapReveal
           className="mt-6 h-80 md:h-96"
           src={SITE.googleMapsEmbedUrl}
@@ -163,7 +163,7 @@ export default async function LocationsPage() {
                   <span className="type-h3 text-tb-text block">{entry.city}</span>
                   <span className="type-caption text-tb-muted mt-2 block">
                     {entry.driveTimeMinutes
-                      ? `About ${entry.driveTimeMinutes} minutes from the Store`
+                      ? `About ${entry.driveTimeMinutes} minutes from the store`
                       : "Directions published on the area page"}
                     {entry.distanceKm ? `, ${entry.distanceKm} km` : ""}
                   </span>
@@ -206,7 +206,7 @@ export default async function LocationsPage() {
           level={2}
           id="cities-heading"
           eyebrow="Beyond Calgary"
-          lead="Customers travel to the Calgary Store from the communities around the city. There is one Store, so every repair happens at 3317 17 Ave SE."
+          lead="Customers travel to the Calgary store from the communities around the city. There is one store, so every repair happens at 3317 17 Ave SE."
         >
           Does TechBrotherz serve Chestermere and Airdrie?
         </Heading>
@@ -230,10 +230,10 @@ export default async function LocationsPage() {
                 <span className="type-h3 text-tb-text block">{entry.name}</span>
                 <span className="type-body text-tb-muted mt-2 block">
                   {entry.drive
-                    ? `About ${entry.drive} minutes from the Store${entry.distance ? `, ${entry.distance} km` : ""}.`
+                    ? `About ${entry.drive} minutes from the store${entry.distance ? `, ${entry.distance} km` : ""}.`
                     : entry.name === "Airdrie"
-                      ? `TechBrotherz repairs devices for Airdrie customers at the Calgary Store, and the honest position is that it is a real drive: Airdrie is north of the city and the Store is in the southeast, down Deerfoot Trail. There is no Airdrie page on this site, because we could not verify enough local detail to write one worth reading.`
-                      : `TechBrotherz repairs devices for ${entry.name} customers at the Calgary Store.`}
+                      ? `TechBrotherz repairs devices for Airdrie customers at the Calgary store, and the honest position is that it is a real drive: Airdrie is north of the city and the store is in the southeast, down Deerfoot Trail. There is no Airdrie page on this site, because we could not verify enough local detail to write one worth reading.`
+                      : `TechBrotherz repairs devices for ${entry.name} customers at the Calgary store.`}
                 </span>
               </>
             );

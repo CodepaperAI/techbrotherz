@@ -94,7 +94,7 @@ export default async function BrandHubPage({ params }: PageProps) {
       name: model.name,
       year: model.releaseYear ?? 0,
       href: null as string | null,
-      caption: "Quoted at the counter",
+      caption: "Quoted at the Store",
     })),
   ].sort((a, b) => b.year - a.year || (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
 
@@ -188,7 +188,7 @@ export default async function BrandHubPage({ params }: PageProps) {
     faqs.schema,
   ];
 
-  const priceSentence = `${brand.name} repairs at TechBrotherz in Calgary are quoted per model at the counter, free of charge, and every quote includes the part and the labour.`;
+  const priceSentence = `${brand.name} repairs at TechBrotherz in Calgary are quoted per model at the Store, free of charge, and every quote includes the part and the labour.`;
 
   return (
     <PageShell
@@ -198,7 +198,7 @@ export default async function BrandHubPage({ params }: PageProps) {
       crumbLabel={brand.name ?? "Brand"}
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, publishes a price for every {brand.name} model it holds parts
           for. Pick your model below for its full price table.
         </>
@@ -206,7 +206,7 @@ export default async function BrandHubPage({ params }: PageProps) {
       answerBox={{
         answer: `${priceSentence} Most repairs take about ${waitMinutes} minutes while you wait, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty on the part and the workmanship.`,
         keyFacts: [
-          { label: "Quote", value: "Free at the counter, part and labour included" },
+          { label: "Quote", value: "Free at the Store, part and labour included" },
           { label: "Models repaired", value: String(models.length) },
           { label: "Typical time", value: `About ${waitMinutes} minutes on most repairs` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
@@ -231,7 +231,7 @@ export default async function BrandHubPage({ params }: PageProps) {
           level={2}
           id="models-heading"
           eyebrow="Models"
-          lead="Newest first. Models with their own page link through to the full repair list, the common faults and an honest verdict; the newest arrivals are quoted at the counter while their pages are written."
+          lead="Newest first. Models with their own page link through to the full repair list, the common faults and an honest verdict; the newest arrivals are quoted at the Store while their pages are written."
         >
           Which {brand.name} models do we repair?
         </Heading>
@@ -270,7 +270,7 @@ export default async function BrandHubPage({ params }: PageProps) {
         </ul>
 
         <p className="type-body measure text-tb-muted mt-8">
-          A model without its own page yet is still repaired at the same counter: call {SITE.phone}{" "}
+          A model without its own page yet is still repaired at the same Store: call {SITE.phone}{" "}
           and it is quoted while you are on the phone, with the {warrantyDays}-day warranty and the
           parts-and-labour pricing the same as every other repair we do.
         </p>
@@ -393,7 +393,7 @@ export default async function BrandHubPage({ params }: PageProps) {
                 : []),
               { label: `Our ${warrantyDays}-day warranty`, href: "/warranty" },
               { label: "All repair services we offer", href: "/services" },
-              { label: "Directions to the Calgary Store", href: "/contact" },
+              { label: "Directions to the Calgary store", href: "/contact" },
             ]}
           />
         </div>

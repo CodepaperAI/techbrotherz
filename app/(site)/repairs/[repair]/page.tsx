@@ -188,7 +188,7 @@ export default async function RepairPage({ params }: PageProps) {
     quoteOnly.length > 0
       ? serviceWithContactAction({
           name: `${content.serviceType}, quoted models`,
-          description: `${content.serviceType} on models TechBrotherz prices at the counter.`,
+          description: `${content.serviceType} on models TechBrotherz prices at the Store.`,
           path,
           phoneRaw: settings?.phoneRaw,
           repairNames: quoteOnly.map((row) => row.model),
@@ -215,7 +215,7 @@ export default async function RepairPage({ params }: PageProps) {
         keyFacts: [
           {
             label: "Quote",
-            value: "Free at the counter, part and labour included",
+            value: "Free at the Store, part and labour included",
           },
           { label: "Typical time", value: `About ${content.minutes} minutes` },
           { label: "Included", value: "The part, the labour and the testing" },
@@ -237,7 +237,7 @@ export default async function RepairPage({ params }: PageProps) {
             level={2}
             id="prices-heading"
             eyebrow="Every model"
-            lead="Quoted per model at the counter, as one figure with the part and the labour included. Newest models first, and each name links to that handset's full repair list."
+            lead="Quoted per model at the Store, as one figure with the part and the labour included. Newest models first, and each name links to that handset's full repair list."
           >
             How much does this repair cost on each model?
           </Heading>
@@ -245,7 +245,7 @@ export default async function RepairPage({ params }: PageProps) {
           <p className="type-body measure text-tb-muted mt-6">
             TechBrotherz prices this repair per model, because the part differs across the range.
             Call {SITE.phone} with your exact model and you will have the figure before you travel,
-            free of charge, and nothing starts at the counter until you have agreed it.
+            free of charge, and nothing starts at the Store until you have agreed it.
           </p>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -441,7 +441,7 @@ export default async function RepairPage({ params }: PageProps) {
                 >
                   <span className="text-tb-text block">{row.model} repair</span>
                   <span className="type-small text-tb-muted mt-1 block">
-                    {content.eyebrow}, quoted free at the counter
+                    {content.eyebrow}, quoted free at the Store
                   </span>
                 </Link>
               </li>
@@ -506,7 +506,7 @@ export default async function RepairPage({ params }: PageProps) {
         <Container>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="type-h2 text-tb-white">Walk in and we will price it at the counter</h2>
+              <h2 className="type-h2 text-tb-white">Walk in and we will price it at the Store</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
                 TechBrotherz is at {SITE.street} in {SITE.city}. No appointment needed, and nothing
                 starts until you have agreed the price.

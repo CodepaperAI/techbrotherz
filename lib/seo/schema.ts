@@ -188,7 +188,7 @@ export function localBusiness(
   return compact({
     "@type": "LocalBusiness",
     "@id": BUSINESS_ID,
-    additionalType: ["MobilePhoneStore", "ComputerStore"],
+    additionalType: ["MobilePhonestore", "Computerstore"],
     name: settings.brandName,
     legalName: settings.legalName,
     url: SITE_URL,

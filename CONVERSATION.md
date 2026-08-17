@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-14 (sixth) — Two vocabulary sweeps: gaming consoles, and Store for counter
+
+**Asked:** "game console" becomes "gaming consoles" everywhere, and "counter" becomes "store" everywhere.
+
+**Done:** 274 replacements across 41 files of user-facing copy. "Game console" became "gaming console" in 24 places including the service page H1, SEO title, route label, cards and prose; the URL and slugs stay at /services/game-console-repair, because renaming a URL for a wording preference costs a redirect chain and the visible text is what the client sees. "Counter" became "Store" in 250 places, capitalised to match the earlier shop-to-Store instruction. A blind sweep of that size creates collisions, and five were caught and rewritten by hand: "One Store, one counter" would have become "One Store, one Store" on About, the home why-us list and a Tier 5 lead, and two "everything the store does happens at one counter" sentences were re-anchored to TechBrotherz as subject. Generic uses of counter did not exist, so nothing needed exempting. Guard, word floor, local facts, typecheck, lint, clean build all green; zero counters remain in the rendered home page.
+
 ## Session 2026-08-14 (fifth) — The rating badge lights up, with the real number
 
 **Asked:** the client sent the reference's "5.0 Facebook review rating" card and wants the same in our hero.
@@ -70,11 +76,11 @@ Same image, same answer as the previous session: 1600x900 at 516 KB, under the 2
 
 ### §3 The service areas, from the Google Business Profile list
 
-`lib/content/service-areas.ts` is the one module driving all four surfaces: areaServed in the LocalBusiness schema (19 entries: the 17 profile areas with Forest Lawn and Forest Heights split, plus Airdrie kept from the site's standing claims), the home tile grid, a new tile grid on /locations, and a footer "Areas we serve" column rendered from the same list. Five new honest sections on /locations/calgary: Applewood Park and Ramsay with routes derived from established corridor facts, Strathmore with the Trans-Canada-past-Chestermere route, and Bragg Creek and Mînî Thnî written plainly as communities outside Calgary the Store serves customers from, with no invented routes or drive times and the phone as the fallback. Forest Heights already had its section. The Tier 5 pages that lived in the old footer areas column moved to a "Repair near you" column so no page lost its site-wide inbound link; the link audit stays fully green with zero orphans and zero dead anchors. The Airdrie section's stale "published price list" line was corrected in passing.
+`lib/content/service-areas.ts` is the one module driving all four surfaces: areaServed in the LocalBusiness schema (19 entries: the 17 profile areas with Forest Lawn and Forest Heights split, plus Airdrie kept from the site's standing claims), the home tile grid, a new tile grid on /locations, and a footer "Areas we serve" column rendered from the same list. Five new honest sections on /locations/calgary: Applewood Park and Ramsay with routes derived from established corridor facts, Strathmore with the Trans-Canada-past-Chestermere route, and Bragg Creek and Mînî Thnî written plainly as communities outside Calgary the store serves customers from, with no invented routes or drive times and the phone as the fallback. Forest Heights already had its section. The Tier 5 pages that lived in the old footer areas column moved to a "Repair near you" column so no page lost its site-wide inbound link; the link audit stays fully green with zero orphans and zero dead anchors. The Airdrie section's stale "published price list" line was corrected in passing.
 
 ### §0, §4, §5 Device coverage, and the reconciliation
 
-Motorola and LG are named in the /services intro, AnswerBox and the phone-repair page prose as device coverage quoted at the counter; the brand hubs stay deleted and the 301s intact; HTC and Nexus are not restored. Recorded as question 28, a reconciliation for the client to confirm. The /services and About copy now cover the full client list including MacBooks, gaming laptops, gaming towers and game consoles, with unbuilt services named without links. "5 brands and 16 repair types" is gone from the About key facts, and the "Store in numbers" card dropped its two data-model rows for facts a person would say. Question 29 records T2A 0R2 from the profile list, unused until the client confirms it is the store's postal code.
+Motorola and LG are named in the /services intro, AnswerBox and the phone-repair page prose as device coverage quoted at the counter; the brand hubs stay deleted and the 301s intact; HTC and Nexus are not restored. Recorded as question 28, a reconciliation for the client to confirm. The /services and About copy now cover the full client list including MacBooks, gaming laptops, gaming towers and game consoles, with unbuilt services named without links. "5 brands and 16 repair types" is gone from the About key facts, and the "store in numbers" card dropped its two data-model rows for facts a person would say. Question 29 records T2A 0R2 from the profile list, unused until the client confirms it is the store's postal code.
 
 All audits green: links (fully), pages, local-facts, FAQ scoping, contrast, words, similarity. Deployed.
 
@@ -96,7 +102,7 @@ All audits green: links (fully), pages, local-facts, FAQ scoping, contrast, word
 
 **Done:**
 
-- **H1 is "Phone and computer repair in SE Calgary"**, the city in --tb-green on the black, two lines at 1440 (the hero H1 runs slightly under the type-h1 ceiling, 40 to 62px, to hold two lines in the seven-column hero). Eyebrow became "Walk-in repair Store · No appointment". No superlatives.
+- **H1 is "Phone and computer repair in SE Calgary"**, the city in --tb-green on the black, two lines at 1440 (the hero H1 runs slightly under the type-h1 ceiling, 40 to 62px, to hold two lines in the seven-column hero). Eyebrow became "Walk-in repair store · No appointment". No superlatives.
 - **The grey had a cause**: the old hero was `bg-tb-black/85` with a backdrop blur inside a rounded contained panel, and 85% black over cream is grey by arithmetic. The hero is now a full-bleed section at solid `--tb-black`, edge to edge, content in the container.
 - **Shorter**: subcopy cut to the prescribed two lines (address, 30 minutes, warranty), image panel reduced, and the hero plus the stat cards plus the top of the AnswerBox all sit inside one 1440x900 viewport, verified by screenshot.
 - **The stat cards straddle the hero boundary** via a new `heroOverlap` slot on PageShell: the hero carries extra bottom padding and the card row pulls up with a negative margin. Purely static layout, so CLS stays 0.000 by construction. The separate stats section is gone, which also shortens the page.
@@ -106,7 +112,7 @@ All audits green: links (fully), pages, local-facts, FAQ scoping, contrast, word
 
 Contrast, pages, links (still fully green) and FAQ audits pass; typecheck, lint, clean build clean. Deployed, screenshots at 1440 and 390 in snapshots/shots/hero-final-*.
 
-## Session 2026-08-13 — Match the reference site: the home rebuild, Store, blog
+## Session 2026-08-13 — Match the reference site: the home rebuild, store, blog
 
 **Asked:** the urgent match-the-reference brief. The reference is a single-page site; ours keeps its 143-page architecture and rebuilds the home page to carry every section the reference has, in order, with header anchors. Plus the text fixes and the blog.
 
@@ -114,7 +120,7 @@ Contrast, pages, links (still fully green) and FAQ audits pass; typecheck, lint,
 
 ### The text fixes
 
-- **"shop" is "Store"** wherever it names the business: 237 replacements across pages, content modules, FAQs, location records, JSON-LD descriptions and the entity sentence in lib/site.ts. Generic uses ("no shop can decrypt", "any shop", "shopping district") kept, reviewed by hand. Capitalised mid-sentence exactly as the client wrote it.
+- **"shop" is "store"** wherever it names the business: 237 replacements across pages, content modules, FAQs, location records, JSON-LD descriptions and the entity sentence in lib/site.ts. Generic uses ("no shop can decrypt", "any shop", "shopping district") kept, reviewed by hand. Capitalised mid-sentence exactly as the client wrote it.
 - **Service area** is now "Calgary, Chestermere, Airdrie and surrounding Calgary communities" site-wide, flagged for confirmation since the client's wording was ambiguous; `areaServed` in schema is unchanged and consistent.
 - **No misspellings existed** in user-facing content; the repo folder (c:\techbrothers) and the Vercel project alias (techbrothers.vercel.app) carry the old spelling as infrastructure names, flagged rather than changed under deadline.
 - **SE Calgary** leads the hero eyebrow, the services lead, the areas heading and the home title tag.

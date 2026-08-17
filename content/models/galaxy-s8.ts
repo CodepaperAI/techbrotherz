@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s8-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S8 introduced Samsung's Infinity Display and dropped the physical home button that every Galaxy S before it had. Its 5.8 inch curved OLED is smaller than the S8 Plus but replaced as the same kind of bonded screen-and-frame assembly, and the figure printed on the legacy list is one we have asked the Store to confirm."
+          "text": "The Galaxy S8 introduced Samsung's Infinity Display and dropped the physical home button that every Galaxy S before it had. Its 5.8 inch curved OLED is smaller than the S8 Plus but replaced as the same kind of bonded screen-and-frame assembly, and the figure printed on the legacy list is one we have asked the store to confirm."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s8-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No. The Galaxy S8 stopped at Android 9 and its screen exceeds what the handset is worth. This is also one of the figures we have asked the Store to confirm, because the printed list puts it above the larger S8 Plus. Either way, at this level a replacement phone is the better spend."
+          "text": "No. The Galaxy S8 stopped at Android 9 and its screen exceeds what the handset is worth. This is also one of the figures we have asked the store to confirm, because the printed list puts it above the larger S8 Plus. Either way, at this level a replacement phone is the better spend."
         }
       ],
       "markDefs": [],

@@ -159,9 +159,9 @@ export default async function LocalPage({ params }: PageProps) {
           level={2}
           id="here-heading"
           eyebrow="Getting here"
-          lead="One Store, one counter, and the address every page on this site gives."
+          lead="One Store, and the address every page on this site gives."
         >
-          Where is the Store and how do you get to it?
+          Where is the store and how do you get to it?
         </Heading>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -195,7 +195,7 @@ export default async function LocalPage({ params }: PageProps) {
               <h3 className="type-h3 text-tb-text">Parking</h3>
               <p className="type-body text-tb-muted mt-2">
                 Parking is free in the plaza in front of the store, so you can pull in, park at the
-                door and bring the device straight to the counter.
+                door and bring the device straight to the Store.
               </p>
             </Card>
           </div>

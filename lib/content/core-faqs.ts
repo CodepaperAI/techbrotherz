@@ -29,10 +29,10 @@ export interface CoreFaqCtx {
 }
 
 function updatedPhrase(iso?: string | null): string {
-  if (!iso) return "The list is maintained in the Store's own system and updated as prices change.";
+  if (!iso) return "The list is maintained in the store's own system and updated as prices change.";
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) {
-    return "The list is maintained in the Store's own system and updated as prices change.";
+    return "The list is maintained in the store's own system and updated as prices change.";
   }
   const formatted = date.toLocaleDateString("en-CA", {
     year: "numeric",
@@ -50,11 +50,11 @@ export function homeFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How much do repairs at TechBrotherz cost?",
-      answer: `Every repair at TechBrotherz in Calgary is quoted at the counter, free of charge, before any work starts, and the quote covers the part and the labour together. What a repair comes to follows the part the device takes, which is why an older handset and a current one are not the same job. Phone ${c.phone} with your device model for a firm figure.`,
+      answer: `Every repair at TechBrotherz in Calgary is quoted at the Store, free of charge, before any work starts, and the quote covers the part and the labour together. What a repair comes to follows the part the device takes, which is why an older handset and a current one are not the same job. Phone ${c.phone} with your device model for a firm figure.`,
     },
     {
       question: "Can TechBrotherz fix my phone the same day?",
-      answer: `Most phone repairs at TechBrotherz in Calgary are finished in about ${c.waitMinutes} minutes at the counter while you wait, including screen and battery replacements on models with parts in stock. Tablet and computer work is usually same-day rather than while-you-wait. TechBrotherz will give you a realistic time before you leave the device.`,
+      answer: `Most phone repairs at TechBrotherz in Calgary are finished in about ${c.waitMinutes} minutes at the Store while you wait, including screen and battery replacements on models with parts in stock. Tablet and computer work is usually same-day rather than while-you-wait. TechBrotherz will give you a realistic time before you leave the device.`,
     },
   ];
 }
@@ -71,7 +71,7 @@ export function servicesFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "Which TechBrotherz service do I need for my device?",
-      answer: `Choose by device: phone repair for handsets, tablet repair for iPads and Android tablets, laptop repair for screens, keyboards and charging sockets, and computer repair for desktops, Windows installation and tune-ups. If you are not sure, bring the device to ${c.street} in ${c.city} and TechBrotherz will diagnose it at the counter.`,
+      answer: `Choose by device: phone repair for handsets, tablet repair for iPads and Android tablets, laptop repair for screens, keyboards and charging sockets, and computer repair for desktops, Windows installation and tune-ups. If you are not sure, bring the device to ${c.street} in ${c.city} and TechBrotherz will diagnose it at the Store.`,
     },
   ];
 }
@@ -88,7 +88,7 @@ export function pricesFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How current is this repair price list?",
-      answer: `${updatedPhrase(c.updatedAt)} Prices on this page are read directly from the TechBrotherz catalogue rather than typed into the page, so a price change in the Store's system appears here without the page being rewritten.`,
+      answer: `${updatedPhrase(c.updatedAt)} Prices on this page are read directly from the TechBrotherz catalogue rather than typed into the page, so a price change in the store's system appears here without the page being rewritten.`,
     },
   ];
 }
@@ -97,15 +97,15 @@ export function locationsFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "Which areas does TechBrotherz serve?",
-      answer: `TechBrotherz repairs devices for customers across Calgary, Chestermere, Airdrie and the surrounding Calgary communities, from a single Store at ${c.street} in ${c.city}. There is no mail-in or callout service: repairs are carried out at the counter.`,
+      answer: `TechBrotherz repairs devices for customers across Calgary, Chestermere, Airdrie and the surrounding Calgary communities, from a single store at ${c.street} in ${c.city}. There is no mail-in or callout service: repairs are carried out at the Store.`,
     },
     {
       question: "Does TechBrotherz have more than one location?",
-      answer: `No. TechBrotherz operates one Store, at ${c.street} in ${c.city}, Alberta. Every repair is carried out there, which is why the same technicians see the device from diagnosis to hand-back. Phone ${c.phone} to check stock before travelling from outside Calgary.`,
+      answer: `No. TechBrotherz operates one store, at ${c.street} in ${c.city}, Alberta. Every repair is carried out there, which is why the same technicians see the device from diagnosis to hand-back. Phone ${c.phone} to check stock before travelling from outside Calgary.`,
     },
     {
       question: "Is it worth driving to TechBrotherz from Chestermere or Airdrie?",
-      answer: `TechBrotherz is on 17 Avenue SE in Calgary, which is a direct route from Chestermere and reachable from Airdrie via Deerfoot Trail. Most phone repairs take about ${c.waitMinutes} minutes at the counter, so a single trip is usually enough. Phone ${c.phone} first to confirm the part for your model is in stock.`,
+      answer: `TechBrotherz is on 17 Avenue SE in Calgary, which is a direct route from Chestermere and reachable from Airdrie via Deerfoot Trail. Most phone repairs take about ${c.waitMinutes} minutes at the Store, so a single trip is usually enough. Phone ${c.phone} first to confirm the part for your model is in stock.`,
     },
   ];
 }
@@ -114,15 +114,15 @@ export function aboutFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "What is TechBrotherz?",
-      answer: `TechBrotherz is a walk-in cell phone, tablet and computer repair Store at ${c.street} in ${c.city}, Alberta. It repairs ${c.modelCount} published device models across ${c.brandCount} brands, unlocks phones for Canadian carriers, and carries out computer work at flat prices agreed before the job starts.`,
+      answer: `TechBrotherz is a walk-in cell phone, tablet and computer repair store at ${c.street} in ${c.city}, Alberta. It repairs ${c.modelCount} published device models across ${c.brandCount} brands, unlocks phones for Canadian carriers, and carries out computer work at flat prices agreed before the job starts.`,
     },
     {
       question: "What does TechBrotherz not do?",
-      answer: `TechBrotherz does not carry out board-level microsoldering, does not run a data recovery lab, and does not warranty repairs on water-damaged devices, because corrosion continues after a device is cleaned. TechBrotherz will say which of these applies at the counter rather than taking a repair it cannot stand behind.`,
+      answer: `TechBrotherz does not carry out board-level microsoldering, does not run a data recovery lab, and does not warranty repairs on water-damaged devices, because corrosion continues after a device is cleaned. TechBrotherz will say which of these applies at the Store rather than taking a repair it cannot stand behind.`,
     },
     {
       question: "How does TechBrotherz price its repairs?",
-      answer: `TechBrotherz quotes repairs per device model rather than at a flat rate, because the replacement part is the largest part of the cost and it differs sharply between an older handset and a current one. Every quote includes the part and the labour, and it is given at the counter before any work starts.`,
+      answer: `TechBrotherz quotes repairs per device model rather than at a flat rate, because the replacement part is the largest part of the cost and it differs sharply between an older handset and a current one. Every quote includes the part and the labour, and it is given at the Store before any work starts.`,
     },
   ];
 }
@@ -131,11 +131,11 @@ export function contactFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "What is the fastest way to reach TechBrotherz?",
-      answer: `Phone ${c.phone} during opening hours. That reaches the counter directly, which is the quickest way to confirm a price, check whether a part is in stock, or ask whether a repair is one TechBrotherz carries out. The contact form on this page reaches the same Store and is answered during opening hours.`,
+      answer: `Phone ${c.phone} during opening hours. That reaches the Store directly, which is the quickest way to confirm a price, check whether a part is in stock, or ask whether a repair is one TechBrotherz carries out. The contact form on this page reaches the same store and is answered during opening hours.`,
     },
     {
       question: "What should I bring when I come in for a repair?",
-      answer: `Bring the device and, for a laptop or desktop, its charger, because a failed adapter produces the same symptoms as a dead machine and takes two minutes to rule out. For a password reset, bring photo identification and proof the computer is yours. Knowing your device model helps, and TechBrotherz can identify it at the counter.`,
+      answer: `Bring the device and, for a laptop or desktop, its charger, because a failed adapter produces the same symptoms as a dead machine and takes two minutes to rule out. For a password reset, bring photo identification and proof the computer is yours. Knowing your device model helps, and TechBrotherz can identify it at the Store.`,
     },
     {
       question: "Can I get a price from TechBrotherz before coming in?",

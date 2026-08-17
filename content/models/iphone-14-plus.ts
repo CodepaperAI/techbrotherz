@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-14-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPhone 14 Plus at 3317 17 Ave SE in Calgary. The iPhone 14 and 14 Plus were rebuilt internally so the rear glass comes off separately from the rest of the phone, which makes back glass replacement far less involved than on the 12 and 13 generations. The 14 Pro and Pro Max use the Dynamic Island cutout instead of a notch, so their screen assemblies are different parts again. We confirm the exact part at the counter."
+          "text": "TechBrotherz repairs the iPhone 14 Plus at 3317 17 Ave SE in Calgary. The iPhone 14 and 14 Plus were rebuilt internally so the rear glass comes off separately from the rest of the phone, which makes back glass replacement far less involved than on the 12 and 13 generations. The 14 Pro and Pro Max use the Dynamic Island cutout instead of a notch, so their screen assemblies are different parts again. We confirm the exact part at the Store."
         }
       ],
       "markDefs": [],

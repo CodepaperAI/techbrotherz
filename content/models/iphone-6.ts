@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 6 was the best-selling iPhone Apple ever made, which is why they still turn up at the counter a decade later. Its 4.7 inch LCD is one of the cheaper iPhone screens to replace, and TechBrotherz still fits the full component range for it. It stopped at iOS 12, so it is now firmly a phone with a specific purpose rather than a daily driver."
+          "text": "The iPhone 6 was the best-selling iPhone Apple ever made, which is why they still turn up at the Store a decade later. Its 4.7 inch LCD is one of the cheaper iPhone screens to replace, and TechBrotherz still fits the full component range for it. It stopped at iOS 12, so it is now firmly a phone with a specific purpose rather than a daily driver."
         }
       ],
       "markDefs": [],

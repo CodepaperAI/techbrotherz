@@ -61,8 +61,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Albert Park and Radisson Heights",
     verified: true,
     paragraphs: [
-      "This is the Store's own community. Albert Park/Radisson Heights sits immediately north of 17 Avenue SE, bounded by Memorial Drive to the north, 36 Street SE to the east and Barlow Trail to the west, and TechBrotherz is on its southern edge at 33 Street.",
-      "For anyone living here the Store is a walk rather than a drive, which is unusual for a repair counter and is the main reason to know it exists. There is no route to work out and no parking question to solve.",
+      "This is the store's own community. Albert Park/Radisson Heights sits immediately north of 17 Avenue SE, bounded by Memorial Drive to the north, 36 Street SE to the east and Barlow Trail to the west, and TechBrotherz is on its southern edge at 33 Street.",
+      "For anyone living here the store is a walk rather than a drive, which is unusual for a repair Store and is the main reason to know it exists. There is no route to work out and no parking question to solve.",
     ],
   },
   {
@@ -70,7 +70,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Southview",
     verified: true,
     paragraphs: [
-      "Southview sits directly across 17 Avenue SE from the Store, on the south side. 33 Street SE Station, the MAX Purple stop on the transitway outside our door, is described by Calgary Transit as the central access point for Southview, so the station serves both sides of the avenue.",
+      "Southview sits directly across 17 Avenue SE from the store, on the south side. 33 Street SE Station, the MAX Purple stop on the transitway outside our door, is described by Calgary Transit as the central access point for Southview, so the station serves both sides of the avenue.",
       "That makes Southview the second community where getting here does not involve a car at all. Cross the avenue at 33 Street and you are outside.",
     ],
   },
@@ -80,7 +80,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     verified: true,
     paragraphs: [
       "Forest Heights lies east of Albert Park/Radisson Heights, on the way toward Forest Lawn. 17 Avenue SE runs along the whole corridor, so the trip in is a straight run west along the avenue with no turns.",
-      "Forest Lawn has its own page covering the International Avenue strip in more detail, and Forest Heights sits between it and the Store.",
+      "Forest Lawn has its own page covering the International Avenue strip in more detail, and Forest Heights sits between it and the store.",
     ],
   },
   {
@@ -88,7 +88,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Inglewood",
     verified: true,
     paragraphs: [
-      "17 Avenue SE passes through Inglewood at its western end, west of the Bow River, before running east through Albert Park/Radisson Heights and Southview to reach the Store. It is the same avenue the whole way.",
+      "17 Avenue SE passes through Inglewood at its western end, west of the Bow River, before running east through Albert Park/Radisson Heights and Southview to reach the store. It is the same avenue the whole way.",
       "Coming from Inglewood means heading east on 17 Avenue SE and crossing Deerfoot Trail and Barlow Trail. MAX Purple runs the same corridor if you would rather not drive.",
     ],
   },
@@ -97,7 +97,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Downtown Calgary",
     verified: true,
     paragraphs: [
-      "17 Avenue SE begins downtown at 9 Avenue SE and 15 Street SE and runs 11.2 kilometres east to the city limit. The Store is on that avenue at 33 Street, so the route from downtown is one road east.",
+      "17 Avenue SE begins downtown at 9 Avenue SE and 15 Street SE and runs 11.2 kilometres east to the city limit. The store is on that avenue at 33 Street, so the route from downtown is one road east.",
       "MAX Purple runs from downtown along the same corridor in a dedicated median transitway, which makes this the easiest trip on the list to make without a car.",
     ],
   },
@@ -106,8 +106,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Dover",
     verified: false,
     paragraphs: [
-      "Dover is one of the southeast communities the Store serves. We have not published a specific route or landmark for it here, because we could not verify one we would be willing to put in print, and a wrong direction is worse than none.",
-      "The Store is on 17 Avenue SE at 33 Street. If you are coming from Dover and want the best way in, phone the counter and ask.",
+      "Dover is one of the southeast communities the store serves. We have not published a specific route or landmark for it here, because we could not verify one we would be willing to put in print, and a wrong direction is worse than none.",
+      "The store is on 17 Avenue SE at 33 Street. If you are coming from Dover and want the best way in, phone the Store and ask.",
     ],
   },
   {
@@ -124,7 +124,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Erin Woods",
     verified: false,
     paragraphs: [
-      "Erin Woods is one of the southeast Calgary communities TechBrotherz serves from the counter at 3317 17 Ave SE. The destination is the same as for every area on this page: the avenue at 33 Street.",
+      "Erin Woods is one of the southeast Calgary communities TechBrotherz serves from the Store at 3317 17 Ave SE. The destination is the same as for every area on this page: the avenue at 33 Street.",
       "Phone before you set out and we will confirm the part for your device is in stock, so the trip from Erin Woods is one journey rather than two.",
     ],
   },
@@ -133,8 +133,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Penbrooke Meadows",
     verified: false,
     paragraphs: [
-      "Penbrooke Meadows sits in the same corner of southeast Calgary as the Store, and its residents are exactly who a walk-in counter on 17 Avenue SE exists for.",
-      "What is certain is short: the Store is at 3317 17 Ave SE, every quote is free and given before any work starts, and most phone repairs take about 30 minutes while you wait.",
+      "Penbrooke Meadows sits in the same corner of southeast Calgary as the store, and its residents are exactly who a walk-in Store on 17 Avenue SE exists for.",
+      "What is certain is short: the store is at 3317 17 Ave SE, every quote is free and given before any work starts, and most phone repairs take about 30 minutes while you wait.",
     ],
   },
   {
@@ -142,8 +142,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Marlborough",
     verified: false,
     paragraphs: [
-      "Marlborough is north of the Store, across Memorial Drive around Marlborough Mall and 36 Street NE. Customers make the trip down because the counter quotes before working and most phone repairs finish in about 30 minutes.",
-      "A repair from Marlborough is usually a single visit: bring the device in, get the quote at the counter, and wait while the work is done.",
+      "Marlborough is north of the store, across Memorial Drive around Marlborough Mall and 36 Street NE. Customers make the trip down because the Store quotes before working and most phone repairs finish in about 30 minutes.",
+      "A repair from Marlborough is usually a single visit: bring the device in, get the quote at the Store, and wait while the work is done.",
     ],
   },
   {
@@ -151,8 +151,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Applewood Park",
     verified: true,
     paragraphs: [
-      "Applewood Park sits at the eastern end of the 17 Avenue SE corridor, near where MAX Purple finishes its run at East Hills. The trip in is the simplest kind: west along the avenue the Store sits on, with no turns to remember.",
-      "The transitway makes this one of the areas that can reach the counter without a car: the same MAX Purple line that ends near Applewood stops at 33 Street SE Station outside the door.",
+      "Applewood Park sits at the eastern end of the 17 Avenue SE corridor, near where MAX Purple finishes its run at East Hills. The trip in is the simplest kind: west along the avenue the store sits on, with no turns to remember.",
+      "The transitway makes this one of the areas that can reach the Store without a car: the same MAX Purple line that ends near Applewood stops at 33 Street SE Station outside the door.",
     ],
   },
   {
@@ -160,7 +160,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Ramsay",
     verified: true,
     paragraphs: [
-      "Ramsay sits beside Inglewood in the inner southeast, and the trip out is the same one Inglewood makes: east along 17 Avenue SE, across Deerfoot Trail and Barlow Trail, to the Store at 33 Street.",
+      "Ramsay sits beside Inglewood in the inner southeast, and the trip out is the same one Inglewood makes: east along 17 Avenue SE, across Deerfoot Trail and Barlow Trail, to the store at 33 Street.",
       "MAX Purple runs that corridor in its own median lanes, so from this end of the avenue the bus is often the simpler answer than parking twice.",
     ],
   },
@@ -170,7 +170,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     verified: true,
     paragraphs: [
       "Strathmore is a town east of Calgary, not a neighbourhood, and TechBrotherz serves customers who make the drive in. The route follows the Trans-Canada Highway west past Chestermere, and from Chestermere the road into the city is the one the Chestermere page describes: Chestermere Boulevard becoming 17 Avenue SE at the city limit.",
-      "For a trip this length, phone first. The counter will confirm the part for your device is in stock and give you the figure before you set out, so the journey is one visit rather than two.",
+      "For a trip this length, phone first. The Store will confirm the part for your device is in stock and give you the figure before you set out, so the journey is one visit rather than two.",
     ],
   },
   {
@@ -178,8 +178,8 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Bragg Creek",
     verified: false,
     paragraphs: [
-      "Bragg Creek is a hamlet in the foothills southwest of Calgary, on the opposite side of the city from the Store, and TechBrotherz serves customers who come in from there. We have not published a route because we could not verify one worth printing across a drive of that length.",
-      "Phone the counter before travelling: the part gets confirmed in stock, the quote is given over the phone, and a long trip stays a single one.",
+      "Bragg Creek is a hamlet in the foothills southwest of Calgary, on the opposite side of the city from the store, and TechBrotherz serves customers who come in from there. We have not published a route because we could not verify one worth printing across a drive of that length.",
+      "Phone the Store before travelling: the part gets confirmed in stock, the quote is given over the phone, and a long trip stays a single one.",
     ],
   },
   {
@@ -188,7 +188,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     verified: false,
     paragraphs: [
       "Mînî Thnî, on the Stoney Nakoda Nation lands west of Calgary along the Trans-Canada Highway, is one of the communities TechBrotherz serves customers from. It is a genuine drive across the city, and we would rather say that plainly than pretend otherwise.",
-      "Phone before setting out and the counter will confirm the part is in stock and quote the repair, so the trip is worth making before you make it.",
+      "Phone before setting out and the Store will confirm the part is in stock and quote the repair, so the trip is worth making before you make it.",
     ],
   },
   {
@@ -196,7 +196,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Airdrie",
     verified: true,
     paragraphs: [
-      "TechBrotherz repairs devices for Airdrie customers, and it is worth being straight about the trip. Airdrie is north of Calgary and the Store is in the southeast, so this is a real drive down Deerfoot Trail rather than a quick errand, and 17 Avenue SE crosses Deerfoot on the way in.",
+      "TechBrotherz repairs devices for Airdrie customers, and it is worth being straight about the trip. Airdrie is north of Calgary and the store is in the southeast, so this is a real drive down Deerfoot Trail rather than a quick errand, and 17 Avenue SE crosses Deerfoot on the way in.",
       "Airdrie's own ICE transit routes 901 and 902 run to downtown Calgary rather than to 17 Avenue SE, and route 900 reaches Rundle CTrain station via CrossIron Mills on weekends and holidays, so transit means a transfer.",
       "The reasons someone makes the trip anyway are the free quote before any work, the 60-day warranty and not needing an appointment. There is no Airdrie page on this site because we could not write one with enough verified local detail to be worth reading, and we would rather say that than pad it.",
     ],
@@ -219,9 +219,9 @@ const calgary: PlaceDef = {
     { fact: "international-avenue", treatment: "full" },
   ]),
   lead: () =>
-    "TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in southeast Calgary, sits in a plaza on International Avenue at 33 Street, with Albert Park and Radisson Heights to the north and Southview to the south. Parking in front of the store is free, and 33 Street SE Station, on the dedicated 17 Avenue Transitway, is outside the door.",
+    "TechBrotherz, a walk-in repair store at 3317 17 Ave SE in southeast Calgary, sits in a plaza on International Avenue at 33 Street, with Albert Park and Radisson Heights to the north and Southview to the south. Parking in front of the store is free, and 33 Street SE Station, on the dedicated 17 Avenue Transitway, is outside the door.",
   answer: (c) =>
-    `TechBrotherz is at 3317 17 Ave SE in southeast Calgary, in a plaza on International Avenue at 33 Street. Parking in front of the store is free, and 33 Street SE Station on the 17 Avenue Transitway is outside the Store for MAX Purple. No appointment is needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz is at 3317 17 Ave SE in southeast Calgary, in a plaza on International Avenue at 33 Street. Parking in front of the store is free, and 33 Street SE Station on the 17 Avenue Transitway is outside the store for MAX Purple. No appointment is needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: () => [
     { label: "Address", value: "3317 17 Ave SE, Calgary, Alberta" },
     { label: "On", value: "International Avenue, at 33 Street SE" },
@@ -234,24 +234,24 @@ const calgary: PlaceDef = {
       heading: "Where exactly is TechBrotherz in Calgary?",
       paragraphs: [
         "TechBrotherz is at 3317 17 Ave SE, which puts it on 17 Avenue SE at 33 Street, in southeast Calgary. The community to the north of the avenue at that point is Albert Park/Radisson Heights, and the community to the south is Southview. Forest Lawn begins a few blocks further east, around 36 Street.",
-        "That precision matters because the whole corridor is commonly called Forest Lawn, after the village annexed by Calgary in 1961 that International Avenue is centred on. The Store is on International Avenue, which is true, and it is not in Forest Lawn, which people often assume.",
-        "17 Avenue SE runs 11.2 kilometres inside Calgary, from 9 Avenue SE and 15 Street SE downtown east to the city limit, crossing Blackfoot Trail, Deerfoot Trail, Barlow Trail, 36 Street SE, 52 Street SE and Stoney Trail on the way. Whichever direction you approach from, the Store is on that one avenue.",
+        "That precision matters because the whole corridor is commonly called Forest Lawn, after the village annexed by Calgary in 1961 that International Avenue is centred on. The store is on International Avenue, which is true, and it is not in Forest Lawn, which people often assume.",
+        "17 Avenue SE runs 11.2 kilometres inside Calgary, from 9 Avenue SE and 15 Street SE downtown east to the city limit, crossing Blackfoot Trail, Deerfoot Trail, Barlow Trail, 36 Street SE, 52 Street SE and Stoney Trail on the way. Whichever direction you approach from, the store is on that one avenue.",
       ],
     },
     {
       heading: "How do you get to TechBrotherz by transit?",
       paragraphs: [
-        "33 Street SE Station is on the 17 Avenue Transitway, a dedicated bus-only corridor running down the middle of the avenue, and it is outside the Store. MAX Purple, route 307, serves it, running from downtown Calgary east to the eastern city limits. The line opened on 19 November 2018.",
+        "33 Street SE Station is on the 17 Avenue Transitway, a dedicated bus-only corridor running down the middle of the avenue, and it is outside the store. MAX Purple, route 307, serves it, running from downtown Calgary east to the eastern city limits. The line opened on 19 November 2018.",
         "Because the transitway is a median corridor separated from general traffic, MAX Purple is not held up by the congestion on 17 Avenue that a normal bus route would sit in. The stations have heated shelters and real-time arrival displays, which matters in a Calgary February more than it does in July.",
-        "For most of the communities along the avenue this makes the Store reachable without a car at all, which is unusual for a repair counter. Southview is directly across the avenue, Albert Park and Radisson Heights are immediately north, and downtown is a straight run west on the same line.",
+        "For most of the communities along the avenue this makes the store reachable without a car at all, which is unusual for a repair Store. Southview is directly across the avenue, Albert Park and Radisson Heights are immediately north, and downtown is a straight run west on the same line.",
       ],
     },
     {
       heading: "Where do you park at TechBrotherz?",
       paragraphs: [
-        "Parking at TechBrotherz is free, in the plaza directly in front of the store. The Store sits in a plaza off 17 Avenue SE at 33 Street, so you pull in, park in front of the door and bring the device to the counter. There is no meter, no ticket and no fee.",
-        "The free plaza parking pairs with how the Store actually works. Most phone repairs are finished in about 30 minutes, so the usual visit is to park, hand the device over and wait, and the car does not move until the repair is done. For a desktop tower drop-off, parking in front of the store means carrying the machine a few steps rather than a block.",
-        "If you would rather not drive at all, the transit answer is on this page too: 33 Street SE Station on the 17 Avenue Transitway is outside the Store.",
+        "Parking at TechBrotherz is free, in the plaza directly in front of the store. The store sits in a plaza off 17 Avenue SE at 33 Street, so you pull in, park in front of the door and bring the device to the Store. There is no meter, no ticket and no fee.",
+        "The free plaza parking pairs with how the store actually works. Most phone repairs are finished in about 30 minutes, so the usual visit is to park, hand the device over and wait, and the car does not move until the repair is done. For a desktop tower drop-off, parking in front of the store means carrying the machine a few steps rather than a block.",
+        "If you would rather not drive at all, the transit answer is on this page too: 33 Street SE Station on the 17 Avenue Transitway is outside the store.",
       ],
     },
     {
@@ -263,11 +263,11 @@ const calgary: PlaceDef = {
       ],
     },
     {
-      heading: "What can you get repaired at the Calgary Store?",
+      heading: "What can you get repaired at the Calgary store?",
       paragraphs: [
-        "Everything the Store does happens at this one counter: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
+        "Everything TechBrotherz does happens at this one Store: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
         "That means the same technicians see a device from diagnosis to hand-back, and it means a household can bring several devices in one trip. Phones are usually finished while you wait; tablets and computers are same-day drop-offs.",
-        "Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure, and nothing begins until you agree to it. Phone the Store with your exact model and the fault and you will have the figure before you travel.",
+        "Every repair is quoted free at the Store before any work starts, with the part and the labour in one figure, and nothing begins until you agree to it. Phone the store with your exact model and the fault and you will have the figure before you travel.",
       ],
     },
   ],
@@ -284,17 +284,17 @@ const calgary: PlaceDef = {
     {
       question: "What neighbourhood is TechBrotherz in?",
       answer:
-        "TechBrotherz is at 3317 17 Ave SE, on International Avenue at 33 Street. The community north of the avenue there is Albert Park/Radisson Heights and the community south is Southview. Forest Lawn begins a few blocks further east around 36 Street, so the Store is on International Avenue rather than in Forest Lawn itself.",
+        "TechBrotherz is at 3317 17 Ave SE, on International Avenue at 33 Street. The community north of the avenue there is Albert Park/Radisson Heights and the community south is Southview. Forest Lawn begins a few blocks further east around 36 Street, so the store is on International Avenue rather than in Forest Lawn itself.",
     },
     {
       question: "Can I get to TechBrotherz on the bus?",
       answer:
-        "Yes. 33 Street SE Station is on the 17 Avenue Transitway, a dedicated bus-only median corridor, and it is outside the Store. MAX Purple, route 307, runs from downtown Calgary east along it and opened on 19 November 2018. Stations have heated shelters and real-time arrival displays.",
+        "Yes. 33 Street SE Station is on the 17 Avenue Transitway, a dedicated bus-only median corridor, and it is outside the store. MAX Purple, route 307, runs from downtown Calgary east along it and opened on 19 November 2018. Stations have heated shelters and real-time arrival displays.",
     },
     {
       question: "Does TechBrotherz have more than one Calgary location?",
       answer:
-        "No. TechBrotherz operates one Store, at 3317 17 Ave SE. Every repair is carried out there, which is why the same technicians see a device from diagnosis through to hand-back, and why a household can bring several devices in on one trip.",
+        "No. TechBrotherz operates one store, at 3317 17 Ave SE. Every repair is carried out there, which is why the same technicians see a device from diagnosis through to hand-back, and why a household can bring several devices in on one trip.",
     },
   ],
   globalCategories: ["location", "walkin"],
@@ -309,26 +309,26 @@ const forestLawn: PlaceDef = {
   eyebrow: "Forest Lawn",
   seoTitle: "Phone Repair Forest Lawn | International Avenue Calgary",
   seoDescription:
-    "Repair Store serving Forest Lawn from 3317 17 Ave SE on International Avenue, a few blocks west at 33 Street. Walk in, no appointment, 60-day warranty.",
+    "Repair store serving Forest Lawn from 3317 17 Ave SE on International Avenue, a few blocks west at 33 Street. Walk in, no appointment, 60-day warranty.",
   crumbLabel: "Forest Lawn",
   facts: checkFactUse("/locations/calgary/forest-lawn", [
     {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "36 Street SE Station is the transitway stop for the Forest Lawn shopping district, and the Store is one stop further west at 33 Street SE Station.",
+        "36 Street SE Station is the transitway stop for the Forest Lawn shopping district, and the store is one stop further west at 33 Street SE Station.",
     },
     {
       fact: "international-avenue",
       treatment: "mention",
       sentence:
-        "International Avenue runs from 26 Street to 61 Street SE, so Forest Lawn and the Store sit on the same 35-block strip.",
+        "International Avenue runs from 26 Street to 61 Street SE, so Forest Lawn and the store sit on the same 35-block strip.",
     },
   ]),
   lead: () =>
-    "TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in southeast Calgary, serves Forest Lawn from a few blocks west along the same avenue. The Store is at 33 Street, and Forest Lawn begins around 36 Street, so it is one straight run east or west on International Avenue.",
+    "TechBrotherz, a walk-in repair store at 3317 17 Ave SE in southeast Calgary, serves Forest Lawn from a few blocks west along the same avenue. The store is at 33 Street, and Forest Lawn begins around 36 Street, so it is one straight run east or west on International Avenue.",
   answer: (c) =>
-    `TechBrotherz serves Forest Lawn from 3317 17 Ave SE, a few blocks west at 33 Street on the same International Avenue strip. It is a walk-in Store with no appointment needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty. 36 Street SE Station is the transitway stop for the Forest Lawn shopping district, one stop east of the Store.`,
+    `TechBrotherz serves Forest Lawn from 3317 17 Ave SE, a few blocks west at 33 Street on the same International Avenue strip. It is a walk-in store with no appointment needed, most phone repairs take about ${c.waitMinutes} minutes, and every repair carries a ${c.warrantyDays}-day warranty. 36 Street SE Station is the transitway stop for the Forest Lawn shopping district, one stop east of the store.`,
   keyFacts: (c) => [
     { label: "Address", value: "3317 17 Ave SE, at 33 Street" },
     { label: "From Forest Lawn", value: "West along 17 Avenue SE, same street" },
@@ -340,17 +340,17 @@ const forestLawn: PlaceDef = {
     {
       heading: "Is TechBrotherz in Forest Lawn?",
       paragraphs: [
-        "Not quite, and it is worth saying so plainly rather than claiming otherwise. TechBrotherz is at 3317 17 Ave SE, which is 33 Street. Forest Lawn begins around 36 Street SE, so the Store is a few blocks west of it, in the stretch where Albert Park and Radisson Heights sit north of the avenue and Southview sits south.",
-        "What is true is that both are on International Avenue. The Business Revitalization Zone runs from 26 Street all the way to 61 Street SE, so Forest Lawn and the Store are on the same 35-block strip, and the trip between them is one straight run along the avenue with no turns.",
-        "People who live in Forest Lawn generally know exactly where 33 Street is, which is the practical point. A repair Store that tells you it is in your neighbourhood when it is not is a repair Store you have already caught being loose with the truth.",
+        "Not quite, and it is worth saying so plainly rather than claiming otherwise. TechBrotherz is at 3317 17 Ave SE, which is 33 Street. Forest Lawn begins around 36 Street SE, so the store is a few blocks west of it, in the stretch where Albert Park and Radisson Heights sit north of the avenue and Southview sits south.",
+        "What is true is that both are on International Avenue. The Business Revitalization Zone runs from 26 Street all the way to 61 Street SE, so Forest Lawn and the store are on the same 35-block strip, and the trip between them is one straight run along the avenue with no turns.",
+        "People who live in Forest Lawn generally know exactly where 33 Street is, which is the practical point. A repair store that tells you it is in your neighbourhood when it is not is a repair store you have already caught being loose with the truth.",
       ],
     },
     {
       heading: "How do you get there from Forest Lawn?",
       paragraphs: [
-        "West along 17 Avenue SE. That is the whole direction. From the Forest Lawn shopping district around 36 Street, the Store is three blocks west on the same side of the city, and there is no turn to make and no other road involved.",
-        "By transit it is one stop. 36 Street SE Station is the MAX Purple stop that Calgary Transit describes as the connection for the Forest Lawn shopping district and the Forest Lawn Library, and 33 Street SE Station is the next one west, outside the Store. Both are on the dedicated transitway rather than in traffic.",
-        "Heading the other way is worth knowing too, because 17 Avenue SE runs through four named communities on its way west from Forest Lawn: Forest Heights, then Albert Park and Radisson Heights, then Southview, then Inglewood on the far side of the Bow River. The Store sits between Albert Park/Radisson Heights and Southview, which is the second of those.",
+        "West along 17 Avenue SE. That is the whole direction. From the Forest Lawn shopping district around 36 Street, the store is three blocks west on the same side of the city, and there is no turn to make and no other road involved.",
+        "By transit it is one stop. 36 Street SE Station is the MAX Purple stop that Calgary Transit describes as the connection for the Forest Lawn shopping district and the Forest Lawn Library, and 33 Street SE Station is the next one west, outside the store. Both are on the dedicated transitway rather than in traffic.",
+        "Heading the other way is worth knowing too, because 17 Avenue SE runs through four named communities on its way west from Forest Lawn: Forest Heights, then Albert Park and Radisson Heights, then Southview, then Inglewood on the far side of the Bow River. The store sits between Albert Park/Radisson Heights and Southview, which is the second of those.",
         "The full explanation of the transitway, the MAX Purple line and what makes it quicker than an ordinary bus route is on the Calgary location page rather than repeated here.",
       ],
     },
@@ -365,7 +365,7 @@ const forestLawn: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Forest Lawn customers?",
       paragraphs: [
-        "The same range as for everyone: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one counter and one set of published prices.",
+        "The same range as for everyone: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one set of published prices.",
         "Phone repairs are the ones worth walking in for without planning, because screens and batteries on stocked models are finished while you wait. Tablets and computers are same-day drop-offs, which suits a neighbourhood close enough to make two short trips.",
         "Prices are published per device model rather than quoted on arrival, so you can check the figure for your exact handset before coming down. Nothing about the price or the warranty changes based on which neighbourhood you are travelling from.",
       ],
@@ -374,7 +374,7 @@ const forestLawn: PlaceDef = {
       heading: "What TechBrotherz does not claim about Forest Lawn",
       paragraphs: [
         "No years in the neighbourhood, no founding date and no claim to be a Forest Lawn institution. TechBrotherz has not published a founding year anywhere on this site, because the year has not been confirmed, and writing around a missing fact with vague warmth is how a page stops being trustworthy.",
-        "There is no claim to be the closest repair Store to Forest Lawn either. There are other shops along International Avenue, which is a 35-block commercial strip with more than 400 merchants, and some of them will be nearer to you than 33 Street. What this page can tell you honestly is where the Store is, what it charges and how long the work takes.",
+        "There is no claim to be the closest repair store to Forest Lawn either. There are other shops along International Avenue, which is a 35-block commercial strip with more than 400 merchants, and some of them will be nearer to you than 33 Street. What this page can tell you honestly is where the store is, what it charges and how long the work takes.",
         "The reason to be this careful on a neighbourhood page is that the audience checks. Someone who lives in Forest Lawn knows where 33 Street is, knows what else is on the avenue, and will notice a shop describing itself as local when it is three blocks outside. Getting that wrong costs more than the page is worth.",
       ],
     },
@@ -389,18 +389,18 @@ const forestLawn: PlaceDef = {
   siblings: ["/locations/calgary", "/locations/chestermere"],
   faqs: (c) => [
     {
-      question: "Is there a phone repair Store in Forest Lawn?",
+      question: "Is there a phone repair store in Forest Lawn?",
       answer:
-        "TechBrotherz serves Forest Lawn from 3317 17 Ave SE, a few blocks west at 33 Street on the same International Avenue strip. The Store is not inside Forest Lawn itself, which begins around 36 Street SE, but it is one straight run west along 17 Avenue SE with no turns.",
+        "TechBrotherz serves Forest Lawn from 3317 17 Ave SE, a few blocks west at 33 Street on the same International Avenue strip. The store is not inside Forest Lawn itself, which begins around 36 Street SE, but it is one straight run west along 17 Avenue SE with no turns.",
     },
     {
       question: "How far is TechBrotherz from the Forest Lawn shopping district?",
       answer:
-        "Three blocks west along 17 Avenue SE. By transit it is one stop: 36 Street SE Station is the MAX Purple stop serving the Forest Lawn shopping district and library, and 33 Street SE Station outside the Store is the next one west on the same dedicated transitway.",
+        "Three blocks west along 17 Avenue SE. By transit it is one stop: 36 Street SE Station is the MAX Purple stop serving the Forest Lawn shopping district and library, and 33 Street SE Station outside the store is the next one west on the same dedicated transitway.",
     },
     {
       question: "Do I need an appointment coming from Forest Lawn?",
-      answer: `No. TechBrotherz takes repairs as walk-ins during opening hours, from Forest Lawn or anywhere else. Most phone repairs are finished in about ${c.waitMinutes} minutes at the counter while you wait, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
+      answer: `No. TechBrotherz takes repairs as walk-ins during opening hours, from Forest Lawn or anywhere else. Most phone repairs are finished in about ${c.waitMinutes} minutes at the Store while you wait, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
     },
   ],
   globalCategories: ["location", "walkin"],
@@ -419,9 +419,9 @@ const chestermere: PlaceDef = {
   crumbLabel: "Chestermere",
   facts: checkFactUse("/locations/chestermere", [{ fact: "chestermere-road", treatment: "full" }]),
   lead: () =>
-    "TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in southeast Calgary, serves Chestermere from the western end of the road Chestermere already uses. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, and the Store is on it.",
+    "TechBrotherz, a walk-in repair store at 3317 17 Ave SE in southeast Calgary, serves Chestermere from the western end of the road Chestermere already uses. Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit, and the store is on it.",
   answer: (c) =>
-    `TechBrotherz serves Chestermere from 3317 17 Ave SE in Calgary. Chestermere Boulevard runs 3.8 kilometres west from Highway 1 to the Calgary city limit at 116 Street SE, where it becomes 17 Avenue SE and continues to the Store, so the trip is one road with no highway section and no turns. No appointment is needed and every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz serves Chestermere from 3317 17 Ave SE in Calgary. Chestermere Boulevard runs 3.8 kilometres west from Highway 1 to the Calgary city limit at 116 Street SE, where it becomes 17 Avenue SE and continues to the store, so the trip is one road with no highway section and no turns. No appointment is needed and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
     { label: "The route", value: "Chestermere Blvd, then 17 Ave SE, one road" },
     { label: "Where it changes name", value: "The city limit at 116 Street SE" },
@@ -433,7 +433,7 @@ const chestermere: PlaceDef = {
     {
       heading: "How do you get from Chestermere to TechBrotherz?",
       paragraphs: [
-        "You stay on one road. Chestermere Boulevard is the eastern extension of 17 Avenue SE: it runs 3.8 kilometres from the Highway 1 interchange west to the Calgary city limit at 116 Street SE, where the name changes to 17 Avenue SE. The Store is on that same avenue at 33 Street.",
+        "You stay on one road. Chestermere Boulevard is the eastern extension of 17 Avenue SE: it runs 3.8 kilometres from the Highway 1 interchange west to the Calgary city limit at 116 Street SE, where the name changes to 17 Avenue SE. The store is on that same avenue at 33 Street.",
         "So there is no highway section, no ring-road decision and no navigating unfamiliar streets. From Chestermere it is west, and you keep going west until 33 Street. For a device repair, which is the kind of errand people put off because of the hassle, that turns out to matter more than the distance does.",
         "17 Avenue SE crosses Stoney Trail on the way in, which is the point where a driver could take the ring road instead. For this destination there is no reason to: staying on the avenue is the direct route.",
       ],
@@ -441,7 +441,7 @@ const chestermere: PlaceDef = {
     {
       heading: "Is it worth the trip from Chestermere?",
       paragraphs: [
-        "That depends on the repair, and the honest answer is that it depends most on whether the part is in stock. If it is a screen or a battery on a model TechBrotherz stocks, the repair is done at the counter while you wait and the trip is a single journey. If the part has to be ordered, it is two journeys, and that changes the arithmetic.",
+        "That depends on the repair, and the honest answer is that it depends most on whether the part is in stock. If it is a screen or a battery on a model TechBrotherz stocks, the repair is done at the Store while you wait and the trip is a single journey. If the part has to be ordered, it is two journeys, and that changes the arithmetic.",
         "A phone call before setting off settles it in a minute, and it is the single most useful thing a Chestermere customer can do. We would rather tell you to wait two days than have you drive in twice.",
         "The other reasons to make the trip are the same ones that apply to anyone: prices published per device model rather than quoted on the day, the part and the labour in one figure, a 60-day warranty, and no appointment to book.",
       ],
@@ -449,7 +449,7 @@ const chestermere: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Chestermere customers?",
       paragraphs: [
-        "Cell phones, iPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one counter, so a household making the trip can bring several devices at once rather than making separate journeys.",
+        "Cell phones, iPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one Store, so a household making the trip can bring several devices at once rather than making separate journeys.",
         "Phone repairs are the ones finished while you wait. Tablet and computer work is a same-day drop-off, which is worth knowing before driving in: that is two trips rather than one, or a long wait in Calgary.",
         "Prices do not change based on where you travel from. There is no out-of-city rate, no travel surcharge, and the warranty is identical.",
       ],
@@ -459,13 +459,13 @@ const chestermere: PlaceDef = {
       paragraphs: [
         "Phone ahead and confirm the part for your model is in stock. That single call is what decides whether the trip is one journey or two, and it is free.",
         "Ask for the price on that same call. Every repair is quoted as one figure with the part and the labour included, so you can decide whether the repair is worth doing before you decide whether the drive is worth making.",
-        "Bring the charger for a laptop or desktop, and back up any device before a repair. Those apply to everyone, and they matter more when the Store is a drive away rather than around the corner.",
+        "Bring the charger for a laptop or desktop, and back up any device before a repair. Those apply to everyone, and they matter more when the store is a drive away rather than around the corner.",
       ],
     },
     {
       heading: "Why this page does not give you a drive time",
       paragraphs: [
-        "Because we could not verify one worth printing. The route is certain: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit at 116 Street SE, and the Store is on that avenue at 33 Street. The minutes are not, because published figures measure city centre to city centre rather than your street to our counter, and 17 Avenue SE traffic varies enormously by time of day.",
+        "Because we could not verify one worth printing. The route is certain: Chestermere Boulevard becomes 17 Avenue SE at the Calgary city limit at 116 Street SE, and the store is on that avenue at 33 Street. The minutes are not, because published figures measure city centre to city centre rather than your street to our Store, and 17 Avenue SE traffic varies enormously by time of day.",
         "A wrong drive time on a local page is the kind of small inaccuracy that tells a reader the rest of the page might be guessed too. It would be easy to write about twenty minutes and it would be a guess, so the page gives you the route and leaves the timing to a map and your own knowledge of the road.",
         "Parking, at least, is simple: it is free in the plaza in front of the store, so the only unknown in the trip is the road, not where to leave the car when you arrive.",
       ],
@@ -473,8 +473,8 @@ const chestermere: PlaceDef = {
     {
       heading: "What to expect when you arrive",
       paragraphs: [
-        "There is no appointment and no queue system. You come to the counter, describe what the device is doing, and it is diagnosed in front of you. The price is quoted before any work starts, and nothing begins until you agree to it.",
-        "Most phone repairs are finished at the counter while you wait, so the usual pattern for someone travelling in is one visit. Tablet and computer work is a drop-off, and that is the case where a trip from Chestermere becomes two journeys, which is worth planning around rather than discovering on arrival.",
+        "There is no appointment and no queue system. You come to the Store, describe what the device is doing, and it is diagnosed in front of you. The price is quoted before any work starts, and nothing begins until you agree to it.",
+        "Most phone repairs are finished at the Store while you wait, so the usual pattern for someone travelling in is one visit. Tablet and computer work is a drop-off, and that is the case where a trip from Chestermere becomes two journeys, which is worth planning around rather than discovering on arrival.",
         "Every repair carries a 60-day warranty on the part and the workmanship, and a warranty claim means bringing the device back with the receipt. There is no form and no appointment for that either, though it is another reason the trip is worth thinking about before choosing where to have a repair done.",
       ],
     },
@@ -491,16 +491,16 @@ const chestermere: PlaceDef = {
     {
       question: "How do I get to TechBrotherz from Chestermere?",
       answer:
-        "Head west on Chestermere Boulevard. It becomes 17 Avenue SE at the Calgary city limit at 116 Street SE and continues west to the Store at 3317 17 Ave SE, at 33 Street. It is one road the whole way, with no highway section and no turns.",
+        "Head west on Chestermere Boulevard. It becomes 17 Avenue SE at the Calgary city limit at 116 Street SE and continues west to the store at 3317 17 Ave SE, at 33 Street. It is one road the whole way, with no highway section and no turns.",
     },
     {
-      question: "Is there a repair Store in Chestermere itself?",
+      question: "Is there a repair store in Chestermere itself?",
       answer:
         "TechBrotherz is in Calgary, at 3317 17 Ave SE, and serves Chestermere customers from there. Chestermere Boulevard is the eastern extension of the same avenue, which makes the trip a straight run west. TechBrotherz does not operate a Chestermere location.",
     },
     {
       question: "Should I call before driving in from Chestermere?",
-      answer: `Yes. Most repairs are finished at the counter while you wait, but a part TechBrotherz does not stock has to be ordered in, which usually adds a day or two and turns one trip into two. A call confirms stock for your model in a minute. Every repair carries a ${c.warrantyDays}-day warranty.`,
+      answer: `Yes. Most repairs are finished at the Store while you wait, but a part TechBrotherz does not stock has to be ordered in, which usually adds a day or two and turns one trip into two. A call confirms stock for your model in a minute. Every repair carries a ${c.warrantyDays}-day warranty.`,
     },
   ],
   globalCategories: ["location", "walkin"],

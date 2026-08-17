@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-15-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPhone 15 Plus at 3317 17 Ave SE in Calgary. The iPhone 15 generation moved from Lightning to USB-C, so the charging port part is different from every iPhone before it and a worn port needs the newer assembly. The Dynamic Island runs across the whole range rather than just the Pro models. Bring the phone to the counter and we will confirm the exact part and the price before any work starts."
+          "text": "TechBrotherz repairs the iPhone 15 Plus at 3317 17 Ave SE in Calgary. The iPhone 15 generation moved from Lightning to USB-C, so the charging port part is different from every iPhone before it and a worn port needs the newer assembly. The Dynamic Island runs across the whole range rather than just the Pro models. Bring the phone to the Store and we will confirm the exact part and the price before any work starts."
         }
       ],
       "markDefs": [],

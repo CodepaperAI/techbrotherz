@@ -119,7 +119,7 @@ const SERVICE_CARDS: ServiceEntry[] = [
     illustration: "lock",
   },
   {
-    title: "Game console repair",
+    title: "Gaming console repair",
     href: "/services/game-console-repair",
     group: "Consoles",
     description:
@@ -135,7 +135,7 @@ const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
   iPads: "What iPad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
-  Consoles: "What game console repairs does TechBrotherz do?",
+  Consoles: "What gaming console repairs does TechBrotherz do?",
 };
 
 export default async function ServicesPage() {
@@ -189,19 +189,19 @@ export default async function ServicesPage() {
       crumbLabel="Services"
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, repairs iPhones, Samsung, Google Pixel, Motorola, LG and
           other Android phones, iPads, laptops including MacBooks and gaming laptops, desktop
-          computers including gaming towers, and game consoles, and unlocks phones for any Canadian
+          computers including gaming towers, and gaming consoles, and unlocks phones for any Canadian
           carrier.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz in Calgary repairs iPhones, Samsung, Google Pixel, Motorola, LG and other Android phones, iPads, laptops and MacBooks, desktop computers and gaming machines, and game consoles, and unlocks phones for any Canadian carrier. Every job is quoted free at the counter before any work starts, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz in Calgary repairs iPhones, Samsung, Google Pixel, Motorola, LG and other Android phones, iPads, laptops and MacBooks, desktop computers and gaming machines, and gaming consoles, and unlocks phones for any Canadian carrier. Every job is quoted free at the Store before any work starts, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           {
             label: "Devices",
-            value: "Phones of every brand, iPads, laptops, desktops, game consoles",
+            value: "Phones of every brand, iPads, laptops, desktops, gaming consoles",
           },
           {
             label: "Computer diagnostics",
@@ -235,7 +235,7 @@ export default async function ServicesPage() {
                 <ServiceCard
                   key={card.title}
                   title={card.title}
-                  description={`${card.description} Quoted free at the counter, with the part and the labour included.`}
+                  description={`${card.description} Quoted free at the Store, with the part and the labour included.`}
                   image={card.image}
                   illustration={card.illustration}
                   sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
@@ -316,7 +316,7 @@ export default async function ServicesPage() {
           </Link>
           , and{" "}
           <Link href="/contact" className="text-tb-green-deep hover:underline">
-            directions to the Calgary Store
+            directions to the Calgary store
           </Link>{" "}
           include parking and transit.
         </p>
@@ -337,7 +337,7 @@ export default async function ServicesPage() {
             <div>
               <h2 className="type-h2 text-tb-white">Not sure which repair you need?</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
-                Bring the device to {SITE.street} in {SITE.city}. We will diagnose it at the counter
+                Bring the device to {SITE.street} in {SITE.city}. We will diagnose it at the Store
                 and tell you the price before any work starts.
               </p>
             </div>

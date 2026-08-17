@@ -63,21 +63,21 @@ const ipadCalgary: LocalDef = {
       paragraphs: [
         "The adhesive holding an iPad's glass runs around the entire perimeter, and that is a much longer edge than a phone. It has to be warmed evenly along its whole length until it softens, then cut through slowly, then scraped off the frame before a new panel can bond. Rushing any of that bends the frame.",
         "The frame is the part that cannot be undone. An iPad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is what makes the repair repeatable rather than a gamble.",
-        "In practice that makes most iPad work a same-day drop-off rather than a wait at the counter. Bring it in during the day and in most cases it is ready before we close. We give a realistic time when you drop it off and call when it is done.",
+        "In practice that makes most iPad work a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close. We give a realistic time when you drop it off and call when it is done.",
       ],
     },
     {
       heading: "Is it worth repairing an older iPad?",
       paragraphs: [
         "For older iPads with separate glass, usually yes and clearly so. The repair costs a small fraction of a replacement tablet and the device carries on doing exactly what it was doing. A cracked iPad that otherwise works is not a tablet that needs replacing, it is a tablet that needs a piece of glass.",
-        "For recent iPad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If a repair approaches half the used value of the tablet, that is worth thinking about rather than deciding at the counter, and we would rather you thought about it.",
+        "For recent iPad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If a repair approaches half the used value of the tablet, that is worth thinking about rather than deciding at the Store, and we would rather you thought about it.",
         "One factor people forget: iPads stay useful for years as reading, video and kitchen devices after they stop getting the latest iPadOS. A tablet that will not see another major update is often still worth fixing, because what it is actually used for has not changed.",
       ],
     },
     {
       heading: "What should you bring for an iPad repair?",
       paragraphs: [
-        "The model number, which is engraved in small print on the back of the tablet. iPad generations look nearly identical and price very differently, so that number is the difference between a firm quote and an estimate. If you cannot read it we will find it at the counter.",
+        "The model number, which is engraved in small print on the back of the tablet. iPad generations look nearly identical and price very differently, so that number is the difference between a firm quote and an estimate. If you cannot read it we will find it at the Store.",
         "Back the iPad up before bringing it in. A glass, screen, battery or port replacement does not touch the storage and your apps and files stay exactly where they are, but a current backup is what protects you if something unexpected turns up once the device is open.",
         "If the iPad has been in liquid, say so. A tablet that has been wet can be opened, cleaned and tested and often works afterwards, but corrosion keeps spreading, so that work carries no warranty on the outcome and we will tell you that before starting rather than after.",
       ],
@@ -86,7 +86,7 @@ const ipadCalgary: LocalDef = {
       heading: "How do you tell which iPad you have?",
       paragraphs: [
         "The model number is engraved in small print on the back of the tablet, near the bottom, and it begins with the letter A followed by four digits. That number identifies the exact generation, which is what determines whether the glass is separate from the display or laminated to it.",
-        "If the engraving is worn or the tablet is in a case that is awkward to remove, the number is also in Settings, then General, then About, listed under Model Number. Either route gives us the same answer in under a minute at the counter.",
+        "If the engraving is worn or the tablet is in a case that is awkward to remove, the number is also in Settings, then General, then About, listed under Model Number. Either route gives us the same answer in under a minute at the Store.",
         "It matters more on iPads than on any other device we repair, because generations look nearly identical from the front and differ by a large multiple in what a screen costs. Two tablets that look the same on a table can be a cheap repair and an expensive one.",
       ],
     },
@@ -118,7 +118,7 @@ const ipadCalgary: LocalDef = {
     {
       question: "Do I need to know my iPad model before coming in?",
       answer:
-        "It helps but it is not required. iPad generations look nearly identical and price very differently, and the model number is engraved in small print on the back of the tablet. TechBrotherz reads it at the counter if you cannot find it, and the number is what turns an estimate into a firm price.",
+        "It helps but it is not required. iPad generations look nearly identical and price very differently, and the model number is engraved in small print on the back of the tablet. TechBrotherz reads it at the Store if you cannot find it, and the number is what turns an estimate into a firm price.",
     },
   ],
   globalCategories: ["ipad", "warranty"],
@@ -132,7 +132,7 @@ const laptopCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Laptop Repair Calgary | Screens, Keyboards, Charging",
   seoDescription:
-        "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, keyboards and charging sockets, quoted free at the counter. Diagnostics deducted from the repair.",
+        "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, keyboards and charging sockets, quoted free at the Store. Diagnostics deducted from the repair.",
   serviceType: "Laptop repair",
   city: "Calgary",
   priceSource: {
@@ -159,13 +159,13 @@ const laptopCalgary: LocalDef = {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "If you would rather not carry a laptop across a car park, 33 Street SE Station on the transitway is directly outside the Store.",
+        "If you would rather not carry a laptop across a car park, 33 Street SE Station on the transitway is directly outside the store.",
     },
   ]),
   lead: () =>
     `${ENTITY}, repairs laptops: screens, keyboards and charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms as a dead laptop and costs nothing to rule out.`,
   answer: () =>
-    `Laptop repair in Calgary at TechBrotherz covers screens, keyboards and charging sockets, with the part and the labour in one figure. Diagnostics carry a fixed fee that comes off the repair. The Store is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
+    `Laptop repair in Calgary at TechBrotherz covers screens, keyboards and charging sockets, with the part and the labour in one figure. Diagnostics carry a fixed fee that comes off the repair. The store is at 3317 17 Ave SE, and most laptop work is finished the same day.`,
   keyFacts: () => [
     { label: "Bring", value: "The laptop and its charger, so the adapter can be ruled out" },
     { label: "Repairs", value: "Screens, keyboards, charging sockets, storage and memory" },
@@ -177,7 +177,7 @@ const laptopCalgary: LocalDef = {
     {
       heading: "Why bring the charger to a laptop repair?",
       paragraphs: [
-        "Because a failed charger and a dead laptop look identical from the outside, and telling them apart with the charger on the counter takes about two minutes. Without it, the same question needs a paid diagnostic to answer, which is money spent finding out something a cable could have told us.",
+        "Because a failed charger and a dead laptop look identical from the outside, and telling them apart with the charger on the Store takes about two minutes. Without it, the same question needs a paid diagnostic to answer, which is money spent finding out something a cable could have told us.",
         "Adapters fail regularly, usually at the strain point where the cable enters the brick, and they fail gradually rather than all at once. A charger that works when the cord is held at one angle and not another is a charger on its way out, not a laptop problem.",
         "The behaviour of the machine tells us the rest. If the charging light flickers when the plug is moved, that is the socket. If the laptop runs perfectly on mains and dies the instant it is unplugged, the socket is fine and the battery has gone.",
       ],
@@ -209,7 +209,7 @@ const laptopCalgary: LocalDef = {
     {
       heading: "What laptop work does TechBrotherz not do?",
       paragraphs: [
-        "Board-level microsoldering. If a diagnostic finds the fault is on the mainboard itself rather than a replaceable part, that is specialist work beyond what we do at this counter, and we will say so plainly. You will have paid the diagnostic fee and got a real answer rather than an open-ended repair.",
+        "Board-level microsoldering. If a diagnostic finds the fault is on the mainboard itself rather than a replaceable part, that is specialist work beyond what we do at this Store, and we will say so plainly. You will have paid the diagnostic fee and got a real answer rather than an open-ended repair.",
         "Data recovery from a physically failed drive. That needs a clean room and specialist equipment. We can tell you whether the drive is the problem, and we will not take your money to attempt something we cannot finish.",
         "Liquid damage carries no warranty. A laptop that has had liquid in it gets opened, cleaned and tested, and often works afterwards, but corrosion keeps spreading under components. We will attempt it and tell you what we find, without promising the outcome.",
       ],
@@ -237,7 +237,7 @@ const laptopCalgary: LocalDef = {
     {
       question: "Should I bring my charger to a laptop repair?",
       answer:
-        "Yes. A failed charger produces symptoms identical to a dead laptop, and ruling it out with the charger on the counter takes about two minutes. Without it, the same question requires a paid diagnostic. TechBrotherz asks every laptop customer to bring the adapter.",
+        "Yes. A failed charger produces symptoms identical to a dead laptop, and ruling it out with the charger on the Store takes about two minutes. Without it, the same question requires a paid diagnostic. TechBrotherz asks every laptop customer to bring the adapter.",
     },
     {
       question: "How do I know if my laptop screen or graphics card is broken?",
@@ -291,7 +291,7 @@ const computerCalgary: LocalDef = {
   lead: () =>
     `${ENTITY}, repairs desktop computers and laptops at flat figures agreed before work starts: diagnostics, Windows installation, and a full clean-up and tune-up. Bring the tower alone, we have monitors and keyboards here to test with.`,
   answer: () =>
-    `Computer repair in Calgary at TechBrotherz is quoted per job rather than per hour, covering diagnostics, a Windows installation with an office suite and security software, and a clean-up and tune-up. The Store is at 3317 17 Ave SE. Bring the tower alone, and the figure is agreed before anything starts.`,
+    `Computer repair in Calgary at TechBrotherz is quoted per job rather than per hour, covering diagnostics, a Windows installation with an office suite and security software, and a clean-up and tune-up. The store is at 3317 17 Ave SE. Bring the tower alone, and the figure is agreed before anything starts.`,
   keyFacts: () => [
     { label: "Bring", value: "The tower alone, monitors and keyboards are here to test with" },
     { label: "Quoted", value: "Per job, not per hour" },
@@ -304,7 +304,7 @@ const computerCalgary: LocalDef = {
       heading: "Why is computer repair priced per job rather than per hour?",
       paragraphs: [
         "Because an hourly rate makes the customer carry the risk of a job taking longer than expected, and on computer work it frequently does. A flat price means a Windows installation that runs into an awkward driver problem costs exactly what was quoted, and the person absorbing that is us rather than you.",
-        `So a diagnostic, a Windows installation with an office suite and security software, a clean-up and tune-up, and hardware or program installation per item are each quoted as one figure for the whole job. Those are the totals, agreed at the counter before anything begins.`,
+        `So a diagnostic, a Windows installation with an office suite and security software, a clean-up and tune-up, and hardware or program installation per item are each quoted as one figure for the whole job. Those are the totals, agreed at the Store before anything begins.`,
         "It also removes the incentive to work slowly, which is worth saying plainly. Nobody here benefits from a job taking three hours instead of one, so the machine gets done properly and gets done.",
       ],
     },
@@ -330,7 +330,7 @@ const computerCalgary: LocalDef = {
         "For a desktop, the tower alone. We have monitors, keyboards and mice here to test with, so there is no need to disconnect a whole setup and carry it in. Bring the power cable if it is a non-standard one, and mention any password needed to log into the machine.",
         "For a laptop, bring the machine and its charger together. A laptop that will not power on or charge is sometimes the charger's fault rather than the computer's, and testing with your own charger answers that in the first minute rather than after a diagnostic.",
         "Tell us what the computer is doing and when it started. Slow, noisy, restarting, showing a specific error, refusing to boot. What the machine does and what changed just before narrows the diagnosis faster than any test we can run.",
-        "If there is anything on the machine you cannot lose, say so at the counter. Most computer work leaves your files exactly where they are, but a clean Windows installation replaces what is on the drive, and that is the one job where getting it wrong is not recoverable.",
+        "If there is anything on the machine you cannot lose, say so at the Store. Most computer work leaves your files exactly where they are, but a clean Windows installation replaces what is on the drive, and that is the one job where getting it wrong is not recoverable.",
       ],
     },
     {
@@ -362,7 +362,7 @@ const computerCalgary: LocalDef = {
       answer: `Computer repair at TechBrotherz in Calgary is quoted per job, not per hour. The diagnostic fee comes off the repair if you go ahead. A Windows installation includes an office suite and security software, a clean-up and tune-up covers startup, temporary files, updates, cooling and storage health, and hardware or program installation is charged per item.`,
     },
     {
-      question: "Do I need to bring my monitor and keyboard to the Store?",
+      question: "Do I need to bring my monitor and keyboard to the store?",
       answer:
         "No. Bring the tower alone to TechBrotherz at 3317 17 Ave SE. Monitors, keyboards and mice are here for testing, so there is no need to disconnect and carry a full setup. Bring the power cable if it is a non-standard one, and mention any login password.",
     },

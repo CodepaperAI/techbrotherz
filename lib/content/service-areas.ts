@@ -10,7 +10,7 @@
  * Today that is Calgary, Forest Lawn and Chestermere; every other area anchors
  * to its honest section on /locations/calgary, and no tile is ever a dead
  * link. Strathmore, Bragg Creek and Mînî Thnî are outside Calgary and their
- * sections say so plainly: areas the Store serves customers from, not
+ * sections say so plainly: areas the store serves customers from, not
  * neighbourhoods.
  *
  * "Forest Lawn and Forest Heights" arrives as one profile entry and is split

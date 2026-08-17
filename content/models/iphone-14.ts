@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-14-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 14 was rebuilt internally so the rear glass comes off on its own rather than requiring the whole phone to be stripped. That single change makes back glass replacement on a 14 far less involved than on a 12 or 13, and the price reflects it. Cracked front glass is still the repair we see most on this model. TechBrotherz is a walk-in Store at 3317 17 Ave SE in Calgary, no appointment needed."
+          "text": "The iPhone 14 was rebuilt internally so the rear glass comes off on its own rather than requiring the whole phone to be stripped. That single change makes back glass replacement on a 14 far less involved than on a 12 or 13, and the price reflects it. Cracked front glass is still the repair we see most on this model. TechBrotherz is a walk-in store at 3317 17 Ave SE in Calgary, no appointment needed."
         }
       ],
       "markDefs": [],

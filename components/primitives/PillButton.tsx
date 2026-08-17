@@ -51,7 +51,7 @@ const SIZE_STYLES: Record<PillButtonSize, string> = {
  * The name stays PillButton because renaming it would touch every call site in
  * the app for no behavioural gain, and Phase 8's rule is that markup may change
  * but content may not. The shape is the point: a pill reads soft and modern, a
- * rectangle reads direct and commercial, which is what a walk-in Store is.
+ * rectangle reads direct and commercial, which is what a walk-in store is.
  *
  * Labels are uppercase and letterspaced via .type-btn, applied in CSS, so the
  * rendered text content is unchanged from the baseline.

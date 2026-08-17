@@ -33,7 +33,7 @@ export default function ImageContactSheet() {
           <Heading
             level={1}
             eyebrow="Styleguide"
-            lead="Every demo image at its real crop. These are placeholders for photography the client has not taken yet, and none of them is presented as the Store, its staff or its customers."
+            lead="Every demo image at its real crop. These are placeholders for photography the client has not taken yet, and none of them is presented as the store, its staff or its customers."
           >
             Image contact sheet
           </Heading>

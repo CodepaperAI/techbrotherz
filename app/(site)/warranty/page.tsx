@@ -223,7 +223,7 @@ export default async function WarrantyPage() {
         </div>
 
         <p className="type-body measure text-tb-muted mt-10">
-          If you cannot get to the Store quickly, call {SITE.phone} and tell us what has happened.
+          If you cannot get to the store quickly, call {SITE.phone} and tell us what has happened.
           Getting the fault recorded inside the {warrantyDays} days is what matters, and we can
           arrange when you bring the device in from there.
         </p>
@@ -242,7 +242,7 @@ export default async function WarrantyPage() {
             clock or continues the original period, and it has not published a formal position on
             devices with pre-existing damage that is unrelated to the repair. Rather than invent
             terms on this page, we say what is known: the {warrantyDays} days, the cover on the part
-            and the workmanship, and the exclusions in the table above. Ask at the counter if either
+            and the workmanship, and the exclusions in the table above. Ask at the Store if either
             of those two points affects you, and you will get a straight answer for your specific
             case.
           </p>
@@ -267,17 +267,17 @@ export default async function WarrantyPage() {
 
         <p className="type-body measure text-tb-muted mt-6">
           Aftermarket phone parts vary in quality, and a small proportion of any batch fails early
-          whoever fits them. The question worth asking a repair Store is not whether that ever
-          happens, but what the Store does when it does. TechBrotherz answers that with a number:{" "}
+          whoever fits them. The question worth asking a repair store is not whether that ever
+          happens, but what the store does when it does. TechBrotherz answers that with a number:{" "}
           {warrantyDays} days, on the part and the work, at no charge.
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">
-          Every quote given at the counter, as described on{" "}
+          Every quote given at the Store, as described on{" "}
           <Link href="/contact" className="text-tb-green-deep hover:underline">
             how TechBrotherz quotes a repair
           </Link>
-          , already includes that cover, so there is nothing extra to add at the counter. The same
+          , already includes that cover, so there is nothing extra to add at the Store. The same
           applies to every service on{" "}
           <Link href="/services" className="text-tb-green-deep hover:underline">
             the repair services page

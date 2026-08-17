@@ -4,7 +4,7 @@
  * These lead with the service and ground it in the place, because service is
  * the axis that differentiates: the Phase 5 repair tier produced a 16.5% worst
  * pair from one template, while the brand hubs, differentiated only by which
- * catalogue they list, reached 63.0%. Eleven pages about one Store would have
+ * catalogue they list, reached 63.0%. Eleven pages about one store would have
  * gone the way of the brand hubs if the place had been asked to carry them.
  *
  * The shared local facts are concentrated rather than repeated. See
@@ -57,7 +57,7 @@ export interface LocalDef {
   globalCategories: string[];
 }
 
-export const ENTITY = "TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in southeast Calgary";
+export const ENTITY = "TechBrotherz, a walk-in repair store at 3317 17 Ave SE in southeast Calgary";
 
 /* ==================================================== phone repair calgary */
 
@@ -89,16 +89,16 @@ const phoneRepairCalgary: LocalDef = {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "The Store is a few steps from 33 Street SE Station on the 17 Avenue Transitway, so a phone repair does not need a car.",
+        "The store is a few steps from 33 Street SE Station on the 17 Avenue Transitway, so a phone repair does not need a car.",
     },
   ]),
   lead: (c) =>
     `${ENTITY}, repairs iPhone, Samsung Galaxy and Google Pixel cell phones. Most repairs take about ${c.waitMinutes} minutes, the quote is free, and no appointment is needed at any time.`,
   answer: (c) =>
-    `TechBrotherz repairs cell phones in Calgary at 3317 17 Ave SE, open seven days, with no appointment needed. Most phone repairs take about ${c.waitMinutes} minutes at the counter, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and given before any work starts, with the part and the labour together in one figure.`,
+    `TechBrotherz repairs cell phones in Calgary at 3317 17 Ave SE, open seven days, with no appointment needed. Most phone repairs take about ${c.waitMinutes} minutes at the Store, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and given before any work starts, with the part and the labour together in one figure.`,
   keyFacts: (c) => [
     { label: "Handsets", value: "iPhone, Samsung Galaxy and Google Pixel" },
-    { label: "Quote", value: "Free at the counter, before any work starts" },
+    { label: "Quote", value: "Free at the Store, before any work starts" },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes` },
     { label: "Warranty", value: `${c.warrantyDays} days on every repair` },
@@ -107,15 +107,15 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Which phones does TechBrotherz repair in Calgary?",
       paragraphs: [
-        "TechBrotherz repairs iPhone, Samsung Galaxy and Google Pixel handsets at its Calgary counter. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
+        "TechBrotherz repairs iPhone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
         `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn batteries, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
-        "Phones from brands outside that list are quoted at the counter once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
+        "Phones from brands outside that list are quoted at the Store once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
       ],
     },
     {
       heading: "How much does phone repair cost in Calgary?",
       paragraphs: [
-        `TechBrotherz quotes a phone repair at the counter, free of charge, with the part and the labour together in one figure. There is no separate bench fee, and no diagnostic charge on a phone repair we go on to carry out.`,
+        `TechBrotherz quotes a phone repair at the Store, free of charge, with the part and the labour together in one figure. There is no separate bench fee, and no diagnostic charge on a phone repair we go on to carry out.`,
         "The price is driven almost entirely by what the replacement part costs, which is why a five-year-old handset is cheaper to fix than a current one, and why an OLED screen costs more than the LCD panels older phones used. The table above lists the entry price per repair, and each brand page lists every model individually.",
         "Prices are agreed before any work starts. If a phone turns out to need something beyond what was quoted once it is open, we stop and ask rather than carrying on and adding it to the bill.",
       ],
@@ -123,9 +123,9 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Do you need an appointment for phone repair in Calgary?",
       paragraphs: [
-        "No. TechBrotherz is a walk-in Store, and that is the whole operating model rather than a concession. Come to the counter during opening hours, describe what the phone is doing, and it gets diagnosed in front of you. There is no booking form, no queue system and no callback.",
+        "No. TechBrotherz is a walk-in store, and that is the whole operating model rather than a concession. Come to the Store during opening hours, describe what the phone is doing, and it gets diagnosed in front of you. There is no booking form, no queue system and no callback.",
         `Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait, which means a cracked screen is a single trip rather than a drop-off and a return journey. Charging port work takes longer, usually around 45 minutes, because the phone has to come apart further.`,
-        "On a busy Saturday there may be repairs ahead of yours, and we will tell you that honestly at the counter rather than letting you discover it after an hour. If you have somewhere to be, say so and we will give you a realistic time.",
+        "On a busy Saturday there may be repairs ahead of yours, and we will tell you that honestly at the Store rather than letting you discover it after an hour. If you have somewhere to be, say so and we will give you a realistic time.",
       ],
     },
     {
@@ -161,8 +161,8 @@ const phoneRepairCalgary: LocalDef = {
   ],
   faqs: (c) => [
     {
-      question: "Where is the nearest phone repair Store in southeast Calgary?",
-      answer: `TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary, a few steps from 33 Street SE Station on the 17 Avenue Transitway. It is a walk-in Store with no appointment needed, and most phone repairs are finished in about ${c.waitMinutes} minutes at the counter.`,
+      question: "Where is the nearest phone repair store in southeast Calgary?",
+      answer: `TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary, a few steps from 33 Street SE Station on the 17 Avenue Transitway. It is a walk-in store with no appointment needed, and most phone repairs are finished in about ${c.waitMinutes} minutes at the Store.`,
     },
     {
       question: "How much does it cost to fix a phone screen in Calgary?",
@@ -170,7 +170,7 @@ const phoneRepairCalgary: LocalDef = {
     },
     {
       question: "Can I get a phone repaired in Calgary on the same day?",
-      answer: `Yes. Most phone repairs at TechBrotherz in Calgary are finished in about ${c.waitMinutes} minutes while you wait, not booked for a later day. Charging port work takes around 45 minutes. If the part for a specific model is not in stock, TechBrotherz says so at the counter before you leave the phone.`,
+      answer: `Yes. Most phone repairs at TechBrotherz in Calgary are finished in about ${c.waitMinutes} minutes while you wait, not booked for a later day. Charging port work takes around 45 minutes. If the part for a specific model is not in stock, TechBrotherz says so at the Store before you leave the phone.`,
     },
   ],
   globalCategories: ["walkin", "warranty"],
@@ -208,7 +208,7 @@ const iphoneScreenCalgary: LocalDef = {
   lead: (c) =>
     `${ENTITY}, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. Every iPhone in the catalogue is quoted individually rather than at one flat rate, and the quote is free and given before any work starts.`,
   answer: (c) =>
-    `iPhone screen repair in Calgary at TechBrotherz takes about ${c.waitMinutes} minutes at the counter at 3317 17 Ave SE, with no appointment needed. Each handset is quoted individually, free of charge, before any work starts. Every screen replacement carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
+    `iPhone screen repair in Calgary at TechBrotherz takes about ${c.waitMinutes} minutes at the Store at 3317 17 Ave SE, with no appointment needed. Each handset is quoted individually, free of charge, before any work starts. Every screen replacement carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   keyFacts: (c) => [
     { label: "iPhone models", value: "iPhone 4 through iPhone 16" },
     { label: "Time", value: `About ${c.waitMinutes} minutes, while you wait` },
@@ -220,7 +220,7 @@ const iphoneScreenCalgary: LocalDef = {
     {
       heading: "How long does an iPhone screen repair take in Calgary?",
       paragraphs: [
-        `About ${c.waitMinutes} minutes, done at the counter while you wait. An iPhone screen arrives as a complete front assembly with the glass and the display already bonded together, which is how Apple builds them, so the repair is a swap rather than something that has to be assembled.`,
+        `About ${c.waitMinutes} minutes, done at the Store while you wait. An iPhone screen arrives as a complete front assembly with the glass and the display already bonded together, which is how Apple builds them, so the repair is a swap rather than something that has to be assembled.`,
         "That makes it a single trip. You do not leave the phone, you do not come back tomorrow, and you are not without a phone for a day. For most people that is the difference between getting it fixed this week and putting it off for a month.",
         "If the part for your model is not on the shelf we order it in, which usually means a day or two rather than the same visit. We check stock and tell you before you commit, not after.",
       ],
@@ -253,7 +253,7 @@ const iphoneScreenCalgary: LocalDef = {
       heading: "What happens to your data during an iPhone screen repair?",
       paragraphs: [
         "Nothing. A screen replacement does not go near the storage in the phone. Your photos, messages, apps and settings are exactly where they were, and there is nothing to restore afterwards. You do not need to sign out of anything or wipe the device before bringing it in.",
-        "We do not need your passcode for a standard screen replacement either. Where a repair needs the phone unlocked for testing, we say so at the counter and explain why rather than asking for it as a matter of routine.",
+        "We do not need your passcode for a standard screen replacement either. Where a repair needs the phone unlocked for testing, we say so at the Store and explain why rather than asking for it as a matter of routine.",
         "Back the phone up anyway before any repair. That is a precaution rather than a requirement, and it is what protects you if something unexpected turns up once the phone is open, which occasionally happens on a handset dropped hard enough to crack the screen.",
       ],
     },
@@ -279,7 +279,7 @@ const iphoneScreenCalgary: LocalDef = {
     },
     {
       question: "Can I get an iPhone screen fixed while I wait in Calgary?",
-      answer: `Yes. iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the counter at 3317 17 Ave SE. The part arrives as a complete front assembly, so it is a swap rather than an assembly job. No appointment is needed.`,
+      answer: `Yes. iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store at 3317 17 Ave SE. The part arrives as a complete front assembly, so it is a swap rather than an assembly job. No appointment is needed.`,
     },
     {
       question: "Is a cracked iPhone screen cheaper to fix than a black one?",
@@ -322,7 +322,7 @@ const samsungCalgary: LocalDef = {
   lead: () =>
     `${ENTITY}, repairs Samsung Galaxy phones: screens, batteries and charging ports. A Galaxy screen is a bigger job than a comparable iPhone screen, and the reason is structural rather than a markup.`,
   answer: (c) =>
-    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The Store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
+    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
   keyFacts: (c) => [
     { label: "Galaxy models", value: "Galaxy S, Galaxy Note and Galaxy A series" },
     { label: "Why Galaxy screens differ", value: "The OLED panel is bonded to the frame and supplied as one assembly" },
@@ -368,7 +368,7 @@ const samsungCalgary: LocalDef = {
       paragraphs: [
         "The arithmetic is the same as for any phone: if the repair costs less than about a third of what the handset is worth used, repairing it is the better choice. On mid-range and flagship Galaxy models under about four years old, that is nearly always the case.",
         "Two things shift it on Samsung specifically. Curved flagship screens are among the more expensive parts we fit, so an older curved model can approach the threshold on a screen alone. And once a Galaxy stops receiving Samsung security updates it keeps working but stops being patched, which is worth knowing before spending on it.",
-        "A phone needing a screen and a battery and a charging port at once is three repairs, and at that point the total deserves an honest comparison against a replacement rather than being paid for one piece at a time. We will give you that comparison at the counter rather than taking all three.",
+        "A phone needing a screen and a battery and a charging port at once is three repairs, and at that point the total deserves an honest comparison against a replacement rather than being paid for one piece at a time. We will give you that comparison at the Store rather than taking all three.",
       ],
     },
   ],

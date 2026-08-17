@@ -253,7 +253,7 @@ export default async function ModelPage({ params }: PageProps) {
     // Only priced repairs become Offers. Quote-only repairs are described by
     serviceWithContactAction({
       name: `${model.name} repairs quoted in person`,
-      description: `Repairs on the ${model.name} whose price depends on the part supply on the day, quoted at the counter or by phone.`,
+      description: `Repairs on the ${model.name} whose price depends on the part supply on the day, quoted at the Store or by phone.`,
       path,
       phoneRaw,
       repairNames: prices.map((entry) => entry.repair?.name ?? "Repair"),
@@ -263,7 +263,7 @@ export default async function ModelPage({ params }: PageProps) {
 
   /* -------------------------------------------------------------- answer */
 
-  const answer = `A ${model.name} ${headlineRepair} at TechBrotherz in Calgary is quoted at the counter, free of charge, before any work starts, with the part and the labour in one figure. Most ${model.deviceType === "tablet" ? "tablet repairs are ready the same day" : `repairs take about ${waitMinutes} minutes while you wait`}, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`;
+  const answer = `A ${model.name} ${headlineRepair} at TechBrotherz in Calgary is quoted at the Store, free of charge, before any work starts, with the part and the labour in one figure. Most ${model.deviceType === "tablet" ? "tablet repairs are ready the same day" : `repairs take about ${waitMinutes} minutes while you wait`}, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`;
 
   return (
     <PageShell
@@ -273,10 +273,10 @@ export default async function ModelPage({ params }: PageProps) {
       crumbLabel={model.name ?? "Model"}
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, repairs the {model.name}
           {age !== null && age >= 2 ? `, now about ${age} years old` : ""}. Every repair
-          is quoted free at the counter, with the part and the labour in one figure.
+          is quoted free at the Store, with the part and the labour in one figure.
         </>
       }
       answerBox={{
@@ -284,7 +284,7 @@ export default async function ModelPage({ params }: PageProps) {
         keyFacts: [
           {
             label: "Quote",
-            value: "Free at the counter, part and labour included",
+            value: "Free at the Store, part and labour included",
           },
           {
             label: "Time",
@@ -360,13 +360,13 @@ export default async function ModelPage({ params }: PageProps) {
         {/* The table lists the repairs curated for this model. The client asked
             (2026-08) for the wider menu to be visible on every model, so the
             options the table does not carry are named here and quoted at the
-            counter, rather than padded into the table as identical rows on
+            Store, rather than padded into the table as identical rows on
             every page. Only the ones genuinely absent are listed, so the
             sentence never contradicts the table above it. */}
         <p className="type-body text-tb-muted mt-4">
           {model.deviceType === "phone" && missingPhoneRepairs.length > 0
-            ? `A repair that is not in the table is not off the menu. TechBrotherz also replaces ${listWords(missingPhoneRepairs)} on the ${model.name}, quoted free at the counter once we have the phone in front of us.`
-            : `A repair that is not in the table is not off the menu. Bring the ${model.name} to the counter and TechBrotherz will quote the fault it actually has, free, before any work starts.`}
+            ? `A repair that is not in the table is not off the menu. TechBrotherz also replaces ${listWords(missingPhoneRepairs)} on the ${model.name}, quoted free at the Store once we have the phone in front of us.`
+            : `A repair that is not in the table is not off the menu. Bring the ${model.name} to the Store and TechBrotherz will quote the fault it actually has, free, before any work starts.`}
         </p>
 
         {model.priceGroup?.models && model.priceGroup.models.length > 1 ? (

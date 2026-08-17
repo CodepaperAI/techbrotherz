@@ -90,13 +90,13 @@ export default async function FaqPage() {
       crumbLabel="FAQ"
       lead={
         <>
-          Every question below is answered by TechBrotherz, a walk-in cell phone and computer repair Store
+          Every question below is answered by TechBrotherz, a walk-in cell phone and computer repair store
           at {SITE.street} in {SITE.city}, {SITE.region}. If your question is not here, call{" "}
           {SITE.phone} and ask.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz in Calgary is a walk-in Store, so no appointment is needed. Most phone screen and battery repairs take about ${waitMinutes} minutes while you wait, every price includes the part and the labour, and every repair carries a ${warrantyDays}-day warranty on both the part and the workmanship.`,
+        answer: `TechBrotherz in Calgary is a walk-in store, so no appointment is needed. Most phone screen and battery repairs take about ${waitMinutes} minutes while you wait, every price includes the part and the labour, and every repair carries a ${warrantyDays}-day warranty on both the part and the workmanship.`,
         keyFacts: [
           { label: "Appointment", value: "Not needed at any time" },
           { label: "Typical wait", value: `About ${waitMinutes} minutes on most phone repairs` },
@@ -175,7 +175,7 @@ export default async function FaqPage() {
             },
             { href: "/contact", label: "Directions, parking and opening hours" },
             { href: "/locations", label: "The Calgary areas TechBrotherz serves" },
-            { href: "/about", label: "About the Store and what we repair" },
+            { href: "/about", label: "About the store and what we repair" },
           ].map((link) => (
             <li key={link.href} className="md:border-tb-border md:border-b">
               <Link

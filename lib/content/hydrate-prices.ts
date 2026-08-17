@@ -12,7 +12,7 @@ import { priceGroupFor, repairType, type RepairTypeDef } from "@/lib/content/rep
  * exact shape they always did: the refactor is a move, and a move that changes
  * every consumer is a rewrite wearing a disguise.
  *
- * An entry with no `price` is a quoted repair. That is how the Store has always
+ * An entry with no `price` is a quoted repair. That is how the store has always
  * described them and how the page has always rendered them; the difference is
  * that an absent price is now an absent field rather than 531 documents.
  */

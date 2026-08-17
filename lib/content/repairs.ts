@@ -11,7 +11,7 @@
  * iPhone or Samsung repairs, and a screen page and a battery page written from
  * the same outline would read as the same page. Each entry therefore leads
  * with what is genuinely different about that repair, not with a restatement
- * of the Store's policies. Phase 4's similarity detector runs over these pages
+ * of the store's policies. Phase 4's similarity detector runs over these pages
  * for exactly this reason.
  */
 
@@ -92,9 +92,9 @@ const iphoneScreen: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
   answer: (c) =>
-    `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the counter. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
+    `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the Store. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
   symptoms: [
     "Cracked or shattered glass, even where the picture underneath still works normally.",
     "Black patches, coloured vertical lines, or a white glow spreading across the display.",
@@ -121,7 +121,7 @@ const iphoneScreen: RepairDef = {
     },
     {
       title: "The phone is sealed and handed back",
-      body: "The screws go back in, the display seats down, and the phone is tested once more as a whole before it leaves the counter.",
+      body: "The screws go back in, the display seats down, and the phone is tested once more as a whole before it leaves the Store.",
     },
   ],
   sections: (c) => [
@@ -152,7 +152,7 @@ const iphoneScreen: RepairDef = {
     {
       heading: "How much does an iPhone screen replacement cost in Calgary?",
       paragraphs: [
-        `What an iPhone screen replacement comes to follows the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the counter, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
+        `What an iPhone screen replacement comes to follows the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the Store, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
         "The pattern in that table is worth understanding. Older LCD models are the cheapest, because those panels have been in production for years and supply is plentiful. The OLED models cost more, and the recent Pro models with the largest displays cost the most, because that is what the assemblies cost to buy.",
         "Apple publishes its own out-of-warranty screen service pricing for each model on its support site, which is worth comparing against before you decide where to take a repair. Models showing Call for quote in the table are ones where we order the part in and price it once we know the cost.",
       ],
@@ -198,7 +198,7 @@ const iphoneScreen: RepairDef = {
     },
     {
       question: "How long does an iPhone screen replacement take?",
-      answer: `An iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the counter while you wait. The part arrives as a complete front assembly with the glass and display already bonded, which is why the repair is quick compared with a tablet or laptop screen.`,
+      answer: `An iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store while you wait. The part arrives as a complete front assembly with the glass and display already bonded, which is why the repair is quick compared with a tablet or laptop screen.`,
     },
   ],
   globalCategories: ["parts", "warranty"],
@@ -220,9 +220,9 @@ const iphoneBattery: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
   answer: (c) =>
-    `iPhone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the counter and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
+    `iPhone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the Store and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer lasts a working day on a charge it used to manage comfortably.",
     "It shuts down suddenly at 20% or 30%, or dies in the cold and revives once warm.",
@@ -258,7 +258,7 @@ const iphoneBattery: RepairDef = {
       paragraphs: [
         "Apple treats about 80% of original capacity as the point where a battery is considered consumed, and iOS reports exactly that figure. Open Settings, then Battery, then Battery Health, and read the maximum capacity percentage. That number is the single best guide to whether a replacement is worth paying for.",
         "Above 85%, a battery is generally not your problem, and the poor battery life is more likely a background app, a weak signal forcing the radio to work hard, or a display running at full brightness. We would rather point that out than take money for a battery that was fine.",
-        "Below 80%, replacement makes a real difference, and the phone will hold a working day again. Between 80 and 85 is a judgement call that depends on how heavily you use the phone, and we will give you an honest read at the counter.",
+        "Below 80%, replacement makes a real difference, and the phone will hold a working day again. Between 80 and 85 is a judgement call that depends on how heavily you use the phone, and we will give you an honest read at the Store.",
       ],
     },
     {
@@ -280,7 +280,7 @@ const iphoneBattery: RepairDef = {
     {
       heading: "How much does an iPhone battery replacement cost in Calgary?",
       paragraphs: [
-        `An iPhone battery is quoted per model at the counter, and the quote covers the part and the labour together. The range is far narrower than it is for screens, because a battery cell is a broadly similar part whichever iPhone it goes into, while a screen is not.`,
+        `An iPhone battery is quoted per model at the Store, and the quote covers the part and the labour together. The range is far narrower than it is for screens, because a battery cell is a broadly similar part whichever iPhone it goes into, while a screen is not.`,
         `The repair takes about ${c.waitMinutes} minutes and is done while you wait. Your data is untouched: a battery replacement does not go near the storage, and nothing needs backing up or restoring afterwards. Back the phone up anyway as a precaution before any repair.`,
         "Apple publishes its own battery service pricing per model on its support site, which is worth checking before deciding where to have the work done. iOS will report a service message about the battery after any non-Apple replacement, in the same way it does for screens.",
       ],
@@ -308,7 +308,7 @@ const iphoneBattery: RepairDef = {
   faqs: (c) => [
     {
       question: "How much does an iPhone battery replacement cost in Calgary?",
-      answer: `iPhone battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across iPhone models is much narrower than it is for screens, because a battery cell is a broadly similar part across the range. The repair takes about ${c.waitMinutes} minutes at the counter.`,
+      answer: `iPhone battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across iPhone models is much narrower than it is for screens, because a battery cell is a broadly similar part across the range. The repair takes about ${c.waitMinutes} minutes at the Store.`,
     },
     {
       question: "How do I know if my iPhone battery needs replacing?",
@@ -345,7 +345,7 @@ const iphonePort: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
   answer: () =>
     `iPhone charging port replacement at TechBrotherz in Calgary takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge at all. The quote is free and given before any work starts.`,
   symptoms: [
@@ -407,7 +407,7 @@ const iphonePort: RepairDef = {
       paragraphs: [
         "About 45 minutes, which is longer than a screen replacement and worth knowing before you decide to wait. The port sits at the very bottom of the phone, underneath the battery and behind the speaker assembly, so getting to it means taking more of the phone apart than a screen repair does.",
         "The reassembly is where the time goes rather than the removal. Everything that came out has to go back in the right order, with the right screws in the right holes, because iPhone screws differ in length by fractions of a millimetre and the wrong one in the wrong place damages the board underneath.",
-        "Most port repairs are still same-visit work rather than a drop-off. We will tell you the realistic time at the counter, and if the part for your model needs ordering we will say so before you leave the phone.",
+        "Most port repairs are still same-visit work rather than a drop-off. We will tell you the realistic time at the Store, and if the part for your model needs ordering we will say so before you leave the phone.",
       ],
     },
   ],
@@ -474,9 +474,9 @@ const iphoneCamera: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
   answer: (c) =>
-    `iPhone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the counter. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
+    `iPhone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the Store. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
   symptoms: [
     "Photos come out blurry no matter how still the phone is held, or will not focus at all.",
     "The camera app opens to a black frame, or freezes when switching between lenses.",
@@ -503,7 +503,7 @@ const iphoneCamera: RepairDef = {
     },
     {
       title: "Photos, video and flash are all tested",
-      body: "Every lens, autofocus, the flash and video recording all get checked before the phone leaves the counter.",
+      body: "Every lens, autofocus, the flash and video recording all get checked before the phone leaves the Store.",
     },
   ],
   sections: () => [
@@ -512,7 +512,7 @@ const iphoneCamera: RepairDef = {
       paragraphs: [
         "This is the first thing to establish, because it is the difference between a small repair and a larger one. The rear cameras on an iPhone sit behind small individual sapphire lens covers, and those covers crack from drops while the camera modules behind them stay perfectly intact.",
         "The symptom of cracked lens glass is distinctive: photos look hazy, washed out, or show flare and starbursts around bright lights, and the effect is worse in sunlight or at night against street lamps. Focus itself still works. If your photos have gone milky rather than blurry, look closely at the lens covers.",
-        "A failed camera module behaves differently. It will not focus at all, shows a black frame, or the app freezes when switching to that lens. TechBrotherz checks both at the counter before quoting, because quoting a module replacement for cracked glass would be charging for the wrong repair.",
+        "A failed camera module behaves differently. It will not focus at all, shows a black frame, or the app freezes when switching to that lens. TechBrotherz checks both at the Store before quoting, because quoting a module replacement for cracked glass would be charging for the wrong repair.",
       ],
     },
     {
@@ -543,7 +543,7 @@ const iphoneCamera: RepairDef = {
   modelNotes: [
     {
       model: "iPhone 11 Pro and later",
-      note: "Three separate rear camera modules mean the price depends on which lens has failed. Testing each one at the counter identifies the right part.",
+      note: "Three separate rear camera modules mean the price depends on which lens has failed. Testing each one at the Store identifies the right part.",
     },
     {
       model: "iPhone 12 and later",
@@ -603,7 +603,7 @@ const iphoneBackGlass: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
   answer: () =>
     `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From iPhone 12 onwards the panel is designed to come off more cleanly.`,
   symptoms: [
@@ -730,7 +730,7 @@ const samsungScreen: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
   answer: (c) =>
     `Samsung Galaxy screen replacement at TechBrotherz in Calgary fits a complete assembly, because Samsung bonds the OLED panel to the phone's frame and supplies the two as one part. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
@@ -790,7 +790,7 @@ const samsungScreen: RepairDef = {
     {
       heading: "How much does a Samsung screen replacement cost in Calgary?",
       paragraphs: [
-        `A Galaxy screen is quoted per model at the counter, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for iPhone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
+        `A Galaxy screen is quoted per model at the Store, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for iPhone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
         "The repair takes about 45 minutes rather than the 30 minutes a typical iPhone screen takes, because of the frame transfer described above. Most Galaxy screen repairs are still done while you wait.",
         "Models showing Call for quote in the table are ones where the assembly is ordered in and priced once we know the cost. Samsung's own service pricing for its current models is published on its Canadian support site and is worth comparing before deciding.",
       ],
@@ -855,7 +855,7 @@ const samsungBattery: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
   answer: () =>
     `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
   symptoms: [
@@ -915,7 +915,7 @@ const samsungBattery: RepairDef = {
     {
       heading: "How much does a Samsung battery replacement cost in Calgary?",
       paragraphs: [
-        `A Galaxy battery is quoted per model at the counter, with the part and the labour in one figure. The range across the Galaxy line is much narrower than it is for screens, because the cell itself is a similar part from model to model and most of the job is the access work.`,
+        `A Galaxy battery is quoted per model at the Store, with the part and the labour in one figure. The range across the Galaxy line is much narrower than it is for screens, because the cell itself is a similar part from model to model and most of the job is the access work.`,
         "Part of the price is the resealing. Fresh adhesive around the rear panel is not optional on a phone that was designed to be sealed, and a battery replacement that skips it leaves a phone with a back that lifts and a gap for dust.",
         "Your data is untouched by a battery replacement. Nothing goes near the storage, and there is nothing to back up or restore afterwards. Back the phone up anyway before any repair, as a precaution.",
       ],
@@ -984,7 +984,7 @@ const samsungBackGlass: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Samsung Galaxy back glass. On a Galaxy the rear panel is the way into the phone for every internal repair, which means the technique for removing it is the same one used for battery and screen work.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Samsung Galaxy back glass. On a Galaxy the rear panel is the way into the phone for every internal repair, which means the technique for removing it is the same one used for battery and screen work.`,
   answer: (c) =>
     `Samsung Galaxy back glass replacement at TechBrotherz in Calgary means heating the rear panel, cutting it free of the adhesive that runs around its entire perimeter, fitting the replacement and resealing it. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
@@ -1013,7 +1013,7 @@ const samsungBackGlass: RepairDef = {
     },
     {
       title: "Wireless charging and the cameras are tested",
-      body: "Both sit directly behind the rear panel, so both are checked before the phone leaves the counter.",
+      body: "Both sit directly behind the rear panel, so both are checked before the phone leaves the Store.",
     },
   ],
   sections: () => [
@@ -1044,7 +1044,7 @@ const samsungBackGlass: RepairDef = {
     {
       heading: "Will the phone still be water resistant afterwards?",
       paragraphs: [
-        "Not to its original rating, and no repair Store can honestly promise otherwise. Water resistance on a Galaxy depends on factory-applied seals and adhesive compressed under controlled conditions, and once that seal has been cut through, what goes back is a good seal rather than a certified one.",
+        "Not to its original rating, and no repair store can honestly promise otherwise. Water resistance on a Galaxy depends on factory-applied seals and adhesive compressed under controlled conditions, and once that seal has been cut through, what goes back is a good seal rather than a certified one.",
         "TechBrotherz uses fresh adhesive around the entire perimeter and clamps the phone while it sets, which gives a properly closed phone that will handle rain and splashes the way you would expect. What it will not do is guarantee the phone against submersion.",
         "This is true of every repair on a sealed phone, at every shop, and anyone who tells you a repaired phone keeps its original water rating is overselling. Treat a repaired phone as water resistant rather than waterproof.",
       ],
@@ -1109,7 +1109,7 @@ const samsungPort: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy charging ports. On most Galaxy models the USB-C port sits on a small daughterboard of its own, which makes it a cleaner replacement than on phones where the port is soldered directly to the mainboard.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy charging ports. On most Galaxy models the USB-C port sits on a small daughterboard of its own, which makes it a cleaner replacement than on phones where the port is soldered directly to the mainboard.`,
   answer: () =>
     `Samsung Galaxy charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On most Galaxy models the USB-C port sits on its own small board that unplugs and replaces as a unit. TechBrotherz clears compacted lint from the socket first, because that alone fixes many charging faults at no cost.`,
   symptoms: [
@@ -1169,9 +1169,9 @@ const samsungPort: RepairDef = {
     {
       heading: "How much does a Samsung charging port repair cost in Calgary?",
       paragraphs: [
-        `A Galaxy charging port is quoted per model at the counter, with the part and the labour in one figure. The repair takes about 45 minutes, most of which is the access work of removing and resealing the rear glass rather than the port itself.`,
+        `A Galaxy charging port is quoted per model at the Store, with the part and the labour in one figure. The repair takes about 45 minutes, most of which is the access work of removing and resealing the rear glass rather than the port itself.`,
         "Because the charging board usually carries the bottom microphone as well, this repair sometimes fixes a second problem people had not connected to it. If callers have been saying they cannot hear you clearly and the phone has also been fussy about charging, one part may be behind both.",
-        "If wireless charging works normally but no cable charges the phone, that is a clear pointer at the port rather than the battery or the board, and it is worth mentioning at the counter.",
+        "If wireless charging works normally but no cable charges the phone, that is a clear pointer at the port rather than the battery or the board, and it is worth mentioning at the Store.",
       ],
     },
   ],
@@ -1240,7 +1240,7 @@ const ipadScreen: RepairDef = {
   brandSlug: "apple-ipad",
   minutes: 90,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
   answer: () =>
     `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent iPad Air and iPad Pro models use a laminated display where both replace as one assembly, which is the larger job.`,
   symptoms: [
@@ -1294,13 +1294,13 @@ const ipadScreen: RepairDef = {
       paragraphs: [
         "The adhesive perimeter on an iPad is far longer than on a phone, and it has to be heated evenly along its whole length before anything can be separated. A panel that is levered while one section is still cold will crack, and a frame that is pulled unevenly will bend.",
         "The frame is the part that cannot be undone. An iPad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is not caution for its own sake, it is what keeps the repair repeatable.",
-        "In practice most iPad work is a same-day drop-off rather than a wait at the counter. Bring it in during the day and in most cases it is ready before we close.",
+        "In practice most iPad work is a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close.",
       ],
     },
     {
       heading: "How much does iPad screen repair cost in Calgary?",
       paragraphs: [
-        `iPad glass is quoted per model at the counter, with the part and the labour in one figure. The spread across the iPad range is wider than on any other device TechBrotherz repairs, because it covers both separated-glass and laminated-display models, and those are two different repairs rather than two versions of one.`,
+        `iPad glass is quoted per model at the Store, with the part and the labour in one figure. The spread across the iPad range is wider than on any other device TechBrotherz repairs, because it covers both separated-glass and laminated-display models, and those are two different repairs rather than two versions of one.`,
         "The model number is what determines which of those you have, and it is engraved in small print on the back of the iPad. Two tablets that look nearly identical can be very different repairs, which is why we ask rather than assume.",
         "Models showing Call for quote are ones where the assembly is ordered in and priced once we know the cost. Apple publishes its own out-of-warranty iPad service pricing, which is worth comparing before deciding where to have the work done.",
       ],
@@ -1367,7 +1367,7 @@ const laptopScreen: RepairDef = {
   siblings: ["/repairs/laptop-keyboard-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop screens. Unlike a phone, a laptop panel is not bonded to a touch layer, which makes the replacement itself a clean job.`,
   answer: (c) =>
     `Laptop screen replacement at TechBrotherz in Calgary is quoted once the panel your machine takes has been identified, because size, resolution and touch capability all change the part. Most laptop screens are replaced the same day, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   symptoms: [
@@ -1518,7 +1518,7 @@ const laptopKeyboard: RepairDef = {
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
   answer: () =>
     `Laptop keyboard replacement at TechBrotherz in Calgary is quoted after we have seen how the keyboard is fitted, because that is what the job turns on. On some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly. Most keyboard work is finished the same day.`,
   symptoms: [
@@ -1570,7 +1570,7 @@ const laptopKeyboard: RepairDef = {
     {
       heading: "Can a single key be fixed instead of the whole keyboard?",
       paragraphs: [
-        "Sometimes, and it is worth asking before paying for a keyboard. A keycap that has popped off usually clips back on if the small plastic scissor mechanism underneath is intact, and that is a two-minute job at the counter rather than a repair.",
+        "Sometimes, and it is worth asking before paying for a keyboard. A keycap that has popped off usually clips back on if the small plastic scissor mechanism underneath is intact, and that is a two-minute job at the Store rather than a repair.",
         "If the scissor mechanism itself has broken, individual replacements are available for some models and not for others. If the key does not respond at all even when pressed directly on the rubber dome underneath, the fault is in the membrane layer, and that is not repairable on its own.",
         "Bring the laptop in and we will tell you which of the three you have. It costs nothing to look, and the answer is sometimes that you do not need a repair at all.",
       ],
@@ -1624,7 +1624,7 @@ const laptopKeyboard: RepairDef = {
       ],
       [
         "Single keycap off",
-        "The cap clips back onto an intact scissor mechanism at the counter",
+        "The cap clips back onto an intact scissor mechanism at the Store",
         "Often nothing to pay",
       ],
     ],
@@ -1642,7 +1642,7 @@ const laptopKeyboard: RepairDef = {
     {
       question: "Can one broken key be replaced instead of the whole keyboard?",
       answer:
-        "Sometimes. A keycap that has popped off clips back on if the scissor mechanism underneath is intact, which is a counter job rather than a repair. If the mechanism is broken, individual replacements exist for some models. If the key does not respond when pressed directly on the rubber dome, the membrane has failed and the keyboard needs replacing.",
+        "Sometimes. A keycap that has popped off clips back on if the scissor mechanism underneath is intact, which is a Store job rather than a repair. If the mechanism is broken, individual replacements exist for some models. If the key does not respond when pressed directly on the rubber dome, the membrane has failed and the keyboard needs replacing.",
     },
     {
       question: "Should I just use an external keyboard instead?",
@@ -1669,7 +1669,7 @@ const laptopPort: RepairDef = {
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-keyboard-replacement"],
   minutes: 90,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop DC charging sockets. Bring the charger with the machine, because a failed adapter produces exactly the same symptoms and costs nothing to rule out.`,
   answer: () =>
     `Laptop charging socket replacement at TechBrotherz in Calgary is quoted free of charge before any work starts. A socket that has worked loose shows as a charging light that flickers when the plug is moved, or a laptop that only charges at a particular cable angle. The repair is soldered work on most machines, so it takes longer than a phone charging port.`,
   symptoms: [
@@ -1723,7 +1723,7 @@ const laptopPort: RepairDef = {
       paragraphs: [
         "A laptop DC socket is usually soldered to the mainboard rather than sitting on a replaceable module, and reaching the mainboard means dismantling the machine substantially: the bottom cover, the battery, the storage, often the cooling assembly, and sometimes the board itself has to come out.",
         "The soldering is skilled work but not the slow part. Getting to the board and putting the machine back together correctly afterwards is where the time goes, and that is why this is priced and scheduled as a longer repair.",
-        `Laptop charging socket replacement is usually a same-day drop-off rather than a wait at the counter, because the machine has to come substantially apart to reach the socket.`,
+        `Laptop charging socket replacement is usually a same-day drop-off rather than a wait at the Store, because the machine has to come substantially apart to reach the socket.`,
       ],
     },
     {
@@ -1761,7 +1761,7 @@ const laptopPort: RepairDef = {
       [
         "Charging light flickers when the plug is moved",
         "The DC socket has worked loose from its solder joints",
-        "Nothing, we check it at the counter",
+        "Nothing, we check it at the Store",
       ],
       [
         "Runs on mains, dies the moment it is unplugged",
@@ -1822,7 +1822,7 @@ const windowsInstallation: RepairDef = {
   siblings: ["/repairs/computer-tune-up", "/repairs/computer-diagnostics"],
   minutes: 120,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean, including an office suite and security software set up and running. It is quoted as one flat figure for the whole job, not as an hourly rate.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, installs Windows clean, including an office suite and security software set up and running. It is quoted as one flat figure for the whole job, not as an hourly rate.`,
   answer: () =>
     `A Windows installation at TechBrotherz in Calgary includes the operating system installed clean, an office suite, and security software configured and running. It is quoted as one flat figure agreed before work starts. A clean install replaces what is on the drive, so back your files up first and tell TechBrotherz what you need kept.`,
   symptoms: [
@@ -1839,7 +1839,7 @@ const windowsInstallation: RepairDef = {
     },
     {
       title: "Files are copied off if you want them kept",
-      body: "Documents, photos and other data can be copied off before the install and put back afterwards. Tell us at the counter so it is part of the job.",
+      body: "Documents, photos and other data can be copied off before the install and put back afterwards. Tell us at the Store so it is part of the job.",
     },
     {
       title: "Windows is installed clean",
@@ -1866,7 +1866,7 @@ const windowsInstallation: RepairDef = {
     {
       heading: "What happens to your files during a Windows installation?",
       paragraphs: [
-        "A clean installation replaces what is on the drive. That is what makes it effective, and it is also why we ask before doing it rather than after. Tell us at the counter if there is anything on the machine you need, and copying your documents and photos off and putting them back afterwards becomes part of the job.",
+        "A clean installation replaces what is on the drive. That is what makes it effective, and it is also why we ask before doing it rather than after. Tell us at the Store if there is anything on the machine you need, and copying your documents and photos off and putting them back afterwards becomes part of the job.",
         "If your files matter and the problem is a forgotten password rather than a broken system, a clean install is the wrong repair entirely. A password reset restores access and leaves everything in place, which is a different service at a different price.",
         "We will always confirm what is on the machine before starting. This is the one repair where getting it wrong is not recoverable, so we ask twice and would rather be tedious about it than assume.",
       ],
@@ -1884,7 +1884,7 @@ const windowsInstallation: RepairDef = {
       paragraphs: [
         `That one figure covers the operating system installed clean, the hardware drivers the machine needs, an office suite, and security software installed and configured. The intention is that the computer comes back ready to use rather than ready to spend an evening setting up.`,
         "Drivers matter more than people expect. A Windows installation without the right drivers gives you a machine where the wireless does not work, the display is at the wrong resolution and the sound is missing. Getting them right is part of the job, not an extra.",
-        "If you want specific programs installed beyond that, those are priced separately per program, and it is worth mentioning at the counter so the total is agreed up front rather than added afterwards.",
+        "If you want specific programs installed beyond that, those are priced separately per program, and it is worth mentioning at the Store so the total is agreed up front rather than added afterwards.",
       ],
     },
   ],
@@ -1941,7 +1941,7 @@ const windowsInstallation: RepairDef = {
     {
       question: "Will a Windows installation delete my files?",
       answer:
-        "A clean install replaces what is on the drive, which is what makes it effective. Tell TechBrotherz at the counter what you need kept and copying your documents and photos off and restoring them afterwards becomes part of the job. If the real problem is a forgotten password, a password reset keeps everything in place instead.",
+        "A clean install replaces what is on the drive, which is what makes it effective. Tell TechBrotherz at the Store what you need kept and copying your documents and photos off and restoring them afterwards becomes part of the job. If the real problem is a forgotten password, a password reset keeps everything in place instead.",
     },
     {
       question: "Will TechBrotherz install Windows 11 or Windows 10?",
@@ -1973,7 +1973,7 @@ const computerTuneUp: RepairDef = {
   siblings: ["/repairs/windows-installation", "/repairs/computer-diagnostics"],
   minutes: 120,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, cleans up and tunes computers. A computer that has become slow almost never has one dramatic fault. It usually has four ordinary ones stacked on top of each other.`,
   answer: () =>
     `A clean-up and tune-up at TechBrotherz in Calgary covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Everything on the machine stays exactly where it is, and the job is quoted as one flat figure.`,
   symptoms: [
@@ -2125,7 +2125,7 @@ const computerDiagnostics: RepairDef = {
   siblings: ["/repairs/computer-tune-up", "/repairs/windows-installation"],
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair Store at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for a fixed diagnostic fee, and that fee comes off the bill if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, diagnoses computers for a fixed diagnostic fee, and that fee comes off the bill if you go ahead with the repair. It exists because some faults have several possible causes, and guessing between them wastes your money rather than ours.`,
   answer: () =>
     `Computer diagnostics at TechBrotherz in Calgary carry a fixed diagnostic fee, and that fee is deducted from the repair if you proceed. The diagnostic checks power delivery, whether the machine posts, storage health, memory and thermal behaviour, and ends with a specific fault and a specific figure rather than an estimate. If the machine is not worth repairing, TechBrotherz will say so.`,
   symptoms: [

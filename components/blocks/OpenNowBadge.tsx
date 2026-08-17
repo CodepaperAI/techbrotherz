@@ -7,7 +7,7 @@ import { isOpenNow } from "@/lib/utils";
 import type { DayName } from "@/lib/site";
 
 /**
- * "Open now" or "Closed now", evaluated in the Store's own time zone rather than
+ * "Open now" or "Closed now", evaluated in the store's own time zone rather than
  * the visitor's.
  *
  * Renders nothing until after mount. Computing this on the server would bake

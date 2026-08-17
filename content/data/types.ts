@@ -83,9 +83,9 @@ export interface SiteSettingsDoc {
 /* ---------------------------------------------------------- catalogue */
 
 /**
- * One repair the Store offers on one model.
+ * One repair the store offers on one model.
  *
- * `price` is optional and absent means quoted at the counter. That is the whole
+ * `price` is optional and absent means quoted at the Store. That is the whole
  * of Rule 2: 531 documents existed only to record that a price did not exist,
  * and an optional field says the same thing without any of them.
  */

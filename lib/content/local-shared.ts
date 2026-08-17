@@ -3,7 +3,7 @@
  *
  * Phase 5 established that any block repeated across many pages is a
  * duplication engine. The local tier is where that bites hardest, because the
- * best facts the site has are true of every page at once: there is one Store,
+ * best facts the site has are true of every page at once: there is one store,
  * one street, one transit station.
  *
  * So each shared fact gets exactly one page that carries it in full, and every
@@ -34,11 +34,11 @@ export const SHARED_FACTS: Record<FactId, SharedFact> = {
     id: "transitway",
     label: "33 Street SE Station and the 17 Avenue Transitway",
     homePath: "/locations/calgary",
-    note: "The strongest local fact on the site. A MAX Purple station on a dedicated bus-only transitway at the door. Spread across eleven pages it reads as boilerplate; concentrated it reads as a reason to choose this Store.",
+    note: "The strongest local fact on the site. A MAX Purple station on a dedicated bus-only transitway at the door. Spread across eleven pages it reads as boilerplate; concentrated it reads as a reason to choose this store.",
   },
   "international-avenue": {
     id: "international-avenue",
-    label: "International Avenue, the BRZ and where the Store actually sits",
+    label: "International Avenue, the BRZ and where the store actually sits",
     homePath: "/locations/calgary",
     note: "Also the accuracy anchor: 33 Street SE, Albert Park/Radisson Heights to the north, Southview to the south. This is what the Google Business Profile gets reconciled against in Phase 9.",
   },

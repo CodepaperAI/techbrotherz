@@ -45,7 +45,7 @@ export default async function PrivacyPolicyPage() {
       crumbLabel="Privacy policy"
       lead={
         <>
-          This policy explains what personal information TechBrotherz, a repair Store at{" "}
+          This policy explains what personal information TechBrotherz, a repair store at{" "}
           {SITE.street} in {SITE.city}, {SITE.region}, collects, why it collects it, and what it
           does with it.
         </>
@@ -83,7 +83,7 @@ export default async function PrivacyPolicyPage() {
 
         <div className="type-body measure text-tb-muted mt-6 space-y-4">
           <p>
-            When you bring a device to TechBrotherz for repair, the Store records your name, a phone
+            When you bring a device to TechBrotherz for repair, the store records your name, a phone
             number or email address to reach you on, a description of the device, and the fault it
             came in with. That is what a repair record needs in order to return the right device to
             the right person and to honour the {settings?.warrantyDays ?? 60}-day warranty
@@ -97,8 +97,8 @@ export default async function PrivacyPolicyPage() {
           <p>
             TechBrotherz does not ask for and does not want your device passcode unless testing the
             repair requires unlocking the device. Where testing does require it, you are welcome to
-            stay in the Store and unlock the device yourself. If you would rather not share a
-            passcode, say so and the Store will test what it can without one and tell you what it
+            stay in the store and unlock the device yourself. If you would rather not share a
+            passcode, say so and the store will test what it can without one and tell you what it
             could not check.
           </p>
         </div>
@@ -118,7 +118,7 @@ export default async function PrivacyPolicyPage() {
           <p>
             Information is disclosed to a third party only where the law requires it, for example in
             response to a lawful order. If TechBrotherz ever needs to send a device to a specialist
-            for a repair it cannot do in the Store, you will be told before that happens.
+            for a repair it cannot do in the store, you will be told before that happens.
           </p>
         </div>
       </Section>
@@ -214,7 +214,7 @@ export default async function PrivacyPolicyPage() {
         <div className="type-body measure text-tb-muted mt-6 space-y-4">
           <p>
             Call {SITE.phone}, or come in to {ADDRESS_LINE} during opening hours. There is no
-            separate privacy department: the Store that repaired your device is the Store that holds
+            separate privacy department: the store that repaired your device is the store that holds
             the record.
           </p>
           <p>

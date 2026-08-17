@@ -60,7 +60,7 @@ const SERVICE_PILLS: { label: string; href: string }[] = [
 ];
 
 /**
- * Brands the Store services, every one confirmed by the client's own device
+ * Brands the store services, every one confirmed by the client's own device
  * list ("laptops of every make" covers the PC names; the console page covers
  * the console names). Text chips only, no manufacturer logos, per the
  * standing trademark rule. OnePlus is deliberately absent: the client has not
@@ -162,7 +162,7 @@ const SERVICE_CARDS: {
     tags: ["All carriers", "Screen lock", "FRP"],
   },
   {
-    title: "Game console repair",
+    title: "Gaming console repair",
     description:
       "Xbox One, Xbox Series X and S, PS4, PS5 and Nintendo Switch. Diagnosed first, with the price agreed before any work starts.",
     href: "/services/game-console-repair",
@@ -287,7 +287,7 @@ export default async function HomePage() {
       type: "WebPage",
       name: "Cell phone and computer repair in SE Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, iPad and computer repair Store at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, iPad and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -298,7 +298,7 @@ export default async function HomePage() {
     <PageShell
       path={PATH}
       layout="hero"
-      eyebrow="Walk-in repair Store · No appointment"
+      eyebrow="Walk-in repair store · No appointment"
       title={
         <>
           Phone and computer repair in <span className="text-tb-green">SE Calgary</span>
@@ -365,7 +365,7 @@ export default async function HomePage() {
         </div>
       }
       answerBox={{
-        answer: `TechBrotherz is a walk-in cell phone and computer repair Store at ${SITE.street} in Calgary. Every repair is quoted free at the counter before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a walk-in cell phone and computer repair store at ${SITE.street} in Calgary. Every repair is quoted free at the Store before any work starts, with the part and the labour in one figure. Most repairs take about ${waitMinutes} minutes, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           { label: "Phone", value: SITE.phone },
@@ -401,7 +401,7 @@ export default async function HomePage() {
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and game consoles in SE Calgary, and unlocks phones for any Canadian carrier."
+          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and gaming consoles in SE Calgary, and unlocks phones for any Canadian carrier."
         >
           What can we fix for you in <span className="text-tb-green-deep">Calgary</span>?
         </Heading>
@@ -463,9 +463,9 @@ export default async function HomePage() {
           </Link>
           , and the consoles to{" "}
           <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
-            game console repair
+            gaming console repair
           </Link>
-          . An Android phone not named here is still taken at the same counter, quoted per model.
+          . An Android phone not named here is still taken at the same Store, quoted per model.
         </p>
       </Section>
 
@@ -485,11 +485,11 @@ export default async function HomePage() {
           items={[
             {
               title: `${waitMinutes}-minute repairs`,
-              body: `Most phone screen and battery repairs are finished in about ${waitMinutes} minutes at the counter, so you wait rather than come back.`,
+              body: `Most phone screen and battery repairs are finished in about ${waitMinutes} minutes at the Store, so you wait rather than come back.`,
             },
             {
               title: "All brands and devices",
-              body: "iPhone, Samsung Galaxy, Google Pixel, iPads, laptops, desktops and game consoles, at one counter.",
+              body: "iPhone, Samsung Galaxy, Google Pixel, iPads, laptops, desktops and gaming consoles, at one Store.",
             },
             {
               title: "Free quote before any work",
@@ -497,18 +497,18 @@ export default async function HomePage() {
             },
             {
               title: "Locally and family owned",
-              body: "One Store, one counter, and the person who takes your device in is the person who repairs it.",
+              body: "One family-owned Store, and the person who takes your device in is the person who repairs it.",
             },
             {
               title: `${warrantyDays}-day warranty`,
               body: `Every repair is covered for ${warrantyDays} days on both the part fitted and the work done.`,
             },
-            /* Confirmed by the client 2026-08: the Store buys and sells
+            /* Confirmed by the client 2026-08: the store buys and sells
                phones. Nothing here claims refurbished stock or instant
                trade-in quotes, because neither is confirmed. */
             {
               title: "We buy and sell phones",
-              body: "Bring yours in for a quote at the counter, whether you are selling it, replacing it, or deciding between the two.",
+              body: "Bring yours in for a quote at the Store, whether you are selling it, replacing it, or deciding between the two.",
             },
           ]}
         />
@@ -560,7 +560,7 @@ export default async function HomePage() {
           level={2}
           id="reviews-heading"
           eyebrow="Reviews"
-          lead="Reviews of TechBrotherz live on the Store's Google listing, written by real customers on their own accounts."
+          lead="Reviews of TechBrotherz live on the store's Google listing, written by real customers on their own accounts."
         >
           What do customers say about TechBrotherz?
         </Heading>
@@ -609,7 +609,7 @@ export default async function HomePage() {
       {/* ----------------------------------------------------------- hours */}
       <Section id="hours" variant="tint" aria-labelledby="hours-heading" className="scroll-mt-24">
         <div className="flex flex-wrap items-center gap-4">
-          <Heading level={2} id="hours-heading" eyebrow="Store hours">
+          <Heading level={2} id="hours-heading" eyebrow="store hours">
             When is TechBrotherz open?
           </Heading>
           <OpenNowBadge />
@@ -636,7 +636,7 @@ export default async function HomePage() {
           level={2}
           id="location-heading"
           eyebrow="Service areas"
-          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, a few blocks west of Forest Lawn. Parking is free in the plaza in front of the Store.`}
+          lead={`TechBrotherz is on the stretch of 17 Avenue SE known as International Avenue, a few blocks west of Forest Lawn. Parking is free in the plaza in front of the store.`}
         >
           Serving <span className="text-tb-green-deep">SE Calgary</span> and beyond
         </Heading>
@@ -679,7 +679,7 @@ export default async function HomePage() {
         faqs={scopedFaqs}
         id="home-faq-heading"
         heading="Common questions about repairs in Calgary"
-        lead="The questions customers ask most before bringing a device in to the Calgary Store."
+        lead="The questions customers ask most before bringing a device in to the Calgary store."
         variant="light"
         aside={
           <Card>

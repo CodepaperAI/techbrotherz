@@ -85,7 +85,7 @@ export const SITE_SETTINGS: SiteSettingsDoc = {
   "region": "Alberta",
   "regionCode": "AB",
   /*
-   * The Store's real Google rating, read from the client's own listing (the
+   * The store's real Google rating, read from the client's own listing (the
    * one whose URL they supplied) as displayed on Google's own embed card,
    * verified 2026-08-14 by loading the embed and reading the card:
    * "TechBrotherz ... 4.8 ★ (732)". Not invented, not estimated, and dated so

@@ -34,7 +34,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # os
-.DS_Store
+.DS_store
 Thumbs.db
 
 # editor

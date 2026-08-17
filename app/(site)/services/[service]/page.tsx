@@ -309,7 +309,7 @@ export default async function ServicePage({ params }: PageProps) {
                       {row.name}
                     </th>
                     <td className="type-body text-tb-muted px-6 py-4">
-                      {row.minutes ? `About ${row.minutes} minutes` : "Quoted at the counter"}
+                      {row.minutes ? `About ${row.minutes} minutes` : "Quoted at the Store"}
                     </td>
                   </tr>
                 ))}

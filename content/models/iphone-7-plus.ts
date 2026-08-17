@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-7-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal, and we will say so at the counter. The iPhone 7 Plus stopped at iOS 15, which is now two major versions behind, and banking and messaging apps are beginning to drop it. A screen makes sense if the phone is otherwise healthy and you need it for a specific job. If the battery is also tired, replacing the handset is usually the better spend."
+          "text": "Marginal, and we will say so at the Store. The iPhone 7 Plus stopped at iOS 15, which is now two major versions behind, and banking and messaging apps are beginning to drop it. A screen makes sense if the phone is otherwise healthy and you need it for a specific job. If the battery is also tired, replacing the handset is usually the better spend."
         }
       ],
       "markDefs": [],

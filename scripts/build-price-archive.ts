@@ -62,7 +62,7 @@ function main() {
  * the structured data. This file is the record, so that reversing the decision
  * is an afternoon of work rather than re-entering a printed price list.
  *
- * WHAT IS CHEAPEST TO RESTORE, IF THE CLIENT RECONSIDERS
+ * WHAT IS CHEAPEST TO REstore, IF THE CLIENT RECONSIDERS
  *
  * Two items need no diagnosis, so "it depends" was never true of them and they
  * were the strongest quotable facts on the site:

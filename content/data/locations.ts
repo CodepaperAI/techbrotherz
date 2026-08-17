@@ -93,14 +93,14 @@ export const LOCATION_DOCS: LocationDoc[] = [
     "order": 10,
     "province": "Alberta",
     "published": true,
-    "routeDescription": "TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary. 17 Avenue SE runs east to west across the whole southeast, so most of the city reaches the Store on one road without turning off. Parking is free in the plaza in front of the store.",
+    "routeDescription": "TechBrotherz is at 3317 17 Ave SE, on International Avenue in southeast Calgary. 17 Avenue SE runs east to west across the whole southeast, so most of the city reaches the store on one road without turning off. Parking is free in the plaza in front of the store.",
     "seoDescription": "Walk-in phone, tablet and computer repair at 3317 17 Ave SE in Calgary. Most repairs about 30 minutes, parts and labour included, 60-day warranty.",
     "seoTitle": "Phone and Computer Repair in Calgary",
     "slug": {
       "_type": "slug",
       "current": "calgary"
     },
-    "transitDescription": "The MAX Purple bus rapid transit line runs the full length of 17 Avenue SE, connecting downtown Calgary to East Hills, with stops along International Avenue close to the Store."
+    "transitDescription": "The MAX Purple bus rapid transit line runs the full length of 17 Avenue SE, connecting downtown Calgary to East Hills, with stops along International Avenue close to the store."
   },
   {
     "_id": "location.chestermere",
@@ -165,7 +165,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": false,
-    "routeDescription": "TODO(client): downtown customers usually reach the Store by heading east on Memorial Drive or 17 Avenue SE. Confirm the route and drive time before this page is published.",
+    "routeDescription": "TODO(client): downtown customers usually reach the store by heading east on Memorial Drive or 17 Avenue SE. Confirm the route and drive time before this page is published.",
     "slug": {
       "_type": "slug",
       "current": "downtown"
@@ -198,14 +198,14 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": true,
-    "routeDescription": "TechBrotherz is inside Forest Lawn. The Store sits at 3317 17 Ave SE, on the stretch of 17 Avenue SE known as International Avenue, so most of Forest Lawn is a short walk or a two minute drive away. Parking is free in the plaza in front of the store.",
+    "routeDescription": "TechBrotherz is inside Forest Lawn. The store sits at 3317 17 Ave SE, on the stretch of 17 Avenue SE known as International Avenue, so most of Forest Lawn is a short walk or a two minute drive away. Parking is free in the plaza in front of the store.",
     "seoDescription": "TechBrotherz is on International Avenue in Forest Lawn at 3317 17 Ave SE. Walk in, no appointment, most repairs about 30 minutes.",
     "seoTitle": "Phone Repair in Forest Lawn, Calgary",
     "slug": {
       "_type": "slug",
       "current": "forest-lawn"
     },
-    "transitDescription": "MAX Purple stops along International Avenue put the Store within a short walk of most of Forest Lawn."
+    "transitDescription": "MAX Purple stops along International Avenue put the store within a short walk of most of Forest Lawn."
   },
   {
     "_id": "location.inglewood",
@@ -225,7 +225,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": false,
-    "routeDescription": "TODO(client): Inglewood sits west of the Store along 9 Avenue SE. Confirm the route, the drive time and the landmarks locals use before this page is published.",
+    "routeDescription": "TODO(client): Inglewood sits west of the store along 9 Avenue SE. Confirm the route, the drive time and the landmarks locals use before this page is published.",
     "slug": {
       "_type": "slug",
       "current": "inglewood"
@@ -250,7 +250,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": false,
-    "routeDescription": "TODO(client): Marlborough sits north of the Store across Memorial Drive. Confirm the route and drive time before this page is published.",
+    "routeDescription": "TODO(client): Marlborough sits north of the store across Memorial Drive. Confirm the route and drive time before this page is published.",
     "slug": {
       "_type": "slug",
       "current": "marlborough"
@@ -274,7 +274,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     },
     "province": "Alberta",
     "published": false,
-    "routeDescription": "TODO(client): Ogden sits southwest of the Store. Confirm the route and drive time before this page is published.",
+    "routeDescription": "TODO(client): Ogden sits southwest of the store. Confirm the route and drive time before this page is published.",
     "slug": {
       "_type": "slug",
       "current": "ogden"

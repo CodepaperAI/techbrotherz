@@ -30,7 +30,7 @@ const PATH = "/about";
 export const metadata: Metadata = buildMetadata({
   title: "About TechBrotherz, Calgary",
   description:
-    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair Store at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
+    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair store at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
   path: PATH,
 });
 
@@ -71,9 +71,9 @@ export default async function AboutPage() {
     localBusiness(settings ?? {}, reviews),
     webPage({
       type: "AboutPage",
-      name: "About TechBrotherz, a walk-in repair Store in Calgary",
+      name: "About TechBrotherz, a walk-in repair store in Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, tablet and computer repair Store at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, tablet and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -88,20 +88,20 @@ export default async function AboutPage() {
       crumbLabel="About"
       lead={
         <>
-          TechBrotherz is a local, family-owned walk-in cell phone and computer repair Store at{" "}
+          TechBrotherz is a local, family-owned walk-in cell phone and computer repair store at{" "}
           {SITE.street} in {SITE.city}, {SITE.region}, on the stretch of 17 Avenue SE known as
-          International Avenue. One Store, one counter, and every repair quoted free before any work
+          International Avenue. One Store, and every repair quoted free before any work
           starts.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz is a local, family-owned walk-in repair Store at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and game consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a local, family-owned walk-in repair store at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and gaming consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
-          { label: "What we are", value: "A local, family-owned walk-in Store, one Calgary location" },
+          { label: "What we are", value: "A local, family-owned walk-in store, one Calgary location" },
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           {
             label: "Devices",
-            value: "Phones of every brand, iPads, laptops, desktops, game consoles",
+            value: "Phones of every brand, iPads, laptops, desktops, gaming consoles",
           },
           { label: "Typical wait", value: `About ${waitMinutes} minutes on most phone repairs` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
@@ -119,8 +119,8 @@ export default async function AboutPage() {
         <div className="mt-6 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="type-body measure text-tb-muted">
-              TechBrotherz is a family-owned repair Store, not a chain and not a mail-in service.
-              There is one counter, at {SITE.street} in {SITE.city}, and the person who takes your
+              TechBrotherz is a family-owned repair store, not a chain and not a mail-in service.
+              There is one Store, at {SITE.street} in {SITE.city}, and the person who takes your
               device in is the person who repairs it. You can watch a phone screen replacement
               happen if you want to.
             </p>
@@ -133,14 +133,14 @@ export default async function AboutPage() {
             ) : null}
 
             <p className="type-body measure text-tb-muted mt-4">
-              The Store works on walk-ins rather than appointments, because most of what comes
+              The store works on walk-ins rather than appointments, because most of what comes
               through the door is urgent: a cracked screen on the way to work, a laptop that will
               not start the night before something is due. Most phone screen and battery repairs are
               finished in about {waitMinutes} minutes, so people wait rather than come back.
             </p>
 
             <p className="type-body measure text-tb-muted mt-4">
-              Every repair TechBrotherz carries out is quoted free at the counter, and{" "}
+              Every repair TechBrotherz carries out is quoted free at the Store, and{" "}
               <Link href="/contact" className="text-tb-green-deep hover:underline">
                 how quoting works
               </Link>{" "}
@@ -152,7 +152,7 @@ export default async function AboutPage() {
 
           <div className="lg:col-span-5">
             <Card>
-              <h3 className="type-h3 text-tb-text">The Store in numbers</h3>
+              <h3 className="type-h3 text-tb-text">The store in numbers</h3>
               <dl className="type-body mt-5 space-y-3">
                 {[
                   ["Open", "7 days a week"],
@@ -194,12 +194,12 @@ export default async function AboutPage() {
           LG and other Android handsets, along with iPads and tablets, laptops and desktop
           computers, MacBooks and gaming machines, and{" "}
           <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
-            game consoles
+            gaming consoles
           </Link>
           , including the Xbox, PlayStation and Nintendo Switch ranges. That covers screens,
           batteries, charging ports, cameras, buttons and back glass on phones, and screens,
           keyboards, charging sockets, Windows installation, virus removal and clean-ups on
-          computers. The Store also{" "}
+          computers. The store also{" "}
           <Link href="/services/phone-unlocking" className="text-tb-green-deep hover:underline">
             unlocks phones
           </Link>
@@ -210,7 +210,7 @@ export default async function AboutPage() {
         <p className="type-body measure text-tb-muted mt-4">
           Just as important is what we will tell you not to do. If a repair costs a large fraction
           of what the device is worth, or if the tablet has stopped receiving software updates, you
-          will hear that at the counter rather than after paying. Liquid damage is the one repair no
+          will hear that at the Store rather than after paying. Liquid damage is the one repair no
           honest shop will promise, because the outcome depends on what got in and how long it sat
           there.
         </p>
@@ -260,7 +260,7 @@ export default async function AboutPage() {
         </Heading>
 
         <p className="type-body measure text-tb-muted mt-6">
-          Every repair TechBrotherz carries out is quoted free at the counter before any work
+          Every repair TechBrotherz carries out is quoted free at the Store before any work
           starts, as one figure that includes the part and the labour, so the number you agree to
           is the number you pay before tax. There is no separate bench fee on a phone repair and no
           charge to look at a phone. Computer diagnostics carry a fixed fee, and that is quoted
@@ -268,7 +268,7 @@ export default async function AboutPage() {
         </p>
 
         <p className="type-body measure text-tb-muted mt-4">
-          Quoting at the counter rather than from a printed list is deliberate: part costs move
+          Quoting at the Store rather than from a printed list is deliberate: part costs move
           with supply, and TechBrotherz would rather give you a firm figure it can honour than a
           published number it cannot. Call {SITE.phone} with the model and the fault and you will
           get that figure before you travel.
@@ -290,7 +290,7 @@ export default async function AboutPage() {
           level={2}
           id="area-heading"
           eyebrow="Service area"
-          lead={`TechBrotherz serves ${SITE.city}, Chestermere, Airdrie and the surrounding Calgary communities from one Store on International Avenue.`}
+          lead={`TechBrotherz serves ${SITE.city}, Chestermere, Airdrie and the surrounding Calgary communities from one store on International Avenue.`}
         >
           Where does TechBrotherz operate?
         </Heading>
@@ -298,7 +298,7 @@ export default async function AboutPage() {
         <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
 
         <p className="type-body measure text-tb-muted mt-8">
-          The Store sits in southeast Calgary, a few blocks west of Forest Lawn, on the stretch of 17 Avenue SE
+          The store sits in southeast Calgary, a few blocks west of Forest Lawn, on the stretch of 17 Avenue SE
           known as International Avenue. See{" "}
           <Link href="/locations" className="text-tb-green-deep hover:underline">
             the areas TechBrotherz serves
@@ -323,7 +323,7 @@ export default async function AboutPage() {
         <Container>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="type-h2 text-tb-white">Come and see the Store</h2>
+              <h2 className="type-h2 text-tb-white">Come and see the store</h2>
               <p className="type-lead measure text-tb-muted-dark mt-4">
                 We are at {SITE.street} in {SITE.city}, open seven days a week. Walk in during
                 opening hours, no appointment needed.

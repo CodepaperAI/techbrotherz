@@ -197,7 +197,7 @@ export const ROUTES: RouteDef[] = [
   },
   {
     path: "/services/game-console-repair",
-    label: "Game console repair",
+    label: "Gaming console repair",
     navLabel: "Consoles",
     tier: "service-hub",
     status: "built",
@@ -554,7 +554,7 @@ export const ROUTES: RouteDef[] = [
   },
   {
     path: "/blog/third-party-vs-apple-store-repair-canada",
-    label: "Third-party vs Apple Store repair in Canada",
+    label: "Third-party vs Apple store repair in Canada",
     tier: "guide",
     status: "pending",
     parent: "/blog",

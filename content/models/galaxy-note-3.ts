@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-3-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 3 is the one with the stitched faux-leather back, and it used the wide USB 3.0 connector that Samsung fitted to only a handful of phones. That connector is the single most common reason a Note 3 comes to the TechBrotherz counter, and it is the one repair still worth doing on this model."
+          "text": "The Galaxy Note 3 is the one with the stitched faux-leather back, and it used the wide USB 3.0 connector that Samsung fitted to only a handful of phones. That connector is the single most common reason a Note 3 comes to the TechBrotherz Store, and it is the one repair still worth doing on this model."
         }
       ],
       "markDefs": [],

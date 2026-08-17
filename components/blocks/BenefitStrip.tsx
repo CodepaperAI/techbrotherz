@@ -20,7 +20,7 @@ const ITEMS = [
   {
     icon: Clock,
     title: "Fast turnaround",
-    body: `Most repairs take about ${SITE.typicalWaitMinutes} minutes at the counter.`,
+    body: `Most repairs take about ${SITE.typicalWaitMinutes} minutes at the Store.`,
   },
   {
     icon: ShieldCheck,

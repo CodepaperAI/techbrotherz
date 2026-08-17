@@ -387,7 +387,7 @@ Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. The
 ### 8.2 Structured data (via the typed `<JsonLd>` component)
 
 - [ ] Every page: `Organization` + `WebSite` with `SearchAction`, plus `BreadcrumbList`.
-- [ ] Home, `/contact`, all local pages: `LocalBusiness`, `additionalType: ["MobilePhoneStore","ComputerStore"]`, `@id: https://techbrotherz.com/#business`, full `address`, `geo`, `telephone`, `openingHoursSpecification`, `areaServed` (Calgary, Chestermere, Airdrie), `priceRange: "$$"`, `hasMap`, `paymentAccepted`, `currenciesAccepted: "CAD"`.
+- [ ] Home, `/contact`, all local pages: `LocalBusiness`, `additionalType: ["MobilePhonestore","Computerstore"]`, `@id: https://techbrotherz.com/#business`, full `address`, `geo`, `telephone`, `openingHoursSpecification`, `areaServed` (Calgary, Chestermere, Airdrie), `priceRange: "$$"`, `hasMap`, `paymentAccepted`, `currenciesAccepted: "CAD"`.
 - [ ] Service hubs and repair-type pages: `Service` with `provider: {"@id": "...#business"}`, `serviceType`, `areaServed`, `hasOfferCatalog`.
 - [ ] Model pages: `ItemList` of `Offer`, each `priceCurrency: "CAD"`, `price`, `availability`, `warranty: { durationOfWarranty: "P60D" }`. `quoteOnly` entries emit the Offer with no `price`, `availability: InStock`, plus a `potentialAction` of type `ContactAction`.
 - [ ] Every FAQ block: `FAQPage` built from `plainAnswer`. **Never duplicate the same question in two FAQPage blocks on one page.**

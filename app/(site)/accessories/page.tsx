@@ -48,17 +48,17 @@ export default async function AccessoriesPage() {
       {
         question: "Does TechBrotherz sell phone cases and screen protectors in Calgary?",
         answer:
-          "Yes. TechBrotherz at 3317 17 Ave SE in Calgary stocks cases, tempered glass, film screen protectors and privacy screen protectors for phones, iPads and tablets, alongside its repair counter. Stock varies by device model, so phoning (403) 273-8324 before travelling is the reliable way to check what is on the shelf for yours.",
+          "Yes. TechBrotherz at 3317 17 Ave SE in Calgary stocks cases, tempered glass, film screen protectors and privacy screen protectors for phones, iPads and tablets, alongside its repair Store. Stock varies by device model, so phoning (403) 273-8324 before travelling is the reliable way to check what is on the shelf for yours.",
       },
       {
         question: "Do you have a case or protector for my exact model?",
         answer:
-          "TechBrotherz stocks accessories for the phone, iPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the Store asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
+          "TechBrotherz stocks accessories for the phone, iPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the store asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
       },
       {
-        question: "Will TechBrotherz fit a screen protector bought at the counter?",
+        question: "Will TechBrotherz fit a screen protector bought at the Store?",
         answer:
-          "Yes. A screen protector bought at the TechBrotherz counter in Calgary is fitted there, aligned and pressed down without trapped dust or bubbles, before you leave. Fitting glass cleanly is routine work for a shop that replaces screens every day.",
+          "Yes. A screen protector bought at the TechBrotherz Store in Calgary is fitted there, aligned and pressed down without trapped dust or bubbles, before you leave. Fitting glass cleanly is routine work for a shop that replaces screens every day.",
       },
       {
         question: "Should you use both a case and a screen protector?",
@@ -77,7 +77,7 @@ export default async function AccessoriesPage() {
       type: "WebPage",
       name: "Phone, iPad and tablet accessories in Calgary",
       description:
-        "Cases, tempered glass, screen protectors and privacy screen protectors stocked at the TechBrotherz counter in Calgary.",
+        "Cases, tempered glass, screen protectors and privacy screen protectors stocked at the TechBrotherz Store in Calgary.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
       dateModified: settings?._updatedAt,
@@ -93,18 +93,18 @@ export default async function AccessoriesPage() {
       crumbLabel="Accessories"
       lead={
         <>
-          TechBrotherz, a walk-in cell phone and computer repair Store at {SITE.street} in{" "}
+          TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, stocks the accessories that stop devices coming back to the
-          repair counter: cases, tempered glass, film screen protectors and privacy screen
+          repair Store: cases, tempered glass, film screen protectors and privacy screen
           protectors for phones, iPads and tablets.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, iPads and tablets: cases, tempered glass, film screen protectors and privacy screen protectors. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the counter is fitted there before you leave.`,
+        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, iPads and tablets: cases, tempered glass, film screen protectors and privacy screen protectors. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the Store is fitted there before you leave.`,
         keyFacts: [
           { label: "In stock", value: "Cases, tempered glass, screen and privacy protectors" },
           { label: "For", value: "Phones, iPads and tablets" },
-          { label: "Fitting", value: "Protectors bought at the counter are fitted there" },
+          { label: "Fitting", value: "Protectors bought at the Store are fitted there" },
           { label: "Stock check", value: `Phone ${SITE.phone} with your exact model` },
           { label: "Appointment", value: "Not needed, walk in during opening hours" },
         ],
@@ -118,7 +118,7 @@ export default async function AccessoriesPage() {
           level={2}
           id="stock-heading"
           eyebrow="On the shelf"
-          lead="Four kinds of accessory, for the three kinds of device the repair counter sees every day."
+          lead="Four kinds of accessory, for the three kinds of device the repair Store sees every day."
         >
           What accessories does TechBrotherz stock?
         </Heading>
@@ -134,7 +134,7 @@ export default async function AccessoriesPage() {
             <h3 className="type-h3 text-tb-text mt-4">Cases</h3>
             <p className="type-body text-tb-muted mt-2">
               Cases for phones and tablets. A case absorbs the corner impacts that crack screens,
-              which is the most common repair at this counter.
+              which is the most common repair at this Store.
             </p>
           </Card>
           <Card>
@@ -270,13 +270,13 @@ export default async function AccessoriesPage() {
       <Section aria-labelledby="why-heading">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
-            <Heading level={2} id="why-heading" eyebrow="The repair counter's view">
-              Why buy a case from a repair Store?
+            <Heading level={2} id="why-heading" eyebrow="The repair Store's view">
+              Why buy a case from a repair store?
             </Heading>
             <div className="measure mt-8 space-y-5">
               <p className="type-body text-tb-muted">
                 TechBrotherz replaces cracked screens all day, so the accessory shelf is stocked by
-                people who see exactly how devices break. The most common repair at the counter is
+                people who see exactly how devices break. The most common repair at the Store is
                 a{" "}
                 <Link href="/services/phone-repair" className="text-tb-green-deep hover:underline">
                   cracked phone screen
@@ -288,11 +288,11 @@ export default async function AccessoriesPage() {
                 <Link href="/services/ipad-repair" className="text-tb-green-deep hover:underline">
                   iPad screen repair
                 </Link>{" "}
-                is one of the larger jobs the Store quotes, and an iPad in a decent case with glass
+                is one of the larger jobs the store quotes, and an iPad in a decent case with glass
                 on the front is a repair that mostly never happens.
               </p>
               <p className="type-body text-tb-muted">
-                A protector bought at the counter is fitted at the counter: aligned, pressed down
+                A protector bought at the Store is fitted at the Store: aligned, pressed down
                 and free of trapped dust, before you leave. Fitting glass cleanly is routine for a
                 shop that does{" "}
                 <Link href="/repair/apple-iphone" className="text-tb-green-deep hover:underline">
@@ -318,8 +318,8 @@ export default async function AccessoriesPage() {
               <Card>
                 <h3 className="type-h3 text-tb-text">No online ordering</h3>
                 <p className="type-body text-tb-muted mt-2">
-                  TechBrotherz is a walk-in counter, not a web store. Accessories are bought at the
-                  Store, where the fit on your actual device can be checked before you pay.
+                  TechBrotherz is a walk-in Store, not a web store. Accessories are bought at the
+                  store, where the fit on your actual device can be checked before you pay.
                 </p>
               </Card>
               <Card>
@@ -329,7 +329,7 @@ export default async function AccessoriesPage() {
                   indestructible, and a hard enough impact can still reach the screen. When it
                   does,{" "}
                   <Link href="/contact" className="text-tb-green-deep hover:underline">
-                    the repair counter
+                    the repair Store
                   </Link>{" "}
                   is a few steps from the accessory shelf.
                 </p>

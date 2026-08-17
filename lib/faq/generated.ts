@@ -54,7 +54,7 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
   /*
    * Phase 7a-ii: the price left, and with it the only thing that made two of
    * these four answers differ per model. They are re-grounded on what the
-   * model's own record still holds: which repairs the Store does on it, how long
+   * model's own record still holds: which repairs the store does on it, how long
    * the shortest and longest of those take, its age, and its software support.
    * Those vary by model in the same way a price did, which is what keeps 84
    * model pages from carrying one identical FAQ answer and one identical
@@ -79,7 +79,7 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
   faqs.push({
     question: `How much does a ${input.name} repair cost in Calgary?`,
     answer:
-      `A ${input.name} repair at TechBrotherz in Calgary is quoted at the counter, free of charge, ` +
+      `A ${input.name} repair at TechBrotherz in Calgary is quoted at the Store, free of charge, ` +
       `before any work starts. ` +
       (input.prices.length > 0
         ? `TechBrotherz carries out ${input.prices.length} ${input.prices.length === 1 ? "repair" : "different repairs"} ` +
@@ -112,7 +112,7 @@ export function modelFaqs(input: ModelFaqInput): PageFaq[] {
     answer:
       `Most ${input.name} repairs at TechBrotherz in Calgary ${timing}, and no appointment is needed. ` +
       (longest !== null ? `The longest job on this model is around ${longest} minutes. ` : "") +
-      `If the part for the ${input.name} is not in stock, TechBrotherz will tell you at the counter ` +
+      `If the part for the ${input.name} is not in stock, TechBrotherz will tell you at the Store ` +
       `before you leave the device.`,
   });
 
@@ -159,7 +159,7 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
   faqs.push({
     question: `How much does ${input.brandName} repair cost in Calgary?`,
     answer:
-      `${input.brandName} repairs at TechBrotherz in Calgary are quoted per model at the counter, ` +
+      `${input.brandName} repairs at TechBrotherz in Calgary are quoted per model at the Store, ` +
       `free of charge, before any work starts. ` +
       // Year spans went 2026-08 on the client's no-years instruction; the span
       // is stated as a duration rather than as release years.
@@ -182,14 +182,14 @@ export function brandFaqs(input: BrandFaqInput): PageFaq[] {
       answer:
         `TechBrotherz in Calgary repairs ${input.modelCount} ${input.brandName} models, from the oldest models still worth fixing to the newest in the catalogue. ` +
         (input.awaitingCount > 0
-          ? `A further ${input.awaitingCount} ${input.awaitingCount === 1 ? "model is" : "models are"} repaired to order, quoted at the counter once the part is confirmed.`
-          : `Every model in the range is quoted individually at the counter.`),
+          ? `A further ${input.awaitingCount} ${input.awaitingCount === 1 ? "model is" : "models are"} repaired to order, quoted at the Store once the part is confirmed.`
+          : `Every model in the range is quoted individually at the Store.`),
     });
   }
 
   faqs.push({
     question: `Do I need an appointment to get a ${input.brandName} device repaired?`,
-    answer: `No. TechBrotherz at 3317 17 Ave SE in Calgary takes ${input.brandName} repairs as walk-ins during opening hours, and most phone repairs are finished in about ${input.waitMinutes} minutes at the counter. Every repair carries a ${input.warrantyDays}-day warranty on the part and the workmanship.`,
+    answer: `No. TechBrotherz at 3317 17 Ave SE in Calgary takes ${input.brandName} repairs as walk-ins during opening hours, and most phone repairs are finished in about ${input.waitMinutes} minutes at the Store. Every repair carries a ${input.warrantyDays}-day warranty on the part and the workmanship.`,
   });
 
   return faqs;

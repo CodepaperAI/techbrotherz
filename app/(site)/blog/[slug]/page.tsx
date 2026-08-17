@@ -133,11 +133,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         </h2>
         <Card>
           <p className="type-body text-tb-text">
-            Written by <strong>TechBrotherz</strong>, the walk-in repair counter at {SITE.street}{" "}
+            Written by <strong>TechBrotherz</strong>, the walk-in repair Store at {SITE.street}{" "}
             in {SITE.city}. Published {formatDate(post.datePublished)}.
           </p>
           <p className="type-caption text-tb-muted mt-2">
-            Everything here reflects how repairs are actually handled at the counter. No article on
+            Everything here reflects how repairs are actually handled at the Store. No article on
             this site is paid for or sponsored.
           </p>
         </Card>

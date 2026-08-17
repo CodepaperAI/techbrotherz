@@ -6,7 +6,7 @@
  *
  * 1. **Stock may show the work, never the business.** A photograph of hands
  *    replacing a screen is a fair illustration of the service. The same
- *    photograph captioned as our bench, our technician or our Store is invented
+ *    photograph captioned as our bench, our technician or our store is invented
  *    social proof, which this build has refused since Phase 1. Alt text
  *    describes what the photo shows and never who it is.
  * 2. **Nothing is load-bearing.** Delete public/demo/ and every page still
@@ -31,7 +31,7 @@ export interface DemoImage {
   height: number;
   /**
    * Describes the photograph, never the business. "A technician replacing a
-   * phone screen" is fine. "Our technician at the TechBrotherz counter" is not.
+   * phone screen" is fine. "Our technician at the TechBrotherz Store" is not.
    */
   alt: string;
   /** Unsplash photo page, for the manifest and the contact sheet. Empty for a
@@ -221,7 +221,7 @@ export const IMAGE_EDITS: Record<string, string> = {
   "home-hero-skyline":
     "The Calgary skyline behind the home hero, supplied by the client via WhatsApp and used on their explicit instruction 2026-08 with no further verification, as directed. Two positions stay on record rather than silent: the file is 1600x900, below the 2000px floor the earlier brief set for a full-bleed hero, and it appears to be a commercial composite whose ownership is unconfirmed (CLAUDE.md question 26). Served at native size, never upscaled, behind a 60 percent black scrim plus a text-side gradient, which is also what keeps the softness invisible. Encoded at quality 72, 225 KB.",
   "service-game-console-repair":
-    "Supplied by the client in 2026-08 for the game console page. Already 3:2 at 1920x1280, so resized only, no crop. The Sony wordmark on the controller is incidental to a photograph of gameplay and is not used as a mark, per the revised Section 8.9 rule. The supplied filename (pexels-playstation-1845880_1920.jpg) indicates a stock original, Pixabay photo 1845880; the photographer credit is unverified, so it stays TODO(client) rather than guessed.",
+    "Supplied by the client in 2026-08 for the gaming console page. Already 3:2 at 1920x1280, so resized only, no crop. The Sony wordmark on the controller is incidental to a photograph of gameplay and is not used as a mark, per the revised Section 8.9 rule. The supplied filename (pexels-playstation-1845880_1920.jpg) indicates a stock original, Pixabay photo 1845880; the photographer credit is unverified, so it stays TODO(client) rather than guessed.",
   "home-process-2":
     "Cropped to 4:3 on the point of work. The Apple mark on the battery in frame is incidental to a workshop photograph and is not used as a mark.",
   "home-process-3":

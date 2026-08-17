@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s5-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S5 is the one with the dimpled back. It was Samsung's first water-resistant flagship, achieved with a rubber-sealed charging port flap rather than internal adhesive, and it kept the removable battery that the S6 would drop a year later. It arrives at the counter more often than any other Galaxy of its age."
+          "text": "The Galaxy S5 is the one with the dimpled back. It was Samsung's first water-resistant flagship, achieved with a rubber-sealed charging port flap rather than internal adhesive, and it kept the removable battery that the S6 would drop a year later. It arrives at the Store more often than any other Galaxy of its age."
         }
       ],
       "markDefs": [],
