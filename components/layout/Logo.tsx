@@ -47,8 +47,11 @@ export function Logo({
   onDark?: boolean;
   variant?: LogoVariant;
 }) {
-  /* The source files are 432x200 and 430x200; both render at a 2.16 ratio. */
-  const height = variant === "full" ? 74 : variant === "icon" ? 44 : 61;
+  /* The source files are 432x200 and 430x200; both render at a 2.16 ratio.
+   * Enlarged again 2026-08 at the client's request: the compact header
+   * lockup fills the 72px header bar exactly, which is as big as it can go
+   * without pushing the header taller. */
+  const height = variant === "full" ? 88 : variant === "icon" ? 52 : 72;
   const width = Math.round(height * 2.16);
 
   return (

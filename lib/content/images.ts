@@ -55,7 +55,7 @@ const RATIO_SIZE: Record<ImageRatio, { width: number; height: number }> = {
 const NARROW: Record<string, number> = {
   "home-hero": 1000,
   "service-phone-repair": 738,
-  "service-password-reset": 1010,
+  "service-frp-removal": 1010,
 };
 
 function image(
@@ -189,10 +189,24 @@ export const IMAGES: Record<string, DemoImage> = {
     "3:2",
     "A combination padlock closed through a chain-link fence, with the numbered dial in focus",
   ),
-  "service-password-reset": supplied(
+  "service-password-reset": image(
     "service-password-reset",
     "3:2",
+    "A phone lying on a wooden desk showing the welcome screen that follows a factory reset",
+    "Sam Grozyan",
+    "imOSfUb6Rg4",
+  ),
+  "service-frp-removal": supplied(
+    "service-frp-removal",
+    "3:2",
     "Two phone screens showing Google's account verification step after a factory reset, with an unlocked padlock graphic",
+  ),
+  "buy-sell-trade": image(
+    "buy-sell-trade",
+    "3:2",
+    "A pile of assorted smartphones and a tablet stacked on a plain surface",
+    "Hal Gatewood",
+    "WcYeiHMexR0",
   ),
   "service-virus-removal": image(
     "service-virus-removal",
@@ -217,7 +231,9 @@ export const IMAGE_EDITS: Record<string, string> = {
   "service-phone-unlocking":
     "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame the old service-tablet-repair used, which put two crops of one photograph in the same grid on the home page.",
   "service-password-reset":
-    "Replaced a second time on the client's instruction in 2026-08 with a supplied graphic of Google's FRP verification screens and an unlocked-padlock motif. Two positions recorded so the decision is auditable. First, the Google logo inside the padlock is a manufacturer mark used as a design element, which is the case Section 8.9 recommends against; the choice is the client's, as that section provides. Second, the image depicts Android FRP verification while this slot fronts the Windows computer password reset; it may belong better on the phone unlocking page, which carries the FRP removal service, and moving it is a one-line change. The 839x673 original sits on pure white, so it is padded to 3:2 rather than cropped and capped near native width. The previous original (imOSfUb6Rg4, the post-reset welcome screen) stays in _source.",
+    "Restored 2026-08 to the post-reset welcome screen (imOSfUb6Rg4) when the FRP graphic the client supplied moved to the new FRP removal card, resolving the recorded mismatch: that graphic depicts Android FRP verification, which was never what a Windows password reset shows.",
+  "service-frp-removal":
+    "The client-supplied graphic of Google's FRP verification screens, moved here 2026-08 from the password-reset slot; on this card it depicts exactly the service offered. The standing Section 8.9 position remains recorded: the Google mark inside the padlock motif is a manufacturer logo used as a design element, and using it is the client's call. Pure white ground padded to 3:2, capped near native width.",
   "home-hero-skyline":
     "The Calgary skyline behind the home hero, supplied by the client via WhatsApp and used on their explicit instruction 2026-08 with no further verification, as directed. Two positions stay on record rather than silent: the file is 1600x900, below the 2000px floor the earlier brief set for a full-bleed hero, and it appears to be a commercial composite whose ownership is unconfirmed (CLAUDE.md question 26). Served at native size, never upscaled, behind a 60 percent black scrim plus a text-side gradient, which is also what keeps the softness invisible. Encoded at quality 72, 225 KB.",
   "service-game-console-repair":

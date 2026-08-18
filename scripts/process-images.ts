@@ -114,13 +114,31 @@ export const SLOTS: SlotSpec[] = [
    * element, which Section 8.9 recommends against; recorded as the client's
    * call.
    */
+  /*
+   * 2026-08: the FRP graphic moved to the dedicated FRP card, where it
+   * finally depicts the right service, and password reset returns to the
+   * post-reset welcome screen.
+   */
   {
     slot: "service-password-reset",
+    source: "imOSfUb6Rg4",
+    ratio: "3:2",
+    position: "centre",
+  },
+  {
+    slot: "service-frp-removal",
     source: "supplied-frp-unlock",
     ratio: "3:2",
     position: "centre",
     pad: "#ffffff",
     maxWidth: 1010,
+  },
+  /* Buy, sell and trade: a pile of assorted handsets, no logos, no faces. */
+  {
+    slot: "buy-sell-trade",
+    source: "WcYeiHMexR0",
+    ratio: "3:2",
+    position: "centre",
   },
   { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
   /*

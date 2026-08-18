@@ -689,11 +689,11 @@ const computerRepair: ServiceDef = {
 
 const phoneUnlocking: ServiceDef = {
   slug: "phone-unlocking",
-  h1: "Phone Unlocking and FRP Removal in Calgary",
+  h1: "Phone Unlocking in Calgary",
   eyebrow: "Unlocking",
-    seoTitle: "Phone Unlocking & FRP Removal Calgary",
+    seoTitle: "Phone Unlocking Calgary | Any Canadian Carrier",
   seoDescription:
-        "Carrier unlocking for any Canadian carrier and Google FRP removal at TechBrotherz in Calgary. Carriers must unlock free on request; FRP needs proof of ownership.",
+        "Carrier unlocking for any Canadian carrier at TechBrotherz in Calgary, usually the same day. Ask your carrier first: they must unlock free on request by CRTC rule.",
   serviceType: "Phone unlocking",
   repairSlugs: [],
   brandSlugs: ["apple-iphone", "samsung-galaxy"],
@@ -704,12 +704,12 @@ const phoneUnlocking: ServiceDef = {
   lead: () =>
     `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, unlocks phones from any Canadian carrier, usually the same day. Before you pay anyone, ask your own carrier, because since December 2017 Canadian carriers have been required to unlock phones free of charge on request.`,
   answer: () =>
-    `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 carriers must unlock phones free of charge on request. TechBrotherz also removes Google Factory Reset Protection (FRP) from Android phones, and proof of ownership is required before that work starts.`,
+    `TechBrotherz in Calgary unlocks phones from any Canadian carrier, usually the same day. Ask your carrier first: under the CRTC Wireless Code, since 1 December 2017 carriers must unlock phones free of charge on request. Google account and FRP removal is a separate service with its own page, and proof of ownership is required for it.`,
   keyFacts: () => [
     { label: "Carriers", value: "Any Canadian carrier" },
     { label: "Time", value: "Usually the same day" },
     { label: "Ask your carrier first", value: "They must do it free, by CRTC rule" },
-    { label: "FRP removal", value: "Android Google lock, proof of ownership required" },
+    { label: "Your data", value: "Untouched by a carrier unlock" },
     { label: "Blacklisted phones", value: "Cannot be unlocked, by anyone" },
   ],
   process: [
@@ -773,11 +773,11 @@ const phoneUnlocking: ServiceDef = {
       ],
     },
     {
-      heading: "Can TechBrotherz remove Factory Reset Protection (FRP)?",
+      heading: "What about Google account locks and screen locks?",
       paragraphs: [
-        "Factory Reset Protection is the Google account lock built into Android. When a phone is factory reset without first being signed out of its Google account, the phone refuses to finish setting up until that account's credentials are entered. It exists to make a stolen phone worthless, and it catches legitimate owners too: a secondhand phone reset by a seller who forgot to sign out, or your own phone after a reset when the account password is long forgotten.",
-        "TechBrotherz removes FRP from Android phones in that situation, and proof of ownership is required before any work starts. That requirement is not negotiable, for the same reason a blacklisted phone cannot be unlocked: the lock exists to protect owners, and we will not defeat it for a phone that cannot be shown to be yours. Bring what you have, such as the original receipt, and phone (403) 273-8324 ahead of the trip to confirm it is enough.",
-        "If the phone still has the Google account signed in and you simply cannot remember the password, try Google's own account recovery first, because that route is free. FRP removal is for the case where the phone is already reset and stuck at the verification screen.",
+        "Carrier unlocking, which this page covers, removes a network restriction. A phone stuck at a Google account verification screen after a factory reset is a different lock entirely: Factory Reset Protection, an ownership protection rather than a carrier one. TechBrotherz handles that as its own service, with proof of ownership required, and its page explains what it can and cannot do.",
+        "The two are easy to confuse because both stop a phone being used. The test is what the phone is asking for. A phone that works but rejects another carrier's SIM needs a carrier unlock. A phone that will not finish setting up until a previous Google account signs in needs FRP removal, which is a different job with different rules.",
+        "Forgotten screen locks sit in the same family as FRP: an ownership protection the Store will only ever remove for a device that can be shown to be yours. Ask at the Store, and bring what proof you have.",
       ],
     },
     {
@@ -793,7 +793,7 @@ const phoneUnlocking: ServiceDef = {
     "Anyone who has bought a phone secondhand and cannot reach the original account holder to have it unlocked.",
     "People who have brought a phone from another country and want it working on a Canadian network.",
     "Anyone switching carriers who wants to keep the handset they already own.",
-    "Anyone locked out of their own Android phone by Factory Reset Protection after a reset, who can show the phone is theirs.",
+    "Anyone unsure whether their locked phone needs a carrier unlock or something else, who wants a straight answer before paying anything.",
   ],
   limits: () => [
     {
@@ -801,8 +801,8 @@ const phoneUnlocking: ServiceDef = {
       body: "A handset reported lost or stolen sits on the shared national IMEI database. No shop and no carrier can unlock it, and it will not work on a Canadian network. We check this before you pay.",
     },
     {
-      title: "FRP removal requires proof of ownership",
-      body: "Factory Reset Protection exists to make a stolen phone worthless, and we will not defeat it for a phone that cannot be shown to be yours. Bring proof of ownership, such as the original receipt, and call ahead to confirm what you have is enough.",
+      title: "Google locks are a different service",
+      body: "A phone stuck at a Google verification screen after a reset needs FRP removal, not a carrier unlock. That is its own service with its own rules, and proof of ownership is required for it without exception.",
     },
     {
       title: "Activation Lock is not carrier lock",
@@ -829,9 +829,9 @@ const phoneUnlocking: ServiceDef = {
         "No. Carrier unlocking removes a network restriction and changes nothing else on the handset. It does not erase data, does not alter the operating system, does not sign you out of your Apple or Google account, and does not affect the manufacturer's warranty. It is a network permission rather than a modification to the phone.",
     },
     {
-      question: "Can TechBrotherz remove a Google account lock (FRP) from my phone?",
+      question: "What do you need from me to unlock my phone?",
       answer:
-        "Yes. TechBrotherz in Calgary removes Factory Reset Protection from Android phones that are stuck at the Google account verification screen after a reset. Proof of ownership is required before any work starts, because the lock exists to protect owners and TechBrotherz will not defeat it on a phone that cannot be shown to be yours.",
+        "Three things: the phone itself, its make and model, and its IMEI number, which appears on screen when you dial *#06# or sits in the settings under About. With those, TechBrotherz in Calgary confirms whether the unlock can be done and what it involves before you pay anything. A SIM from the carrier you are moving to is useful for testing but not required.",
     },
   ],
   globalCategories: ["unlocking", "walkin"],
@@ -1278,6 +1278,153 @@ const gameConsoleRepair: ServiceDef = {
   sources: [],
 };
 
+/* ------------------------------------------------- frp and google unlocking */
+
+/**
+ * Split out of the phone-unlocking page 2026-08 at the client's request for a
+ * dedicated card and page. The proof-of-ownership requirement is stated
+ * without specifics, because the client has not yet said what proof they
+ * accept (CLAUDE.md question 33); the page says "proof of ownership is
+ * required" and tells people to call, rather than inventing a policy.
+ */
+const frpRemoval: ServiceDef = {
+  slug: "frp-removal",
+  h1: "Google Unlocking and FRP Removal in Calgary",
+  eyebrow: "FRP removal",
+  seoTitle: "FRP Removal Calgary | Google Account Unlock",
+  seoDescription:
+    "Google FRP removal at TechBrotherz in Calgary, for owners locked out after a factory reset. Proof of ownership required, quoted at the Store before any work.",
+  serviceType: "FRP removal",
+  repairSlugs: [],
+  brandSlugs: ["samsung-galaxy", "google-pixel"],
+  flatSlugs: [],
+  deviceTypes: [],
+  localPath: "/phone-unlocking-calgary",
+  siblings: ["/services/phone-unlocking", "/services/password-reset"],
+  lead: () =>
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, removes Google account locks and Factory Reset Protection from Android phones, for owners locked out of devices they can show are theirs. Proof of ownership is required before any work starts, without exception.`,
+  answer: () =>
+    `TechBrotherz in Calgary removes Google Factory Reset Protection (FRP) from Android phones stuck at the account verification screen after a factory reset. Proof of ownership is required before any work starts, without exception, because the lock exists to make stolen phones worthless. The work is quoted at the Store, and if the Google account is still signed in, Google's free recovery route comes first.`,
+  keyFacts: () => [
+    { label: "What it fixes", value: "A phone stuck at Google verification after a reset" },
+    { label: "Proof of ownership", value: "Required before any work, without exception" },
+    { label: "Quoted", value: "At the Store, before anything starts" },
+    { label: "iPhones", value: "Apple Activation Lock cannot be removed, by anyone" },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
+  ],
+  process: [
+    {
+      title: "Bring the phone and your proof",
+      body: "The phone, and whatever shows it is yours. What counts is confirmed at the Store, so phone ahead with what you have rather than making the trip to find out.",
+      art: "lock",
+    },
+    {
+      title: "We check the free routes first",
+      body: "If the Google account is still signed in and the problem is a forgotten password, Google's own account recovery is free and keeps everything intact. We check that before charging you for anything.",
+      art: "diagnostic",
+    },
+    {
+      title: "We confirm the phone is not blacklisted",
+      body: "A phone reported lost or stolen is blacklisted on the national IMEI database and stays useless whatever happens to its locks. We check before you pay.",
+      art: "board",
+    },
+    {
+      title: "You approve the quote",
+      body: "The removal is quoted as one figure at the Store, agreed before any work starts.",
+      art: "screen",
+    },
+    {
+      title: "We remove the lock and hand it back set up",
+      body: "The phone comes back at the setup screen, ready for your own Google account, and we stay while you sign in so you leave with a working phone rather than a maybe.",
+      art: "port",
+    },
+  ],
+  sections: () => [
+    {
+      heading: "What is Factory Reset Protection?",
+      paragraphs: [
+        "Factory Reset Protection is the ownership lock built into Android. When a phone is factory reset without first being signed out of its Google account, the phone refuses to finish setting up until that account's credentials are entered. The screen says something like Verify your account: this device was reset.",
+        "The lock exists to make a stolen phone worthless, and it works. It also catches legitimate owners constantly: a secondhand phone reset by a seller who forgot to sign out first, a phone reset to fix a fault whose account password is long forgotten, or a family member's phone inherited without the credentials.",
+        "FRP is not a carrier lock and not a screen lock. A carrier lock stops the phone using another network's SIM and has its own page at TechBrotherz. A screen lock guards a phone that is otherwise running. FRP bites only after a factory reset, which is exactly why people meet it at the worst moment: the phone is already wiped.",
+      ],
+    },
+    {
+      heading: "When is FRP removal the right fix?",
+      paragraphs: [
+        "When the phone is already reset, stuck at the Google verification screen, and the account it wants is out of reach: a previous owner who cannot be contacted, or your own old account whose password and recovery details are gone. That is what this service exists for, and it is the situation TechBrotherz sees most weeks.",
+        "It is the wrong fix, and an unnecessary cost, when the Google account is still signed in and the problem is only a forgotten password. Google's own account recovery handles that free of charge, using the recovery email address or phone number on the account, and TechBrotherz will point you there rather than charge you. The same goes for a secondhand purchase where the seller is still reachable: the seller removing the device from their account costs nothing.",
+        "Forgotten screen locks on a running phone are a related service under the same rule: proof of ownership first, quoted at the Store. Ask when you call, because what the work involves depends on the phone and what is on it.",
+      ],
+    },
+    {
+      heading: "Why is proof of ownership required, without exception?",
+      paragraphs: [
+        "Because a service that removes ownership locks without checking ownership is a service for phone thieves, and running one would harm every legitimate customer this Store serves. Factory Reset Protection exists to make a stolen phone worthless. TechBrotherz will not defeat it for a phone that cannot be shown to be yours, and staff can and do decline.",
+        "Proof of ownership is required before any work starts. What counts is confirmed at the Store, so bring what you have and phone (403) 273-8324 ahead of the trip. If you cannot show the phone is yours, the work does not happen, and that will occasionally be inconvenient for someone with a genuine claim and lost paperwork. It is still the right rule.",
+        "The same logic already governs the rest of this Store's unlocking work: a blacklisted phone cannot be carrier-unlocked by anyone, and TechBrotherz checks the IMEI before taking payment rather than after.",
+      ],
+    },
+    {
+      heading: "What can FRP removal not do?",
+      paragraphs: [
+        "It cannot help a stolen phone. A handset reported lost or stolen is blacklisted on the national IMEI database Canadian carriers share, and it will not work on a Canadian network whatever happens to its software locks. Removing FRP from a blacklisted phone would produce a phone that still does not work, which is why the IMEI is checked first.",
+        "It cannot remove Apple's Activation Lock. An iPhone or iPad signed into someone else's Apple Account stays locked until that person removes it from their account, and no repair store anywhere can change that honestly. Anyone who claims otherwise for a fee is worth walking away from. For iPhones, the route is the previous owner or Apple's own support process, with proof of purchase.",
+        "It does not bring data back. A phone at the FRP screen has already been factory reset, so the photos and messages that were on it are already gone. The removal gets the hardware back into use with your own account; it cannot reach into the past.",
+      ],
+    },
+  ],
+  whoFor: [
+    "Anyone whose Android phone is stuck at the Google verification screen after a reset, who can show the phone is theirs.",
+    "People who bought a secondhand phone that was reset without being signed out, and cannot reach the seller.",
+    "Anyone locked out of an old Google account whose password and recovery details are long gone.",
+    "People told a locked phone is garbage who want an honest answer on whether it can come back.",
+  ],
+  limits: () => [
+    {
+      title: "No proof of ownership, no work",
+      body: "The lock exists to make stolen phones worthless, and TechBrotherz will not defeat it for a phone that cannot be shown to be yours. What counts as proof is confirmed at the Store; call ahead with what you have.",
+    },
+    {
+      title: "Apple Activation Lock cannot be removed",
+      body: "An iPhone locked to someone else's Apple Account stays locked until that person or Apple removes it. No store can do this honestly, and TechBrotherz will say so rather than take the job.",
+    },
+    {
+      title: "A blacklisted phone stays blacklisted",
+      body: "FRP removal does not touch the national IMEI database. A phone reported lost or stolen will not work on a Canadian network regardless, and the IMEI is checked before you pay.",
+    },
+  ],
+  faqs: () => [
+    {
+      question: "How much does FRP removal cost in Calgary?",
+      answer:
+        "FRP removal at TechBrotherz in Calgary is quoted at the Store as one figure, agreed before any work starts. Proof of ownership is required without exception, and the IMEI is checked first so a blacklisted phone is identified before you spend anything. If the Google account is still signed in, Google's free recovery route is checked before you are charged for a removal you do not need.",
+    },
+    {
+      question: "My phone says Verify your account after a reset. What happened?",
+      answer:
+        "The phone was factory reset without being signed out of its Google account first, which triggers Factory Reset Protection. Android refuses to finish setting up until that account's credentials are entered. If the account is yours, try Google's account recovery first. If it belongs to a previous owner you cannot reach, that is the situation FRP removal at TechBrotherz exists for, with proof of ownership required.",
+    },
+    {
+      question: "Can TechBrotherz unlock an iPhone with Activation Lock?",
+      answer:
+        "No, and neither can anyone else, honestly. Apple's Activation Lock is tied to the previous owner's Apple Account and is removed only by that person or by Apple's own support process with proof of purchase. TechBrotherz removes Google FRP on Android phones with proof of ownership, and says plainly that the Apple equivalent is not a service any store can offer.",
+    },
+    {
+      question: "Will my photos still be on the phone after FRP removal?",
+      answer:
+        "No, and it is worth understanding why: a phone at the FRP verification screen has already been factory reset, so its data was erased before it reached the Store. FRP removal puts the hardware back into use with your own Google account. Anything backed up to that account, such as synced photos and contacts, comes back when you sign in.",
+    },
+  ],
+  globalCategories: ["unlocking", "walkin"],
+  sources: [
+    {
+      label: "Google, recover your Google Account",
+      href: "https://support.google.com/accounts/answer/7682439",
+      note: "Google's own free account recovery process, the first route to try when the account on the phone is yours and only the password is lost.",
+    },
+  ],
+};
+
 /* -------------------------------------------------------------------- index */
 
 export const SERVICES: ServiceDef[] = [
@@ -1287,6 +1434,7 @@ export const SERVICES: ServiceDef[] = [
   computerRepair,
   gameConsoleRepair,
   phoneUnlocking,
+  frpRemoval,
   passwordReset,
   virusRemoval,
 ];

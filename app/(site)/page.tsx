@@ -108,40 +108,48 @@ export const metadata: Metadata = buildMetadata({
  * design element inside its padlock motif. The client chose the image with
  * that position on record, in IMAGE_EDITS.
  */
-const SERVICE_CARDS: {
+interface HomeServiceCard {
   title: string;
   description: string;
   href: string;
   image?: string;
   illustration: RepairSubject;
   tags: string[];
-}[] = [
+}
+
+/*
+ * Split into Repairs and In-Store groups 2026-08, when FRP removal,
+ * buy-sell-trade and accessories joined and eleven cards in one grid read as
+ * a wall. Chips show the four most-searched repairs per card; the service
+ * pages carry the full lists.
+ */
+const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Phone repair",
     description:
-      "Screens, batteries, charging ports and cameras on iPhone, Samsung Galaxy and Google Pixel. Most take about 30 minutes.",
+      "Screens and LCDs, batteries, charging ports, cameras and lenses, speakers, back glass and full housings, on iPhone, Samsung Galaxy and Google Pixel.",
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
-    tags: ["Screen", "Battery", "Charging port"],
+    tags: ["Screen", "Battery", "Charging port", "Back glass"],
   },
   {
     title: "iPad repair",
     description:
-      "Cracked iPad glass, batteries and charging ports. On older iPads the glass alone can be replaced, which is a much smaller job than a full screen.",
+      "iPad screens, digitizer glass, batteries and charging ports. On older iPads the glass alone can be replaced, a much smaller job than a full screen.",
     href: "/services/ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
-    tags: ["Glass", "Battery", "Charging port"],
+    tags: ["Screen", "Digitizer", "Battery", "Charging port"],
   },
   {
     title: "Laptop repair",
     description:
-      "Screens, charging sockets and keyboards on laptops of every make. Usually ready the same day.",
+      "Screens, batteries, keyboards, charging jacks, broken hinges, water damage cleanup and data recovery, on laptops of every make.",
     href: "/services/laptop-repair",
     image: "service-laptop-repair",
     illustration: "keyboard",
-    tags: ["Screen", "Keyboard", "DC jack"],
+    tags: ["Screen", "Battery", "Keyboard", "DC jack"],
   },
   {
     title: "Computer repair",
@@ -150,16 +158,7 @@ const SERVICE_CARDS: {
     href: "/services/computer-repair",
     image: "service-computer-repair",
     illustration: "board",
-    tags: ["Diagnostics", "Tune-up", "Windows"],
-  },
-  {
-    title: "Carrier unlocking",
-    description:
-      "Any Canadian carrier unlocked, usually the same day. Unlocking does not erase your data.",
-    href: "/services/phone-unlocking",
-    image: "service-phone-unlocking",
-    illustration: "sim",
-    tags: ["All carriers", "Screen lock", "FRP"],
+    tags: ["Diagnostics", "Tune-up", "Windows", "Data recovery"],
   },
   {
     title: "Gaming console repair",
@@ -171,6 +170,36 @@ const SERVICE_CARDS: {
     tags: ["Xbox", "PlayStation", "Switch"],
   },
   {
+    title: "Virus removal",
+    description:
+      "Malware, adware and browser hijackers removed, with security software left running so it does not come straight back.",
+    href: "/services/virus-removal",
+    image: "service-virus-removal",
+    illustration: "diagnostic",
+    tags: ["Malware", "Pop-ups", "Protection"],
+  },
+];
+
+const STORE_CARDS: HomeServiceCard[] = [
+  {
+    title: "Carrier unlocking",
+    description:
+      "Any Canadian carrier unlocked, usually the same day. Unlocking does not erase your data.",
+    href: "/services/phone-unlocking",
+    image: "service-phone-unlocking",
+    illustration: "sim",
+    tags: ["All carriers", "Same day", "Data kept"],
+  },
+  {
+    title: "Google unlocking & FRP removal",
+    description:
+      "For owners locked out after a factory reset. Proof of ownership is required, without exception.",
+    href: "/services/frp-removal",
+    image: "service-frp-removal",
+    illustration: "lock",
+    tags: ["Google lock", "FRP", "Proof required"],
+  },
+  {
     title: "Password reset",
     description:
       "A locked Windows account reset, with the files on the machine left exactly where they are.",
@@ -180,13 +209,21 @@ const SERVICE_CARDS: {
     tags: ["Windows", "Files kept", "Same day"],
   },
   {
-    title: "Virus removal",
+    title: "Buy, sell and trade",
     description:
-      "Malware, adware and browser hijackers removed, with security software left running so it does not come straight back.",
-    href: "/services/virus-removal",
-    image: "service-virus-removal",
-    illustration: "diagnostic",
-    tags: ["Malware", "Pop-ups", "Protection"],
+      "Sell your phone, computer or laptop, buy one, or trade one in. Valued at the Store with the figure agreed before anything changes hands.",
+    href: "/buy-sell-trade",
+    image: "buy-sell-trade",
+    illustration: "screen",
+    tags: ["Sell", "Buy", "Trade-in"],
+  },
+  {
+    title: "Accessories",
+    description:
+      "Cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables, in Store.",
+    href: "/accessories",
+    illustration: "screen",
+    tags: ["Cases", "Tempered glass", "Chargers", "HDMI"],
   },
 ];
 
@@ -401,27 +438,35 @@ export default async function HomePage() {
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and gaming consoles in SE Calgary, and unlocks phones for any Canadian carrier."
+          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and gaming consoles in SE Calgary, unlocks phones, and buys, sells and trades devices in Store."
         >
           What can we fix for you in <span className="text-tb-green-deep">Calgary</span>?
         </Heading>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICE_CARDS.map((card) => (
-            <ServiceCard
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              illustration={card.illustration}
-              tags={card.tags}
-              sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
-              {...(shouldRenderLink(card.href)
-                ? { link: { label: `${card.title} details`, href: card.href } }
-                : {})}
-            />
-          ))}
-        </div>
+        {[
+          { label: "Repairs", cards: REPAIR_CARDS },
+          { label: "More in the Store", cards: STORE_CARDS },
+        ].map((group) => (
+          <div key={group.label}>
+            <h3 className="type-h3 text-tb-ink mt-14">{group.label}</h3>
+            <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {group.cards.map((card) => (
+                <ServiceCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  image={card.image}
+                  illustration={card.illustration}
+                  tags={card.tags}
+                  sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, 92vw"
+                  {...(shouldRenderLink(card.href)
+                    ? { link: { label: `${card.title} details`, href: card.href } }
+                    : {})}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
 
         <div className="mt-12 flex justify-center">
           <PillButton href="/services" variant="ghost">

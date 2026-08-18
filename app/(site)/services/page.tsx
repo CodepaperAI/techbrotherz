@@ -47,7 +47,7 @@ export const metadata: Metadata = buildMetadata({
 interface ServiceEntry {
   title: string;
   href: string;
-  group: "Phones" | "iPads" | "Computers" | "Consoles";
+  group: "Phones" | "iPads" | "Computers" | "Consoles" | "In Store";
   description: string;
   /** Demo slot in lib/content/images.ts. */
   image: string;
@@ -119,6 +119,34 @@ const SERVICE_CARDS: ServiceEntry[] = [
     illustration: "lock",
   },
   {
+    title: "Google unlocking and FRP removal",
+    href: "/services/frp-removal",
+    group: "Phones",
+    description:
+      "For owners locked out after a factory reset. Proof of ownership is required, without exception, and the free routes are checked first.",
+    image: "service-frp-removal",
+    illustration: "lock",
+  },
+  {
+    title: "Buy, sell and trade",
+    href: "/buy-sell-trade",
+    group: "In Store",
+    description:
+      "Sell your phone, computer or laptop, buy one, or trade one in. Valued at the Store, with the figure agreed before anything changes hands.",
+    image: "buy-sell-trade",
+    illustration: "screen",
+  },
+  {
+    title: "Accessories",
+    href: "/accessories",
+    group: "In Store",
+    description:
+      "Cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables, stocked in Store.",
+    /* No cleared photograph yet; the slot is empty so the illustration renders. */
+    image: "service-accessories",
+    illustration: "screen",
+  },
+  {
     title: "Gaming console repair",
     href: "/services/game-console-repair",
     group: "Consoles",
@@ -129,13 +157,14 @@ const SERVICE_CARDS: ServiceEntry[] = [
   },
 ];
 
-const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "iPads", "Computers", "Consoles"];
+const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "iPads", "Computers", "Consoles", "In Store"];
 
 const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
   iPads: "What iPad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
   Consoles: "What gaming console repairs does TechBrotherz do?",
+  "In Store": "What else can you do in the Store?",
 };
 
 export default async function ServicesPage() {

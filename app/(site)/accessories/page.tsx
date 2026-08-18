@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Layers, Shield, Smartphone, Eye } from "lucide-react";
+import { Cable, Layers, Shield, Smartphone, Eye } from "lucide-react";
 
 import { PageShell } from "@/components/blocks/PageShell";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
@@ -29,7 +29,7 @@ export const metadata: Metadata = buildMetadata({
 
 /**
  * Added on the client's instruction 2026-08: "Apart from repairs Please add
- * phones, iPads and tablet accessories- cases, tamper glass, screen protectors
+ * phones, iPads and tablet accessories- cases, tempered glass, screen protectors
  * and privacy screen protectors". A what-we-stock page, not a shop: no prices,
  * no cart, and no claim about what is on the shelf for a specific model,
  * because stock changes and the site cannot know it. The phone number is the
@@ -100,9 +100,9 @@ export default async function AccessoriesPage() {
         </>
       }
       answerBox={{
-        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, iPads and tablets: cases, tempered glass, film screen protectors and privacy screen protectors. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the Store is fitted there before you leave.`,
+        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, iPads, tablets and laptops: cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the Store is fitted there before you leave.`,
         keyFacts: [
-          { label: "In stock", value: "Cases, tempered glass, screen and privacy protectors" },
+          { label: "In stock", value: "Cases, tempered glass, privacy protectors, cables, chargers" },
           { label: "For", value: "Phones, iPads and tablets" },
           { label: "Fitting", value: "Protectors bought at the Store are fitted there" },
           { label: "Stock check", value: `Phone ${SITE.phone} with your exact model` },
@@ -159,6 +159,14 @@ export default async function AccessoriesPage() {
             <p className="type-body text-tb-muted mt-2">
               Tempered glass with a filter that narrows the viewing angle, so the screen reads
               clearly to you and goes dark to the person beside you.
+            </p>
+          </Card>
+          <Card>
+            <Cable aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
+            <h3 className="type-h3 text-tb-text mt-4">Cables and chargers</h3>
+            <p className="type-body text-tb-muted mt-2">
+              Charging cables and wall chargers for phones and tablets, MacBook chargers, and HDMI
+              cables, all stocked at the Store.
             </p>
           </Card>
         </div>

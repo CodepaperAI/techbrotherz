@@ -2,6 +2,38 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-18 — Services grid expansion: FRP page, buy-sell-trade, four repair types, the grid split
+
+**Asked:** the "services grid expansion" brief: record four client confirmations, add new repair types, put searched-for repair chips on the home cards, build an FRP removal page, build a buy-sell-trade page, extend the accessories list, enlarge the logo 20 to 25 percent, and split the grid if it reads as a wall.
+
+**Done:**
+
+### Four confirmations recorded, two new questions opened
+
+Q9 closed: data recovery is offered, and it is now a repair type. Q15 closed: the shop buys, sells and trades phones, computers and laptops, and `/buy-sell-trade` is live. The accessories list is confirmed as cases, tempered glass, privacy protectors, cables and chargers, MacBook chargers and HDMI cables. Water damage repair is confirmed on laptops. Two questions opened: Q32, whether water damage repair extends beyond laptops (the repair type stays laptop-only until answered), and Q33, what "proof of ownership" concretely means for FRP removal (the page says it is confirmed at the Store, and no more, until the client specifies).
+
+### Four new repair types, one deliberate skip
+
+`camera-lens-replacement` (phone), `hinge-repair`, `liquid-damage-repair` and `data-recovery` (laptop), each with a real long description and four symptoms. Liquid damage and data recovery carry no time estimate, because neither can honestly promise one. **`laptop-battery-replacement` was deliberately not added**: `battery-replacement` already applies to phones, tablets and laptops, so a second type would render "Battery replacement" twice on every laptop page.
+
+### The FRP page, and the unlocking page refocused
+
+`/services/frp-removal` is new (1,125 words, own keyword row: "frp removal calgary"). To stop it cannibalising `/services/phone-unlocking`, that page was refocused to carrier unlocking only: its FRP section became a one-paragraph pointer, its FRP FAQ was replaced, and its title tightened to "Phone Unlocking Calgary | Any Canadian Carrier". The FRP page is honest about Apple: Activation Lock removal is not offered, and it says so, linking Apple's own process. The supplied FRP graphic moved from the password-reset card (where it depicted the wrong service) to the FRP card, and password reset got its welcome-screen photo back.
+
+### Buy, sell and trade
+
+`/buy-sell-trade` is a full page: three paths (sell, buy, trade), a before-you-sell checklist, and honest-limits cards, including "locked devices are not bought", which links to the FRP page. No prices anywhere, per the standing rule. Photo: a pile of phones by Hal Gatewood on Unsplash (WcYeiHMexR0), no logos or faces in frame. Keyword row: "sell my phone calgary". The card links from the home grid and the services index; the footer's Learn column carries it.
+
+### The grid split, per the brief's judgment call
+
+Eleven cards did read as a wall, so the home grid is now two labelled groups: **"Repairs"** (phone, iPad, laptop, computer, gaming console, virus removal) and **"More in the Store"** (carrier unlocking, FRP removal, password reset, buy-sell-trade, accessories). The phone, iPad and laptop cards each carry their four most-searched repair chips; the full lists stay on the pages. The services index gained an "In Store" group the same way.
+
+### Accessories, the URL decision, the logo ceiling
+
+The accessories page's answer, key facts and card grid now name the confirmed list, including a fifth "Cables and chargers" card. The card on the services index links to the existing `/accessories` rather than a duplicate `/services/accessories`, because one URL per intent is the rule the whole site runs on. The logo: the compact header lockup went to 72px, which fills the 72px header bar exactly; the full 20 to 25 percent would push the header taller, which the brief forbade, so 72px is the ceiling and the brief's sacrifice order (§6 first) covers the shortfall. "Tamper glass" is nowhere; "tempered glass" everywhere.
+
+**Verification:** typecheck, lint, word floor (every page over 900, the FRP page at 1,125 and the trimmed unlocking page still at 1,469), link graph (no orphans, both new pages linked from grid and footer), FAQ scoping (every pair unique to one URL), no-fake-rating, no-prose-prices, schema (13 templates, no price-less Offers) and page audit all pass on a clean build. Similarity re-run: highest pair site-wide 52.9% against the 70% ceiling; the service tier with the new FRP page sits at 5.6% median, 10.8% worst; core with buy-sell-trade at 2.6% median.
+
 ## Session 2026-08-14 (sixth) — Two vocabulary sweeps: gaming consoles, and Store for counter
 
 **Asked:** "game console" becomes "gaming consoles" everywhere, and "counter" becomes "store" everywhere.

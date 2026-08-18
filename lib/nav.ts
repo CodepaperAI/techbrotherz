@@ -96,6 +96,7 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
       "/services/password-reset",
       "/services/virus-removal",
       "/services/game-console-repair",
+      "/services/frp-removal",
       "/services",
     ],
   },
@@ -136,7 +137,7 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
   },
   {
     heading: "Learn",
-    paths: ["/blog", "/faq", "/warranty", "/about", "/contact"],
+    paths: ["/blog", "/buy-sell-trade", "/faq", "/warranty", "/about", "/contact"],
   },
 ];
 

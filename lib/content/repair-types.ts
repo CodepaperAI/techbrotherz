@@ -36,7 +36,11 @@ export type RepairSlug =
   | "back-glass-replacement"
   | "back-housing-replacement"
   | "lcd-shield-replacement"
-  | "keyboard-replacement";
+  | "keyboard-replacement"
+  | "camera-lens-replacement"
+  | "hinge-repair"
+  | "liquid-damage-repair"
+  | "data-recovery";
 
 export interface RepairTypeDef {
   slug: RepairSlug;
@@ -557,6 +561,133 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
       "The backlight has stopped working",
     ],
     order: 95,
+  },
+  /*
+   * Added 2026-08 from the client's own service lists. laptop-battery was on
+   * the list too but battery-replacement already applies to laptops, and a
+   * second battery type would render the same repair twice on laptop pages.
+   */
+  {
+    slug: "camera-lens-replacement",
+    name: "Camera lens replacement",
+    icon: "camera",
+    shortDescription: "The glass over the rear camera replaced, without touching the camera itself.",
+    longDescription: [
+      {
+        _key: "repairType.camera-lens-replacement-b0",
+        _type: "block",
+        children: [
+          {
+            _key: "repairType.camera-lens-replacement-s0",
+            _type: "span",
+            marks: [],
+            text: "The camera lens is the small glass window over the rear cameras, and it cracks far more often than the camera behind it. When only the lens is broken, the camera module itself usually still works perfectly, which makes this one of the smaller repairs on a modern phone: the shattered glass is removed, the housing cleaned of fragments, and a new lens bonded in. TechBrotherz tests every rear camera and the flash before handing the phone back, because glass fragments behind the lens are what scratch a working camera into a broken one.",
+          },
+        ],
+        markDefs: [],
+        style: "normal",
+      },
+    ],
+    estimatedMinutes: 30,
+    appliesTo: ["phone"],
+    symptoms: [
+      "The glass over the rear camera is cracked but photos mostly still work",
+      "Blurry or hazy photos from one rear camera after a drop",
+      "Bright flare or streaks across photos taken toward light",
+      "Visible glass fragments over the camera opening",
+    ],
+    order: 78,
+  },
+  {
+    slug: "hinge-repair",
+    name: "Broken hinge repair",
+    icon: "laptop",
+    shortDescription: "Laptop hinges rebuilt or replaced before they crack the lid or the base.",
+    longDescription: [
+      {
+        _key: "repairType.hinge-repair-b0",
+        _type: "block",
+        children: [
+          {
+            _key: "repairType.hinge-repair-s0",
+            _type: "span",
+            marks: [],
+            text: "Laptop hinges carry the whole weight of the lid thousands of times a year, and when one fails it rarely fails alone: a seized or broken hinge starts tearing the screw mounts out of the plastic base or cracking the lid around the screen. Caught early, a hinge repair is a matter of replacing or rebuilding the hinge and reinforcing the mounts. Left alone, it becomes a screen and case repair as well. TechBrotherz repairs hinges on laptops of every make, and will say plainly at the Store when a chassis is too far gone for the repair to hold.",
+          },
+        ],
+        markDefs: [],
+        style: "normal",
+      },
+    ],
+    estimatedMinutes: 60,
+    appliesTo: ["laptop"],
+    symptoms: [
+      "The lid grinds, clicks or resists when opening",
+      "The screen will not stay at the angle you set",
+      "The case is separating or bulging near a hinge corner",
+      "Cracks spreading from the hinge into the lid or base",
+    ],
+    order: 97,
+  },
+  {
+    slug: "liquid-damage-repair",
+    name: "Water and liquid damage repair",
+    icon: "droplet",
+    shortDescription: "Opened, cleaned and inspected promptly, before corrosion spreads.",
+    longDescription: [
+      {
+        _key: "repairType.liquid-damage-repair-b0",
+        _type: "block",
+        children: [
+          {
+            _key: "repairType.liquid-damage-repair-s0",
+            _type: "span",
+            marks: [],
+            text: "Liquid rarely kills a laptop on the spot; corrosion does it over the following days, working on powered contacts long after the machine seems to have survived. A liquid damage repair means opening the machine promptly, disconnecting the battery, cleaning the board with high-purity isopropyl alcohol, and inspecting the contacts under magnification before corrosion has eaten anything. TechBrotherz will say honestly that no liquid damage repair carries a guarantee of success, here or anywhere, because the outcome depends on what got in and how long it sat. What a prompt cleanup does is move the odds substantially in the machine's favour. Power it off, do not charge it, and bring it in.",
+          },
+        ],
+        markDefs: [],
+        style: "normal",
+      },
+    ],
+    appliesTo: ["laptop"],
+    symptoms: [
+      "A drink went over the keyboard, even if the laptop still works",
+      "Keys sticking or repeating after a spill",
+      "The laptop was rained on or left somewhere damp",
+      "It worked after the spill, then started failing days later",
+    ],
+    order: 100,
+  },
+  {
+    slug: "data-recovery",
+    name: "Data recovery",
+    icon: "hard-drive",
+    shortDescription: "Files recovered from failing drives and dead machines, quoted before any work.",
+    longDescription: [
+      {
+        _key: "repairType.data-recovery-b0",
+        _type: "block",
+        children: [
+          {
+            _key: "repairType.data-recovery-s0",
+            _type: "span",
+            marks: [],
+            text: "Data recovery is getting your files off a machine that no longer gives them up: a laptop that will not boot, a drive that clicks or disappears, a desktop that died and took the documents with it. The honest shape of the work is diagnosis first, because the right approach differs completely between a failing mechanical drive, a corrupted solid-state drive and a machine whose drive is fine but whose board is dead. TechBrotherz quotes the recovery at the Store before any work starts, tells you plainly what the chances look like for your case, and one boundary is absolute: a drive encrypted with a lost key cannot be recovered by anyone, and we say so rather than charge you to find out slowly.",
+          },
+        ],
+        markDefs: [],
+        style: "normal",
+      },
+    ],
+    appliesTo: ["laptop"],
+    symptoms: [
+      "The computer will not start and the files on it matter",
+      "A clicking or grinding noise from a hard drive",
+      "A drive that no longer shows up, or shows up empty",
+      "Files or folders that have started disappearing or corrupting",
+    ],
+    order: 105,
   },
 ] as RepairTypeDef[];
 
