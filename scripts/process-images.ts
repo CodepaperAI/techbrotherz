@@ -142,6 +142,14 @@ export const SLOTS: SlotSpec[] = [
   },
   { slot: "service-virus-removal", source: "bN5XdU-bap4", ratio: "3:2", position: "centre" },
   /*
+   * Accessories, chosen by the client 2026-08: a flat lay of headphones, a
+   * power bank, a spare battery and two phone cases beside a camera. The Sony,
+   * LG and Fujifilm marks are incidental on real products, which the revised
+   * Section 8.9 rule allows; the centre 3:2 crop trims the camera strap where
+   * the largest wordmark sits.
+   */
+  { slot: "service-accessories", source: "sQ0xXxQdfeY", ratio: "3:2", position: "centre" },
+  /*
    * Supplied by the client 2026-08 for the game console page. The original is
    * 1920x1280, exactly 3:2, so cover is a straight downscale.
    */

@@ -142,7 +142,6 @@ const SERVICE_CARDS: ServiceEntry[] = [
     group: "In Store",
     description:
       "Cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables, stocked in Store.",
-    /* No cleared photograph yet; the slot is empty so the illustration renders. */
     image: "service-accessories",
     illustration: "screen",
   },

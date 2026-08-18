@@ -222,6 +222,7 @@ const STORE_CARDS: HomeServiceCard[] = [
     description:
       "Cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables, in Store.",
     href: "/accessories",
+    image: "service-accessories",
     illustration: "screen",
     tags: ["Cases", "Tempered glass", "Chargers", "HDMI"],
   },

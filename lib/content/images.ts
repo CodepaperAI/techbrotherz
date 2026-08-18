@@ -208,6 +208,13 @@ export const IMAGES: Record<string, DemoImage> = {
     "Hal Gatewood",
     "WcYeiHMexR0",
   ),
+  "service-accessories": image(
+    "service-accessories",
+    "3:2",
+    "A flat lay of device accessories on a white surface: headphones, a power bank, a spare phone battery and two phone cases beside a camera",
+    "Ady TeenagerInRO",
+    "sQ0xXxQdfeY",
+  ),
   "service-virus-removal": image(
     "service-virus-removal",
     "3:2",
