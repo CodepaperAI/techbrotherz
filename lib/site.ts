@@ -98,6 +98,9 @@ export const SITE = {
   /** Unconfirmed, see CLAUDE.md open question 8. */
   googleBusinessUrl: null as string | null,
 
+  /** Supplied by the client 2026-08. Feeds the footer link and sameAs. */
+  socialLinks: [{ platform: "TikTok", url: "https://www.tiktok.com/@techbrotherzyyc" }],
+
   /**
    * Real, verifiable trust signals only. This list replaces the reference
    * template's fake rating badge and logo cloud.
