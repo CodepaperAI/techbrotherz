@@ -49,10 +49,18 @@ export interface BlogPost {
   about: string[];
   related: { label: string; href: string }[];
   sources: { label: string; href: string; note: string }[];
+  /**
+   * Demo slot in lib/content/images.ts, shown on the index card and at the
+   * top of the article. Drawn from the already-cleared stock set, so every
+   * blog image has been through the Section 8.9 trademark review and carries
+   * a credit in the manifest.
+   */
+  image: string;
 }
 
 const unlockCanada: BlogPost = {
   slug: "how-to-unlock-a-cell-phone-in-canada",
+  image: "service-phone-unlocking",
   title: "How to Unlock a Cell Phone in Canada",
   seoTitle: "How to Unlock a Cell Phone in Canada | Free by Law",
   seoDescription:
@@ -152,6 +160,7 @@ const unlockCanada: BlogPost = {
 
 const laptopSigns: BlogPost = {
   slug: "signs-your-laptop-needs-repair",
+  image: "service-laptop-repair",
   title: "Signs Your Laptop Needs Repair",
   seoTitle: "Signs Your Laptop Needs Repair | What to Watch For",
   seoDescription:
@@ -254,6 +263,7 @@ const laptopSigns: BlogPost = {
 
 const waterDamage: BlogPost = {
   slug: "phone-water-damage-what-to-do-first",
+  image: "home-process-1",
   title: "Phone Water Damage: What to Do First",
   seoTitle: "Phone Water Damage: What to Do First | Skip the Rice",
   seoDescription:
@@ -369,6 +379,7 @@ const waterDamage: BlogPost = {
 
 const screenRepairTime: BlogPost = {
   slug: "how-long-does-a-phone-screen-repair-take",
+  image: "home-process-2",
   title: "How Long Does a Phone Screen Repair Take?",
   seoTitle: "How Long Does a Phone Screen Repair Take?",
   seoDescription:
@@ -477,6 +488,7 @@ const screenRepairTime: BlogPost = {
 
 const slowComputer: BlogPost = {
   slug: "why-is-my-computer-running-slow",
+  image: "service-computer-repair",
   title: "Why Is My Computer Running Slow?",
   seoTitle: "Why Is My Computer Running Slow? Causes & Real Fixes",
   seoDescription:
@@ -593,6 +605,7 @@ const slowComputer: BlogPost = {
 
 const consoleFaults: BlogPost = {
   slug: "common-xbox-and-playstation-faults",
+  image: "service-game-console-repair",
   title: "Common Xbox and PlayStation Faults, and Which Are Worth Repairing",
   seoTitle: "Common Xbox & PlayStation Faults Worth Repairing",
   seoDescription:

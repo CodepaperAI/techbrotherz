@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
+import { DemoImage } from "@/components/blocks/DemoImage";
 import { PageShell } from "@/components/blocks/PageShell";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { Card } from "@/components/primitives/Card";
@@ -82,6 +83,11 @@ export default async function BlogIndexPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {BLOG_POSTS.map((post) => (
             <Card key={post.slug} className="flex flex-col">
+              <DemoImage
+                slot={post.image}
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="mb-5"
+              />
               <p className="type-caption text-tb-muted">{formatDate(post.datePublished)}</p>
               <h3 className="type-h3 text-tb-text mt-3">
                 <Link href={`/blog/${post.slug}`} className="hover:text-tb-green-deep">

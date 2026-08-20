@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 
+import { DemoImage } from "@/components/blocks/DemoImage";
 import { PageShell } from "@/components/blocks/PageShell";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
@@ -128,6 +129,11 @@ export default async function BlogPostPage({ params }: PageProps) {
     >
       {/* --------------------------------------------------- author and date */}
       <Section className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="article-meta-heading">
+        <DemoImage
+          slot={post.image}
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="mb-10"
+        />
         <h2 id="article-meta-heading" className="sr-only">
           About this article
         </h2>
