@@ -58,7 +58,7 @@ export default async function BuySellTradePage() {
       {
         question: "What should I do before selling my phone or laptop?",
         answer:
-          "Three things. Back it up, because selling a device means wiping it. Sign out of your accounts, Apple Account or Find My on an iPhone and the Google account on Android, because a device still locked to an account cannot be resold and is worth far less. And bring the charger and any accessories, which help the valuation.",
+          "Three things. Back it up, because selling a device means wiping it. Sign out of your accounts, Apple Account or Find My on an Iphone and the Google account on Android, because a device still locked to an account cannot be resold and is worth far less. And bring the charger and any accessories, which help the valuation.",
       },
       {
         question: "What phones and computers does TechBrotherz have for sale?",
@@ -173,7 +173,7 @@ export default async function BuySellTradePage() {
                 matters off the drive. This is the step people skip and regret.
               </p>
               <p className="type-body text-tb-muted">
-                Sign out of your accounts. An iPhone still attached to an Apple Account, or an
+                Sign out of your accounts. An Iphone still attached to an Apple Account, or an
                 Android phone still signed into Google, is locked to you: it cannot honestly be
                 resold, and a device that arrives locked is worth far less or nothing. Turn off
                 Find My on Apple devices, and remove the Google account on Android, before the
@@ -245,7 +245,7 @@ export default async function BuySellTradePage() {
             links={[
               { label: "Cell phone repair", href: "/services/phone-repair" },
               { label: "Laptop repair", href: "/services/laptop-repair" },
-              { label: "Phone, iPad and tablet accessories", href: "/accessories" },
+              { label: "Phone, IPad and tablet accessories", href: "/accessories" },
             ]}
           />
           <RelatedLinks

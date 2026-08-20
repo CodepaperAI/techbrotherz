@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "ipad-mini-2",
-  "name": "iPad Mini 2",
+  "name": "IPad Mini 2",
   "intro": [
     {
       "_key": "model.ipad-mini-2-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-2-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Mini 2 brought the Retina display to Apple's small tablet and is the model that made the Mini genuinely usable for reading. It has no Touch ID, which is what keeps its glass repair cheaper than the otherwise similar Mini 3. It stayed on sale for years and remains common as a hand-me-down."
+          "text": "The IPad Mini 2 brought the Retina display to Apple's small tablet and is the model that made the Mini genuinely usable for reading. It has no Touch ID, which is what keeps its glass repair cheaper than the otherwise similar Mini 3. It stayed on sale for years and remains common as a hand-me-down."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-2-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Worth it as a reading and video tablet. The iPad Mini 2 stopped at iPadOS 12, so treat it as a device for books, video and browsing rather than current apps. The glass repair is cheap enough that keeping a working Mini alive for that purpose is sensible, particularly given how few small tablets exist."
+          "text": "Worth it as a reading and video tablet. The IPad Mini 2 stopped at IPadOS 12, so treat it as a device for books, video and browsing rather than current apps. The glass repair is cheap enough that keeping a working Mini alive for that purpose is sensible, particularly given how few small tablets exist."
         }
       ],
       "markDefs": [],
@@ -65,7 +65,7 @@ const content: ModelContent = {
       "style": "normal"
     }
   ],
-  "lastSupportedOs": "iPadOS 12",
+  "lastSupportedOs": "IPadOS 12",
   "stillReceivesUpdates": false
 } as ModelContent;
 

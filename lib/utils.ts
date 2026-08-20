@@ -125,7 +125,7 @@ function toMinutes(time24: string): number {
  * word list:
  *
  * 1. **It only ever raises case, never lowers it.** A word already carrying a
- *    capital anywhere (iPhone, MacBook, FRP, TechBrotherz, SE) passes through
+ *    capital anywhere (Iphone, MacBook, FRP, TechBrotherz, SE) passes through
  *    untouched, so brand and device casing can never be mangled.
  * 2. **It is applied at render, in the display components only.** AnswerBox
  *    copy, FAQ answers, plainAnswer, meta descriptions and JSON-LD never pass
@@ -142,7 +142,7 @@ export function titleCase(input: string): string {
   return words
     .map((word, index) => {
       if (!word) return word;
-      // Already cased (iPhone, MacBook, SE, FRP, TechBrotherz): hands off.
+      // Already cased (Iphone, MacBook, SE, FRP, TechBrotherz): hands off.
       if (/[A-Z]/.test(word)) return word;
       const bare = word.replace(/[^a-z']/g, "");
       const isEdge = index === 0 || index === words.length - 1;

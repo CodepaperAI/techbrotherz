@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-14",
-  "name": "iPhone 14",
+  "name": "Iphone 14",
   "intro": [
     {
       "_key": "model.iphone-14-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-14-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 14 was rebuilt internally so the rear glass comes off on its own rather than requiring the whole phone to be stripped. That single change makes back glass replacement on a 14 far less involved than on a 12 or 13, and the price reflects it. Cracked front glass is still the repair we see most on this model. TechBrotherz is a walk-in store at 3317 17 Ave SE in Calgary, no appointment needed."
+          "text": "The Iphone 14 was rebuilt internally so the rear glass comes off on its own rather than requiring the whole phone to be stripped. That single change makes back glass replacement on a 14 far less involved than on a 12 or 13, and the price reflects it. Cracked front glass is still the repair we see most on this model. TechBrotherz is a walk-in store at 3317 17 Ave SE in Calgary, no appointment needed."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-14-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes. The iPhone 14 still receives iOS updates and is recent enough that a repair clearly beats replacement. Its redesigned internals also mean rear glass damage costs far less to put right than on the two generations before it, so a phone broken on both sides is still worth quoting."
+          "text": "Yes. The Iphone 14 still receives iOS updates and is recent enough that a repair clearly beats replacement. Its redesigned internals also mean rear glass damage costs far less to put right than on the two generations before it, so a phone broken on both sides is still worth quoting."
         }
       ],
       "markDefs": [],

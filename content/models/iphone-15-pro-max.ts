@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-15-pro-max",
-  "name": "iPhone 15 Pro Max",
+  "name": "Iphone 15 Pro Max",
   "intro": [
     {
       "_key": "model.iphone-15-pro-max-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-15-pro-max-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPhone 15 Pro Max at 3317 17 Ave SE in Calgary. The iPhone 15 generation moved from Lightning to USB-C, so the charging port part is different from every iPhone before it and a worn port needs the newer assembly. The Dynamic Island runs across the whole range rather than just the Pro models. Bring the phone to the Store and we will confirm the exact part and the price before any work starts."
+          "text": "TechBrotherz repairs the Iphone 15 Pro Max at 3317 17 Ave SE in Calgary. The Iphone 15 generation moved from Lightning to USB-C, so the charging port part is different from every Iphone before it and a worn port needs the newer assembly. The Dynamic Island runs across the whole range rather than just the Pro models. Bring the phone to the Store and we will confirm the exact part and the price before any work starts."
         }
       ],
       "markDefs": [],

@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-12",
-  "name": "iPhone 12",
+  "name": "Iphone 12",
   "intro": [
     {
       "_key": "model.iphone-12-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-12-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 12 introduced the Ceramic Shield front, which resists cracking better than earlier glass but shatters just as completely once it goes. Behind the rear glass sits the MagSafe magnet ring, so a back glass repair on a 12 has to keep that ring intact or magnetic chargers and wallets stop holding. TechBrotherz replaces both at 3317 17 Ave SE in Calgary. Bring the phone in and we will confirm the price before starting."
+          "text": "The Iphone 12 introduced the Ceramic Shield front, which resists cracking better than earlier glass but shatters just as completely once it goes. Behind the rear glass sits the MagSafe magnet ring, so a back glass repair on a 12 has to keep that ring intact or magnetic chargers and wallets stop holding. TechBrotherz replaces both at 3317 17 Ave SE in Calgary. Bring the phone in and we will confirm the price before starting."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-12-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes. The iPhone 12 still receives iOS updates and remains a fully capable phone, so a repair buys real remaining life rather than postponing the inevitable. The one thing to weigh is that back glass on this generation is bonded to the frame and slower to replace than on the iPhone 14."
+          "text": "Yes. The Iphone 12 still receives iOS updates and remains a fully capable phone, so a repair buys real remaining life rather than postponing the inevitable. The one thing to weigh is that back glass on this generation is bonded to the frame and slower to replace than on the Iphone 14."
         }
       ],
       "markDefs": [],

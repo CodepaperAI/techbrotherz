@@ -103,7 +103,7 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
             _key: "repairType.glass-digitizer-s0",
             _type: "span",
             marks: [],
-            text: "On many older iPads and tablets the touch glass is a separate layer sitting above the LCD, so a cracked front can be repaired without replacing the more expensive display panel underneath. A digitizer is the touch-sensitive glass layer above the LCD. TechBrotherz removes the broken glass, clears the old adhesive from the frame, fits a new digitizer and re-seals it. This repair only applies when the picture is still perfect and only the glass is broken. If the LCD underneath shows lines, blotches or a dead area, the panel itself needs replacing and the price is different, so bring the tablet in and we will tell you which one it needs.",
+            text: "On many older IPads and tablets the touch glass is a separate layer sitting above the LCD, so a cracked front can be repaired without replacing the more expensive display panel underneath. A digitizer is the touch-sensitive glass layer above the LCD. TechBrotherz removes the broken glass, clears the old adhesive from the frame, fits a new digitizer and re-seals it. This repair only applies when the picture is still perfect and only the glass is broken. If the LCD underneath shows lines, blotches or a dead area, the panel itself needs replacing and the price is different, so bring the tablet in and we will tell you which one it needs.",
           },
         ],
         markDefs: [],
@@ -232,7 +232,7 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
             _key: "repairType.home-button-s0",
             _type: "span",
             marks: [],
-            text: "The home button on older iPhones and iPads is a mechanical switch under a cosmetic cap, and it wears out after years of pressing. On iPhone 5S and newer, the fingerprint sensor is paired to the phone's logic board at the factory, so a replacement button will click and register presses but Touch ID will not work again. TechBrotherz will tell you that before starting, so you can decide whether the repair is worth it. On iPads and on iPhones without a fingerprint sensor, a replacement button restores full function.",
+            text: "The home button on older Iphones and IPads is a mechanical switch under a cosmetic cap, and it wears out after years of pressing. On Iphone 5S and newer, the fingerprint sensor is paired to the phone's logic board at the factory, so a replacement button will click and register presses but Touch ID will not work again. TechBrotherz will tell you that before starting, so you can decide whether the repair is worth it. On IPads and on Iphones without a fingerprint sensor, a replacement button restores full function.",
           },
         ],
         markDefs: [],
@@ -387,7 +387,7 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
             _key: "repairType.front-camera-repair-s0",
             _type: "span",
             marks: [],
-            text: "On most phones the front camera shares one flex cable with the proximity sensor and the ambient light sensor, so when the selfie camera fails the screen often stops turning off during calls as well. TechBrotherz replaces the whole flex assembly and tests the camera, the proximity sensor and auto-brightness together. On iPhone X and newer the Face ID components are paired to the phone at the factory and cannot be transferred, so replacing them disables Face ID. We will tell you before starting so you can decide.",
+            text: "On most phones the front camera shares one flex cable with the proximity sensor and the ambient light sensor, so when the selfie camera fails the screen often stops turning off during calls as well. TechBrotherz replaces the whole flex assembly and tests the camera, the proximity sensor and auto-brightness together. On Iphone X and newer the Face ID components are paired to the phone at the factory and cannot be transferred, so replacing them disables Face ID. We will tell you before starting so you can decide.",
           },
         ],
         markDefs: [],
@@ -450,7 +450,7 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
             _key: "repairType.back-glass-replacement-s0",
             _type: "span",
             marks: [],
-            text: "From the iPhone 8 and the Galaxy S6 onward, phone backs are glass rather than metal, so that wireless charging works through them. Rear glass is bonded to the frame with strong adhesive and usually has to be broken out in pieces and cleared before the new panel goes on. TechBrotherz replaces the glass and reseals the frame. Cracked rear glass is worth fixing sooner rather than later, because loose shards keep spreading and can cut you or let moisture into the phone.",
+            text: "From the Iphone 8 and the Galaxy S6 onward, phone backs are glass rather than metal, so that wireless charging works through them. Rear glass is bonded to the frame with strong adhesive and usually has to be broken out in pieces and cleared before the new panel goes on. TechBrotherz replaces the glass and reseals the frame. Cracked rear glass is worth fixing sooner rather than later, because loose shards keep spreading and can cut you or let moisture into the phone.",
           },
         ],
         markDefs: [],
@@ -713,7 +713,7 @@ export function repairsFor(kind: DeviceKind): RepairTypeDef[] {
  * Models that share one printed price.
  *
  * Was the priceGroup document type. It is a rendering concern: the note is
- * shown on a model page so a visitor understands why the iPhone 5, 5S and 5C
+ * shown on a model page so a visitor understands why the Iphone 5, 5S and 5C
  * all cost the same. Nothing edits this.
  */
 export interface PriceGroupDef {
@@ -725,23 +725,23 @@ export interface PriceGroupDef {
 export const PRICE_GROUPS: PriceGroupDef[] = [
   {
     models: ["ipad-2", "ipad-3", "ipad-4"],
-    name: "iPad 2, 3 and 4",
-    note: "The iPad 2, 3 and 4 share the same glass replacement price.",
+    name: "IPad 2, 3 and 4",
+    note: "The IPad 2, 3 and 4 share the same glass replacement price.",
   },
   {
     models: ["ipad-mini", "ipad-mini-2"],
-    name: "iPad Mini 1 and 2",
-    note: "The iPad Mini and iPad Mini 2 share the same glass replacement price.",
+    name: "IPad Mini 1 and 2",
+    note: "The IPad Mini and IPad Mini 2 share the same glass replacement price.",
   },
   {
     models: ["iphone-4", "iphone-4s"],
-    name: "iPhone 4 and 4S",
-    note: "The iPhone 4 and 4S take the same parts.",
+    name: "Iphone 4 and 4S",
+    note: "The Iphone 4 and 4S take the same parts.",
   },
   {
     models: ["iphone-5", "iphone-5s", "iphone-5c"],
-    name: "iPhone 5, 5S and 5C",
-    note: "The iPhone 5, 5S and 5C take the same parts.",
+    name: "Iphone 5, 5S and 5C",
+    note: "The Iphone 5, 5S and 5C take the same parts.",
   },
 ] as PriceGroupDef[];
 

@@ -335,7 +335,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-2",
-    "name": "iPad 2",
+    "name": "IPad 2",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -346,7 +346,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-3",
-    "name": "iPad 3",
+    "name": "IPad 3",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -357,7 +357,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-4",
-    "name": "iPad 4",
+    "name": "IPad 4",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -368,7 +368,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-air",
-    "name": "iPad Air",
+    "name": "IPad Air",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -379,7 +379,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-mini",
-    "name": "iPad Mini",
+    "name": "IPad Mini",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -390,7 +390,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-mini-2",
-    "name": "iPad Mini 2",
+    "name": "IPad Mini 2",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -401,7 +401,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "ipad-mini-3",
-    "name": "iPad Mini 3",
+    "name": "IPad Mini 3",
     "brandSlug": "apple-ipad",
     "repairs": [
       {
@@ -412,7 +412,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-4",
-    "name": "iPhone 4",
+    "name": "Iphone 4",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -455,7 +455,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-4s",
-    "name": "iPhone 4S",
+    "name": "Iphone 4S",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -498,7 +498,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-5",
-    "name": "iPhone 5",
+    "name": "Iphone 5",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -541,7 +541,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-5c",
-    "name": "iPhone 5C",
+    "name": "Iphone 5C",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -584,7 +584,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-5s",
-    "name": "iPhone 5S",
+    "name": "Iphone 5S",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -627,7 +627,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-6",
-    "name": "iPhone 6",
+    "name": "Iphone 6",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -682,7 +682,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-6-plus",
-    "name": "iPhone 6 Plus",
+    "name": "Iphone 6 Plus",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -737,7 +737,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-6s",
-    "name": "iPhone 6S",
+    "name": "Iphone 6S",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -792,7 +792,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-6s-plus",
-    "name": "iPhone 6S Plus",
+    "name": "Iphone 6S Plus",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -847,7 +847,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-7",
-    "name": "iPhone 7",
+    "name": "Iphone 7",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -858,7 +858,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-7-plus",
-    "name": "iPhone 7 Plus",
+    "name": "Iphone 7 Plus",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -869,7 +869,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-8",
-    "name": "iPhone 8",
+    "name": "Iphone 8",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -880,7 +880,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-8-plus",
-    "name": "iPhone 8 Plus",
+    "name": "Iphone 8 Plus",
     "brandSlug": "apple-iphone",
     "repairs": [
       {
@@ -891,7 +891,7 @@ export const ARCHIVED_MODEL_PRICES = [
   },
   {
     "slug": "iphone-se-1st-gen",
-    "name": "iPhone SE (1st gen)",
+    "name": "Iphone SE (1st gen)",
     "brandSlug": "apple-iphone",
     "repairs": [
       {

@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "ipad-5th-gen",
-  "name": "iPad 5th gen",
+  "name": "IPad 5th gen",
   "intro": [
     {
       "_key": "model.ipad-5th-gen-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-5th-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPad 5th gen at 3317 17 Ave SE in Calgary. On the standard iPad line through the ninth generation the touch glass is a separate layer from the display panel underneath, so a cracked front can often be fixed by replacing only the glass, which costs far less than a full screen. The tenth generation moved to a laminated display where the two are bonded together and replaced as one part. We will tell you which yours is before quoting."
+          "text": "TechBrotherz repairs the IPad 5th gen at 3317 17 Ave SE in Calgary. On the standard IPad line through the ninth generation the touch glass is a separate layer from the display panel underneath, so a cracked front can often be fixed by replacing only the glass, which costs far less than a full screen. The tenth generation moved to a laminated display where the two are bonded together and replaced as one part. We will tell you which yours is before quoting."
         }
       ],
       "markDefs": [],

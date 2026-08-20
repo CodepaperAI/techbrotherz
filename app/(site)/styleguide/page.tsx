@@ -135,10 +135,10 @@ const SHADOWS = [
 /* ------------------------------------------------------- sample block data */
 
 const SAMPLE_MODELS = [
-  { name: "iPhone 8 Plus", href: "/repair/apple-iphone/iphone-8-plus" },
-  { name: "iPhone 8", href: "/repair/apple-iphone/iphone-8" },
-  { name: "iPhone 7 Plus", href: "/repair/apple-iphone/iphone-7-plus" },
-  { name: "iPhone 13", href: "/repair/apple-iphone/iphone-13", fromPrice: null },
+  { name: "Iphone 8 Plus", href: "/repair/apple-iphone/iphone-8-plus" },
+  { name: "Iphone 8", href: "/repair/apple-iphone/iphone-8" },
+  { name: "Iphone 7 Plus", href: "/repair/apple-iphone/iphone-7-plus" },
+  { name: "Iphone 13", href: "/repair/apple-iphone/iphone-13", fromPrice: null },
 ];
 
 const SAMPLE_FAQS = [
@@ -148,9 +148,9 @@ const SAMPLE_FAQS = [
       "No. TechBrotherz is a walk-in store at 3317 17 Ave SE in Calgary. Come in during opening hours and most repairs are finished in about 30 minutes while you wait.",
   },
   {
-    question: "How long does an iPhone screen replacement take?",
+    question: "How long does an Iphone screen replacement take?",
     answer:
-      "Most iPhone screen replacements take about 30 minutes. Bring the phone in during opening hours and you can wait while the work is done.",
+      "Most Iphone screen replacements take about 30 minutes. Bring the phone in during opening hours and you can wait while the work is done.",
   },
   {
     question: "What warranty comes with a repair?",
@@ -448,7 +448,7 @@ export default function StyleguidePage() {
 
         <AnswerBox
           className="mt-10"
-          answer="TechBrotherz in Calgary charges Free quote to replace an iPhone 8 Plus screen, and that price includes the part and the labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
+          answer="TechBrotherz in Calgary charges Free quote to replace an Iphone 8 Plus screen, and that price includes the part and the labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
           keyFacts={[
             { label: "Price", value: "Free quote CAD, part and labour included" },
             { label: "Time", value: "About 30 minutes, while you wait" },
@@ -588,15 +588,15 @@ export default function StyleguidePage() {
 
           <RelatedLinks
             className="lg:col-span-4"
-            title="Other iPhone models we repair"
+            title="Other Iphone models we repair"
             links={[
-              { label: "iPhone 8 screen replacement", href: "/repair/apple-iphone/iphone-8" },
+              { label: "Iphone 8 screen replacement", href: "/repair/apple-iphone/iphone-8" },
               {
-                label: "iPhone 7 Plus screen replacement",
+                label: "Iphone 7 Plus screen replacement",
                 href: "/repair/apple-iphone/iphone-7-plus",
               },
-              { label: "iPhone 6S screen replacement", href: "/repair/apple-iphone/iphone-6s" },
-              { label: "All iPhone repair", href: "/repair/apple-iphone" },
+              { label: "Iphone 6S screen replacement", href: "/repair/apple-iphone/iphone-6s" },
+              { label: "All Iphone repair", href: "/repair/apple-iphone" },
             ]}
           />
         </div>

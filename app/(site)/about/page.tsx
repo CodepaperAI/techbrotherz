@@ -30,7 +30,7 @@ const PATH = "/about";
 export const metadata: Metadata = buildMetadata({
   title: "About TechBrotherz, Calgary",
   description:
-    "TechBrotherz is a local, family-owned walk-in phone, iPad and computer repair store at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
+    "TechBrotherz is a local, family-owned walk-in phone, IPad and computer repair store at 3317 17 Ave SE in Calgary. What we repair, how quoting works, the warranty.",
   path: PATH,
 });
 
@@ -95,13 +95,13 @@ export default async function AboutPage() {
         </>
       }
       answerBox={{
-        answer: `TechBrotherz is a local, family-owned walk-in repair store at ${SITE.street} in Calgary, Alberta. It repairs phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers and gaming consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz is a local, family-owned walk-in repair store at ${SITE.street} in Calgary, Alberta. It repairs phones, IPads and tablets, laptops, desktops, MacBooks, gaming computers and gaming consoles, and unlocks phones. No appointment is needed, most phone repairs take about ${waitMinutes} minutes, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           { label: "What we are", value: "A local, family-owned walk-in store, one Calgary location" },
           { label: "Address", value: `${SITE.street}, ${SITE.city}, ${SITE.region}` },
           {
             label: "Devices",
-            value: "Phones of every brand, iPads, laptops, desktops, gaming consoles",
+            value: "Phones of every brand, IPads, laptops, desktops, gaming consoles",
           },
           { label: "Typical wait", value: `About ${waitMinutes} minutes on most phone repairs` },
           { label: "Warranty", value: `${warrantyDays} days on every repair` },
@@ -190,8 +190,8 @@ export default async function AboutPage() {
         </Heading>
 
         <p className="type-body measure text-tb-muted mt-6">
-          We repair cell phones of every brand, iPhone, Samsung Galaxy, Google Pixel, and Motorola,
-          LG and other Android handsets, along with iPads and tablets, laptops and desktop
+          We repair cell phones of every brand, Iphone, Samsung Galaxy, Google Pixel, and Motorola,
+          LG and other Android handsets, along with IPads and tablets, laptops and desktop
           computers, MacBooks and gaming machines, and{" "}
           <Link href="/services/game-console-repair" className="text-tb-green-deep hover:underline">
             gaming consoles

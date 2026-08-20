@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-12-pro-max",
-  "name": "iPhone 12 Pro Max",
+  "name": "Iphone 12 Pro Max",
   "intro": [
     {
       "_key": "model.iphone-12-pro-max-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-12-pro-max-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 12 Pro Max is the largest phone in the 12 range and the only one with sensor-shift stabilisation in the main camera, which is a more delicate assembly than the standard optical stabilisation beside it. A drop that cracks the rear camera lens cover on a Pro Max is worth looking at quickly for that reason. TechBrotherz checks it at 3317 17 Ave SE in Calgary before quoting."
+          "text": "The Iphone 12 Pro Max is the largest phone in the 12 range and the only one with sensor-shift stabilisation in the main camera, which is a more delicate assembly than the standard optical stabilisation beside it. A drop that cracks the rear camera lens cover on a Pro Max is worth looking at quickly for that reason. TechBrotherz checks it at 3317 17 Ave SE in Calgary before quoting."
         }
       ],
       "markDefs": [],

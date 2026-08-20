@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-13-pro-max",
-  "name": "iPhone 13 Pro Max",
+  "name": "Iphone 13 Pro Max",
   "intro": [
     {
       "_key": "model.iphone-13-pro-max-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-13-pro-max-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 13 Pro Max carries the largest battery Apple had put in an iPhone at the time, so a Pro Max that no longer lasts a day has usually genuinely worn its cell rather than simply being used hard. It also uses a 120Hz ProMotion panel, which makes its screen the dearest in the 13 range. TechBrotherz tests the battery before quoting, at 3317 17 Ave SE in Calgary."
+          "text": "The Iphone 13 Pro Max carries the largest battery Apple had put in an Iphone at the time, so a Pro Max that no longer lasts a day has usually genuinely worn its cell rather than simply being used hard. It also uses a 120Hz ProMotion panel, which makes its screen the dearest in the 13 range. TechBrotherz tests the battery before quoting, at 3317 17 Ave SE in Calgary."
         }
       ],
       "markDefs": [],

@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-5s",
-  "name": "iPhone 5S",
+  "name": "Iphone 5S",
   "intro": [
     {
       "_key": "model.iphone-5s-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5s-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 5S was the first iPhone with Touch ID and the first with a 64-bit processor, which is why it kept receiving updates years after the 5 and 5C had stopped. It shares its repair prices with those two models but not its internals, and the fingerprint sensor is the difference that matters most when a repair is quoted."
+          "text": "The Iphone 5S was the first Iphone with Touch ID and the first with a 64-bit processor, which is why it kept receiving updates years after the 5 and 5C had stopped. It shares its repair prices with those two models but not its internals, and the fingerprint sensor is the difference that matters most when a repair is quoted."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5s-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Not worth repairing except for sentiment or a very specific need. The iPhone 5S stopped at iOS 12 and is now well over a decade old, with no security updates and very limited app support. TechBrotherz will fit a screen if you want the phone working for a particular reason, but we would not recommend it as a phone to rely on."
+          "text": "Not worth repairing except for sentiment or a very specific need. The Iphone 5S stopped at iOS 12 and is now well over a decade old, with no security updates and very limited app support. TechBrotherz will fit a screen if you want the phone working for a particular reason, but we would not recommend it as a phone to rely on."
         }
       ],
       "markDefs": [],
@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5s-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 5S was the first iPhone to pair its home button to the logic board, so Touch ID cannot be transferred to a replacement button. The iPhone 5 and 5C beside it on the price list have no fingerprint sensor at all, so their home button repairs restore full function while the 5S does not."
+          "text": "The Iphone 5S was the first Iphone to pair its home button to the logic board, so Touch ID cannot be transferred to a replacement button. The Iphone 5 and 5C beside it on the price list have no fingerprint sensor at all, so their home button repairs restore full function while the 5S does not."
         }
       ],
       "markDefs": [],

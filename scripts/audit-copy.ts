@@ -75,10 +75,18 @@ const AMERICANISMS: [RegExp, string][] = [
   [/\bcenter\b/, "centre"],
 ];
 
-/** Wrong casings of device and brand names, in copy context only. */
+/**
+ * Wrong casings of device and brand names, in copy context only.
+ *
+ * "Iphone" and "IPad" are the CLIENT'S OWN casing, instructed 2026-08-20 and
+ * confirmed after pushback (the client is particular about capitalisation).
+ * Apple's forms, iPhone and iPad, are therefore flagged as wrong here, which
+ * is the reverse of what any style guide says: recorded in CLAUDE.md Section
+ * 8.7. Slugs and URLs stay all-lowercase and are excluded by isCodeContext.
+ */
 const DEVICE_CASING: [RegExp, string][] = [
-  [/\bIphone\b|\bIPhone\b/, "iPhone"],
-  [/\bIpad\b|\bIPad\b/, "iPad"],
+  [/\biPhone\b|\bIPhone\b|\bIPHONE\b/, "Iphone"],
+  [/\biPad\b|\bIpad\b|\bIPAD\b/, "IPad"],
   [/\bMacbook\b|\bmacbook\b/, "MacBook"],
   [/\bplaystation\b|\bPlaystation\b/, "PlayStation"],
   [/\bXBox\b|\bXBOX\b/, "Xbox"],

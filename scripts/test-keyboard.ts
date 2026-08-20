@@ -198,7 +198,7 @@ async function main() {
       await page.keyboard.press("Tab");
       await page.keyboard.type("403 555 0199");
       await page.keyboard.press("Tab");
-      await page.keyboard.type("iPhone 11");
+      await page.keyboard.type("Iphone 11");
       await page.keyboard.press("Tab");
       await page.keyboard.type("The battery drops from forty percent to nothing without warning.");
 

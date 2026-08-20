@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
  * The independence notice.
  *
  * TechBrotherz is not an authorised service provider for any manufacturer, and
- * a repair site that names iPhone, Galaxy and Pixel throughout should say so
+ * a repair site that names Iphone, Galaxy and Pixel throughout should say so
  * plainly rather than leave the impression open. This is also the single
  * cheapest piece of trademark hygiene available: naming devices is fair
  * nominative use, and stating non-affiliation is what keeps it unambiguous.

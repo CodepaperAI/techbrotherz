@@ -29,7 +29,7 @@ export interface BrandCardProps {
   name: string;
   href: string;
   silhouette: DeviceSilhouette;
-  /** e.g. "iPhone 4 to iPhone 16". Omitted when the catalogue cannot supply it. */
+  /** e.g. "Iphone 4 to Iphone 16". Omitted when the catalogue cannot supply it. */
   range?: string | null;
   modelCount?: number | null;
   /** Formatted, e.g. "$44.99". */
@@ -147,7 +147,7 @@ export const BRAND_SILHOUETTE: Record<string, DeviceSilhouette> = {
 };
 
 /**
- * "iPhone 4 to iPhone 16", from the oldest and newest published models.
+ * "Iphone 4 to Iphone 16", from the oldest and newest published models.
  *
  * Returns null rather than a half-formed string when the catalogue cannot
  * supply both ends, because a range with one end is worse than no range.

@@ -265,7 +265,7 @@ const calgary: PlaceDef = {
     {
       heading: "What can you get repaired at the Calgary store?",
       paragraphs: [
-        "Everything TechBrotherz does happens at this one store: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
+        "Everything TechBrotherz does happens at this one store: cell phones, IPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
         "That means the same technicians see a device from diagnosis to hand-back, and it means a household can bring several devices in one trip. Phones are usually finished while you wait; tablets and computers are same-day drop-offs.",
         "Every repair is quoted free at the Store before any work starts, with the part and the labour in one figure, and nothing begins until you agree to it. Phone the store with your exact model and the fault and you will have the figure before you travel.",
       ],
@@ -365,7 +365,7 @@ const forestLawn: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Forest Lawn customers?",
       paragraphs: [
-        "The same range as for everyone: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one way of quoting: free, with the device in front of us.",
+        "The same range as for everyone: cell phones, IPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one way of quoting: free, with the device in front of us.",
         "Phone repairs are the ones worth walking in for without planning, because screens and batteries on stocked models are finished while you wait. Tablets and computers are same-day drop-offs, which suits a neighbourhood close enough to make two short trips.",
         "Every repair is quoted free with the device in front of us, and the figure is agreed before any work starts. Nothing about the quote or the warranty changes based on which neighbourhood you are travelling from.",
       ],
@@ -449,7 +449,7 @@ const chestermere: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Chestermere customers?",
       paragraphs: [
-        "Cell phones, iPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one store, so a household making the trip can bring several devices at once rather than making separate journeys.",
+        "Cell phones, IPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one store, so a household making the trip can bring several devices at once rather than making separate journeys.",
         "Phone repairs are the ones finished while you wait. Tablet and computer work is a same-day drop-off, which is worth knowing before driving in: that is two trips rather than one, or a long wait in Calgary.",
         "Prices do not change based on where you travel from. There is no out-of-city rate, no travel surcharge, and the warranty is identical.",
       ],

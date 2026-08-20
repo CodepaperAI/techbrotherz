@@ -74,7 +74,7 @@ export interface BrandWithStats extends BrandDef {
  * Counts and ranges cover the whole catalogue, published or not (changed
  * 2026-08 when the current ranges were seeded): the shop repairs a seeded
  * quote-only model just as it repairs a published one, and a card claiming
- * "iPhone 4 to iPhone 16" the week the 17 range is taken at the counter is
+ * "Iphone 4 to Iphone 16" the week the 17 range is taken at the counter is
  * simply out of date. Model PAGES stay gated on published, as before.
  */
 export async function getBrands(): Promise<BrandWithStats[]> {
@@ -158,7 +158,7 @@ export interface HydratedModel {
  * prose. The sibling links in a price group read their display name from
  * NAME_BY_SLUG; the Phase 6.9 version accepted an optional lookup that no
  * caller ever passed, so every one of them rendered "ipad-3" instead of
- * "iPad 3".
+ * "IPad 3".
  */
 function hydrate(doc: ModelDoc): HydratedModel {
   const def = brandDef(doc.brandSlug);

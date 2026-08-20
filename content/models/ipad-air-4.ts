@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "ipad-air-4",
-  "name": "iPad Air 4",
+  "name": "IPad Air 4",
   "intro": [
     {
       "_key": "model.ipad-air-4-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-air-4-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the iPhone 12, which was quick at launch and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
+          "text": "The IPad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the Iphone 12, which was quick at launch and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
         }
       ],
       "markDefs": [],

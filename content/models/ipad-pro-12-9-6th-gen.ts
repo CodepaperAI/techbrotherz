@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "ipad-pro-12-9-6th-gen",
-  "name": "iPad Pro 12.9 (6th gen)",
+  "name": "IPad Pro 12.9 (6th gen)",
   "intro": [
     {
       "_key": "model.ipad-pro-12-9-6th-gen-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-pro-12-9-6th-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPad Pro 12.9 (6th gen) at 3317 17 Ave SE in Calgary. iPad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
+          "text": "TechBrotherz repairs the IPad Pro 12.9 (6th gen) at 3317 17 Ave SE in Calgary. IPad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
         }
       ],
       "markDefs": [],

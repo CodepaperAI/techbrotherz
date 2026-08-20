@@ -34,7 +34,7 @@ export interface BrandDef {
 export const BRANDS: BrandDef[] = [
     {
       "slug": "apple-iphone",
-      "name": "Apple iPhone",
+      "name": "Apple Iphone",
       "type": "phone",
       "order": 10,
       "active": true,
@@ -47,19 +47,19 @@ export const BRANDS: BrandDef[] = [
               "_key": "brand.apple-iphone-s0",
               "_type": "span",
               "marks": [],
-              "text": "TechBrotherz repairs every iPhone from the iPhone 4 through to the current models at 3317 17 Ave SE in Calgary. Screen replacements on the models we stock parts for are done while you wait, usually in about 30 minutes, and every price on this page includes the part and the labour. No appointment is needed. Where a model shows Call for quote, the part is ordered in and the price depends on the day's supply, so phone (403) 273-8324 and we will give you an exact figure."
+              "text": "TechBrotherz repairs every Iphone from the Iphone 4 through to the current models at 3317 17 Ave SE in Calgary. Screen replacements on the models we stock parts for are done while you wait, usually in about 30 minutes, and every price on this page includes the part and the labour. No appointment is needed. Where a model shows Call for quote, the part is ordered in and the price depends on the day's supply, so phone (403) 273-8324 and we will give you an exact figure."
             }
           ],
           "markDefs": [],
           "style": "normal"
         }
       ],
-      "seoTitle": "iPhone Repair Prices in Calgary",
-      "seoDescription": "iPhone screen, battery and charging port repair at TechBrotherz in Calgary. Parts and labour included, most repairs done in about 30 minutes."
+      "seoTitle": "Iphone Repair Prices in Calgary",
+      "seoDescription": "Iphone screen, battery and charging port repair at TechBrotherz in Calgary. Parts and labour included, most repairs done in about 30 minutes."
     },
     {
       "slug": "apple-ipad",
-      "name": "Apple iPad",
+      "name": "Apple IPad",
       "type": "tablet",
       "order": 20,
       "active": true,
@@ -72,15 +72,15 @@ export const BRANDS: BrandDef[] = [
               "_key": "brand.apple-ipad-s0",
               "_type": "span",
               "marks": [],
-              "text": "TechBrotherz replaces cracked iPad glass and iPad screens at 3317 17 Ave SE in Calgary. On older iPads the touch glass is a separate layer from the picture panel, so a cracked front often costs far less to fix than people expect. Bring the iPad in and we will tell you which of the two it needs before any work starts. iPad repairs take longer than phone repairs because the adhesive has to cure, so most are ready the same day rather than while you wait."
+              "text": "TechBrotherz replaces cracked IPad glass and IPad screens at 3317 17 Ave SE in Calgary. On older IPads the touch glass is a separate layer from the picture panel, so a cracked front often costs far less to fix than people expect. Bring the IPad in and we will tell you which of the two it needs before any work starts. IPad repairs take longer than phone repairs because the adhesive has to cure, so most are ready the same day rather than while you wait."
             }
           ],
           "markDefs": [],
           "style": "normal"
         }
       ],
-      "seoTitle": "iPad Repair Prices in Calgary",
-      "seoDescription": "iPad screen and glass replacement prices at TechBrotherz in Calgary. Parts and labour included, 60-day warranty, no appointment needed."
+      "seoTitle": "IPad Repair Prices in Calgary",
+      "seoDescription": "IPad screen and glass replacement prices at TechBrotherz in Calgary. Parts and labour included, 60-day warranty, no appointment needed."
     },
     {
       "slug": "samsung-galaxy",
@@ -97,7 +97,7 @@ export const BRANDS: BrandDef[] = [
               "_key": "brand.samsung-galaxy-s0",
               "_type": "span",
               "marks": [],
-              "text": "TechBrotherz repairs Samsung Galaxy phones at 3317 17 Ave SE in Calgary, from the Galaxy S4 through to the current S and Note ranges. Galaxy screens cost more than iPhone screens because Samsung bonds the OLED panel to the frame, so the replacement part is the screen and the frame together. Every price on this page includes that part and the labour, and every repair carries a 60-day warranty. Walk in during opening hours, no appointment is needed."
+              "text": "TechBrotherz repairs Samsung Galaxy phones at 3317 17 Ave SE in Calgary, from the Galaxy S4 through to the current S and Note ranges. Galaxy screens cost more than Iphone screens because Samsung bonds the OLED panel to the frame, so the replacement part is the screen and the frame together. Every price on this page includes that part and the labour, and every repair carries a 60-day warranty. Walk in during opening hours, no appointment is needed."
             }
           ],
           "markDefs": [],

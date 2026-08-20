@@ -52,9 +52,9 @@ const CALGARY_AREAS: { name: string; href?: string }[] = [
 
 /** The service pill strip directly under the hero, mirroring the reference. */
 const SERVICE_PILLS: { label: string; href: string }[] = [
-  { label: "iPhone Repair", href: "/repair/apple-iphone" },
+  { label: "Iphone Repair", href: "/repair/apple-iphone" },
   { label: "Samsung Repair", href: "/repair/samsung-galaxy" },
-  { label: "iPad Repair", href: "/services/ipad-repair" },
+  { label: "IPad Repair", href: "/services/ipad-repair" },
   { label: "Laptop Repair", href: "/services/laptop-repair" },
   { label: "Computer Repair", href: "/services/computer-repair" },
   { label: "Unlocking", href: "/services/phone-unlocking" },
@@ -69,8 +69,8 @@ const SERVICE_PILLS: { label: string; href: string }[] = [
  * (CLAUDE.md question 31). Each chip links to the page that covers it.
  */
 const BRAND_NAMES: { label: string; href: string }[] = [
-  { label: "iPhone", href: "/repair/apple-iphone" },
-  { label: "iPad", href: "/repair/apple-ipad" },
+  { label: "Iphone", href: "/repair/apple-iphone" },
+  { label: "IPad", href: "/repair/apple-ipad" },
   { label: "MacBook", href: "/services/laptop-repair" },
   { label: "Samsung Galaxy", href: "/repair/samsung-galaxy" },
   { label: "Google Pixel", href: "/repair/google-pixel" },
@@ -95,7 +95,7 @@ const PATH = "/";
 export const metadata: Metadata = buildMetadata({
   title: "Cell Phone & Computer Repair in SE Calgary",
   description:
-    "Walk-in phone, iPad and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Free quote before any work, 60-day warranty.",
+    "Walk-in phone, IPad and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Free quote before any work, 60-day warranty.",
   path: PATH,
 });
 
@@ -128,16 +128,16 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Phone repair",
     description:
-      "Screens and LCDs, batteries, charging ports, cameras and lenses, speakers, back glass and full housings, on iPhone, Samsung Galaxy and Google Pixel.",
+      "Screens and LCDs, batteries, charging ports, cameras and lenses, speakers, back glass and full housings, on Iphone, Samsung Galaxy and Google Pixel.",
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
     tags: ["Screen", "Battery", "Charging port", "Back glass"],
   },
   {
-    title: "iPad repair",
+    title: "IPad repair",
     description:
-      "iPad screens, digitizer glass, batteries and charging ports. On older iPads the glass alone can be replaced, a much smaller job than a full screen.",
+      "IPad screens, digitizer glass, batteries and charging ports. On older IPads the glass alone can be replaced, a much smaller job than a full screen.",
     href: "/services/ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
@@ -276,7 +276,7 @@ export default async function HomePage() {
         .concat([{ label: "Google Pixel 6 repair", href: "/repair/google-pixel/pixel-6" }]),
     },
     {
-      heading: "iPhone models",
+      heading: "Iphone models",
       links: (iphoneHub?.models ?? []).slice(0, 8).map((model) => ({
         label: `${model.name} repair`,
         href: `/repair/apple-iphone/${model.slug}`,
@@ -326,7 +326,7 @@ export default async function HomePage() {
       type: "WebPage",
       name: "Cell phone and computer repair in SE Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, iPad and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, IPad and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -452,7 +452,7 @@ export default async function HomePage() {
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and gaming consoles in SE Calgary, unlocks phones, and buys, sells and trades devices in Store."
+          lead="TechBrotherz repairs phones, IPads, laptops, desktop computers and gaming consoles in SE Calgary, unlocks phones, and buys, sells and trades devices in Store."
         >
           What can we fix for you in <span className="text-tb-green-deep">Calgary</span>?
         </Heading>
@@ -548,7 +548,7 @@ export default async function HomePage() {
             },
             {
               title: "All brands and devices",
-              body: "iPhone, Samsung Galaxy, Google Pixel, iPads, laptops, desktops and gaming consoles, at one Store.",
+              body: "Iphone, Samsung Galaxy, Google Pixel, IPads, laptops, desktops and gaming consoles, at one Store.",
             },
             {
               title: "Free quote before any work",

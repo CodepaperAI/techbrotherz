@@ -262,7 +262,7 @@ async function testContactForm(browser: Browser) {
     await page.goto(`${BASE}/contact`, { waitUntil: "networkidle0", timeout: 90_000 });
     await page.type("#contact-name", "Jordan Reid");
     await page.type("#contact-contact", "403 555 0142");
-    await page.type("#contact-device", "iPhone 12");
+    await page.type("#contact-device", "Iphone 12");
     await page.type(
       "#contact-message",
       "The screen is cracked across the top corner but the display still works. What does a replacement cost?",

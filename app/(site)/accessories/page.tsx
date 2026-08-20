@@ -21,15 +21,15 @@ export const revalidate = 3600;
 const PATH = "/accessories";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Phone, iPad and Tablet Accessories in Calgary",
+  title: "Phone, IPad and Tablet Accessories in Calgary",
   description:
-    "Cases, tempered glass, screen protectors and privacy screen protectors for phones, iPads and tablets at TechBrotherz in Calgary. Call to check stock for your model.",
+    "Cases, tempered glass, screen protectors and privacy screen protectors for phones, IPads and tablets at TechBrotherz in Calgary. Call to check stock for your model.",
   path: PATH,
 });
 
 /**
  * Added on the client's instruction 2026-08: "Apart from repairs Please add
- * phones, iPads and tablet accessories- cases, tempered glass, screen protectors
+ * phones, IPads and tablet accessories- cases, tempered glass, screen protectors
  * and privacy screen protectors". A what-we-stock page, not a shop: no prices,
  * no cart, and no claim about what is on the shelf for a specific model,
  * because stock changes and the site cannot know it. The phone number is the
@@ -48,12 +48,12 @@ export default async function AccessoriesPage() {
       {
         question: "Does TechBrotherz sell phone cases and screen protectors in Calgary?",
         answer:
-          "Yes. TechBrotherz at 3317 17 Ave SE in Calgary stocks cases, tempered glass, film screen protectors and privacy screen protectors for phones, iPads and tablets, alongside its repair Store. Stock varies by device model, so phoning (403) 273-8324 before travelling is the reliable way to check what is on the shelf for yours.",
+          "Yes. TechBrotherz at 3317 17 Ave SE in Calgary stocks cases, tempered glass, film screen protectors and privacy screen protectors for phones, IPads and tablets, alongside its repair Store. Stock varies by device model, so phoning (403) 273-8324 before travelling is the reliable way to check what is on the shelf for yours.",
       },
       {
         question: "Do you have a case or protector for my exact model?",
         answer:
-          "TechBrotherz stocks accessories for the phone, iPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the store asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
+          "TechBrotherz stocks accessories for the phone, IPad and tablet models people in Calgary actually carry, and stock changes as devices come and go. Rather than promise a model is on the shelf, the store asks you to phone (403) 273-8324 with the exact device name, and staff will check while you are on the line.",
       },
       {
         question: "Will TechBrotherz fit a screen protector bought at the Store?",
@@ -75,7 +75,7 @@ export default async function AccessoriesPage() {
     localBusiness(settings ?? {}, reviews),
     webPage({
       type: "WebPage",
-      name: "Phone, iPad and tablet accessories in Calgary",
+      name: "Phone, IPad and tablet accessories in Calgary",
       description:
         "Cases, tempered glass, screen protectors and privacy screen protectors stocked at the TechBrotherz Store in Calgary.",
       path: PATH,
@@ -89,21 +89,21 @@ export default async function AccessoriesPage() {
     <PageShell
       path={PATH}
       eyebrow="Accessories"
-      title="Phone, iPad and Tablet Accessories in Calgary"
+      title="Phone, IPad and Tablet Accessories in Calgary"
       crumbLabel="Accessories"
       lead={
         <>
           TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
           {SITE.city}, {SITE.region}, stocks the accessories that stop devices coming back to the
           repair Store: cases, tempered glass, film screen protectors and privacy screen
-          protectors for phones, iPads and tablets.
+          protectors for phones, IPads and tablets.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, iPads, tablets and laptops: cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the Store is fitted there before you leave.`,
+        answer: `TechBrotherz at ${SITE.street} in Calgary stocks accessories for phones, IPads, tablets and laptops: cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers and HDMI cables. Stock varies by device model, so phone ${SITE.phone} to check what is on the shelf for your device. A protector bought at the Store is fitted there before you leave.`,
         keyFacts: [
           { label: "In stock", value: "Cases, tempered glass, privacy protectors, cables, chargers" },
-          { label: "For", value: "Phones, iPads and tablets" },
+          { label: "For", value: "Phones, IPads and tablets" },
           { label: "Fitting", value: "Protectors bought at the Store are fitted there" },
           { label: "Stock check", value: `Phone ${SITE.phone} with your exact model` },
           { label: "Appointment", value: "Not needed, walk in during opening hours" },
@@ -172,7 +172,7 @@ export default async function AccessoriesPage() {
         </div>
 
         <p className="type-body measure text-tb-muted mt-8">
-          Stock varies by device model. TechBrotherz carries accessories for the phone, iPad and
+          Stock varies by device model. TechBrotherz carries accessories for the phone, IPad and
           tablet models people in Calgary actually own, and the reliable way to check what is on the
           shelf for yours is to phone {SITE.phone} with the exact model name. Staff will check while
           you are on the line, the same call that confirms a repair part is in stock.
@@ -294,9 +294,9 @@ export default async function AccessoriesPage() {
               <p className="type-body text-tb-muted">
                 The same applies to tablets. An{" "}
                 <Link href="/services/ipad-repair" className="text-tb-green-deep hover:underline">
-                  iPad screen repair
+                  IPad screen repair
                 </Link>{" "}
-                is one of the larger jobs the store quotes, and an iPad in a decent case with glass
+                is one of the larger jobs the store quotes, and an IPad in a decent case with glass
                 on the front is a repair that mostly never happens.
               </p>
               <p className="type-body text-tb-muted">
@@ -304,7 +304,7 @@ export default async function AccessoriesPage() {
                 and free of trapped dust, before you leave. Fitting glass cleanly is routine for a
                 shop that does{" "}
                 <Link href="/repair/apple-iphone" className="text-tb-green-deep hover:underline">
-                  iPhone screen replacements
+                  Iphone screen replacements
                 </Link>{" "}
                 every day.
               </p>
@@ -365,7 +365,7 @@ export default async function AccessoriesPage() {
             title="If the damage is already done"
             links={[
               { label: "Cell phone repair", href: "/services/phone-repair" },
-              { label: "iPad repair", href: "/services/ipad-repair" },
+              { label: "IPad repair", href: "/services/ipad-repair" },
               { label: "All repair services", href: "/services" },
             ]}
           />

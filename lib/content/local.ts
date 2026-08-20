@@ -93,11 +93,11 @@ const phoneRepairCalgary: LocalDef = {
     },
   ]),
   lead: (c) =>
-    `${ENTITY}, repairs iPhone, Samsung Galaxy and Google Pixel cell phones. Most repairs take about ${c.waitMinutes} minutes, the quote is free, and no appointment is needed at any time.`,
+    `${ENTITY}, repairs Iphone, Samsung Galaxy and Google Pixel cell phones. Most repairs take about ${c.waitMinutes} minutes, the quote is free, and no appointment is needed at any time.`,
   answer: (c) =>
     `TechBrotherz repairs cell phones in Calgary at 3317 17 Ave SE, open seven days, with no appointment needed. Most phone repairs take about ${c.waitMinutes} minutes at the Store, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and given before any work starts, with the part and the labour together in one figure.`,
   keyFacts: (c) => [
-    { label: "Handsets", value: "iPhone, Samsung Galaxy and Google Pixel" },
+    { label: "Handsets", value: "Iphone, Samsung Galaxy and Google Pixel" },
     { label: "Quote", value: "Free at the Store, before any work starts" },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes` },
@@ -107,7 +107,7 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Which phones does TechBrotherz repair in Calgary?",
       paragraphs: [
-        "TechBrotherz repairs iPhone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
+        "TechBrotherz repairs Iphone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
         `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn batteries, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
         "Phones from brands outside that list are quoted at the Store once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
       ],
@@ -166,7 +166,7 @@ const phoneRepairCalgary: LocalDef = {
     },
     {
       question: "How much does it cost to fix a phone screen in Calgary?",
-      answer: `Phone screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts, with the part and the labour together in one figure. The figure depends on the handset, because the replacement assembly is much the largest share of the job. Every iPhone and Galaxy model in the catalogue is quoted individually.`,
+      answer: `Phone screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts, with the part and the labour together in one figure. The figure depends on the handset, because the replacement assembly is much the largest share of the job. Every Iphone and Galaxy model in the catalogue is quoted individually.`,
     },
     {
       question: "Can I get a phone repaired in Calgary on the same day?",
@@ -180,12 +180,12 @@ const phoneRepairCalgary: LocalDef = {
 
 const iphoneScreenCalgary: LocalDef = {
   slug: "iphone-screen-repair-calgary",
-  h1: "iPhone Screen Repair in Calgary",
+  h1: "Iphone Screen Repair in Calgary",
   eyebrow: "Calgary",
-  seoTitle: "iPhone Screen Repair Calgary | About 30 Minutes",
+  seoTitle: "Iphone Screen Repair Calgary | About 30 Minutes",
   seoDescription:
-    "iPhone screen repair in Calgary at TechBrotherz, 3317 17 Ave SE. Priced per model, part and labour included, about 30 minutes while you wait, 60-day warranty.",
-  serviceType: "iPhone screen repair",
+    "Iphone screen repair in Calgary at TechBrotherz, 3317 17 Ave SE. Priced per model, part and labour included, about 30 minutes while you wait, 60-day warranty.",
+  serviceType: "Iphone screen repair",
   city: "Calgary",
   priceSource: {
     kind: "catalogue",
@@ -206,11 +206,11 @@ const iphoneScreenCalgary: LocalDef = {
     },
   ]),
   lead: (c) =>
-    `${ENTITY}, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. Every iPhone in the catalogue is quoted individually rather than at one flat rate, and the quote is free and given before any work starts.`,
+    `${ENTITY}, replaces Iphone screens in about ${c.waitMinutes} minutes while you wait. Every Iphone in the catalogue is quoted individually rather than at one flat rate, and the quote is free and given before any work starts.`,
   answer: (c) =>
-    `iPhone screen repair in Calgary at TechBrotherz takes about ${c.waitMinutes} minutes at the Store at 3317 17 Ave SE, with no appointment needed. Each handset is quoted individually, free of charge, before any work starts. Every screen replacement carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
+    `Iphone screen repair in Calgary at TechBrotherz takes about ${c.waitMinutes} minutes at the Store at 3317 17 Ave SE, with no appointment needed. Each handset is quoted individually, free of charge, before any work starts. Every screen replacement carries a ${c.warrantyDays}-day warranty on the part and the workmanship.`,
   keyFacts: (c) => [
-    { label: "iPhone models", value: "iPhone 4 through iPhone 16" },
+    { label: "Iphone models", value: "Iphone 4 through Iphone 16" },
     { label: "Time", value: `About ${c.waitMinutes} minutes, while you wait` },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Face ID", value: "Transferred from your old screen, kept working" },
@@ -218,9 +218,9 @@ const iphoneScreenCalgary: LocalDef = {
   ],
   sections: (c) => [
     {
-      heading: "How long does an iPhone screen repair take in Calgary?",
+      heading: "How long does an Iphone screen repair take in Calgary?",
       paragraphs: [
-        `About ${c.waitMinutes} minutes, done at the Store while you wait. An iPhone screen arrives as a complete front assembly with the glass and the display already bonded together, which is how Apple builds them, so the repair is a swap rather than something that has to be assembled.`,
+        `About ${c.waitMinutes} minutes, done at the Store while you wait. An Iphone screen arrives as a complete front assembly with the glass and the display already bonded together, which is how Apple builds them, so the repair is a swap rather than something that has to be assembled.`,
         "That makes it a single trip. You do not leave the phone, you do not come back tomorrow, and you are not without a phone for a day. For most people that is the difference between getting it fixed this week and putting it off for a month.",
         "If the part for your model is not on the shelf we order it in, which usually means a day or two rather than the same visit. We check stock and tell you before you commit, not after.",
       ],
@@ -228,7 +228,7 @@ const iphoneScreenCalgary: LocalDef = {
     {
       heading: "Will Face ID still work after the screen is replaced?",
       paragraphs: [
-        "Yes, when the repair is done properly, and this is the question worth asking any shop before handing over an iPhone. The Face ID dot projector and infrared camera sit in the notch and are cryptographically paired to the logic board in your specific handset. They cannot be replaced with parts from another phone.",
+        "Yes, when the repair is done properly, and this is the question worth asking any shop before handing over an Iphone. The Face ID dot projector and infrared camera sit in the notch and are cryptographically paired to the logic board in your specific handset. They cannot be replaced with parts from another phone.",
         "What has to happen is that the existing sensor assembly is transferred carefully from the old screen onto the new one. That flex cable is thin and it tears if the job is rushed, and a torn Face ID cable means Face ID is gone permanently on that phone, with no repair available afterwards.",
         "The same applies to Touch ID on models with a home button. The fingerprint sensor is paired to the board and has to move across intact. It is the most delicate step in the repair and the reason the job is not worth rushing to save ten minutes.",
       ],
@@ -236,21 +236,21 @@ const iphoneScreenCalgary: LocalDef = {
     {
       heading: "Does a cracked screen cost the same as a black one?",
       paragraphs: [
-        "On an iPhone, yes, and it surprises people every week. The touch-sensitive glass is laminated directly onto the display panel at the factory with no air gap, which is what makes the picture look like it sits on the surface rather than behind a window. It also means the two layers cannot be separated.",
+        "On an Iphone, yes, and it surprises people every week. The touch-sensitive glass is laminated directly onto the display panel at the factory with no air gap, which is what makes the picture look like it sits on the surface rather than behind a window. It also means the two layers cannot be separated.",
         "So a hairline crack and a completely black display are the same repair, because both are fixed by fitting one complete front assembly. There is no cheaper option where only the glass is replaced, however minor the damage looks from the outside.",
-        "Older iPads are the exception and the reason people expect otherwise: on those the glass is a separate layer and replacing it alone is much cheaper. That has not been true of iPhones for a very long time.",
+        "Older IPads are the exception and the reason people expect otherwise: on those the glass is a separate layer and replacing it alone is much cheaper. That has not been true of Iphones for a very long time.",
       ],
     },
     {
-      heading: "What does an iPhone screen replacement cost in Calgary?",
+      heading: "What does an Iphone screen replacement cost in Calgary?",
       paragraphs: [
-        `Two things decide what an iPhone screen comes to: whether the handset uses an LCD or an OLED panel, and whether it is a standard or a Pro model. Those are part differences rather than labour differences, which is why the labour is much the same across the range and the quoted figure is not. TechBrotherz gives the figure for your handset before any work starts, and it covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty.`,
+        `Two things decide what an Iphone screen comes to: whether the handset uses an LCD or an OLED panel, and whether it is a standard or a Pro model. Those are part differences rather than labour differences, which is why the labour is much the same across the range and the quoted figure is not. TechBrotherz gives the figure for your handset before any work starts, and it covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty.`,
         "The pattern is consistent: older LCD models are cheapest because those panels have been in production for years, OLED models cost more, and recent Pro models with the largest displays cost the most. None of that is a markup, it is what the assemblies cost to buy.",
-        "Apple publishes its own out-of-warranty screen service pricing per model on its support site, which is worth comparing before deciding where to take the repair. On iPhone XR, XS and later, iOS shows a notification after any screen replacement carried out outside Apple's system, and we explain what to expect for your model before starting.",
+        "Apple publishes its own out-of-warranty screen service pricing per model on its support site, which is worth comparing before deciding where to take the repair. On Iphone XR, XS and later, iOS shows a notification after any screen replacement carried out outside Apple's system, and we explain what to expect for your model before starting.",
       ],
     },
     {
-      heading: "What happens to your data during an iPhone screen repair?",
+      heading: "What happens to your data during an Iphone screen repair?",
       paragraphs: [
         "Nothing. A screen replacement does not go near the storage in the phone. Your photos, messages, apps and settings are exactly where they were, and there is nothing to restore afterwards. You do not need to sign out of anything or wipe the device before bringing it in.",
         "We do not need your passcode for a standard screen replacement either. Where a repair needs the phone unlocked for testing, we say so at the Store and explain why rather than asking for it as a matter of routine.",
@@ -261,7 +261,7 @@ const iphoneScreenCalgary: LocalDef = {
   localMix: [
     {
       title: "Winter drops",
-      body: "Cold glass breaks more easily and gloves make phones harder to hold. The months around the new year bring the most cracked iPhones through the door.",
+      body: "Cold glass breaks more easily and gloves make phones harder to hold. The months around the new year bring the most cracked Iphones through the door.",
     },
     {
       title: "Screens that still work",
@@ -274,17 +274,17 @@ const iphoneScreenCalgary: LocalDef = {
   ],
   faqs: (c) => [
     {
-      question: "How much is iPhone screen repair in Calgary?",
-      answer: `iPhone screen repair at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older LCD handsets are the smaller job and recent Pro models the larger one, because the replacement assembly is much the largest share of the work. Every iPhone in the catalogue is quoted individually.`,
+      question: "How much is Iphone screen repair in Calgary?",
+      answer: `Iphone screen repair at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older LCD handsets are the smaller job and recent Pro models the larger one, because the replacement assembly is much the largest share of the work. Every Iphone in the catalogue is quoted individually.`,
     },
     {
-      question: "Can I get an iPhone screen fixed while I wait in Calgary?",
-      answer: `Yes. iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store at 3317 17 Ave SE. The part arrives as a complete front assembly, so it is a swap rather than an assembly job. No appointment is needed.`,
+      question: "Can I get an Iphone screen fixed while I wait in Calgary?",
+      answer: `Yes. Iphone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store at 3317 17 Ave SE. The part arrives as a complete front assembly, so it is a swap rather than an assembly job. No appointment is needed.`,
     },
     {
-      question: "Is a cracked iPhone screen cheaper to fix than a black one?",
+      question: "Is a cracked Iphone screen cheaper to fix than a black one?",
       answer:
-        "No. On an iPhone the glass is laminated directly to the display panel, so both are replaced as one complete front assembly and both cost the same. There is no cheaper glass-only option on any iPhone. Older iPads do have separate glass, which is where the expectation comes from.",
+        "No. On an Iphone the glass is laminated directly to the display panel, so both are replaced as one complete front assembly and both cost the same. There is no cheaper glass-only option on any Iphone. Older IPads do have separate glass, which is where the expectation comes from.",
     },
   ],
   globalCategories: ["parts", "turnaround"],
@@ -320,7 +320,7 @@ const samsungCalgary: LocalDef = {
     },
   ]),
   lead: () =>
-    `${ENTITY}, repairs Samsung Galaxy phones: screens, batteries and charging ports. A Galaxy screen is a bigger job than a comparable iPhone screen, and the reason is structural rather than a markup.`,
+    `${ENTITY}, repairs Samsung Galaxy phones: screens, batteries and charging ports. A Galaxy screen is a bigger job than a comparable Iphone screen, and the reason is structural rather than a markup.`,
   answer: (c) =>
     `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
   keyFacts: (c) => [
@@ -332,11 +332,11 @@ const samsungCalgary: LocalDef = {
   ],
   sections: (c) => [
     {
-      heading: "Why does a Samsung screen cost more than an iPhone screen?",
+      heading: "Why does a Samsung screen cost more than an Iphone screen?",
       paragraphs: [
-        "The difference is structural rather than a matter of brand. On most Galaxy models the OLED display is bonded to the phone's mid-frame at the factory and supplied as a single service assembly, so replacing the screen means replacing the frame it is mounted in. On an iPhone the display comes off the frame as its own part.",
+        "The difference is structural rather than a matter of brand. On most Galaxy models the OLED display is bonded to the phone's mid-frame at the factory and supplied as a single service assembly, so replacing the screen means replacing the frame it is mounted in. On an Iphone the display comes off the frame as its own part.",
         "That means a Galaxy screen part includes more of the phone and costs accordingly. It also takes longer to fit, because the board, the battery, the cameras and the buttons all have to be transferred out of the old frame and into the new one rather than the screen simply being swapped over.",
-        "The second factor is the panel. Samsung has used OLED across its range for far longer than Apple has, including on mid-range models, and OLED costs more to manufacture than the LCD panels older iPhones used. Both factors are part cost, not labour rate.",
+        "The second factor is the panel. Samsung has used OLED across its range for far longer than Apple has, including on mid-range models, and OLED costs more to manufacture than the LCD panels older Iphones used. Both factors are part cost, not labour rate.",
       ],
     },
     {
@@ -358,8 +358,8 @@ const samsungCalgary: LocalDef = {
     {
       heading: "Which Galaxy models does TechBrotherz repair in Calgary?",
       paragraphs: [
-        `TechBrotherz repairs Galaxy S, Note and A series phones, with each model priced individually in the table above. The spread between the cheapest and most expensive Galaxy screen is wider than for iPhone, because the range runs from small flat A-series displays to large curved Note panels.`,
-        `Screens, batteries, charging ports and back glass are the four repairs that account for nearly every Galaxy brought in. A screen takes about 45 minutes rather than the ${c.waitMinutes} an iPhone screen takes, because of the frame transfer, and most are still done while you wait.`,
+        `TechBrotherz repairs Galaxy S, Note and A series phones, with each model priced individually in the table above. The spread between the cheapest and most expensive Galaxy screen is wider than for Iphone, because the range runs from small flat A-series displays to large curved Note panels.`,
+        `Screens, batteries, charging ports and back glass are the four repairs that account for nearly every Galaxy brought in. A screen takes about 45 minutes rather than the ${c.waitMinutes} an Iphone screen takes, because of the frame transfer, and most are still done while you wait.`,
         "Models showing a quote rather than a price are ones where the assembly is ordered in and priced once we know the cost. Samsung publishes its own service pricing for current models on its Canadian support site, which is worth comparing before deciding.",
       ],
     },
@@ -389,7 +389,7 @@ const samsungCalgary: LocalDef = {
   faqs: () => [
     {
       question: "How much does Samsung screen repair cost in Calgary?",
-      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. A Galaxy screen is a larger job than a comparable iPhone screen because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
+      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. A Galaxy screen is a larger job than a comparable Iphone screen because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
     },
     {
       question: "My Galaxy screen has green lines but no crack. What is wrong?",
@@ -399,7 +399,7 @@ const samsungCalgary: LocalDef = {
     {
       question: "How long does a Samsung repair take in Calgary?",
       answer:
-        "About 45 minutes for a screen at TechBrotherz in Calgary, longer than an iPhone screen. A Galaxy opens from the back, and the board, battery, cameras and buttons must all be transferred into the new display and frame assembly, which is what accounts for the extra time.",
+        "About 45 minutes for a screen at TechBrotherz in Calgary, longer than an Iphone screen. A Galaxy opens from the back, and the board, battery, cameras and buttons must all be transferred into the new display and frame assembly, which is what accounts for the extra time.",
     },
   ],
   globalCategories: ["parts", "warranty"],

@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s21-ultra-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Galaxy S21 Ultra at 3317 17 Ave SE in Calgary. The screen part for this generation is the OLED panel bonded to the frame, replaced as one assembly, which is why the price sits well above a typical iPhone screen. The fingerprint reader is under the display and is matched to it, so it is recalibrated as part of a screen replacement here. Phone (403) 273-8324 with your exact model and we will confirm the price and part availability."
+          "text": "TechBrotherz repairs the Galaxy S21 Ultra at 3317 17 Ave SE in Calgary. The screen part for this generation is the OLED panel bonded to the frame, replaced as one assembly, which is why the price sits well above a typical Iphone screen. The fingerprint reader is under the display and is matched to it, so it is recalibrated as part of a screen replacement here. Phone (403) 273-8324 with your exact model and we will confirm the price and part availability."
         }
       ],
       "markDefs": [],

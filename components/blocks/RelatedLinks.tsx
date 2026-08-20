@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export interface RelatedLinksProps {
   /**
-   * A real phrase or a question, e.g. "Other iPhone models we repair".
+   * A real phrase or a question, e.g. "Other Iphone models we repair".
    * Never the word "Related" on its own.
    */
   title: string;

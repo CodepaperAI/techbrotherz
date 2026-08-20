@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-4s",
-  "name": "iPhone 4S",
+  "name": "Iphone 4S",
   "intro": [
     {
       "_key": "model.iphone-4s-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-4s-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 4S was the first iPhone with Siri and the last with the 30-pin dock connector. Its front and back are both glass over a stainless steel frame, so it breaks on both sides and it is heavy for its size. TechBrotherz still stocks parts for it, which very few shops do."
+          "text": "The Iphone 4S was the first Iphone with Siri and the last with the 30-pin dock connector. Its front and back are both glass over a stainless steel frame, so it breaks on both sides and it is heavy for its size. TechBrotherz still stocks parts for it, which very few shops do."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-4s-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, and we will say so plainly. The iPhone 4S stopped at iOS 9, well over a decade ago. It cannot run current apps, receives no security updates, and uses a charging connector that is no longer sold in most shops. TechBrotherz will repair one on request, but not one member of staff would recommend spending money on it."
+          "text": "No, and we will say so plainly. The Iphone 4S stopped at iOS 9, well over a decade ago. It cannot run current apps, receives no security updates, and uses a charging connector that is no longer sold in most shops. TechBrotherz will repair one on request, but not one member of staff would recommend spending money on it."
         }
       ],
       "markDefs": [],

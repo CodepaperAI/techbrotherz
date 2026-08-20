@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-5c",
-  "name": "iPhone 5C",
+  "name": "Iphone 5C",
   "intro": [
     {
       "_key": "model.iphone-5c-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5c-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 5C is the plastic one. Apple built it from polycarbonate over a steel frame rather than aluminium, in five colours, and it is the only iPhone that has ever been made that way. That construction changes the repair: the shell flexes rather than bends, and it cracks around the screw posts rather than denting."
+          "text": "The Iphone 5C is the plastic one. Apple built it from polycarbonate over a steel frame rather than aluminium, in five colours, and it is the only Iphone that has ever been made that way. That construction changes the repair: the shell flexes rather than bends, and it cracks around the screw posts rather than denting."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-5c-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "No, other than for sentiment. The iPhone 5C stopped at iOS 10, which is now many years without security updates, and almost no current app will install on it. TechBrotherz will still repair one if you ask, and we will be straight with you first: this is a collectable or a keepsake at this point, not a working phone."
+          "text": "No, other than for sentiment. The Iphone 5C stopped at iOS 10, which is now many years without security updates, and almost no current app will install on it. TechBrotherz will still repair one if you ask, and we will be straight with you first: this is a collectable or a keepsake at this point, not a working phone."
         }
       ],
       "markDefs": [],

@@ -61,7 +61,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     "_updatedAt": "2026-07-30T17:00:10Z",
     "city": "Calgary",
     "commonRepairs": [
-      "iPhone and Samsung screen replacement",
+      "Iphone and Samsung screen replacement",
       "Phone battery replacement",
       "Charging port repair",
       "Laptop screen replacement and Windows installation",
@@ -176,7 +176,7 @@ export const LOCATION_DOCS: LocationDoc[] = [
     "_updatedAt": "2026-07-30T17:00:10Z",
     "city": "Forest Lawn",
     "commonRepairs": [
-      "iPhone and Samsung screen replacement",
+      "Iphone and Samsung screen replacement",
       "Phone battery replacement",
       "Carrier unlocking",
       "Charging port repair"

@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-6s-plus",
-  "name": "iPhone 6S Plus",
+  "name": "Iphone 6S Plus",
   "intro": [
     {
       "_key": "model.iphone-6s-plus-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the iPhone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone this far into its life, so almost any fault on a 6S Plus can be quoted on the spot at the Store rather than waiting on an ordered part."
+          "text": "The Iphone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the Iphone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone this far into its life, so almost any fault on a 6S Plus can be quoted on the spot at the Store rather than waiting on an ordered part."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.iphone-6s-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Repair only if the phone owes you nothing. The iPhone 6S Plus stopped at iOS 15 and is now roughly a decade old. A screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
+          "text": "Repair only if the phone owes you nothing. The Iphone 6S Plus stopped at iOS 15 and is now roughly a decade old. A screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
         }
       ],
       "markDefs": [],

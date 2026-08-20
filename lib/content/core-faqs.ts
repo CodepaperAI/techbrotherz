@@ -36,7 +36,7 @@ export function homeFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
     {
       question: "What does TechBrotherz repair in Calgary?",
-      answer: `TechBrotherz at ${c.street} in ${c.city} repairs cell phones, iPads, Android and Windows tablets, laptops and desktop computers, and unlocks phones for any Canadian carrier. The published catalogue covers ${c.modelCount} device models across ${c.brandCount} brands, with ${c.repairTypeCount} kinds of repair.`,
+      answer: `TechBrotherz at ${c.street} in ${c.city} repairs cell phones, IPads, Android and Windows tablets, laptops and desktop computers, and unlocks phones for any Canadian carrier. The published catalogue covers ${c.modelCount} device models across ${c.brandCount} brands, with ${c.repairTypeCount} kinds of repair.`,
     },
     {
       question: "How much do repairs at TechBrotherz cost?",
@@ -61,7 +61,7 @@ export function servicesFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "Which TechBrotherz service do I need for my device?",
-      answer: `Choose by device: phone repair for handsets, tablet repair for iPads and Android tablets, laptop repair for screens, keyboards and charging sockets, and computer repair for desktops, Windows installation and tune-ups. If you are not sure, bring the device to ${c.street} in ${c.city} and TechBrotherz will diagnose it at the Store.`,
+      answer: `Choose by device: phone repair for handsets, tablet repair for IPads and Android tablets, laptop repair for screens, keyboards and charging sockets, and computer repair for desktops, Windows installation and tune-ups. If you are not sure, bring the device to ${c.street} in ${c.city} and TechBrotherz will diagnose it at the Store.`,
     },
   ];
 }

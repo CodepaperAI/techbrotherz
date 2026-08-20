@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "iphone-14-pro-max",
-  "name": "iPhone 14 Pro Max",
+  "name": "Iphone 14 Pro Max",
   "intro": [
     {
       "_key": "model.iphone-14-pro-max-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.iphone-14-pro-max-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 14 Pro Max has the largest and most expensive screen of the 14 range, combining the Dynamic Island cutout with an always-on ProMotion panel. It also carries the 48 megapixel main camera, whose lens cover sits proud of the body and cracks readily in a drop. TechBrotherz can often replace just the cracked lens cover rather than the whole camera module. We are at 3317 17 Ave SE in Calgary."
+          "text": "The Iphone 14 Pro Max has the largest and most expensive screen of the 14 range, combining the Dynamic Island cutout with an always-on ProMotion panel. It also carries the 48 megapixel main camera, whose lens cover sits proud of the body and cracks readily in a drop. TechBrotherz can often replace just the cracked lens cover rather than the whole camera module. We are at 3317 17 Ave SE in Calgary."
         }
       ],
       "markDefs": [],

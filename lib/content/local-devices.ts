@@ -13,12 +13,12 @@ import { ENTITY } from "@/lib/content/local";
 
 const ipadCalgary: LocalDef = {
   slug: "ipad-repair-calgary",
-  h1: "iPad Repair in Calgary",
+  h1: "IPad Repair in Calgary",
   eyebrow: "Calgary",
-  seoTitle: "iPad Repair Calgary | Cracked Glass and Screens",
+  seoTitle: "IPad Repair Calgary | Cracked Glass and Screens",
   seoDescription:
-    "iPad repair in Calgary at TechBrotherz, 3317 17 Ave SE. Cracked glass, failed screens and batteries, part and labour included, 60-day warranty, walk in.",
-  serviceType: "iPad repair",
+    "IPad repair in Calgary at TechBrotherz, 3317 17 Ave SE. Cracked glass, failed screens and batteries, part and labour included, 60-day warranty, walk in.",
+  serviceType: "IPad repair",
   city: "Calgary",
   priceSource: {
     kind: "catalogue",
@@ -35,15 +35,15 @@ const ipadCalgary: LocalDef = {
       fact: "transitway",
       treatment: "mention",
       sentence:
-        "Because iPad work is usually a drop-off rather than a wait, the transitway stop outside at 33 Street SE makes two short trips easy instead of one long one.",
+        "Because IPad work is usually a drop-off rather than a wait, the transitway stop outside at 33 Street SE makes two short trips easy instead of one long one.",
     },
   ]),
   lead: () =>
-    `${ENTITY}, repairs iPads: cracked glass, failed display panels, worn batteries and charging ports. On older iPads the glass is a separate layer from the picture, so a cracked front is often a smaller repair than people expect.`,
+    `${ENTITY}, repairs IPads: cracked glass, failed display panels, worn batteries and charging ports. On older IPads the glass is a separate layer from the picture, so a cracked front is often a smaller repair than people expect.`,
   answer: (c) =>
-    `iPad repair in Calgary at TechBrotherz is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture is the smaller repair. iPad work is usually same-day rather than while you wait, and every repair carries a ${c.warrantyDays}-day warranty.`,
+    `IPad repair in Calgary at TechBrotherz is quoted per model, free of charge, before any work starts. On older IPad models the touch glass is separate from the display panel, so a cracked front with a working picture is the smaller repair. IPad work is usually same-day rather than while you wait, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
-    { label: "Models", value: "iPad, iPad Air and iPad Mini" },
+    { label: "Models", value: "IPad, IPad Air and IPad Mini" },
     { label: "Time", value: "Usually same day, not while you wait" },
     { label: "Where", value: "3317 17 Ave SE, southeast Calgary" },
     { label: "Bring", value: "The model number from the back" },
@@ -51,74 +51,74 @@ const ipadCalgary: LocalDef = {
   ],
   sections: () => [
     {
-      heading: "Why is iPad repair in Calgary cheaper than people expect?",
+      heading: "Why is IPad repair in Calgary cheaper than people expect?",
       paragraphs: [
-        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel underneath, with an air gap between them. Crack the front of one of those and leave the picture undamaged, and only the glass needs replacing, which is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
-        "This is the opposite of every modern phone, where the two layers are laminated together at the factory and replace as one. The base iPad kept the older separated construction long after phones moved on, so a large cracked tablet can cost less to fix than a small cracked handset.",
-        "The newer iPad Air and every iPad Pro changed it. Those use laminated displays where the glass is bonded directly to the panel, which looks better and costs considerably more when it breaks. Which one you have is the first thing we check, and it is why we ask for the model.",
+        `On many IPad models the touch-sensitive glass is a genuinely separate component from the display panel underneath, with an air gap between them. Crack the front of one of those and leave the picture undamaged, and only the glass needs replacing, which is why a cracked older IPad is one of the smaller repairs TechBrotherz quotes.`,
+        "This is the opposite of every modern phone, where the two layers are laminated together at the factory and replace as one. The base IPad kept the older separated construction long after phones moved on, so a large cracked tablet can cost less to fix than a small cracked handset.",
+        "The newer IPad Air and every IPad Pro changed it. Those use laminated displays where the glass is bonded directly to the panel, which looks better and costs considerably more when it breaks. Which one you have is the first thing we check, and it is why we ask for the model.",
       ],
     },
     {
-      heading: "Why does an iPad repair take longer than a phone repair?",
+      heading: "Why does an IPad repair take longer than a phone repair?",
       paragraphs: [
-        "The adhesive holding an iPad's glass runs around the entire perimeter, and that is a much longer edge than a phone. It has to be warmed evenly along its whole length until it softens, then cut through slowly, then scraped off the frame before a new panel can bond. Rushing any of that bends the frame.",
-        "The frame is the part that cannot be undone. An iPad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is what makes the repair repeatable rather than a gamble.",
-        "In practice that makes most iPad work a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close. We give a realistic time when you drop it off and call when it is done.",
+        "The adhesive holding an IPad's glass runs around the entire perimeter, and that is a much longer edge than a phone. It has to be warmed evenly along its whole length until it softens, then cut through slowly, then scraped off the frame before a new panel can bond. Rushing any of that bends the frame.",
+        "The frame is the part that cannot be undone. An IPad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is what makes the repair repeatable rather than a gamble.",
+        "In practice that makes most IPad work a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close. We give a realistic time when you drop it off and call when it is done.",
       ],
     },
     {
-      heading: "Is it worth repairing an older iPad?",
+      heading: "Is it worth repairing an older IPad?",
       paragraphs: [
-        "For older iPads with separate glass, usually yes and clearly so. The repair costs a small fraction of a replacement tablet and the device carries on doing exactly what it was doing. A cracked iPad that otherwise works is not a tablet that needs replacing, it is a tablet that needs a piece of glass.",
-        "For recent iPad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If a repair approaches half the used value of the tablet, that is worth thinking about rather than deciding at the Store, and we would rather you thought about it.",
-        "One factor people forget: iPads stay useful for years as reading, video and kitchen devices after they stop getting the latest iPadOS. A tablet that will not see another major update is often still worth fixing, because what it is actually used for has not changed.",
+        "For older IPads with separate glass, usually yes and clearly so. The repair costs a small fraction of a replacement tablet and the device carries on doing exactly what it was doing. A cracked IPad that otherwise works is not a tablet that needs replacing, it is a tablet that needs a piece of glass.",
+        "For recent IPad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If a repair approaches half the used value of the tablet, that is worth thinking about rather than deciding at the Store, and we would rather you thought about it.",
+        "One factor people forget: IPads stay useful for years as reading, video and kitchen devices after they stop getting the latest IPadOS. A tablet that will not see another major update is often still worth fixing, because what it is actually used for has not changed.",
       ],
     },
     {
-      heading: "What should you bring for an iPad repair?",
+      heading: "What should you bring for an IPad repair?",
       paragraphs: [
-        "The model number, which is engraved in small print on the back of the tablet. iPad generations look nearly identical and price very differently, so that number is the difference between a firm quote and an estimate. If you cannot read it we will find it at the Store.",
-        "Back the iPad up before bringing it in. A glass, screen, battery or port replacement does not touch the storage and your apps and files stay exactly where they are, but a current backup is what protects you if something unexpected turns up once the device is open.",
-        "If the iPad has been in liquid, say so. A tablet that has been wet can be opened, cleaned and tested and often works afterwards, but corrosion keeps spreading, so that work carries no warranty on the outcome and we will tell you that before starting rather than after.",
+        "The model number, which is engraved in small print on the back of the tablet. IPad generations look nearly identical and price very differently, so that number is the difference between a firm quote and an estimate. If you cannot read it we will find it at the Store.",
+        "Back the IPad up before bringing it in. A glass, screen, battery or port replacement does not touch the storage and your apps and files stay exactly where they are, but a current backup is what protects you if something unexpected turns up once the device is open.",
+        "If the IPad has been in liquid, say so. A tablet that has been wet can be opened, cleaned and tested and often works afterwards, but corrosion keeps spreading, so that work carries no warranty on the outcome and we will tell you that before starting rather than after.",
       ],
     },
     {
-      heading: "How do you tell which iPad you have?",
+      heading: "How do you tell which IPad you have?",
       paragraphs: [
         "The model number is engraved in small print on the back of the tablet, near the bottom, and it begins with the letter A followed by four digits. That number identifies the exact generation, which is what determines whether the glass is separate from the display or laminated to it.",
         "If the engraving is worn or the tablet is in a case that is awkward to remove, the number is also in Settings, then General, then About, listed under Model Number. Either route gives us the same answer in under a minute at the Store.",
-        "It matters more on iPads than on any other device we repair, because generations look nearly identical from the front and differ by a large multiple in what a screen costs. Two tablets that look the same on a table can be a cheap repair and an expensive one.",
+        "It matters more on IPads than on any other device we repair, because generations look nearly identical from the front and differ by a large multiple in what a screen costs. Two tablets that look the same on a table can be a cheap repair and an expensive one.",
       ],
     },
   ],
   localMix: [
     {
       title: "Cracked fronts with perfect pictures",
-      body: "The most common iPad we see, and on older models the cheapest repair, because only the glass layer needs replacing.",
+      body: "The most common IPad we see, and on older models the cheapest repair, because only the glass layer needs replacing.",
     },
     {
-      title: "Kids' iPads and school devices",
-      body: "Older base-model iPads on separated glass, which is exactly the case where repair beats replacement by a wide margin.",
+      title: "Kids' IPads and school devices",
+      body: "Older base-model IPads on separated glass, which is exactly the case where repair beats replacement by a wide margin.",
     },
     {
-      title: "iPad Pro screens",
+      title: "IPad Pro screens",
       body: "Laminated assemblies and the most expensive tablet part we fit. Worth pricing carefully against the tablet's value before committing.",
     },
   ],
   faqs: () => [
     {
-      question: "How much does iPad repair cost in Calgary?",
-      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPads with separated glass are the smaller repair. Laminated iPad Air and iPad Pro displays replace as one assembly and are the larger job.`,
+      question: "How much does IPad repair cost in Calgary?",
+      answer: `IPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older IPads with separated glass are the smaller repair. Laminated IPad Air and IPad Pro displays replace as one assembly and are the larger job.`,
     },
     {
-      question: "Can I wait for an iPad repair in Calgary?",
+      question: "Can I wait for an IPad repair in Calgary?",
       answer:
-        "Usually not. iPad repairs at TechBrotherz are same-day drop-offs rather than while-you-wait, because the adhesive around the whole perimeter has to be heated evenly, cut and cleaned off before a new panel is fitted. TechBrotherz gives a realistic time at drop-off and calls when the tablet is ready.",
+        "Usually not. IPad repairs at TechBrotherz are same-day drop-offs rather than while-you-wait, because the adhesive around the whole perimeter has to be heated evenly, cut and cleaned off before a new panel is fitted. TechBrotherz gives a realistic time at drop-off and calls when the tablet is ready.",
     },
     {
-      question: "Do I need to know my iPad model before coming in?",
+      question: "Do I need to know my IPad model before coming in?",
       answer:
-        "It helps but it is not required. iPad generations look nearly identical and price very differently, and the model number is engraved in small print on the back of the tablet. TechBrotherz reads it at the Store if you cannot find it, and the number is what turns an estimate into a firm price.",
+        "It helps but it is not required. IPad generations look nearly identical and price very differently, and the model number is engraved in small print on the back of the tablet. TechBrotherz reads it at the Store if you cannot find it, and the number is what turns an estimate into a firm price.",
     },
   ],
   globalCategories: ["ipad", "warranty"],
@@ -376,7 +376,7 @@ const computerCalgary: LocalDef = {
 };
 
 /*
- * tabletCalgary was retired 2026-08 with the iPad rename; /tablet-repair-calgary
+ * tabletCalgary was retired 2026-08 with the IPad rename; /tablet-repair-calgary
  * 301s to /ipad-repair-calgary. The Android-tablets story lives on
  * /services/ipad-repair as the supporting section.
  */

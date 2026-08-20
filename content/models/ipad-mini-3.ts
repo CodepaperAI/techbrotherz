@@ -9,7 +9,7 @@ import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
   "slug": "ipad-mini-3",
-  "name": "iPad Mini 3",
+  "name": "IPad Mini 3",
   "intro": [
     {
       "_key": "model.ipad-mini-3-intro-b0",
@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-3-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs noticeably more than the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
+          "text": "The IPad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs noticeably more than the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
         }
       ],
       "markDefs": [],
@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-mini-3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal, and the gap to a newer Mini matters. The iPad Mini 3 stopped at iPadOS 12, and its glass repair lands close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
+          "text": "Marginal, and the gap to a newer Mini matters. The IPad Mini 3 stopped at IPadOS 12, and its glass repair lands close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
         }
       ],
       "markDefs": [],
@@ -65,7 +65,7 @@ const content: ModelContent = {
       "style": "normal"
     }
   ],
-  "lastSupportedOs": "iPadOS 12",
+  "lastSupportedOs": "IPadOS 12",
   "stillReceivesUpdates": false
 } as ModelContent;
 

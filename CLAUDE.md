@@ -656,6 +656,21 @@ Run this on every page before it ships.
 - [ ] **No `TODO(client)` in body prose.** That marker is for factual fields only.
 - [ ] **Prices, times and warranties come from `content/data/`**, not typed into the copy, so they cannot go stale.
 
+### The Apple casing override (client instruction, 2026-08-20)
+
+**The client's casing for Apple products is `Iphone` and `IPad`, everywhere in
+visible copy, metadata and structured data.** This is the client's explicit,
+twice-given instruction, confirmed after pushback that Apple's own forms are
+iPhone and iPad; like the skyline and the FRP graphic, it is their call and it
+is recorded rather than silently applied. `scripts/audit-copy.ts` enforces the
+client's forms and now flags Apple's. Two hard boundaries:
+
+1. **URLs, slugs, aliases and route paths stay all-lowercase** (`apple-iphone`,
+   `ipad-repair`). The casing change is display-only; a cased URL would 404
+   every indexed page. A sweep that touches a slug is a bug, not a preference.
+2. `IPadOS` follows (it contains IPad); `MacBook` and every other brand keep
+   their official casing, because the instruction named only the two.
+
 ### The capitalisation rule (client instruction, 2026-08)
 
 The client wants "Repair" capitalised. Applied literally to prose it reads

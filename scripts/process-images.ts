@@ -66,14 +66,14 @@ export const SLOTS: SlotSpec[] = [
   { slot: "home-split-individuals", source: "YPj0Mi7aQtY", ratio: "3:2", position: "centre" },
   { slot: "home-split-business", source: "6RcDLyy0s1I", ratio: "3:2", position: "attention" },
   /*
-   * 2026-08 client change request: the phone card shows an iPhone 16 Pro Max,
-   * the tablet card a recognisable iPad rather than a SIM tray, and the
+   * 2026-08 client change request: the phone card shows an Iphone 16 Pro Max,
+   * the tablet card a recognisable IPad rather than a SIM tray, and the
    * password reset card must not show a social app. All three go through the
    * same 3:2 pipeline as the rest of the set, so the media frame is identical
    * across the service cards.
    */
   /*
-   * Replaced again on the client's instruction 2026-08: an iPhone exploded
+   * Replaced again on the client's instruction 2026-08: an Iphone exploded
    * into its repair layers, which is the service the card advertises. The
    * supplied original is 738x415 on pure black, so it is padded to 3:2 rather
    * than cropped (the outer layers reach the frame edges) and capped at its
