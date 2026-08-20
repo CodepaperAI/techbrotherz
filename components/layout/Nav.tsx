@@ -151,8 +151,12 @@ export function Nav() {
           >
             {SITE.phone}
           </a>
+          {/* Renamed from "Get a quote" on the client's instruction 2026-08.
+              The plain "Contact" text link left the nav at the same time:
+              two items reading Contact in one header was redundant, and the
+              button is the more prominent of the two. */}
           <PillButton href="/contact" size="sm">
-            Get a quote
+            Contact
           </PillButton>
         </div>
 
@@ -225,6 +229,9 @@ export function Nav() {
           <Container className="border-tb-border-dark border-t py-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
             <PillButton href={TEL_HREF} withArrow={false} className="w-full">
               Call {SITE.phone}
+            </PillButton>
+            <PillButton href="/contact" variant="ghostOnDark" className="mt-3 w-full">
+              Contact
             </PillButton>
             <p className="type-caption text-tb-muted-dark mt-3 text-center">
               {SITE.appointmentPolicy}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 
 import { Logo } from "@/components/layout/Logo";
+import { SocialLinks } from "@/components/blocks/SocialLinks";
 import { TrademarkNotice } from "@/components/blocks/TrademarkNotice";
 import { Container } from "@/components/primitives/Container";
 import { SERVICE_AREAS } from "@/lib/content/service-areas";
@@ -57,25 +58,10 @@ export function Footer() {
               </p>
             </address>
 
-            {/* Social profiles, from site settings. Text links, no platform
-                logos, consistent with the brand-strip rule. The same URLs
-                feed sameAs on the LocalBusiness node. */}
-            {SITE.socialLinks.length > 0 ? (
-              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-                {SITE.socialLinks.map((social) => (
-                  <li key={social.url}>
-                    <a
-                      href={social.url}
-                      rel="noopener"
-                      target="_blank"
-                      className="type-body text-tb-white hover:text-tb-green underline underline-offset-4"
-                    >
-                      TechBrotherz on {social.platform}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+            {/* Social profile icons, from site settings; the same URLs feed
+                sameAs on the LocalBusiness node. Icon buttons on the client's
+                instruction 2026-08. */}
+            <SocialLinks onDark className="mt-6" />
 
             <table className="mt-6 w-full max-w-xs text-left">
               <caption className="type-eyebrow text-tb-silver pb-2 text-left">

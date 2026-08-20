@@ -1,15 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Bus, Car, MapPin, Phone } from "lucide-react";
+import { Bus, Car } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/ContactForm";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { MapReveal } from "@/components/blocks/MapReveal";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
+import { SocialLinks } from "@/components/blocks/SocialLinks";
 import { PageShell } from "@/components/blocks/PageShell";
 import { Card } from "@/components/primitives/Card";
 import { Heading } from "@/components/primitives/Heading";
-import { PillButton } from "@/components/primitives/PillButton";
 import { Section } from "@/components/primitives/Section";
 import { shouldRenderLink } from "@/lib/routes";
 import { getCoreFaqContext } from "@/lib/content/core-context";
@@ -17,17 +17,23 @@ import { contactFaqs } from "@/lib/content/core-faqs";
 import { composeFaqs, globalLinks } from "@/lib/faq/scoping";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
-import { ADDRESS_LINE, SITE, TEL_HREF } from "@/lib/site";
+import { ADDRESS_LINE, SITE } from "@/lib/site";
 import { getAllFaqs, getLocations, getReviewSummary, getSiteSettings } from "@/lib/data";
 
 export const revalidate = 3600;
 
 const PATH = "/contact";
 
+/*
+ * Merged with the planned /get-a-quote 2026-08 on the client's instruction:
+ * one page carries both contact and quote intent, /get-a-quote 301s here, and
+ * the "free quote" keyword lives in the title, description and H1 so the
+ * term forfeited with /repair-prices is not lost.
+ */
 export const metadata: Metadata = buildMetadata({
-  title: "Contact TechBrotherz in Calgary",
+  title: "Contact TechBrotherz | Free Repair Quote in Calgary",
   description:
-    "Call (403) 273-8324 or walk in to 3317 17 Ave SE, Calgary. Opening hours, directions, parking and transit for the TechBrotherz repair store.",
+    "Message TechBrotherz for a free repair quote, call (403) 273-8324, or walk in to 3317 17 Ave SE, Calgary. Hours, parking, directions and transit.",
   path: PATH,
 });
 
@@ -61,7 +67,7 @@ export default async function ContactPage() {
       type: "ContactPage",
       name: "Contact TechBrotherz in Calgary",
       description:
-        "Phone, address, opening hours and directions for the TechBrotherz repair store at 3317 17 Ave SE in Calgary.",
+        "Phone, address, opening hours, directions and a message form for a free repair quote from the TechBrotherz repair store at 3317 17 Ave SE in Calgary.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -71,14 +77,14 @@ export default async function ContactPage() {
   return (
     <PageShell
       path={PATH}
+      layout="form"
       eyebrow="Contact"
-      title="Contact TechBrotherz in Calgary"
+      title="Contact TechBrotherz for a Free Repair Quote"
       crumbLabel="Contact"
       lead={
         <>
-          TechBrotherz is a walk-in cell phone and computer repair store at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}. Calling is the fastest way to check a part is in stock before
-          you travel.
+          Message the store below, call {SITE.phone}, or walk in to {SITE.street} in {SITE.city}.
+          Every quote is free.
         </>
       }
       answerBox={{
@@ -93,38 +99,46 @@ export default async function ContactPage() {
         lastUpdated: settings?._updatedAt,
       }}
       schema={schema}
+      beforeAnswer={
+        /* ------------------------------------------- the form, first */
+        <Section className="pt-8 md:pt-10 lg:pt-10" aria-labelledby="form-heading">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-7">
+              <Heading level={2} id="form-heading" eyebrow="Message us">
+                Send TechBrotherz a Message
+              </Heading>
+              <p className="type-body text-tb-muted mt-4">
+                Describe the fault and the store replies with what it is likely to be, as a free
+                quote. This is a message and a quote request, not a booking: TechBrotherz is
+                walk-in, with no appointment system, so just come in whenever suits you.
+              </p>
+
+              <Card className="mt-6">
+                <ContactForm />
+              </Card>
+            </div>
+
+            {/* Someone who would rather call should not have to scroll past
+                a form to find the number: the full store card sits beside
+                the form, phone first. */}
+            <div className="lg:col-span-5">
+              <LocalInfoCard headingLevel={3} heading="Rather Call or Walk In?" />
+              <div className="mt-6">
+                <p className="type-caption text-tb-muted mb-3">Follow TechBrotherz</p>
+                <SocialLinks />
+              </div>
+            </div>
+          </div>
+        </Section>
+      }
     >
-      {/* --------------------------------------------------- call and visit */}
-      <Section variant="tint" className="pt-0 md:pt-0 lg:pt-0" aria-labelledby="reach-us-heading">
-        <Heading level={2} id="reach-us-heading" eyebrow="Reach us">
-          How do I get in touch with TechBrotherz?
+      {/* --------------------------------------- parking, transit, map */}
+      <Section variant="tint" aria-labelledby="getting-here-heading">
+        <Heading level={2} id="getting-here-heading" eyebrow="Getting here">
+          How Do You Get to TechBrotherz?
         </Heading>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <Card>
-            <Phone aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Call the Store</h3>
-            <p className="type-body text-tb-muted mt-2">
-              The fastest way to check a part is in stock and get a firm price before you travel.
-            </p>
-            <a
-              href={TEL_HREF}
-              className="type-h3 text-tb-green-deep mt-4 inline-block hover:underline"
-            >
-              {SITE.phone}
-            </a>
-          </Card>
-
-          <Card>
-            <MapPin aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Walk In</h3>
-            <p className="type-body text-tb-muted mt-2">
-              No appointment at any time. Most phone screen and battery repairs are finished in
-              about {waitMinutes} minutes.
-            </p>
-            <address className="type-body text-tb-text mt-4 not-italic">{ADDRESS_LINE}</address>
-          </Card>
-
           <Card>
             <Car aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
             <h3 className="type-h3 text-tb-text mt-4">Parking</h3>
@@ -132,105 +146,61 @@ export default async function ContactPage() {
               Parking is free in the plaza in front of the store, so you can pull in, drop the
               device off and wait.
             </p>
-            <PillButton href={SITE.googleMapsUrl} size="sm" className="mt-4">
-              Get directions
-            </PillButton>
+          </Card>
+
+          <Card>
+            <Bus aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
+            <h3 className="type-h3 text-tb-text mt-4">Transit</h3>
+            <p className="type-body text-tb-muted mt-2">
+              The MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between
+              downtown Calgary and East Hills, with stops along International Avenue close to the
+              store.
+            </p>
+          </Card>
+
+          <Card>
+            <h3 className="type-h3 text-tb-text">Before You Travel</h3>
+            <ul className="type-body text-tb-muted mt-2 list-disc space-y-2 pl-5">
+              <li>Back the device up if you can; a backup costs nothing.</li>
+              <li>Bring the charger with a laptop that will not charge.</li>
+              <li>Call ahead if your model is unusual, so the part is confirmed in stock.</li>
+            </ul>
           </Card>
         </div>
-      </Section>
 
-      {/* -------------------------------------------------- hours and map */}
-      <Section aria-labelledby="hours-heading">
-        <Heading level={2} id="hours-heading" eyebrow="Opening hours">
-          When is TechBrotherz open?
-        </Heading>
-
-        <LocalInfoCard className="mt-10" headingLevel={3} heading="TechBrotherz, Calgary" />
-
-        {/* Click-to-load map, added on client request 2026-08. */}
         <MapReveal
-          className="mt-6 h-80 md:h-96"
+          className="mt-10 h-80 md:h-96"
           src={SITE.googleMapsEmbedUrl}
           title="Map showing TechBrotherz at 3317 17 Ave SE, Calgary"
           addressLine={`${SITE.street}, ${SITE.city}, ${SITE.region}`}
         />
-      </Section>
 
-      {/* ------------------------------------------------------------ form */}
-      <Section variant="tint" aria-labelledby="form-heading">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7">
-            <Heading
-              level={2}
-              id="form-heading"
-              eyebrow="Message us"
-              lead="Describe the fault and we will reply with what it is likely to be and what it costs. For anything urgent, calling is faster."
-            >
-              Send TechBrotherz a message
-            </Heading>
-
-            <Card className="mt-8">
-              <ContactForm />
-            </Card>
+        {neighbourhoods.length > 0 ? (
+          <div className="mt-10">
+            <h3 className="type-h3 text-tb-text">Coming From Nearby</h3>
+            <ul className="type-body mt-3 flex flex-wrap gap-x-8 gap-y-2">
+              {neighbourhoods.slice(0, 6).map((entry) => {
+                const href = `/locations/calgary/${entry.slug}`;
+                return (
+                  <li key={entry._id}>
+                    {shouldRenderLink(href) ? (
+                      <Link href={href} className="text-tb-green-deep hover:underline">
+                        Repairs for {entry.city}
+                      </Link>
+                    ) : (
+                      <span className="text-tb-muted">{entry.city}</span>
+                    )}
+                  </li>
+                );
+              })}
+              <li>
+                <Link href="/locations" className="text-tb-green-deep hover:underline">
+                  Every area we serve
+                </Link>
+              </li>
+            </ul>
           </div>
-
-          <div className="lg:col-span-5">
-            <Card>
-              <h3 className="type-h3 text-tb-text">Getting Here by Transit</h3>
-              <p className="type-body text-tb-muted mt-3 flex items-start gap-2">
-                <Bus
-                  aria-hidden="true"
-                  size={18}
-                  strokeWidth={1.5}
-                  className="text-tb-green-deep mt-1 shrink-0"
-                />
-                <span>
-                  The MAX Purple bus rapid transit line runs the full length of 17 Avenue SE between
-                  downtown Calgary and East Hills, with stops along International Avenue close to
-                  the store.
-                </span>
-              </p>
-
-              <h3 className="type-h3 text-tb-text mt-8">Before You Travel</h3>
-              <ul className="type-body text-tb-muted mt-3 list-disc space-y-2 pl-5">
-                <li>
-                  Back the device up if you can. A screen or battery repair does not touch your
-                  storage, but a backup costs nothing.
-                </li>
-                <li>
-                  Bring the charger with a laptop that will not charge. Sometimes the charger is the
-                  fault, which is a much cheaper answer.
-                </li>
-                <li>
-                  Call ahead if your model is unusual, so we can confirm the part is here rather
-                  than ordered in.
-                </li>
-              </ul>
-
-              {neighbourhoods.length > 0 ? (
-                <>
-                  <h3 className="type-h3 text-tb-text mt-8">Coming From Nearby</h3>
-                  <ul className="type-body mt-3 space-y-2">
-                    {neighbourhoods.slice(0, 6).map((entry) => {
-                      const href = `/locations/calgary/${entry.slug}`;
-                      return (
-                        <li key={entry._id}>
-                          {shouldRenderLink(href) ? (
-                            <Link href={href} className="text-tb-green-deep hover:underline">
-                              Repairs for {entry.city}
-                            </Link>
-                          ) : (
-                            <span className="text-tb-muted">{entry.city}</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </>
-              ) : null}
-            </Card>
-          </div>
-        </div>
+        ) : null}
       </Section>
 
       {/* ------------------------------------------------------------ faqs */}

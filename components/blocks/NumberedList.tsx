@@ -27,7 +27,7 @@ export function NumberedList({
           key={item.title}
           className="border-tb-rule on-dark:border-tb-rule-dark flex gap-6 border-b py-7 md:gap-10 md:py-8"
         >
-          <span aria-hidden="true" className="type-numeral text-tb-green w-16 shrink-0 md:w-24">
+          <span aria-hidden="true" className="type-numeral text-tb-green-deep w-16 shrink-0 md:w-24">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="min-w-0">

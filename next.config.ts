@@ -36,10 +36,21 @@ const nextConfig: NextConfig = {
       {
         /*
          * /repair-prices carried the whole price list and is deleted. It goes to
-         * /contact rather than /get-a-quote, because /get-a-quote does not exist
-         * yet and a 301 into a 404 is worse than the page it replaced.
+         * /contact, which since 2026-08 carries both the contact and the quote
+         * intent (the planned /get-a-quote page was merged into it).
          */
         source: "/repair-prices",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        /*
+         * /get-a-quote was planned and never built; 2026-08 the client chose
+         * one page rather than two, so the URL 301s to the merged /contact.
+         * Protective: nothing internal links to it, but the URL appeared in
+         * planning documents and this stops it ever 404ing.
+         */
+        source: "/get-a-quote",
         destination: "/contact",
         permanent: true,
       },

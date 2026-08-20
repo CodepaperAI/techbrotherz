@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-21 — Get a Quote merged into Contact, form first, social icons
+
+**Asked:** merge /get-a-quote into /contact with the form first; header button becomes Contact; add TikTok, Instagram and Facebook icon buttons to the footer and the contact page.
+
+**Done:** /get-a-quote (planned, never built) permanently redirects to /contact, which now carries both intents: "Free Repair Quote" in the title, H1 and description, so the keyword that replaced the forfeited price-list term is not lost. The keyword map row moved from /repair-prices to /contact ("phone repair quote calgary"). PageShell gained a "form" layout: compact header with the H1 at section size, the page's first section above the fold, and the AnswerBox still composed inside PageShell, below the form, text unchanged, so the H1-plus-AnswerBox guarantee survives the reordering. The contact page now runs: compact header, message form with an explicit not-a-booking line, the full store card beside it (phone, hours, open-now, directions, so a caller never scrolls past the form), social icons, AnswerBox, then parking, transit, the map, nearby links and the FAQ block. The header's green button reads Contact and the plain Contact text link was removed as redundant; the mobile sheet gained a Contact button in its footer since it shared the text list. Instagram and Facebook joined TikTok in socialLinks (tracking parameters stripped), all three render as inline-drawn icon buttons (lucide dropped brand icons) in the footer and on /contact, and all three now emit in sameAs. One pre-existing axe violation surfaced and was fixed: the why-us numerals used tb-green on cream, the exact combination DESIGN.md bans; they are green-deep now. Verified: typecheck, lint, clean build, link graph (zero links to the old URL), FAQ scoping, copy audit, service areas, keyboard pass, axe clean on /contact, hydration clean, CLS 0.001 on /contact. Screenshots at 1440 and 390: form and phone number both above the fold.
+
 ## Session 2026-08-20 — The areas bug found, the copy audit, Title Case, and three articles
 
 **Asked:** the site-wide copy audit brief: the areas bug (reported twice), the capitalisation rule, a spelling and grammar audit, one brand spelling, a photo beside the home AnswerBox, and three new articles.

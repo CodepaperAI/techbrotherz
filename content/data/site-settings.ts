@@ -31,6 +31,14 @@ export const SITE_SETTINGS: SiteSettingsDoc = {
     {
       "platform": "TikTok",
       "url": "https://www.tiktok.com/@techbrotherzyyc"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/techbrotherz_yyc"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/Techbrotherzcalgary/"
     }
   ],
   "hours": [

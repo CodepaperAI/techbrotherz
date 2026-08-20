@@ -68,7 +68,10 @@ export function headerLinks(): NavLink[] {
     { label: "Reviews", href: "/#reviews", pending: false },
     { label: "Hours", href: "/#hours", pending: false },
   ];
-  return [...anchors, ...toLinks(["/locations", "/blog", "/about", "/contact"])];
+  // /contact left the text list 2026-08: the green header button now reads
+  // Contact, and two items saying Contact in one header was redundant. The
+  // mobile sheet carries a Contact button in its footer for the same reason.
+  return [...anchors, ...toLinks(["/locations", "/blog", "/about"])];
 }
 
 /* -------------------------------------------------------------------- footer */

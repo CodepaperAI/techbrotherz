@@ -98,8 +98,13 @@ export const SITE = {
   /** Unconfirmed, see CLAUDE.md open question 8. */
   googleBusinessUrl: null as string | null,
 
-  /** Supplied by the client 2026-08. Feeds the footer link and sameAs. */
-  socialLinks: [{ platform: "TikTok", url: "https://www.tiktok.com/@techbrotherzyyc" }],
+  /** Supplied by the client 2026-08, tracking parameters stripped. Feeds the
+   *  footer icons, the contact page and sameAs. */
+  socialLinks: [
+    { platform: "TikTok", url: "https://www.tiktok.com/@techbrotherzyyc" },
+    { platform: "Instagram", url: "https://www.instagram.com/techbrotherz_yyc" },
+    { platform: "Facebook", url: "https://www.facebook.com/Techbrotherzcalgary/" },
+  ],
 
   /**
    * Real, verifiable trust signals only. This list replaces the reference

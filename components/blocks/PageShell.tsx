@@ -35,10 +35,20 @@ export interface PageShellProps {
   schema: (JsonLdNode | null | undefined)[];
   /**
    * "hero" puts the H1 in the dark panel used on the home page, with the
-   * AnswerBox directly beneath it. Everything else uses the standard two
-   * column opening.
+   * AnswerBox directly beneath it. "form" opens with a compact header (the
+   * H1 at section size) so the page's own first section, passed as
+   * `beforeAnswer`, sits above the fold; the AnswerBox renders after it,
+   * still composed here so a page cannot ship without one. Everything else
+   * uses the standard two column opening.
    */
-  layout?: "default" | "hero";
+  layout?: "default" | "hero" | "form";
+  /**
+   * Form layout only: the content that comes before the AnswerBox, on the
+   * client's instruction that the message form is the first thing on
+   * /contact. The AnswerBox is not deleted and its text is unchanged; it
+   * reads as the summary answer engines lift, below the form.
+   */
+  beforeAnswer?: ReactNode;
   /** Hero layout only: the call to action buttons under the H1. */
   heroActions?: ReactNode;
   heroImage?: { src: string; alt: string; unoptimized?: boolean; blurDataURL?: string };
@@ -88,6 +98,7 @@ export function PageShell({
   heroBackground,
   heroOverlap,
   answerAside,
+  beforeAnswer,
   children,
 }: PageShellProps) {
   const crumbs = breadcrumbsFor(path, crumbLabel);
@@ -100,6 +111,33 @@ export function PageShell({
       lastUpdated={answerBox.lastUpdated}
     />
   );
+
+  if (layout === "form") {
+    return (
+      <>
+        <JsonLd graph={graph} />
+
+        <Section className="pt-8 md:pt-10 lg:pt-10 pb-0 md:pb-0 lg:pb-0" >
+          {crumbs.length > 0 ? <Breadcrumbs items={crumbs} className="mb-6" /> : null}
+          {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+          {/* The single H1, at section size rather than hero size, so the
+              form lands above the fold at 1440x900. */}
+          <h1 className="type-h2 text-tb-text mt-4">
+            {typeof title === "string" ? titleCase(title) : title}
+          </h1>
+          {lead ? <p className="type-body measure text-tb-muted mt-4">{lead}</p> : null}
+        </Section>
+
+        {beforeAnswer}
+
+        <Section aria-label="The short answer" className="pt-10 md:pt-12 lg:pt-12">
+          {answer}
+        </Section>
+
+        {children}
+      </>
+    );
+  }
 
   if (layout === "hero") {
     /*

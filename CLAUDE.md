@@ -23,10 +23,14 @@
 >
 > **2026-08-10 status:** the guard reports **zero failures across 143 pages**
 > on the current build, and the schema audit shows no price-less Offers, so
-> the machinery items above are done or moot on this tree. Still outstanding
-> from the list: `/get-a-quote` has not been built (`/repair-prices` 301s to
-> `/contact` instead). Verify the remaining items before declaring this
-> cleared and removing the block.
+> the machinery items above are done or moot on this tree.
+>
+> **2026-08 resolution of the last item:** `/get-a-quote` will not be built.
+> The client chose one page rather than two, so /contact carries both the
+> contact and the quote intent ("free repair quote" in its title, H1 and
+> description, the form first on the page), and /get-a-quote 301s to /contact
+> protectively. The "phone repair quote calgary" keyword moved to the /contact
+> row in the map.
 >
 > ## Named follow-up — brand tier similarity
 >
@@ -423,7 +427,7 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | URL                                                | Primary keyword                          | Supporting                                    |
 | -------------------------------------------------- | ---------------------------------------- | --------------------------------------------- |
 | `/`                                                | cell phone repair calgary                | phone repair calgary, computer repair calgary |
-| `/repair-prices`                                   | phone repair prices calgary              | cell phone repair cost calgary                |
+| `/contact`                                         | phone repair quote calgary               | free repair quote calgary, contact techbrotherz |
 | `/warranty`                                        | phone repair warranty                    | 60 day repair warranty                        |
 | `/services/phone-repair`                           | cell phone repair                        | phone repair service, mobile phone repair     |
 | `/services/ipad-repair`                            | ipad repair                              | ipad screen repair, android tablet repair     |
