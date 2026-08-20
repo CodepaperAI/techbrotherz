@@ -6,7 +6,6 @@ import { ContactForm } from "@/components/blocks/ContactForm";
 import { LocalInfoCard } from "@/components/blocks/LocalInfoCard";
 import { MapReveal } from "@/components/blocks/MapReveal";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
-import { SocialLinks } from "@/components/blocks/SocialLinks";
 import { PageShell } from "@/components/blocks/PageShell";
 import { Card } from "@/components/primitives/Card";
 import { Heading } from "@/components/primitives/Heading";
@@ -122,11 +121,7 @@ export default async function ContactPage() {
                 a form to find the number: the full store card sits beside
                 the form, phone first. */}
             <div className="lg:col-span-5">
-              <LocalInfoCard headingLevel={3} heading="Rather Call or Walk In?" />
-              <div className="mt-6">
-                <p className="type-caption text-tb-muted mb-3">Follow TechBrotherz</p>
-                <SocialLinks />
-              </div>
+              <LocalInfoCard headingLevel={3} heading="Rather Call or Walk In?" columns={1} socials />
             </div>
           </div>
         </Section>

@@ -1,6 +1,7 @@
 import { MapPin, Phone } from "lucide-react";
 
 import { OpenNowBadge } from "@/components/blocks/OpenNowBadge";
+import { SocialLinks } from "@/components/blocks/SocialLinks";
 import { Card } from "@/components/primitives/Card";
 import { PillButton } from "@/components/primitives/PillButton";
 import { ADDRESS_LINE, SITE, TEL_HREF, groupedHours } from "@/lib/site";
@@ -11,6 +12,16 @@ export interface LocalInfoCardProps {
   heading?: string;
   /** Heading level, so the card can sit under an h2 without skipping a level. */
   headingLevel?: 2 | 3;
+  /**
+   * The two-column layout is a vestige of the map that used to fill the
+   * second column (see the Phase 8 note below). In a narrow slot, the
+   * contact page's side panel, it just squeezes the content and leaves dead
+   * space, so pass 1 there.
+   */
+  columns?: 1 | 2;
+  /** Renders the social icon row beside the buttons, on the client's
+   *  instruction (2026-08): the icons fill the space next to Get Directions. */
+  socials?: boolean;
   className?: string;
 }
 
@@ -29,6 +40,8 @@ export interface LocalInfoCardProps {
 export function LocalInfoCard({
   heading = "Find us in Calgary",
   headingLevel = 2,
+  columns = 2,
+  socials = false,
   className,
 }: LocalInfoCardProps) {
   const hours = groupedHours();
@@ -36,7 +49,13 @@ export function LocalInfoCard({
   const SubTitle = headingLevel === 2 ? "h3" : "h4";
 
   return (
-    <Card className={cn("grid gap-8 p-6 md:p-8 lg:grid-cols-2 lg:gap-10", className)}>
+    <Card
+      className={cn(
+        "grid gap-8 p-6 md:p-8",
+        columns === 2 && "lg:grid-cols-2 lg:gap-10",
+        className,
+      )}
+    >
       {/*
         Phase 8: no map frame.
 
@@ -100,13 +119,14 @@ export function LocalInfoCard({
 
         <p className="type-caption text-tb-muted mt-4">{SITE.appointmentPolicy}.</p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           <PillButton href={SITE.googleMapsUrl} size="sm">
             Get directions
           </PillButton>
           <PillButton href={TEL_HREF} variant="ghost" size="sm" withArrow={false}>
             Call {SITE.phone}
           </PillButton>
+          {socials ? <SocialLinks className="ml-auto" /> : null}
         </div>
       </div>
     </Card>
