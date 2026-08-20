@@ -83,7 +83,7 @@ interface PageProps {
  * model page names whichever of these its own table does not already carry.
  */
 const EXTRA_PHONE_REPAIRS: { slug: string; label: string }[] = [
-  { slug: "battery-replacement", label: "batteries" },
+  { slug: "battery-replacement", label: "battery" },
   { slug: "back-glass-replacement", label: "back glass" },
   { slug: "charging-port-repair", label: "charging ports" },
   { slug: "earpiece-repair", label: "earpieces" },

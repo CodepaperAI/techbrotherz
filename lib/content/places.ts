@@ -366,7 +366,7 @@ const forestLawn: PlaceDef = {
       heading: "What does TechBrotherz repair for Forest Lawn customers?",
       paragraphs: [
         "The same range as for everyone: cell phones, IPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one way of quoting: free, with the device in front of us.",
-        "Phone repairs are the ones worth walking in for without planning, because screens and batteries on stocked models are finished while you wait. Tablets and computers are same-day drop-offs, which suits a neighbourhood close enough to make two short trips.",
+        "Phone repairs are the ones worth walking in for without planning, because screens and battery on stocked models are finished while you wait. Tablets and computers are same-day drop-offs, which suits a neighbourhood close enough to make two short trips.",
         "Every repair is quoted free with the device in front of us, and the figure is agreed before any work starts. Nothing about the quote or the warranty changes based on which neighbourhood you are travelling from.",
       ],
     },

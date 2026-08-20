@@ -17,7 +17,7 @@ const ipadCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "IPad Repair Calgary | Cracked Glass and Screens",
   seoDescription:
-    "IPad repair in Calgary at TechBrotherz, 3317 17 Ave SE. Cracked glass, failed screens and batteries, part and labour included, 60-day warranty, walk in.",
+    "IPad repair in Calgary at TechBrotherz, 3317 17 Ave SE. Cracked glass, failed screens and battery, part and labour included, 60-day warranty, walk in.",
   serviceType: "IPad repair",
   city: "Calgary",
   priceSource: {
@@ -39,7 +39,7 @@ const ipadCalgary: LocalDef = {
     },
   ]),
   lead: () =>
-    `${ENTITY}, repairs IPads: cracked glass, failed display panels, worn batteries and charging ports. On older IPads the glass is a separate layer from the picture, so a cracked front is often a smaller repair than people expect.`,
+    `${ENTITY}, repairs IPads: cracked glass, failed display panels, worn battery and charging ports. On older IPads the glass is a separate layer from the picture, so a cracked front is often a smaller repair than people expect.`,
   answer: (c) =>
     `IPad repair in Calgary at TechBrotherz is quoted per model, free of charge, before any work starts. On older IPad models the touch glass is separate from the display panel, so a cracked front with a working picture is the smaller repair. IPad work is usually same-day rather than while you wait, and every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [

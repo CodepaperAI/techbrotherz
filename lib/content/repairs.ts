@@ -220,7 +220,7 @@ const iphoneBattery: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone battery in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
   answer: (c) =>
     `Iphone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the Store and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
   symptoms: [
@@ -241,7 +241,7 @@ const iphoneBattery: RepairDef = {
     },
     {
       title: "The adhesive strips are pulled",
-      body: "Iphone batteries are held down by stretch-release strips that pull out from under the cell. Done slowly they come out whole. Rushed, they snap, and the battery has to be eased out instead.",
+      body: "Iphone battery are held down by stretch-release strips that pull out from under the cell. Done slowly they come out whole. Rushed, they snap, and the battery has to be eased out instead.",
     },
     {
       title: "The new battery goes in and is tested",
@@ -249,7 +249,7 @@ const iphoneBattery: RepairDef = {
     },
     {
       title: "The old cell is disposed of properly",
-      body: "Lithium cells do not go in the bin. Old batteries are collected here and recycled through the proper channel.",
+      body: "Lithium cells do not go in the bin. Old battery are collected here and recycled through the proper channel.",
     },
   ],
   sections: (c) => [
@@ -265,7 +265,7 @@ const iphoneBattery: RepairDef = {
       heading: "Why does an old battery make an Iphone slower?",
       paragraphs: [
         "This is real, documented and often misunderstood. As a lithium battery ages, its ability to deliver sudden bursts of current falls. When the processor demands a peak the battery cannot supply, the phone shuts down abruptly rather than degrading gracefully, which is why old Iphones die at 30%.",
-        "Apple's response was performance management: iOS deliberately smooths the peaks by slowing the processor on phones with worn batteries, trading speed for stability. It is why a phone can feel sluggish long before anything is visibly wrong with it.",
+        "Apple's response was performance management: iOS deliberately smooths the peaks by slowing the processor on phones with worn battery, trading speed for stability. It is why a phone can feel sluggish long before anything is visibly wrong with it.",
         "The practical point is that a battery replacement on an old Iphone often makes the phone feel faster as well as last longer, and people are frequently surprised by how much. If your Iphone feels tired, the battery is the first thing to check.",
       ],
     },
@@ -289,7 +289,7 @@ const iphoneBattery: RepairDef = {
   modelNotes: [
     {
       model: "Iphone 6 and 6 Plus",
-      note: "These are the models where swollen batteries are most common now, simply because of their age. Bring one in rather than pressing the lifted screen back down.",
+      note: "These are the models where swollen battery are most common now, simply because of their age. Bring one in rather than pressing the lifted screen back down.",
     },
     {
       model: "Iphone 8 and later",
@@ -855,9 +855,9 @@ const samsungBattery: RepairDef = {
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy battery. Since the Galaxy S6, Samsung battery have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
   answer: () =>
-    `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
+    `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy battery have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer reaches the end of a day on a charge it used to manage.",
     "It shuts down suddenly with charge still showing, particularly in cold weather.",
@@ -880,7 +880,7 @@ const samsungBattery: RepairDef = {
     },
     {
       title: "The battery is cut free and replaced",
-      body: "Samsung batteries are held down with strong adhesive across the whole underside. It is softened and the cell eased out, never levered against, because puncturing a lithium cell is dangerous.",
+      body: "Samsung battery are held down with strong adhesive across the whole underside. It is softened and the cell eased out, never levered against, because puncturing a lithium cell is dangerous.",
     },
     {
       title: "The phone is resealed with fresh adhesive",
@@ -891,7 +891,7 @@ const samsungBattery: RepairDef = {
     {
       heading: "Why can you no longer just swap a Galaxy battery yourself?",
       paragraphs: [
-        "Until the Galaxy S5, Samsung phones had removable back covers and batteries you could carry a spare for, and that was one of the main things people preferred about them over the Iphone. The Galaxy S6 ended it, in exchange for a sealed metal and glass body, water resistance and wireless charging.",
+        "Until the Galaxy S5, Samsung phones had removable back covers and battery you could carry a spare for, and that was one of the main things people preferred about them over the Iphone. The Galaxy S6 ended it, in exchange for a sealed metal and glass body, water resistance and wireless charging.",
         "The result is that a battery replacement went from a ten-second job anyone could do to a proper repair. The rear glass is bonded on with adhesive around the entire perimeter, and it has to be warmed until that adhesive softens and then cut through carefully without cracking the panel.",
         "This is why a Galaxy battery replacement takes about 45 minutes rather than the 30 an Iphone takes. More of the phone has to come apart to reach the cell, and it has to be properly resealed afterwards.",
       ],
@@ -924,7 +924,7 @@ const samsungBattery: RepairDef = {
   modelNotes: [
     {
       model: "Galaxy S5 and earlier",
-      note: "These have user-removable back covers and batteries. If you have one of these, a replacement cell is something you can fit yourself in seconds.",
+      note: "These have user-removable back covers and battery. If you have one of these, a replacement cell is something you can fit yourself in seconds.",
     },
     {
       model: "Galaxy S6 and later",

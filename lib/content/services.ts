@@ -84,7 +84,7 @@ const phoneRepair: ServiceDef = {
   eyebrow: "Phone repair",
   seoTitle: "Cell Phone Repair Calgary | Walk In, No Appointment",
   seoDescription:
-    "Cell phone repair at TechBrotherz in Calgary. Screens, batteries, charging ports and cameras, parts and labour included, 60-day warranty. Walk in, no appointment.",
+    "Cell phone repair at TechBrotherz in Calgary. Screens, battery, charging ports and cameras, parts and labour included, 60-day warranty. Walk in, no appointment.",
   serviceType: "Cell phone repair",
   repairSlugs: [
     "iphone-screen-replacement",
@@ -103,7 +103,7 @@ const phoneRepair: ServiceDef = {
   localPath: "/phone-repair-calgary",
   siblings: ["/services/ipad-repair", "/services/phone-unlocking"],
   lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on Iphone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, battery, charging ports, cameras and buttons on Iphone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs cell phones while you wait at the Store. Most phone repairs take about ${c.waitMinutes} minutes, no appointment is needed, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and agreed before any work starts, and it covers the part and the labour together.`,
   keyFacts: (c) => [
@@ -144,7 +144,7 @@ const phoneRepair: ServiceDef = {
     {
       heading: "What phone repairs does TechBrotherz do?",
       paragraphs: [
-        `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn batteries, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
+        `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn battery, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
         "Beyond those five, we replace earpieces, loudspeakers, power buttons, volume buttons and home buttons. Those are smaller jobs, and on most handsets they take under an hour. If a phone has a fault that is not on the list, bring it in and we will tell you honestly whether it is something we can fix or something that needs the manufacturer.",
         "We work on Iphone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same store. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the Store once we have the model in front of us and know what the part costs.",
       ],
@@ -238,9 +238,9 @@ const ipadRepair: ServiceDef = {
   slug: "ipad-repair",
   h1: "IPad Repair in Calgary",
   eyebrow: "IPad repair",
-  seoTitle: "IPad Repair Calgary | Glass, Screens and Batteries",
+  seoTitle: "IPad Repair Calgary | Glass, Screens and Battery",
   seoDescription:
-    "IPad repair at TechBrotherz in Calgary. Cracked glass, screens, batteries and charging ports, parts and labour included, 60-day warranty, walk in.",
+    "IPad repair at TechBrotherz in Calgary. Cracked glass, screens, battery and charging ports, parts and labour included, 60-day warranty, walk in.",
   serviceType: "IPad repair",
   repairSlugs: ["ipad-screen-replacement"],
   brandSlugs: ["apple-ipad"],
@@ -249,7 +249,7 @@ const ipadRepair: ServiceDef = {
   localPath: "/ipad-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every IPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same store.`,
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every IPad generation, replacing cracked glass, failed display panels, worn battery and charging ports, and takes Android and Windows tablets at the same store.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs IPads of every generation. On older IPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. IPad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
@@ -316,7 +316,7 @@ const ipadRepair: ServiceDef = {
       paragraphs: [
         "TechBrotherz repairs Android and Windows tablets as well as IPads, but those are quoted at the Store rather than published in advance. Android tablet parts vary enormously between manufacturers and model years, and unlike IPads there is no small set of models that covers most of the market, so quoting with the device in front of us is the only honest way to price them.",
         "Bring the tablet in with its model number, which is normally printed on the back or listed in the settings under About. We will identify the part, tell you what it costs and how long it will take, and you can decide from there. If the part is not available at a sensible price, we will tell you that too rather than take the job.",
-        "The repairs themselves are the same work: cracked glass, failed panels, batteries that no longer hold charge, and charging ports that have worn out from years of cable insertion.",
+        "The repairs themselves are the same work: cracked glass, failed panels, battery that no longer hold charge, and charging ports that have worn out from years of cable insertion.",
       ],
     },
     {

@@ -197,7 +197,7 @@ export default async function AboutPage() {
             gaming consoles
           </Link>
           , including the Xbox, PlayStation and Nintendo Switch ranges. That covers screens,
-          batteries, charging ports, cameras, buttons and back glass on phones, and screens,
+          battery, charging ports, cameras, buttons and back glass on phones, and screens,
           keyboards, charging sockets, Windows installation, virus removal and clean-ups on
           computers. The store also{" "}
           <Link href="/services/phone-unlocking" className="text-tb-green-deep hover:underline">

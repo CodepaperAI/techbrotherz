@@ -128,7 +128,7 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Phone repair",
     description:
-      "Screens and LCDs, batteries, charging ports, cameras and lenses, speakers, back glass and full housings, on Iphone, Samsung Galaxy and Google Pixel.",
+      "Screens and LCDs, battery, charging ports, cameras and lenses, speakers, back glass and full housings, on Iphone, Samsung Galaxy and Google Pixel.",
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
@@ -137,7 +137,7 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "IPad repair",
     description:
-      "IPad screens, digitizer glass, batteries and charging ports. On older IPads the glass alone can be replaced, a much smaller job than a full screen.",
+      "IPad screens, digitizer glass, battery and charging ports. On older IPads the glass alone can be replaced, a much smaller job than a full screen.",
     href: "/services/ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
@@ -146,7 +146,7 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Laptop repair",
     description:
-      "Screens, batteries, keyboards, charging jacks, broken hinges, water damage cleanup and data recovery, on laptops of every make.",
+      "Screens, battery, keyboards, charging jacks, broken hinges, water damage cleanup and data recovery, on laptops of every make.",
     href: "/services/laptop-repair",
     image: "service-laptop-repair",
     illustration: "keyboard",
@@ -378,7 +378,7 @@ export default async function HomePage() {
             {
               stat: `${waitMinutes} min`,
               label: "Most repairs",
-              body: "Screens and batteries finished while you wait.",
+              body: "Screens and battery finished while you wait.",
             },
             {
               stat: `${warrantyDays} days`,

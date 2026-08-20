@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s6-edge-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy S6 Edge was Samsung's first dual-curved phone and the model where it abandoned removable batteries and microSD cards. Its curved display broke often enough that it defined the repair economics of the whole generation, and it is still one of the dearer legacy Samsung screens we fit."
+          "text": "The Galaxy S6 Edge was Samsung's first dual-curved phone and the model where it abandoned removable battery and microSD cards. Its curved display broke often enough that it defined the repair economics of the whole generation, and it is still one of the dearer legacy Samsung screens we fit."
         }
       ],
       "markDefs": [],

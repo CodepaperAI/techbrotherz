@@ -230,7 +230,7 @@ const walkInCalgary: LocalDef = {
     },
     {
       question: "Can I get a phone fixed the same day in Calgary?",
-      answer: `Most phone repairs at TechBrotherz are faster than same day: screens and batteries on stocked models take about ${c.waitMinutes} minutes while you wait. Tablets and computers are same-day drop-offs. A part that has to be ordered in usually adds a day or two, and TechBrotherz checks stock before you leave the device.`,
+      answer: `Most phone repairs at TechBrotherz are faster than same day: screens and battery on stocked models take about ${c.waitMinutes} minutes while you wait. Tablets and computers are same-day drop-offs. A part that has to be ordered in usually adds a day or two, and TechBrotherz checks stock before you leave the device.`,
     },
     {
       question: "What do I need to bring to a walk-in repair?",
@@ -309,7 +309,7 @@ const chestermerePhones: LocalDef = {
     {
       heading: "What do Chestermere customers usually bring in?",
       paragraphs: [
-        "The same mix as everyone else, weighted toward the repairs worth planning a trip around. Cracked screens dominate, followed by batteries that no longer last a day, and those are precisely the two finished while you wait.",
+        "The same mix as everyone else, weighted toward the repairs worth planning a trip around. Cracked screens dominate, followed by battery that no longer last a day, and those are precisely the two finished while you wait.",
         "Charging ports come third and are the repair most often avoidable. Compacted pocket lint stops the cable seating and looks exactly like a failed port, so we check and clear the socket before quoting a replacement. On a trip in from out of town, that is sometimes the whole visit and nothing to pay.",
         "For anything beyond a phone, the same store handles tablets, laptops and desktop computers, so a trip can cover more than one device. Bring model numbers where you have them and chargers for anything that will not power on.",
       ],
@@ -326,7 +326,7 @@ const chestermerePhones: LocalDef = {
   localMix: [
     {
       title: "One trip, not two",
-      body: "Screens and batteries on stocked models are done at the Store, which is what makes a drive in from Chestermere worth it.",
+      body: "Screens and battery on stocked models are done at the Store, which is what makes a drive in from Chestermere worth it.",
     },
     {
       title: "Call ahead about parts",

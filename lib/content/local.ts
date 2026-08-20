@@ -67,7 +67,7 @@ const phoneRepairCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Phone Repair Calgary | Walk In, 60-Day Warranty",
   seoDescription:
-    "Cell phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, batteries, charging ports and cameras. Parts and labour included, 60-day warranty, walk in.",
+    "Cell phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, battery, charging ports and cameras. Parts and labour included, 60-day warranty, walk in.",
   serviceType: "Cell phone repair",
   city: "Calgary",
   priceSource: {
@@ -108,7 +108,7 @@ const phoneRepairCalgary: LocalDef = {
       heading: "Which phones does TechBrotherz repair in Calgary?",
       paragraphs: [
         "TechBrotherz repairs Iphone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
-        `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn batteries, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
+        `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn battery, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
         "Phones from brands outside that list are quoted at the Store once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
       ],
     },
@@ -151,7 +151,7 @@ const phoneRepairCalgary: LocalDef = {
       body: "Cold glass is more brittle and gloved hands drop phones. The months either side of the new year are the busiest for cracked screens.",
     },
     {
-      title: "Batteries that fail in the cold",
+      title: "Battery that fail in the cold",
       body: "A worn cell delivers less current at low temperatures, so a battery that coped in September shuts the phone down at 30 percent in January.",
     },
     {
@@ -296,9 +296,9 @@ const samsungCalgary: LocalDef = {
   slug: "samsung-repair-calgary",
   h1: "Samsung Galaxy Repair in Calgary",
   eyebrow: "Calgary",
-  seoTitle: "Samsung Repair Calgary | Galaxy Screens and Batteries",
+  seoTitle: "Samsung Repair Calgary | Galaxy Screens and Battery",
   seoDescription:
-    "Samsung Galaxy repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, batteries and charging ports priced per model, 60-day warranty, no appointment needed.",
+    "Samsung Galaxy repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, battery and charging ports priced per model, 60-day warranty, no appointment needed.",
   serviceType: "Samsung Galaxy repair",
   city: "Calgary",
   priceSource: {
@@ -320,13 +320,13 @@ const samsungCalgary: LocalDef = {
     },
   ]),
   lead: () =>
-    `${ENTITY}, repairs Samsung Galaxy phones: screens, batteries and charging ports. A Galaxy screen is a bigger job than a comparable Iphone screen, and the reason is structural rather than a markup.`,
+    `${ENTITY}, repairs Samsung Galaxy phones: screens, battery and charging ports. A Galaxy screen is a bigger job than a comparable Iphone screen, and the reason is structural rather than a markup.`,
   answer: (c) =>
-    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, batteries and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
+    `Samsung Galaxy repair in Calgary at TechBrotherz covers screens, battery and charging ports, quoted per model and free of charge before any work starts. A Galaxy screen is the larger job because the OLED panel is bonded to the phone's frame and supplied as one assembly. The store is at 3317 17 Ave SE, walk-in, with a ${c.warrantyDays}-day warranty on every repair.`,
   keyFacts: (c) => [
     { label: "Galaxy models", value: "Galaxy S, Galaxy Note and Galaxy A series" },
     { label: "Why Galaxy screens differ", value: "The OLED panel is bonded to the frame and supplied as one assembly" },
-    { label: "Repairs", value: "Screens, batteries, charging ports and back glass" },
+    { label: "Repairs", value: "Screens, battery, charging ports and back glass" },
     { label: "Typical time", value: "About 45 minutes on a screen" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
   ],
@@ -359,7 +359,7 @@ const samsungCalgary: LocalDef = {
       heading: "Which Galaxy models does TechBrotherz repair in Calgary?",
       paragraphs: [
         `TechBrotherz repairs Galaxy S, Note and A series phones, with each model priced individually in the table above. The spread between the cheapest and most expensive Galaxy screen is wider than for Iphone, because the range runs from small flat A-series displays to large curved Note panels.`,
-        `Screens, batteries, charging ports and back glass are the four repairs that account for nearly every Galaxy brought in. A screen takes about 45 minutes rather than the ${c.waitMinutes} an Iphone screen takes, because of the frame transfer, and most are still done while you wait.`,
+        `Screens, battery, charging ports and back glass are the four repairs that account for nearly every Galaxy brought in. A screen takes about 45 minutes rather than the ${c.waitMinutes} an Iphone screen takes, because of the frame transfer, and most are still done while you wait.`,
         "Models showing a quote rather than a price are ones where the assembly is ordered in and priced once we know the cost. Samsung publishes its own service pricing for current models on its Canadian support site, which is worth comparing before deciding.",
       ],
     },

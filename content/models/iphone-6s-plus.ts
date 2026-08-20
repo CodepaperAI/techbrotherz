@@ -28,7 +28,7 @@ const content: ModelContent = {
   ],
   "commonIssues": [
     "Cracked front glass on the 5.5 inch display",
-    "Battery failing, this model is old enough that most original batteries are long past their useful life",
+    "Battery failing, this model is old enough that most original battery are long past their useful life",
     "Charging port worn out after a decade of use",
     "Rear camera failing or producing hazy images",
     "Touch becoming unresponsive in patches, sometimes a display fault rather than a cracked screen"

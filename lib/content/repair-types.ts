@@ -134,7 +134,7 @@ export const REPAIR_TYPES: RepairTypeDef[] = [
             _key: "repairType.battery-replacement-s0",
             _type: "span",
             marks: [],
-            text: "Lithium-ion batteries lose usable capacity every charge cycle, and after roughly two years of daily charging most phone batteries hold noticeably less than when new. A worn battery shows up as a phone that drops from 40 percent to nothing, shuts down in the cold, or will not last a working day. TechBrotherz removes the old cell, fits a new battery and tests it through a full charge cycle before you leave. Most phone battery replacements take about 30 minutes. Bring the device in and we will check the battery health first, so you are not paying for a part you do not need.",
+            text: "Lithium-ion battery lose usable capacity every charge cycle, and after roughly two years of daily charging most phone battery hold noticeably less than when new. A worn battery shows up as a phone that drops from 40 percent to nothing, shuts down in the cold, or will not last a working day. TechBrotherz removes the old cell, fits a new battery and tests it through a full charge cycle before you leave. Most phone battery replacements take about 30 minutes. Bring the device in and we will check the battery health first, so you are not paying for a part you do not need.",
           },
         ],
         markDefs: [],

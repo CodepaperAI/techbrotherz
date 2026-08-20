@@ -189,7 +189,7 @@ const laptopSigns: BlogPost = {
     {
       heading: "Is it the battery, the charger or the charging port?",
       paragraphs: [
-        "A laptop that only works when plugged in has a worn-out battery, and on most models the battery is a straightforward replacement. A battery that drains in an hour, or shows different percentages minutes apart, is telling the same story. Batteries are consumables: several years of daily charging uses one up in the normal course of life.",
+        "A laptop that only works when plugged in has a worn-out battery, and on most models the battery is a straightforward replacement. A battery that drains in an hour, or shows different percentages minutes apart, is telling the same story. Battery are consumables: several years of daily charging uses one up in the normal course of life.",
         "A laptop that will not charge at all has three suspects: the charger, the charging port, and the battery, in that order of cost. The charger is the cheap answer, which is why TechBrotherz asks you to bring yours in with the laptop: testing with your own charger settles it in the first minute at the Store.",
         "If the plug has to sit at an angle to charge, or wiggling the cable makes the charge light flicker, the DC jack inside the laptop has worked loose. That is a real repair rather than an accessory swap, and it is worth doing promptly, because a loose jack can damage the board it is soldered to.",
       ],
@@ -228,7 +228,7 @@ const laptopSigns: BlogPost = {
     {
       question: "Why does my laptop only work when plugged in?",
       answer:
-        "Because the battery is worn out. Laptop batteries are consumables, and several years of daily charge cycles uses one up in the normal course of life. On most models the battery is a straightforward replacement, and the laptop is otherwise fine. Bring the charger with the laptop so the charging side can be ruled out at the same time.",
+        "Because the battery is worn out. Laptop battery are consumables, and several years of daily charge cycles uses one up in the normal course of life. On most models the battery is a straightforward replacement, and the laptop is otherwise fine. Bring the charger with the laptop so the charging side can be ruled out at the same time.",
     },
     {
       question: "Is a slow laptop worth repairing?",
@@ -241,7 +241,7 @@ const laptopSigns: BlogPost = {
         "Back it up the same day. A clicking or grinding noise on a laptop with a mechanical hard drive can be the drive beginning to fail, and a failing drive is the one fault where waiting costs files you cannot buy back. Copy what matters off the machine first, then bring it in for diagnosis.",
     },
   ],
-  about: ["Laptop repair", "Laptop batteries", "Hard drive failure", "Laptop cooling"],
+  about: ["Laptop repair", "Laptop battery", "Hard drive failure", "Laptop cooling"],
   related: [
     { label: "Laptop repair", href: "/services/laptop-repair" },
     { label: "Laptop screen replacement", href: "/repairs/laptop-screen-replacement" },
