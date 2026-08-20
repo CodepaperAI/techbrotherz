@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "ipad-air-2",
-  "name": "iPad Air 2",
+  "slug": "Ipad-air-2",
+  "name": "Ipad Air 2",
   "intro": [
     {
-      "_key": "model.ipad-air-2-intro-b0",
+      "_key": "model.Ipad-air-2-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-air-2-intro-s0",
+          "_key": "model.Ipad-air-2-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPad Air 2 at 3317 17 Ave SE in Calgary. iPad Air models from the Air 2 onward use a laminated display, where the glass and the picture panel are bonded into one part and have to be replaced together. That makes a cracked Air more expensive to fix than a cracked standard iPad of the same age, so it is worth knowing the figure before deciding. Bring the tablet in and we will quote it before any work starts."
+          "text": "TechBrotherz repairs the Ipad Air 2 at 3317 17 Ave SE in Calgary. Ipad Air models from the Air 2 onward use a laminated display, where the glass and the picture panel are bonded into one part and have to be replaced together. That makes a cracked Air more expensive to fix than a cracked standard Ipad of the same age, so it is worth knowing the figure before deciding. Bring the tablet in and we will quote it before any work starts."
         }
       ],
       "markDefs": [],

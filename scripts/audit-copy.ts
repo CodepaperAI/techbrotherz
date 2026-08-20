@@ -7,7 +7,7 @@
  * heading nesting, and test-service-areas owns the area list.
  *
  * Device-name casing skips lines that are code rather than copy: slugs,
- * hrefs, ids and imports legitimately contain "iphone-8-plus".
+ * hrefs, ids and imports legitimately contain "Iphone-8-plus".
  */
 
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -77,8 +77,8 @@ const AMERICANISMS: [RegExp, string][] = [
 
 /** Wrong casings of device and brand names, in copy context only. */
 const DEVICE_CASING: [RegExp, string][] = [
-  [/\bIphone\b|\bIPhone\b/, "iPhone"],
-  [/\bIpad\b|\bIPad\b/, "iPad"],
+  [/\bIphone\b|\bIphone\b/, "Iphone"],
+  [/\bIpad\b|\bIpad\b/, "Ipad"],
   [/\bMacbook\b|\bmacbook\b/, "MacBook"],
   [/\bplaystation\b|\bPlaystation\b/, "PlayStation"],
   [/\bXBox\b|\bXBOX\b/, "Xbox"],

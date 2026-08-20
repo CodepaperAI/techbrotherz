@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-6s-plus",
-  "name": "iPhone 6S Plus",
+  "slug": "Iphone-6s-plus",
+  "name": "Iphone 6S Plus",
   "intro": [
     {
-      "_key": "model.iphone-6s-plus-intro-b0",
+      "_key": "model.Iphone-6s-plus-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-6s-plus-intro-s0",
+          "_key": "model.Iphone-6s-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the iPhone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone this far into its life, so almost any fault on a 6S Plus can be quoted on the spot at the Store rather than waiting on an ordered part."
+          "text": "The Iphone 6S Plus introduced 3D Touch and a stronger 7000 series aluminium frame, added after the Iphone 6 Plus developed a reputation for bending in pockets. TechBrotherz still carries a full parts range for it, which is unusual for a phone this far into its life, so almost any fault on a 6S Plus can be quoted on the spot at the Store rather than waiting on an ordered part."
         }
       ],
       "markDefs": [],
@@ -28,21 +28,21 @@ const content: ModelContent = {
   ],
   "commonIssues": [
     "Cracked front glass on the 5.5 inch display",
-    "Battery failing, this model is old enough that most original batteries are long past their useful life",
+    "Battery failing, this model is old enough that most original battery are long past their useful life",
     "Charging port worn out after a decade of use",
     "Rear camera failing or producing hazy images",
     "Touch becoming unresponsive in patches, sometimes a display fault rather than a cracked screen"
   ],
   "verdict": [
     {
-      "_key": "model.iphone-6s-plus-verdict-b0",
+      "_key": "model.Iphone-6s-plus-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-6s-plus-verdict-s0",
+          "_key": "model.Iphone-6s-plus-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Repair only if the phone owes you nothing. The iPhone 6S Plus stopped at iOS 15 and is now roughly a decade old. A screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
+          "text": "Repair only if the phone owes you nothing. The Iphone 6S Plus stopped at iOS 15 and is now roughly a decade old. A screen is affordable in isolation, but on a handset this age it is common to fix one thing and have another fail within months. We will tell you honestly if the phone in front of us looks like it is near the end."
         }
       ],
       "markDefs": [],
@@ -51,11 +51,11 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.iphone-6s-plus-notes-b0",
+      "_key": "model.Iphone-6s-plus-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-6s-plus-notes-s0",
+          "_key": "model.Iphone-6s-plus-notes-s0",
           "_type": "span",
           "marks": [],
           "text": "The 6S generation uses a stronger aluminium alloy than the 6, so a 6S Plus is far less likely to arrive bent than its predecessor. TechBrotherz still fits the full component range for this model, including the metal LCD shield that many shops no longer replace."

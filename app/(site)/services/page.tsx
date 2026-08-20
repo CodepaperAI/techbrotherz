@@ -25,7 +25,7 @@ const PATH = "/services";
 export const metadata: Metadata = buildMetadata({
   title: "Repair Services in Calgary",
   description:
-    "Every repair TechBrotherz offers in Calgary: phones, iPads, tablets, laptops, desktops, unlocking, virus removal and password reset. Walk in, no appointment.",
+    "Every repair TechBrotherz offers in Calgary: phones, Ipads, tablets, laptops, desktops, unlocking, virus removal and password reset. Walk in, no appointment.",
   path: PATH,
 });
 
@@ -47,7 +47,7 @@ export const metadata: Metadata = buildMetadata({
 interface ServiceEntry {
   title: string;
   href: string;
-  group: "Phones" | "iPads" | "Computers" | "Consoles" | "In Store";
+  group: "Phones" | "Ipads" | "Computers" | "Consoles" | "In Store";
   description: string;
   /** Demo slot in lib/content/images.ts. */
   image: string;
@@ -60,7 +60,7 @@ const SERVICE_CARDS: ServiceEntry[] = [
     href: "/services/phone-repair",
     group: "Phones",
     description:
-      "Screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets.",
+      "Screens, battery, charging ports, cameras and buttons on Iphone, Samsung Galaxy and Google Pixel handsets.",
     image: "service-phone-repair",
     illustration: "screen",
   },
@@ -74,11 +74,11 @@ const SERVICE_CARDS: ServiceEntry[] = [
     illustration: "sim",
   },
   {
-    title: "iPad repair",
-    href: "/services/ipad-repair",
-    group: "iPads",
+    title: "Ipad repair",
+    href: "/services/Ipad-repair",
+    group: "Ipads",
     description:
-      "On older iPads the glass is separate from the picture panel, so a cracked front often costs far less than people expect.",
+      "On older Ipads the glass is separate from the picture panel, so a cracked front often costs far less than people expect.",
     image: "service-tablet-repair",
     illustration: "screen",
   },
@@ -156,11 +156,11 @@ const SERVICE_CARDS: ServiceEntry[] = [
   },
 ];
 
-const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "iPads", "Computers", "Consoles", "In Store"];
+const GROUP_ORDER: ServiceEntry["group"][] = ["Phones", "Ipads", "Computers", "Consoles", "In Store"];
 
 const GROUP_QUESTION: Record<ServiceEntry["group"], string> = {
   Phones: "What phone repairs does TechBrotherz do?",
-  iPads: "What iPad repairs does TechBrotherz do?",
+  Ipads: "What Ipad repairs does TechBrotherz do?",
   Computers: "What laptop and computer work does TechBrotherz do?",
   Consoles: "What gaming console repairs does TechBrotherz do?",
   "In Store": "What else can you do in the Store?",
@@ -218,18 +218,18 @@ export default async function ServicesPage() {
       lead={
         <>
           TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}, repairs iPhones, Samsung, Google Pixel, Motorola, LG and
-          other Android phones, iPads, laptops including MacBooks and gaming laptops, desktop
+          {SITE.city}, {SITE.region}, repairs Iphones, Samsung, Google Pixel, Motorola, LG and
+          other Android phones, Ipads, laptops including MacBooks and gaming laptops, desktop
           computers including gaming towers, and gaming consoles, and unlocks phones for any Canadian
           carrier.
         </>
       }
       answerBox={{
-        answer: `TechBrotherz in Calgary repairs iPhones, Samsung, Google Pixel, Motorola, LG and other Android phones, iPads, laptops and MacBooks, desktop computers and gaming machines, and gaming consoles, and unlocks phones for any Canadian carrier. Every job is quoted free at the Store before any work starts, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
+        answer: `TechBrotherz in Calgary repairs Iphones, Samsung, Google Pixel, Motorola, LG and other Android phones, Ipads, laptops and MacBooks, desktop computers and gaming machines, and gaming consoles, and unlocks phones for any Canadian carrier. Every job is quoted free at the Store before any work starts, no appointment is needed, and every repair carries a ${warrantyDays}-day warranty.`,
         keyFacts: [
           {
             label: "Devices",
-            value: "Phones of every brand, iPads, laptops, desktops, gaming consoles",
+            value: "Phones of every brand, Ipads, laptops, desktops, gaming consoles",
           },
           {
             label: "Computer diagnostics",

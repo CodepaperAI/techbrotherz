@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s23-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Galaxy S23 Plus at 3317 17 Ave SE in Calgary. Screens on this generation are supplied as the OLED panel bonded to the frame, so the part is dearer than an iPhone screen of the same size and the repair replaces the phone's whole front section. The under-display fingerprint reader is recalibrated as part of the job. Parts are ordered in rather than stocked, so phone (403) 273-8324 with the exact model for a firm price."
+          "text": "TechBrotherz repairs the Galaxy S23 Plus at 3317 17 Ave SE in Calgary. Screens on this generation are supplied as the OLED panel bonded to the frame, so the part is dearer than an Iphone screen of the same size and the repair replaces the phone's whole front section. The under-display fingerprint reader is recalibrated as part of the job. Parts are ordered in rather than stocked, so phone (403) 273-8324 with the exact model for a firm price."
         }
       ],
       "markDefs": [],

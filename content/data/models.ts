@@ -2259,16 +2259,16 @@ export const MODEL_DOCS: ModelDoc[] = [
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-10th-gen",
+    "_id": "model.Ipad-10th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2022",
+      "Ipad 2022",
       "A2696"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 10th gen",
+    "name": "Ipad 10th gen",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2292,26 +2292,26 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-10th-gen"
+      "current": "Ipad-10th-gen"
     },
     "stillReceivesUpdates": false
   },
   /*
-   * The 2024 to 2026 iPad range, seeded 2026-08 on the client's instruction.
-   * Lineup verified against Apple's current range before seeding: iPad (A16),
-   * iPad Mini (A17 Pro), iPad Air M2/M3/M4 in 11 and 13 inch, iPad Pro M4 and
+   * The 2024 to 2026 Ipad range, seeded 2026-08 on the client's instruction.
+   * Lineup verified against Apple's current range before seeding: Ipad (A16),
+   * Ipad Mini (A17 Pro), Ipad Air M2/M3/M4 in 11 and 13 inch, Ipad Pro M4 and
    * M5 in 11 and 13 inch. All quote-only and unpublished until each has
    * model-specific content, per the Phase 4 thin-content rule; they render as
-   * "Also repaired" chips on the iPad hub meanwhile.
+   * "Also repaired" chips on the Ipad hub meanwhile.
    */
   {
-    "_id": "model.ipad-11th-gen",
+    "_id": "model.Ipad-11th-gen",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad 2025", "ipad a16"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad 2025", "Ipad a16"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 11th gen",
+    "name": "Ipad 11th gen",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2322,17 +2322,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-11th-gen" },
+    "slug": { "current": "Ipad-11th-gen" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-mini-7",
+    "_id": "model.Ipad-mini-7",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad mini a17 pro", "ipad mini 2024"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad mini a17 pro", "Ipad mini 2024"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Mini 7",
+    "name": "Ipad Mini 7",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2343,17 +2343,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-mini-7" },
+    "slug": { "current": "Ipad-mini-7" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-11-m2",
+    "_id": "model.Ipad-air-11-m2",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air m2", "ipad air 2024"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air m2", "Ipad air 2024"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 11 (M2)",
+    "name": "Ipad Air 11 (M2)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2364,17 +2364,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-11-m2" },
+    "slug": { "current": "Ipad-air-11-m2" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-13-m2",
+    "_id": "model.Ipad-air-13-m2",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air 13 m2", "ipad air 13 2024"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air 13 m2", "Ipad air 13 2024"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 13 (M2)",
+    "name": "Ipad Air 13 (M2)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2385,17 +2385,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-13-m2" },
+    "slug": { "current": "Ipad-air-13-m2" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-11-m3",
+    "_id": "model.Ipad-air-11-m3",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air m3", "ipad air 2025"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air m3", "Ipad air 2025"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 11 (M3)",
+    "name": "Ipad Air 11 (M3)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2406,17 +2406,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-11-m3" },
+    "slug": { "current": "Ipad-air-11-m3" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-13-m3",
+    "_id": "model.Ipad-air-13-m3",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air 13 m3", "ipad air 13 2025"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air 13 m3", "Ipad air 13 2025"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 13 (M3)",
+    "name": "Ipad Air 13 (M3)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2427,17 +2427,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-13-m3" },
+    "slug": { "current": "Ipad-air-13-m3" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-11-m4",
+    "_id": "model.Ipad-air-11-m4",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air m4", "ipad air 2026"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air m4", "Ipad air 2026"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 11 (M4)",
+    "name": "Ipad Air 11 (M4)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2448,17 +2448,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-11-m4" },
+    "slug": { "current": "Ipad-air-11-m4" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-13-m4",
+    "_id": "model.Ipad-air-13-m4",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad air 13 m4", "ipad air 13 2026"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad air 13 m4", "Ipad air 13 2026"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 13 (M4)",
+    "name": "Ipad Air 13 (M4)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2469,17 +2469,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-air-13-m4" },
+    "slug": { "current": "Ipad-air-13-m4" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-pro-11-m4",
+    "_id": "model.Ipad-pro-11-m4",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad pro 11 2024", "ipad pro m4"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad pro 11 2024", "Ipad pro m4"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (M4)",
+    "name": "Ipad Pro 11 (M4)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2490,17 +2490,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-pro-11-m4" },
+    "slug": { "current": "Ipad-pro-11-m4" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-pro-13-m4",
+    "_id": "model.Ipad-pro-13-m4",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad pro 13 2024", "ipad pro 13 m4"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad pro 13 2024", "Ipad pro 13 m4"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 13 (M4)",
+    "name": "Ipad Pro 13 (M4)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2511,17 +2511,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-pro-13-m4" },
+    "slug": { "current": "Ipad-pro-13-m4" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-pro-11-m5",
+    "_id": "model.Ipad-pro-11-m5",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad pro 11 2025", "ipad pro m5"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad pro 11 2025", "Ipad pro m5"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (M5)",
+    "name": "Ipad Pro 11 (M5)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2532,17 +2532,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-pro-11-m5" },
+    "slug": { "current": "Ipad-pro-11-m5" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-pro-13-m5",
+    "_id": "model.Ipad-pro-13-m5",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["ipad pro 13 2025", "ipad pro 13 m5"],
-    "brandSlug": "apple-ipad",
+    "aliases": ["Ipad pro 13 2025", "Ipad pro 13 m5"],
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 13 (M5)",
+    "name": "Ipad Pro 13 (M5)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2553,22 +2553,22 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "ipad-pro-13-m5" },
+    "slug": { "current": "Ipad-pro-13-m5" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-2",
+    "_id": "model.Ipad-2",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad2",
+      "Ipad2",
       "A1395",
       "A1396"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 9",
-    "name": "iPad 2",
+    "lastSupportedOs": "IpadOS 9",
+    "name": "Ipad 2",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -2581,23 +2581,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-2"
+      "current": "Ipad-2"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-3",
+    "_id": "model.Ipad-3",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 3rd gen",
-      "the new ipad",
+      "Ipad 3rd gen",
+      "the new Ipad",
       "A1416"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 9",
-    "name": "iPad 3",
+    "lastSupportedOs": "IpadOS 9",
+    "name": "Ipad 3",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -2610,23 +2610,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-3"
+      "current": "Ipad-3"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-4",
+    "_id": "model.Ipad-4",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 4th gen",
-      "ipad with retina display",
+      "Ipad 4th gen",
+      "Ipad with retina display",
       "A1458"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 10",
-    "name": "iPad 4",
+    "lastSupportedOs": "IpadOS 10",
+    "name": "Ipad 4",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -2639,21 +2639,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-4"
+      "current": "Ipad-4"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-5th-gen",
+    "_id": "model.Ipad-5th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2017",
+      "Ipad 2017",
       "A1822"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 5th gen",
+    "name": "Ipad 5th gen",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2677,21 +2677,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-5th-gen"
+      "current": "Ipad-5th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-6th-gen",
+    "_id": "model.Ipad-6th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2018",
+      "Ipad 2018",
       "A1893"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 6th gen",
+    "name": "Ipad 6th gen",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2715,21 +2715,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-6th-gen"
+      "current": "Ipad-6th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-7th-gen",
+    "_id": "model.Ipad-7th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2019",
+      "Ipad 2019",
       "A2197"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 7th gen",
+    "name": "Ipad 7th gen",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2753,21 +2753,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-7th-gen"
+      "current": "Ipad-7th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-8th-gen",
+    "_id": "model.Ipad-8th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2020",
+      "Ipad 2020",
       "A2270"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 8th gen",
+    "name": "Ipad 8th gen",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -2791,21 +2791,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-8th-gen"
+      "current": "Ipad-8th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-9th-gen",
+    "_id": "model.Ipad-9th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad 2021",
+      "Ipad 2021",
       "A2602"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad 9th gen",
+    "name": "Ipad 9th gen",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -2829,24 +2829,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-9th-gen"
+      "current": "Ipad-9th-gen"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air",
+    "_id": "model.Ipad-air",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad air 1",
-      "ipad air 1st gen",
+      "Ipad air 1",
+      "Ipad air 1st gen",
       "A1474",
       "A1475"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 12",
-    "name": "iPad Air",
+    "lastSupportedOs": "IpadOS 12",
+    "name": "Ipad Air",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -2859,21 +2859,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-air"
+      "current": "Ipad-air"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-air-2",
+    "_id": "model.Ipad-air-2",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad air 2",
+      "Ipad air 2",
       "A1566"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 2",
+    "name": "Ipad Air 2",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2897,21 +2897,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-air-2"
+      "current": "Ipad-air-2"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-air-3",
+    "_id": "model.Ipad-air-3",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad air 3",
+      "Ipad air 3",
       "A2152"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 3",
+    "name": "Ipad Air 3",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -2935,21 +2935,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-air-3"
+      "current": "Ipad-air-3"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-air-4",
+    "_id": "model.Ipad-air-4",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad air 4",
+      "Ipad air 4",
       "A2316"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 4",
+    "name": "Ipad Air 4",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -2973,21 +2973,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-air-4"
+      "current": "Ipad-air-4"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-air-5",
+    "_id": "model.Ipad-air-5",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad air 5",
+      "Ipad air 5",
       "A2588"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Air 5",
+    "name": "Ipad Air 5",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3011,24 +3011,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-air-5"
+      "current": "Ipad-air-5"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-mini",
+    "_id": "model.Ipad-mini",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini 1",
-      "ipad mini 1st gen",
+      "Ipad mini 1",
+      "Ipad mini 1st gen",
       "A1432",
       "A1454"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 9",
-    "name": "iPad Mini",
+    "lastSupportedOs": "IpadOS 9",
+    "name": "Ipad Mini",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -3041,23 +3041,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini"
+      "current": "Ipad-mini"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-mini-2",
+    "_id": "model.Ipad-mini-2",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini retina",
+      "Ipad mini retina",
       "A1489",
       "A1490"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 12",
-    "name": "iPad Mini 2",
+    "lastSupportedOs": "IpadOS 12",
+    "name": "Ipad Mini 2",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -3070,23 +3070,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini-2"
+      "current": "Ipad-mini-2"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-mini-3",
+    "_id": "model.Ipad-mini-3",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini 3rd gen",
+      "Ipad mini 3rd gen",
       "A1599",
       "A1600"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": true,
-    "lastSupportedOs": "iPadOS 12",
-    "name": "iPad Mini 3",
+    "lastSupportedOs": "IpadOS 12",
+    "name": "Ipad Mini 3",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -3099,21 +3099,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini-3"
+      "current": "Ipad-mini-3"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-mini-4",
+    "_id": "model.Ipad-mini-4",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini 4",
+      "Ipad mini 4",
       "A1538"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Mini 4",
+    "name": "Ipad Mini 4",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3137,21 +3137,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini-4"
+      "current": "Ipad-mini-4"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-mini-5",
+    "_id": "model.Ipad-mini-5",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini 5",
+      "Ipad mini 5",
       "A2133"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Mini 5",
+    "name": "Ipad Mini 5",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3175,21 +3175,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini-5"
+      "current": "Ipad-mini-5"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-mini-6",
+    "_id": "model.Ipad-mini-6",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad mini 6",
+      "Ipad mini 6",
       "A2567"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Mini 6",
+    "name": "Ipad Mini 6",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3213,21 +3213,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-mini-6"
+      "current": "Ipad-mini-6"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.ipad-pro-10-5",
+    "_id": "model.Ipad-pro-10-5",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 10.5",
+      "Ipad pro 10.5",
       "A1701"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 10.5",
+    "name": "Ipad Pro 10.5",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3251,20 +3251,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-10-5"
+      "current": "Ipad-pro-10-5"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-11-1st-gen",
+    "_id": "model.Ipad-pro-11-1st-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 11 2018"
+      "Ipad pro 11 2018"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (1st gen)",
+    "name": "Ipad Pro 11 (1st gen)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3288,20 +3288,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-11-1st-gen"
+      "current": "Ipad-pro-11-1st-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-11-2nd-gen",
+    "_id": "model.Ipad-pro-11-2nd-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 11 2020"
+      "Ipad pro 11 2020"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (2nd gen)",
+    "name": "Ipad Pro 11 (2nd gen)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3325,20 +3325,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-11-2nd-gen"
+      "current": "Ipad-pro-11-2nd-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-11-3rd-gen",
+    "_id": "model.Ipad-pro-11-3rd-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 11 2021"
+      "Ipad pro 11 2021"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (3rd gen)",
+    "name": "Ipad Pro 11 (3rd gen)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -3362,20 +3362,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-11-3rd-gen"
+      "current": "Ipad-pro-11-3rd-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-11-4th-gen",
+    "_id": "model.Ipad-pro-11-4th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 11 2022"
+      "Ipad pro 11 2022"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 11 (4th gen)",
+    "name": "Ipad Pro 11 (4th gen)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -3399,20 +3399,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-11-4th-gen"
+      "current": "Ipad-pro-11-4th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-12-9-3rd-gen",
+    "_id": "model.Ipad-pro-12-9-3rd-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 12.9 2018"
+      "Ipad pro 12.9 2018"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 12.9 (3rd gen)",
+    "name": "Ipad Pro 12.9 (3rd gen)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3436,20 +3436,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-12-9-3rd-gen"
+      "current": "Ipad-pro-12-9-3rd-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-12-9-4th-gen",
+    "_id": "model.Ipad-pro-12-9-4th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 12.9 2020"
+      "Ipad pro 12.9 2020"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 12.9 (4th gen)",
+    "name": "Ipad Pro 12.9 (4th gen)",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3473,20 +3473,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-12-9-4th-gen"
+      "current": "Ipad-pro-12-9-4th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-12-9-5th-gen",
+    "_id": "model.Ipad-pro-12-9-5th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 12.9 2021"
+      "Ipad pro 12.9 2021"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 12.9 (5th gen)",
+    "name": "Ipad Pro 12.9 (5th gen)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -3510,20 +3510,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-12-9-5th-gen"
+      "current": "Ipad-pro-12-9-5th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-12-9-6th-gen",
+    "_id": "model.Ipad-pro-12-9-6th-gen",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 12.9 2022"
+      "Ipad pro 12.9 2022"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 12.9 (6th gen)",
+    "name": "Ipad Pro 12.9 (6th gen)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -3547,21 +3547,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-12-9-6th-gen"
+      "current": "Ipad-pro-12-9-6th-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.ipad-pro-9-7",
+    "_id": "model.Ipad-pro-9-7",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "ipad pro 9.7",
+      "Ipad pro 9.7",
       "A1673"
     ],
-    "brandSlug": "apple-ipad",
+    "brandSlug": "apple-Ipad",
     "deviceType": "tablet",
     "discontinued": false,
-    "name": "iPad Pro 9.7",
+    "name": "Ipad Pro 9.7",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3585,20 +3585,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "ipad-pro-9-7"
+      "current": "Ipad-pro-9-7"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-11",
+    "_id": "model.Iphone-11",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone11"
+      "Iphone11"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 11",
+    "name": "Iphone 11",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3626,20 +3626,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-11"
+      "current": "Iphone-11"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-11-pro",
+    "_id": "model.Iphone-11-pro",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone11pro"
+      "Iphone11pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 11 Pro",
+    "name": "Iphone 11 Pro",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3667,20 +3667,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-11-pro"
+      "current": "Iphone-11-pro"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-11-pro-max",
+    "_id": "model.Iphone-11-pro-max",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone11promax"
+      "Iphone11promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 11 Pro Max",
+    "name": "Iphone 11 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -3708,20 +3708,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-11-pro-max"
+      "current": "Iphone-11-pro-max"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-12",
+    "_id": "model.Iphone-12",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone12"
+      "Iphone12"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 12",
+    "name": "Iphone 12",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3749,20 +3749,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-12"
+      "current": "Iphone-12"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-12-mini",
+    "_id": "model.Iphone-12-mini",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone12mini"
+      "Iphone12mini"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 12 mini",
+    "name": "Iphone 12 mini",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3790,20 +3790,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-12-mini"
+      "current": "Iphone-12-mini"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-12-pro",
+    "_id": "model.Iphone-12-pro",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone12pro"
+      "Iphone12pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 12 Pro",
+    "name": "Iphone 12 Pro",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3831,20 +3831,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-12-pro"
+      "current": "Iphone-12-pro"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-12-pro-max",
+    "_id": "model.Iphone-12-pro-max",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone12promax"
+      "Iphone12promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 12 Pro Max",
+    "name": "Iphone 12 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3872,20 +3872,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-12-pro-max"
+      "current": "Iphone-12-pro-max"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-13",
+    "_id": "model.Iphone-13",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone13"
+      "Iphone13"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 13",
+    "name": "Iphone 13",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3913,20 +3913,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-13"
+      "current": "Iphone-13"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-13-mini",
+    "_id": "model.Iphone-13-mini",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone13mini"
+      "Iphone13mini"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 13 mini",
+    "name": "Iphone 13 mini",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -3954,20 +3954,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-13-mini"
+      "current": "Iphone-13-mini"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-13-pro",
+    "_id": "model.Iphone-13-pro",
     "_updatedAt": "2026-07-31T19:22:01Z",
     "aliases": [
-      "iphone13pro"
+      "Iphone13pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 13 Pro",
+    "name": "Iphone 13 Pro",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -3995,20 +3995,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-13-pro"
+      "current": "Iphone-13-pro"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-13-pro-max",
+    "_id": "model.Iphone-13-pro-max",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone13promax"
+      "Iphone13promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 13 Pro Max",
+    "name": "Iphone 13 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4036,20 +4036,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-13-pro-max"
+      "current": "Iphone-13-pro-max"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-14",
+    "_id": "model.Iphone-14",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone14"
+      "Iphone14"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 14",
+    "name": "Iphone 14",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4077,21 +4077,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-14"
+      "current": "Iphone-14"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-14-plus",
+    "_id": "model.Iphone-14-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone14plus",
-      "iphone 14+"
+      "Iphone14plus",
+      "Iphone 14+"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 14 Plus",
+    "name": "Iphone 14 Plus",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -4119,20 +4119,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-14-plus"
+      "current": "Iphone-14-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-14-pro",
+    "_id": "model.Iphone-14-pro",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone14pro"
+      "Iphone14pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 14 Pro",
+    "name": "Iphone 14 Pro",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4160,20 +4160,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-14-pro"
+      "current": "Iphone-14-pro"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-14-pro-max",
+    "_id": "model.Iphone-14-pro-max",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone14promax"
+      "Iphone14promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 14 Pro Max",
+    "name": "Iphone 14 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4201,20 +4201,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-14-pro-max"
+      "current": "Iphone-14-pro-max"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-15",
+    "_id": "model.Iphone-15",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone15"
+      "Iphone15"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 15",
+    "name": "Iphone 15",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4242,21 +4242,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-15"
+      "current": "Iphone-15"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-15-plus",
+    "_id": "model.Iphone-15-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone15plus",
-      "iphone 15+"
+      "Iphone15plus",
+      "Iphone 15+"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 15 Plus",
+    "name": "Iphone 15 Plus",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -4284,20 +4284,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-15-plus"
+      "current": "Iphone-15-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-15-pro",
+    "_id": "model.Iphone-15-pro",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone15pro"
+      "Iphone15pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 15 Pro",
+    "name": "Iphone 15 Pro",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4325,20 +4325,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-15-pro"
+      "current": "Iphone-15-pro"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-15-pro-max",
+    "_id": "model.Iphone-15-pro-max",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone15promax"
+      "Iphone15promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 15 Pro Max",
+    "name": "Iphone 15 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -4366,20 +4366,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-15-pro-max"
+      "current": "Iphone-15-pro-max"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-16",
+    "_id": "model.Iphone-16",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone16"
+      "Iphone16"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 16",
+    "name": "Iphone 16",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -4407,21 +4407,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-16"
+      "current": "Iphone-16"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-16-plus",
+    "_id": "model.Iphone-16-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone16plus",
-      "iphone 16+"
+      "Iphone16plus",
+      "Iphone 16+"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 16 Plus",
+    "name": "Iphone 16 Plus",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -4449,20 +4449,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-16-plus"
+      "current": "Iphone-16-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-16-pro",
+    "_id": "model.Iphone-16-pro",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone16pro"
+      "Iphone16pro"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 16 Pro",
+    "name": "Iphone 16 Pro",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -4490,20 +4490,20 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-16-pro"
+      "current": "Iphone-16-pro"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-16-pro-max",
+    "_id": "model.Iphone-16-pro-max",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone16promax"
+      "Iphone16promax"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 16 Pro Max",
+    "name": "Iphone 16 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -4531,23 +4531,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-16-pro-max"
+      "current": "Iphone-16-pro-max"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-4",
+    "_id": "model.Iphone-4",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone4",
+      "Iphone4",
       "A1332",
       "A1349"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 7",
-    "name": "iPhone 4",
+    "name": "Iphone 4",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4600,23 +4600,23 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-4"
+      "current": "Iphone-4"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-4s",
+    "_id": "model.Iphone-4s",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone4s",
+      "Iphone4s",
       "A1387",
       "A1431"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 9",
-    "name": "iPhone 4S",
+    "name": "Iphone 4S",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4669,24 +4669,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-4s"
+      "current": "Iphone-4s"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-5",
+    "_id": "model.Iphone-5",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone5",
+      "Iphone5",
       "A1428",
       "A1429",
       "A1442"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 10",
-    "name": "iPhone 5",
+    "name": "Iphone 5",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4739,24 +4739,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-5"
+      "current": "Iphone-5"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-5c",
+    "_id": "model.Iphone-5c",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone5c",
+      "Iphone5c",
       "A1456",
       "A1507",
       "A1532"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 10",
-    "name": "iPhone 5C",
+    "name": "Iphone 5C",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4809,25 +4809,25 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-5c"
+      "current": "Iphone-5c"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-5s",
+    "_id": "model.Iphone-5s",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone5s",
+      "Iphone5s",
       "A1453",
       "A1457",
       "A1530",
       "A1533"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 12",
-    "name": "iPhone 5S",
+    "name": "Iphone 5S",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4880,24 +4880,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-5s"
+      "current": "Iphone-5s"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-6",
+    "_id": "model.Iphone-6",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone6",
+      "Iphone6",
       "A1549",
       "A1586",
       "A1589"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 12",
-    "name": "iPhone 6",
+    "name": "Iphone 6",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -4965,25 +4965,25 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-6"
+      "current": "Iphone-6"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-6-plus",
+    "_id": "model.Iphone-6-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone 6+",
-      "iphone6plus",
+      "Iphone 6+",
+      "Iphone6plus",
       "A1522",
       "A1524",
       "A1593"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 12",
-    "name": "iPhone 6 Plus",
+    "name": "Iphone 6 Plus",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -5051,24 +5051,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-6-plus"
+      "current": "Iphone-6-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-6s",
+    "_id": "model.Iphone-6s",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone6s",
+      "Iphone6s",
       "A1633",
       "A1688",
       "A1700"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 15",
-    "name": "iPhone 6S",
+    "name": "Iphone 6S",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -5136,25 +5136,25 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-6s"
+      "current": "Iphone-6s"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-6s-plus",
+    "_id": "model.Iphone-6s-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone 6s+",
-      "iphone6splus",
+      "Iphone 6s+",
+      "Iphone6splus",
       "A1634",
       "A1687",
       "A1699"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 15",
-    "name": "iPhone 6S Plus",
+    "name": "Iphone 6S Plus",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -5222,24 +5222,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-6s-plus"
+      "current": "Iphone-6s-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-7",
+    "_id": "model.Iphone-7",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone7",
+      "Iphone7",
       "A1660",
       "A1778",
       "A1779"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 15",
-    "name": "iPhone 7",
+    "name": "Iphone 7",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5296,25 +5296,25 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-7"
+      "current": "Iphone-7"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-7-plus",
+    "_id": "model.Iphone-7-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone 7+",
-      "iphone7plus",
+      "Iphone 7+",
+      "Iphone7plus",
       "A1661",
       "A1784",
       "A1785"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 15",
-    "name": "iPhone 7 Plus",
+    "name": "Iphone 7 Plus",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5371,24 +5371,24 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-7-plus"
+      "current": "Iphone-7-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-8",
+    "_id": "model.Iphone-8",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone8",
+      "Iphone8",
       "A1863",
       "A1905",
       "A1906"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 16",
-    "name": "iPhone 8",
+    "name": "Iphone 8",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5445,26 +5445,26 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-8"
+      "current": "Iphone-8"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-8-plus",
+    "_id": "model.Iphone-8-plus",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone 8+",
-      "iphone8plus",
-      "iphone 8 plus",
+      "Iphone 8+",
+      "Iphone8plus",
+      "Iphone 8 plus",
       "A1864",
       "A1897",
       "A1898"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 16",
-    "name": "iPhone 8 Plus",
+    "name": "Iphone 8 Plus",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5521,25 +5521,25 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-8-plus"
+      "current": "Iphone-8-plus"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-se-1st-gen",
+    "_id": "model.Iphone-se-1st-gen",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone se",
-      "iphone se 2016",
+      "Iphone se",
+      "Iphone se 2016",
       "A1662",
       "A1723",
       "A1724"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": true,
     "lastSupportedOs": "iOS 15",
-    "name": "iPhone SE (1st gen)",
+    "name": "Iphone SE (1st gen)",
     "noIndex": false,
     "popular": false,
     "published": true,
@@ -5552,21 +5552,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-se-1st-gen"
+      "current": "Iphone-se-1st-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-se-2nd-gen",
+    "_id": "model.Iphone-se-2nd-gen",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone se 2020",
-      "iphone se2"
+      "Iphone se 2020",
+      "Iphone se2"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone SE (2nd gen)",
+    "name": "Iphone SE (2nd gen)",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5594,21 +5594,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-se-2nd-gen"
+      "current": "Iphone-se-2nd-gen"
     },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-se-3rd-gen",
+    "_id": "model.Iphone-se-3rd-gen",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone se 2022",
-      "iphone se3"
+      "Iphone se 2022",
+      "Iphone se3"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone SE (3rd gen)",
+    "name": "Iphone SE (3rd gen)",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -5636,21 +5636,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-se-3rd-gen"
+      "current": "Iphone-se-3rd-gen"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-x",
+    "_id": "model.Iphone-x",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone 10",
-      "iphonex"
+      "Iphone 10",
+      "Iphonex"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone X",
+    "name": "Iphone X",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5678,21 +5678,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-x"
+      "current": "Iphone-x"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-xr",
+    "_id": "model.Iphone-xr",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphonexr",
-      "iphone 10r"
+      "Iphonexr",
+      "Iphone 10r"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone XR",
+    "name": "Iphone XR",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5720,21 +5720,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-xr"
+      "current": "Iphone-xr"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-xs",
+    "_id": "model.Iphone-xs",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphonexs",
-      "iphone 10s"
+      "Iphonexs",
+      "Iphone 10s"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone XS",
+    "name": "Iphone XS",
     "noIndex": false,
     "popular": true,
     "published": true,
@@ -5762,21 +5762,21 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-xs"
+      "current": "Iphone-xs"
     },
     "stillReceivesUpdates": false
   },
   {
-    "_id": "model.iphone-xs-max",
+    "_id": "model.Iphone-xs-max",
     "_updatedAt": "2026-07-31T19:22:02Z",
     "aliases": [
-      "iphone xs max",
-      "iphone 10s max"
+      "Iphone xs max",
+      "Iphone 10s max"
     ],
-    "brandSlug": "apple-iphone",
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone XS Max",
+    "name": "Iphone XS Max",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -5804,7 +5804,7 @@ export const MODEL_DOCS: ModelDoc[] = [
       }
     ],
     "slug": {
-      "current": "iphone-xs-max"
+      "current": "Iphone-xs-max"
     },
     "stillReceivesUpdates": false
   },
@@ -6260,8 +6260,8 @@ export const MODEL_DOCS: ModelDoc[] = [
     "stillReceivesUpdates": false
   },
   /*
-   * The 2024 to 2026 iPhone, Galaxy and Pixel range, seeded 2026-08 on the
-   * client's instruction. Lineups verified before seeding: iPhone 16e, 17,
+   * The 2024 to 2026 Iphone, Galaxy and Pixel range, seeded 2026-08 on the
+   * client's instruction. Lineups verified before seeding: Iphone 16e, 17,
    * Air, 17 Pro, 17 Pro Max and 17e; Galaxy S25 Edge, S26/S26 Plus/S26 Ultra,
    * Z Fold 7 and 8 (plus 8 Ultra), Z Flip 7, 7 FE and 8; Pixel 9 Pro XL,
    * 9 Pro Fold, 9a and the Pixel 10 family. Pixel 11 and Pixel 10a are NOT
@@ -6269,13 +6269,13 @@ export const MODEL_DOCS: ModelDoc[] = [
    * All quote-only and unpublished until each has model-specific content.
    */
   {
-    "_id": "model.iphone-16e",
+    "_id": "model.Iphone-16e",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone 16 e"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone 16 e"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 16e",
+    "name": "Iphone 16e",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -6287,17 +6287,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-16e" },
+    "slug": { "current": "Iphone-16e" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-17",
+    "_id": "model.Iphone-17",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone17"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone17"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 17",
+    "name": "Iphone 17",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -6309,17 +6309,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-17" },
+    "slug": { "current": "Iphone-17" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-air",
+    "_id": "model.Iphone-air",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone 17 air"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone 17 air"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone Air",
+    "name": "Iphone Air",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -6331,17 +6331,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-air" },
+    "slug": { "current": "Iphone-air" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-17-pro",
+    "_id": "model.Iphone-17-pro",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone17 pro"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone17 pro"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 17 Pro",
+    "name": "Iphone 17 Pro",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -6353,17 +6353,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-17-pro" },
+    "slug": { "current": "Iphone-17-pro" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-17-pro-max",
+    "_id": "model.Iphone-17-pro-max",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone17 pro max"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone17 pro max"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 17 Pro Max",
+    "name": "Iphone 17 Pro Max",
     "noIndex": false,
     "popular": true,
     "published": false,
@@ -6375,17 +6375,17 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-17-pro-max" },
+    "slug": { "current": "Iphone-17-pro-max" },
     "stillReceivesUpdates": true
   },
   {
-    "_id": "model.iphone-17e",
+    "_id": "model.Iphone-17e",
     "_updatedAt": "2026-08-11T00:00:00Z",
-    "aliases": ["iphone 17 e"],
-    "brandSlug": "apple-iphone",
+    "aliases": ["Iphone 17 e"],
+    "brandSlug": "apple-Iphone",
     "deviceType": "phone",
     "discontinued": false,
-    "name": "iPhone 17e",
+    "name": "Iphone 17e",
     "noIndex": false,
     "popular": false,
     "published": false,
@@ -6397,7 +6397,7 @@ export const MODEL_DOCS: ModelDoc[] = [
       { "_key": "charging-port-repair", "repair": "charging-port-repair" },
       { "_key": "screen-replacement", "repair": "screen-replacement" }
     ],
-    "slug": { "current": "iphone-17e" },
+    "slug": { "current": "Iphone-17e" },
     "stillReceivesUpdates": true
   },
   {

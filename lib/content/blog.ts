@@ -189,7 +189,7 @@ const laptopSigns: BlogPost = {
     {
       heading: "Is it the battery, the charger or the charging port?",
       paragraphs: [
-        "A laptop that only works when plugged in has a worn-out battery, and on most models the battery is a straightforward replacement. A battery that drains in an hour, or shows different percentages minutes apart, is telling the same story. Batteries are consumables: several years of daily charging uses one up in the normal course of life.",
+        "A laptop that only works when plugged in has a worn-out battery, and on most models the battery is a straightforward replacement. A battery that drains in an hour, or shows different percentages minutes apart, is telling the same story. battery are consumables: several years of daily charging uses one up in the normal course of life.",
         "A laptop that will not charge at all has three suspects: the charger, the charging port, and the battery, in that order of cost. The charger is the cheap answer, which is why TechBrotherz asks you to bring yours in with the laptop: testing with your own charger settles it in the first minute at the Store.",
         "If the plug has to sit at an angle to charge, or wiggling the cable makes the charge light flicker, the DC jack inside the laptop has worked loose. That is a real repair rather than an accessory swap, and it is worth doing promptly, because a loose jack can damage the board it is soldered to.",
       ],
@@ -228,7 +228,7 @@ const laptopSigns: BlogPost = {
     {
       question: "Why does my laptop only work when plugged in?",
       answer:
-        "Because the battery is worn out. Laptop batteries are consumables, and several years of daily charge cycles uses one up in the normal course of life. On most models the battery is a straightforward replacement, and the laptop is otherwise fine. Bring the charger with the laptop so the charging side can be ruled out at the same time.",
+        "Because the battery is worn out. Laptop battery are consumables, and several years of daily charge cycles uses one up in the normal course of life. On most models the battery is a straightforward replacement, and the laptop is otherwise fine. Bring the charger with the laptop so the charging side can be ruled out at the same time.",
     },
     {
       question: "Is a slow laptop worth repairing?",
@@ -241,7 +241,7 @@ const laptopSigns: BlogPost = {
         "Back it up the same day. A clicking or grinding noise on a laptop with a mechanical hard drive can be the drive beginning to fail, and a failing drive is the one fault where waiting costs files you cannot buy back. Copy what matters off the machine first, then bring it in for diagnosis.",
     },
   ],
-  about: ["Laptop repair", "Laptop batteries", "Hard drive failure", "Laptop cooling"],
+  about: ["Laptop repair", "Laptop battery", "Hard drive failure", "Laptop cooling"],
   related: [
     { label: "Laptop repair", href: "/services/laptop-repair" },
     { label: "Laptop screen replacement", href: "/repairs/laptop-screen-replacement" },
@@ -360,7 +360,7 @@ const waterDamage: BlogPost = {
   about: ["Water damage", "Phone repair", "Corrosion"],
   related: [
     { label: "Cell phone repair", href: "/services/phone-repair" },
-    { label: "iPhone charging port repair", href: "/repairs/iphone-charging-port-repair" },
+    { label: "Iphone charging port repair", href: "/repairs/Iphone-charging-port-repair" },
     { label: "Phone repair in Calgary", href: "/phone-repair-calgary" },
     { label: "Contact and directions", href: "/contact" },
   ],
@@ -372,16 +372,16 @@ const screenRepairTime: BlogPost = {
   title: "How Long Does a Phone Screen Repair Take?",
   seoTitle: "How Long Does a Phone Screen Repair Take?",
   seoDescription:
-    "About 30 minutes for most phones at a walk-in store. What the job involves, why iPads take longer, and what makes any screen repair run over.",
+    "About 30 minutes for most phones at a walk-in store. What the job involves, why Ipads take longer, and what makes any screen repair run over.",
   datePublished: "2026-08-20",
   summary:
     "About 30 minutes for most phones, done while you wait. What actually happens in that half hour, and which repairs honestly take longer.",
   lead: "A cracked screen is the most common repair there is, and the first question everyone asks is how long they will be without their phone. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces screens every day, so the honest timings below come from the bench rather than a brochure.",
   answer:
-    "A phone screen replacement at TechBrotherz in Calgary takes about 30 minutes for most iPhone, Samsung Galaxy and Google Pixel models, done while you wait with no appointment. iPad screens take longer, usually a day, because the glass is glued down and must be separated with heat. Every repair carries a 60-day warranty.",
+    "A phone screen replacement at TechBrotherz in Calgary takes about 30 minutes for most Iphone, Samsung Galaxy and Google Pixel models, done while you wait with no appointment. Ipad screens take longer, usually a day, because the glass is glued down and must be separated with heat. Every repair carries a 60-day warranty.",
   keyFacts: [
     { label: "Most phones", value: "About 30 minutes, while you wait" },
-    { label: "iPads", value: "Usually a day, because the glass is glued" },
+    { label: "Ipads", value: "Usually a day, because the glass is glued" },
     { label: "Appointment", value: "Not needed, walk in during opening hours" },
     { label: "Warranty", value: "60 days on the part and the work" },
     { label: "Quote", value: "Free, agreed before any work starts" },
@@ -392,13 +392,13 @@ const screenRepairTime: BlogPost = {
       paragraphs: [
         "A phone screen replacement is a sequence, not a single act, and each step has a reason. The phone is powered down and opened, on most models through the screen itself or the back panel. The broken display assembly is disconnected from the board, and the new assembly is connected and tested before anything is sealed, because testing after sealing means opening the phone twice.",
         "The test covers the things a screen actually does: touch response across the whole surface, display quality, the earpiece and the front camera where they route through the assembly, and the sensors that sit behind the glass. Only after that does the phone get closed up, and the technician runs the same checks once more on the sealed phone.",
-        "That whole sequence is about 30 minutes on most iPhone, Samsung Galaxy and Google Pixel models at the TechBrotherz Store, which is why screen repairs are done while you wait. The part for common models is usually on the shelf, and the quote is agreed before the phone is opened.",
+        "That whole sequence is about 30 minutes on most Iphone, Samsung Galaxy and Google Pixel models at the TechBrotherz Store, which is why screen repairs are done while you wait. The part for common models is usually on the shelf, and the quote is agreed before the phone is opened.",
       ],
     },
     {
       heading: "Why do some screen repairs take longer than others?",
       paragraphs: [
-        "The biggest single factor is how the screen is attached. Most phone displays are held by clips, screws and light adhesive, which a technician can release in minutes. iPad glass is glued down across its whole surface, and separating it takes controlled heat and patience: rushing cracked glass out of a glued frame is how home repairs turn one broken part into three.",
+        "The biggest single factor is how the screen is attached. Most phone displays are held by clips, screws and light adhesive, which a technician can release in minutes. Ipad glass is glued down across its whole surface, and separating it takes controlled heat and patience: rushing cracked glass out of a glued frame is how home repairs turn one broken part into three.",
         "Water exposure changes the job too. A cracked screen on a phone that has also been wet is not a screen repair, it is an inspection first, because corrosion on the board will outlast any new display fitted over it. The honest sequence is to check the inside before quoting the outside.",
         "Part availability is the third factor. Common models are stocked, but an unusual model can need a part ordered in, which adds days of waiting though not of work. The Store will say so at the quote stage rather than keep the phone sitting on a shelf.",
       ],
@@ -408,11 +408,11 @@ const screenRepairTime: BlogPost = {
         columns: ["Device", "Typical time", "Why"],
         rows: [
           [
-            "iPhone, Galaxy, Pixel",
+            "Iphone, Galaxy, Pixel",
             "About 30 minutes",
             "Clipped and screwed assemblies, parts usually in stock",
           ],
-          ["iPad and tablets", "Usually a day", "Glued glass must be heat-separated from the frame"],
+          ["Ipad and tablets", "Usually a day", "Glued glass must be heat-separated from the frame"],
           [
             "Laptop screens",
             "Same day when the panel is stocked",
@@ -438,21 +438,21 @@ const screenRepairTime: BlogPost = {
       heading: "Should you book an appointment for a screen repair?",
       paragraphs: [
         "At TechBrotherz, no. The store is walk-in by design: bring the phone to 3317 17 Ave SE during opening hours, the repair is quoted free with the phone in front of the technician, and most screen replacements are finished in about 30 minutes. There is no booking system to wait on and no drop-off queue.",
-        "The one thing worth doing before any repair visit, anywhere, is a backup. A screen replacement does not touch your data, and data loss during one is rare, but a phone that arrives with a backup leaves nothing to chance. Both iPhone and Android back up automatically overnight when charging and on Wi-Fi, so for most people this is already done.",
+        "The one thing worth doing before any repair visit, anywhere, is a backup. A screen replacement does not touch your data, and data loss during one is rare, but a phone that arrives with a backup leaves nothing to chance. Both Iphone and Android back up automatically overnight when charging and on Wi-Fi, so for most people this is already done.",
         "If the timing matters, phone (403) 273-8324 before coming in. The Store can confirm the part for your exact model is on the shelf, which is the only thing that ever turns a half-hour repair into a wait.",
       ],
     },
   ],
   faqs: [
     {
-      question: "How long does an iPhone screen replacement take in Calgary?",
+      question: "How long does an Iphone screen replacement take in Calgary?",
       answer:
         "About 30 minutes at TechBrotherz, the walk-in repair store at 3317 17 Ave SE in Calgary. The screen assembly is replaced and tested while you wait, with no appointment needed, and the repair carries a 60-day warranty on the part and the work.",
     },
     {
-      question: "Why does an iPad screen repair take longer than a phone?",
+      question: "Why does an Ipad screen repair take longer than a phone?",
       answer:
-        "Because iPad glass is glued down across its whole surface rather than clipped in. Separating cracked, glued glass from the frame takes controlled heat and careful work, so an iPad screen replacement at TechBrotherz in Calgary usually takes a day rather than the half hour a phone takes.",
+        "Because Ipad glass is glued down across its whole surface rather than clipped in. Separating cracked, glued glass from the frame takes controlled heat and careful work, so an Ipad screen replacement at TechBrotherz in Calgary usually takes a day rather than the half hour a phone takes.",
     },
     {
       question: "Will a screen replacement delete what is on my phone?",
@@ -467,7 +467,7 @@ const screenRepairTime: BlogPost = {
   ],
   about: ["Phone screen replacement", "Repair turnaround times", "Walk-in phone repair"],
   related: [
-    { label: "iPhone screen replacement", href: "/repairs/iphone-screen-replacement" },
+    { label: "Iphone screen replacement", href: "/repairs/Iphone-screen-replacement" },
     { label: "Samsung screen replacement", href: "/repairs/samsung-screen-replacement" },
     { label: "Walk-in phone repair in Calgary", href: "/walk-in-phone-repair-calgary" },
     { label: "Cell phone repair", href: "/services/phone-repair" },

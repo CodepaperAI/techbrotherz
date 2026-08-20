@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-14-plus",
-  "name": "iPhone 14 Plus",
+  "slug": "Iphone-14-plus",
+  "name": "Iphone 14 Plus",
   "intro": [
     {
-      "_key": "model.iphone-14-plus-intro-b0",
+      "_key": "model.Iphone-14-plus-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-14-plus-intro-s0",
+          "_key": "model.Iphone-14-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the iPhone 14 Plus at 3317 17 Ave SE in Calgary. The iPhone 14 and 14 Plus were rebuilt internally so the rear glass comes off separately from the rest of the phone, which makes back glass replacement far less involved than on the 12 and 13 generations. The 14 Pro and Pro Max use the Dynamic Island cutout instead of a notch, so their screen assemblies are different parts again. We confirm the exact part at the Store."
+          "text": "TechBrotherz repairs the Iphone 14 Plus at 3317 17 Ave SE in Calgary. The Iphone 14 and 14 Plus were rebuilt internally so the rear glass comes off separately from the rest of the phone, which makes back glass replacement far less involved than on the 12 and 13 generations. The 14 Pro and Pro Max use the Dynamic Island cutout instead of a notch, so their screen assemblies are different parts again. We confirm the exact part at the Store."
         }
       ],
       "markDefs": [],

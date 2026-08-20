@@ -18,12 +18,12 @@ const BASE = process.argv[2] ?? "http://localhost:3100";
 /** Each case is a path someone could plausibly land on, and what should surface. */
 const CASES = [
   {
-    path: "/repair/apple-iphone/iphone-8-pluss",
-    expect: "iPhone 8 Plus",
+    path: "/repair/apple-Iphone/Iphone-8-pluss",
+    expect: "Iphone 8 Plus",
     why: "a typo in the slug",
   },
-  { path: "/iphone-8-plus", expect: "iPhone 8 Plus", why: "the model slug at the site root" },
-  { path: "/A1864", expect: "iPhone 8 Plus", why: "a raw Apple model number from the aliases" },
+  { path: "/Iphone-8-plus", expect: "Iphone 8 Plus", why: "the model slug at the site root" },
+  { path: "/A1864", expect: "Iphone 8 Plus", why: "a raw Apple model number from the aliases" },
   { path: "/galaxy-s7-edge-screen", expect: "Galaxy S7 Edge", why: "a model plus a repair word" },
   { path: "/SM-G935W8", expect: "Galaxy S7 Edge", why: "a Samsung part number from the aliases" },
 ];

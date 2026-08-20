@@ -106,7 +106,7 @@ export const ROUTES: RouteDef[] = [
   },
   {
     path: "/accessories",
-    label: "Phone, iPad and tablet accessories",
+    label: "Phone, Ipad and tablet accessories",
     navLabel: "Accessories",
     tier: "core",
     status: "built",
@@ -142,8 +142,8 @@ export const ROUTES: RouteDef[] = [
   /* --- Tier 2, service hubs -------------------------------------------
    *
    * Device categories and non-device services only. Phase 5 removed the
-   * brand-specific hubs (/services/iphone-repair and friends): the Tier 4
-   * brand hub at /repair/apple-iphone already owns "which iPhone do you
+   * brand-specific hubs (/services/Iphone-repair and friends): the Tier 4
+   * brand hub at /repair/apple-Iphone already owns "which Iphone do you
    * have", and a second page on the same intent competes with it for
    * nothing. See CLAUDE.md Section 7 for the intent table.
    */
@@ -156,12 +156,12 @@ export const ROUTES: RouteDef[] = [
   },
   /*
    * Renamed from /services/tablet-repair on the client's instruction 2026-08:
-   * iPad leads. The old URL 301s here in next.config.ts.
+   * Ipad leads. The old URL 301s here in next.config.ts.
    */
   {
-    path: "/services/ipad-repair",
-    label: "iPad repair",
-    navLabel: "iPads",
+    path: "/services/Ipad-repair",
+    label: "Ipad repair",
+    navLabel: "Ipads",
     tier: "service-hub",
     status: "built",
     parent: "/services",
@@ -228,36 +228,36 @@ export const ROUTES: RouteDef[] = [
    * price data no other template presents.
    */
   {
-    path: "/repairs/iphone-screen-replacement",
-    label: "iPhone screen replacement",
+    path: "/repairs/Iphone-screen-replacement",
+    label: "Iphone screen replacement",
     tier: "repair-type",
     status: "built",
     parent: "/services/phone-repair",
   },
   {
-    path: "/repairs/iphone-battery-replacement",
-    label: "iPhone battery replacement",
+    path: "/repairs/Iphone-battery-replacement",
+    label: "Iphone battery replacement",
     tier: "repair-type",
     status: "built",
     parent: "/services/phone-repair",
   },
   {
-    path: "/repairs/iphone-charging-port-repair",
-    label: "iPhone charging port repair",
+    path: "/repairs/Iphone-charging-port-repair",
+    label: "Iphone charging port repair",
     tier: "repair-type",
     status: "built",
     parent: "/services/phone-repair",
   },
   {
-    path: "/repairs/iphone-camera-repair",
-    label: "iPhone camera repair",
+    path: "/repairs/Iphone-camera-repair",
+    label: "Iphone camera repair",
     tier: "repair-type",
     status: "built",
     parent: "/services/phone-repair",
   },
   {
-    path: "/repairs/iphone-back-glass-replacement",
-    label: "iPhone back glass replacement",
+    path: "/repairs/Iphone-back-glass-replacement",
+    label: "Iphone back glass replacement",
     tier: "repair-type",
     status: "built",
     parent: "/services/phone-repair",
@@ -291,11 +291,11 @@ export const ROUTES: RouteDef[] = [
     parent: "/services/phone-repair",
   },
   {
-    path: "/repairs/ipad-screen-replacement",
-    label: "iPad screen replacement",
+    path: "/repairs/Ipad-screen-replacement",
+    label: "Ipad screen replacement",
     tier: "repair-type",
     status: "built",
-    parent: "/services/ipad-repair",
+    parent: "/services/Ipad-repair",
   },
   {
     path: "/repairs/laptop-screen-replacement",
@@ -342,15 +342,15 @@ export const ROUTES: RouteDef[] = [
 
   /* --- Tier 4, brand hubs. Model pages are dynamic, see isModelRoute. --- */
   {
-    path: "/repair/apple-iphone",
-    label: "iPhone repair",
+    path: "/repair/apple-Iphone",
+    label: "Iphone repair",
     tier: "brand",
     status: "built",
     parent: "/services",
   },
   {
-    path: "/repair/apple-ipad",
-    label: "iPad repair",
+    path: "/repair/apple-Ipad",
+    label: "Ipad repair",
     tier: "brand",
     status: "built",
     parent: "/services",
@@ -400,8 +400,8 @@ export const ROUTES: RouteDef[] = [
     parent: "/locations",
   },
   {
-    path: "/iphone-screen-repair-calgary",
-    label: "iPhone screen repair in Calgary",
+    path: "/Iphone-screen-repair-calgary",
+    label: "Iphone screen repair in Calgary",
     tier: "local",
     status: "built",
     parent: "/locations",
@@ -414,16 +414,16 @@ export const ROUTES: RouteDef[] = [
     parent: "/locations",
   },
   {
-    path: "/ipad-repair-calgary",
-    label: "iPad repair in Calgary",
+    path: "/Ipad-repair-calgary",
+    label: "Ipad repair in Calgary",
     tier: "local",
     status: "built",
     parent: "/locations",
   },
   /*
-   * /tablet-repair-calgary was retired 2026-08 with the iPad rename; it 301s
-   * to /ipad-repair-calgary in next.config.ts, which already carried the
-   * "ipad repair calgary" keyword.
+   * /tablet-repair-calgary was retired 2026-08 with the Ipad rename; it 301s
+   * to /Ipad-repair-calgary in next.config.ts, which already carried the
+   * "Ipad repair calgary" keyword.
    */
   {
     path: "/laptop-repair-calgary",
@@ -499,8 +499,8 @@ export const ROUTES: RouteDef[] = [
     parent: "/blog",
   },
   {
-    path: "/blog/ipad-repair-vs-replacement-cost",
-    label: "iPad repair vs replacement cost",
+    path: "/blog/Ipad-repair-vs-replacement-cost",
+    label: "Ipad repair vs replacement cost",
     tier: "guide",
     status: "pending",
     parent: "/blog",
@@ -520,8 +520,8 @@ export const ROUTES: RouteDef[] = [
     parent: "/blog",
   },
   {
-    path: "/blog/iphone-screen-repair-cost-calgary",
-    label: "iPhone screen repair cost in Calgary",
+    path: "/blog/Iphone-screen-repair-cost-calgary",
+    label: "Iphone screen repair cost in Calgary",
     tier: "guide",
     status: "pending",
     parent: "/blog",
@@ -548,8 +548,8 @@ export const ROUTES: RouteDef[] = [
     parent: "/blog",
   },
   {
-    path: "/blog/is-it-worth-repairing-an-older-iphone",
-    label: "Is it worth repairing an older iPhone",
+    path: "/blog/is-it-worth-repairing-an-older-Iphone",
+    label: "Is it worth repairing an older Iphone",
     tier: "guide",
     status: "pending",
     parent: "/blog",
@@ -576,8 +576,8 @@ export const ROUTES: RouteDef[] = [
     parent: "/blog",
   },
   {
-    path: "/blog/iphone-battery-replacement-when-to-do-it",
-    label: "iPhone battery replacement, when to do it",
+    path: "/blog/Iphone-battery-replacement-when-to-do-it",
+    label: "Iphone battery replacement, when to do it",
     tier: "guide",
     status: "pending",
     parent: "/blog",

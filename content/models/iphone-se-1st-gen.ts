@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-se-1st-gen",
-  "name": "iPhone SE (1st gen)",
+  "slug": "Iphone-se-1st-gen",
+  "name": "Iphone SE (1st gen)",
   "intro": [
     {
-      "_key": "model.iphone-se-1st-gen-intro-b0",
+      "_key": "model.Iphone-se-1st-gen-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-se-1st-gen-intro-s0",
+          "_key": "model.Iphone-se-1st-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The first-generation iPhone SE put the iPhone 6S internals into the older iPhone 5S body, which makes it the smallest iPhone Apple has ever sold and the reason people still hold onto them. Its screen is the cheapest iPhone repair TechBrotherz does. Owners of these are usually keeping them deliberately because nothing else that small exists."
+          "text": "The first-generation Iphone SE put the Iphone 6S internals into the older Iphone 5S body, which makes it the smallest Iphone Apple has ever sold and the reason people still hold onto them. Its screen is the cheapest Iphone repair TechBrotherz does. Owners of these are usually keeping them deliberately because nothing else that small exists."
         }
       ],
       "markDefs": [],
@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass on the 4 inch display, our cheapest iPhone screen repair",
+    "Cracked front glass on the 4 inch display, our cheapest Iphone screen repair",
     "Battery worn out, this model has a small cell that degrades noticeably",
     "Home button and Touch ID failing",
     "Charging port worn from a decade of use",
@@ -35,11 +35,11 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.iphone-se-1st-gen-verdict-b0",
+      "_key": "model.Iphone-se-1st-gen-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-se-1st-gen-verdict-s0",
+          "_key": "model.Iphone-se-1st-gen-verdict-s0",
           "_type": "span",
           "marks": [],
           "text": "Worth it if the size is why you own it. The first-generation SE stopped at iOS 15, so app support is narrowing, but there is genuinely no modern replacement at this size. A screen on a phone you keep specifically because it fits your hand is a reasonable spend. If you are indifferent to size, a newer handset is the better call."
@@ -51,14 +51,14 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.iphone-se-1st-gen-notes-b0",
+      "_key": "model.Iphone-se-1st-gen-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-se-1st-gen-notes-s0",
+          "_key": "model.Iphone-se-1st-gen-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The first-generation SE shares its body with the iPhone 5S, so the screen assembly is closely related and repairs are quick. It is not the same part as the second-generation SE, which uses the iPhone 8 body, and the two are frequently confused when ordering."
+          "text": "The first-generation SE shares its body with the Iphone 5S, so the screen assembly is closely related and repairs are quick. It is not the same part as the second-generation SE, which uses the Iphone 8 body, and the two are frequently confused when ordering."
         }
       ],
       "markDefs": [],

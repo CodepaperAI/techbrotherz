@@ -31,7 +31,7 @@ function normalise(input: string): string {
  * every alias, plus a token overlap fallback. A fuzzy edit-distance library
  * would score better on typos but is not worth a dependency for a 404 page,
  * and containment already catches the common case of someone typing or being
- * linked to "/iphone-8-plus-screen" or "/repair/iphone8plus".
+ * linked to "/Iphone-8-plus-screen" or "/repair/Iphone8plus".
  */
 function score(attempt: string, model: ModelIndexEntry): number {
   const haystacks = [model.name ?? "", model.slug ?? "", ...(model.aliases ?? [])]

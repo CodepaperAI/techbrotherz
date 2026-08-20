@@ -52,9 +52,9 @@ const CALGARY_AREAS: { name: string; href?: string }[] = [
 
 /** The service pill strip directly under the hero, mirroring the reference. */
 const SERVICE_PILLS: { label: string; href: string }[] = [
-  { label: "iPhone Repair", href: "/repair/apple-iphone" },
+  { label: "Iphone Repair", href: "/repair/apple-Iphone" },
   { label: "Samsung Repair", href: "/repair/samsung-galaxy" },
-  { label: "iPad Repair", href: "/services/ipad-repair" },
+  { label: "Ipad Repair", href: "/services/Ipad-repair" },
   { label: "Laptop Repair", href: "/services/laptop-repair" },
   { label: "Computer Repair", href: "/services/computer-repair" },
   { label: "Unlocking", href: "/services/phone-unlocking" },
@@ -69,8 +69,8 @@ const SERVICE_PILLS: { label: string; href: string }[] = [
  * (CLAUDE.md question 31). Each chip links to the page that covers it.
  */
 const BRAND_NAMES: { label: string; href: string }[] = [
-  { label: "iPhone", href: "/repair/apple-iphone" },
-  { label: "iPad", href: "/repair/apple-ipad" },
+  { label: "Iphone", href: "/repair/apple-Iphone" },
+  { label: "Ipad", href: "/repair/apple-Ipad" },
   { label: "MacBook", href: "/services/laptop-repair" },
   { label: "Samsung Galaxy", href: "/repair/samsung-galaxy" },
   { label: "Google Pixel", href: "/repair/google-pixel" },
@@ -95,7 +95,7 @@ const PATH = "/";
 export const metadata: Metadata = buildMetadata({
   title: "Cell Phone & Computer Repair in SE Calgary",
   description:
-    "Walk-in phone, iPad and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Free quote before any work, 60-day warranty.",
+    "Walk-in phone, Ipad and computer repair at 3317 17 Ave SE, Calgary. Most repairs take about 30 minutes. Free quote before any work, 60-day warranty.",
   path: PATH,
 });
 
@@ -128,17 +128,17 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Phone repair",
     description:
-      "Screens and LCDs, batteries, charging ports, cameras and lenses, speakers, back glass and full housings, on iPhone, Samsung Galaxy and Google Pixel.",
+      "Screens and LCDs, battery, charging ports, cameras and lenses, speakers, back glass and full housings, on Iphone, Samsung Galaxy and Google Pixel.",
     href: "/services/phone-repair",
     image: "service-phone-repair",
     illustration: "screen",
     tags: ["Screen", "Battery", "Charging port", "Back glass"],
   },
   {
-    title: "iPad repair",
+    title: "Ipad repair",
     description:
-      "iPad screens, digitizer glass, batteries and charging ports. On older iPads the glass alone can be replaced, a much smaller job than a full screen.",
-    href: "/services/ipad-repair",
+      "Ipad screens, digitizer glass, battery and charging ports. On older Ipads the glass alone can be replaced, a much smaller job than a full screen.",
+    href: "/services/Ipad-repair",
     image: "service-tablet-repair",
     illustration: "screen",
     tags: ["Screen", "Digitizer", "Battery", "Charging port"],
@@ -146,7 +146,7 @@ const REPAIR_CARDS: HomeServiceCard[] = [
   {
     title: "Laptop repair",
     description:
-      "Screens, batteries, keyboards, charging jacks, broken hinges, water damage cleanup and data recovery, on laptops of every make.",
+      "Screens, battery, keyboards, charging jacks, broken hinges, water damage cleanup and data recovery, on laptops of every make.",
     href: "/services/laptop-repair",
     image: "service-laptop-repair",
     illustration: "keyboard",
@@ -230,12 +230,12 @@ const STORE_CARDS: HomeServiceCard[] = [
 ];
 
 export default async function HomePage() {
-  const [settings, reviews, faqs, testimonials, iphoneHub, samsungHub] = await Promise.all([
+  const [settings, reviews, faqs, testimonials, IphoneHub, samsungHub] = await Promise.all([
     getSiteSettings(),
     getReviewSummary(),
     getGlobalFaqs(8),
     getTestimonials(6),
-    getBrandHub("apple-iphone"),
+    getBrandHub("apple-Iphone"),
     getBrandHub("samsung-galaxy"),
   ]);
 
@@ -260,14 +260,14 @@ export default async function HomePage() {
     {
       heading: "Common repairs",
       links: [
-        "/repairs/iphone-screen-replacement",
-        "/repairs/iphone-battery-replacement",
-        "/repairs/iphone-charging-port-repair",
-        "/repairs/iphone-back-glass-replacement",
+        "/repairs/Iphone-screen-replacement",
+        "/repairs/Iphone-battery-replacement",
+        "/repairs/Iphone-charging-port-repair",
+        "/repairs/Iphone-back-glass-replacement",
         "/repairs/samsung-screen-replacement",
         "/repairs/samsung-battery-replacement",
         "/repairs/samsung-charging-port-repair",
-        "/repairs/ipad-screen-replacement",
+        "/repairs/Ipad-screen-replacement",
       ]
         .filter((href) => shouldRenderLink(href))
         .map((href) => ({ label: route(href)?.label ?? href, href }))
@@ -276,10 +276,10 @@ export default async function HomePage() {
         .concat([{ label: "Google Pixel 6 repair", href: "/repair/google-pixel/pixel-6" }]),
     },
     {
-      heading: "iPhone models",
-      links: (iphoneHub?.models ?? []).slice(0, 8).map((model) => ({
+      heading: "Iphone models",
+      links: (IphoneHub?.models ?? []).slice(0, 8).map((model) => ({
         label: `${model.name} repair`,
-        href: `/repair/apple-iphone/${model.slug}`,
+        href: `/repair/apple-Iphone/${model.slug}`,
       })),
     },
     {
@@ -326,7 +326,7 @@ export default async function HomePage() {
       type: "WebPage",
       name: "Cell phone and computer repair in SE Calgary",
       description:
-        "TechBrotherz is a walk-in cell phone, iPad and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
+        "TechBrotherz is a walk-in cell phone, Ipad and computer repair store at 3317 17 Ave SE in Calgary, Alberta.",
       path: PATH,
       speakableSelectors: ['[data-speakable="answer"]'],
     }),
@@ -378,7 +378,7 @@ export default async function HomePage() {
             {
               stat: `${waitMinutes} min`,
               label: "Most repairs",
-              body: "Screens and batteries finished while you wait.",
+              body: "Screens and battery finished while you wait.",
             },
             {
               stat: `${warrantyDays} days`,
@@ -452,7 +452,7 @@ export default async function HomePage() {
           level={2}
           id="services-heading"
           eyebrow="Services"
-          lead="TechBrotherz repairs phones, iPads, laptops, desktop computers and gaming consoles in SE Calgary, unlocks phones, and buys, sells and trades devices in Store."
+          lead="TechBrotherz repairs phones, Ipads, laptops, desktop computers and gaming consoles in SE Calgary, unlocks phones, and buys, sells and trades devices in Store."
         >
           What can we fix for you in <span className="text-tb-green-deep">Calgary</span>?
         </Heading>
@@ -548,7 +548,7 @@ export default async function HomePage() {
             },
             {
               title: "All brands and devices",
-              body: "iPhone, Samsung Galaxy, Google Pixel, iPads, laptops, desktops and gaming consoles, at one Store.",
+              body: "Iphone, Samsung Galaxy, Google Pixel, Ipads, laptops, desktops and gaming consoles, at one Store.",
             },
             {
               title: "Free quote before any work",

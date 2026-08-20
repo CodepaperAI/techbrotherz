@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-7",
-  "name": "iPhone 7",
+  "slug": "Iphone-7",
+  "name": "Iphone 7",
   "intro": [
     {
-      "_key": "model.iphone-7-intro-b0",
+      "_key": "model.Iphone-7-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-7-intro-s0",
+          "_key": "model.Iphone-7-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 7 was the first iPhone rated for water resistance and the first with a solid-state home button. Its screen is among the cheapest iPhone repairs TechBrotherz offers. Most iPhone 7 handsets arriving now are long out of their original ownership and are being kept going as backup phones or handed down."
+          "text": "The Iphone 7 was the first Iphone rated for water resistance and the first with a solid-state home button. Its screen is among the cheapest Iphone repairs TechBrotherz offers. Most Iphone 7 handsets arriving now are long out of their original ownership and are being kept going as backup phones or handed down."
         }
       ],
       "markDefs": [],
@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass, the cheapest iPhone screen replacement on our list",
+    "Cracked front glass, the cheapest Iphone screen replacement on our list",
     "Home button no longer registering, a Taptic Engine fault on this generation rather than a switch",
     "Water resistance lost after a previous repair, because the frame seal is single-use",
     "Charging port worn from years of Lightning cables",
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.iphone-7-verdict-b0",
+      "_key": "model.Iphone-7-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-7-verdict-s0",
+          "_key": "model.Iphone-7-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only worth a smaller repair. The iPhone 7 stopped at iOS 15 and is now old enough that app compatibility is a real constraint rather than a theoretical one. A screen on a phone that otherwise works is defensible. Anything more than that, on a phone of this age, is better spent on a replacement handset."
+          "text": "Only worth a smaller repair. The Iphone 7 stopped at iOS 15 and is now old enough that app compatibility is a real constraint rather than a theoretical one. A screen on a phone that otherwise works is defensible. Anything more than that, on a phone of this age, is better spent on a replacement handset."
         }
       ],
       "markDefs": [],
@@ -51,14 +51,14 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.iphone-7-notes-b0",
+      "_key": "model.Iphone-7-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-7-notes-s0",
+          "_key": "model.Iphone-7-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 7 is rated IP67 from the factory, but that rating depends on an adhesive seal around the frame that is destroyed the first time the phone is opened. TechBrotherz re-seals during a repair, but no shop can restore the original factory rating, and we would rather say that than imply otherwise."
+          "text": "The Iphone 7 is rated IP67 from the factory, but that rating depends on an adhesive seal around the frame that is destroyed the first time the phone is opened. TechBrotherz re-seals during a repair, but no shop can restore the original factory rating, and we would rather say that than imply otherwise."
         }
       ],
       "markDefs": [],

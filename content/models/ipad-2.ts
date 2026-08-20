@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "ipad-2",
-  "name": "iPad 2",
+  "slug": "Ipad-2",
+  "name": "Ipad 2",
   "intro": [
     {
-      "_key": "model.ipad-2-intro-b0",
+      "_key": "model.Ipad-2-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-2-intro-s0",
+          "_key": "model.Ipad-2-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad 2 is the thinnest of the three iPads that share one glass price, because it has no Retina panel and therefore no large battery to fit around. It was sold for an unusually long time after its debut, which is why so many are still in circulation. Its non-Retina screen makes it the lightest and the easiest of the three to open."
+          "text": "The Ipad 2 is the thinnest of the three Ipads that share one glass price, because it has no Retina panel and therefore no large battery to fit around. It was sold for an unusually long time after its debut, which is why so many are still in circulation. Its non-Retina screen makes it the lightest and the easiest of the three to open."
         }
       ],
       "markDefs": [],
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.ipad-2-verdict-b0",
+      "_key": "model.Ipad-2-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-2-verdict-s0",
+          "_key": "model.Ipad-2-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Only as a child's video tablet. The iPad 2 stopped at iPadOS 9 and is now around fifteen years old. A glass repair is cheap enough to make sense if the tablet is used for cartoons and nothing else. TechBrotherz would not recommend spending anything on one for adult use, because almost no current app will install."
+          "text": "Only as a child's video tablet. The Ipad 2 stopped at IpadOS 9 and is now around fifteen years old. A glass repair is cheap enough to make sense if the tablet is used for cartoons and nothing else. TechBrotherz would not recommend spending anything on one for adult use, because almost no current app will install."
         }
       ],
       "markDefs": [],
@@ -51,21 +51,21 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.ipad-2-notes-b0",
+      "_key": "model.Ipad-2-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-2-notes-s0",
+          "_key": "model.Ipad-2-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad 2 has a lower-resolution display than the iPad 3 and 4 that share its price, which makes the whole assembly thinner and the glass repair slightly quicker. Its glass is a fully separate layer, so a cracked front never requires touching the display panel."
+          "text": "The Ipad 2 has a lower-resolution display than the Ipad 3 and 4 that share its price, which makes the whole assembly thinner and the glass repair slightly quicker. Its glass is a fully separate layer, so a cracked front never requires touching the display panel."
         }
       ],
       "markDefs": [],
       "style": "normal"
     }
   ],
-  "lastSupportedOs": "iPadOS 9",
+  "lastSupportedOs": "IpadOS 9",
   "stillReceivesUpdates": false
 } as ModelContent;
 

@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s9-plus-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Galaxy S9 Plus at 3317 17 Ave SE in Calgary. Samsung bonds the curved OLED panel to the phone's frame on this generation, so the replacement part is the screen and the frame together, which is why Galaxy screens cost more than comparable iPhone screens. On the S10 range the fingerprint reader sits under the display and is matched to it, so it needs recalibrating after a screen replacement. That step is included in the job here."
+          "text": "TechBrotherz repairs the Galaxy S9 Plus at 3317 17 Ave SE in Calgary. Samsung bonds the curved OLED panel to the phone's frame on this generation, so the replacement part is the screen and the frame together, which is why Galaxy screens cost more than comparable Iphone screens. On the S10 range the fingerprint reader sits under the display and is matched to it, so it needs recalibrating after a screen replacement. That step is included in the job here."
         }
       ],
       "markDefs": [],

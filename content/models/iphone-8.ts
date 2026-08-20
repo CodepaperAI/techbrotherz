@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-8",
-  "name": "iPhone 8",
+  "slug": "Iphone-8",
+  "name": "Iphone 8",
   "intro": [
     {
-      "_key": "model.iphone-8-intro-b0",
+      "_key": "model.Iphone-8-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-8-intro-s0",
+          "_key": "model.Iphone-8-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 8 is the smaller of Apple's last home-button pair and the cheapest iPhone screen replacement TechBrotherz does on a glass-backed model. Its 4.7 inch LCD keeps the repair well under what any OLED iPhone costs. Many of the iPhone 8 handsets that come in are second or third-hand phones being kept alive as a spare, a work phone or a first phone for a child."
+          "text": "The Iphone 8 is the smaller of Apple's last home-button pair and the cheapest Iphone screen replacement TechBrotherz does on a glass-backed model. Its 4.7 inch LCD keeps the repair well under what any OLED Iphone costs. Many of the Iphone 8 handsets that come in are second or third-hand phones being kept alive as a spare, a work phone or a first phone for a child."
         }
       ],
       "markDefs": [],
@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass on a 4.7 inch LCD, the cheapest iPhone screen we replace",
+    "Cracked front glass on a 4.7 inch LCD, the cheapest Iphone screen we replace",
     "Cracked rear glass, new to the 8 generation",
     "Battery that shuts the phone down before it reaches zero percent",
     "Home button worn out from years of pressing",
@@ -35,11 +35,11 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.iphone-8-verdict-b0",
+      "_key": "model.Iphone-8-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-8-verdict-s0",
+          "_key": "model.Iphone-8-verdict-s0",
           "_type": "span",
           "marks": [],
           "text": "Usually worth it, because the repair is small relative to almost any replacement. A screen on a working phone is easy to justify even at this point in its life, particularly as a spare or a child's first phone. The limit is iOS 16: apps are steadily dropping support for it, so treat this as a phone with one or two useful years left rather than one you invest heavily in."
@@ -51,14 +51,14 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.iphone-8-notes-b0",
+      "_key": "model.Iphone-8-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-8-notes-s0",
+          "_key": "model.Iphone-8-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "Like the 8 Plus, the home button is paired to the logic board, so Touch ID does not survive a button replacement. The iPhone 8 screen is not interchangeable with the iPhone 7 screen despite the identical size, because the 8 uses a different backlight and connector layout."
+          "text": "Like the 8 Plus, the home button is paired to the logic board, so Touch ID does not survive a button replacement. The Iphone 8 screen is not interchangeable with the Iphone 7 screen despite the identical size, because the 8 uses a different backlight and connector layout."
         }
       ],
       "markDefs": [],

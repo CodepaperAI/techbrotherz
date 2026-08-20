@@ -12,16 +12,16 @@ import type { FaqDoc } from "./types";
 
 export const FAQ_DOCS: FaqDoc[] = [
   {
-    "_id": "faq.common-ipad-repairs-apple-vs-third-party",
+    "_id": "faq.common-Ipad-repairs-apple-vs-third-party",
     "_updatedAt": "2026-07-30T17:00:06Z",
     "answer": [
       {
-        "_key": "faq.common-ipad-repairs-apple-vs-third-party-b0",
+        "_key": "faq.common-Ipad-repairs-apple-vs-third-party-b0",
         "children": [
           {
-            "_key": "faq.common-ipad-repairs-apple-vs-third-party-s0",
+            "_key": "faq.common-Ipad-repairs-apple-vs-third-party-s0",
             "marks": [],
-            "text": "The three most common iPad repairs are cracked front glass, a battery that no longer holds a charge, and a charging port that has stopped seating the cable properly. Cracked glass is by far the most common of the three.",
+            "text": "The three most common Ipad repairs are cracked front glass, a battery that no longer holds a charge, and a charging port that has stopped seating the cable properly. Cracked glass is by far the most common of the three.",
             "_type": "span"
           }
         ],
@@ -30,12 +30,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.common-ipad-repairs-apple-vs-third-party-b1",
+        "_key": "faq.common-Ipad-repairs-apple-vs-third-party-b1",
         "children": [
           {
-            "_key": "faq.common-ipad-repairs-apple-vs-third-party-s1",
+            "_key": "faq.common-Ipad-repairs-apple-vs-third-party-s1",
             "marks": [],
-            "text": "At TechBrotherz in Calgary, iPad glass replacement is quoted per model, because the part differs across the range: an iPad 2, 3 or 4 is the smallest job, an iPad Mini 3 the largest of the older models, and the iPad Air and Mini 2 sit between them. Each quote includes the part and the labour and carries a 60-day warranty.",
+            "text": "At TechBrotherz in Calgary, Ipad glass replacement is quoted per model, because the part differs across the range: an Ipad 2, 3 or 4 is the smallest job, an Ipad Mini 3 the largest of the older models, and the Ipad Air and Mini 2 sit between them. Each quote includes the part and the labour and carries a 60-day warranty.",
             "_type": "span"
           }
         ],
@@ -44,12 +44,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.common-ipad-repairs-apple-vs-third-party-b2",
+        "_key": "faq.common-Ipad-repairs-apple-vs-third-party-b2",
         "children": [
           {
-            "_key": "faq.common-ipad-repairs-apple-vs-third-party-s2",
+            "_key": "faq.common-Ipad-repairs-apple-vs-third-party-s2",
             "marks": [],
-            "text": "Apple publishes its own iPad service pricing on apple.com, and the figure depends on the model and on whether the tablet is covered by AppleCare. We would rather point you at Apple's published page than quote a number for them. The practical differences are that a third-party shop is usually cheaper on older models, does not require an appointment, and can often do the work the same day.",
+            "text": "Apple publishes its own Ipad service pricing on apple.com, and the figure depends on the model and on whether the tablet is covered by AppleCare. We would rather point you at Apple's published page than quote a number for them. The practical differences are that a third-party shop is usually cheaper on older models, does not require an appointment, and can often do the work the same day.",
             "_type": "span"
           }
         ],
@@ -58,12 +58,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       }
     ],
-    "category": "ipad",
+    "category": "Ipad",
     "featured": true,
     "order": 50,
-    "plainAnswer": "The most common iPad repairs are cracked glass, a worn battery and a failed charging port. At TechBrotherz in Calgary, iPad glass replacement is quoted per model, and the quote is free and agreed before any work starts. Apple publishes its own iPad service pricing on apple.com, and it varies by model and by whether you have AppleCare.",
+    "plainAnswer": "The most common Ipad repairs are cracked glass, a worn battery and a failed charging port. At TechBrotherz in Calgary, Ipad glass replacement is quoted per model, and the quote is free and agreed before any work starts. Apple publishes its own Ipad service pricing on apple.com, and it varies by model and by whether you have AppleCare.",
     "published": true,
-    "question": "What are the most common iPad repairs and their average costs at Canadian Apple stores versus third-party repair shops?"
+    "question": "What are the most common Ipad repairs and their average costs at Canadian Apple stores versus third-party repair shops?"
   },
   {
     "_id": "faq.cracked-screen-vs-broken-lcd",
@@ -294,14 +294,14 @@ export const FAQ_DOCS: FaqDoc[] = [
     "question": "Can you fix a phone that has been in water?"
   },
   {
-    "_id": "faq.find-reputable-ipad-repair-canada",
+    "_id": "faq.find-reputable-Ipad-repair-canada",
     "_updatedAt": "2026-07-30T17:00:06Z",
     "answer": [
       {
-        "_key": "faq.find-reputable-ipad-repair-canada-b0",
+        "_key": "faq.find-reputable-Ipad-repair-canada-b0",
         "children": [
           {
-            "_key": "faq.find-reputable-ipad-repair-canada-s0",
+            "_key": "faq.find-reputable-Ipad-repair-canada-s0",
             "marks": [],
             "text": "Look for four things. A shop that publishes its prices in writing, so you know the figure before you hand the tablet over. A warranty stated as a number of days rather than as a vague promise. A real street address you can walk into and return to if something goes wrong. And a shop willing to tell you when a repair is not worth buying.",
             "_type": "span"
@@ -312,10 +312,10 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.find-reputable-ipad-repair-canada-b1",
+        "_key": "faq.find-reputable-Ipad-repair-canada-b1",
         "children": [
           {
-            "_key": "faq.find-reputable-ipad-repair-canada-s1",
+            "_key": "faq.find-reputable-Ipad-repair-canada-s1",
             "marks": [],
             "text": "Ask two questions before agreeing to any work: what exactly is included in the price, and what happens if the part fails next month. A shop that answers both plainly is usually a shop that will stand behind the work.",
             "_type": "span"
@@ -326,10 +326,10 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.find-reputable-ipad-repair-canada-b2",
+        "_key": "faq.find-reputable-Ipad-repair-canada-b2",
         "children": [
           {
-            "_key": "faq.find-reputable-ipad-repair-canada-s2",
+            "_key": "faq.find-reputable-Ipad-repair-canada-s2",
             "marks": [],
             "text": "TechBrotherz quotes every repair free before any work starts, includes the part and the labour in each figure, and covers every repair for 60 days. The store is at 3317 17 Ave SE in Calgary and you can walk in during opening hours without an appointment.",
             "_type": "span"
@@ -340,12 +340,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       }
     ],
-    "category": "ipad",
+    "category": "Ipad",
     "featured": true,
     "order": 30,
     "plainAnswer": "Look for four things: a firm figure given in writing before you hand the tablet over, a warranty stated in days rather than vaguely, a real street address you can walk into, and a shop willing to tell you when a repair is not worth buying. TechBrotherz quotes every repair before any work starts and warrants every repair for 60 days.",
     "published": true,
-    "question": "How do I find a reputable iPad repair store in Canada that offers fair pricing?"
+    "question": "How do I find a reputable Ipad repair store in Canada that offers fair pricing?"
   },
   {
     "_id": "faq.how-long-does-a-repair-take",
@@ -442,16 +442,16 @@ export const FAQ_DOCS: FaqDoc[] = [
     "question": "How much does it cost to unlock a cell phone in Calgary?"
   },
   {
-    "_id": "faq.ipad-screen-repair-vs-new-canada",
+    "_id": "faq.Ipad-screen-repair-vs-new-canada",
     "_updatedAt": "2026-07-30T17:00:06Z",
     "answer": [
       {
-        "_key": "faq.ipad-screen-repair-vs-new-canada-b0",
+        "_key": "faq.Ipad-screen-repair-vs-new-canada-b0",
         "children": [
           {
-            "_key": "faq.ipad-screen-repair-vs-new-canada-s0",
+            "_key": "faq.Ipad-screen-repair-vs-new-canada-s0",
             "marks": [],
-            "text": "At TechBrotherz in Calgary, iPad glass replacement is quoted per model. An iPad 2, 3 or 4 is the smallest job, an iPad Mini or Mini 2 a slightly bigger one, an iPad Air bigger again, and an iPad Mini 3 the largest of the older models because its Touch ID sensor has to be transferred. Every quote includes the part and the labour and carries a 60-day warranty.",
+            "text": "At TechBrotherz in Calgary, Ipad glass replacement is quoted per model. An Ipad 2, 3 or 4 is the smallest job, an Ipad Mini or Mini 2 a slightly bigger one, an Ipad Air bigger again, and an Ipad Mini 3 the largest of the older models because its Touch ID sensor has to be transferred. Every quote includes the part and the labour and carries a 60-day warranty.",
             "_type": "span"
           }
         ],
@@ -460,12 +460,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.ipad-screen-repair-vs-new-canada-b1",
+        "_key": "faq.Ipad-screen-repair-vs-new-canada-b1",
         "children": [
           {
-            "_key": "faq.ipad-screen-repair-vs-new-canada-s1",
+            "_key": "faq.Ipad-screen-repair-vs-new-canada-s1",
             "marks": [],
-            "text": "A new entry-level iPad in Canada costs several hundred dollars before tax, and a Pro model costs well over a thousand. Against that, a glass repair on an older iPad is normally the cheaper option by a wide margin, and it keeps the apps, photos and files already on the tablet.",
+            "text": "A new entry-level Ipad in Canada costs several hundred dollars before tax, and a Pro model costs well over a thousand. Against that, a glass repair on an older Ipad is normally the cheaper option by a wide margin, and it keeps the apps, photos and files already on the tablet.",
             "_type": "span"
           }
         ],
@@ -474,12 +474,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.ipad-screen-repair-vs-new-canada-b2",
+        "_key": "faq.Ipad-screen-repair-vs-new-canada-b2",
         "children": [
           {
-            "_key": "faq.ipad-screen-repair-vs-new-canada-s2",
+            "_key": "faq.Ipad-screen-repair-vs-new-canada-s2",
             "marks": [],
-            "text": "The comparison changes on newer iPads where the glass is laminated to the display panel, because the two have to be replaced together as one part. Bring the iPad to 3317 17 Ave SE and we will tell you which kind yours is and what it costs before any work starts.",
+            "text": "The comparison changes on newer Ipads where the glass is laminated to the display panel, because the two have to be replaced together as one part. Bring the Ipad to 3317 17 Ave SE and we will tell you which kind yours is and what it costs before any work starts.",
             "_type": "span"
           }
         ],
@@ -488,12 +488,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       }
     ],
-    "category": "ipad",
+    "category": "Ipad",
     "featured": true,
     "order": 10,
-    "plainAnswer": "At TechBrotherz in Calgary, iPad glass replacement is quoted per model, and the quote is free and agreed before any work starts. An iPad 2, 3 or 4 is the smallest job and an iPad Mini 3 the largest of the older models. A new entry-level iPad costs several hundred dollars, so a glass repair is normally the cheaper option by a wide margin.",
+    "plainAnswer": "At TechBrotherz in Calgary, Ipad glass replacement is quoted per model, and the quote is free and agreed before any work starts. An Ipad 2, 3 or 4 is the smallest job and an Ipad Mini 3 the largest of the older models. A new entry-level Ipad costs several hundred dollars, so a glass repair is normally the cheaper option by a wide margin.",
     "published": true,
-    "question": "How much does it typically cost to repair a cracked iPad screen in Canada compared to buying a new one?"
+    "question": "How much does it typically cost to repair a cracked Ipad screen in Canada compared to buying a new one?"
   },
   {
     "_id": "faq.is-unlocking-legal-in-canada",
@@ -536,16 +536,16 @@ export const FAQ_DOCS: FaqDoc[] = [
     "question": "Is unlocking a phone legal in Canada?"
   },
   {
-    "_id": "faq.repair-or-replace-ipad-canada",
+    "_id": "faq.repair-or-replace-Ipad-canada",
     "_updatedAt": "2026-07-30T17:00:06Z",
     "answer": [
       {
-        "_key": "faq.repair-or-replace-ipad-canada-b0",
+        "_key": "faq.repair-or-replace-Ipad-canada-b0",
         "children": [
           {
-            "_key": "faq.repair-or-replace-ipad-canada-s0",
+            "_key": "faq.repair-or-replace-Ipad-canada-s0",
             "marks": [],
-            "text": "Four things decide it. First, the repair price against what a replacement actually costs you, not the list price of the newest model. Second, whether the iPad still receives iPadOS updates, because an iPad that has stopped getting security updates has a limited useful life no matter how good the screen is.",
+            "text": "Four things decide it. First, the repair price against what a replacement actually costs you, not the list price of the newest model. Second, whether the Ipad still receives IpadOS updates, because an Ipad that has stopped getting security updates has a limited useful life no matter how good the screen is.",
             "_type": "span"
           }
         ],
@@ -554,12 +554,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.repair-or-replace-ipad-canada-b1",
+        "_key": "faq.repair-or-replace-Ipad-canada-b1",
         "children": [
           {
-            "_key": "faq.repair-or-replace-ipad-canada-s1",
+            "_key": "faq.repair-or-replace-Ipad-canada-s1",
             "marks": [],
-            "text": "Third, the battery. An iPad more than five years old has usually lost a large share of its original capacity, so a screen repair on its own may leave you with a tablet that still will not last a day. Fourth, whether anything else is already going: a charging port that only works at an angle, a camera that will not focus, buttons that stick.",
+            "text": "Third, the battery. An Ipad more than five years old has usually lost a large share of its original capacity, so a screen repair on its own may leave you with a tablet that still will not last a day. Fourth, whether anything else is already going: a charging port that only works at an angle, a camera that will not focus, buttons that stick.",
             "_type": "span"
           }
         ],
@@ -568,12 +568,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.repair-or-replace-ipad-canada-b2",
+        "_key": "faq.repair-or-replace-Ipad-canada-b2",
         "children": [
           {
-            "_key": "faq.repair-or-replace-ipad-canada-s2",
+            "_key": "faq.repair-or-replace-Ipad-canada-s2",
             "marks": [],
-            "text": "As a rule of thumb, if the repair costs well under half of what replacing the iPad would, and the tablet still gets updates, repairing is the better call. TechBrotherz will give you an honest read on that at the Store rather than quoting a repair you should not buy.",
+            "text": "As a rule of thumb, if the repair costs well under half of what replacing the Ipad would, and the tablet still gets updates, repairing is the better call. TechBrotherz will give you an honest read on that at the Store rather than quoting a repair you should not buy.",
             "_type": "span"
           }
         ],
@@ -582,12 +582,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       }
     ],
-    "category": "ipad",
+    "category": "Ipad",
     "featured": true,
     "order": 20,
-    "plainAnswer": "Weigh four things: the repair price against a replacement, whether the iPad still gets iPadOS updates, whether the battery still holds a day of use, and whether anything else is failing. If the repair costs well under half of a replacement and the iPad still updates, repairing is usually better.",
+    "plainAnswer": "Weigh four things: the repair price against a replacement, whether the Ipad still gets IpadOS updates, whether the battery still holds a day of use, and whether anything else is failing. If the repair costs well under half of a replacement and the Ipad still updates, repairing is usually better.",
     "published": true,
-    "question": "What factors should I consider when deciding whether to repair or replace a broken iPad in Canada?"
+    "question": "What factors should I consider when deciding whether to repair or replace a broken Ipad in Canada?"
   },
   {
     "_id": "faq.third-party-repair-and-warranty",
@@ -853,7 +853,7 @@ export const FAQ_DOCS: FaqDoc[] = [
           {
             "_key": "faq.will-i-lose-my-data-s1",
             "marks": [],
-            "text": "We still recommend backing up before you bring any device in. No repair is completely without risk, a device that arrives with a hidden fault can behave unpredictably, and a backup costs you nothing. On an iPhone use iCloud or a computer, and on Android use Google One or your phone maker's backup tool.",
+            "text": "We still recommend backing up before you bring any device in. No repair is completely without risk, a device that arrives with a hidden fault can behave unpredictably, and a backup costs you nothing. On an Iphone use iCloud or a computer, and on Android use Google One or your phone maker's backup tool.",
             "_type": "span"
           }
         ],
@@ -870,16 +870,16 @@ export const FAQ_DOCS: FaqDoc[] = [
     "question": "Will I lose my photos and data during a repair?"
   },
   {
-    "_id": "faq.worth-repairing-older-ipad",
+    "_id": "faq.worth-repairing-older-Ipad",
     "_updatedAt": "2026-07-30T17:00:06Z",
     "answer": [
       {
-        "_key": "faq.worth-repairing-older-ipad-b0",
+        "_key": "faq.worth-repairing-older-Ipad-b0",
         "children": [
           {
-            "_key": "faq.worth-repairing-older-ipad-s0",
+            "_key": "faq.worth-repairing-older-Ipad-s0",
             "marks": [],
-            "text": "An older iPad is worth repairing when three things are true: the glass is the only fault, the battery still gets through the day, and the tablet still receives iPadOS updates. At TechBrotherz, glass replacement on an iPad 2, 3 or 4 is the smallest tablet repair we quote, a job small enough to justify for a tablet used for video, reading, recipes or as a second screen for a child.",
+            "text": "An older Ipad is worth repairing when three things are true: the glass is the only fault, the battery still gets through the day, and the tablet still receives IpadOS updates. At TechBrotherz, glass replacement on an Ipad 2, 3 or 4 is the smallest tablet repair we quote, a job small enough to justify for a tablet used for video, reading, recipes or as a second screen for a child.",
             "_type": "span"
           }
         ],
@@ -888,12 +888,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.worth-repairing-older-ipad-b1",
+        "_key": "faq.worth-repairing-older-Ipad-b1",
         "children": [
           {
-            "_key": "faq.worth-repairing-older-ipad-s1",
+            "_key": "faq.worth-repairing-older-Ipad-s1",
             "marks": [],
-            "text": "Replacing makes more sense when the iPad has stopped receiving updates, when the battery no longer lasts, or when the repair would cost a large fraction of a replacement. Apps drop support for old iPadOS versions over time, so an iPad that no longer updates will slowly stop running the things you want.",
+            "text": "Replacing makes more sense when the Ipad has stopped receiving updates, when the battery no longer lasts, or when the repair would cost a large fraction of a replacement. Apps drop support for old IpadOS versions over time, so an Ipad that no longer updates will slowly stop running the things you want.",
             "_type": "span"
           }
         ],
@@ -902,12 +902,12 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       },
       {
-        "_key": "faq.worth-repairing-older-ipad-b2",
+        "_key": "faq.worth-repairing-older-Ipad-b2",
         "children": [
           {
-            "_key": "faq.worth-repairing-older-ipad-s2",
+            "_key": "faq.worth-repairing-older-Ipad-s2",
             "marks": [],
-            "text": "Bring the iPad to 3317 17 Ave SE in Calgary and we will check the battery and the software version with you before quoting, so you are deciding with real information rather than a guess.",
+            "text": "Bring the Ipad to 3317 17 Ave SE in Calgary and we will check the battery and the software version with you before quoting, so you are deciding with real information rather than a guess.",
             "_type": "span"
           }
         ],
@@ -916,11 +916,11 @@ export const FAQ_DOCS: FaqDoc[] = [
         "_type": "block"
       }
     ],
-    "category": "ipad",
+    "category": "Ipad",
     "featured": true,
     "order": 40,
-    "plainAnswer": "An older iPad is worth repairing when the glass is the only fault, the battery still lasts, and the tablet still gets iPadOS updates. At TechBrotherz, glass replacement on an iPad 2, 3 or 4 is the smallest tablet repair we quote, a job small enough to be worth it for a tablet used for video, reading or as a kitchen screen.",
+    "plainAnswer": "An older Ipad is worth repairing when the glass is the only fault, the battery still lasts, and the tablet still gets IpadOS updates. At TechBrotherz, glass replacement on an Ipad 2, 3 or 4 is the smallest tablet repair we quote, a job small enough to be worth it for a tablet used for video, reading or as a kitchen screen.",
     "published": true,
-    "question": "Is it worth repairing an older iPad model or should I just replace it with a newer one?"
+    "question": "Is it worth repairing an older Ipad model or should I just replace it with a newer one?"
   }
 ] as unknown as FaqDoc[];

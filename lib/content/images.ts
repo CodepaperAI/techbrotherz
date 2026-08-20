@@ -151,12 +151,12 @@ export const IMAGES: Record<string, DemoImage> = {
   "service-phone-repair": supplied(
     "service-phone-repair",
     "3:2",
-    "An iPhone shown in exploded view, with the screen, frame, camera assembly and back glass separated in layers",
+    "An Iphone shown in exploded view, with the screen, frame, camera assembly and back glass separated in layers",
   ),
   "service-tablet-repair": image(
     "service-tablet-repair",
     "3:2",
-    "A hand holding an iPad showing its lock screen above a desk with a keyboard",
+    "A hand holding an Ipad showing its lock screen above a desk with a keyboard",
     "Henry Ascroft",
     "7OFnb7NOvjw",
   ),
@@ -228,9 +228,9 @@ export const IMAGES: Record<string, DemoImage> = {
  */
 export const IMAGE_EDITS: Record<string, string> = {
   "service-phone-repair":
-    "Replaced a second time at the client's request in 2026-08 with a supplied exploded-view render of an iPhone Pro, which shows the device in exactly the layers a repair separates. The 16:9 original sits on pure black, so it is padded to 3:2 rather than cropped, which would clip the outer layers, and the slot is capped at the original's 738px width rather than upscaled. The Apple mark on the back glass is incidental to an image of the device, per the revised Section 8.9 rule. The image appears to be manufacturer marketing imagery supplied by the client; using it is the client's call, recorded here so the decision is auditable. A higher-resolution original would sharpen the service page's wide rendering. The previous Unsplash original (LqMK_dwsaxs) stays in _source.",
+    "Replaced a second time at the client's request in 2026-08 with a supplied exploded-view render of an Iphone Pro, which shows the device in exactly the layers a repair separates. The 16:9 original sits on pure black, so it is padded to 3:2 rather than cropped, which would clip the outer layers, and the slot is capped at the original's 738px width rather than upscaled. The Apple mark on the back glass is incidental to an image of the device, per the revised Section 8.9 rule. The image appears to be manufacturer marketing imagery supplied by the client; using it is the client's call, recorded here so the decision is auditable. A higher-resolution original would sharpen the service page's wide rendering. The previous Unsplash original (LqMK_dwsaxs) stays in _source.",
   "service-tablet-repair":
-    "Replaced at the client's request in 2026-08. The previous frame was a SIM tray beside a tablet corner; this one is a recognisable iPad on its lock screen, with no app branding in frame.",
+    "Replaced at the client's request in 2026-08. The previous frame was a SIM tray beside a tablet corner; this one is a recognisable Ipad on its lock screen, with no app branding in frame.",
   "service-phone-unlocking":
     "Supplied by the client. Already 3:2, so resized only, no crop. The MASTER embossing on the shackle is incidental to the object photographed and is not used as a mark. Replaced a second crop of the frame the old service-tablet-repair used, which put two crops of one photograph in the same grid on the home page.",
   "service-password-reset":

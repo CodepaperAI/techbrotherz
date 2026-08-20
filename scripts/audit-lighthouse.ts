@@ -49,7 +49,7 @@ const PAGES = [
   // with no image as the regression control.
   "/",
   "/services/laptop-repair",
-  "/repairs/iphone-screen-replacement",
+  "/repairs/Iphone-screen-replacement",
 ];
 
 const CHROME_CANDIDATES = [

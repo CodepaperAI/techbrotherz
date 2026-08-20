@@ -30,7 +30,7 @@ const unlockingCalgary: LocalDef = {
   priceSource: { kind: "flat", flatSlugs: [] },
   servicePath: "/services/phone-unlocking",
   repairPaths: [],
-  brandPaths: ["/repair/apple-iphone", "/repair/samsung-galaxy"],
+  brandPaths: ["/repair/apple-Iphone", "/repair/samsung-galaxy"],
   siblings: ["/phone-repair-calgary", "/walk-in-phone-repair-calgary"],
   placePaths: ["/locations/calgary"],
   facts: checkFactUse("/phone-unlocking-calgary", [
@@ -74,7 +74,7 @@ const unlockingCalgary: LocalDef = {
       paragraphs: [
         "A phone reported lost or stolen is blacklisted on the national IMEI database Canadian carriers share. A blacklisted phone cannot be unlocked by TechBrotherz, by any other shop, or by the carrier itself, and it will not work on a Canadian network whatever SIM goes in it. If a secondhand phone will not activate, this is the most common reason.",
         "A phone with an outstanding balance or an unpaid device financing agreement is a related case. The carrier can refuse to unlock it until the account is settled, and that is a billing matter rather than a technical one.",
-        "An iPhone locked to someone else's Apple Account through Activation Lock is a different restriction entirely, and unlocking will not help. Only the original owner can remove it by signing the device out of their account. We check both before you pay, because we would rather you kept the money.",
+        "An Iphone locked to someone else's Apple Account through Activation Lock is a different restriction entirely, and unlocking will not help. Only the original owner can remove it by signing the device out of their account. We check both before you pay, because we would rather you kept the money.",
       ],
     },
     {
@@ -82,14 +82,14 @@ const unlockingCalgary: LocalDef = {
       paragraphs: [
         "Bring the phone to the Store at 3317 17 Ave SE with its IMEI, the fifteen-digit number unique to the handset. Dial star-hash-zero-six-hash on the phone and it appears on screen, or find it in the settings under About. It is also printed on the original box and on the SIM tray of some models.",
         "We confirm the model and carrier and check the phone can actually be unlocked before taking payment. Most unlocks come back the same day. Some combinations of carrier and model take longer, and a small number cannot be done at all, in which case you do not pay for the attempt.",
-        "The proof is a SIM from a different carrier working in the phone. On an iPhone, Settings, General, About shows a Carrier Lock line reading No SIM restrictions when the phone is unlocked, and that is worth checking yourself before paying anyone, here or elsewhere.",
+        "The proof is a SIM from a different carrier working in the phone. On an Iphone, Settings, General, About shows a Carrier Lock line reading No SIM restrictions when the phone is unlocked, and that is worth checking yourself before paying anyone, here or elsewhere.",
       ],
     },
     {
       heading: "How do you check whether a phone is already unlocked?",
       paragraphs: [
         "The definitive test is putting a SIM from a different carrier in the phone and seeing whether it registers on the network and can make a call. Nothing you can check in the settings is as reliable as that, and it costs nothing.",
-        "On an iPhone, Settings, then General, then About has a Carrier Lock line that reads No SIM restrictions when the phone is unlocked. That line is accurate on current iOS versions and it is worth checking before paying anyone, here or anywhere else. On Android the equivalent varies by manufacturer, which is why we still trust the second-SIM test.",
+        "On an Iphone, Settings, then General, then About has a Carrier Lock line that reads No SIM restrictions when the phone is unlocked. That line is accurate on current iOS versions and it is worth checking before paying anyone, here or anywhere else. On Android the equivalent varies by manufacturer, which is why we still trust the second-SIM test.",
         "Bring the phone to the Store and we will check it for you. If it turns out to be unlocked already, that is the end of the conversation and there is nothing to pay. We would rather tell you that than take money for work that was not needed.",
       ],
     },
@@ -140,13 +140,13 @@ const walkInCalgary: LocalDef = {
   city: "Calgary",
   priceSource: {
     kind: "catalogue",
-    brandSlugs: ["apple-iphone", "samsung-galaxy"],
+    brandSlugs: ["apple-Iphone", "samsung-galaxy"],
     repairSlugs: ["screen-replacement", "battery-replacement"],
   },
   servicePath: "/services/phone-repair",
-  repairPaths: ["/repairs/iphone-screen-replacement", "/repairs/iphone-battery-replacement"],
-  brandPaths: ["/repair/apple-iphone", "/repair/samsung-galaxy"],
-  siblings: ["/phone-repair-calgary", "/iphone-screen-repair-calgary"],
+  repairPaths: ["/repairs/Iphone-screen-replacement", "/repairs/Iphone-battery-replacement"],
+  brandPaths: ["/repair/apple-Iphone", "/repair/samsung-galaxy"],
+  siblings: ["/phone-repair-calgary", "/Iphone-screen-repair-calgary"],
   placePaths: ["/locations/calgary", "/locations/calgary/forest-lawn"],
   facts: checkFactUse("/walk-in-phone-repair-calgary", [
     {
@@ -187,7 +187,7 @@ const walkInCalgary: LocalDef = {
     {
       heading: "Which repairs can be done while you wait?",
       paragraphs: [
-        `Screen replacements and battery replacements on stocked iPhone and Galaxy models are the two that reliably finish in about ${c.waitMinutes} minutes. Those are also the two most common repairs by a wide margin, so most people who walk in get their phone back in the same visit.`,
+        `Screen replacements and battery replacements on stocked Iphone and Galaxy models are the two that reliably finish in about ${c.waitMinutes} minutes. Those are also the two most common repairs by a wide margin, so most people who walk in get their phone back in the same visit.`,
         "Camera modules, earpieces, loudspeakers and buttons are in the same range or slightly longer. Charging ports take around 45 minutes on a phone and longer on a laptop, where the socket is usually soldered to the board and the machine has to be substantially dismantled.",
         "Water damage is the one case with no time at all attached to it. A phone that has been wet has to be opened, cleaned and tested before anyone can say what is wrong, and it is a diagnosis rather than a fixed repair. We will not quote a time for it because we would be guessing.",
       ],
@@ -230,7 +230,7 @@ const walkInCalgary: LocalDef = {
     },
     {
       question: "Can I get a phone fixed the same day in Calgary?",
-      answer: `Most phone repairs at TechBrotherz are faster than same day: screens and batteries on stocked models take about ${c.waitMinutes} minutes while you wait. Tablets and computers are same-day drop-offs. A part that has to be ordered in usually adds a day or two, and TechBrotherz checks stock before you leave the device.`,
+      answer: `Most phone repairs at TechBrotherz are faster than same day: screens and battery on stocked models take about ${c.waitMinutes} minutes while you wait. Tablets and computers are same-day drop-offs. A part that has to be ordered in usually adds a day or two, and TechBrotherz checks stock before you leave the device.`,
     },
     {
       question: "What do I need to bring to a walk-in repair?",
@@ -254,12 +254,12 @@ const chestermerePhones: LocalDef = {
   city: "Chestermere",
   priceSource: {
     kind: "catalogue",
-    brandSlugs: ["apple-iphone", "samsung-galaxy", "google-pixel"],
+    brandSlugs: ["apple-Iphone", "samsung-galaxy", "google-pixel"],
     repairSlugs: ["screen-replacement", "battery-replacement", "charging-port-repair"],
   },
   servicePath: "/services/phone-repair",
-  repairPaths: ["/repairs/iphone-screen-replacement", "/repairs/samsung-screen-replacement"],
-  brandPaths: ["/repair/apple-iphone", "/repair/samsung-galaxy"],
+  repairPaths: ["/repairs/Iphone-screen-replacement", "/repairs/samsung-screen-replacement"],
+  brandPaths: ["/repair/apple-Iphone", "/repair/samsung-galaxy"],
   siblings: ["/phone-repair-calgary", "/walk-in-phone-repair-calgary"],
   placePaths: ["/locations/chestermere"],
   facts: checkFactUse("/cell-phone-repair-chestermere", [
@@ -309,7 +309,7 @@ const chestermerePhones: LocalDef = {
     {
       heading: "What do Chestermere customers usually bring in?",
       paragraphs: [
-        "The same mix as everyone else, weighted toward the repairs worth planning a trip around. Cracked screens dominate, followed by batteries that no longer last a day, and those are precisely the two finished while you wait.",
+        "The same mix as everyone else, weighted toward the repairs worth planning a trip around. Cracked screens dominate, followed by battery that no longer last a day, and those are precisely the two finished while you wait.",
         "Charging ports come third and are the repair most often avoidable. Compacted pocket lint stops the cable seating and looks exactly like a failed port, so we check and clear the socket before quoting a replacement. On a trip in from out of town, that is sometimes the whole visit and nothing to pay.",
         "For anything beyond a phone, the same store handles tablets, laptops and desktop computers, so a trip can cover more than one device. Bring model numbers where you have them and chargers for anything that will not power on.",
       ],
@@ -317,7 +317,7 @@ const chestermerePhones: LocalDef = {
     {
       heading: "What else can you bring on the same trip?",
       paragraphs: [
-        "Everything TechBrotherz repairs happens at the one Store, so a trip in from Chestermere can cover more than one device. Phones, iPads, Android and Windows tablets, laptops and desktop towers are all handled in the same visit, along with carrier unlocking and computer work.",
+        "Everything TechBrotherz repairs happens at the one Store, so a trip in from Chestermere can cover more than one device. Phones, Ipads, Android and Windows tablets, laptops and desktop towers are all handled in the same visit, along with carrier unlocking and computer work.",
         "That changes the arithmetic on a drive. One journey for a cracked phone is a reasonable errand; one journey for a cracked phone, a laptop that will not charge and a tablet with a dead battery is a genuinely efficient trip. Bring model numbers where you have them and chargers for anything that will not power on.",
         "The one thing worth splitting out is computer work, which is a drop-off rather than a wait. If you are bringing a tower as well as a phone, the phone can be done while you wait and the tower collected on a later trip, or we can call when it is ready.",
       ],
@@ -326,7 +326,7 @@ const chestermerePhones: LocalDef = {
   localMix: [
     {
       title: "One trip, not two",
-      body: "Screens and batteries on stocked models are done at the Store, which is what makes a drive in from Chestermere worth it.",
+      body: "Screens and battery on stocked models are done at the Store, which is what makes a drive in from Chestermere worth it.",
     },
     {
       title: "Call ahead about parts",

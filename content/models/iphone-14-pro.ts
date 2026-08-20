@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "iphone-14-pro",
-  "name": "iPhone 14 Pro",
+  "slug": "Iphone-14-pro",
+  "name": "Iphone 14 Pro",
   "intro": [
     {
-      "_key": "model.iphone-14-pro-intro-b0",
+      "_key": "model.Iphone-14-pro-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-14-pro-intro-s0",
+          "_key": "model.Iphone-14-pro-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPhone 14 Pro replaced the notch with the Dynamic Island and added an always-on display, so its screen assembly is a different part from the standard iPhone 14 and the two are not interchangeable. The always-on display also means these panels see more hours lit than earlier iPhones. TechBrotherz replaces 14 Pro screens at 3317 17 Ave SE in Calgary. Phone (403) 273-8324 to check the part is here."
+          "text": "The Iphone 14 Pro replaced the notch with the Dynamic Island and added an always-on display, so its screen assembly is a different part from the standard Iphone 14 and the two are not interchangeable. The always-on display also means these panels see more hours lit than earlier Iphones. TechBrotherz replaces 14 Pro screens at 3317 17 Ave SE in Calgary. Phone (403) 273-8324 to check the part is here."
         }
       ],
       "markDefs": [],
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.iphone-14-pro-verdict-b0",
+      "_key": "model.Iphone-14-pro-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.iphone-14-pro-verdict-s0",
+          "_key": "model.Iphone-14-pro-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes. The iPhone 14 Pro is recent, still receives iOS updates and is expensive enough that almost any repair beats replacing it. Worth knowing: the always-on display means this panel spends more hours lit than earlier iPhones, so battery health tends to decline a little sooner than owners expect."
+          "text": "Yes. The Iphone 14 Pro is recent, still receives iOS updates and is expensive enough that almost any repair beats replacing it. Worth knowing: the always-on display means this panel spends more hours lit than earlier Iphones, so battery health tends to decline a little sooner than owners expect."
         }
       ],
       "markDefs": [],

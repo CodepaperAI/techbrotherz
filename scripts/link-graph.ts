@@ -353,8 +353,8 @@ Inbound links per tier:
     console.log(`\nDOM node counts:`);
     for (const path of [
       "/services",
-      "/repair/apple-iphone",
-      "/repair/apple-iphone/iphone-8-plus",
+      "/repair/apple-Iphone",
+      "/repair/apple-Iphone/Iphone-8-plus",
       "/",
     ]) {
       const page = await browser.newPage();

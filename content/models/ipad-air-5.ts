@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "ipad-air-5",
-  "name": "iPad Air 5",
+  "slug": "Ipad-air-5",
+  "name": "Ipad Air 5",
   "intro": [
     {
-      "_key": "model.ipad-air-5-intro-b0",
+      "_key": "model.Ipad-air-5-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-air-5-intro-s0",
+          "_key": "model.Ipad-air-5-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Air 5 looks identical to the Air 4 but runs an M1, the same silicon Apple put in the MacBook Air and the iPad Pro of that year. It also gained the Centre Stage front camera that keeps you framed during a video call. Those two differences are why an Air 5 holds its value where an Air 4 has not, and why the repair maths lands differently on the two."
+          "text": "The Ipad Air 5 looks identical to the Air 4 but runs an M1, the same silicon Apple put in the MacBook Air and the Ipad Pro of that year. It also gained the Centre Stage front camera that keeps you framed during a video call. Those two differences are why an Air 5 holds its value where an Air 4 has not, and why the repair maths lands differently on the two."
         }
       ],
       "markDefs": [],
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.ipad-air-5-verdict-b0",
+      "_key": "model.Ipad-air-5-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-air-5-verdict-s0",
+          "_key": "model.Ipad-air-5-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes, comfortably. An M1 tablet is still a fast machine and secondhand values reflect that, so a broken Air 5 is worth well above what the repair costs. This is the clearest yes in our whole iPad range: the silicon has years left in it and only the front of the tablet is broken."
+          "text": "Yes, comfortably. An M1 tablet is still a fast machine and secondhand values reflect that, so a broken Air 5 is worth well above what the repair costs. This is the clearest yes in our whole Ipad range: the silicon has years left in it and only the front of the tablet is broken."
         }
       ],
       "markDefs": [],

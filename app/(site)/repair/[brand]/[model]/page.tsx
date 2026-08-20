@@ -47,15 +47,15 @@ export const revalidate = 3600;
  * would be a table of one fact.
  */
 const BRAND_LOCAL_PATH: Record<string, string> = {
-  "apple-iphone": "/iphone-screen-repair-calgary",
+  "apple-Iphone": "/Iphone-screen-repair-calgary",
   "samsung-galaxy": "/samsung-repair-calgary",
-  "apple-ipad": "/ipad-repair-calgary",
+  "apple-Ipad": "/Ipad-repair-calgary",
   "laptops-desktops": "/laptop-repair-calgary",
 };
 const DEFAULT_LOCAL_PATH = "/phone-repair-calgary";
 
 const BRAND_SERVICE_PATH: Record<string, string> = {
-  "apple-ipad": "/services/ipad-repair",
+  "apple-Ipad": "/services/Ipad-repair",
   "laptops-desktops": "/services/laptop-repair",
 };
 const DEFAULT_SERVICE_PATH = "/services/phone-repair";
@@ -83,7 +83,7 @@ interface PageProps {
  * model page names whichever of these its own table does not already carry.
  */
 const EXTRA_PHONE_REPAIRS: { slug: string; label: string }[] = [
-  { slug: "battery-replacement", label: "batteries" },
+  { slug: "battery-replacement", label: "battery" },
   { slug: "back-glass-replacement", label: "back glass" },
   { slug: "charging-port-repair", label: "charging ports" },
   { slug: "earpiece-repair", label: "earpieces" },
@@ -176,8 +176,8 @@ export default async function ModelPage({ params }: PageProps) {
    * appear here as two links rather than as a second full copy.
    */
   const categoryForDevice: Record<string, string> = {
-    phone: model.brand?.slug === "apple-iphone" ? "iphone" : "samsung",
-    tablet: "ipad",
+    phone: model.brand?.slug === "apple-Iphone" ? "Iphone" : "samsung",
+    tablet: "Ipad",
     laptop: "computer",
     desktop: "computer",
   };

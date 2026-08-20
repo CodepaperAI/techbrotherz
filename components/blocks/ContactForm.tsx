@@ -175,7 +175,7 @@ export function ContactForm() {
         id="contact-device"
         name="device"
         label="Device"
-        hint="For example iPhone 12, Galaxy S21, or a Dell laptop."
+        hint="For example Iphone 12, Galaxy S21, or a Dell laptop."
         error={fieldErrors.device}
       />
 

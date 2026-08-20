@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "ipad-mini-3",
-  "name": "iPad Mini 3",
+  "slug": "Ipad-mini-3",
+  "name": "Ipad Mini 3",
   "intro": [
     {
-      "_key": "model.ipad-mini-3-intro-b0",
+      "_key": "model.Ipad-mini-3-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-mini-3-intro-s0",
+          "_key": "model.Ipad-mini-3-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The iPad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs noticeably more than the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
+          "text": "The Ipad Mini 3 added Touch ID and a gold colour option to the Mini 2 and changed almost nothing else, which made it the least-loved Mini Apple released. Its glass replacement costs noticeably more than the Mini 1 and 2, because the Touch ID sensor has to be transferred rather than simply refitted."
         }
       ],
       "markDefs": [],
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.ipad-mini-3-verdict-b0",
+      "_key": "model.Ipad-mini-3-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-mini-3-verdict-s0",
+          "_key": "model.Ipad-mini-3-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Marginal, and the gap to a newer Mini matters. The iPad Mini 3 stopped at iPadOS 12, and its glass repair lands close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
+          "text": "Marginal, and the gap to a newer Mini matters. The Ipad Mini 3 stopped at IpadOS 12, and its glass repair lands close to what a used Mini 4 costs on the second-hand market. If Touch ID has already failed, we would generally suggest putting the money toward a newer Mini instead of repairing this one."
         }
       ],
       "markDefs": [],
@@ -51,11 +51,11 @@ const content: ModelContent = {
   ],
   "repairNotes": [
     {
-      "_key": "model.ipad-mini-3-notes-b0",
+      "_key": "model.Ipad-mini-3-notes-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.ipad-mini-3-notes-s0",
+          "_key": "model.Ipad-mini-3-notes-s0",
           "_type": "span",
           "marks": [],
           "text": "The Touch ID sensor is why a Mini 3 glass repair costs more than the near-identical Mini 2. The sensor is paired to the tablet, so it must be carefully transferred from the broken glass to the new one, and if it was already damaged in the original accident Touch ID cannot be restored."
@@ -65,7 +65,7 @@ const content: ModelContent = {
       "style": "normal"
     }
   ],
-  "lastSupportedOs": "iPadOS 12",
+  "lastSupportedOs": "IpadOS 12",
   "stillReceivesUpdates": false
 } as ModelContent;
 
