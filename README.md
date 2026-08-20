@@ -63,7 +63,9 @@ Copy `.env.example` to `.env.local`. Never commit `.env.local`.
 | `SANITY_API_WRITE_TOKEN` | Used by `pnpm seed` only | Seed only |
 | `SANITY_REVALIDATE_SECRET` | Shared secret for the `/api/revalidate` webhook | Yes |
 | `NEXT_PUBLIC_SANITY_PREVIEW_SECRET` | Secret for the Studio preview handshake | No |
-| `RESEND_API_KEY` | Contact form email. The form degrades gracefully if this is missing | No |
+| `BREVO_API_KEY` | Contact form email, via Brevo. The form degrades gracefully if this is missing | No |
+| `BREVO_FROM_EMAIL` | Sender address on the authenticated domain, e.g. noreply@techbrotherz.com | No |
+| `BREVO_FROM_NAME` | Sender display name | No |
 | `CONTACT_TO_EMAIL` | Where contact form submissions are delivered | No |
 | `NEXT_PUBLIC_GA_ID` | GA4 measurement id. Analytics is skipped if unset | No |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console verification token | No |

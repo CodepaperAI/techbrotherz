@@ -2,6 +2,12 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-21 (second) — Resend swapped for Brevo
+
+**Asked:** replace Resend with Brevo (the domain's DNS is on Wix, which cannot host the MX record Resend requires; Brevo authenticates with TXT records only), with the from/to split settled: enquiries land at the store's Gmail, sent from noreply@techbrotherz.com, reply-to the customer.
+
+**Done:** the send moved to lib/email/contact.ts, a plain fetch against Brevo's documented endpoint (checked against developers.brevo.com, not memory: POST /v3/smtp/email, api-key header), no SMTP dependency, plain-text and HTML parts, a counter-scannable subject carrying the device, every field plus the Calgary timestamp and source page in the body, and reply-to set to the customer's email so the store answers directly from Gmail. The resend package and every reference to it are gone from code, CLAUDE.md and README. Failure handling: missing configuration degrades to the phone-number confirmation; a Brevo rejection logs server-side and still confirms receipt to the customer. scripts/test-contact-email.ts joined pnpm verify: composition, reply-to rules, Calgary timestamp and the unconfigured path, all asserted without a key (the honeypot, invalid and valid paths already run end to end in audit-browser through a real browser). Verified live after deploy: valid submit returns the sent confirmation (Brevo 201), invalid shows field errors, honeypot returns the silent success. The BREVO_API_KEY never appears in the built client bundle (grepped). Env on Vercel: BREVO_API_KEY, BREVO_FROM_EMAIL, BREVO_FROM_NAME set, RESEND_API_KEY removed. DNS state: the brevo-code TXT is live on techbrotherz.com, but the mail._domainkey DKIM record is still missing in Wix, so authentication is partial until the client adds it.
+
 ## Session 2026-08-21 — Get a Quote merged into Contact, form first, social icons
 
 **Asked:** merge /get-a-quote into /contact with the form first; header button becomes Contact; add TikTok, Instagram and Facebook icon buttons to the footer and the contact page.

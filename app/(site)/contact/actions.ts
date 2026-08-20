@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 
 import { ContactSchema, type ContactState } from "@/app/(site)/contact/form-state";
+import { sendContactEmail } from "@/lib/email/contact";
 import { pruneRateLimit, rateLimit } from "@/lib/rate-limit";
 import { SITE } from "@/lib/site";
 
@@ -10,9 +11,11 @@ import { SITE } from "@/lib/site";
  * Contact form handling.
  *
  * Four defences, in order of cost: a honeypot field that a human never fills,
- * a per-address rate limit, zod validation, and only then the send. The form
- * degrades gracefully when RESEND_API_KEY is absent: the submission is
- * accepted and logged, and the visitor is told to call, rather than being
+ * a per-address rate limit, zod validation, and only then the send. The send
+ * itself lives in lib/email/contact.ts (Brevo, plain fetch) so the
+ * behavioural check can exercise it without a request context. The form
+ * degrades gracefully when the Brevo configuration is absent: the submission
+ * is accepted and logged, and the visitor is told to call, rather than being
  * shown an error for a configuration problem that is not their fault.
  */
 
@@ -73,69 +76,39 @@ export async function submitContact(
 
   const { name, contact, device, message } = parsed.data;
 
-  /* 4. Send, or degrade gracefully. */
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
+  /* 4. Send through Brevo, or degrade gracefully. The customer is never
+     shown a stack trace or a configuration problem: every failure path
+     confirms receipt of the message and offers the phone number, and the
+     detail goes to the server log. */
+  const page = headerList.get("referer")?.replace(/^https?:\/\/[^/]+/, "") || "/contact";
 
-  if (!apiKey || !to) {
-    // Not the visitor's problem, so do not show them an error. The submission
-    // is logged so nothing is silently lost, and they are given the phone
-    // number, which is the faster route to a repair store anyway.
+  const result = await sendContactEmail({ name, contact, device: device ?? "", message, page });
+
+  if (result.outcome === "unconfigured") {
     console.warn(
-      "[contact] RESEND_API_KEY or CONTACT_TO_EMAIL is not set, so this message was not emailed.",
+      "[contact] BREVO_API_KEY, CONTACT_TO_EMAIL or BREVO_FROM_EMAIL is not set, so this message was not emailed.",
       { name, contact, device, message },
     );
-
     return {
       status: "success",
       message: `Thank you. Email delivery is not switched on for this site yet, so the quickest way to reach TechBrotherz right now is to call ${SITE.phone}.`,
     };
   }
 
-  try {
-    const { Resend } = await import("resend");
-    const resend = new Resend(apiKey);
-
-    /* onboarding@resend.dev is Resend's sandbox sender: it works with zero
-       domain setup but only delivers to the Resend account owner's own email.
-       Once techbrotherz.com (or the client's domain) is verified in Resend,
-       set CONTACT_FROM_EMAIL to e.g. website@techbrotherz.com and delivery
-       works to any address, with no code change. */
-    const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
-
-    const result = await resend.emails.send({
-      from: `${SITE.brandName} website <${from}>`,
-      to: [to],
-      replyTo: contact.includes("@") ? contact : undefined,
-      subject: `Website enquiry from ${name}`,
-      text: [
-        `Name: ${name}`,
-        `Contact: ${contact}`,
-        device ? `Device: ${device}` : null,
-        "",
-        message,
-      ]
-        .filter((line) => line !== null)
-        .join("\n"),
+  if (result.outcome === "failed") {
+    console.error("[contact] Brevo rejected the message.", result.detail, {
+      name,
+      contact,
+      device,
     });
-
-    if (result.error) {
-      console.error("[contact] Resend rejected the message.", result.error);
-      return {
-        status: "error",
-        message: `The message could not be sent. Please call ${SITE.phone} and we will pick up.`,
-      };
-    }
-
     return {
       status: "success",
-      message: `Thank you, your message has been sent. TechBrotherz will reply as soon as the store is free. If it is urgent, call ${SITE.phone}.`,
-    };
-  } catch (error) {
-    console.error("[contact] Sending failed.", error);
-    return {
-      status: "error",
-      message: `The message could not be sent. Please call ${SITE.phone} and we will pick up.`,
+      message: `Thank you, your message has been received. If you do not hear back, the surest way to reach TechBrotherz is to call ${SITE.phone}.`,
     };
   }
+
+  return {
+    status: "success",
+    message: `Thank you, your message has been sent. TechBrotherz will reply as soon as the store is free. If it is urgent, call ${SITE.phone}.`,
+  };
 }

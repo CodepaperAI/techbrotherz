@@ -256,7 +256,7 @@ async function testContactForm(browser: Browser) {
     await page.close();
   }
 
-  /* --- valid submit, no Resend key --------------------------------- */
+  /* --- valid submit, with or without a Brevo key ------------------- */
   {
     const page = await browser.newPage();
     await page.goto(`${BASE}/contact`, { waitUntil: "networkidle0", timeout: 90_000 });
@@ -272,11 +272,11 @@ async function testContactForm(browser: Browser) {
     const text = await page.$eval('[role="status"]', (el) => el.textContent ?? "");
     console.log(`  valid submit     -> "${text.trim().slice(0, 90)}"`);
     if (!/thank you/i.test(text)) fail("valid submit did not confirm receipt");
-    if (process.env.RESEND_API_KEY) {
+    if (process.env.BREVO_API_KEY) {
       if (!/has been sent/i.test(text))
-        fail("valid submit with a Resend key did not confirm sending");
+        fail("valid submit with a Brevo key did not confirm sending");
     } else if (!/call/i.test(text)) {
-      fail("valid submit without a Resend key did not fall back to the phone number");
+      fail("valid submit without a Brevo key did not fall back to the phone number");
     }
     await page.close();
   }

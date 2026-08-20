@@ -95,6 +95,12 @@ const CHECKS: Check[] = [
     why: "One brand spelling, one NAP format, no misspellings, no em dashes, en-CA throughout.",
   },
   {
+    name: "contact-email",
+    script: "scripts/test-contact-email.ts",
+    needsServer: false,
+    why: "The Brevo send path behaves without a key: composition, reply-to, graceful degradation.",
+  },
+  {
     name: "service-areas",
     script: "scripts/test-service-areas.ts",
     needsServer: true,

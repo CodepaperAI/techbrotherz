@@ -125,7 +125,7 @@ Cell phone repair, iPhone repair, Samsung Galaxy repair, Google Pixel repair, iP
 | Icons      | `lucide-react`, stroke width 1.5, no other icon set           | latest                        |
 | Fonts      | `next/font`, `display: swap`, self-hosted, subset `latin`     | built in                      |
 | Validation | `zod`                                                         | 3.x                           |
-| Email      | Resend, env driven, degrades gracefully if key missing        | latest                        |
+| Email      | Brevo transactional API, plain fetch, env driven, degrades gracefully | n/a                    |
 | Analytics  | GA4 + Google Search Console via env vars, `@vercel/analytics` | latest                        |
 | Deploy     | Vercel                                                        | n/a                           |
 
@@ -964,7 +964,9 @@ Never commit real values. `.env.example` is committed, `.env.local` is git-ignor
 | Variable                       | Purpose                                                                                                                                                            | Required |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | `NEXT_PUBLIC_SITE_URL`         | **Override only.** The canonical origin is the constant `CANONICAL_ORIGIN` in `lib/site-url.ts`, because the site has exactly one and always did. Set this to point a build at another origin, which is what the local audits do with `http://localhost:3100`. Leave it unset in production and on the hosting project. | no       |
-| `RESEND_API_KEY`               | Contact form email. **The form degrades gracefully if missing.**                                                                                                    | no       |
+| `BREVO_API_KEY`                | Contact form email via Brevo's transactional API. **The form degrades gracefully if missing.** Brevo replaced Resend 2026-08: the domain's DNS is on Wix, which cannot host the MX record Resend requires on its send subdomain, while Brevo authenticates with TXT records only, which Wix can host. | no       |
+| `BREVO_FROM_EMAIL`             | The sender, on the authenticated domain (noreply@techbrotherz.com). **Never the Gmail address**: Brevo cannot authenticate gmail.com, and third-party mail from a Gmail address fails alignment and lands in spam. It need not be a real mailbox; the reply-to carries the conversation. | no       |
+| `BREVO_FROM_NAME`              | The sender display name, TechBrotherz.                                                                                                                              | no       |
 | `CONTACT_TO_EMAIL`             | Where contact submissions are delivered.                                                                                                                            | no       |
 | `NEXT_PUBLIC_GA_ID`            | GA4 measurement id. Analytics is skipped if unset.                                                                                                                  | no       |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console meta verification token.                                                                                                                      | no       |
