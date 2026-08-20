@@ -206,12 +206,10 @@ export const IMAGES: Record<string, DemoImage> = {
     "3:2",
     "A lineup of devices on a plain surface: two phones, a laptop, a smartwatch and three tablets",
   ),
-  "service-accessories": image(
+  "service-accessories": supplied(
     "service-accessories",
     "3:2",
-    "A flat lay of device accessories on a white surface: headphones, a power bank, a spare phone battery and two phone cases beside a camera",
-    "Ady TeenagerInRO",
-    "sQ0xXxQdfeY",
+    "A lineup of phone accessories on a plain surface: cases, a power bank, a wireless charger, braided cables, earbuds, a phone stand and a tempered glass kit",
   ),
   "service-virus-removal": image(
     "service-virus-removal",
