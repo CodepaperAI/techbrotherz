@@ -105,9 +105,9 @@ export default async function BrandHubPage({ params }: PageProps) {
   );
 
   const brandCategory: Record<string, string> = {
-    "apple-Iphone": "Iphone",
+    "apple-iphone": "iphone",
     "samsung-galaxy": "samsung",
-    "apple-Ipad": "Ipad",
+    "apple-ipad": "ipad",
     "laptops-desktops": "computer",
   };
 
@@ -136,9 +136,9 @@ export default async function BrandHubPage({ params }: PageProps) {
 
   /** The Tier 5 page for this brand, gated by the registry until Phase 6. */
   const brandLocalPath: Record<string, string> = {
-    "apple-Iphone": "/Iphone-screen-repair-calgary",
+    "apple-iphone": "/iphone-screen-repair-calgary",
     "samsung-galaxy": "/samsung-repair-calgary",
-    "apple-Ipad": "/Ipad-repair-calgary",
+    "apple-ipad": "/ipad-repair-calgary",
     "laptops-desktops": "/laptop-repair-calgary",
   };
   const localPath = brandLocalPath[brandSlug] ?? "/phone-repair-calgary";

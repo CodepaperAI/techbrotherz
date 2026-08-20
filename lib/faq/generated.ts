@@ -9,7 +9,7 @@
  * Generating them from the record instead produces answers that are genuinely
  * different per URL, because they carry that model's name, that model's repair
  * list, that model's own repair timings and that model's age. A question whose
- * answer is "we do four repairs on the Iphone 8 Plus, from about 30 minutes to
+ * answer is "we do four repairs on the iPhone 8 Plus, from about 30 minutes to
  * about 60" is not shared text, it is this page's data written out.
  *
  * This is also what let Phase 5 remove the shared global answers from model

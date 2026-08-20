@@ -35,8 +35,8 @@ const CATEGORY_ORDER: { key: string; label: string; question: string }[] = [
   { key: "parts", label: "Parts quality", question: "What parts do you use?" },
   { key: "data", label: "Data and privacy", question: "What happens to my data?" },
   { key: "unlocking", label: "Unlocking", question: "How does phone unlocking work?" },
-  { key: "Ipad", label: "Ipad and tablets", question: "Should I repair or replace my Ipad?" },
-  { key: "Iphone", label: "Iphone", question: "Questions about Iphone repairs" },
+  { key: "ipad", label: "iPad and tablets", question: "Should I repair or replace my iPad?" },
+  { key: "iphone", label: "iPhone", question: "Questions about iPhone repairs" },
   { key: "samsung", label: "Samsung", question: "Questions about Samsung repairs" },
   { key: "computer", label: "Laptops and computers", question: "Questions about computer repairs" },
   {

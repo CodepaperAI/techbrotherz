@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Ipad-pro-9-7",
-  "name": "Ipad Pro 9.7",
+  "slug": "ipad-pro-9-7",
+  "name": "iPad Pro 9.7",
   "intro": [
     {
-      "_key": "model.Ipad-pro-9-7-intro-b0",
+      "_key": "model.ipad-pro-9-7-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Ipad-pro-9-7-intro-s0",
+          "_key": "model.ipad-pro-9-7-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Ipad Pro 9.7 at 3317 17 Ave SE in Calgary. Ipad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
+          "text": "TechBrotherz repairs the iPad Pro 9.7 at 3317 17 Ave SE in Calgary. iPad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
         }
       ],
       "markDefs": [],

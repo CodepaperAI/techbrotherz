@@ -25,10 +25,10 @@ const PAGES = [
 
 /** Added in Phase 4: one brand hub, one priced model, one quote-only model. */
 const PROGRAMMATIC_PAGES = [
-  "/repair/apple-Iphone",
-  "/repair/apple-Ipad",
-  "/repair/apple-Iphone/Iphone-8-plus",
-  "/repair/apple-Iphone/Iphone-16",
+  "/repair/apple-iphone",
+  "/repair/apple-ipad",
+  "/repair/apple-iphone/iphone-8-plus",
+  "/repair/apple-iphone/iphone-16",
 ];
 
 /**
@@ -38,16 +38,16 @@ const PROGRAMMATIC_PAGES = [
  */
 const TIER_2_3_PAGES = [
   "/services/phone-repair",
-  "/services/Ipad-repair",
+  "/services/ipad-repair",
   "/services/laptop-repair",
   "/services/computer-repair",
   "/services/phone-unlocking",
   "/services/password-reset",
   "/services/virus-removal",
-  "/repairs/Iphone-screen-replacement",
+  "/repairs/iphone-screen-replacement",
   "/repairs/samsung-screen-replacement",
-  "/repairs/Ipad-screen-replacement",
-  "/repairs/Iphone-camera-repair",
+  "/repairs/ipad-screen-replacement",
+  "/repairs/iphone-camera-repair",
   "/repairs/laptop-screen-replacement",
   "/repairs/computer-diagnostics",
 ];
@@ -55,7 +55,7 @@ const TIER_2_3_PAGES = [
 /** Phase 6: the local tiers. */
 const TIER_5_6_PAGES = [
   "/phone-repair-calgary",
-  "/Iphone-screen-repair-calgary",
+  "/iphone-screen-repair-calgary",
   "/laptop-repair-calgary",
   "/walk-in-phone-repair-calgary",
   "/cell-phone-repair-chestermere",
@@ -78,16 +78,16 @@ const EXPECTED_404 = [
   "/locations/calgary/ogden",
   // The pre-Phase-5 Tier 2 and Tier 3 URLs. Nothing was ever live at these,
   // so they 404 rather than redirect. CLAUDE.md Section 7.
-  // (/services/Ipad-repair left this list 2026-08: the tablet hub was renamed
+  // (/services/ipad-repair left this list 2026-08: the tablet hub was renamed
   // onto it, so it is now a real page and /services/tablet-repair 301s to it.)
-  "/services/Iphone-repair",
+  "/services/iphone-repair",
   "/services/samsung-repair",
-  "/services/Iphone-repair/screen-replacement",
+  "/services/iphone-repair/screen-replacement",
   "/services/computer-repair/tune-up",
   // Unpublished model: seeded but held back for want of written content.
-  "/repair/apple-Iphone/Iphone-12-mini",
+  "/repair/apple-iphone/iphone-12-mini",
   // Right model, wrong brand. A 404, deliberately, not a redirect.
-  "/repair/samsung-galaxy/Iphone-8-plus",
+  "/repair/samsung-galaxy/iphone-8-plus",
   // Unknown brand entirely.
   "/repair/nokia/lumia-900",
 ];

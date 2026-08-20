@@ -262,7 +262,7 @@ Two columns, 6/6 on desktop, stacked on mobile with the image first. One side is
 ```html
 <table>
   <caption>
-    Iphone 8 Plus repair prices at TechBrotherz in Calgary
+    iPhone 8 Plus repair prices at TechBrotherz in Calgary
   </caption>
   <thead>
     <tr>
@@ -314,8 +314,8 @@ Anatomy, top to bottom:
 
 The answer paragraph carries `data-speakable="answer"` so the `speakable` JSON-LD selector can point at it.
 
-**Do:** "TechBrotherz in Calgary charges $109.99 to replace an Iphone 8 Plus screen, including the part and labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
-**Don't:** "We offer great prices on Iphone repairs, come see us today."
+**Do:** "TechBrotherz in Calgary charges $109.99 to replace an iPhone 8 Plus screen, including the part and labour. Most screen replacements take about 30 minutes while you wait, no appointment is needed, and every repair is covered by a 60-day warranty."
+**Don't:** "We offer great prices on iPhone repairs, come see us today."
 
 ### 6.15 `TrustStrip`
 
@@ -334,7 +334,7 @@ Visible on every page except home. Small caption-size text, `--tb-muted`, `Chevr
 
 ### 6.17 `RelatedLinks`
 
-A titled block of 3 to 6 links in a bordered card. Title is a question or a real phrase ("Other Iphone models we repair"), never "Related". Anchor text is always the full descriptive page name.
+A titled block of 3 to 6 links in a bordered card. Title is a question or a real phrase ("Other iPhone models we repair"), never "Related". Anchor text is always the full descriptive page name.
 
 ### 6.18 `LocalInfoCard`
 
@@ -356,7 +356,7 @@ Dark. Four link columns plus a brand column.
 
 | Column            | Contents                                                                                         |
 | ----------------- | ------------------------------------------------------------------------------------------------ |
-| 1. Repairs        | Iphone, Samsung, Ipad, Tablet, Laptop, Computer, Unlocking, Password reset                       |
+| 1. Repairs        | iPhone, Samsung, iPad, Tablet, Laptop, Computer, Unlocking, Password reset                       |
 | 2. Popular models | Top 8 models by search demand, from Sanity `popular: true`                                       |
 | 3. Areas          | Calgary, SE Calgary, Forest Lawn, Inglewood, Dover, Marlborough, Ogden, Chestermere, Airdrie     |
 | 4. Learn          | Top 6 guides, FAQ, Warranty, About, Contact                                                      |
@@ -427,7 +427,7 @@ Cool neutral light, real workshop surfaces, no heavy colour filters. Where a sou
 
 1. Silhouette panel, 3:2, soft green tint, brand green stroke, tint deepening on hover
 2. Wordmark in Plus Jakarta Sans
-3. Model range, e.g. "Iphone 4 to Iphone 16"
+3. Model range, e.g. "iPhone 4 to iPhone 16"
 4. Model count
 5. Starting price
 

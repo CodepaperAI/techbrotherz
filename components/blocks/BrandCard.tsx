@@ -29,7 +29,7 @@ export interface BrandCardProps {
   name: string;
   href: string;
   silhouette: DeviceSilhouette;
-  /** e.g. "Iphone 4 to Iphone 16". Omitted when the catalogue cannot supply it. */
+  /** e.g. "iPhone 4 to iPhone 16". Omitted when the catalogue cannot supply it. */
   range?: string | null;
   modelCount?: number | null;
   /** Formatted, e.g. "$44.99". */
@@ -135,19 +135,19 @@ export function BrandCard({
 
 /** Which silhouette a brand slug gets. Everything unmapped is a phone. */
 export const BRAND_SILHOUETTE: Record<string, DeviceSilhouette> = {
-  "apple-Iphone": "phone",
+  "apple-iphone": "phone",
   "samsung-galaxy": "phone",
   "google-pixel": "phone",
   "google-nexus": "phone",
   lg: "phone",
   motorola: "phone",
   htc: "phone",
-  "apple-Ipad": "tablet",
+  "apple-ipad": "tablet",
   "laptops-desktops": "laptop",
 };
 
 /**
- * "Iphone 4 to Iphone 16", from the oldest and newest published models.
+ * "iPhone 4 to iPhone 16", from the oldest and newest published models.
  *
  * Returns null rather than a half-formed string when the catalogue cannot
  * supply both ends, because a range with one end is worse than no range.

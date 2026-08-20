@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Ipad-pro-12-9-5th-gen",
-  "name": "Ipad Pro 12.9 (5th gen)",
+  "slug": "ipad-pro-12-9-5th-gen",
+  "name": "iPad Pro 12.9 (5th gen)",
   "intro": [
     {
-      "_key": "model.Ipad-pro-12-9-5th-gen-intro-b0",
+      "_key": "model.ipad-pro-12-9-5th-gen-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Ipad-pro-12-9-5th-gen-intro-s0",
+          "_key": "model.ipad-pro-12-9-5th-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Ipad Pro 12.9 (5th gen) at 3317 17 Ave SE in Calgary. Ipad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
+          "text": "TechBrotherz repairs the iPad Pro 12.9 (5th gen) at 3317 17 Ave SE in Calgary. iPad Pro displays are laminated and, on the later models, use ProMotion high refresh rate panels, so the replacement part is the most expensive of any tablet we handle. On a Pro it is genuinely worth comparing the repair against the tablet's resale value before committing, and we will give you an honest read on that rather than simply quoting the job."
         }
       ],
       "markDefs": [],

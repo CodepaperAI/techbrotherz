@@ -14,13 +14,13 @@ The client saw only Forest Lawn under "Which Calgary areas does TechBrotherz ser
 
 ### Title Case, implemented in code rather than in strings
 
-`titleCase()` in lib/utils.ts runs at render inside the display components: Heading, the PageShell hero H1, Eyebrow, Chip, PillButton, Tile, IconCard, ServiceCard, StepCard, Breadcrumbs, Nav and Footer. That covers every H1, H2, card title, nav label, button and chip on all 143 pages, including the programmatically generated model-page headings, with one mechanism. It only raises case and skips words already carrying a capital, so Iphone, MacBook, FRP and TechBrotherz cannot be mangled. AnswerBox copy, FAQ answers, plainAnswer, meta descriptions and JSON-LD never pass through those components, so they stay sentence case structurally rather than by discipline. 23 literal card titles were also updated in source, and the home hero H1 (JSX, so outside the transform) was retitled by hand. The rule is recorded in CLAUDE.md Section 8.7.
+`titleCase()` in lib/utils.ts runs at render inside the display components: Heading, the PageShell hero H1, Eyebrow, Chip, PillButton, Tile, IconCard, ServiceCard, StepCard, Breadcrumbs, Nav and Footer. That covers every H1, H2, card title, nav label, button and chip on all 143 pages, including the programmatically generated model-page headings, with one mechanism. It only raises case and skips words already carrying a capital, so iPhone, MacBook, FRP and TechBrotherz cannot be mangled. AnswerBox copy, FAQ answers, plainAnswer, meta descriptions and JSON-LD never pass through those components, so they stay sentence case structurally rather than by discipline. 23 literal card titles were also updated in source, and the home hero H1 (JSX, so outside the transform) was retitled by hand. The rule is recorded in CLAUDE.md Section 8.7.
 
 ### The copy audit: a script, and a real grammar read
 
-`scripts/audit-copy.ts` joined `pnpm verify`: known misspellings, device-name casing (Iphone, Ipad, MacBook, PlayStation...), NAP formatting, double spaces, em dashes, en-CA spellings, and one canonical brand spelling, TechBrotherz, outside the logo component. It found the corpus already consistent ("authorised" 4-0 over "authorized"; no tamper glass, charing port or Tech Brotherz anywhere).
+`scripts/audit-copy.ts` joined `pnpm verify`: known misspellings, device-name casing (iPhone, iPad, MacBook, PlayStation...), NAP formatting, double spaces, em dashes, en-CA spellings, and one canonical brand spelling, TechBrotherz, outside the logo component. It found the corpus already consistent ("authorised" 4-0 over "authorized"; no tamper glass, charing port or Tech Brotherz anywhere).
 
-The grammar read found what the script could not: roughly 60 broken or damaged strings, most left by the price removal. Fixed: seven broken sentences ("the figure is free", "when the charger is on the Store", a virus-removal answer that read as removing the security software, a duplicated key-facts row); every dangling reference to the deleted price table ("the table below lists the price", "Models showing Call for quote in the table", "published price list", "Prices are published per device model", a written-out "three hundred dollars"); five "what it comes to follows" constructions; and/but contrast errors; Ipad FAQ comparatives orphaned by the price scrub; the dead `pricesFaqs` block deleted outright. Model files: the Iphone 13 Pro's "USB port" is now a Lightning port, the Note 9 tense clash and two broken possessive comparisons fixed, and the crease-line bullet rewritten across all 8 foldables. Biggest catch: `stillReceivesUpdates: false` on 52 models that are inside their published support windows (Pixel 8 to 2030, S24 Ultra to 2031, every iOS-26 Iphone), which generated visible FAQ copy claiming they no longer receive security updates. Set true on those 52, null on 5 genuine borderlines so the claim is omitted rather than guessed.
+The grammar read found what the script could not: roughly 60 broken or damaged strings, most left by the price removal. Fixed: seven broken sentences ("the figure is free", "when the charger is on the Store", a virus-removal answer that read as removing the security software, a duplicated key-facts row); every dangling reference to the deleted price table ("the table below lists the price", "Models showing Call for quote in the table", "published price list", "Prices are published per device model", a written-out "three hundred dollars"); five "what it comes to follows" constructions; and/but contrast errors; iPad FAQ comparatives orphaned by the price scrub; the dead `pricesFaqs` block deleted outright. Model files: the iPhone 13 Pro's "USB port" is now a Lightning port, the Note 9 tense clash and two broken possessive comparisons fixed, and the crease-line bullet rewritten across all 8 foldables. Biggest catch: `stillReceivesUpdates: false` on 52 models that are inside their published support windows (Pixel 8 to 2030, S24 Ultra to 2031, every iOS-26 iPhone), which generated visible FAQ copy claiming they no longer receive security updates. Set true on those 52, null on 5 genuine borderlines so the claim is omitted rather than guessed.
 
 ### The photo beside the AnswerBox, and the articles
 
@@ -54,7 +54,7 @@ Q9 closed: data recovery is offered, and it is now a repair type. Q15 closed: th
 
 ### The grid split, per the brief's judgment call
 
-Eleven cards did read as a wall, so the home grid is now two labelled groups: **"Repairs"** (phone, Ipad, laptop, computer, gaming console, virus removal) and **"More in the Store"** (carrier unlocking, FRP removal, password reset, buy-sell-trade, accessories). The phone, Ipad and laptop cards each carry their four most-searched repair chips; the full lists stay on the pages. The services index gained an "In Store" group the same way.
+Eleven cards did read as a wall, so the home grid is now two labelled groups: **"Repairs"** (phone, iPad, laptop, computer, gaming console, virus removal) and **"More in the Store"** (carrier unlocking, FRP removal, password reset, buy-sell-trade, accessories). The phone, iPad and laptop cards each carry their four most-searched repair chips; the full lists stay on the pages. The services index gained an "In Store" group the same way.
 
 ### Accessories, the URL decision, the logo ceiling
 
@@ -90,7 +90,7 @@ The why-us list gains "We buy and sell phones. Bring yours in for a quote at the
 
 ### The brand strip at full width
 
-The home chip strip (the card grid folded into it back in the reference-match session, so there is one brand section, not two) now carries all seventeen confirmed names: Iphone, Ipad, MacBook, Samsung Galaxy, Google Pixel, Motorola, LG, HP, Dell, Lenovo, ASUS, Acer, PlayStation 4 and 5, Xbox, Xbox Series, Nintendo Switch. Text only, no logos; every chip links to the page that covers it (phone hubs, laptop repair, console repair), nothing dead. OnePlus deliberately absent, per the brief, as question 31.
+The home chip strip (the card grid folded into it back in the reference-match session, so there is one brand section, not two) now carries all seventeen confirmed names: iPhone, iPad, MacBook, Samsung Galaxy, Google Pixel, Motorola, LG, HP, Dell, Lenovo, ASUS, Acer, PlayStation 4 and 5, Xbox, Xbox Series, Nintendo Switch. Text only, no logos; every chip links to the page that covers it (phone hubs, laptop repair, console repair), nothing dead. OnePlus deliberately absent, per the brief, as question 31.
 
 Guard, links, typecheck, lint, clean build all green. Deployed.
 
@@ -187,7 +187,7 @@ Contrast, pages, links (still fully green) and FAQ audits pass; typecheck, lint,
 
 ### The home page, sixteen sections in the reference's order
 
-Sticky header (Services, Reviews and Hours are anchors into the page, then Locations, Blog, About, Contact), service pill row, hero with the SE Calgary eyebrow and Call plus Get a Quote, four stat cards (30 min, 60 days, walk in, 7 days, every one verified), the ticker, the services grid now at eight photo cards each with tag chips, brands as a wrapped name list (Iphone through Lenovo, no manufacturer logos), why-us as the numbered 01 to 05 list (no "no fix no fee": we charge a diagnostic fee on computers), the three-step process, the reviews section, the hours section split weekday and weekend with the open-now badge, service areas with the map, free-parking line and 14 tiles that all navigate somewhere real, the scoped FAQ, the CTA band with phone, hours and address, and the service directory: four columns, 33 deep links, every one resolving. The SplitBlock section was dropped, being the one block with no counterpart in the reference order.
+Sticky header (Services, Reviews and Hours are anchors into the page, then Locations, Blog, About, Contact), service pill row, hero with the SE Calgary eyebrow and Call plus Get a Quote, four stat cards (30 min, 60 days, walk in, 7 days, every one verified), the ticker, the services grid now at eight photo cards each with tag chips, brands as a wrapped name list (iPhone through Lenovo, no manufacturer logos), why-us as the numbered 01 to 05 list (no "no fix no fee": we charge a diagnostic fee on computers), the three-step process, the reviews section, the hours section split weekday and weekend with the open-now badge, service areas with the map, free-parking line and 14 tiles that all navigate somewhere real, the scoped FAQ, the CTA band with phone, hours and address, and the service directory: four columns, 33 deep links, every one resolving. The SplitBlock section was dropped, being the one block with no counterpart in the reference order.
 
 ### Reviews, the honest version
 
@@ -207,38 +207,38 @@ The service directory gave the lone published Pixel its second inbound link, clo
 
 ## Session 2026-08-11 (fourth) — The new models made visible where people look
 
-**Asked:** the client's screenshots showed the hub grid still topping out at Iphone 16 and the home brand cards still reading "Iphone 4 to Iphone 16" and "Galaxy Note 2 to Galaxy S24". The seeded models existed but only as chips at the bottom of the hub, and the card statistics counted published pages only.
+**Asked:** the client's screenshots showed the hub grid still topping out at iPhone 16 and the home brand cards still reading "iPhone 4 to iPhone 16" and "Galaxy Note 2 to Galaxy S24". The seeded models existed but only as chips at the bottom of the hub, and the card statistics counted published pages only.
 
 **Done:** two visibility changes, with the thin-content rule untouched, no new pages published.
 
-1. **The hub model grid now carries the whole catalogue, newest first.** Published models render as linked cards with their repair counts; quote-only seeds render as unlinked cards captioned "Quoted at the counter". The Iphone 17 family, the S26 range and the Pixel 10 family now open their grids instead of hiding in a chip list, and the redundant "Also repaired" section is gone, its call-to-quote copy folded under the grid.
-2. **`getBrands` statistics cover the whole catalogue rather than published pages only**, so the home and hub cards read "Iphone 4 to Iphone 17e", "Galaxy Note 2 to Galaxy S26", "Ipad 2 to Ipad Air 11 (M4)", with counts to match. The shop repairs a seeded quote-only model just as it repairs a published one, so the old range was simply out of date as a claim. Model pages themselves stay gated on `published`, as before.
+1. **The hub model grid now carries the whole catalogue, newest first.** Published models render as linked cards with their repair counts; quote-only seeds render as unlinked cards captioned "Quoted at the counter". The iPhone 17 family, the S26 range and the Pixel 10 family now open their grids instead of hiding in a chip list, and the redundant "Also repaired" section is gone, its call-to-quote copy folded under the grid.
+2. **`getBrands` statistics cover the whole catalogue rather than published pages only**, so the home and hub cards read "iPhone 4 to iPhone 17e", "Galaxy Note 2 to Galaxy S26", "iPad 2 to iPad Air 11 (M4)", with counts to match. The shop repairs a seeded quote-only model just as it repairs a published one, so the old range was simply out of date as a claim. Model pages themselves stay gated on `published`, as before.
 
 Pages, links (pixel-6 only) and similarity audits pass. Deployed.
 
-## Session 2026-08-11 (third) — The current Iphone, Galaxy and Pixel ranges seeded
+## Session 2026-08-11 (third) — The current iPhone, Galaxy and Pixel ranges seeded
 
-**Asked:** the previous seeding covered only Ipads; the client wants the latest Apple, Samsung and Google handsets too.
+**Asked:** the previous seeding covered only iPads; the client wants the latest Apple, Samsung and Google handsets too.
 
-**Done:** 23 models seeded after verifying all three lineups (web-checked, not guessed): Iphone 16e, Iphone 17, Iphone Air (the official name; "Iphone 17 air" kept as an alias), Iphone 17 Pro, 17 Pro Max and 17e; Galaxy S25 Edge, Z Fold 7, Z Flip 7 and Z Flip 7 FE, the S26, S26 Plus and S26 Ultra, and the Z Fold 8, Z Fold 8 Ultra and Z Flip 8; Pixel 9 Pro XL, 9 Pro Fold, 9a, and the Pixel 10, 10 Pro, 10 Pro XL and 10 Pro Fold. **Pixel 11 and Pixel 10a are deliberately not seeded**: the Pixel 11 event is announced but the phones are unreleased, and the 10a could not be confirmed shipped, and an unverified model name is exactly the error the brief forbids. All 23 are quote-only and unpublished per the thin-content rule, rendering as "Also repaired" chips on their brand hubs. **Catalogue: 153 to 176 models, 69 published, 107 seeded awaiting copy.** The A-series gap (nothing newer than the A54) was noticed and left: the client asked for latest flagships, and the volume mid-rangers are a cheap follow-up when asked. Pages, FAQ scoping and link audits pass; pixel-6 remains the one known link gap. Deployed.
+**Done:** 23 models seeded after verifying all three lineups (web-checked, not guessed): iPhone 16e, iPhone 17, iPhone Air (the official name; "iphone 17 air" kept as an alias), iPhone 17 Pro, 17 Pro Max and 17e; Galaxy S25 Edge, Z Fold 7, Z Flip 7 and Z Flip 7 FE, the S26, S26 Plus and S26 Ultra, and the Z Fold 8, Z Fold 8 Ultra and Z Flip 8; Pixel 9 Pro XL, 9 Pro Fold, 9a, and the Pixel 10, 10 Pro, 10 Pro XL and 10 Pro Fold. **Pixel 11 and Pixel 10a are deliberately not seeded**: the Pixel 11 event is announced but the phones are unreleased, and the 10a could not be confirmed shipped, and an unverified model name is exactly the error the brief forbids. All 23 are quote-only and unpublished per the thin-content rule, rendering as "Also repaired" chips on their brand hubs. **Catalogue: 153 to 176 models, 69 published, 107 seeded awaiting copy.** The A-series gap (nothing newer than the A54) was noticed and left: the client asked for latest flagships, and the volume mid-rangers are a cheap follow-up when asked. Pages, FAQ scoping and link audits pass; pixel-6 remains the one known link gap. Deployed.
 
-## Session 2026-08-11 (later) — The Ipad rename, and the current Ipad range seeded
+## Session 2026-08-11 (later) — The iPad rename, and the current iPad range seeded
 
-**Asked:** "add Ipad, all the models of it, remove tablet, and deploy" — the go-ahead for the recommended rename from the batch-2 doc.
+**Asked:** "add iPad, all the models of it, remove tablet, and deploy" — the go-ahead for the recommended rename from the batch-2 doc.
 
 **Done:**
 
-### Ipad leads everywhere
+### iPad leads everywhere
 
-`/services/tablet-repair` is renamed to `/services/Ipad-repair` with a permanent redirect from the old URL (Next emits 308, SEO-equivalent to the site's other 301s). The def's H1, title, serviceType, eyebrow and copy lead with Ipad; the "Android and Windows tablets" section and FAQ survive as the one supporting mention that holds the tablet term. `/tablet-repair-calgary` is retired and 301s to `/Ipad-repair-calgary`, which already carried the "Ipad repair calgary" keyword; its LocalDef is deleted and the Android-tablet story lives on the service page. Cards, nav, footer, siblings, the model-page service mapping, the repairs parent, the audit page lists and the /services group heading ("Ipads") all follow. The audit's must-404 list needed one edit: `/services/Ipad-repair` was on it from the Phase 5 brand-hub removal, and it is now a real page.
+`/services/tablet-repair` is renamed to `/services/ipad-repair` with a permanent redirect from the old URL (Next emits 308, SEO-equivalent to the site's other 301s). The def's H1, title, serviceType, eyebrow and copy lead with iPad; the "Android and Windows tablets" section and FAQ survive as the one supporting mention that holds the tablet term. `/tablet-repair-calgary` is retired and 301s to `/ipad-repair-calgary`, which already carried the "ipad repair calgary" keyword; its LocalDef is deleted and the Android-tablet story lives on the service page. Cards, nav, footer, siblings, the model-page service mapping, the repairs parent, the audit page lists and the /services group heading ("iPads") all follow. The audit's must-404 list needed one edit: `/services/ipad-repair` was on it from the Phase 5 brand-hub removal, and it is now a real page.
 
-**Keyword map change, for the record:** `/services/Ipad-repair` takes "Ipad repair" as primary (was "tablet repair", with Ipad repair as supporting); "tablet repair calgary" is forfeited as a primary keyword with the Tier 5 retirement, held only by the supporting "android tablet repair" mention. This is the trade the batch-2 doc priced in.
+**Keyword map change, for the record:** `/services/ipad-repair` takes "ipad repair" as primary (was "tablet repair", with ipad repair as supporting); "tablet repair calgary" is forfeited as a primary keyword with the Tier 5 retirement, held only by the supporting "android tablet repair" mention. This is the trade the batch-2 doc priced in.
 
-### The current Ipad range, verified then seeded
+### The current iPad range, verified then seeded
 
-Twelve models seeded after verifying Apple's current lineup (web-checked, not guessed): Ipad 11th gen (A16, 2025), Ipad Mini 7 (A17 Pro, 2024), Ipad Air 11 and 13 in M2 (2024), M3 (2025) and M4 (2026), and Ipad Pro 11 and 13 in M4 (2024) and M5 (2025). All quote-only and `published: false` per the Phase 4 thin-content rule, so they render as "Also repaired" chips on the Ipad hub until each gets model-specific content. **Catalogue: 141 to 153 models, 69 published (unchanged), 84 seeded awaiting copy.**
+Twelve models seeded after verifying Apple's current lineup (web-checked, not guessed): iPad 11th gen (A16, 2025), iPad Mini 7 (A17 Pro, 2024), iPad Air 11 and 13 in M2 (2024), M3 (2025) and M4 (2026), and iPad Pro 11 and 13 in M4 (2024) and M5 (2025). All quote-only and `published: false` per the Phase 4 thin-content rule, so they render as "Also repaired" chips on the iPad hub until each gets model-specific content. **Catalogue: 141 to 153 models, 69 published (unchanged), 84 seeded awaiting copy.**
 
-**Verify:** pages, words (the renamed hub carries 1,303 words), similarity, faq, schema, local-facts all pass; links carries only the pre-existing pixel-6 gap; browser is the localhost Lighthouse noise. Redirects tested on the build: both old URLs 308 to their Ipad equivalents. Deployed.
+**Verify:** pages, words (the renamed hub carries 1,303 words), similarity, faq, schema, local-facts all pass; links carries only the pre-existing pixel-6 gap; browser is the localhost Lighthouse noise. Redirects tested on the build: both old URLs 308 to their iPad equivalents. Deployed.
 
 ## Session 2026-08-11 — Batch 2, session 1b: About, parking, service area, years out of the listings
 
@@ -248,7 +248,7 @@ Twelve models seeded after verifying Apple's current lineup (web-checked, not gu
 
 ### About
 
-Family-owned is now in the lead, the AnswerBox, the who-we-are prose and a key fact, with no duration claimed because the founding year is still missing. The verified device list (phones, Ipads and tablets, laptops, desktops, MacBooks, gaming computers, game consoles) is on the page: consoles and unlocking link to their pages, MacBooks and gaming computers are named without links until their pages exist. Unlocking now names screen locks and FRP with the proof-of-ownership condition. The rewrite went ahead now rather than waiting for session 2, because naming-without-linking covers the gap and the page was carrying worse problems: "prices published in full", "every price on the site" and "where a model shows Call for quote" all survived the price scrub as false claims, and are now rewritten to the quote-at-counter reality.
+Family-owned is now in the lead, the AnswerBox, the who-we-are prose and a key fact, with no duration claimed because the founding year is still missing. The verified device list (phones, iPads and tablets, laptops, desktops, MacBooks, gaming computers, game consoles) is on the page: consoles and unlocking link to their pages, MacBooks and gaming computers are named without links until their pages exist. Unlocking now names screen locks and FRP with the proof-of-ownership condition. The rewrite went ahead now rather than waiting for session 2, because naming-without-linking covers the gap and the page was carrying worse problems: "prices published in full", "every price on the site" and "where a model shows Call for quote" all survived the price scrub as false claims, and are now rewritten to the quote-at-counter reality.
 
 ### Parking, verified at last
 
@@ -264,11 +264,11 @@ Labels removed, 5 template sites: the release-year band headings on the brand hu
 
 ### Stale price copy, found in the sweep's path
 
-Both year-bearing tables turned out to be broken price-scrub leftovers: headers still said "Price" and "Repairs from (CAD)" with years and repair counts rendering under the wrong columns. The brand hub summary table is deleted (the model grid above it already carries everything it had left); the Tier 3 table became a models-covered grid under the same cost H2, answered quote-first. Also fixed on the way: the Calgary place page's "the full list is on the repair prices page", Chestermere's "check the published price", the awaiting-models lead's "we have not published prices for them", and Iphone-6s-plus's "published price list".
+Both year-bearing tables turned out to be broken price-scrub leftovers: headers still said "Price" and "Repairs from (CAD)" with years and repair counts rendering under the wrong columns. The brand hub summary table is deleted (the model grid above it already carries everything it had left); the Tier 3 table became a models-covered grid under the same cost H2, answered quote-first. Also fixed on the way: the Calgary place page's "the full list is on the repair prices page", Chestermere's "check the published price", the awaiting-models lead's "we have not published prices for them", and iphone-6s-plus's "published price list".
 
 **Verify:** 12 of 14, identical to before the session. The two failures are the pre-existing pixel-6 single-inbound-link gap and the browser audit's localhost Lighthouse target. Zero orphans, zero internal 404s, words/similarity/faq/schema/local-facts all pass.
 
-**Blocked / open:** founding year (blocks any duration claim), the session-2 service pages (now six: FRP, screen lock unlocking, consoles repair list, gaming computers, MacBook, accessories content), and the standing client questions. The Ipad rename and latest-model seeding are deliberately not in this session; the keyword-map report goes to the agency before the rename ships.
+**Blocked / open:** founding year (blocks any duration claim), the session-2 service pages (now six: FRP, screen lock unlocking, consoles repair list, gaming computers, MacBook, accessories content), and the standing client questions. The iPad rename and latest-model seeding are deliberately not in this session; the keyword-map report goes to the agency before the rename ships.
 
 **Template**
 
@@ -285,7 +285,7 @@ Both year-bearing tables turned out to be broken price-scrub leftovers: headers 
 
 ## Session 2026-08-10 (fourth) — Game console repair and the accessories shelf
 
-**Asked:** two WhatsApp forwards from the client: "In repairs please add Gaming consoles XBox, XBox 1 series PS4 ps5 Nintendo Switch" and "Apart from repairs Please add phones, Ipads and tablet accessories- cases, tamper glass, screen protectors and privacy screen protectors".
+**Asked:** two WhatsApp forwards from the client: "In repairs please add Gaming consoles XBox, XBox 1 series PS4 ps5 Nintendo Switch" and "Apart from repairs Please add phones, iPads and tablet accessories- cases, tamper glass, screen protectors and privacy screen protectors".
 
 **Done:**
 
@@ -295,7 +295,7 @@ Xbox One, Xbox Series X and Series S, PlayStation 4, PlayStation 5, Nintendo Swi
 
 ### /accessories, a what-we-stock page rather than a shop
 
-Cases, tempered glass, film screen protectors and privacy screen protectors, for phones, Ipads and tablets. No prices, no cart, and no per-model stock claims: the page says stock varies and the phone number is the stock check, which is the honest version of a retail page for a walk-in counter. Definition patterns for the protector types, a real comparison table (film vs tempered vs privacy), and an honest-limits column saying plainly what the page does not promise. One claim to flag to the client: the page says a protector bought at the counter is fitted at the counter, which is standard practice for a shop that replaces screens but was not explicitly confirmed. Added to the header nav (six items now) and the footer Devices column.
+Cases, tempered glass, film screen protectors and privacy screen protectors, for phones, iPads and tablets. No prices, no cart, and no per-model stock claims: the page says stock varies and the phone number is the stock check, which is the honest version of a retail page for a walk-in counter. Definition patterns for the protector types, a real comparison table (film vs tempered vs privacy), and an honest-limits column saying plainly what the page does not promise. One claim to flag to the client: the page says a protector bought at the counter is fitted at the counter, which is standard practice for a shop that replaces screens but was not explicitly confirmed. Added to the header nav (six items now) and the footer Devices column.
 
 ### Housekeeping found on the way
 
@@ -313,7 +313,7 @@ The client supplied a graphic of Google's FRP verification screens (the "Verify 
 
 ### Follow-up in the same session: the phone repair image
 
-The client supplied an exploded-view render of an Iphone Pro for the phone repair slot, replacing the Iphone 16 Pro Max rear from the previous change request. Two adjustments the pipeline needed: the 16:9 original sits on pure black, so a new `pad` option extends the canvas to 3:2 instead of cropping (a crop would clip the outer layers), and the slot is capped at the original's 738px width instead of upscaling to 1200, because a soft upscale is worse than a smaller sharp image. Renders on the home card, the /services card and the phone repair page. The image appears to be manufacturer marketing imagery; using it is the client's call and is recorded in IMAGE_EDITS. A higher-resolution original would sharpen the service page's wide rendering, worth asking for.
+The client supplied an exploded-view render of an iPhone Pro for the phone repair slot, replacing the iPhone 16 Pro Max rear from the previous change request. Two adjustments the pipeline needed: the 16:9 original sits on pure black, so a new `pad` option extends the canvas to 3:2 instead of cropping (a crop would clip the outer layers), and the slot is capped at the original's 738px width instead of upscaling to 1200, because a soft upscale is worse than a smaller sharp image. Renders on the home card, the /services card and the phone repair page. The image appears to be manufacturer marketing imagery; using it is the client's call and is recorded in IMAGE_EDITS. A higher-resolution original would sharpen the service page's wide rendering, worth asking for.
 
 ### Follow-up in the same session: the map loads by default
 
@@ -403,14 +403,14 @@ The audit gap is closed too: scripts/link-graph.ts now fails on any internal lin
 - Copy scrubbed in lib/content/services.ts, lib/content/local.ts, home and services cards, and the trademark notice. Remaining grep hits are historical comments and the price archive, which keeps its rows as a record with a do-not-restore note
 - CLAUDE.md Section 2.1, the content-model counts and the Tier 4 counts updated
 
-**Similarity after the removal, the number the change request asked for:** the brand tier, the worst tier on the site and a named follow-up in CLAUDE.md, moved from 38.0% median / 63%+ worst pair (nine hubs) to **29.9% median / 45.7% worst pair** (five hubs). Model tier worst pair is 51.4% (Iphone 14 Pro / 14 Pro Max), all pairs under the 70% threshold. The legacy handsets were propping the numbers down, as predicted, but the removal still nets out as the tiers' best figures to date.
+**Similarity after the removal, the number the change request asked for:** the brand tier, the worst tier on the site and a named follow-up in CLAUDE.md, moved from 38.0% median / 63%+ worst pair (nine hubs) to **29.9% median / 45.7% worst pair** (five hubs). Model tier worst pair is 51.4% (iPhone 14 Pro / 14 Pro Max), all pairs under the 70% threshold. The legacy handsets were propping the numbers down, as predicted, but the removal still nets out as the tiers' best figures to date.
 
 ### The three images
 
 All three sourced from Unsplash (free tier, not Unsplash+), committed under _source, processed through the standard 3:2 pipeline so the media frame is identical across the service cards:
 
-- service-phone-repair: the back of an Iphone 16 Pro Max in titanium (Amanz, LqMK_dwsaxs), the camera array that identifies the model. Allowed under the revised 8.9 rule
-- service-tablet-repair: a hand holding an Ipad on its lock screen (Henry Ascroft, 7OFnb7NOvjw), replacing the SIM-tray corner shot
+- service-phone-repair: the back of an iPhone 16 Pro Max in titanium (Amanz, LqMK_dwsaxs), the camera array that identifies the model. Allowed under the revised 8.9 rule
+- service-tablet-repair: a hand holding an iPad on its lock screen (Henry Ascroft, 7OFnb7NOvjw), replacing the SIM-tray corner shot
 - service-password-reset: a phone showing the post-factory-reset welcome screen (Sam Grozyan, imOSfUb6Rg4), replacing the Instagram login screen the client had originally supplied and has now reversed on. No social branding anywhere in the three
 
 ### Verification
@@ -456,9 +456,9 @@ Two dead fields went with the rewrite. `priceKey` on the `/services` card type i
 
 The link labels also gained `mt-auto`, so six links sit on one line per row rather than six heights.
 
-### tablet-repair versus Ipad-repair
+### tablet-repair versus ipad-repair
 
-`/services/Ipad-repair` **does not exist and never has.** It is one of the pre-Phase-5 URLs listed in `EXPECTED_404` in `scripts/audit-pages.ts`, and it 404s. `/services/tablet-repair` is the canonical route: registered, built, and the one the `/services` page and `DeviceGrid` both linked to.
+`/services/ipad-repair` **does not exist and never has.** It is one of the pre-Phase-5 URLs listed in `EXPECTED_404` in `scripts/audit-pages.ts`, and it 404s. `/services/tablet-repair` is the canonical route: registered, built, and the one the `/services` page and `DeviceGrid` both linked to.
 
 The home page was the only place linking to the dead one. Production never emitted it, because `shouldRenderLink` gates on the registry and an unregistered path is not built, so the card rendered with no link at all; in development it pointed at a 404. **Removing the device section orphaned nothing.** The card now links to `/services/tablet-repair` and the grid is complete.
 
@@ -506,7 +506,7 @@ The first deploy to a new Vercel project failed the build outright: `lib/env-ass
 | --- | --- | --- | --- | --- | --- | --- |
 | `/` | **96** | 100 | 100 | 2.65s | 0.000 | 77ms |
 | `/services/laptop-repair` | **97** | 100 | 100 | 2.20s | 0.000 | 141ms |
-| `/repairs/Iphone-screen-replacement` | **98** | 100 | 100 | 1.72s | 0.000 | 72ms |
+| `/repairs/iphone-screen-replacement` | **98** | 100 | 100 | 1.72s | 0.000 | 72ms |
 
 Every category at or above 95 on the median run, against Phase 6's 92 to 96. SEO reads 66 to 69 because this host is deliberately noindexed; `audit-lighthouse` recognises that and does not apply the SEO target. **Do not "fix" it by removing the noindex.** LCP still misses the 2.0s target in Section 8.1 on the home page at 2.65s, though the repair page reaches 1.72s.
 
@@ -528,7 +528,7 @@ Rebuilding while `next start` held `.next` open produced an output whose prerend
 - **`/repair/google-pixel/pixel-6` still has one inbound link**, against an internal minimum of two. It is not an orphan and there are no internal 404s. `/repair-prices` was the one page that linked all 84 models, and its replacement is the HTML sitemap at `/sitemap`, which CLAUDE.md Section 9 rule 9 calls the orphan insurance policy and which Phase 8 has not built. Rule 7, "every service hub links to its top 6 popular models", would also close it and is likewise unimplemented.
 - **The `WebSite` `SearchAction` in `lib/seo/schema.ts` still points at `/repair-prices?q=`**, a URL that 301s to a page with no search. Left alone because the fix is a decision, not an edit: either the site gets a search page or the `SearchAction` comes out, and CLAUDE.md Section 8.2 currently requires it.
 - **Attribution for both supplied images.** `photographer` is `TODO(client)` on `service-phone-unlocking` and `service-password-reset`, and the manifest says "Supplied by the client" where the others link a source page. If they came from a stock library, the licence and the credit both need recording before launch.
-- **The ten Tier 3 h1s still read "... Prices"**, for example "Iphone Screen Replacement Prices", and prose across the site still discusses pricing. Both are the 7a-ii work, not link text, and changing an h1 moves the title, the meta description and the keyword map with it.
+- **The ten Tier 3 h1s still read "... Prices"**, for example "iPhone Screen Replacement Prices", and prose across the site still discusses pricing. Both are the 7a-ii work, not link text, and changing an h1 moves the title, the meta description and the keyword map with it.
 
 **Next:** confirm which Vercel project is the real one, then Phase 7 guides.
 
@@ -552,7 +552,7 @@ The four regressions reported at the end of Phase 6.9 are all closed, and three 
 
 | Was wrong | Why | Now |
 | --------- | --- | --- |
-| 18 model pages rendered "Ipad-3" instead of "Ipad 3" | `hydrateModel` took an optional name lookup no caller passed | Names come from a slug map built over the model constant |
+| 18 model pages rendered "ipad-3" instead of "iPad 3" | `hydrateModel` took an optional name lookup no caller passed | Names come from a slug map built over the model constant |
 | 9 brand hubs lost their "Last updated" line | The brand document that carried `_updatedAt` became a code constant | Newest model `_updatedAt`, falling back to flat services for laptops-desktops, which has no models |
 | Home showed "to Moto X Play" instead of "to Moto G (3rd gen)" | `order(releaseYear desc, name asc)` lost its name tie-break | `byYearThenName`, comparing by code point because GROQ does and `localeCompare` disagrees on punctuation |
 | /contact and /locations listed five unpublished neighbourhoods | `NEAREST_LOCATIONS_QUERY` filtered `published` and ordered by `distanceKm`; the Phase 6.9 constant kept neither, and only Calgary and Forest Lawn are published | Both restored, and locations re-exported as whole documents rather than a projection |
@@ -627,7 +627,7 @@ That is a single atomic change across the query layer plus a `sanity typegen` re
 - **Staging populated.** `sanity dataset copy` and `dataset import` both call `datasets.list()` first, which needs a grant none of the three tokens has, so both fail before they start. `scripts/copy-dataset.ts` copies documents through the client API instead, which needs no such grant. Strong references mean creation order matters, so it writes by dependency: settings and leaf types, then brands and repair types, then models, then price groups, then price entries.
 - **Token grants are not what their names suggest**, and this cost time. The read token reads production. The write token writes to both datasets. The admin token can neither read production documents nor create in staging. Using one token for both ends silently returns zero rows.
 - **Hard guard added and demonstrated.** `FORBIDDEN_DATASETS` exits before touching anything when the target is production.
-- **Migration run on staging: 917 content documents to 188.** 729 deleted. Iphone 8 Plus went from twelve `priceEntry` documents to one document with twelve array entries, one of which carries a price.
+- **Migration run on staging: 917 content documents to 188.** 729 deleted. iPhone 8 Plus went from twelve `priceEntry` documents to one document with twelve array entries, one of which carries a price.
 - **`lib/content/hydrate-prices.ts`**, the TypeScript join that rebuilds the exact `prices` shape every page already consumes, from the array plus the repair-type constant. The refactor is a move, and a move that changes every consumer is a rewrite in disguise.
 
 **THE FINDING. Derivation is lossless for zero of 156 models.**
@@ -727,9 +727,9 @@ The cause was oversized sources, not too many images. Nothing on this site rende
 | ------------------------------------ | --------- | ------------ | ------------ |
 | `/`                                  | 94        | **84**       | **95**       |
 | `/services/laptop-repair`            | 95        | 96           | 93           |
-| `/repairs/Iphone-screen-replacement` | 92        | 89           | **96**       |
+| `/repairs/iphone-screen-replacement` | 92        | 89           | **96**       |
 
-**The performance comparison from this session is not trustworthy, and the reason is worth recording.** Three median-of-five samples were taken against the same deployment. On the third, `/repairs/Iphone-screen-replacement`, a page carrying **no images at all**, scored 72 with a Total Blocking Time of 1,477 ms, having scored 96 with a TBT of 158 ms twenty minutes earlier. Nothing in the build can do that.
+**The performance comparison from this session is not trustworthy, and the reason is worth recording.** Three median-of-five samples were taken against the same deployment. On the third, `/repairs/iphone-screen-replacement`, a page carrying **no images at all**, scored 72 with a Total Blocking Time of 1,477 ms, having scored 96 with a TBT of 158 ms twenty minutes earlier. Nothing in the build can do that.
 
 The measuring machine had been running Chrome continuously for hours. Individual runs inside a single batch spanned 71 to 97 on one page.
 
@@ -768,14 +768,14 @@ What is directional but not provable from here: the 1600px to 1200px cap coincid
 
 **Done:**
 
-- **Brand cards with no manufacturer marks.** A wordmark in Plus Jakarta Sans, the palette's green dot, and a generic device silhouette drawn as an SVG at stroke width 1.5. Three silhouettes: phone, tablet, laptop. Deliberately generic outlines, because a recognisable Iphone shape implies the same authorised-service-provider relationship a logo does. `brand.logo` in Sanity stays empty and functional.
+- **Brand cards with no manufacturer marks.** A wordmark in Plus Jakarta Sans, the palette's green dot, and a generic device silhouette drawn as an SVG at stroke width 1.5. Three silhouettes: phone, tablet, laptop. Deliberately generic outlines, because a recognisable iPhone shape implies the same authorised-service-provider relationship a logo does. `brand.logo` in Sanity stays empty and functional.
 - **The independence notice**, in the footer site-wide and again on `/repair-prices` and every brand hub, which are the pages where manufacturer names appear most densely.
 - **A verified demo image set of six placements from five photographs**, self-hosted under `public/demo/`, sourced by hand from Unsplash and processed to ratio at 1600px, quality 74, each with a 16px base64 blur placeholder.
 - **`content/image-manifest.md`**, generated from `lib/content/images.ts` rather than hand-maintained, recording slot, file, ratio, size, photographer, source URL and alt text, plus every slot deliberately left empty and why.
 - **`/styleguide/images`**, a noindex contact sheet showing every image at its real crop beside its metadata, and the empty slots with their reasons. This is the page to review before the client meeting.
 - **`pnpm audit:weight`**, a before-and-after transfer-weight report, and the correction that a browser fetches one srcset candidate rather than all ten.
 
-**The constraint that actually bound.** "No visible manufacturer logos or recognisable device models in frame" is far harder to satisfy for device-repair photography than it sounds. Eleven candidates were downloaded and reviewed by eye. **Six were rejected**: two for a readable Apple logo and "Authorized Service Provider Only" text on an Iphone battery, two for a Samsung wordmark on an SSD, one for Lenovo and LG marks on a laptop battery, and one for being general hand tools rather than device repair. Five passed and are in the set.
+**The constraint that actually bound.** "No visible manufacturer logos or recognisable device models in frame" is far harder to satisfy for device-repair photography than it sounds. Eleven candidates were downloaded and reviewed by eye. **Six were rejected**: two for a readable Apple logo and "Authorized Service Provider Only" text on an iPhone battery, two for a Samsung wordmark on an SSD, one for Lenovo and LG marks on a laptop battery, and one for being general hand tools rather than device repair. Five passed and are in the set.
 
 That is why six of the seven repair categories, both home split images, all three process steps, and the tablet, unlocking and password-reset service pages carry no photograph. Those subjects are inherently pictures of a specific handset or a branded operating system.
 
@@ -798,7 +798,7 @@ The +1 to +3 KB on pages with no image is the footer notice.
 | -------------------------------------------------------- | ------ | -------- | --------- | --------- | ----- |
 | `/` (hero added)                                         | **94** | 92       | 2.57s     | **0.000** | 200ms |
 | `/services/laptop-repair` (image added)                  | **95** | 94       | **2.42s** | **0.000** | 169ms |
-| `/repairs/Iphone-screen-replacement` (control, no image) | 92     | 92       | 2.57s     | **0.000** | 256ms |
+| `/repairs/iphone-screen-replacement` (control, no image) | 92     | 92       | 2.57s     | **0.000** | 256ms |
 
 No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessibility and best practices stayed 100. The image-bearing service hub posted the best LCP on the site.
 
@@ -892,7 +892,7 @@ No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessi
 
 **Done:**
 
-- **URL architecture revised.** The original map had four page types competing for Iphone repair intent. The brand-specific Tier 2 hubs were removed rather than built: `/repair/apple-Iphone` already owns "which Iphone do you have", and nothing distinguished a second page on the same intent. Tier 2 is now 7 device-category and non-device services at `/services/[service]`. Tier 3 is 16 pages at `/repairs/[repair]`, a flat namespace kept separate from `/repair/` so a repair slug can never collide with a model slug. Nothing was ever live at the old URLs, so they 404 rather than redirect, and `pnpm audit:pages` asserts that on five of them.
+- **URL architecture revised.** The original map had four page types competing for iPhone repair intent. The brand-specific Tier 2 hubs were removed rather than built: `/repair/apple-iphone` already owns "which iPhone do you have", and nothing distinguished a second page on the same intent. Tier 2 is now 7 device-category and non-device services at `/services/[service]`. Tier 3 is 16 pages at `/repairs/[repair]`, a flat namespace kept separate from `/repair/` so a repair slug can never collide with a model slug. Nothing was ever live at the old URLs, so they 404 rather than redirect, and `pnpm audit:pages` asserts that on five of them.
 - **23 new pages, 25,364 words of authored prose.** Median 1,029 words per page, lowest 955, all above the 900-word floor. `pnpm audit:words` counts the authored copy in the content modules rather than guessing from rendered HTML, and excludes tables and FAQ answers so a low count cannot be fixed by padding them.
 - **The `/repairs/*` cross-model price table.** One repair, every model, sorted cheapest first, each model name linking to its own page. Quote-only models are listed separately and covered by a `ContactAction`, never a price-less Offer. Four of the sixteen have no per-model data (laptop and computer work is flat-priced), so those carry a comparison table instead.
 - **Real external citations.** The CRTC Wireless Code decision (Telecom Regulatory Policy CRTC 2017-200) on `/services/phone-unlocking`, which is the page that tells visitors they can probably get this free from their own carrier. Microsoft's Windows 10 end-of-support date on the laptop and computer pages.
@@ -949,7 +949,7 @@ No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessi
 
 - **Rich Results has no public API** and has to be run by hand at `search.google.com/test/rich-results`. The four URLs, one per template, are listed in `CLAUDE.md` Section 12.1.
 - Open questions 1 to 18 in `CLAUDE.md` Section 12 are unchanged.
-- The Ipad watchlist opened in `CLAUDE.md` Section 8.6.1, for review 90 days after launch.
+- The iPad watchlist opened in `CLAUDE.md` Section 8.6.1, for review 90 days after launch.
 
 **Next:** Phase 6, the local and neighbourhood tiers, after a decision on the eleven-page neighbourhood count.
 
@@ -994,7 +994,7 @@ No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessi
 **Decisions:**
 
 - **Model-page FAQs cut from eight to four.** The site-wide FAQ answers are identical on every model page in a category, and at eight per page they were roughly half the body text, which pushed 25 pairs over the similarity threshold. This was a template problem, not a threshold problem: four keeps the useful answers without letting shared text dominate a page whose value is its model-specific content. The full set stays on `/faq`.
-- **Ipad Air 4 and Air 5 rewritten rather than unpublished.** They were the one pair still failing at 70.7 percent, and they are genuinely near-identical hardware. Rewriting both to lead with what actually differs, the A14 against the M1 and the Centre Stage camera, brought the pair to 67.2 percent.
+- **iPad Air 4 and Air 5 rewritten rather than unpublished.** They were the one pair still failing at 70.7 percent, and they are genuinely near-identical hardware. Rewriting both to lead with what actually differs, the A14 against the M1 and the Centre Stage camera, brought the pair to 67.2 percent.
 - **A brand and model mismatch is a 404, not a redirect.** Two URLs resolving to one page is exactly the duplicate this phase exists to avoid.
 - **The similarity threshold was never touched.** The failing content was fixed.
 
@@ -1092,7 +1092,7 @@ No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessi
 3. `pnpm seed` run twice produces an identical content hash, `b13a7dbd...`, over all 917 documents with the volatile `_rev` and timestamp fields stripped.
 4. Counts reported by the seed and independently by `pnpm seed:verify`.
 5. Both guards proven firing via `pnpm prove:validation` plus `pnpm sanity:validate`: the thin-content guard rejected a model published with no price and no content, and the price rule rejected a row with neither a price nor quote-only. With the probes removed, all 917 documents validate with zero errors.
-6. `/studio` returns 200 and serves the Studio. The "Add standard repairs" action was exercised headlessly on the Iphone 16: 13 repair types apply to a phone, 8 were missing, 8 were created, a second run would add 0, and the dataset was restored.
+6. `/studio` returns 200 and serves the Studio. The "Add standard repairs" action was exercised headlessly on the iPhone 16: 13 repair types apply to a phone, 8 were missing, 8 were created, a second run would add 0, and the dataset was restored.
 7. `/styleguide/data` renders every block from live data. The four printed JSON-LD payloads contain no null, no undefined, no empty string, no empty array or object.
 8. Full webhook round trip: unsigned POST rejected 401, bad signature rejected 401, signed webhook 200 and the price changed on the live site without a redeploy, then restored.
 9. `/studio` carries `<meta name="robots" content="noindex, nofollow">` and `robots.txt` disallows `/studio` and `/api/`.
@@ -1100,7 +1100,7 @@ No page fell below its previous median, and CLS stayed 0.000 everywhere. Accessi
 **Decisions where the brief left room:**
 
 - **Compact seed JSON expanded by the script, rather than 917 literal documents.** `prices.json` records the printed list once and the script expands shared rows into one entry per model. `models-modern.json` is grouped into families. Hand-writing every document as literal JSON would have been thousands of lines with no extra fidelity and far more room for a transcription error.
-- **Modern models grouped into 17 families, not treated as 102 individuals.** The repair facts that matter genuinely differ by family, not by handset: Face ID pairing on Iphone X and later, laminated versus non-laminated Ipad glass, the sealed folding display on Z Fold and Z Flip, the under-display fingerprint reader on Pixel 6 and later. Each family carries its own `commonIssues` and a `familyIntro` naming the specific model. See the open question below about whether this is the right call.
+- **Modern models grouped into 17 families, not treated as 102 individuals.** The repair facts that matter genuinely differ by family, not by handset: Face ID pairing on iPhone X and later, laminated versus non-laminated iPad glass, the sealed folding display on Z Fold and Z Flip, the under-display fingerprint reader on Pixel 6 and later. Each family carries its own `commonIssues` and a `familyIntro` naming the specific model. See the open question below about whether this is the right call.
 - **"Add standard repairs" creates rows as quote-only, not blank.** A genuinely blank row fails validation the instant it is created, and an unpriced row has to render "Call for quote" anyway. The owner replaces a toggle with a number.
 - **`priceEntry` validation moved from the document root to the fields.** A root-level rule looked correct and passed review, but `sanity documents validate` never executed it, so the guard was silently dead. Field-level rules run, and they put the error next to the input in the Studio.
 - **Studio config moved behind a client boundary** (`app/studio/[[...tool]]/Studio.tsx`). The config pulls in the schema, structure and preview pane, all of which call `React.createContext` at module scope, which fails in the server bundle.

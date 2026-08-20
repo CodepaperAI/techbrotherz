@@ -89,7 +89,7 @@ These live in `content/data/site-settings.ts`. Code reads them from there. The t
 
 Do not add any others. Do not imply any others.
 
-Cell phone repair, Iphone repair, Samsung Galaxy repair, Google Pixel repair, Ipad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, Google FRP removal (proof of ownership required, added 2026-08 on the client's instruction), game console repair (Xbox One, Xbox Series X and S, PS4, PS5, Nintendo Switch, added 2026-08 on the client's instruction; the client has not said which console repairs are carried out, so the page is diagnose-first and claims no specific fix and no price), phone / Ipad / tablet / laptop accessories (confirmed with specifics 2026-08: cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers, HDMI cables; no prices and no stock-level claims, the phone number is the stock check), MacBook repair, gaming computer repair, and screen lock unlocking (all three verified 2026-08 by the owner's About copy; named on `/about` without links, pages queued for the next service session; screen lock unlocking carries the same proof-of-ownership question as FRP), device sales, buying and trade-ins on phones, computers and laptops (confirmed 2026-08, /buy-sell-trade; new vs refurbished unconfirmed, question 30), water and liquid damage repair on laptops (confirmed 2026-08; wider scope is question 32), data recovery (confirmed 2026-08), and Google unlocking / FRP removal as its own page (/services/frp-removal, proof of ownership required, question 33).
+Cell phone repair, iPhone repair, Samsung Galaxy repair, Google Pixel repair, iPad repair, tablet repair, computer and laptop repair, virus removal, Windows installation with Office and security, desktop clean-up and tune-up, program installation, hardware installation, diagnostics, password reset, laptop screen replacement, DC / charging port replacement, laptop keyboard replacement, carrier unlocking, Google FRP removal (proof of ownership required, added 2026-08 on the client's instruction), game console repair (Xbox One, Xbox Series X and S, PS4, PS5, Nintendo Switch, added 2026-08 on the client's instruction; the client has not said which console repairs are carried out, so the page is diagnose-first and claims no specific fix and no price), phone / iPad / tablet / laptop accessories (confirmed with specifics 2026-08: cases, tempered glass, privacy screen protectors, cables and chargers, MacBook chargers, HDMI cables; no prices and no stock-level claims, the phone number is the stock check), MacBook repair, gaming computer repair, and screen lock unlocking (all three verified 2026-08 by the owner's About copy; named on `/about` without links, pages queued for the next service session; screen lock unlocking carries the same proof-of-ownership question as FRP), device sales, buying and trade-ins on phones, computers and laptops (confirmed 2026-08, /buy-sell-trade; new vs refurbished unconfirmed, question 30), water and liquid damage repair on laptops (confirmed 2026-08; wider scope is question 32), data recovery (confirmed 2026-08), and Google unlocking / FRP removal as its own page (/services/frp-removal, proof of ownership required, question 33).
 
 **Removed 2026-08 on the client's instruction:** LG, Motorola, HTC and Google Nexus repair. The four brand hubs and fifteen model pages 301 to `/services/phone-repair`. Open question for the client: refused outright, or still taken at the counter without promotion? If the latter, one line on `/services/phone-repair` can say so.
 
@@ -268,15 +268,15 @@ Status legend: `built` / `pending`. Update this table as pages ship.
 
 ### The four templates and what each one answers
 
-Phase 5 revised this map. The original plan had four page types competing for Iphone repair intent: the Tier 4 brand hub, a Tier 2 `/services/Iphone-repair` hub, a Tier 3 repair page under it, and a Tier 5 local page. The brand hub shipped in Phase 4 and already owns the device-catalogue intent, so the brand-specific Tier 2 hubs were removed rather than built to compete with it.
+Phase 5 revised this map. The original plan had four page types competing for iPhone repair intent: the Tier 4 brand hub, a Tier 2 `/services/iphone-repair` hub, a Tier 3 repair page under it, and a Tier 5 local page. The brand hub shipped in Phase 4 and already owns the device-catalogue intent, so the brand-specific Tier 2 hubs were removed rather than built to compete with it.
 
 | Template                  | Answers                                         | Example query                    |
 | ------------------------- | ----------------------------------------------- | -------------------------------- |
 | `/services/[service]`     | What this service covers and how it works       | "phone repair"                   |
-| `/repairs/[repair]`       | One repair, every model we do it on, all prices | "Iphone screen replacement cost" |
-| `/repair/[brand]`         | Which device do you have                        | "Iphone repair prices"           |
-| `/repair/[brand]/[model]` | This exact handset                              | "Iphone 8 plus repair cost"      |
-| Tier 5, Phase 6           | Where we are, and getting here                  | "Iphone screen repair calgary"   |
+| `/repairs/[repair]`       | One repair, every model we do it on, all prices | "iphone screen replacement cost" |
+| `/repair/[brand]`         | Which device do you have                        | "iphone repair prices"           |
+| `/repair/[brand]/[model]` | This exact handset                              | "iphone 8 plus repair cost"      |
+| Tier 5, Phase 6           | Where we are, and getting here                  | "iphone screen repair calgary"   |
 
 Nothing was ever live at the old Tier 2 and Tier 3 URLs, so **no redirects are needed and those URLs return 404**. `pnpm audit:pages` asserts that.
 
@@ -284,7 +284,7 @@ Nothing was ever live at the old Tier 2 and Tier 3 URLs, so **no redirects are n
 
 Device categories and non-device services only. No brand-specific hubs.
 
-`/services/phone-repair` · `/services/Ipad-repair` (renamed from `/services/tablet-repair` 2026-08 on the client's instruction; the old URL 301s) · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal` · `/services/game-console-repair`
+`/services/phone-repair` · `/services/ipad-repair` (renamed from `/services/tablet-repair` 2026-08 on the client's instruction; the old URL 301s) · `/services/laptop-repair` · `/services/computer-repair` · `/services/phone-unlocking` · `/services/password-reset` · `/services/virus-removal` · `/services/game-console-repair`
 
 `/services/game-console-repair` (added 2026-08) is the one hub with no price table, no covered-repairs grid and no brand links, because consoles have no models in `content/data/models.ts` and no confirmed repair list. It is diagnose-first by design until the client says which console repairs they actually carry out.
 
@@ -294,21 +294,21 @@ Device categories and non-device services only. No brand-specific hubs.
 
 A flat namespace, deliberately separate from `/repair/` so a repair slug can never collide with a brand or model slug. Each page is one repair across every model we do it on, sorted by price, which is the cut of the price data no other template presents.
 
-`/repairs/{Iphone-screen-replacement, Iphone-battery-replacement, Iphone-charging-port-repair, Iphone-camera-repair, Iphone-back-glass-replacement}` · `/repairs/{samsung-screen-replacement, samsung-battery-replacement, samsung-back-glass-replacement, samsung-charging-port-repair}` · `/repairs/Ipad-screen-replacement` · `/repairs/{laptop-screen-replacement, laptop-keyboard-replacement, laptop-charging-port-repair}` · `/repairs/{windows-installation, computer-tune-up, computer-diagnostics}`
+`/repairs/{iphone-screen-replacement, iphone-battery-replacement, iphone-charging-port-repair, iphone-camera-repair, iphone-back-glass-replacement}` · `/repairs/{samsung-screen-replacement, samsung-battery-replacement, samsung-back-glass-replacement, samsung-charging-port-repair}` · `/repairs/ipad-screen-replacement` · `/repairs/{laptop-screen-replacement, laptop-keyboard-replacement, laptop-charging-port-repair}` · `/repairs/{windows-installation, computer-tune-up, computer-diagnostics}`
 
 Copy for both tiers lives in `lib/content/services.ts` and `lib/content/repairs.ts`, typed, with every price read from `content/data/models.ts` through `buildPriceContext()` rather than written into the prose. A price change in the Studio moves every sentence that quotes it.
 
 ### Tier 4 — Programmatic (from `content/data/models.ts`), built
 
-5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 107 further models are seeded but unpublished, held back until someone writes them content of their own. The 35 seeded 2026-08 are the verified current ranges: the Ipad 11th gen, Mini 7, Air M2/M3/M4 and Pro M4/M5; the Iphone 16e, 17, Air, 17 Pro, 17 Pro Max and 17e; the Galaxy S25 Edge, S26, S26 Plus, S26 Ultra, Z Fold 7 and 8, Z Fold 8 Ultra, Z Flip 7, 7 FE and 8; and the Pixel 9 Pro XL, 9 Pro Fold, 9a and the Pixel 10 family. Pixel 11 and Pixel 10a are deliberately not seeded: neither was released and confirmed at the time. Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
+5 brand hubs at `/repair/[brand]`, and 69 model pages at `/repair/[brand]/[model]`, all prerendered. 107 further models are seeded but unpublished, held back until someone writes them content of their own. The 35 seeded 2026-08 are the verified current ranges: the iPad 11th gen, Mini 7, Air M2/M3/M4 and Pro M4/M5; the iPhone 16e, 17, Air, 17 Pro, 17 Pro Max and 17e; the Galaxy S25 Edge, S26, S26 Plus, S26 Ultra, Z Fold 7 and 8, Z Fold 8 Ultra, Z Flip 7, 7 FE and 8; and the Pixel 9 Pro XL, 9 Pro Fold, 9a and the Pixel 10 family. Pixel 11 and Pixel 10a are deliberately not seeded: neither was released and confirmed at the time. Every published model carries an introduction, three or more model-specific issues and a verdict. (9 hubs and 84 model pages until the 2026-08 removal of LG, Motorola, HTC and Google Nexus; those 19 URLs 301 to `/services/phone-repair`.)
 
 ### Tier 5 — Service and place, `/[locality]`, built
 
 Ten pages, differentiating on **service**, which is the axis the Phase 5 repair tier proved works.
 
-`/phone-repair-calgary` · `/Iphone-screen-repair-calgary` · `/samsung-repair-calgary` · `/Ipad-repair-calgary` · `/laptop-repair-calgary` · `/computer-repair-calgary` · `/phone-unlocking-calgary` · `/walk-in-phone-repair-calgary` · `/cell-phone-repair-chestermere`
+`/phone-repair-calgary` · `/iphone-screen-repair-calgary` · `/samsung-repair-calgary` · `/ipad-repair-calgary` · `/laptop-repair-calgary` · `/computer-repair-calgary` · `/phone-unlocking-calgary` · `/walk-in-phone-repair-calgary` · `/cell-phone-repair-chestermere`
 
-Nine pages since 2026-08: `/tablet-repair-calgary` was retired with the Ipad rename and 301s to `/Ipad-repair-calgary`, forfeiting "tablet repair calgary" as a primary keyword on the client's instruction.
+Nine pages since 2026-08: `/tablet-repair-calgary` was retired with the iPad rename and 301s to `/ipad-repair-calgary`, forfeiting "tablet repair calgary" as a primary keyword on the client's instruction.
 
 Cut in Phase 6: `/same-day-phone-repair-calgary` merged into the walk-in page (they differed by modifier, not service), `/laptop-repair-chestermere` (a second page leaning on the same single road fact), and both Airdrie pages (see below).
 
@@ -398,7 +398,7 @@ Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. The
 ### 8.3 AEO (getting quoted)
 
 - [ ] **AnswerBox directly under the H1.** Bolded 40 to 60 word direct answer that stands alone and names the entity ("TechBrotherz in Calgary charges ..."), then 3 to 5 "Key facts" bullets (price or range, time, warranty, appointment policy, location), then "Last updated" bound to Sanity `_updatedAt`.
-- [ ] **H2s phrased as real questions.** "How much does an Iphone 8 screen replacement cost in Calgary?" not "Pricing".
+- [ ] **H2s phrased as real questions.** "How much does an iPhone 8 screen replacement cost in Calgary?" not "Pricing".
 - [ ] **Self-contained paragraphs.** Each paragraph makes sense lifted out alone. No "as mentioned above". No pronoun referring across paragraphs. Restate the subject.
 - [ ] **Real `<table>` markup with `<th scope>` wherever prices, times or comparisons appear.** Never a div grid.
 - [ ] **Numbers, not adjectives.** "60-day warranty", "about 30 minutes", "$89.99 including part and labour". Not "fast", "affordable", "great".
@@ -426,7 +426,7 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/repair-prices`                                   | phone repair prices calgary              | cell phone repair cost calgary                |
 | `/warranty`                                        | phone repair warranty                    | 60 day repair warranty                        |
 | `/services/phone-repair`                           | cell phone repair                        | phone repair service, mobile phone repair     |
-| `/services/Ipad-repair`                            | Ipad repair                              | Ipad screen repair, android tablet repair     |
+| `/services/ipad-repair`                            | ipad repair                              | ipad screen repair, android tablet repair     |
 | `/services/laptop-repair`                          | laptop repair                            | notebook repair                               |
 | `/services/computer-repair`                        | computer repair                          | desktop pc repair                             |
 | `/services/phone-unlocking`                        | how to unlock a cell phone               | unlock phone canada, carrier unlock calgary   |
@@ -436,28 +436,28 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/services/virus-removal`                          | virus removal service                    | computer malware removal                      |
 | `/services/game-console-repair`                    | game console repair calgary              | xbox repair calgary, ps5 repair calgary, nintendo switch repair calgary |
 | `/accessories`                                     | phone accessories calgary                | screen protector calgary, privacy screen protector, phone cases calgary |
-| `/repairs/Iphone-screen-replacement`               | Iphone screen replacement                | Iphone screen repair cost                     |
-| `/repairs/Iphone-battery-replacement`              | Iphone battery replacement               | Iphone battery repair                         |
-| `/repairs/Iphone-charging-port-repair`             | Iphone charging port repair              | Iphone will not charge                        |
-| `/repairs/Iphone-camera-repair`                    | Iphone camera repair                     | Iphone camera replacement cost                |
-| `/repairs/Iphone-back-glass-replacement`           | Iphone back glass replacement            | cracked Iphone back                           |
+| `/repairs/iphone-screen-replacement`               | iphone screen replacement                | iphone screen repair cost                     |
+| `/repairs/iphone-battery-replacement`              | iphone battery replacement               | iphone battery repair                         |
+| `/repairs/iphone-charging-port-repair`             | iphone charging port repair              | iphone will not charge                        |
+| `/repairs/iphone-camera-repair`                    | iphone camera repair                     | iphone camera replacement cost                |
+| `/repairs/iphone-back-glass-replacement`           | iphone back glass replacement            | cracked iphone back                           |
 | `/repairs/samsung-screen-replacement`              | samsung screen replacement               | galaxy screen repair cost                     |
 | `/repairs/samsung-battery-replacement`             | samsung battery replacement              | galaxy battery repair                         |
 | `/repairs/samsung-back-glass-replacement`          | samsung back glass replacement           | galaxy back glass repair                      |
 | `/repairs/samsung-charging-port-repair`            | samsung charging port repair             | galaxy will not charge                        |
-| `/repairs/Ipad-screen-replacement`                 | Ipad screen replacement                  | Ipad glass replacement cost                   |
+| `/repairs/ipad-screen-replacement`                 | ipad screen replacement                  | ipad glass replacement cost                   |
 | `/repairs/laptop-screen-replacement`               | laptop screen replacement                | laptop screen repair cost                     |
 | `/repairs/laptop-keyboard-replacement`             | laptop keyboard replacement              | laptop keyboard repair cost                   |
 | `/repairs/laptop-charging-port-repair`             | laptop charging port repair              | laptop dc jack repair                         |
 | `/repairs/windows-installation`                    | windows installation                     | windows install service                       |
 | `/repairs/computer-tune-up`                        | computer tune up                         | computer clean up service                     |
 | `/repairs/computer-diagnostics`                    | computer diagnostics                     | pc diagnostic service                         |
-| `/repair/apple-Iphone`                             | Iphone repair prices                     | apple Iphone repair cost                      |
-| `/repair/apple-Iphone/Iphone-8-plus`               | Iphone 8 plus screen replacement         | Iphone 8 plus repair cost                     |
+| `/repair/apple-iphone`                             | iphone repair prices                     | apple iphone repair cost                      |
+| `/repair/apple-iphone/iphone-8-plus`               | iphone 8 plus screen replacement         | iphone 8 plus repair cost                     |
 | `/phone-repair-calgary`                            | phone repair calgary                     | cell phone repair calgary shop                |
-| `/Iphone-screen-repair-calgary`                    | Iphone screen repair calgary             | cracked Iphone screen calgary                 |
+| `/iphone-screen-repair-calgary`                    | iphone screen repair calgary             | cracked iphone screen calgary                 |
 | `/samsung-repair-calgary`                          | samsung repair calgary                   | samsung screen repair calgary                 |
-| `/Ipad-repair-calgary`                             | Ipad repair calgary                      | Ipad screen repair calgary                    |
+| `/ipad-repair-calgary`                             | ipad repair calgary                      | ipad screen repair calgary                    |
 | `/laptop-repair-calgary`                           | laptop repair calgary                    | laptop screen repair calgary                  |
 | `/computer-repair-calgary`                         | computer repair calgary                  | pc repair calgary                             |
 | `/phone-unlocking-calgary`                         | phone unlocking calgary                  | unlock phone calgary                          |
@@ -467,9 +467,9 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/locations/calgary/forest-lawn`                   | phone repair forest lawn                 | repair shop international avenue calgary      |
 | `/locations/chestermere`                           | repair shop near chestermere             | chestermere phone repair drive                |
 | `/blog/how-to-unlock-a-cell-phone-in-canada`     | how to unlock a cell phone               | unlock phone canada legally                   |
-| `/blog/Ipad-repair-vs-replacement-cost`          | Ipad repair vs replacement cost          | is it worth repairing an Ipad                 |
+| `/blog/ipad-repair-vs-replacement-cost`          | ipad repair vs replacement cost          | is it worth repairing an ipad                 |
 | `/blog/signs-your-laptop-needs-repair`           | signs your laptop needs repair           | laptop problems, when to repair a laptop      |
-| `/blog/Iphone-screen-repair-cost-calgary`        | Iphone screen repair cost calgary        | how much to fix Iphone screen calgary         |
+| `/blog/iphone-screen-repair-cost-calgary`        | iphone screen repair cost calgary        | how much to fix iphone screen calgary         |
 | `/blog/how-long-does-a-phone-screen-repair-take` | how long does a phone screen repair take | phone screen repair time                      |
 | `/blog/phone-water-damage-what-to-do-first`      | phone water damage what to do            | wet phone first steps                         |
 | `/blog/cracked-screen-vs-broken-lcd-difference`  | cracked screen vs broken lcd             | digitizer vs lcd difference                   |
@@ -568,12 +568,12 @@ Two templates, two different search intents. Keeping them apart is what stops th
 
 |               | `/repair/[brand]`                                                                           | `/repair/[brand]/[model]`                                                         |
 | ------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Intent        | Browsing. "Iphone repair calgary"                                                           | Deciding. "Iphone 8 plus screen repair calgary"                                   |
+| Intent        | Browsing. "iphone repair calgary"                                                           | Deciding. "iphone 8 plus screen repair calgary"                                   |
 | Answers       | Which models do you fix, and roughly what does it cost?                                     | What does _my_ device cost, and is it worth fixing?                               |
 | Carries       | Model grid newest first, brand price summary, repair types, process, models awaiting prices | Full price table, symptoms, what is included, the verdict, repair notes, siblings |
 | Never carries | A per-repair price table for one model                                                      | A grid of other models as its main content                                        |
 
-**The verdict section is the point of the model page.** It answers whether the device is still worth repairing, grounded in its age, the published repair price and whether it still receives OS updates. For an Iphone 4S the honest answer is no, and the page says no. A page that tells someone not to spend money is the page they trust and quote.
+**The verdict section is the point of the model page.** It answers whether the device is still worth repairing, grounded in its age, the published repair price and whether it still receives OS updates. For an iPhone 4S the honest answer is no, and the page says no. A page that tells someone not to spend money is the page they trust and quote.
 
 ### Revised offer rules
 
@@ -588,17 +588,17 @@ The master prompt said to emit a price-less `Offer` for quote-only repairs. **Th
 
 ### The 90-day watchlist
 
-Phase 4's similarity report put every one of its ten most-similar pairs in the Ipad range, clustered at 63 to 69 percent against a site median of 12.8 percent. They pass, and they are the least differentiated content on the site. **Review these 90 days after launch against real search data**, and cut or merge any that have not earned their place:
+Phase 4's similarity report put every one of its ten most-similar pairs in the iPad range, clustered at 63 to 69 percent against a site median of 12.8 percent. They pass, and they are the least differentiated content on the site. **Review these 90 days after launch against real search data**, and cut or merge any that have not earned their place:
 
 | Page                              | Why it is on the list                                                                                                           |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `/repair/apple-Ipad/Ipad-9th-gen` | Four modern Ipads whose genuine differences (laminated or not, Touch ID placement, M1 or A14) are thin to write 200 words about |
-| `/repair/apple-Ipad/Ipad-mini-6`  | as above                                                                                                                        |
-| `/repair/apple-Ipad/Ipad-air-4`   | as above                                                                                                                        |
-| `/repair/apple-Ipad/Ipad-air-5`   | as above                                                                                                                        |
-| `/repair/apple-Ipad/Ipad-2`       | Three models sharing one printed price, differing only by Retina, connector and thickness                                       |
-| `/repair/apple-Ipad/Ipad-3`       | as above                                                                                                                        |
-| `/repair/apple-Ipad/Ipad-4`       | as above                                                                                                                        |
+| `/repair/apple-ipad/ipad-9th-gen` | Four modern iPads whose genuine differences (laminated or not, Touch ID placement, M1 or A14) are thin to write 200 words about |
+| `/repair/apple-ipad/ipad-mini-6`  | as above                                                                                                                        |
+| `/repair/apple-ipad/ipad-air-4`   | as above                                                                                                                        |
+| `/repair/apple-ipad/ipad-air-5`   | as above                                                                                                                        |
+| `/repair/apple-ipad/ipad-2`       | Three models sharing one printed price, differing only by Retina, connector and thickness                                       |
+| `/repair/apple-ipad/ipad-3`       | as above                                                                                                                        |
+| `/repair/apple-ipad/ipad-4`       | as above                                                                                                                        |
 
 Phase 5 improved all of them, because the model-page FAQ block stopped being four shared answers and became four generated from each model's own record. The model tier's worst pair fell from 68.9 to 57.9 percent. The watchlist stands anyway: a page that passes a duplicate check can still fail to earn a click.
 
@@ -620,7 +620,7 @@ Phase 5 improved all of them, because the model-page FAQ block stopped being fou
 
 - `generateStaticParams` covers published models only. `dynamicParams` stays on, so a model published in the Studio afterwards renders on first request with no redeploy.
 - An unpublished or unknown model slug calls `notFound()`.
-- A brand and model mismatch, such as `/repair/samsung-galaxy/Iphone-8-plus`, is a **404, not a redirect**. Two URLs resolving to one page is the duplicate we are trying to avoid.
+- A brand and model mismatch, such as `/repair/samsung-galaxy/iphone-8-plus`, is a **404, not a redirect**. Two URLs resolving to one page is the duplicate we are trying to avoid.
 
 ---
 
@@ -668,7 +668,7 @@ ServiceCard, StepCard, Breadcrumbs, Nav, Footer).
    Case.** Principal words capitalised; articles, conjunctions and short
    prepositions stay lowercase unless first or last.
 2. **Service names are proper nouns** wherever they name the service (Phone
-   Repair, Ipad Repair, FRP Removal). Generic use stays lowercase: "most
+   Repair, iPad Repair, FRP Removal). Generic use stays lowercase: "most
    repairs take about 30 minutes".
 3. **AnswerBox copy, FAQ answers, `plainAnswer`, meta descriptions and JSON-LD
    stay sentence case.** These never pass through the display components, so
@@ -676,7 +676,7 @@ ServiceCard, StepCard, Breadcrumbs, Nav, Footer).
    the visible accordion and the FAQPage node come from one string, and the
    schema must stay sentence case.
 4. `titleCase()` **only raises case, never lowers it**, and skips any word
-   already carrying a capital, so Iphone, MacBook, FRP and TechBrotherz can
+   already carrying a capital, so iPhone, MacBook, FRP and TechBrotherz can
    never be mangled. Authored strings stay sentence case in the source.
 
 ### The voice split
@@ -733,11 +733,11 @@ A name and a count made nine cards look identical, so the card carries five thin
 
 1. **Silhouette panel**, soft green tint, brand green stroke, deepening on hover
 2. **Wordmark** in Plus Jakarta Sans
-3. **Model range**, e.g. "Iphone 4 to Iphone 16", from the oldest and newest published models
+3. **Model range**, e.g. "iPhone 4 to iPhone 16", from the oldest and newest published models
 4. **Model count**
 5. **Starting price**, the cheapest priced entry for that brand
 
-The range and the price are what differentiate the cards, and both are real catalogue data read from `content/data/models.ts`. Silhouettes map: every phone brand to `phone`, Apple Ipad to `tablet`, laptops and desktops to `laptop`.
+The range and the price are what differentiate the cards, and both are real catalogue data read from `content/data/models.ts`. Silhouettes map: every phone brand to `phone`, Apple iPad to `tablet`, laptops and desktops to `laptop`.
 
 ### The illustration fallback
 
@@ -885,7 +885,7 @@ The site must behave as one tightly connected graph.
 8. **Footer link matrix** gives every important page a site-wide link. See DESIGN.md Section on Footer.
 9. **HTML sitemap at `/sitemap`** lists every URL grouped by tier. This is the orphan insurance policy.
 10. **`scripts/link-audit.ts`** crawls the built site and fails CI if any page has fewer than 2 inbound internal links or any internal link 404s.
-11. **Reciprocal cross-linking between competing intents.** Example: `/blog/Ipad-repair-vs-replacement-cost` links to `/services/Ipad-repair` and `/Ipad-repair-calgary`, and both link back.
+11. **Reciprocal cross-linking between competing intents.** Example: `/blog/ipad-repair-vs-replacement-cost` links to `/services/ipad-repair` and `/ipad-repair-calgary`, and both link back.
 
 ---
 
@@ -971,7 +971,7 @@ Never commit real values. `.env.example` is committed, `.env.local` is git-ignor
 | 2      | Samsung **S8 screen is $299.99 but S8 Plus is $289.99**. The Plus is normally the more expensive part, so this looks like a transposition. Confirm both.                                                                                      | As supplied, flagged in Sanity with a note                                                                                                          |
 | 3      | The Samsung heading "Note 5 / 4 / 3 / 2" contains Note 8, 9, 10 and 10+ prices. We are reorganising into individual models in Sanity. Confirm each price maps to the model we assigned.                                                       | Reorganised, each price attached to its own model                                                                                                   |
 | 4      | The brief's "Language and Location" field says **India**. The business is in Calgary. Confirming we build for `en-CA` / Canada.                                                                                                               | `en-CA`, Canada, CAD                                                                                                                                |
-| 5      | The price catalogue tops out at Iphone 8, Galaxy Note 10 and LG G6. Modern models carry the highest search volume. We are seeding Iphone 11 to 16, Galaxy S20 to S25, recent Ipad and Pixel with `Call for quote`. Please supply real prices. | `quoteOnly: true` on all modern models                                                                                                              |
+| 5      | The price catalogue tops out at iPhone 8, Galaxy Note 10 and LG G6. Modern models carry the highest search volume. We are seeding iPhone 11 to 16, Galaxy S20 to S25, recent iPad and Pixel with `Call for quote`. Please supply real prices. | `quoteOnly: true` on all modern models                                                                                                              |
 | 6      | **Founding year.** What year did TechBrotherz open? Needed for E-E-A-T on `/about` and guide author boxes.                                                                                                                                    | Omitted entirely until supplied                                                                                                                     |
 | 7      | **Technician credentials.** Any certifications, manufacturer training, years of experience per technician? Needed for the `author` schema and GEO expertise signals.                                                                          | Omitted entirely until supplied                                                                                                                     |
 | 8      | **Real Google review data: LIVE as a dated snapshot since 2026-08-14.** The client asked for the reference site's 5.0 block; what shipped is their real figure, 4.8 with 732 reviews, read off Google's own embed card for their listing and verified by loading the embed the same day. The badge renders in the hero stat row and the reviews section, and `AggregateRating` now emits. The record lives in `siteSettings.reviewSummary` with `lastVerified: 2026-08-14`; it is a snapshot, not a feed, so it goes stale as reviews arrive. A restricted Places API key (or project access) upgrades it to auto-refreshing data and remains the standing ask. The verify guard still fails the build on any rating literal outside the data file. | 4.8 / 732 live, dated. API key still wanted for freshness. |
@@ -987,7 +987,7 @@ Never commit real values. `.env.example` is committed, `.env.local` is git-ignor
 | 18     | **"Nexus 5S" on the printed price list.** No such phone was made. We have mapped the $120 screen price to the **Nexus 5X**. Confirm, or tell us if you meant the Nexus 5.                                                                     | Mapped to Nexus 5X, flagged `needsVerification`                                                                                                     |
 | 30     | **Buying and selling phones: the specifics.** Buying was confirmed 2026-08 (selling has been in the brief since Phase 1) and is now a why-us point, worded to claim nothing more. Three questions: new phones, refurbished, or both? Do you take trade-ins against a repair? And should this have its own page, since "sell my phone calgary" is a real search term? | One numbered point on home, no claims beyond buy and sell. |
 | 31     | **Should OnePlus be named as a covered brand?** The reference site lists it; the client's own device list does not, so the brand strip leaves it under "other Android phones". One word adds the chip. | Not named. |
-| 32     | **Water damage scope: phones and Ipads too, or laptops only?** The client confirmed "Water Damage / Liquid damage Repair" in the laptop list (2026-08), so the `liquid-damage-repair` type applies to laptops only until told otherwise. The water-damage blog article stays advice-first and does not yet link the service; it links once the scope is confirmed. | Laptop-only type live. |
+| 32     | **Water damage scope: phones and iPads too, or laptops only?** The client confirmed "Water Damage / Liquid damage Repair" in the laptop list (2026-08), so the `liquid-damage-repair` type applies to laptops only until told otherwise. The water-damage blog article stays advice-first and does not yet link the service; it links once the scope is confirmed. | Laptop-only type live. |
 | 33     | **What proof of ownership does FRP removal require?** The receipt, the box, the Google credentials, something else? `/services/frp-removal` says "proof of ownership is required" without specifics and tells people to call, rather than inventing a policy. | Unspecified on the page, pending the client. |
 | 28     | **Motorola and LG: a reconciliation, not a confirmed instruction.** The client removed Motorola, LG, HTC and Nexus from repairs in 2026-08, then later asked the Services page to name "Motorola, LG and other Android phones". Working interpretation, built: the brand hubs and model pages stay deleted with their 301s intact, and Motorola and LG are named in the Services and About prose as device coverage, quoted at the counter. HTC and Nexus are not restored, being absent from the new list. **Client to confirm this reading.** | Prose coverage only, no hubs. |
 | 29     | **Is T2A 0R2 the postal code for 3317 17 Ave SE?** It appeared in the Google Business Profile service-area list (and on the Maps embed card), which very likely makes it the store's own postal code, open since question 10. **Not used until confirmed.** Once confirmed it completes `PostalAddress` in the schema. | Postal code still absent from the schema. |
@@ -1017,10 +1017,10 @@ Two things to know about that deployment:
 | ------------------------------------ | ---- | ---- | --- | --- | ----- | ----- | ----- |
 | `/`                                  | 92   | 100  | 100 | 100 | 2.58s | 0.000 | 301ms |
 | `/repair-prices`                     | 90   | 100  | 100 | 100 | 2.51s | 0.000 | 329ms |
-| `/repair/apple-Iphone`               | 92   | 100  | 100 | 100 | 2.57s | 0.000 | 258ms |
-| `/repair/apple-Iphone/Iphone-8-plus` | 94   | 100  | 100 | 100 | 2.28s | 0.000 | 198ms |
+| `/repair/apple-iphone`               | 92   | 100  | 100 | 100 | 2.57s | 0.000 | 258ms |
+| `/repair/apple-iphone/iphone-8-plus` | 94   | 100  | 100 | 100 | 2.28s | 0.000 | 198ms |
 | `/services/laptop-repair`            | 94   | 100  | 100 | 100 | 2.57s | 0.000 | 184ms |
-| `/repairs/Iphone-screen-replacement` | 92   | 100  | 100 | 100 | 2.57s | 0.000 | 252ms |
+| `/repairs/iphone-screen-replacement` | 92   | 100  | 100 | 100 | 2.57s | 0.000 | 252ms |
 
 **Accessibility, best practices and SEO are 100 on every page, and CLS is 0.000 on every page.** Performance sits at 90 to 94 against a target of 95, and **LCP at 2.3 to 2.6s misses the 2.0s target in Section 8.1**. Those two are real and are Phase 8 work. Individual runs reached 95 to 97 repeatedly, so the medians are close to the line rather than structurally short.
 
@@ -1044,15 +1044,15 @@ For comparison, the same build on `next start` on localhost measured 40 to 72 fo
 | -------------------------------------------------------- | ------ | -------- | ---- | --- | --------- | --------- | ----- |
 | `/` (hero image added)                                   | **94** | 92       | 100  | 100 | 2.57s     | **0.000** | 200ms |
 | `/services/laptop-repair` (image added)                  | **95** | 94       | 100  | 100 | **2.42s** | **0.000** | 169ms |
-| `/repairs/Iphone-screen-replacement` (no image, control) | 92     | 92       | 100  | 100 | 2.57s     | **0.000** | 256ms |
+| `/repairs/iphone-screen-replacement` (no image, control) | 92     | 92       | 100  | 100 | 2.57s     | **0.000** | 256ms |
 
 **No page fell below its previous median and CLS stayed 0.000 everywhere**, which was the condition for keeping the pass. The image-bearing service hub posted the best LCP on the site at 2.42s, and the home hero at 2.57s stayed under the 2.6s ceiling set for this pass. Adding a 65 KB hero did not cost anything measurable, because it is the LCP element and it now arrives with an explicit aspect ratio and a blur placeholder rather than an empty panel.
 
 - **Rich Results has no public API.** It has to be run by hand at `https://search.google.com/test/rich-results` against these four URLs, one per template:
-  - `https://techbrotherz.vercel.app/repair/apple-Iphone` (brand hub)
-  - `https://techbrotherz.vercel.app/repair/apple-Iphone/Iphone-8-plus` (priced model, `ItemList` of `Offer`)
-  - `https://techbrotherz.vercel.app/repair/apple-Iphone/Iphone-16` (quote-only model, `Service` with `ContactAction`, no `ItemList`)
-  - `https://techbrotherz.vercel.app/repairs/Iphone-screen-replacement` (Tier 3 cross-model price table)
+  - `https://techbrotherz.vercel.app/repair/apple-iphone` (brand hub)
+  - `https://techbrotherz.vercel.app/repair/apple-iphone/iphone-8-plus` (priced model, `ItemList` of `Offer`)
+  - `https://techbrotherz.vercel.app/repair/apple-iphone/iphone-16` (quote-only model, `Service` with `ContactAction`, no `ItemList`)
+  - `https://techbrotherz.vercel.app/repairs/iphone-screen-replacement` (Tier 3 cross-model price table)
 
 ### 12.2 Legal review, outstanding
 

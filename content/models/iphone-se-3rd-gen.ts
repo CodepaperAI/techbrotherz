@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Iphone-se-3rd-gen",
-  "name": "Iphone SE (3rd gen)",
+  "slug": "iphone-se-3rd-gen",
+  "name": "iPhone SE (3rd gen)",
   "intro": [
     {
-      "_key": "model.Iphone-se-3rd-gen-intro-b0",
+      "_key": "model.iphone-se-3rd-gen-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Iphone-se-3rd-gen-intro-s0",
+          "_key": "model.iphone-se-3rd-gen-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Iphone SE (3rd gen) at 3317 17 Ave SE in Calgary. This SE uses the Iphone 8 body and keeps the Touch ID home button, so the screen assembly is closely related to the Iphone 8 and repairs are among the quicker ones we do. The home button itself is paired to the logic board, so a replacement button will click and register presses but Touch ID will not work again. We will say so before starting. Walk in, no appointment needed."
+          "text": "TechBrotherz repairs the iPhone SE (3rd gen) at 3317 17 Ave SE in Calgary. This SE uses the iPhone 8 body and keeps the Touch ID home button, so the screen assembly is closely related to the iPhone 8 and repairs are among the quicker ones we do. The home button itself is paired to the logic board, so a replacement button will click and register presses but Touch ID will not work again. We will say so before starting. Walk in, no appointment needed."
         }
       ],
       "markDefs": [],

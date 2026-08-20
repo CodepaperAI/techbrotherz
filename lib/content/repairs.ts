@@ -8,7 +8,7 @@
  * across the range".
  *
  * The duplication risk here is real and specific: nine of these sixteen are
- * Iphone or Samsung repairs, and a screen page and a battery page written from
+ * iPhone or Samsung repairs, and a screen page and a battery page written from
  * the same outline would read as the same page. Each entry therefore leads
  * with what is genuinely different about that repair, not with a restatement
  * of the store's policies. Phase 4's similarity detector runs over these pages
@@ -74,27 +74,27 @@ export interface RepairDef {
   globalCategories: string[];
 }
 
-/* ================================================================== Iphone */
+/* ================================================================== iPhone */
 
-const IphoneScreen: RepairDef = {
-  slug: "Iphone-screen-replacement",
+const iphoneScreen: RepairDef = {
+  slug: "iphone-screen-replacement",
   art: "screen",
-  localPath: "/Iphone-screen-repair-calgary",
-  h1: "Iphone Screen Replacement Prices",
-  eyebrow: "Iphone screen",
-  seoTitle: "Iphone Screen Replacement Calgary | Price By Model",
+  localPath: "/iphone-screen-repair-calgary",
+  h1: "iPhone Screen Replacement Prices",
+  eyebrow: "iPhone screen",
+  seoTitle: "iPhone Screen Replacement Calgary | Price By Model",
   seoDescription:
-    "Iphone screen replacement prices for every model TechBrotherz repairs in Calgary, part and labour included. About 30 minutes, 60-day warranty, walk in.",
-  serviceType: "Iphone screen replacement",
+    "iPhone screen replacement prices for every model TechBrotherz repairs in Calgary, part and labour included. About 30 minutes, 60-day warranty, walk in.",
+  serviceType: "iPhone screen replacement",
   parentService: "/services/phone-repair",
-  source: { kind: "catalogue", brandSlug: "apple-Iphone", repairSlugs: ["screen-replacement"] },
-  siblings: ["/repairs/Iphone-battery-replacement", "/repairs/samsung-screen-replacement"],
-  brandSlug: "apple-Iphone",
+  source: { kind: "catalogue", brandSlug: "apple-iphone", repairSlugs: ["screen-replacement"] },
+  siblings: ["/repairs/iphone-battery-replacement", "/repairs/samsung-screen-replacement"],
+  brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone screens in about ${c.waitMinutes} minutes while you wait. The list below shows every Iphone model the store replaces screens on, and every quote includes the part and the labour in one figure.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The list below shows every iPhone model the store replaces screens on, and every quote includes the part and the labour in one figure.`,
   answer: (c) =>
-    `Iphone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most Iphone screen replacements take about ${c.waitMinutes} minutes at the Store. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
+    `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the Store. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
   symptoms: [
     "Cracked or shattered glass, even where the picture underneath still works normally.",
     "Black patches, coloured vertical lines, or a white glow spreading across the display.",
@@ -105,7 +105,7 @@ const IphoneScreen: RepairDef = {
   steps: [
     {
       title: "The phone is powered down and opened from the front",
-      body: "Iphones open from the screen side. Two screws at the bottom edge come out and the display lifts away from the frame like a book cover, still attached by ribbon cables.",
+      body: "iPhones open from the screen side. Two screws at the bottom edge come out and the display lifts away from the frame like a book cover, still attached by ribbon cables.",
     },
     {
       title: "The battery is disconnected first",
@@ -126,11 +126,11 @@ const IphoneScreen: RepairDef = {
   ],
   sections: (c) => [
     {
-      heading: "Why is an Iphone screen replaced as one whole assembly?",
+      heading: "Why is an iPhone screen replaced as one whole assembly?",
       paragraphs: [
         "Apple laminates the touch-sensitive glass directly onto the display panel at the factory, with no air gap between them. That lamination is what makes the picture look like it sits on the surface of the glass rather than behind a window, and it is the reason the two layers cannot practically be separated once they are bonded.",
-        "The consequence for pricing is direct: on an Iphone, a crack in the glass and a dead display cost exactly the same to fix, because both are repaired by fitting one complete front assembly. People are often surprised that a hairline crack costs the same as a shattered black screen, and this is why.",
-        `The upside is speed. Because the part arrives as a finished assembly rather than something that has to be built up, an Iphone screen replacement at TechBrotherz takes about ${c.waitMinutes} minutes rather than half a day.`,
+        "The consequence for pricing is direct: on an iPhone, a crack in the glass and a dead display cost exactly the same to fix, because both are repaired by fitting one complete front assembly. People are often surprised that a hairline crack costs the same as a shattered black screen, and this is why.",
+        `The upside is speed. Because the part arrives as a finished assembly rather than something that has to be built up, an iPhone screen replacement at TechBrotherz takes about ${c.waitMinutes} minutes rather than half a day.`,
       ],
     },
     {
@@ -138,21 +138,21 @@ const IphoneScreen: RepairDef = {
       paragraphs: [
         "Yes, when the repair is done properly. The Face ID dot projector and infrared camera sit in the notch at the top of the screen, and they are cryptographically paired to the logic board in your specific phone. They cannot be replaced with parts from another handset, and they do not come with a new screen.",
         "What has to happen is that the existing sensor assembly is carefully transferred from your old screen onto the new one. That flex cable is thin and it tears if it is rushed, and a torn Face ID cable means Face ID is gone permanently, on that phone, for good. There is no repair for it afterwards.",
-        "The same applies to Touch ID on the models that have a home button. The fingerprint sensor is paired to the board and has to move across intact. This is the single most delicate part of an Iphone screen replacement, and it is the step worth asking any shop about before handing over a phone.",
+        "The same applies to Touch ID on the models that have a home button. The fingerprint sensor is paired to the board and has to move across intact. This is the single most delicate part of an iPhone screen replacement, and it is the step worth asking any shop about before handing over a phone.",
       ],
     },
     {
       heading: "What is the message about a genuine Apple display?",
       paragraphs: [
-        "On Iphone models from the XR and XS onwards, iOS shows a notification in Settings after a screen replacement to say it cannot verify the display as a genuine Apple part. That message appears after any repair carried out outside Apple's own system, and it does not mean the screen is faulty.",
+        "On iPhone models from the XR and XS onwards, iOS shows a notification in Settings after a screen replacement to say it cannot verify the display as a genuine Apple part. That message appears after any repair carried out outside Apple's own system, and it does not mean the screen is faulty.",
         "The practical effects are limited but worth knowing before the repair rather than after. True Tone, which adjusts the white balance of the display to the light in the room, can be lost on some models and repairs. The message itself sits in Settings and does not interfere with using the phone.",
         "We will tell you what to expect for your specific model before starting, because it is the kind of thing that is fine when you know about it in advance and irritating when you do not.",
       ],
     },
     {
-      heading: "How much does an Iphone screen replacement cost in Calgary?",
+      heading: "How much does an iPhone screen replacement cost in Calgary?",
       paragraphs: [
-        `What an Iphone screen replacement costs depends on the panel the handset takes. An older Iphone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the Store, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
+        `What an iPhone screen replacement costs depends on the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the Store, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
         "The pattern across models is worth understanding. Older LCD models are the cheapest, because those panels have been in production for years and supply is plentiful. The OLED models cost more, and the recent Pro models with the largest displays cost the most, because that is what the assemblies cost to buy.",
         "Apple publishes its own out-of-warranty screen service pricing for each model on its support site, which is worth comparing against before you decide where to take a repair. For less common models, the part is ordered in and priced once we know the cost.",
       ],
@@ -160,19 +160,19 @@ const IphoneScreen: RepairDef = {
   ],
   modelNotes: [
     {
-      model: "Iphone X and later",
+      model: "iPhone X and later",
       note: "Face ID hardware transfers from the old screen and is paired to the board. If that flex tears, Face ID is permanently lost on that phone, so this step is done slowly.",
     },
     {
-      model: "Iphone 8 and earlier",
+      model: "iPhone 8 and earlier",
       note: "Touch ID is in the home button and is paired to the board in the same way. The button moves across to the new screen intact or fingerprint unlock stops working.",
     },
     {
-      model: "Iphone XR, XS and later",
+      model: "iPhone XR, XS and later",
       note: "iOS shows a genuine-display notification in Settings after any non-Apple screen repair, and True Tone can be lost depending on model and part.",
     },
     {
-      model: "Iphone 12 and later",
+      model: "iPhone 12 and later",
       note: "The front glass is Ceramic Shield, which resists cracking better than earlier glass but still cracks. The repair itself is unchanged.",
     },
   ],
@@ -183,46 +183,46 @@ const IphoneScreen: RepairDef = {
   ],
   faqs: (c) => [
     {
-      question: "How much does it cost to replace an Iphone screen in Calgary?",
-      answer: `Iphone screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older Iphones with LCD panels are the cheaper repair and Pro models with OLED panels are the dearer one, because the part differs sharply across the range. Every quote covers the part and the labour together, with no separate bench fee.`,
+      question: "How much does it cost to replace an iPhone screen in Calgary?",
+      answer: `iPhone screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPhones with LCD panels are the cheaper repair and Pro models with OLED panels are the dearer one, because the part differs sharply across the range. Every quote covers the part and the labour together, with no separate bench fee.`,
     },
     {
-      question: "Does replacing an Iphone screen break Face ID?",
+      question: "Does replacing an iPhone screen break Face ID?",
       answer:
-        "Not when the Face ID assembly is transferred correctly. The dot projector and infrared camera are paired to the logic board in your specific Iphone and must move from the old screen to the new one intact. If that flex cable tears during the repair, Face ID is permanently lost on that handset and cannot be restored.",
+        "Not when the Face ID assembly is transferred correctly. The dot projector and infrared camera are paired to the logic board in your specific iPhone and must move from the old screen to the new one intact. If that flex cable tears during the repair, Face ID is permanently lost on that handset and cannot be restored.",
     },
     {
-      question: "Why does my Iphone say it cannot verify the display after a repair?",
+      question: "Why does my iPhone say it cannot verify the display after a repair?",
       answer:
-        "iOS shows that notification on Iphone XR, XS and later after any screen replacement carried out outside Apple's own service system. It does not mean the screen is faulty. True Tone can be lost on some model and part combinations. TechBrotherz explains what to expect for your model before the repair starts.",
+        "iOS shows that notification on iPhone XR, XS and later after any screen replacement carried out outside Apple's own service system. It does not mean the screen is faulty. True Tone can be lost on some model and part combinations. TechBrotherz explains what to expect for your model before the repair starts.",
     },
     {
-      question: "How long does an Iphone screen replacement take?",
-      answer: `An Iphone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store while you wait. The part arrives as a complete front assembly with the glass and display already bonded, which is why the repair is quick compared with a tablet or laptop screen.`,
+      question: "How long does an iPhone screen replacement take?",
+      answer: `An iPhone screen replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes and is done at the Store while you wait. The part arrives as a complete front assembly with the glass and display already bonded, which is why the repair is quick compared with a tablet or laptop screen.`,
     },
   ],
   globalCategories: ["parts", "warranty"],
 };
 
-const IphoneBattery: RepairDef = {
-  slug: "Iphone-battery-replacement",
+const iphoneBattery: RepairDef = {
+  slug: "iphone-battery-replacement",
   art: "battery",
   localPath: "/phone-repair-calgary",
-  h1: "Iphone Battery Replacement Prices",
-  eyebrow: "Iphone battery",
-  seoTitle: "Iphone Battery Replacement Calgary | Price By Model",
+  h1: "iPhone Battery Replacement Prices",
+  eyebrow: "iPhone battery",
+  seoTitle: "iPhone Battery Replacement Calgary | Price By Model",
   seoDescription:
-    "Iphone battery replacement prices by model at TechBrotherz in Calgary, part and labour included. About 30 minutes, 60-day warranty, no appointment needed.",
-  serviceType: "Iphone battery replacement",
+    "iPhone battery replacement prices by model at TechBrotherz in Calgary, part and labour included. About 30 minutes, 60-day warranty, no appointment needed.",
+  serviceType: "iPhone battery replacement",
   parentService: "/services/phone-repair",
-  source: { kind: "catalogue", brandSlug: "apple-Iphone", repairSlugs: ["battery-replacement"] },
-  siblings: ["/repairs/Iphone-screen-replacement", "/repairs/samsung-battery-replacement"],
-  brandSlug: "apple-Iphone",
+  source: { kind: "catalogue", brandSlug: "apple-iphone", repairSlugs: ["battery-replacement"] },
+  siblings: ["/repairs/iphone-screen-replacement", "/repairs/samsung-battery-replacement"],
+  brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone battery in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone batteries in about ${c.waitMinutes} minutes. A battery that has fallen below roughly 80% of its original capacity no longer holds a working day, and replacing it is far cheaper than replacing the phone.`,
   answer: (c) =>
-    `Iphone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the Store and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
+    `iPhone battery replacement at TechBrotherz in Calgary takes about ${c.waitMinutes} minutes at the Store and carries a ${c.warrantyDays}-day warranty. Check Settings, Battery, Battery Health on the phone first: below about 80% maximum capacity, a replacement restores a full day of use. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer lasts a working day on a charge it used to manage comfortably.",
     "It shuts down suddenly at 20% or 30%, or dies in the cold and revives once warm.",
@@ -237,11 +237,11 @@ const IphoneBattery: RepairDef = {
     },
     {
       title: "The display is lifted and the battery disconnected",
-      body: "Iphones open from the front. The screen comes up, the battery connector comes off first, and a bracket over the connector is removed.",
+      body: "iPhones open from the front. The screen comes up, the battery connector comes off first, and a bracket over the connector is removed.",
     },
     {
       title: "The adhesive strips are pulled",
-      body: "Iphone battery are held down by stretch-release strips that pull out from under the cell. Done slowly they come out whole. Rushed, they snap, and the battery has to be eased out instead.",
+      body: "iPhone batteries are held down by stretch-release strips that pull out from under the cell. Done slowly they come out whole. Rushed, they snap, and the battery has to be eased out instead.",
     },
     {
       title: "The new battery goes in and is tested",
@@ -249,12 +249,12 @@ const IphoneBattery: RepairDef = {
     },
     {
       title: "The old cell is disposed of properly",
-      body: "Lithium cells do not go in the bin. Old battery are collected here and recycled through the proper channel.",
+      body: "Lithium cells do not go in the bin. Old batteries are collected here and recycled through the proper channel.",
     },
   ],
   sections: (c) => [
     {
-      heading: "When does an Iphone battery actually need replacing?",
+      heading: "When does an iPhone battery actually need replacing?",
       paragraphs: [
         "Apple treats about 80% of original capacity as the point where a battery is considered consumed, and iOS reports exactly that figure. Open Settings, then Battery, then Battery Health, and read the maximum capacity percentage. That number is the single best guide to whether a replacement is worth paying for.",
         "Above 85%, a battery is generally not your problem, and the poor battery life is more likely a background app, a weak signal forcing the radio to work hard, or a display running at full brightness. We would rather point that out than take money for a battery that was fine.",
@@ -262,15 +262,15 @@ const IphoneBattery: RepairDef = {
       ],
     },
     {
-      heading: "Why does an old battery make an Iphone slower?",
+      heading: "Why does an old battery make an iPhone slower?",
       paragraphs: [
-        "This is real, documented and often misunderstood. As a lithium battery ages, its ability to deliver sudden bursts of current falls. When the processor demands a peak the battery cannot supply, the phone shuts down abruptly rather than degrading gracefully, which is why old Iphones die at 30%.",
-        "Apple's response was performance management: iOS deliberately smooths the peaks by slowing the processor on phones with worn battery, trading speed for stability. It is why a phone can feel sluggish long before anything is visibly wrong with it.",
-        "The practical point is that a battery replacement on an old Iphone often makes the phone feel faster as well as last longer, and people are frequently surprised by how much. If your Iphone feels tired, the battery is the first thing to check.",
+        "This is real, documented and often misunderstood. As a lithium battery ages, its ability to deliver sudden bursts of current falls. When the processor demands a peak the battery cannot supply, the phone shuts down abruptly rather than degrading gracefully, which is why old iPhones die at 30%.",
+        "Apple's response was performance management: iOS deliberately smooths the peaks by slowing the processor on phones with worn batteries, trading speed for stability. It is why a phone can feel sluggish long before anything is visibly wrong with it.",
+        "The practical point is that a battery replacement on an old iPhone often makes the phone feel faster as well as last longer, and people are frequently surprised by how much. If your iPhone feels tired, the battery is the first thing to check.",
       ],
     },
     {
-      heading: "What should you do about a swollen Iphone battery?",
+      heading: "What should you do about a swollen iPhone battery?",
       paragraphs: [
         "Stop using the phone and bring it in. A swollen battery is a lithium cell that has generated gas internally, and the pressure is what has lifted your screen away from the frame or made the back panel bulge. It is the one battery symptom that is genuinely a safety matter rather than an inconvenience.",
         "Do not press the screen back down, do not carry on using the phone, and do not charge it overnight on a bedside table. A punctured swollen cell can catch fire, and the most common way one gets punctured is somebody trying to force the phone closed.",
@@ -278,9 +278,9 @@ const IphoneBattery: RepairDef = {
       ],
     },
     {
-      heading: "How much does an Iphone battery replacement cost in Calgary?",
+      heading: "How much does an iPhone battery replacement cost in Calgary?",
       paragraphs: [
-        `An Iphone battery is quoted per model at the Store, and the quote covers the part and the labour together. The range is far narrower than it is for screens, because a battery cell is a broadly similar part whichever Iphone it goes into, while a screen is not.`,
+        `An iPhone battery is quoted per model at the Store, and the quote covers the part and the labour together. The range is far narrower than it is for screens, because a battery cell is a broadly similar part whichever iPhone it goes into, while a screen is not.`,
         `The repair takes about ${c.waitMinutes} minutes and is done while you wait. Your data is untouched: a battery replacement does not go near the storage, and nothing needs backing up or restoring afterwards. Back the phone up anyway as a precaution before any repair.`,
         "Apple publishes its own battery service pricing per model on its support site, which is worth checking before deciding where to have the work done. iOS will report a service message about the battery after any non-Apple replacement, in the same way it does for screens.",
       ],
@@ -288,15 +288,15 @@ const IphoneBattery: RepairDef = {
   ],
   modelNotes: [
     {
-      model: "Iphone 6 and 6 Plus",
-      note: "These are the models where swollen battery are most common now, simply because of their age. Bring one in rather than pressing the lifted screen back down.",
+      model: "iPhone 6 and 6 Plus",
+      note: "These are the models where swollen batteries are most common now, simply because of their age. Bring one in rather than pressing the lifted screen back down.",
     },
     {
-      model: "Iphone 8 and later",
+      model: "iPhone 8 and later",
       note: "Glass backs mean a swollen battery can crack the rear panel as well as lift the screen, turning one repair into two if it is left.",
     },
     {
-      model: "Iphone 11 and later",
+      model: "iPhone 11 and later",
       note: "iOS reports an unknown-battery service message after any replacement outside Apple's system, and battery health reporting can be limited afterwards.",
     },
   ],
@@ -307,21 +307,21 @@ const IphoneBattery: RepairDef = {
   ],
   faqs: (c) => [
     {
-      question: "How much does an Iphone battery replacement cost in Calgary?",
-      answer: `Iphone battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across Iphone models is much narrower than it is for screens, because a battery cell is a broadly similar part across the range. The repair takes about ${c.waitMinutes} minutes at the Store.`,
+      question: "How much does an iPhone battery replacement cost in Calgary?",
+      answer: `iPhone battery replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. The range across iPhone models is much narrower than it is for screens, because a battery cell is a broadly similar part across the range. The repair takes about ${c.waitMinutes} minutes at the Store.`,
     },
     {
-      question: "How do I know if my Iphone battery needs replacing?",
+      question: "How do I know if my iPhone battery needs replacing?",
       answer:
-        "Open Settings, then Battery, then Battery Health on the Iphone and read the maximum capacity percentage. Below 80% a replacement restores a full day of use. Above 85% the battery is usually not the cause of poor battery life, and TechBrotherz will say so rather than sell a battery that is not needed.",
+        "Open Settings, then Battery, then Battery Health on the iPhone and read the maximum capacity percentage. Below 80% a replacement restores a full day of use. Above 85% the battery is usually not the cause of poor battery life, and TechBrotherz will say so rather than sell a battery that is not needed.",
     },
     {
-      question: "Why has my old Iphone got slower as the battery aged?",
+      question: "Why has my old iPhone got slower as the battery aged?",
       answer:
-        "A worn lithium battery cannot deliver sudden bursts of current, so iOS deliberately slows the processor to prevent the phone shutting down unexpectedly. Replacing the battery removes that limit, which is why an Iphone battery replacement often makes an older phone feel faster as well as last longer.",
+        "A worn lithium battery cannot deliver sudden bursts of current, so iOS deliberately slows the processor to prevent the phone shutting down unexpectedly. Replacing the battery removes that limit, which is why an iPhone battery replacement often makes an older phone feel faster as well as last longer.",
     },
     {
-      question: "Is a swollen Iphone battery dangerous?",
+      question: "Is a swollen iPhone battery dangerous?",
       answer:
         "A swollen battery should be treated as a safety matter. Stop using the phone, do not press the lifted screen back down, and do not charge it unattended. A punctured swollen cell can catch fire. Bring the phone to TechBrotherz in Calgary, where the swelling usually causes no further damage if caught early.",
     },
@@ -329,25 +329,25 @@ const IphoneBattery: RepairDef = {
   globalCategories: ["parts", "warranty"],
 };
 
-const IphonePort: RepairDef = {
-  slug: "Iphone-charging-port-repair",
+const iphonePort: RepairDef = {
+  slug: "iphone-charging-port-repair",
   art: "port",
   localPath: "/phone-repair-calgary",
-  h1: "Iphone Charging Port Repair Prices",
-  eyebrow: "Iphone charging port",
-  seoTitle: "Iphone Charging Port Repair Calgary | Price By Model",
+  h1: "iPhone Charging Port Repair Prices",
+  eyebrow: "iPhone charging port",
+  seoTitle: "iPhone Charging Port Repair Calgary | Price By Model",
   seoDescription:
-    "Iphone charging port replacement prices by model at TechBrotherz in Calgary. Part and labour included, about 45 minutes, 60-day warranty, walk in.",
-  serviceType: "Iphone charging port repair",
+    "iPhone charging port replacement prices by model at TechBrotherz in Calgary. Part and labour included, about 45 minutes, 60-day warranty, walk in.",
+  serviceType: "iPhone charging port repair",
   parentService: "/services/phone-repair",
-  source: { kind: "catalogue", brandSlug: "apple-Iphone", repairSlugs: ["charging-port-repair"] },
-  siblings: ["/repairs/samsung-charging-port-repair", "/repairs/Iphone-battery-replacement"],
-  brandSlug: "apple-Iphone",
+  source: { kind: "catalogue", brandSlug: "apple-iphone", repairSlugs: ["charging-port-repair"] },
+  siblings: ["/repairs/samsung-charging-port-repair", "/repairs/iphone-battery-replacement"],
+  brandSlug: "apple-iphone",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an Iphone stops charging.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone charging ports in about 45 minutes. Before paying for the repair, it is worth having the port cleaned, because compacted pocket lint is the single most common reason an iPhone stops charging.`,
   answer: () =>
-    `Iphone charging port replacement at TechBrotherz in Calgary takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge at all. The quote is free and given before any work starts.`,
+    `iPhone charging port replacement at TechBrotherz in Calgary takes about 45 minutes, longer than a screen, because the port sits at the bottom of the phone and the assembly has to come apart to reach it. TechBrotherz checks for compacted lint first, because a clean-out often solves the problem at no charge at all. The quote is free and given before any work starts.`,
   symptoms: [
     "The cable has to be held at an angle, or pressed in, before charging starts.",
     "The phone charges from some cables but not others, or only from certain plugs.",
@@ -370,7 +370,7 @@ const IphonePort: RepairDef = {
     },
     {
       title: "The charging flex assembly is replaced",
-      body: "On an Iphone the charging port comes as a flex cable assembly that usually carries the microphone and the antenna too, so the whole strip is replaced as one part.",
+      body: "On an iPhone the charging port comes as a flex cable assembly that usually carries the microphone and the antenna too, so the whole strip is replaced as one part.",
     },
     {
       title: "Charging, audio and the microphone are all tested",
@@ -389,39 +389,39 @@ const IphonePort: RepairDef = {
     {
       heading: "Why does cleaning the port fix so many phones?",
       paragraphs: [
-        "An Iphone lives in a pocket, and a pocket is full of lint. Every time the cable goes in, it presses a little more of that lint to the bottom of the socket, and over a couple of years it compacts into a dense pad that is genuinely hard to see and quite hard to remove.",
+        "An iPhone lives in a pocket, and a pocket is full of lint. Every time the cable goes in, it presses a little more of that lint to the bottom of the socket, and over a couple of years it compacts into a dense pad that is genuinely hard to see and quite hard to remove.",
         "The effect is that the cable stops a fraction of a millimetre short of full contact. The phone charges intermittently, or only when the cable is pushed hard or held at an angle, which is exactly what a failing port feels like from the outside.",
         "TechBrotherz checks and clears this first, before quoting a port replacement, because a good proportion of phones brought in for charging problems need nothing more. If a clean-out fixes it, that is the end of the visit.",
       ],
     },
     {
-      heading: "What else is on the Iphone charging flex?",
+      heading: "What else is on the iPhone charging flex?",
       paragraphs: [
-        "On an Iphone the Lightning or USB-C connector is not a standalone socket. It sits on a flexible printed cable that also carries the bottom microphone, and on most models part of the antenna as well. That whole strip is replaced as one part.",
+        "On an iPhone the Lightning or USB-C connector is not a standalone socket. It sits on a flexible printed cable that also carries the bottom microphone, and on most models part of the antenna as well. That whole strip is replaced as one part.",
         "This explains a symptom that otherwise looks unrelated. If people cannot hear you on calls, or voice memos and Siri stop picking you up clearly, and the phone has also been fussy about charging, the same failed flex can be behind both.",
         "It also means the test after this repair covers more than charging. Wired charging, the bottom microphone and call audio all get checked before the phone is sealed, because all three run through the part that was just replaced.",
       ],
     },
     {
-      heading: "How long does an Iphone charging port repair take?",
+      heading: "How long does an iPhone charging port repair take?",
       paragraphs: [
         "About 45 minutes, which is longer than a screen replacement and worth knowing before you decide to wait. The port sits at the very bottom of the phone, underneath the battery and behind the speaker assembly, so getting to it means taking more of the phone apart than a screen repair does.",
-        "The reassembly is where the time goes rather than the removal. Everything that came out has to go back in the right order, with the right screws in the right holes, because Iphone screws differ in length by fractions of a millimetre and the wrong one in the wrong place damages the board underneath.",
+        "The reassembly is where the time goes rather than the removal. Everything that came out has to go back in the right order, with the right screws in the right holes, because iPhone screws differ in length by fractions of a millimetre and the wrong one in the wrong place damages the board underneath.",
         "Most port repairs are still same-visit work rather than a drop-off. We will tell you the realistic time at the Store, and if the part for your model needs ordering we will say so before you leave the phone.",
       ],
     },
   ],
   modelNotes: [
     {
-      model: "Iphone 15 and later",
+      model: "iPhone 15 and later",
       note: "These use USB-C rather than Lightning. The repair is the same shape of job, but the part is a different assembly.",
     },
     {
-      model: "Iphone 8 and later",
+      model: "iPhone 8 and later",
       note: "Wireless charging works independently of the port, so a phone that charges on a pad but not by cable is a clear port diagnosis.",
     },
     {
-      model: "Iphone 7 and later",
+      model: "iPhone 7 and later",
       note: "These models are water resistant when sealed, and that seal is broken by any repair. Resistance is not restored to the original rating afterwards.",
     },
   ],
@@ -432,21 +432,21 @@ const IphonePort: RepairDef = {
   ],
   faqs: () => [
     {
-      question: "How much does Iphone charging port repair cost in Calgary?",
-      answer: `Iphone charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced and at no charge.`,
+      question: "How much does iPhone charging port repair cost in Calgary?",
+      answer: `iPhone charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced and at no charge.`,
     },
     {
-      question: "Why does my Iphone only charge when I hold the cable at an angle?",
+      question: "Why does my iPhone only charge when I hold the cable at an angle?",
       answer:
         "That symptom usually means compacted lint at the bottom of the charging socket, holding the cable a fraction short of full contact, or a worn port that no longer grips. TechBrotherz in Calgary inspects and clears the socket first, then tests with a known-good cable, before quoting a port replacement.",
     },
     {
       question: "Can a bad charging port stop people hearing me on calls?",
       answer:
-        "Yes. On an Iphone the charging connector sits on a flex cable that also carries the bottom microphone and part of the antenna. A failure in that assembly can affect charging and microphone pickup together, which is why TechBrotherz tests charging, the microphone and call audio after the repair.",
+        "Yes. On an iPhone the charging connector sits on a flex cable that also carries the bottom microphone and part of the antenna. A failure in that assembly can affect charging and microphone pickup together, which is why TechBrotherz tests charging, the microphone and call audio after the repair.",
     },
     {
-      question: "How long does an Iphone charging port replacement take?",
+      question: "How long does an iPhone charging port replacement take?",
       answer:
         "About 45 minutes at TechBrotherz in Calgary, longer than a screen replacement. The charging assembly sits at the bottom of the phone beneath the battery and speaker, so more of the handset has to be dismantled and correctly reassembled to reach and replace it.",
     },
@@ -454,29 +454,29 @@ const IphonePort: RepairDef = {
   globalCategories: ["turnaround", "warranty"],
 };
 
-const IphoneCamera: RepairDef = {
-  slug: "Iphone-camera-repair",
+const iphoneCamera: RepairDef = {
+  slug: "iphone-camera-repair",
   art: "camera",
   localPath: "/phone-repair-calgary",
-  h1: "Iphone Camera Repair Prices",
-  eyebrow: "Iphone camera",
-  seoTitle: "Iphone Camera Repair Calgary | Front and Rear Prices",
+  h1: "iPhone Camera Repair Prices",
+  eyebrow: "iPhone camera",
+  seoTitle: "iPhone Camera Repair Calgary | Front and Rear Prices",
   seoDescription:
-    "Iphone camera repair by model at TechBrotherz in Calgary. Front and rear cameras, cracked lens glass, part and labour included, 60-day warranty.",
-  serviceType: "Iphone camera repair",
+    "iPhone camera repair by model at TechBrotherz in Calgary. Front and rear cameras, cracked lens glass, part and labour included, 60-day warranty.",
+  serviceType: "iPhone camera repair",
   parentService: "/services/phone-repair",
   source: {
     kind: "catalogue",
-    brandSlug: "apple-Iphone",
+    brandSlug: "apple-iphone",
     repairSlugs: ["back-camera-repair", "front-camera-repair"],
   },
-  siblings: ["/repairs/Iphone-screen-replacement", "/repairs/Iphone-back-glass-replacement"],
-  brandSlug: "apple-Iphone",
+  siblings: ["/repairs/iphone-screen-replacement", "/repairs/iphone-back-glass-replacement"],
+  brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Iphone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone front and rear cameras in about ${c.waitMinutes} minutes. A blurry photo is often the lens glass over the camera rather than the camera module itself, and those are two different repairs at two different prices.`,
   answer: (c) =>
-    `Iphone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the Store. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
+    `iPhone camera repair at TechBrotherz in Calgary begins with identifying which repair the phone actually needs. Cracked lens glass over the rear camera is a separate and smaller job than replacing the camera module underneath it, and TechBrotherz tells you which one applies at the Store. Most camera repairs take about ${c.waitMinutes} minutes, and the quote is free.`,
   symptoms: [
     "Photos come out blurry no matter how still the phone is held, or will not focus at all.",
     "The camera app opens to a black frame, or freezes when switching between lenses.",
@@ -491,7 +491,7 @@ const IphoneCamera: RepairDef = {
     },
     {
       title: "The camera app is checked across all lenses",
-      body: "A fault on the wide lens and a fault on the ultra-wide are different modules on modern Iphones. Testing each one narrows the repair to the part that actually failed.",
+      body: "A fault on the wide lens and a fault on the ultra-wide are different modules on modern iPhones. Testing each one narrows the repair to the part that actually failed.",
     },
     {
       title: "The phone is opened and the battery disconnected",
@@ -510,15 +510,15 @@ const IphoneCamera: RepairDef = {
     {
       heading: "Is it the camera or the glass in front of it?",
       paragraphs: [
-        "This is the first thing to establish, because it is the difference between a small repair and a larger one. The rear cameras on an Iphone sit behind small individual sapphire lens covers, and those covers crack from drops while the camera modules behind them stay perfectly intact.",
+        "This is the first thing to establish, because it is the difference between a small repair and a larger one. The rear cameras on an iPhone sit behind small individual sapphire lens covers, and those covers crack from drops while the camera modules behind them stay perfectly intact.",
         "The symptom of cracked lens glass is distinctive: photos look hazy, washed out, or show flare and starbursts around bright lights, and the effect is worse in sunlight or at night against street lamps. Focus itself still works. If your photos have gone milky rather than blurry, look closely at the lens covers.",
         "A failed camera module behaves differently. It will not focus at all, shows a black frame, or the app freezes when switching to that lens. TechBrotherz checks both at the Store before quoting, because quoting a module replacement for cracked glass would be charging for the wrong repair.",
       ],
     },
     {
-      heading: "Why does an Iphone camera stop focusing?",
+      heading: "Why does an iPhone camera stop focusing?",
       paragraphs: [
-        "Modern Iphone cameras focus by physically moving the lens element with tiny motors, and the same mechanism handles optical image stabilisation on the models that have it. It is a mechanical assembly in a phone that gets dropped, and mechanical assemblies eventually stop moving properly.",
+        "Modern iPhone cameras focus by physically moving the lens element with tiny motors, and the same mechanism handles optical image stabilisation on the models that have it. It is a mechanical assembly in a phone that gets dropped, and mechanical assemblies eventually stop moving properly.",
         "A drop is the usual cause. The stabilisation mechanism is suspended on fine springs, and a hard impact can knock it out of position or break the suspension. The tell-tale sign is a faint rattle when the phone is shaken gently, along with photos that will not come into focus.",
         "Magnets are a less obvious cause worth knowing about. Strong magnets held close to the camera can disturb the stabilisation assembly, which is why very strong magnetic mounts and cases are worth avoiding near the camera bump.",
       ],
@@ -526,15 +526,15 @@ const IphoneCamera: RepairDef = {
     {
       heading: "What about the front camera and Face ID?",
       paragraphs: [
-        "The front camera on an Iphone shares a flex assembly with the earpiece speaker and the proximity sensor, and on Face ID models it sits alongside the dot projector and infrared camera in the same notch. Those Face ID components are paired to the logic board and are not replaceable, which makes this area the most delicate on the phone.",
+        "The front camera on an iPhone shares a flex assembly with the earpiece speaker and the proximity sensor, and on Face ID models it sits alongside the dot projector and infrared camera in the same notch. Those Face ID components are paired to the logic board and are not replaceable, which makes this area the most delicate on the phone.",
         "The practical consequence is that a front camera can be replaced, but the Face ID hardware next to it cannot. If a drop has damaged the Face ID components rather than the camera, that function is permanently gone on that handset, and no shop can restore it.",
         "TechBrotherz will tell you which of the two you are dealing with before doing any work, because it changes both the price and what you get back at the end.",
       ],
     },
     {
-      heading: "How much does an Iphone camera repair cost in Calgary?",
+      heading: "How much does an iPhone camera repair cost in Calgary?",
       paragraphs: [
-        "Iphone camera repair at TechBrotherz in Calgary is quoted per model, with the part and the labour in one figure. Rear camera modules on recent Pro models cost more than the single camera in an older Iphone, because those phones carry three separate modules and each is a distinct part.",
+        "iPhone camera repair at TechBrotherz in Calgary is quoted per model, with the part and the labour in one figure. Rear camera modules on recent Pro models cost more than the single camera in an older iPhone, because those phones carry three separate modules and each is a distinct part.",
         "Cracked lens glass over the rear camera is a smaller job than a module replacement, and it is worth asking about specifically if that is what you have. Bringing the phone in is the fastest way to find out which repair you need, and the check costs nothing.",
         "For less common models, the part is ordered in and priced once we know the cost. We do not give a quote we cannot stand behind.",
       ],
@@ -542,15 +542,15 @@ const IphoneCamera: RepairDef = {
   ],
   modelNotes: [
     {
-      model: "Iphone 11 Pro and later",
+      model: "iPhone 11 Pro and later",
       note: "Three separate rear camera modules mean the price depends on which lens has failed. Testing each one at the Store identifies the right part.",
     },
     {
-      model: "Iphone 12 and later",
+      model: "iPhone 12 and later",
       note: "The rear camera sits behind the back glass, so accessing it is a different job from older models where it comes out through the front.",
     },
     {
-      model: "Iphone X and later",
+      model: "iPhone X and later",
       note: "The front camera shares its assembly with Face ID hardware, which is paired to the board and cannot be replaced if it is damaged.",
     },
   ],
@@ -561,51 +561,51 @@ const IphoneCamera: RepairDef = {
   ],
   faqs: () => [
     {
-      question: "How much does Iphone camera repair cost in Calgary?",
-      answer: `Iphone camera repair at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Recent Pro models are the larger job because they carry three separate rear camera modules, each a distinct part. Cracked rear lens glass is a smaller repair than replacing the module underneath it.`,
+      question: "How much does iPhone camera repair cost in Calgary?",
+      answer: `iPhone camera repair at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Recent Pro models are the larger job because they carry three separate rear camera modules, each a distinct part. Cracked rear lens glass is a smaller repair than replacing the module underneath it.`,
     },
     {
-      question: "Why are my Iphone photos hazy or full of flare?",
+      question: "Why are my iPhone photos hazy or full of flare?",
       answer:
         "Hazy, washed-out photos with flare around bright lights usually mean the small sapphire lens cover over the rear camera has cracked, not that the camera module has failed. Focus still works. TechBrotherz in Calgary checks the lens glass and the module separately, because they are two different repairs at two different prices.",
     },
     {
-      question: "My Iphone camera rattles and will not focus. What is wrong?",
+      question: "My iPhone camera rattles and will not focus. What is wrong?",
       answer:
         "A faint rattle when the phone is shaken, combined with photos that will not focus, usually means the optical image stabilisation assembly has been knocked loose by a drop. The lens element is suspended on fine springs that can break on impact. Replacing the camera module is the repair for this.",
     },
     {
       question: "Can TechBrotherz repair Face ID if the front camera is damaged?",
       answer:
-        "The front camera can be replaced, but the Face ID dot projector and infrared camera beside it are cryptographically paired to the logic board and cannot be replaced on any Iphone. If a drop damaged the Face ID hardware, that function is permanently lost on that handset. TechBrotherz identifies which component failed before quoting.",
+        "The front camera can be replaced, but the Face ID dot projector and infrared camera beside it are cryptographically paired to the logic board and cannot be replaced on any iPhone. If a drop damaged the Face ID hardware, that function is permanently lost on that handset. TechBrotherz identifies which component failed before quoting.",
     },
   ],
   globalCategories: ["parts", "warranty"],
 };
 
-const IphoneBackGlass: RepairDef = {
-  slug: "Iphone-back-glass-replacement",
+const iphoneBackGlass: RepairDef = {
+  slug: "iphone-back-glass-replacement",
   art: "screen",
   localPath: "/phone-repair-calgary",
-  h1: "Iphone Back Glass Replacement Prices",
-  eyebrow: "Iphone back glass",
-  seoTitle: "Iphone Back Glass Replacement Calgary | Price By Model",
+  h1: "iPhone Back Glass Replacement Prices",
+  eyebrow: "iPhone back glass",
+  seoTitle: "iPhone Back Glass Replacement Calgary | Price By Model",
   seoDescription:
-    "Iphone back glass and housing replacement prices by model at TechBrotherz in Calgary. Part and labour included, 60-day warranty, no appointment needed.",
-  serviceType: "Iphone back glass replacement",
+    "iPhone back glass and housing replacement prices by model at TechBrotherz in Calgary. Part and labour included, 60-day warranty, no appointment needed.",
+  serviceType: "iPhone back glass replacement",
   parentService: "/services/phone-repair",
   source: {
     kind: "catalogue",
-    brandSlug: "apple-Iphone",
+    brandSlug: "apple-iphone",
     repairSlugs: ["back-glass-replacement", "back-housing-replacement"],
   },
-  siblings: ["/repairs/Iphone-screen-replacement", "/repairs/samsung-back-glass-replacement"],
-  brandSlug: "apple-Iphone",
+  siblings: ["/repairs/iphone-screen-replacement", "/repairs/samsung-back-glass-replacement"],
+  brandSlug: "apple-iphone",
   minutes: 60,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked Iphone back glass. Since the Iphone 8, the rear panel is glass rather than aluminium, and on models before the Iphone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces cracked iPhone back glass. Since the iPhone 8, the rear panel is glass rather than aluminium, and on models before the iPhone 12 it is bonded to the frame hard enough that replacement is a slow job rather than a quick one.`,
   answer: () =>
-    `Iphone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On Iphone 8 through Iphone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From Iphone 12 onwards the panel is designed to come off more cleanly.`,
+    `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the rear glass is bonded to the frame with strong adhesive and has to be removed in pieces, which makes it a longer repair than a screen. From iPhone 12 onwards the panel is designed to come off more cleanly.`,
   symptoms: [
     "Cracked or shattered glass on the back of the phone, with the front undamaged.",
     "Glass fragments lifting away from the frame, sharp enough to catch on a pocket.",
@@ -624,7 +624,7 @@ const IphoneBackGlass: RepairDef = {
     },
     {
       title: "The old glass is removed from the frame",
-      body: "On Iphone 8 through 11 the panel is bonded hard and comes away in pieces, which is the slow part of this repair. On Iphone 12 and later it releases more cleanly.",
+      body: "On iPhone 8 through 11 the panel is bonded hard and comes away in pieces, which is the slow part of this repair. On iPhone 12 and later it releases more cleanly.",
     },
     {
       title: "The frame is cleaned and the new panel bonded",
@@ -637,18 +637,18 @@ const IphoneBackGlass: RepairDef = {
   ],
   sections: () => [
     {
-      heading: "Why is Iphone back glass replacement more work than a screen?",
+      heading: "Why is iPhone back glass replacement more work than a screen?",
       paragraphs: [
-        "A screen is designed to be removed. It is held by two screws and a set of connectors, because Apple's own service process replaces displays. The back glass on an Iphone 8 through Iphone 11 was never designed to come off at all, and it is bonded to the frame with adhesive strong enough that it does not release intact.",
+        "A screen is designed to be removed. It is held by two screws and a set of connectors, because Apple's own service process replaces displays. The back glass on an iPhone 8 through iPhone 11 was never designed to come off at all, and it is bonded to the frame with adhesive strong enough that it does not release intact.",
         "In practice that means the old panel is removed in fragments rather than lifted off, and every piece of glass and every trace of adhesive has to be cleared from the frame before a new panel can bond flat. That clearing is where the time goes, and it is why this repair takes around an hour rather than half of one.",
         "It also means the phone has to be completely stripped first. The board, the battery, the cameras and the taptic engine all come out of the frame before the back is worked on, and go back in afterwards.",
       ],
     },
     {
-      heading: "What changed with the Iphone 12?",
+      heading: "What changed with the iPhone 12?",
       paragraphs: [
-        "From the Iphone 12 onwards, Apple changed the internal design so the rear glass can be removed more cleanly, which makes the repair meaningfully less laborious than it is on the Iphone 8 through 11 generation. It is one of the few cases where a newer phone is easier to repair than an older one.",
-        "This shows up in the pricing. On the models where the glass has to be taken off in pieces, the labour is the dominant cost rather than the part, which is why an older Iphone can cost as much for back glass as a newer one despite the part being cheaper.",
+        "From the iPhone 12 onwards, Apple changed the internal design so the rear glass can be removed more cleanly, which makes the repair meaningfully less laborious than it is on the iPhone 8 through 11 generation. It is one of the few cases where a newer phone is easier to repair than an older one.",
+        "This shows up in the pricing. On the models where the glass has to be taken off in pieces, the labour is the dominant cost rather than the part, which is why an older iPhone can cost as much for back glass as a newer one despite the part being cheaper.",
         "If you are weighing up whether to have back glass done, the model matters more here than on almost any other repair, and the quote reflects that rather than smoothing every model into one figure.",
       ],
     },
@@ -671,15 +671,15 @@ const IphoneBackGlass: RepairDef = {
   ],
   modelNotes: [
     {
-      model: "Iphone 8 through Iphone 11",
+      model: "iPhone 8 through iPhone 11",
       note: "The rear glass is bonded hard to the frame and comes away in pieces. This is the labour-heavy generation for this repair.",
     },
     {
-      model: "Iphone 12 and later",
+      model: "iPhone 12 and later",
       note: "Apple changed the internal design so the rear panel releases more cleanly, which makes the repair less laborious than on the previous generation.",
     },
     {
-      model: "Iphone 7 and earlier",
+      model: "iPhone 7 and earlier",
       note: "These have aluminium backs rather than glass, so this repair does not apply. Dents and scuffs on those models are housing work.",
     },
   ],
@@ -690,13 +690,13 @@ const IphoneBackGlass: RepairDef = {
   ],
   faqs: () => [
     {
-      question: "How much does Iphone back glass replacement cost in Calgary?",
-      answer: `Iphone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On Iphone 8 through Iphone 11 the labour dominates the job, because the panel is bonded hard to the frame and has to be removed in pieces rather than lifted off.`,
+      question: "How much does iPhone back glass replacement cost in Calgary?",
+      answer: `iPhone back glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On iPhone 8 through iPhone 11 the labour dominates the job, because the panel is bonded hard to the frame and has to be removed in pieces rather than lifted off.`,
     },
     {
-      question: "Why does back glass cost as much as a screen on some Iphones?",
+      question: "Why does back glass cost as much as a screen on some iPhones?",
       answer:
-        "On Iphone 8 through Iphone 11 the rear glass was never designed to be removed. It is bonded to the frame and comes away in fragments, and the phone must be completely stripped first. That labour, not the part, is what drives the price. From Iphone 12 onwards Apple changed the design so the panel releases more cleanly.",
+        "On iPhone 8 through iPhone 11 the rear glass was never designed to be removed. It is bonded to the frame and comes away in fragments, and the phone must be completely stripped first. That labour, not the part, is what drives the price. From iPhone 12 onwards Apple changed the design so the panel releases more cleanly.",
     },
     {
       question: "Does cracked back glass stop wireless charging working?",
@@ -704,7 +704,7 @@ const IphoneBackGlass: RepairDef = {
         "Usually not. The wireless charging coil sits inside the phone against the rear panel and is a separate component from the glass. If wireless charging stopped when the back cracked, the impact likely damaged the coil or its connector, which TechBrotherz tests for during the repair.",
     },
     {
-      question: "Do I have to fix cracked back glass on my Iphone?",
+      question: "Do I have to fix cracked back glass on my iPhone?",
       answer:
         "Not always. A single stable crack on a phone that lives in a case affects nothing functionally. Loose sharp fragments, glass that is lifting, or a trade-in valuation are the usual reasons to fix it. A back panel bulging outward is different: that is a swollen battery and should be brought in promptly.",
     },
@@ -726,11 +726,11 @@ const samsungScreen: RepairDef = {
   serviceType: "Samsung Galaxy screen replacement",
   parentService: "/services/phone-repair",
   source: { kind: "catalogue", brandSlug: "samsung-galaxy", repairSlugs: ["screen-replacement"] },
-  siblings: ["/repairs/Iphone-screen-replacement", "/repairs/samsung-battery-replacement"],
+  siblings: ["/repairs/iphone-screen-replacement", "/repairs/samsung-battery-replacement"],
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than Iphone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy screens. Samsung screens cost more than iPhone screens of the same generation, and the reason is structural: on a Galaxy the display is bonded to the frame itself, so the frame is part of the replacement.`,
   answer: (c) =>
     `Samsung Galaxy screen replacement at TechBrotherz in Calgary fits a complete assembly, because Samsung bonds the OLED panel to the phone's frame and supplies the two as one part. The repair takes about 45 minutes and carries a ${c.warrantyDays}-day warranty. The quote is free and given before any work starts.`,
   symptoms: [
@@ -743,7 +743,7 @@ const samsungScreen: RepairDef = {
   steps: [
     {
       title: "The phone is opened from the back",
-      body: "Unlike an Iphone, a Galaxy opens from the rear. The back glass is heated, cut free and lifted off before anything else can be reached.",
+      body: "Unlike an iPhone, a Galaxy opens from the rear. The back glass is heated, cut free and lifted off before anything else can be reached.",
     },
     {
       title: "The internals are removed to reach the display",
@@ -751,7 +751,7 @@ const samsungScreen: RepairDef = {
     },
     {
       title: "The display and frame assembly is replaced together",
-      body: "On most Galaxy models the OLED panel is bonded to the phone's mid-frame and supplied as one part, which is the main reason the price is higher than an Iphone screen.",
+      body: "On most Galaxy models the OLED panel is bonded to the phone's mid-frame and supplied as one part, which is the main reason the price is higher than an iPhone screen.",
     },
     {
       title: "Everything is transferred to the new frame",
@@ -764,11 +764,11 @@ const samsungScreen: RepairDef = {
   ],
   sections: () => [
     {
-      heading: "Why do Samsung screens cost more than Iphone screens?",
+      heading: "Why do Samsung screens cost more than iPhone screens?",
       paragraphs: [
-        "The difference is structural rather than a matter of brand. On most Samsung Galaxy models the OLED display is bonded to the phone's mid-frame at the factory and supplied as a single service assembly, so replacing the screen means replacing the frame it is mounted in. On an Iphone the display comes off the frame as its own part.",
+        "The difference is structural rather than a matter of brand. On most Samsung Galaxy models the OLED display is bonded to the phone's mid-frame at the factory and supplied as a single service assembly, so replacing the screen means replacing the frame it is mounted in. On an iPhone the display comes off the frame as its own part.",
         "That means a Galaxy screen part includes more of the phone, and it costs accordingly. It also means the repair takes longer, because the board, the battery, the cameras and the buttons all have to be transferred from the old frame into the new one rather than the screen simply being swapped.",
-        "The second factor is the panel itself. Samsung has used OLED across its range for far longer than Apple has, including on mid-range models, and OLED panels cost more to manufacture than the LCD panels that older Iphones used.",
+        "The second factor is the panel itself. Samsung has used OLED across its range for far longer than Apple has, including on mid-range models, and OLED panels cost more to manufacture than the LCD panels that older iPhones used.",
       ],
     },
     {
@@ -790,8 +790,8 @@ const samsungScreen: RepairDef = {
     {
       heading: "How much does a Samsung screen replacement cost in Calgary?",
       paragraphs: [
-        `A Galaxy screen is quoted per model at the Store, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for Iphone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
-        "The repair takes about 45 minutes rather than the 30 minutes a typical Iphone screen takes, because of the frame transfer described above. Most Galaxy screen repairs are still done while you wait.",
+        `A Galaxy screen is quoted per model at the Store, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for iPhone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
+        "The repair takes about 45 minutes rather than the 30 minutes a typical iPhone screen takes, because of the frame transfer described above. Most Galaxy screen repairs are still done while you wait.",
         "For less common models, the assembly is ordered in and priced once we know the cost. Samsung's own service pricing for its current models is published on its Canadian support site and is worth comparing before deciding.",
       ],
     },
@@ -818,12 +818,12 @@ const samsungScreen: RepairDef = {
   faqs: () => [
     {
       question: "How much does a Samsung screen replacement cost in Calgary?",
-      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. A Galaxy screen is a larger job than a comparable Iphone screen because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
+      answer: `Samsung Galaxy screen replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. A Galaxy screen is a larger job than a comparable iPhone screen because the OLED panel is bonded to the phone's mid-frame and supplied as one complete assembly.`,
     },
     {
-      question: "Why is a Samsung screen more expensive to replace than an Iphone screen?",
+      question: "Why is a Samsung screen more expensive to replace than an iPhone screen?",
       answer:
-        "On most Galaxy models the display is bonded to the phone's mid-frame at the factory and supplied as a single assembly, so the replacement part includes the frame. The board, battery and cameras must then be transferred into the new frame. On an Iphone the display comes off as its own part, which costs less and takes less time.",
+        "On most Galaxy models the display is bonded to the phone's mid-frame at the factory and supplied as a single assembly, so the replacement part includes the frame. The board, battery and cameras must then be transferred into the new frame. On an iPhone the display comes off as its own part, which costs less and takes less time.",
     },
     {
       question: "What do green or pink lines on my Galaxy screen mean?",
@@ -833,7 +833,7 @@ const samsungScreen: RepairDef = {
     {
       question: "How long does a Samsung screen replacement take?",
       answer:
-        "About 45 minutes at TechBrotherz in Calgary, longer than an Iphone screen. A Galaxy opens from the back, and the board, battery, cameras and buttons must all be transferred into the new display and frame assembly, which is what accounts for the extra time.",
+        "About 45 minutes at TechBrotherz in Calgary, longer than an iPhone screen. A Galaxy opens from the back, and the board, battery, cameras and buttons must all be transferred into the new display and frame assembly, which is what accounts for the extra time.",
     },
   ],
   globalCategories: ["parts", "warranty"],
@@ -851,13 +851,13 @@ const samsungBattery: RepairDef = {
   serviceType: "Samsung Galaxy battery replacement",
   parentService: "/services/phone-repair",
   source: { kind: "catalogue", brandSlug: "samsung-galaxy", repairSlugs: ["battery-replacement"] },
-  siblings: ["/repairs/Iphone-battery-replacement", "/repairs/samsung-screen-replacement"],
+  siblings: ["/repairs/iphone-battery-replacement", "/repairs/samsung-screen-replacement"],
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy battery. Since the Galaxy S6, Samsung battery have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Samsung Galaxy batteries. Since the Galaxy S6, Samsung batteries have been sealed inside the phone rather than user-removable, so replacing one means opening the phone from the back and cutting through adhesive.`,
   answer: () =>
-    `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy battery have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
+    `Samsung Galaxy battery replacement at TechBrotherz in Calgary takes about 45 minutes. Galaxy batteries have been sealed inside the phone since the Galaxy S6, so the repair means heating and removing the rear glass, cutting the battery free of its adhesive, and resealing the phone afterwards. The quote is free and given before any work starts.`,
   symptoms: [
     "The phone no longer reaches the end of a day on a charge it used to manage.",
     "It shuts down suddenly with charge still showing, particularly in cold weather.",
@@ -880,7 +880,7 @@ const samsungBattery: RepairDef = {
     },
     {
       title: "The battery is cut free and replaced",
-      body: "Samsung battery are held down with strong adhesive across the whole underside. It is softened and the cell eased out, never levered against, because puncturing a lithium cell is dangerous.",
+      body: "Samsung batteries are held down with strong adhesive across the whole underside. It is softened and the cell eased out, never levered against, because puncturing a lithium cell is dangerous.",
     },
     {
       title: "The phone is resealed with fresh adhesive",
@@ -891,15 +891,15 @@ const samsungBattery: RepairDef = {
     {
       heading: "Why can you no longer just swap a Galaxy battery yourself?",
       paragraphs: [
-        "Until the Galaxy S5, Samsung phones had removable back covers and battery you could carry a spare for, and that was one of the main things people preferred about them over the Iphone. The Galaxy S6 ended it, in exchange for a sealed metal and glass body, water resistance and wireless charging.",
+        "Until the Galaxy S5, Samsung phones had removable back covers and batteries you could carry a spare for, and that was one of the main things people preferred about them over the iPhone. The Galaxy S6 ended it, in exchange for a sealed metal and glass body, water resistance and wireless charging.",
         "The result is that a battery replacement went from a ten-second job anyone could do to a proper repair. The rear glass is bonded on with adhesive around the entire perimeter, and it has to be warmed until that adhesive softens and then cut through carefully without cracking the panel.",
-        "This is why a Galaxy battery replacement takes about 45 minutes rather than the 30 an Iphone takes. More of the phone has to come apart to reach the cell, and it has to be properly resealed afterwards.",
+        "This is why a Galaxy battery replacement takes about 45 minutes rather than the 30 an iPhone takes. More of the phone has to come apart to reach the cell, and it has to be properly resealed afterwards.",
       ],
     },
     {
       heading: "How do you know a Galaxy battery is worn out?",
       paragraphs: [
-        "Android does not expose a maximum capacity percentage the way iOS does, which makes this less straightforward than on an Iphone. Samsung's own Members app includes a battery status check on many models, and that is the closest equivalent, reporting battery life as normal, weak or in need of replacement.",
+        "Android does not expose a maximum capacity percentage the way iOS does, which makes this less straightforward than on an iPhone. Samsung's own Members app includes a battery status check on many models, and that is the closest equivalent, reporting battery life as normal, weak or in need of replacement.",
         "Failing that, behaviour is the guide. A battery that has genuinely worn out shows a phone that lasts noticeably less than a year ago on the same use, shuts down with charge still showing, and struggles particularly in the cold, because low temperatures reduce what a worn cell can deliver.",
         "Before assuming the battery, check Settings and look at battery usage by app. A single app misbehaving in the background will flatten a phone in a way that looks identical to a worn cell from the outside, and that is worth ruling out before paying for a repair.",
       ],
@@ -924,7 +924,7 @@ const samsungBattery: RepairDef = {
   modelNotes: [
     {
       model: "Galaxy S5 and earlier",
-      note: "These have user-removable back covers and battery. If you have one of these, a replacement cell is something you can fit yourself in seconds.",
+      note: "These have user-removable back covers and batteries. If you have one of these, a replacement cell is something you can fit yourself in seconds.",
     },
     {
       model: "Galaxy S6 and later",
@@ -980,7 +980,7 @@ const samsungBackGlass: RepairDef = {
     brandSlug: "samsung-galaxy",
     repairSlugs: ["back-glass-replacement", "back-housing-replacement"],
   },
-  siblings: ["/repairs/Iphone-back-glass-replacement", "/repairs/samsung-screen-replacement"],
+  siblings: ["/repairs/iphone-back-glass-replacement", "/repairs/samsung-screen-replacement"],
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
@@ -1018,10 +1018,10 @@ const samsungBackGlass: RepairDef = {
   ],
   sections: () => [
     {
-      heading: "Is Samsung back glass easier to replace than Iphone back glass?",
+      heading: "Is Samsung back glass easier to replace than iPhone back glass?",
       paragraphs: [
         "Yes, and the reason is that on a Galaxy the rear panel is the service access point. Samsung's own repair process for a battery, a charging port or a display starts by removing the back, so the panel is bonded to be removable rather than permanent.",
-        "On an Iphone 8 through Iphone 11 the opposite is true: the back was never meant to come off, service happens through the front, and the rear glass is bonded hard enough that it comes away in fragments. That difference is why Iphone back glass on those models is a labour-heavy repair and Galaxy back glass is not.",
+        "On an iPhone 8 through iPhone 11 the opposite is true: the back was never meant to come off, service happens through the front, and the rear glass is bonded hard enough that it comes away in fragments. That difference is why iPhone back glass on those models is a labour-heavy repair and Galaxy back glass is not.",
         "In practice a Galaxy rear panel is heated, cut free around the perimeter, and lifted off in one piece most of the time. The work is careful rather than laborious.",
       ],
     },
@@ -1085,9 +1085,9 @@ const samsungBackGlass: RepairDef = {
         "Not to its original factory rating. Water resistance depends on seals compressed under controlled factory conditions, and cutting through them for any repair ends that certification. TechBrotherz reseals with fresh perimeter adhesive and clamps the phone while it sets, giving a properly closed phone that handles rain and splashes.",
     },
     {
-      question: "Why is Samsung back glass easier to replace than Iphone back glass?",
+      question: "Why is Samsung back glass easier to replace than iPhone back glass?",
       answer:
-        "On a Galaxy the rear panel is the service access point for every internal repair, so it is bonded to be removable and usually lifts off in one piece. On Iphone 8 through Iphone 11 the back was never designed to come off, service happens through the front, and the glass must be removed in fragments.",
+        "On a Galaxy the rear panel is the service access point for every internal repair, so it is bonded to be removable and usually lifts off in one piece. On iPhone 8 through iPhone 11 the back was never designed to come off, service happens through the front, and the glass must be removed in fragments.",
     },
   ],
   globalCategories: ["parts", "warranty"],
@@ -1105,7 +1105,7 @@ const samsungPort: RepairDef = {
   serviceType: "Samsung Galaxy charging port repair",
   parentService: "/services/phone-repair",
   source: { kind: "catalogue", brandSlug: "samsung-galaxy", repairSlugs: ["charging-port-repair"] },
-  siblings: ["/repairs/Iphone-charging-port-repair", "/repairs/samsung-battery-replacement"],
+  siblings: ["/repairs/iphone-charging-port-repair", "/repairs/samsung-battery-replacement"],
   brandSlug: "samsung-galaxy",
   minutes: 45,
   lead: () =>
@@ -1218,31 +1218,31 @@ const samsungPort: RepairDef = {
   globalCategories: ["turnaround", "warranty"],
 };
 
-/* ==================================================================== Ipad */
+/* ==================================================================== iPad */
 
-const IpadScreen: RepairDef = {
-  slug: "Ipad-screen-replacement",
+const ipadScreen: RepairDef = {
+  slug: "ipad-screen-replacement",
   art: "screen",
-  localPath: "/Ipad-repair-calgary",
-  h1: "Ipad Screen and Glass Replacement Prices",
-  eyebrow: "Ipad screen",
-  seoTitle: "Ipad Screen Replacement Calgary | Price By Model",
+  localPath: "/ipad-repair-calgary",
+  h1: "iPad Screen and Glass Replacement Prices",
+  eyebrow: "iPad screen",
+  seoTitle: "iPad Screen Replacement Calgary | Price By Model",
   seoDescription:
-    "Ipad glass and screen replacement prices by model at TechBrotherz in Calgary. Part and labour included, 60-day warranty, walk in, no appointment needed.",
-  serviceType: "Ipad screen replacement",
-  parentService: "/services/Ipad-repair",
+    "iPad glass and screen replacement prices by model at TechBrotherz in Calgary. Part and labour included, 60-day warranty, walk in, no appointment needed.",
+  serviceType: "iPad screen replacement",
+  parentService: "/services/ipad-repair",
   source: {
     kind: "catalogue",
-    brandSlug: "apple-Ipad",
+    brandSlug: "apple-ipad",
     repairSlugs: ["glass-digitizer", "screen-replacement"],
   },
-  siblings: ["/repairs/Iphone-screen-replacement", "/repairs/laptop-screen-replacement"],
-  brandSlug: "apple-Ipad",
+  siblings: ["/repairs/iphone-screen-replacement", "/repairs/laptop-screen-replacement"],
+  brandSlug: "apple-ipad",
   minutes: 90,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces Ipad glass and screens. On older Ipads the glass is a separate layer from the display, which is why a cracked Ipad front is often a smaller repair than people expect.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPad glass and screens. On older iPads the glass is a separate layer from the display, which is why a cracked iPad front is often a smaller repair than people expect.`,
   answer: () =>
-    `Ipad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older Ipad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent Ipad Air and Ipad Pro models use a laminated display where both replace as one assembly, which is the larger job.`,
+    `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is separate from the display panel, so a cracked front with a working picture needs only the glass. Recent iPad Air and iPad Pro models use a laminated display where both replace as one assembly, which is the larger job.`,
   symptoms: [
     "Cracked or shattered front glass while the picture underneath is still perfect.",
     "Touch that has stopped working in one area, or registers presses on its own.",
@@ -1257,7 +1257,7 @@ const IpadScreen: RepairDef = {
     },
     {
       title: "The perimeter adhesive is heated",
-      body: "Ipad glass is bonded around the entire edge. The whole perimeter is warmed evenly until the adhesive softens, which takes patience on a panel this size.",
+      body: "iPad glass is bonded around the entire edge. The whole perimeter is warmed evenly until the adhesive softens, which takes patience on a panel this size.",
     },
     {
       title: "The glass is cut free and lifted",
@@ -1269,84 +1269,84 @@ const IpadScreen: RepairDef = {
     },
     {
       title: "Touch, cameras and buttons are tested",
-      body: "Touch across the whole panel, both cameras, the home button or Face ID, the speakers and charging are all checked before the Ipad goes back.",
+      body: "Touch across the whole panel, both cameras, the home button or Face ID, the speakers and charging are all checked before the iPad goes back.",
     },
   ],
   sections: () => [
     {
-      heading: "Why is Ipad glass replacement cheaper than an Iphone screen?",
+      heading: "Why is iPad glass replacement cheaper than an iPhone screen?",
       paragraphs: [
-        `On many Ipad models the touch-sensitive glass is a genuinely separate component from the display panel beneath it, with an air gap between the two. If the front cracks and the picture is unaffected, only the glass needs replacing, and that part is a fraction of a full display assembly. That is why a cracked older Ipad is one of the smaller repairs TechBrotherz quotes.`,
-        "This is the opposite of every modern phone, where the digitiser and the panel are laminated together at the factory and must be replaced as one. The Ipad kept the older separated construction on its base models long after phones moved on.",
-        "The practical result surprises people regularly: a large cracked Ipad screen can cost less to repair than a small cracked phone screen, because the layer that broke is the cheap one.",
+        `On many iPad models the touch-sensitive glass is a genuinely separate component from the display panel beneath it, with an air gap between the two. If the front cracks and the picture is unaffected, only the glass needs replacing, and that part is a fraction of a full display assembly. That is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
+        "This is the opposite of every modern phone, where the digitiser and the panel are laminated together at the factory and must be replaced as one. The iPad kept the older separated construction on its base models long after phones moved on.",
+        "The practical result surprises people regularly: a large cracked iPad screen can cost less to repair than a small cracked phone screen, because the layer that broke is the cheap one.",
       ],
     },
     {
-      heading: "Which Ipads have laminated screens?",
+      heading: "Which iPads have laminated screens?",
       paragraphs: [
-        "The Ipad Air from the third generation onward, every Ipad Pro, and the Ipad mini from the fifth generation onward use laminated displays, where the glass is bonded directly to the panel with no air gap. The base Ipad kept the older separated construction for much longer, through the ninth generation.",
+        "The iPad Air from the third generation onward, every iPad Pro, and the iPad mini from the fifth generation onward use laminated displays, where the glass is bonded directly to the panel with no air gap. The base iPad kept the older separated construction for much longer, through the ninth generation.",
         "Lamination is a genuine improvement to look at. It removes the air gap, so the picture appears to sit on the surface of the glass rather than behind a window, and it reduces reflections and the hollow feel when tapping. It is also what makes Apple Pencil use feel direct rather than slightly disconnected.",
-        "The cost of that improvement appears at repair time. A crack on a laminated Ipad takes out the whole assembly, and an Ipad Pro display can cost several times what glass replacement costs on a base Ipad. TechBrotherz identifies which construction your model uses before quoting, which is why the model number matters.",
+        "The cost of that improvement appears at repair time. A crack on a laminated iPad takes out the whole assembly, and an iPad Pro display can cost several times what glass replacement costs on a base iPad. TechBrotherz identifies which construction your model uses before quoting, which is why the model number matters.",
       ],
     },
     {
-      heading: "Why does an Ipad repair take longer than a phone repair?",
+      heading: "Why does an iPad repair take longer than a phone repair?",
       paragraphs: [
-        "The adhesive perimeter on an Ipad is far longer than on a phone, and it has to be heated evenly along its whole length before anything can be separated. A panel that is levered while one section is still cold will crack, and a frame that is pulled unevenly will bend.",
-        "The frame is the part that cannot be undone. An Ipad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is not caution for its own sake, it is what keeps the repair repeatable.",
-        "In practice most Ipad work is a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close.",
+        "The adhesive perimeter on an iPad is far longer than on a phone, and it has to be heated evenly along its whole length before anything can be separated. A panel that is levered while one section is still cold will crack, and a frame that is pulled unevenly will bend.",
+        "The frame is the part that cannot be undone. An iPad's aluminium body is thin and large, which makes it easy to distort, and a bent frame will not let a new panel sit flat afterwards. Working slowly is not caution for its own sake, it is what keeps the repair repeatable.",
+        "In practice most iPad work is a same-day drop-off rather than a wait at the Store. Bring it in during the day and in most cases it is ready before we close.",
       ],
     },
     {
-      heading: "How much does Ipad screen repair cost in Calgary?",
+      heading: "How much does iPad screen repair cost in Calgary?",
       paragraphs: [
-        `Ipad glass is quoted per model at the Store, with the part and the labour in one figure. The spread across the Ipad range is wider than on any other device TechBrotherz repairs, because it covers both separated-glass and laminated-display models, and those are two different repairs rather than two versions of one.`,
-        "The model number is what determines which of those you have, and it is engraved in small print on the back of the Ipad. Two tablets that look nearly identical can be very different repairs, which is why we ask rather than assume.",
-        "Models showing Call for quote are ones where the assembly is ordered in and priced once we know the cost. Apple publishes its own out-of-warranty Ipad service pricing, which is worth comparing before deciding where to have the work done.",
+        `iPad glass is quoted per model at the Store, with the part and the labour in one figure. The spread across the iPad range is wider than on any other device TechBrotherz repairs, because it covers both separated-glass and laminated-display models, and those are two different repairs rather than two versions of one.`,
+        "The model number is what determines which of those you have, and it is engraved in small print on the back of the iPad. Two tablets that look nearly identical can be very different repairs, which is why we ask rather than assume.",
+        "Models showing Call for quote are ones where the assembly is ordered in and priced once we know the cost. Apple publishes its own out-of-warranty iPad service pricing, which is worth comparing before deciding where to have the work done.",
       ],
     },
   ],
   modelNotes: [
     {
-      model: "Ipad 2 through Ipad 9th generation",
+      model: "iPad 2 through iPad 9th generation",
       note: "Separated glass and display. A cracked front with a working picture needs only the glass, which is the cheaper repair.",
     },
     {
-      model: "Ipad Air 3 and later, Ipad mini 5 and later",
+      model: "iPad Air 3 and later, iPad mini 5 and later",
       note: "Laminated displays, where the glass and panel replace as one assembly at a considerably higher part cost.",
     },
     {
-      model: "Every Ipad Pro",
+      model: "Every iPad Pro",
       note: "Laminated, and the most expensive tablet display we fit. Worth pricing carefully against the tablet's value before committing.",
     },
   ],
   notWorthIt: [
     "When the aluminium frame is visibly bent, because a new panel cannot seat flat against it.",
-    "When a laminated Ipad Pro display approaches half the used value of the tablet.",
-    "When the Ipad has been in liquid, since corrosion continues after the glass is replaced.",
+    "When a laminated iPad Pro display approaches half the used value of the tablet.",
+    "When the iPad has been in liquid, since corrosion continues after the glass is replaced.",
   ],
   faqs: () => [
     {
-      question: "How much does it cost to replace an Ipad screen in Calgary?",
-      answer: `Ipad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older Ipads with separated glass are the smaller repair. Laminated Ipad Air and Ipad Pro displays replace as one assembly and are the larger job.`,
+      question: "How much does it cost to replace an iPad screen in Calgary?",
+      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. Older iPads with separated glass are the smaller repair. Laminated iPad Air and iPad Pro displays replace as one assembly and are the larger job.`,
     },
     {
-      question: "Which Ipad models have laminated screens?",
+      question: "Which iPad models have laminated screens?",
       answer:
-        "Ipad Air from the third generation, Ipad mini from the fifth generation, and every Ipad Pro use laminated displays where the glass is bonded to the panel. The base Ipad kept separated glass through the ninth generation. Lamination removes the air gap and improves the picture, and it makes a cracked screen more expensive to repair.",
+        "iPad Air from the third generation, iPad mini from the fifth generation, and every iPad Pro use laminated displays where the glass is bonded to the panel. The base iPad kept separated glass through the ninth generation. Lamination removes the air gap and improves the picture, and it makes a cracked screen more expensive to repair.",
     },
     {
-      question: "Can just the glass be replaced on a cracked Ipad?",
+      question: "Can just the glass be replaced on a cracked iPad?",
       answer:
-        "On Ipad models with separated construction, yes. If the front glass is cracked and the picture underneath is undamaged, TechBrotherz in Calgary replaces the glass alone. On laminated Ipad Air, Ipad mini and Ipad Pro models the glass and display are bonded and must be replaced together.",
+        "On iPad models with separated construction, yes. If the front glass is cracked and the picture underneath is undamaged, TechBrotherz in Calgary replaces the glass alone. On laminated iPad Air, iPad mini and iPad Pro models the glass and display are bonded and must be replaced together.",
     },
     {
-      question: "Why does an Ipad screen repair take longer than a phone screen?",
+      question: "Why does an iPad screen repair take longer than a phone screen?",
       answer:
-        "The adhesive perimeter on an Ipad is much longer than on a phone and has to be heated evenly along its whole length before separation. The thin aluminium frame bends easily if the panel is lifted unevenly, and a bent frame will not let a new panel sit flat. Most Ipad repairs at TechBrotherz are same-day drop-offs.",
+        "The adhesive perimeter on an iPad is much longer than on a phone and has to be heated evenly along its whole length before separation. The thin aluminium frame bends easily if the panel is lifted unevenly, and a bent frame will not let a new panel sit flat. Most iPad repairs at TechBrotherz are same-day drop-offs.",
     },
   ],
-  globalCategories: ["Ipad", "warranty"],
+  globalCategories: ["ipad", "warranty"],
 };
 
 /* ================================================================== laptop */
@@ -1421,7 +1421,7 @@ const laptopScreen: RepairDef = {
       paragraphs: [
         "A laptop panel is a single component that is not bonded to anything else. It sits in the lid held by brackets and screws, connected by one video cable, with a plastic bezel clipped over the front. The bezel comes off, the panel unscrews, the cable unplugs, and a new one goes in the same way.",
         "There is no adhesive to heat and cut, no digitiser laminated to the front, and no sensor assembly that has to be transferred across. On a non-touch laptop, which is most of them, there is no touch layer involved at all.",
-        "That is why the price is dominated by the part rather than the labour, which is the reverse of a repair like Iphone back glass. The work is straightforward. What varies is what the panel costs.",
+        "That is why the price is dominated by the part rather than the labour, which is the reverse of a repair like iPhone back glass. The work is straightforward. What varies is what the panel costs.",
       ],
     },
     {
@@ -2263,16 +2263,16 @@ const computerDiagnostics: RepairDef = {
 /* -------------------------------------------------------------------- index */
 
 export const REPAIRS: RepairDef[] = [
-  IphoneScreen,
-  IphoneBattery,
-  IphonePort,
-  IphoneCamera,
-  IphoneBackGlass,
+  iphoneScreen,
+  iphoneBattery,
+  iphonePort,
+  iphoneCamera,
+  iphoneBackGlass,
   samsungScreen,
   samsungBattery,
   samsungBackGlass,
   samsungPort,
-  IpadScreen,
+  ipadScreen,
   laptopScreen,
   laptopKeyboard,
   laptopPort,

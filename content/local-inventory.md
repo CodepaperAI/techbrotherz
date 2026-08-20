@@ -86,9 +86,9 @@ These differentiate on **service**, which the Phase 5 repair tier demonstrated w
 | URL                             | Service facts                                                             | Local facts it leans on                  |
 | ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------- |
 | `/phone-repair-calgary`         | Full phone price range across 6 brands                                    | 33 St SE Station, International Avenue   |
-| `/Iphone-screen-repair-calgary` | Iphone screen prices per model, Face ID transfer                          | 33 St SE Station, walk-in while you wait |
+| `/iphone-screen-repair-calgary` | iPhone screen prices per model, Face ID transfer                          | 33 St SE Station, walk-in while you wait |
 | `/samsung-repair-calgary`       | Galaxy prices, frame-bonded OLED assemblies                               | 33 St SE Station, International Avenue   |
-| `/Ipad-repair-calgary`          | Ipad glass vs laminated, same-day not while-you-wait                      | Drop-off suits the transitway location   |
+| `/ipad-repair-calgary`          | iPad glass vs laminated, same-day not while-you-wait                      | Drop-off suits the transitway location   |
 | `/tablet-repair-calgary`        | Android and Windows tablets, counter quoting                              | Bring the model number                   |
 | `/laptop-repair-calgary`        | Screen, keyboard, DC jack, diagnostics                                    | Parking matters more, bring the charger  |
 | `/computer-repair-calgary`      | Diagnostics, Windows, tune-up, flat pricing                               | Tower-only drop-off, parking             |

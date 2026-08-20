@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Iphone-11",
-  "name": "Iphone 11",
+  "slug": "iphone-11",
+  "name": "iPhone 11",
   "intro": [
     {
-      "_key": "model.Iphone-11-intro-b0",
+      "_key": "model.iphone-11-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Iphone-11-intro-s0",
+          "_key": "model.iphone-11-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Iphone 11 is the most common phone we see at TechBrotherz in Calgary. Unlike the 11 Pro beside it, the 11 uses an LCD panel rather than OLED, which makes its screen noticeably cheaper to replace than the Pro of the same year. Most Iphone 11 repairs here are a cracked screen or a battery that no longer lasts a Calgary winter day. Walk in at 3317 17 Ave SE, no appointment needed."
+          "text": "The iPhone 11 is the most common phone we see at TechBrotherz in Calgary. Unlike the 11 Pro beside it, the 11 uses an LCD panel rather than OLED, which makes its screen noticeably cheaper to replace than the Pro of the same year. Most iPhone 11 repairs here are a cracked screen or a battery that no longer lasts a Calgary winter day. Walk in at 3317 17 Ave SE, no appointment needed."
         }
       ],
       "markDefs": [],
@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass on the LCD panel, cheaper to replace than any OLED Iphone of the same year",
+    "Cracked front glass on the LCD panel, cheaper to replace than any OLED iPhone of the same year",
     "Battery health below 80 percent, common on a phone now several years old",
     "Charging port packed with lint so the cable will not seat",
     "Rear camera lens cover cracked, producing hazy photos in bright light",
@@ -35,14 +35,14 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.Iphone-11-verdict-b0",
+      "_key": "model.iphone-11-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Iphone-11-verdict-s0",
+          "_key": "model.iphone-11-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes, this is one of the best repairs to buy. The Iphone 11 still receives iOS updates, which means banking and messaging apps continue to support it, and its LCD screen is cheaper to replace than the OLED of the 11 Pro beside it. A screen or a battery on a working Iphone 11 is money well spent."
+          "text": "Yes, this is one of the best repairs to buy. The iPhone 11 still receives iOS updates, which means banking and messaging apps continue to support it, and its LCD screen is cheaper to replace than the OLED of the 11 Pro beside it. A screen or a battery on a working iPhone 11 is money well spent."
         }
       ],
       "markDefs": [],

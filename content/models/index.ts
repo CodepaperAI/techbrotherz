@@ -64,79 +64,79 @@ import m53 from "@/content/models/galaxy-z-fold-3";
 import m54 from "@/content/models/galaxy-z-fold-4";
 import m55 from "@/content/models/galaxy-z-fold-5";
 import m56 from "@/content/models/galaxy-z-fold-6";
-import m60 from "@/content/models/Ipad-10th-gen";
-import m61 from "@/content/models/Ipad-2";
-import m62 from "@/content/models/Ipad-3";
-import m63 from "@/content/models/Ipad-4";
-import m64 from "@/content/models/Ipad-5th-gen";
-import m65 from "@/content/models/Ipad-6th-gen";
-import m66 from "@/content/models/Ipad-7th-gen";
-import m67 from "@/content/models/Ipad-8th-gen";
-import m68 from "@/content/models/Ipad-9th-gen";
-import m69 from "@/content/models/Ipad-air";
-import m70 from "@/content/models/Ipad-air-2";
-import m71 from "@/content/models/Ipad-air-3";
-import m72 from "@/content/models/Ipad-air-4";
-import m73 from "@/content/models/Ipad-air-5";
-import m74 from "@/content/models/Ipad-mini";
-import m75 from "@/content/models/Ipad-mini-2";
-import m76 from "@/content/models/Ipad-mini-3";
-import m77 from "@/content/models/Ipad-mini-4";
-import m78 from "@/content/models/Ipad-mini-5";
-import m79 from "@/content/models/Ipad-mini-6";
-import m80 from "@/content/models/Ipad-pro-10-5";
-import m81 from "@/content/models/Ipad-pro-11-1st-gen";
-import m82 from "@/content/models/Ipad-pro-11-2nd-gen";
-import m83 from "@/content/models/Ipad-pro-11-3rd-gen";
-import m84 from "@/content/models/Ipad-pro-11-4th-gen";
-import m85 from "@/content/models/Ipad-pro-12-9-3rd-gen";
-import m86 from "@/content/models/Ipad-pro-12-9-4th-gen";
-import m87 from "@/content/models/Ipad-pro-12-9-5th-gen";
-import m88 from "@/content/models/Ipad-pro-12-9-6th-gen";
-import m89 from "@/content/models/Ipad-pro-9-7";
-import m90 from "@/content/models/Iphone-11";
-import m91 from "@/content/models/Iphone-11-pro";
-import m92 from "@/content/models/Iphone-11-pro-max";
-import m93 from "@/content/models/Iphone-12";
-import m94 from "@/content/models/Iphone-12-mini";
-import m95 from "@/content/models/Iphone-12-pro";
-import m96 from "@/content/models/Iphone-12-pro-max";
-import m97 from "@/content/models/Iphone-13";
-import m98 from "@/content/models/Iphone-13-mini";
-import m99 from "@/content/models/Iphone-13-pro";
-import m100 from "@/content/models/Iphone-13-pro-max";
-import m101 from "@/content/models/Iphone-14";
-import m102 from "@/content/models/Iphone-14-plus";
-import m103 from "@/content/models/Iphone-14-pro";
-import m104 from "@/content/models/Iphone-14-pro-max";
-import m105 from "@/content/models/Iphone-15";
-import m106 from "@/content/models/Iphone-15-plus";
-import m107 from "@/content/models/Iphone-15-pro";
-import m108 from "@/content/models/Iphone-15-pro-max";
-import m109 from "@/content/models/Iphone-16";
-import m110 from "@/content/models/Iphone-16-plus";
-import m111 from "@/content/models/Iphone-16-pro";
-import m112 from "@/content/models/Iphone-16-pro-max";
-import m113 from "@/content/models/Iphone-4";
-import m114 from "@/content/models/Iphone-4s";
-import m115 from "@/content/models/Iphone-5";
-import m116 from "@/content/models/Iphone-5c";
-import m117 from "@/content/models/Iphone-5s";
-import m118 from "@/content/models/Iphone-6";
-import m119 from "@/content/models/Iphone-6-plus";
-import m120 from "@/content/models/Iphone-6s";
-import m121 from "@/content/models/Iphone-6s-plus";
-import m122 from "@/content/models/Iphone-7";
-import m123 from "@/content/models/Iphone-7-plus";
-import m124 from "@/content/models/Iphone-8";
-import m125 from "@/content/models/Iphone-8-plus";
-import m126 from "@/content/models/Iphone-se-1st-gen";
-import m127 from "@/content/models/Iphone-se-2nd-gen";
-import m128 from "@/content/models/Iphone-se-3rd-gen";
-import m129 from "@/content/models/Iphone-x";
-import m130 from "@/content/models/Iphone-xr";
-import m131 from "@/content/models/Iphone-xs";
-import m132 from "@/content/models/Iphone-xs-max";
+import m60 from "@/content/models/ipad-10th-gen";
+import m61 from "@/content/models/ipad-2";
+import m62 from "@/content/models/ipad-3";
+import m63 from "@/content/models/ipad-4";
+import m64 from "@/content/models/ipad-5th-gen";
+import m65 from "@/content/models/ipad-6th-gen";
+import m66 from "@/content/models/ipad-7th-gen";
+import m67 from "@/content/models/ipad-8th-gen";
+import m68 from "@/content/models/ipad-9th-gen";
+import m69 from "@/content/models/ipad-air";
+import m70 from "@/content/models/ipad-air-2";
+import m71 from "@/content/models/ipad-air-3";
+import m72 from "@/content/models/ipad-air-4";
+import m73 from "@/content/models/ipad-air-5";
+import m74 from "@/content/models/ipad-mini";
+import m75 from "@/content/models/ipad-mini-2";
+import m76 from "@/content/models/ipad-mini-3";
+import m77 from "@/content/models/ipad-mini-4";
+import m78 from "@/content/models/ipad-mini-5";
+import m79 from "@/content/models/ipad-mini-6";
+import m80 from "@/content/models/ipad-pro-10-5";
+import m81 from "@/content/models/ipad-pro-11-1st-gen";
+import m82 from "@/content/models/ipad-pro-11-2nd-gen";
+import m83 from "@/content/models/ipad-pro-11-3rd-gen";
+import m84 from "@/content/models/ipad-pro-11-4th-gen";
+import m85 from "@/content/models/ipad-pro-12-9-3rd-gen";
+import m86 from "@/content/models/ipad-pro-12-9-4th-gen";
+import m87 from "@/content/models/ipad-pro-12-9-5th-gen";
+import m88 from "@/content/models/ipad-pro-12-9-6th-gen";
+import m89 from "@/content/models/ipad-pro-9-7";
+import m90 from "@/content/models/iphone-11";
+import m91 from "@/content/models/iphone-11-pro";
+import m92 from "@/content/models/iphone-11-pro-max";
+import m93 from "@/content/models/iphone-12";
+import m94 from "@/content/models/iphone-12-mini";
+import m95 from "@/content/models/iphone-12-pro";
+import m96 from "@/content/models/iphone-12-pro-max";
+import m97 from "@/content/models/iphone-13";
+import m98 from "@/content/models/iphone-13-mini";
+import m99 from "@/content/models/iphone-13-pro";
+import m100 from "@/content/models/iphone-13-pro-max";
+import m101 from "@/content/models/iphone-14";
+import m102 from "@/content/models/iphone-14-plus";
+import m103 from "@/content/models/iphone-14-pro";
+import m104 from "@/content/models/iphone-14-pro-max";
+import m105 from "@/content/models/iphone-15";
+import m106 from "@/content/models/iphone-15-plus";
+import m107 from "@/content/models/iphone-15-pro";
+import m108 from "@/content/models/iphone-15-pro-max";
+import m109 from "@/content/models/iphone-16";
+import m110 from "@/content/models/iphone-16-plus";
+import m111 from "@/content/models/iphone-16-pro";
+import m112 from "@/content/models/iphone-16-pro-max";
+import m113 from "@/content/models/iphone-4";
+import m114 from "@/content/models/iphone-4s";
+import m115 from "@/content/models/iphone-5";
+import m116 from "@/content/models/iphone-5c";
+import m117 from "@/content/models/iphone-5s";
+import m118 from "@/content/models/iphone-6";
+import m119 from "@/content/models/iphone-6-plus";
+import m120 from "@/content/models/iphone-6s";
+import m121 from "@/content/models/iphone-6s-plus";
+import m122 from "@/content/models/iphone-7";
+import m123 from "@/content/models/iphone-7-plus";
+import m124 from "@/content/models/iphone-8";
+import m125 from "@/content/models/iphone-8-plus";
+import m126 from "@/content/models/iphone-se-1st-gen";
+import m127 from "@/content/models/iphone-se-2nd-gen";
+import m128 from "@/content/models/iphone-se-3rd-gen";
+import m129 from "@/content/models/iphone-x";
+import m130 from "@/content/models/iphone-xr";
+import m131 from "@/content/models/iphone-xs";
+import m132 from "@/content/models/iphone-xs-max";
 import m145 from "@/content/models/pixel-6";
 import m146 from "@/content/models/pixel-6-pro";
 import m147 from "@/content/models/pixel-6a";
@@ -207,79 +207,79 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
   "galaxy-z-fold-4": m54,
   "galaxy-z-fold-5": m55,
   "galaxy-z-fold-6": m56,
-  "Ipad-10th-gen": m60,
-  "Ipad-2": m61,
-  "Ipad-3": m62,
-  "Ipad-4": m63,
-  "Ipad-5th-gen": m64,
-  "Ipad-6th-gen": m65,
-  "Ipad-7th-gen": m66,
-  "Ipad-8th-gen": m67,
-  "Ipad-9th-gen": m68,
-  "Ipad-air": m69,
-  "Ipad-air-2": m70,
-  "Ipad-air-3": m71,
-  "Ipad-air-4": m72,
-  "Ipad-air-5": m73,
-  "Ipad-mini": m74,
-  "Ipad-mini-2": m75,
-  "Ipad-mini-3": m76,
-  "Ipad-mini-4": m77,
-  "Ipad-mini-5": m78,
-  "Ipad-mini-6": m79,
-  "Ipad-pro-10-5": m80,
-  "Ipad-pro-11-1st-gen": m81,
-  "Ipad-pro-11-2nd-gen": m82,
-  "Ipad-pro-11-3rd-gen": m83,
-  "Ipad-pro-11-4th-gen": m84,
-  "Ipad-pro-12-9-3rd-gen": m85,
-  "Ipad-pro-12-9-4th-gen": m86,
-  "Ipad-pro-12-9-5th-gen": m87,
-  "Ipad-pro-12-9-6th-gen": m88,
-  "Ipad-pro-9-7": m89,
-  "Iphone-11": m90,
-  "Iphone-11-pro": m91,
-  "Iphone-11-pro-max": m92,
-  "Iphone-12": m93,
-  "Iphone-12-mini": m94,
-  "Iphone-12-pro": m95,
-  "Iphone-12-pro-max": m96,
-  "Iphone-13": m97,
-  "Iphone-13-mini": m98,
-  "Iphone-13-pro": m99,
-  "Iphone-13-pro-max": m100,
-  "Iphone-14": m101,
-  "Iphone-14-plus": m102,
-  "Iphone-14-pro": m103,
-  "Iphone-14-pro-max": m104,
-  "Iphone-15": m105,
-  "Iphone-15-plus": m106,
-  "Iphone-15-pro": m107,
-  "Iphone-15-pro-max": m108,
-  "Iphone-16": m109,
-  "Iphone-16-plus": m110,
-  "Iphone-16-pro": m111,
-  "Iphone-16-pro-max": m112,
-  "Iphone-4": m113,
-  "Iphone-4s": m114,
-  "Iphone-5": m115,
-  "Iphone-5c": m116,
-  "Iphone-5s": m117,
-  "Iphone-6": m118,
-  "Iphone-6-plus": m119,
-  "Iphone-6s": m120,
-  "Iphone-6s-plus": m121,
-  "Iphone-7": m122,
-  "Iphone-7-plus": m123,
-  "Iphone-8": m124,
-  "Iphone-8-plus": m125,
-  "Iphone-se-1st-gen": m126,
-  "Iphone-se-2nd-gen": m127,
-  "Iphone-se-3rd-gen": m128,
-  "Iphone-x": m129,
-  "Iphone-xr": m130,
-  "Iphone-xs": m131,
-  "Iphone-xs-max": m132,
+  "ipad-10th-gen": m60,
+  "ipad-2": m61,
+  "ipad-3": m62,
+  "ipad-4": m63,
+  "ipad-5th-gen": m64,
+  "ipad-6th-gen": m65,
+  "ipad-7th-gen": m66,
+  "ipad-8th-gen": m67,
+  "ipad-9th-gen": m68,
+  "ipad-air": m69,
+  "ipad-air-2": m70,
+  "ipad-air-3": m71,
+  "ipad-air-4": m72,
+  "ipad-air-5": m73,
+  "ipad-mini": m74,
+  "ipad-mini-2": m75,
+  "ipad-mini-3": m76,
+  "ipad-mini-4": m77,
+  "ipad-mini-5": m78,
+  "ipad-mini-6": m79,
+  "ipad-pro-10-5": m80,
+  "ipad-pro-11-1st-gen": m81,
+  "ipad-pro-11-2nd-gen": m82,
+  "ipad-pro-11-3rd-gen": m83,
+  "ipad-pro-11-4th-gen": m84,
+  "ipad-pro-12-9-3rd-gen": m85,
+  "ipad-pro-12-9-4th-gen": m86,
+  "ipad-pro-12-9-5th-gen": m87,
+  "ipad-pro-12-9-6th-gen": m88,
+  "ipad-pro-9-7": m89,
+  "iphone-11": m90,
+  "iphone-11-pro": m91,
+  "iphone-11-pro-max": m92,
+  "iphone-12": m93,
+  "iphone-12-mini": m94,
+  "iphone-12-pro": m95,
+  "iphone-12-pro-max": m96,
+  "iphone-13": m97,
+  "iphone-13-mini": m98,
+  "iphone-13-pro": m99,
+  "iphone-13-pro-max": m100,
+  "iphone-14": m101,
+  "iphone-14-plus": m102,
+  "iphone-14-pro": m103,
+  "iphone-14-pro-max": m104,
+  "iphone-15": m105,
+  "iphone-15-plus": m106,
+  "iphone-15-pro": m107,
+  "iphone-15-pro-max": m108,
+  "iphone-16": m109,
+  "iphone-16-plus": m110,
+  "iphone-16-pro": m111,
+  "iphone-16-pro-max": m112,
+  "iphone-4": m113,
+  "iphone-4s": m114,
+  "iphone-5": m115,
+  "iphone-5c": m116,
+  "iphone-5s": m117,
+  "iphone-6": m118,
+  "iphone-6-plus": m119,
+  "iphone-6s": m120,
+  "iphone-6s-plus": m121,
+  "iphone-7": m122,
+  "iphone-7-plus": m123,
+  "iphone-8": m124,
+  "iphone-8-plus": m125,
+  "iphone-se-1st-gen": m126,
+  "iphone-se-2nd-gen": m127,
+  "iphone-se-3rd-gen": m128,
+  "iphone-x": m129,
+  "iphone-xr": m130,
+  "iphone-xs": m131,
+  "iphone-xs-max": m132,
   "pixel-6": m145,
   "pixel-6-pro": m146,
   "pixel-6a": m147,

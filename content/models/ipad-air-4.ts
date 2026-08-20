@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Ipad-air-4",
-  "name": "Ipad Air 4",
+  "slug": "ipad-air-4",
+  "name": "iPad Air 4",
   "intro": [
     {
-      "_key": "model.Ipad-air-4-intro-b0",
+      "_key": "model.ipad-air-4-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Ipad-air-4-intro-s0",
+          "_key": "model.ipad-air-4-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Ipad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the Iphone 12, which was quick at launch and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
+          "text": "The iPad Air 4 was the redesign: flat edges, no home button, and the first Apple device anywhere to move Touch ID into the power button. It runs an A14 chip, the same generation as the iPhone 12, which was quick at launch and is merely adequate now. That ageing processor, rather than anything about the screen, is what usually decides whether an Air 4 is worth putting money into."
         }
       ],
       "markDefs": [],
@@ -35,11 +35,11 @@ const content: ModelContent = {
   ],
   "verdict": [
     {
-      "_key": "model.Ipad-air-4-verdict-b0",
+      "_key": "model.ipad-air-4-verdict-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Ipad-air-4-verdict-s0",
+          "_key": "model.ipad-air-4-verdict-s0",
           "_type": "span",
           "marks": [],
           "text": "Yes, but check the price against what an Air 4 now fetches secondhand. Its A14 processor has aged, values have dropped further than the Air 5's, and the display repair costs the same as its newer sibling's. If the tablet is doing a light job well, fix it. If it already feels slow, spending on glass will not fix that."

@@ -84,30 +84,30 @@ const phoneRepair: ServiceDef = {
   eyebrow: "Phone repair",
   seoTitle: "Cell Phone Repair Calgary | Walk In, No Appointment",
   seoDescription:
-    "Cell phone repair at TechBrotherz in Calgary. Screens, battery, charging ports and cameras, parts and labour included, 60-day warranty. Walk in, no appointment.",
+    "Cell phone repair at TechBrotherz in Calgary. Screens, batteries, charging ports and cameras, parts and labour included, 60-day warranty. Walk in, no appointment.",
   serviceType: "Cell phone repair",
   repairSlugs: [
-    "Iphone-screen-replacement",
-    "Iphone-battery-replacement",
-    "Iphone-charging-port-repair",
-    "Iphone-camera-repair",
-    "Iphone-back-glass-replacement",
+    "iphone-screen-replacement",
+    "iphone-battery-replacement",
+    "iphone-charging-port-repair",
+    "iphone-camera-repair",
+    "iphone-back-glass-replacement",
     "samsung-screen-replacement",
     "samsung-battery-replacement",
     "samsung-charging-port-repair",
     "samsung-back-glass-replacement",
   ],
-  brandSlugs: ["apple-Iphone", "samsung-galaxy", "google-pixel"],
+  brandSlugs: ["apple-iphone", "samsung-galaxy", "google-pixel"],
   flatSlugs: [],
   deviceTypes: ["phone"],
   localPath: "/phone-repair-calgary",
-  siblings: ["/services/Ipad-repair", "/services/phone-unlocking"],
+  siblings: ["/services/ipad-repair", "/services/phone-unlocking"],
   lead: (c) =>
-    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, battery, charging ports, cameras and buttons on Iphone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, batteries, charging ports, cameras and buttons on iPhone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs cell phones while you wait at the Store. Most phone repairs take about ${c.waitMinutes} minutes, no appointment is needed, and every repair carries a ${c.warrantyDays}-day warranty on the part and the workmanship. The quote is free and agreed before any work starts, and it covers the part and the labour together.`,
   keyFacts: (c) => [
-    { label: "Handsets", value: "Iphone, Samsung Galaxy and Google Pixel" },
+    { label: "Handsets", value: "iPhone, Samsung Galaxy and Google Pixel" },
     { label: "Most common repairs", value: "Screen, then battery, then charging port" },
     { label: "Typical time", value: `About ${c.waitMinutes} minutes on a screen` },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
@@ -144,16 +144,16 @@ const phoneRepair: ServiceDef = {
     {
       heading: "What phone repairs does TechBrotherz do?",
       paragraphs: [
-        `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn battery, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
+        `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn batteries, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
         "Beyond those five, we replace earpieces, loudspeakers, power buttons, volume buttons and home buttons. Those are smaller jobs, and on most handsets they take under an hour. If a phone has a fault that is not on the list, bring it in and we will tell you honestly whether it is something we can fix or something that needs the manufacturer.",
-        "We work on Iphone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same store. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the Store once we have the model in front of us and know what the part costs.",
+        "We work on iPhone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same store. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the Store once we have the model in front of us and know what the part costs.",
       ],
     },
     {
       heading: "What is the difference between a cracked screen and a broken LCD?",
       paragraphs: [
         "A phone screen is two layers bonded together: the digitizer, which is the touch-sensitive glass you press, and the LCD or OLED panel underneath, which produces the picture. A cracked screen means the glass is broken. A broken LCD means the panel underneath has failed, which shows up as black patches, coloured lines, a bleeding white glow or a display that stays dark.",
-        "The distinction matters because it is the single biggest driver of what a repair costs. On almost every modern phone the two layers are laminated together at the factory and have to be replaced as one assembly, so cracked glass and a dead panel cost the same to fix. On some older Ipads and a handful of older Android phones the layers are separate, and replacing just the glass is much cheaper.",
+        "The distinction matters because it is the single biggest driver of what a repair costs. On almost every modern phone the two layers are laminated together at the factory and have to be replaced as one assembly, so cracked glass and a dead panel cost the same to fix. On some older iPads and a handful of older Android phones the layers are separate, and replacing just the glass is much cheaper.",
         "You do not need to work out which one you have before you come in. Bring the phone to the Store and we will tell you in a minute, because the price we quote depends on it and we would rather show you than guess.",
       ],
     },
@@ -205,7 +205,7 @@ const phoneRepair: ServiceDef = {
   faqs: (c) => [
     {
       question: "How much does a cell phone repair cost in Calgary?",
-      answer: `Cell phone repair at TechBrotherz in Calgary is quoted per handset, free of charge, before any work starts, and every quote covers the part and the labour together. Iphone and Samsung Galaxy screens differ sharply across the range, because the panel in a five-year-old handset and the panel in a current one are not the same part.`,
+      answer: `Cell phone repair at TechBrotherz in Calgary is quoted per handset, free of charge, before any work starts, and every quote covers the part and the labour together. iPhone and Samsung Galaxy screens differ sharply across the range, because the panel in a five-year-old handset and the panel in a current one are not the same part.`,
     },
     {
       question: "Can TechBrotherz fix my phone while I wait?",
@@ -214,7 +214,7 @@ const phoneRepair: ServiceDef = {
     {
       question: "Which phone brands does TechBrotherz repair?",
       answer:
-        "TechBrotherz in Calgary repairs Iphone, Samsung Galaxy and Google Pixel phones. Every model is quoted individually at the Store, free and before any work starts, because the part cost drives the price.",
+        "TechBrotherz in Calgary repairs iPhone, Samsung Galaxy and Google Pixel phones. Every model is quoted individually at the Store, free and before any work starts, because the part cost drives the price.",
     },
     {
       question: "Do I need to back up my phone before a repair?",
@@ -229,31 +229,31 @@ const phoneRepair: ServiceDef = {
 /* ----------------------------------------------------------- tablet repair */
 
 /*
- * Renamed from tablet-repair on the client's instruction 2026-08: Ipad leads
+ * Renamed from tablet-repair on the client's instruction 2026-08: iPad leads
  * everywhere. The old /services/tablet-repair URL 301s here in next.config.ts.
  * "Android and Windows tablets" survives as one supporting section and FAQ,
- * which holds the tablet term without diluting the Ipad emphasis.
+ * which holds the tablet term without diluting the iPad emphasis.
  */
-const IpadRepair: ServiceDef = {
-  slug: "Ipad-repair",
-  h1: "Ipad Repair in Calgary",
-  eyebrow: "Ipad repair",
-  seoTitle: "Ipad Repair Calgary | Glass, Screens and battery",
+const ipadRepair: ServiceDef = {
+  slug: "ipad-repair",
+  h1: "iPad Repair in Calgary",
+  eyebrow: "iPad repair",
+  seoTitle: "iPad Repair Calgary | Glass, Screens and Batteries",
   seoDescription:
-    "Ipad repair at TechBrotherz in Calgary. Cracked glass, screens, battery and charging ports, parts and labour included, 60-day warranty, walk in.",
-  serviceType: "Ipad repair",
-  repairSlugs: ["Ipad-screen-replacement"],
-  brandSlugs: ["apple-Ipad"],
+    "iPad repair at TechBrotherz in Calgary. Cracked glass, screens, batteries and charging ports, parts and labour included, 60-day warranty, walk in.",
+  serviceType: "iPad repair",
+  repairSlugs: ["ipad-screen-replacement"],
+  brandSlugs: ["apple-ipad"],
   flatSlugs: [],
   deviceTypes: ["tablet"],
-  localPath: "/Ipad-repair-calgary",
+  localPath: "/ipad-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every Ipad generation, replacing cracked glass, failed display panels, worn battery and charging ports, and takes Android and Windows tablets at the same store.`,
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same store.`,
   answer: (c) =>
-    `TechBrotherz in Calgary repairs Ipads of every generation. On older Ipads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. Ipad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
+    `TechBrotherz in Calgary repairs iPads of every generation. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. iPad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
-    { label: "Two kinds of screen", value: "Separated glass on older Ipads, laminated on recent Air and Pro" },
+    { label: "Two kinds of screen", value: "Separated glass on older iPads, laminated on recent Air and Pro" },
     { label: "Typical time", value: "Longer than a phone, usually the same day" },
     { label: "Warranty", value: `${c.warrantyDays} days on the part and the work` },
     { label: "Android tablets", value: "Quoted at the Store, model number needed" },
@@ -262,12 +262,12 @@ const IpadRepair: ServiceDef = {
   process: [
     {
       title: "Bring the tablet and tell us the model",
-      body: "Ipad models look alike and price very differently. The model number is engraved on the back in small print, and we can read it at the Store if you cannot find it.",
+      body: "iPad models look alike and price very differently. The model number is engraved on the back in small print, and we can read it at the Store if you cannot find it.",
       art: "diagnostic",
     },
     {
       title: "We work out which layer is broken",
-      body: "On an Ipad, the glass and the display are often two separate parts. A cracked front with a perfect picture is the cheaper repair. Black patches or coloured lines mean the panel underneath has failed too.",
+      body: "On an iPad, the glass and the display are often two separate parts. A cracked front with a perfect picture is the cheaper repair. Black patches or coloured lines mean the panel underneath has failed too.",
       art: "screen",
     },
     {
@@ -288,49 +288,49 @@ const IpadRepair: ServiceDef = {
   ],
   sections: (c) => [
     {
-      heading: "Why does Ipad glass replacement cost less than an Iphone screen?",
+      heading: "Why does iPad glass replacement cost less than an iPhone screen?",
       paragraphs: [
-        `On many Ipad models the touch-sensitive glass is a separate component from the display panel underneath, unlike almost every modern phone where the two are laminated into one assembly. If you crack the front of an older Ipad and the picture is still perfect, only the glass needs replacing, and that part is a fraction of a full display. That is why a cracked older Ipad is one of the smaller repairs TechBrotherz quotes.`,
-        "The newer Ipad Air and Ipad Pro models changed this. Their displays are laminated, with the glass bonded directly to the panel, which removes the air gap and makes the screen look closer to the surface. It also means a crack takes out the whole assembly, and the part is far more expensive. An Ipad Pro screen can cost several times what the same repair costs on a base Ipad.",
-        "This is the first thing we check at the Store, and it is the reason we ask for the model. Two Ipads that look nearly identical can be two very different repairs, and quoting one price for both would be guessing.",
+        `On many iPad models the touch-sensitive glass is a separate component from the display panel underneath, unlike almost every modern phone where the two are laminated into one assembly. If you crack the front of an older iPad and the picture is still perfect, only the glass needs replacing, and that part is a fraction of a full display. That is why a cracked older iPad is one of the smaller repairs TechBrotherz quotes.`,
+        "The newer iPad Air and iPad Pro models changed this. Their displays are laminated, with the glass bonded directly to the panel, which removes the air gap and makes the screen look closer to the surface. It also means a crack takes out the whole assembly, and the part is far more expensive. An iPad Pro screen can cost several times what the same repair costs on a base iPad.",
+        "This is the first thing we check at the Store, and it is the reason we ask for the model. Two iPads that look nearly identical can be two very different repairs, and quoting one price for both would be guessing.",
       ],
     },
     {
-      heading: "How long does an Ipad repair take?",
+      heading: "How long does an iPad repair take?",
       paragraphs: [
-        "An Ipad repair takes longer than a phone repair, and it is worth knowing why before you decide to wait for it. The glass on a tablet is held down by a continuous band of adhesive around the entire perimeter, and that adhesive has to be warmed until it softens, cut through carefully, and then scraped off the frame before a new panel can go on. Rushing that step is how frames get bent.",
-        "In practice most Ipad work is done the same day rather than while you wait. Bring it in during the day, and in most cases it is ready before we close. We will give you a realistic time when you drop it off, and we will call you when it is done.",
-        "If the part for your model is not in stock, we order it, which usually adds a day or two. Older Ipad glass is generally on the shelf. Laminated assemblies for recent Ipad Air and Ipad Pro models are more often ordered in.",
+        "An iPad repair takes longer than a phone repair, and it is worth knowing why before you decide to wait for it. The glass on a tablet is held down by a continuous band of adhesive around the entire perimeter, and that adhesive has to be warmed until it softens, cut through carefully, and then scraped off the frame before a new panel can go on. Rushing that step is how frames get bent.",
+        "In practice most iPad work is done the same day rather than while you wait. Bring it in during the day, and in most cases it is ready before we close. We will give you a realistic time when you drop it off, and we will call you when it is done.",
+        "If the part for your model is not in stock, we order it, which usually adds a day or two. Older iPad glass is generally on the shelf. Laminated assemblies for recent iPad Air and iPad Pro models are more often ordered in.",
       ],
     },
     {
-      heading: "Should you repair an Ipad or replace it?",
+      heading: "Should you repair an iPad or replace it?",
       paragraphs: [
-        "For older Ipads with separate glass, repair is usually the clear answer, because the repair costs a small fraction of a replacement tablet and the device keeps doing what it was doing. A cracked Ipad that is otherwise working is not a device that needs replacing, it is a device that needs a piece of glass.",
-        "For recent Ipad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If the repair is approaching half the used value of the tablet, that is worth thinking about rather than deciding on the spot, and we would rather you thought about it than felt rushed.",
-        "There is one more factor on tablets that people forget: Ipads stay useful for a long time as a reading, video and kitchen device even after they stop getting the latest IpadOS. An Ipad that will not get another major update is often still worth fixing, because what it is used for has not changed.",
+        "For older iPads with separate glass, repair is usually the clear answer, because the repair costs a small fraction of a replacement tablet and the device keeps doing what it was doing. A cracked iPad that is otherwise working is not a device that needs replacing, it is a device that needs a piece of glass.",
+        "For recent iPad Pro models the calculation is genuinely closer, because a laminated display assembly is one of the more expensive parts we fit. If the repair is approaching half the used value of the tablet, that is worth thinking about rather than deciding on the spot, and we would rather you thought about it than felt rushed.",
+        "There is one more factor on tablets that people forget: iPads stay useful for a long time as a reading, video and kitchen device even after they stop getting the latest iPadOS. An iPad that will not get another major update is often still worth fixing, because what it is used for has not changed.",
       ],
     },
     {
       heading: "Does TechBrotherz repair Android and Windows tablets?",
       paragraphs: [
-        "TechBrotherz repairs Android and Windows tablets as well as Ipads, but those are quoted at the Store rather than published in advance. Android tablet parts vary enormously between manufacturers and model years, and unlike Ipads there is no small set of models that covers most of the market, so quoting with the device in front of us is the only honest way to price them.",
+        "TechBrotherz repairs Android and Windows tablets as well as iPads, but those are quoted at the Store rather than published in advance. Android tablet parts vary enormously between manufacturers and model years, and unlike iPads there is no small set of models that covers most of the market, so quoting with the device in front of us is the only honest way to price them.",
         "Bring the tablet in with its model number, which is normally printed on the back or listed in the settings under About. We will identify the part, tell you what it costs and how long it will take, and you can decide from there. If the part is not available at a sensible price, we will tell you that too rather than take the job.",
-        "The repairs themselves are the same work: cracked glass, failed panels, battery that no longer hold charge, and charging ports that have worn out from years of cable insertion.",
+        "The repairs themselves are the same work: cracked glass, failed panels, batteries that no longer hold charge, and charging ports that have worn out from years of cable insertion.",
       ],
     },
     {
-      heading: "What is included in an Ipad repair price?",
+      heading: "What is included in an iPad repair price?",
       paragraphs: [
-        `Every Ipad repair quote at TechBrotherz includes the replacement part, the labour to fit it, fresh adhesive to seal the device back up, testing before it is handed over, and a ${c.warrantyDays}-day warranty on the part and the workmanship. There is no separate bench fee and no diagnostic charge on a repair we go on to carry out.`,
+        `Every iPad repair quote at TechBrotherz includes the replacement part, the labour to fit it, fresh adhesive to seal the device back up, testing before it is handed over, and a ${c.warrantyDays}-day warranty on the part and the workmanship. There is no separate bench fee and no diagnostic charge on a repair we go on to carry out.`,
         "The warranty covers a part that fails and work that was not done properly. It does not cover a new crack, because a tablet that has been dropped again is a new repair rather than a failure of the last one. If something is not right after a repair, bring it back with the receipt.",
         "We do not touch the storage in your tablet during a glass, screen, battery or port replacement, and your apps and files stay exactly where they are. Back the tablet up anyway before any repair, because that is what protects you if something unexpected turns up once the device is open.",
       ],
     },
   ],
   whoFor: [
-    "Anyone with a cracked Ipad front where the picture underneath still works perfectly.",
-    "People whose Ipad battery no longer lasts through an evening, or takes most of a day to charge.",
+    "Anyone with a cracked iPad front where the picture underneath still works perfectly.",
+    "People whose iPad battery no longer lasts through an evening, or takes most of a day to charge.",
     "Anyone whose tablet charging port has worn loose from years of plugging a cable in.",
     "People with an Android or Windows tablet who want an honest quote before committing to a repair.",
   ],
@@ -340,8 +340,8 @@ const IpadRepair: ServiceDef = {
       body: "A tablet that has been dropped hard enough to bend the aluminium frame may not seal properly again, because a new panel needs a flat surface to bond to. We will tell you at the Store if that is what we are looking at.",
     },
     {
-      title: "Recent Ipad Pro screens are expensive parts",
-      body: "Laminated display assemblies on recent Ipad Pro models cost several times what an older Ipad glass replacement costs. That is the part price, not a markup, and we will always quote it before you commit.",
+      title: "Recent iPad Pro screens are expensive parts",
+      body: "Laminated display assemblies on recent iPad Pro models cost several times what an older iPad glass replacement costs. That is the part price, not a markup, and we will always quote it before you commit.",
     },
     {
       title: "Water-damaged tablets carry no guarantee",
@@ -350,23 +350,23 @@ const IpadRepair: ServiceDef = {
   ],
   faqs: () => [
     {
-      question: "How much does it cost to fix a cracked Ipad screen in Calgary?",
-      answer: `Ipad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older Ipad models the touch glass is a separate layer from the display, so a cracked front with a working picture is the smaller repair. Laminated screens on recent Ipad Air and Ipad Pro models are the larger job, because the glass and the panel replace as one assembly.`,
+      question: "How much does it cost to fix a cracked iPad screen in Calgary?",
+      answer: `iPad glass replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. On older iPad models the touch glass is a separate layer from the display, so a cracked front with a working picture is the smaller repair. Laminated screens on recent iPad Air and iPad Pro models are the larger job, because the glass and the panel replace as one assembly.`,
     },
     {
-      question: "Can TechBrotherz replace just the glass on an Ipad?",
+      question: "Can TechBrotherz replace just the glass on an iPad?",
       answer:
-        "On older Ipad models, yes. Those Ipads have a separate glass digitizer above the display panel, and TechBrotherz replaces the glass alone when the picture underneath is undamaged. Recent Ipad Air and Ipad Pro models use a laminated display where the glass and panel are bonded together and must be replaced as one part.",
+        "On older iPad models, yes. Those iPads have a separate glass digitizer above the display panel, and TechBrotherz replaces the glass alone when the picture underneath is undamaged. Recent iPad Air and iPad Pro models use a laminated display where the glass and panel are bonded together and must be replaced as one part.",
     },
     {
-      question: "How long does an Ipad repair take at TechBrotherz?",
+      question: "How long does an iPad repair take at TechBrotherz?",
       answer:
-        "Most Ipad repairs at TechBrotherz in Calgary are same-day rather than while-you-wait. Tablet glass is sealed to the frame with adhesive around the whole perimeter, which has to be heated, cut and cleaned off before a new panel is fitted. TechBrotherz gives a realistic time at the Store when the tablet is dropped off.",
+        "Most iPad repairs at TechBrotherz in Calgary are same-day rather than while-you-wait. Tablet glass is sealed to the frame with adhesive around the whole perimeter, which has to be heated, cut and cleaned off before a new panel is fitted. TechBrotherz gives a realistic time at the Store when the tablet is dropped off.",
     },
     {
       question: "Does TechBrotherz repair Samsung and other Android tablets?",
       answer:
-        "Yes. TechBrotherz in Calgary repairs Android and Windows tablets alongside Ipads, quoted at the Store rather than from a published list. Android tablet parts vary widely by manufacturer and model year. Bring the tablet with its model number and TechBrotherz will confirm the part cost and the time before any work starts.",
+        "Yes. TechBrotherz in Calgary repairs Android and Windows tablets alongside iPads, quoted at the Store rather than from a published list. Android tablet parts vary widely by manufacturer and model year. Bring the tablet with its model number and TechBrotherz will confirm the part cost and the time before any work starts.",
     },
   ],
   globalCategories: ["walkin", "warranty"],
@@ -696,7 +696,7 @@ const phoneUnlocking: ServiceDef = {
         "Carrier unlocking for any Canadian carrier at TechBrotherz in Calgary, usually the same day. Ask your carrier first: they must unlock free on request by CRTC rule.",
   serviceType: "Phone unlocking",
   repairSlugs: [],
-  brandSlugs: ["apple-Iphone", "samsung-galaxy"],
+  brandSlugs: ["apple-iphone", "samsung-galaxy"],
   flatSlugs: [],
   deviceTypes: ["phone"],
   localPath: "/phone-unlocking-calgary",
@@ -761,14 +761,14 @@ const phoneUnlocking: ServiceDef = {
       paragraphs: [
         "A phone that has been reported lost or stolen is blacklisted on the national IMEI database that Canadian carriers share. A blacklisted phone cannot be unlocked by TechBrotherz, by any other shop, or by the carrier itself, and it will not work on a Canadian network regardless of what SIM goes in it. If a secondhand phone will not activate, this is the most common reason.",
         "A phone with an outstanding balance or an unpaid device financing agreement is a related case. The carrier can refuse to unlock it until the account is settled, and that is a billing matter rather than a technical one.",
-        "An Iphone locked to someone else's Apple Account through Activation Lock is a different restriction entirely, and unlocking will not help. Only the original owner can remove that, by signing the device out of their account. We check for both of these before you pay, because we would rather you kept the money than paid for something that cannot work.",
+        "An iPhone locked to someone else's Apple Account through Activation Lock is a different restriction entirely, and unlocking will not help. Only the original owner can remove that, by signing the device out of their account. We check for both of these before you pay, because we would rather you kept the money than paid for something that cannot work.",
       ],
     },
     {
       heading: "How do you check whether a phone is already unlocked?",
       paragraphs: [
         "The simplest test is the definitive one: put a SIM from a different carrier in the phone and see whether it registers on the network and can make a call. If it does, the phone is unlocked. Nothing else you can check on the device is as reliable as that.",
-        "On an Iphone, Settings, General, About has a Carrier Lock line that reads No SIM restrictions when the phone is unlocked. That line is accurate on current iOS versions and it is worth checking before you pay anyone. On Android the equivalent varies by manufacturer, which is why the second-SIM test remains the one we trust.",
+        "On an iPhone, Settings, General, About has a Carrier Lock line that reads No SIM restrictions when the phone is unlocked. That line is accurate on current iOS versions and it is worth checking before you pay anyone. On Android the equivalent varies by manufacturer, which is why the second-SIM test remains the one we trust.",
         "Bring the phone to the Store at 3317 17 Ave SE and we will check it for you. If it turns out the phone is already unlocked, that is the end of the conversation and there is nothing to pay.",
       ],
     },
@@ -806,7 +806,7 @@ const phoneUnlocking: ServiceDef = {
     },
     {
       title: "Activation Lock is not carrier lock",
-      body: "An Iphone signed into someone else's Apple Account cannot be used until they remove it. That is a different restriction from carrier locking and unlocking does not touch it.",
+      body: "An iPhone signed into someone else's Apple Account cannot be used until they remove it. That is a different restriction from carrier locking and unlocking does not touch it.",
     },
     {
       title: "Ask your carrier before you pay us",
@@ -1308,7 +1308,7 @@ const frpRemoval: ServiceDef = {
     { label: "What it fixes", value: "A phone stuck at Google verification after a reset" },
     { label: "Proof of ownership", value: "Required before any work, without exception" },
     { label: "Quoted", value: "At the Store, before anything starts" },
-    { label: "Iphones", value: "Apple Activation Lock cannot be removed, by anyone" },
+    { label: "iPhones", value: "Apple Activation Lock cannot be removed, by anyone" },
     { label: "Appointment", value: "Not needed, walk in during opening hours" },
   ],
   process: [
@@ -1367,7 +1367,7 @@ const frpRemoval: ServiceDef = {
       heading: "What can FRP removal not do?",
       paragraphs: [
         "It cannot help a stolen phone. A handset reported lost or stolen is blacklisted on the national IMEI database Canadian carriers share, and it will not work on a Canadian network whatever happens to its software locks. Removing FRP from a blacklisted phone would produce a phone that still does not work, which is why the IMEI is checked first.",
-        "It cannot remove Apple's Activation Lock. An Iphone or Ipad signed into someone else's Apple Account stays locked until that person removes it from their account, and no repair store anywhere can change that honestly. Anyone who claims otherwise for a fee is worth walking away from. For Iphones, the route is the previous owner or Apple's own support process, with proof of purchase.",
+        "It cannot remove Apple's Activation Lock. An iPhone or iPad signed into someone else's Apple Account stays locked until that person removes it from their account, and no repair store anywhere can change that honestly. Anyone who claims otherwise for a fee is worth walking away from. For iPhones, the route is the previous owner or Apple's own support process, with proof of purchase.",
         "It does not bring data back. A phone at the FRP screen has already been factory reset, so the photos and messages that were on it are already gone. The removal gets the hardware back into use with your own account; it cannot reach into the past.",
       ],
     },
@@ -1385,7 +1385,7 @@ const frpRemoval: ServiceDef = {
     },
     {
       title: "Apple Activation Lock cannot be removed",
-      body: "An Iphone locked to someone else's Apple Account stays locked until that person or Apple removes it. No store can do this honestly, and TechBrotherz will say so rather than take the job.",
+      body: "An iPhone locked to someone else's Apple Account stays locked until that person or Apple removes it. No store can do this honestly, and TechBrotherz will say so rather than take the job.",
     },
     {
       title: "A blacklisted phone stays blacklisted",
@@ -1404,7 +1404,7 @@ const frpRemoval: ServiceDef = {
         "The phone was factory reset without being signed out of its Google account first, which triggers Factory Reset Protection. Android refuses to finish setting up until that account's credentials are entered. If the account is yours, try Google's account recovery first. If it belongs to a previous owner you cannot reach, that is the situation FRP removal at TechBrotherz exists for, with proof of ownership required.",
     },
     {
-      question: "Can TechBrotherz unlock an Iphone with Activation Lock?",
+      question: "Can TechBrotherz unlock an iPhone with Activation Lock?",
       answer:
         "No, and neither can anyone else, honestly. Apple's Activation Lock is tied to the previous owner's Apple Account and is removed only by that person or by Apple's own support process with proof of purchase. TechBrotherz removes Google FRP on Android phones with proof of ownership, and says plainly that the Apple equivalent is not a service any store can offer.",
     },
@@ -1428,7 +1428,7 @@ const frpRemoval: ServiceDef = {
 
 export const SERVICES: ServiceDef[] = [
   phoneRepair,
-  IpadRepair,
+  ipadRepair,
   laptopRepair,
   computerRepair,
   gameConsoleRepair,

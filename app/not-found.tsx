@@ -17,7 +17,7 @@ import { getModelSearchIndex } from "@/lib/data";
  * Rather than a dead end, it matches the attempted address against every model
  * name, slug and alias in the catalogue and offers the three closest. That is
  * what the aliases seeded in Phase 2 are for: someone who lands on
- * /Iphone8plus-screen or an old Wix address still gets to a price.
+ * /iphone8plus-screen or an old Wix address still gets to a price.
  *
  * Lives outside the (site) route group, so it renders its own chrome.
  */

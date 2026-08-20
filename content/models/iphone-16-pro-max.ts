@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Iphone-16-pro-max",
-  "name": "Iphone 16 Pro Max",
+  "slug": "iphone-16-pro-max",
+  "name": "iPhone 16 Pro Max",
   "intro": [
     {
-      "_key": "model.Iphone-16-pro-max-intro-b0",
+      "_key": "model.iphone-16-pro-max-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Iphone-16-pro-max-intro-s0",
+          "_key": "model.iphone-16-pro-max-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Iphone 16 Pro Max at 3317 17 Ave SE in Calgary. The Iphone 16 generation uses USB-C and adds the Camera Control button on the right edge, which sits on its own flex assembly and is a separate repair from the volume and power keys. Parts for this generation are ordered in rather than held in stock, so phone (403) 273-8324 with your exact model and we will confirm the price and how soon the part can be here."
+          "text": "TechBrotherz repairs the iPhone 16 Pro Max at 3317 17 Ave SE in Calgary. The iPhone 16 generation uses USB-C and adds the Camera Control button on the right edge, which sits on its own flex assembly and is a separate repair from the volume and power keys. Parts for this generation are ordered in rather than held in stock, so phone (403) 273-8324 with your exact model and we will confirm the price and how soon the part can be here."
         }
       ],
       "markDefs": [],

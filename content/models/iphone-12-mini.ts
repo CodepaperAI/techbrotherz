@@ -8,18 +8,18 @@
 import type { ModelContent } from "@/lib/content/model-content";
 
 const content: ModelContent = {
-  "slug": "Iphone-12-mini",
-  "name": "Iphone 12 mini",
+  "slug": "iphone-12-mini",
+  "name": "iPhone 12 mini",
   "intro": [
     {
-      "_key": "model.Iphone-12-mini-intro-b0",
+      "_key": "model.iphone-12-mini-intro-b0",
       "_type": "block",
       "children": [
         {
-          "_key": "model.Iphone-12-mini-intro-s0",
+          "_key": "model.iphone-12-mini-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "TechBrotherz repairs the Iphone 12 mini at 3317 17 Ave SE in Calgary. The Iphone 12 generation introduced the Ceramic Shield front and the MagSafe magnet array sitting behind the rear glass, so a back glass repair on these has to keep the magnet ring intact for MagSafe accessories to keep working. Every model in the range uses OLED. Bring the phone to the Store and we will confirm the exact part and the price before any work starts."
+          "text": "TechBrotherz repairs the iPhone 12 mini at 3317 17 Ave SE in Calgary. The iPhone 12 generation introduced the Ceramic Shield front and the MagSafe magnet array sitting behind the rear glass, so a back glass repair on these has to keep the magnet ring intact for MagSafe accessories to keep working. Every model in the range uses OLED. Bring the phone to the Store and we will confirm the exact part and the price before any work starts."
         }
       ],
       "markDefs": [],

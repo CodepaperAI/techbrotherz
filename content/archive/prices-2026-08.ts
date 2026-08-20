@@ -334,9 +334,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-2",
-    "name": "Ipad 2",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-2",
+    "name": "iPad 2",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -345,9 +345,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-3",
-    "name": "Ipad 3",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-3",
+    "name": "iPad 3",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -356,9 +356,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-4",
-    "name": "Ipad 4",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-4",
+    "name": "iPad 4",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -367,9 +367,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-air",
-    "name": "Ipad Air",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-air",
+    "name": "iPad Air",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -378,9 +378,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-mini",
-    "name": "Ipad Mini",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-mini",
+    "name": "iPad Mini",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -389,9 +389,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-mini-2",
-    "name": "Ipad Mini 2",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-mini-2",
+    "name": "iPad Mini 2",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -400,9 +400,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Ipad-mini-3",
-    "name": "Ipad Mini 3",
-    "brandSlug": "apple-Ipad",
+    "slug": "ipad-mini-3",
+    "name": "iPad Mini 3",
+    "brandSlug": "apple-ipad",
     "repairs": [
       {
         "repair": "glass-digitizer",
@@ -411,9 +411,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-4",
-    "name": "Iphone 4",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-4",
+    "name": "iPhone 4",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -454,9 +454,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-4s",
-    "name": "Iphone 4S",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-4s",
+    "name": "iPhone 4S",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -497,9 +497,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-5",
-    "name": "Iphone 5",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-5",
+    "name": "iPhone 5",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -540,9 +540,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-5c",
-    "name": "Iphone 5C",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-5c",
+    "name": "iPhone 5C",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -583,9 +583,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-5s",
-    "name": "Iphone 5S",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-5s",
+    "name": "iPhone 5S",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -626,9 +626,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-6",
-    "name": "Iphone 6",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-6",
+    "name": "iPhone 6",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -681,9 +681,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-6-plus",
-    "name": "Iphone 6 Plus",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-6-plus",
+    "name": "iPhone 6 Plus",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -736,9 +736,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-6s",
-    "name": "Iphone 6S",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-6s",
+    "name": "iPhone 6S",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -791,9 +791,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-6s-plus",
-    "name": "Iphone 6S Plus",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-6s-plus",
+    "name": "iPhone 6S Plus",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "back-camera-repair",
@@ -846,9 +846,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-7",
-    "name": "Iphone 7",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-7",
+    "name": "iPhone 7",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "screen-replacement",
@@ -857,9 +857,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-7-plus",
-    "name": "Iphone 7 Plus",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-7-plus",
+    "name": "iPhone 7 Plus",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "screen-replacement",
@@ -868,9 +868,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-8",
-    "name": "Iphone 8",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-8",
+    "name": "iPhone 8",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "screen-replacement",
@@ -879,9 +879,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-8-plus",
-    "name": "Iphone 8 Plus",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-8-plus",
+    "name": "iPhone 8 Plus",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "screen-replacement",
@@ -890,9 +890,9 @@ export const ARCHIVED_MODEL_PRICES = [
     ]
   },
   {
-    "slug": "Iphone-se-1st-gen",
-    "name": "Iphone SE (1st gen)",
-    "brandSlug": "apple-Iphone",
+    "slug": "iphone-se-1st-gen",
+    "name": "iPhone SE (1st gen)",
+    "brandSlug": "apple-iphone",
     "repairs": [
       {
         "repair": "screen-replacement",

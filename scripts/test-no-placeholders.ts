@@ -38,8 +38,8 @@ async function main() {
     ...REPAIRS.map((entry) => `/repairs/${entry.slug}`),
     ...LOCAL_PAGES.map((entry) => `/${entry.slug}`),
     ...PLACES.map((entry) => entry.path),
-    "/repair/apple-Iphone",
-    "/repair/apple-Iphone/Iphone-8-plus",
+    "/repair/apple-iphone",
+    "/repair/apple-iphone/iphone-8-plus",
   ];
 
   console.log(`\nPlaceholder check, ${BASE}\n`);

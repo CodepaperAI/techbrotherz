@@ -58,7 +58,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-s8-plus-notes-s0",
           "_type": "span",
           "marks": [],
-          "text": "Samsung bonds the curved OLED panel to the aluminium frame on this generation, so the replacement part is the screen and the frame together rather than a panel alone. That is the single reason a Galaxy screen costs more than an Iphone screen of comparable size."
+          "text": "Samsung bonds the curved OLED panel to the aluminium frame on this generation, so the replacement part is the screen and the frame together rather than a panel alone. That is the single reason a Galaxy screen costs more than an iPhone screen of comparable size."
         }
       ],
       "markDefs": [],

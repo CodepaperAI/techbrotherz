@@ -89,7 +89,7 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
     heading: "Repairs",
     paths: [
       "/services/phone-repair",
-      "/services/Ipad-repair",
+      "/services/ipad-repair",
       "/services/laptop-repair",
       "/services/computer-repair",
       "/services/phone-unlocking",
@@ -105,9 +105,9 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
     // was silently dropping them, so the paths went too.
     heading: "Devices",
     paths: [
-      "/repair/apple-Iphone",
+      "/repair/apple-iphone",
       "/repair/samsung-galaxy",
-      "/repair/apple-Ipad",
+      "/repair/apple-ipad",
       "/repair/google-pixel",
       "/repair/laptops-desktops",
       "/accessories",
@@ -124,9 +124,9 @@ const FOOTER_MATRIX: { heading: string; paths: string[] }[] = [
     heading: "Repair near you",
     paths: [
       "/phone-repair-calgary",
-      "/Iphone-screen-repair-calgary",
+      "/iphone-screen-repair-calgary",
       "/samsung-repair-calgary",
-      "/Ipad-repair-calgary",
+      "/ipad-repair-calgary",
       "/laptop-repair-calgary",
       "/computer-repair-calgary",
       "/phone-unlocking-calgary",

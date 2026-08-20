@@ -161,7 +161,7 @@ export function Footer() {
         </div>
 
         {/* Independence notice. TechBrotherz is not an authorised service
-            provider for any manufacturer, and this site names Iphone, Galaxy
+            provider for any manufacturer, and this site names iPhone, Galaxy
             and Pixel throughout. See components/blocks/TrademarkNotice.tsx. */}
         <div className="border-tb-border-dark mt-16 border-t pt-8">
           <TrademarkNotice tone="footer" />

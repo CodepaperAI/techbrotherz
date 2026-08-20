@@ -99,9 +99,9 @@ Ask your developer for any of these. Each is a few minutes of work.
 
 ```ts
 {
-  "name": "Iphone 8 Plus",
-  "slug": { "current": "Iphone-8-plus" },
-  "brandSlug": "apple-Iphone",
+  "name": "iPhone 8 Plus",
+  "slug": { "current": "iphone-8-plus" },
+  "brandSlug": "apple-iphone",
   "published": true,
   "repairs": [
     { "repair": "screen-replacement", "price": 89.99 },
@@ -111,7 +111,7 @@ Ask your developer for any of these. Each is a few minutes of work.
 }
 ```
 
-Change `89.99` and the new figure appears everywhere that price is quoted: the model page, the full price list, the Iphone hub, the screen-replacement page and the structured data search engines read.
+Change `89.99` and the new figure appears everywhere that price is quoted: the model page, the full price list, the iPhone hub, the screen-replacement page and the structured data search engines read.
 
 **A repair with no `price` renders "Call for quote".** That is why the third entry above has no number. Never invent one to fill the gap.
 

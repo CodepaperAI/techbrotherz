@@ -58,16 +58,16 @@ const nextConfig: NextConfig = {
       },
       {
         /*
-         * The Ipad rename, client instruction 2026-08: Ipad leads everywhere.
-         * Both tablet URLs were live, so both 301 to their Ipad equivalents.
+         * The iPad rename, client instruction 2026-08: iPad leads everywhere.
+         * Both tablet URLs were live, so both 301 to their iPad equivalents.
          */
         source: "/services/tablet-repair",
-        destination: "/services/Ipad-repair",
+        destination: "/services/ipad-repair",
         permanent: true,
       },
       {
         source: "/tablet-repair-calgary",
-        destination: "/Ipad-repair-calgary",
+        destination: "/ipad-repair-calgary",
         permanent: true,
       },
     ];

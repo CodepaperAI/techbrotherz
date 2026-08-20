@@ -174,7 +174,7 @@ export function repairsFor(kind: DeviceKind): RepairTypeDef[] {
  * Models that share one printed price.
  *
  * Was the priceGroup document type. It is a rendering concern: the note is
- * shown on a model page so a visitor understands why the Iphone 5, 5S and 5C
+ * shown on a model page so a visitor understands why the iPhone 5, 5S and 5C
  * all cost the same. Nothing edits this.
  */
 export interface PriceGroupDef {
