@@ -96,8 +96,15 @@ export async function submitContact(
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
 
+    /* onboarding@resend.dev is Resend's sandbox sender: it works with zero
+       domain setup but only delivers to the Resend account owner's own email.
+       Once techbrotherz.com (or the client's domain) is verified in Resend,
+       set CONTACT_FROM_EMAIL to e.g. website@techbrotherz.com and delivery
+       works to any address, with no code change. */
+    const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
+
     const result = await resend.emails.send({
-      from: `${SITE.brandName} website <onboarding@resend.dev>`,
+      from: `${SITE.brandName} website <${from}>`,
       to: [to],
       replyTo: contact.includes("@") ? contact : undefined,
       subject: `Website enquiry from ${name}`,
