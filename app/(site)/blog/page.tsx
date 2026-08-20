@@ -64,7 +64,7 @@ export default async function BlogIndexPage() {
       }
       answerBox={{
         answer:
-          "The TechBrotherz blog answers the questions customers actually ask at the Store of the Calgary repair store: how to unlock a phone in Canada, which laptop symptoms mean repair, and what to do first with a wet phone. Every article is written by the store itself, under the same no-invented-facts rule as the rest of this site.",
+          "The TechBrotherz blog answers the questions customers actually ask at the Calgary Store: how to unlock a phone in Canada, which laptop symptoms mean repair, and what to do first with a wet phone. Every article is written by the store itself, under the same no-invented-facts rule as the rest of this site.",
         keyFacts: [
           { label: "Written by", value: "The TechBrotherz Store, not generated filler" },
           { label: "Articles", value: `${BLOG_POSTS.length} published, more from the planned list follow` },
