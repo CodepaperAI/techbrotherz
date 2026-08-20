@@ -36,7 +36,7 @@ const content: ModelContent = {
   "verdict": null,
   "repairNotes": null,
   "lastSupportedOs": null,
-  "stillReceivesUpdates": false
+  "stillReceivesUpdates": null
 } as ModelContent;
 
 export default content;

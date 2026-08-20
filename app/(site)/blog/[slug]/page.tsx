@@ -160,6 +160,49 @@ export default async function BlogPostPage({ params }: PageProps) {
               </p>
             ))}
           </div>
+
+          {section.table ? (
+            <div className="mt-8 overflow-x-auto">
+              <table className="border-tb-border w-full min-w-[36rem] border-collapse text-left">
+                <caption className="type-caption text-tb-muted mb-3 text-left">
+                  {section.table.caption}
+                </caption>
+                <thead>
+                  <tr>
+                    {section.table.columns.map((column) => (
+                      <th
+                        key={column}
+                        scope="col"
+                        className="border-tb-border type-body text-tb-text border-b-2 py-3 pr-6 font-bold"
+                      >
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row) => (
+                    <tr key={row[0]}>
+                      <th
+                        scope="row"
+                        className="border-tb-border type-body text-tb-text border-b py-3 pr-6 align-top font-medium"
+                      >
+                        {row[0]}
+                      </th>
+                      {row.slice(1).map((cell, cellIndex) => (
+                        <td
+                          key={`${row[0]}-${cellIndex}`}
+                          className="border-tb-border type-body text-tb-muted border-b py-3 pr-6 align-top"
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : null}
         </Section>
       ))}
 

@@ -6,7 +6,6 @@ import { MapReveal } from "@/components/blocks/MapReveal";
 import { Tile, TileGrid } from "@/components/blocks/Tile";
 import { ScopedFaqs } from "@/components/blocks/ScopedFaqs";
 import { PageShell } from "@/components/blocks/PageShell";
-import { Card } from "@/components/primitives/Card";
 import { Container } from "@/components/primitives/Container";
 import { Heading } from "@/components/primitives/Heading";
 import { PillButton } from "@/components/primitives/PillButton";
@@ -50,7 +49,6 @@ export default async function LocationsPage() {
    * spun page is worse than no page. CLAUDE.md Section 7.
    */
   const cities = locations.filter((entry) => entry.kind === "city" && !entry.isPrimary);
-  const neighbourhoods = locations.filter((entry) => entry.kind === "neighbourhood");
   const primary = locations.find((entry) => entry.isPrimary);
 
   // FAQ scoping rule, CLAUDE.md Section 8.8. Questions this page can answer
@@ -129,10 +127,26 @@ export default async function LocationsPage() {
           <p className="type-body measure text-tb-muted mt-8">{primary.routeDescription}</p>
         ) : null}
 
-        {/* The Google Business Profile service-area list, 2026-08. Every tile
-            navigates to a page or an anchored section; none is a dead link. */}
-        <h3 className="type-h3 text-tb-ink mt-12">Every area we serve</h3>
-        <TileGrid className="mt-5">
+      </Section>
+
+      {/* ------------------------------------------------- service areas */}
+      {/* The Google Business Profile service-area list, 2026-08, in full.
+          Every tile navigates to a page or an anchored section on the Calgary
+          page; none is a dead link. This section previously rendered only the
+          areas with a published page of their own, which filtered the list
+          down to Forest Lawn; scripts/test-service-areas.ts now asserts the
+          full list renders here. */}
+      <Section aria-labelledby="areas-heading">
+        <Heading
+          level={2}
+          id="areas-heading"
+          eyebrow="Calgary"
+          lead="Every area on the TechBrotherz service list. Each name links to its own page, or to its section on the Calgary page with the route and landmarks where we can verify them."
+        >
+          Which Calgary areas does TechBrotherz serve?
+        </Heading>
+
+        <TileGrid className="mt-10">
           {[...SERVICE_AREAS, { name: "Airdrie", href: "/locations/calgary#airdrie" }].map(
             (area) => (
               <Tile key={area.name} href={area.href}>
@@ -141,63 +155,6 @@ export default async function LocationsPage() {
             ),
           )}
         </TileGrid>
-      </Section>
-
-      {/* ------------------------------------------------- neighbourhoods */}
-      <Section aria-labelledby="areas-heading">
-        <Heading
-          level={2}
-          id="areas-heading"
-          eyebrow="Calgary"
-          lead="These are the Calgary areas TechBrotherz publishes real directions for. An area only appears here once we can give a genuine route, a real drive time and landmarks locals actually use."
-        >
-          Which Calgary areas does TechBrotherz serve?
-        </Heading>
-
-        {neighbourhoods.length > 0 ? (
-          <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {neighbourhoods.map((entry) => {
-              const href = `/locations/calgary/${entry.slug}`;
-              const body = (
-                <>
-                  <span className="type-h3 text-tb-text block">{entry.city}</span>
-                  <span className="type-caption text-tb-muted mt-2 block">
-                    {entry.driveTimeMinutes
-                      ? `About ${entry.driveTimeMinutes} minutes from the store`
-                      : "Directions published on the area page"}
-                    {entry.distanceKm ? `, ${entry.distanceKm} km` : ""}
-                  </span>
-                </>
-              );
-
-              return (
-                <li key={entry._id}>
-                  {shouldRenderLink(href) ? (
-                    <Link
-                      href={href}
-                      className="border-tb-border bg-tb-white hover:border-tb-ink rounded-card block border p-6 transition-colors duration-[180ms] ease-out"
-                    >
-                      {body}
-                    </Link>
-                  ) : (
-                    <div className="border-tb-border bg-tb-white rounded-card block border p-6">
-                      {body}
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <Card className="border-l-tb-green mt-10 border-l-4">
-            <h3 className="type-h3 text-tb-text">Area pages are being written</h3>
-            <p className="type-body text-tb-muted mt-3">
-              TechBrotherz serves the whole of southeast Calgary from {SITE.street}. Individual area
-              pages are published only once they carry a real driving route, a real drive time and
-              landmarks locals use, rather than the same paragraph with the name changed.
-            </p>
-          </Card>
-        )}
       </Section>
 
       {/* --------------------------------------------------- other cities */}

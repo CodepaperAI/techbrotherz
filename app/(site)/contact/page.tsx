@@ -103,7 +103,7 @@ export default async function ContactPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Card>
             <Phone aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Call the store</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Call the Store</h3>
             <p className="type-body text-tb-muted mt-2">
               The fastest way to check a part is in stock and get a firm price before you travel.
             </p>
@@ -117,7 +117,7 @@ export default async function ContactPage() {
 
           <Card>
             <MapPin aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Walk in</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Walk In</h3>
             <p className="type-body text-tb-muted mt-2">
               No appointment at any time. Most phone screen and battery repairs are finished in
               about {waitMinutes} minutes.
@@ -176,7 +176,7 @@ export default async function ContactPage() {
 
           <div className="lg:col-span-5">
             <Card>
-              <h3 className="type-h3 text-tb-text">Getting here by transit</h3>
+              <h3 className="type-h3 text-tb-text">Getting Here by Transit</h3>
               <p className="type-body text-tb-muted mt-3 flex items-start gap-2">
                 <Bus
                   aria-hidden="true"
@@ -191,7 +191,7 @@ export default async function ContactPage() {
                 </span>
               </p>
 
-              <h3 className="type-h3 text-tb-text mt-8">Before you travel</h3>
+              <h3 className="type-h3 text-tb-text mt-8">Before You Travel</h3>
               <ul className="type-body text-tb-muted mt-3 list-disc space-y-2 pl-5">
                 <li>
                   Back the device up if you can. A screen or battery repair does not touch your
@@ -209,7 +209,7 @@ export default async function ContactPage() {
 
               {neighbourhoods.length > 0 ? (
                 <>
-                  <h3 className="type-h3 text-tb-text mt-8">Coming from nearby</h3>
+                  <h3 className="type-h3 text-tb-text mt-8">Coming From Nearby</h3>
                   <ul className="type-body mt-3 space-y-2">
                     {neighbourhoods.slice(0, 6).map((entry) => {
                       const href = `/locations/calgary/${entry.slug}`;

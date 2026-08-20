@@ -31,7 +31,7 @@ const content: ModelContent = {
     "Face ID lost after a screen repair done without transferring the sensor",
     "Battery health declining after several years",
     "Macro camera failing, a feature the standard 13 does not have",
-    "USB port worn"
+    "Lightning port worn"
   ],
   "verdict": [
     {

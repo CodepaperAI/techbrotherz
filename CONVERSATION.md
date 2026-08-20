@@ -2,6 +2,34 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-20 — The areas bug found, the copy audit, Title Case, and three articles
+
+**Asked:** the site-wide copy audit brief: the areas bug (reported twice), the capitalisation rule, a spelling and grammar audit, one brand spelling, a photo beside the home AnswerBox, and three new articles.
+
+**Done:**
+
+### The areas bug, actually found this time
+
+The client saw only Forest Lawn under "Which Calgary areas does TechBrotherz serve?" because that H2 section on /locations mapped over published location pages, and only Forest Lawn has one. The previous fix added the full 21-tile list to a different section of the same page, under a small h3, which is why every check passed while the client's complaint stayed true. The H2 section now renders the full Google Business Profile list (21 tiles, verified in the build), the redundant h3 grid is gone, and `scripts/test-service-areas.ts` joined `pnpm verify`: it fails if the section ever renders fewer tiles than the source list, and it also asserts all 16 anchored area sections exist on /locations/calgary so no tile can be a dead anchor.
+
+### Title Case, implemented in code rather than in strings
+
+`titleCase()` in lib/utils.ts runs at render inside the display components: Heading, the PageShell hero H1, Eyebrow, Chip, PillButton, Tile, IconCard, ServiceCard, StepCard, Breadcrumbs, Nav and Footer. That covers every H1, H2, card title, nav label, button and chip on all 143 pages, including the programmatically generated model-page headings, with one mechanism. It only raises case and skips words already carrying a capital, so iPhone, MacBook, FRP and TechBrotherz cannot be mangled. AnswerBox copy, FAQ answers, plainAnswer, meta descriptions and JSON-LD never pass through those components, so they stay sentence case structurally rather than by discipline. 23 literal card titles were also updated in source, and the home hero H1 (JSX, so outside the transform) was retitled by hand. The rule is recorded in CLAUDE.md Section 8.7.
+
+### The copy audit: a script, and a real grammar read
+
+`scripts/audit-copy.ts` joined `pnpm verify`: known misspellings, device-name casing (iPhone, iPad, MacBook, PlayStation...), NAP formatting, double spaces, em dashes, en-CA spellings, and one canonical brand spelling, TechBrotherz, outside the logo component. It found the corpus already consistent ("authorised" 4-0 over "authorized"; no tamper glass, charing port or Tech Brotherz anywhere).
+
+The grammar read found what the script could not: roughly 60 broken or damaged strings, most left by the price removal. Fixed: seven broken sentences ("the figure is free", "when the charger is on the Store", a virus-removal answer that read as removing the security software, a duplicated key-facts row); every dangling reference to the deleted price table ("the table below lists the price", "Models showing Call for quote in the table", "published price list", "Prices are published per device model", a written-out "three hundred dollars"); five "what it comes to follows" constructions; and/but contrast errors; iPad FAQ comparatives orphaned by the price scrub; the dead `pricesFaqs` block deleted outright. Model files: the iPhone 13 Pro's "USB port" is now a Lightning port, the Note 9 tense clash and two broken possessive comparisons fixed, and the crease-line bullet rewritten across all 8 foldables. Biggest catch: `stillReceivesUpdates: false` on 52 models that are inside their published support windows (Pixel 8 to 2030, S24 Ultra to 2031, every iOS-26 iPhone), which generated visible FAQ copy claiming they no longer receive security updates. Set true on those 52, null on 5 genuine borderlines so the claim is omitted rather than guessed.
+
+### The photo beside the AnswerBox, and the articles
+
+PageShell gained `answerAside` (hero layout only): the AnswerBox keeps its width and stacks first on mobile; the aside fills the space to its right from lg up. The home page passes the `home-hero` photograph, a phone in a repair jig under a precision screwdriver, unused since the skyline took the hero background, so the client's ask cost no new download and no new licence question.
+
+Three articles, each with a quick answer, question H2s, a comparison table (new `table` support on BlogSection, real `<table>` with caption and scoped headers), the honest author box, FAQ block, Article schema and internal links: "How Long Does a Phone Screen Repair Take?", "Why Is My Computer Running Slow?", and "Common Xbox and PlayStation Faults, and Which Are Worth Repairing". The guide tier joined the similarity detector: 6 pages, 5.1% median, 6.3% worst pair. **The unlocking article was retained and moved to the end of the list, not deleted**: "how to unlock a cell phone" is on the client's own AI-visibility tracking list and it is the only piece covering the CRTC rule. Flagged for their decision.
+
+**Verification:** typecheck, lint, clean build (139 pages), word floor, link graph, FAQ scoping, no-prose-prices, no-fake-rating, schema audit, page audit, copy audit and the new service-areas guard all pass. Similarity: highest pair site-wide 52.9% against the 70% ceiling.
+
 ## Session 2026-08-18 — Services grid expansion: FRP page, buy-sell-trade, four repair types, the grid split
 
 **Asked:** the "services grid expansion" brief: record four client confirmations, add new repair types, put searched-for repair chips on the home cards, build an FRP removal page, build a buy-sell-trade page, extend the accessories list, enlarge the logo 20 to 25 percent, and split the grid if it reads as a wall.

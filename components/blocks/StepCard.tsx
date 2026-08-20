@@ -3,7 +3,7 @@ import Image from "next/image";
 import { RepairIllustration, type RepairSubject } from "@/components/blocks/RepairIllustration";
 import { Card } from "@/components/primitives/Card";
 import { Chip } from "@/components/primitives/Chip";
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export interface StepCardProps {
   /** Rendered in the chip as "Step 1". Never put the number in the title. */
@@ -63,7 +63,7 @@ export function StepCard({
       )}
 
       <Chip className="mt-6 self-start">Step {step}</Chip>
-      <h3 className="type-h3 text-tb-text mt-4">{title}</h3>
+      <h3 className="type-h3 text-tb-text mt-4">{titleCase(title)}</h3>
       <p className="type-body text-tb-muted mt-3">{description}</p>
     </Card>
   );

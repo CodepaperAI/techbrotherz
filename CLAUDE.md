@@ -473,6 +473,8 @@ One primary keyword per URL. No overlaps. Add a row before building any new page
 | `/blog/how-long-does-a-phone-screen-repair-take` | how long does a phone screen repair take | phone screen repair time                      |
 | `/blog/phone-water-damage-what-to-do-first`      | phone water damage what to do            | wet phone first steps                         |
 | `/blog/cracked-screen-vs-broken-lcd-difference`  | cracked screen vs broken lcd             | digitizer vs lcd difference                   |
+| `/blog/why-is-my-computer-running-slow`          | why is my computer running slow          | slow computer fix, speed up my computer       |
+| `/blog/common-xbox-and-playstation-faults`       | common xbox and playstation faults       | ps5 hdmi port repair, is my xbox worth repairing |
 
 _(Rows for the remaining Tier 3, 5, 6 and 7 URLs are added as those pages are built. A page does not ship without a row here.)_
 
@@ -653,6 +655,29 @@ Run this on every page before it ships.
 - [ ] **Minimum four contextual in-body links** with descriptive anchor text.
 - [ ] **No `TODO(client)` in body prose.** That marker is for factual fields only.
 - [ ] **Prices, times and warranties come from `content/data/`**, not typed into the copy, so they cannot go stale.
+
+### The capitalisation rule (client instruction, 2026-08)
+
+The client wants "Repair" capitalised. Applied literally to prose it reads
+badly, so the rule is split, and it is **implemented in code, not in strings**:
+`titleCase()` in `lib/utils.ts` runs at render inside the display components
+(Heading, PageShell hero H1, Eyebrow, Chip, PillButton, Tile, IconCard,
+ServiceCard, StepCard, Breadcrumbs, Nav, Footer).
+
+1. **Headings, card titles, nav labels, buttons and chips render in Title
+   Case.** Principal words capitalised; articles, conjunctions and short
+   prepositions stay lowercase unless first or last.
+2. **Service names are proper nouns** wherever they name the service (Phone
+   Repair, iPad Repair, FRP Removal). Generic use stays lowercase: "most
+   repairs take about 30 minutes".
+3. **AnswerBox copy, FAQ answers, `plainAnswer`, meta descriptions and JSON-LD
+   stay sentence case.** These never pass through the display components, so
+   the rule cannot leak into them. FAQ questions are excluded deliberately:
+   the visible accordion and the FAQPage node come from one string, and the
+   schema must stay sentence case.
+4. `titleCase()` **only raises case, never lowers it**, and skips any word
+   already carrying a capital, so iPhone, MacBook, FRP and TechBrotherz can
+   never be mangled. Authored strings stay sentence case in the source.
 
 ### The voice split
 

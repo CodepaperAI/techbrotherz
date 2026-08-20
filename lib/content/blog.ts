@@ -16,6 +16,16 @@ export interface BlogSection {
   /** H2, phrased as a question a person would actually type or ask. */
   heading: string;
   paragraphs: string[];
+  /**
+   * A comparison table rendered after the paragraphs, as real <table> markup
+   * with a caption and scoped headers (CLAUDE.md Section 8.3). The first cell
+   * of each row is its row header.
+   */
+  table?: {
+    caption: string;
+    columns: string[];
+    rows: string[][];
+  };
 }
 
 export interface BlogPost {
@@ -55,7 +65,7 @@ const unlockCanada: BlogPost = {
     "Since December 1, 2017, the CRTC's Wireless Code requires Canadian carriers to unlock their customers' phones free of charge, and new phones must be sold unlocked. For imported handsets, closed accounts and defunct carriers, TechBrotherz in Calgary unlocks phones at the Store, usually the same day, without touching the data on the phone.",
   keyFacts: [
     { label: "Carrier route", value: "Free by law since December 2017, for their own customers" },
-    { label: "store route", value: "Imported phones, closed accounts, defunct carriers" },
+    { label: "Store route", value: "Imported phones, closed accounts, defunct carriers" },
     { label: "Time", value: "Usually the same day at the Store" },
     { label: "Your data", value: "Untouched by an unlock" },
     { label: "Blacklisted phones", value: "Cannot be unlocked by anyone" },
@@ -299,7 +309,7 @@ const waterDamage: BlogPost = {
       paragraphs: [
         "No phone is waterproof. The ratings on recent phones, IP67 or IP68, mean the phone resisted fresh water in a laboratory test when it was new. Those seals age, weaken with every drop and every summer in a hot car, and were never rated for salt water, pool chemicals or soap in the first place.",
         "Water resistance is also the first casualty of any opened phone. Once a phone has been opened for a screen or battery replacement, at any repair store, the factory seal is replaced with adhesive that is good but not laboratory-rated. Treat any repaired phone as rain-resistant rather than swim-ready, whatever it was rated at new.",
-        "The practical rule: a rating is a margin of safety for accidents, not an invitation. A phone that has been in water is a phone that has been in water, whatever the box said, and the checklist at the top of this page applies to all of them.",
+        "The practical rule: a rating is a margin of safety for accidents, not an invitation. A phone that has been in water is a phone that has been in water, whatever the box said, and the first-hour steps in this article apply to all of them.",
       ],
     },
   ],
@@ -322,7 +332,7 @@ const waterDamage: BlogPost = {
     },
     {
       name: "Get it cleaned promptly",
-      text: "Bring the phone to a repair Store for an isopropyl cleanup and board inspection within a day or two, before corrosion sets in.",
+      text: "Bring the phone to a repair store for an isopropyl cleanup and board inspection within a day or two, before corrosion sets in.",
     },
   ],
   faqs: [
@@ -357,7 +367,362 @@ const waterDamage: BlogPost = {
   sources: [],
 };
 
-export const BLOG_POSTS: BlogPost[] = [unlockCanada, laptopSigns, waterDamage];
+const screenRepairTime: BlogPost = {
+  slug: "how-long-does-a-phone-screen-repair-take",
+  title: "How Long Does a Phone Screen Repair Take?",
+  seoTitle: "How Long Does a Phone Screen Repair Take?",
+  seoDescription:
+    "About 30 minutes for most phones at a walk-in store. What the job involves, why iPads take longer, and what makes any screen repair run over.",
+  datePublished: "2026-08-20",
+  summary:
+    "About 30 minutes for most phones, done while you wait. What actually happens in that half hour, and which repairs honestly take longer.",
+  lead: "A cracked screen is the most common repair there is, and the first question everyone asks is how long they will be without their phone. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces screens every day, so the honest timings below come from the bench rather than a brochure.",
+  answer:
+    "A phone screen replacement at TechBrotherz in Calgary takes about 30 minutes for most iPhone, Samsung Galaxy and Google Pixel models, done while you wait with no appointment. iPad screens take longer, usually a day, because the glass is glued down and must be separated with heat. Every repair carries a 60-day warranty.",
+  keyFacts: [
+    { label: "Most phones", value: "About 30 minutes, while you wait" },
+    { label: "iPads", value: "Usually a day, because the glass is glued" },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
+    { label: "Warranty", value: "60 days on the part and the work" },
+    { label: "Quote", value: "Free, agreed before any work starts" },
+  ],
+  sections: [
+    {
+      heading: "What happens during a 30-minute screen repair?",
+      paragraphs: [
+        "A phone screen replacement is a sequence, not a single act, and each step has a reason. The phone is powered down and opened, on most models through the screen itself or the back panel. The broken display assembly is disconnected from the board, and the new assembly is connected and tested before anything is sealed, because testing after sealing means opening the phone twice.",
+        "The test covers the things a screen actually does: touch response across the whole surface, display quality, the earpiece and the front camera where they route through the assembly, and the sensors that sit behind the glass. Only after that does the phone get closed up, and the technician runs the same checks once more on the sealed phone.",
+        "That whole sequence is about 30 minutes on most iPhone, Samsung Galaxy and Google Pixel models at the TechBrotherz Store, which is why screen repairs are done while you wait. The part for common models is usually on the shelf, and the quote is agreed before the phone is opened.",
+      ],
+    },
+    {
+      heading: "Why do some screen repairs take longer than others?",
+      paragraphs: [
+        "The biggest single factor is how the screen is attached. Most phone displays are held by clips, screws and light adhesive, which a technician can release in minutes. iPad glass is glued down across its whole surface, and separating it takes controlled heat and patience: rushing cracked glass out of a glued frame is how home repairs turn one broken part into three.",
+        "Water exposure changes the job too. A cracked screen on a phone that has also been wet is not a screen repair, it is an inspection first, because corrosion on the board will outlast any new display fitted over it. The honest sequence is to check the inside before quoting the outside.",
+        "Part availability is the third factor. Common models are stocked, but an unusual model can need a part ordered in, which adds days of waiting though not of work. The Store will say so at the quote stage rather than keep the phone sitting on a shelf.",
+      ],
+      table: {
+        caption:
+          "Typical screen repair times at the TechBrotherz Store in Calgary, by device type.",
+        columns: ["Device", "Typical time", "Why"],
+        rows: [
+          [
+            "iPhone, Galaxy, Pixel",
+            "About 30 minutes",
+            "Clipped and screwed assemblies, parts usually in stock",
+          ],
+          ["iPad and tablets", "Usually a day", "Glued glass must be heat-separated from the frame"],
+          [
+            "Laptop screens",
+            "Same day when the panel is stocked",
+            "Bezel and hinge disassembly, more screws than a phone",
+          ],
+          [
+            "Water-damaged phones",
+            "Inspection first",
+            "The board must be checked before a screen is worth fitting",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Cracked glass or broken LCD: does it change the time?",
+      paragraphs: [
+        "It changes the urgency more than the time. On modern phones the glass, the touch layer and the display ship as one fused assembly, so a cracked-glass-only repair and a dead-display repair are usually the same job with the same timing: the whole assembly is replaced.",
+        "What differs is how long the phone stays usable. A phone with cracked glass but a working display can wait for a convenient half hour, though cracks spread and sharp edges cut thumbs. A phone showing lines, black patches or nothing at all is telling you the display layer itself has failed, and it rarely recovers on its own.",
+        "The practical advice from the bench is simple: a phone that still displays should be repaired at your convenience, and a phone that does not should be repaired before whatever is on it becomes urgent. Either way the repair itself is the same half hour.",
+      ],
+    },
+    {
+      heading: "Should you book an appointment for a screen repair?",
+      paragraphs: [
+        "At TechBrotherz, no. The store is walk-in by design: bring the phone to 3317 17 Ave SE during opening hours, the repair is quoted free with the phone in front of the technician, and most screen replacements are finished in about 30 minutes. There is no booking system to wait on and no drop-off queue.",
+        "The one thing worth doing before any repair visit, anywhere, is a backup. A screen replacement does not touch your data, and data loss during one is rare, but a phone that arrives with a backup leaves nothing to chance. Both iPhone and Android back up automatically overnight when charging and on Wi-Fi, so for most people this is already done.",
+        "If the timing matters, phone (403) 273-8324 before coming in. The Store can confirm the part for your exact model is on the shelf, which is the only thing that ever turns a half-hour repair into a wait.",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "How long does an iPhone screen replacement take in Calgary?",
+      answer:
+        "About 30 minutes at TechBrotherz, the walk-in repair store at 3317 17 Ave SE in Calgary. The screen assembly is replaced and tested while you wait, with no appointment needed, and the repair carries a 60-day warranty on the part and the work.",
+    },
+    {
+      question: "Why does an iPad screen repair take longer than a phone?",
+      answer:
+        "Because iPad glass is glued down across its whole surface rather than clipped in. Separating cracked, glued glass from the frame takes controlled heat and careful work, so an iPad screen replacement at TechBrotherz in Calgary usually takes a day rather than the half hour a phone takes.",
+    },
+    {
+      question: "Will a screen replacement delete what is on my phone?",
+      answer:
+        "No. A screen replacement swaps the display assembly and does not touch the phone's storage, so photos, messages and apps stay exactly where they are. Backing up before any repair is still sensible practice, and most phones already back up automatically overnight.",
+    },
+    {
+      question: "Can a screen repair be done the same day without an appointment?",
+      answer:
+        "Yes. TechBrotherz at 3317 17 Ave SE in Calgary is a walk-in store with no booking system. Most phone screen replacements are done in about 30 minutes while you wait, and phoning (403) 273-8324 first confirms the part for your model is in stock.",
+    },
+  ],
+  about: ["Phone screen replacement", "Repair turnaround times", "Walk-in phone repair"],
+  related: [
+    { label: "iPhone screen replacement", href: "/repairs/iphone-screen-replacement" },
+    { label: "Samsung screen replacement", href: "/repairs/samsung-screen-replacement" },
+    { label: "Walk-in phone repair in Calgary", href: "/walk-in-phone-repair-calgary" },
+    { label: "Cell phone repair", href: "/services/phone-repair" },
+  ],
+  sources: [],
+};
+
+const slowComputer: BlogPost = {
+  slug: "why-is-my-computer-running-slow",
+  title: "Why Is My Computer Running Slow?",
+  seoTitle: "Why Is My Computer Running Slow? Causes & Real Fixes",
+  seoDescription:
+    "The five real reasons computers slow down: startup load, malware, a failing hard drive, dust and heat, or too little memory. Which is yours, and what fixes it.",
+  datePublished: "2026-08-20",
+  summary:
+    "Slow computers have about five real causes, and guessing wrong wastes money. How to tell startup clutter from malware from a drive that is failing.",
+  lead: "A slow computer is the most common complaint that walks into TechBrotherz, a cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta. It is also the vaguest, because five very different faults all present as slow. The difference matters: one of them costs nothing to fix, and one of them is a warning that your files are at risk.",
+  answer:
+    "A computer usually runs slow for one of five reasons: too many programs loading at startup, malware running in the background, a mechanical hard drive failing or full, dust choking the cooling so the processor slows itself down, or too little memory for what you now use it for. TechBrotherz in Calgary diagnoses which one it is before any work is quoted.",
+  keyFacts: [
+    { label: "Common causes", value: "Startup load, malware, failing drive, dust and heat, low memory" },
+    { label: "The urgent one", value: "A failing drive: back up the moment you suspect it" },
+    { label: "Diagnosis", value: "At the Store, with the actual cause named before any quote" },
+    { label: "Tune-up includes", value: "Startup clean-up, updates, dust removal" },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
+  ],
+  sections: [
+    {
+      heading: "Is it just too many programs starting with Windows?",
+      paragraphs: [
+        "The most common cause of a slow computer is also the most boring one: dozens of programs that install themselves to run at startup and then sit in the background forever. Each one is small, and twenty of them together are why a machine that once booted in seconds now takes minutes and stutters for the first quarter hour of use.",
+        "You can check this yourself at no cost. On Windows, open Task Manager with Ctrl+Shift+Esc and look at the Startup tab: everything listed there launches before you have opened a single thing. Disabling the entries you do not recognise as essential is safe, because disabling a startup entry does not uninstall the program, it just stops it launching itself.",
+        "A computer tune-up at the TechBrotherz Store does this properly: startup entries reviewed, the accumulated background software removed rather than just disabled, updates applied, and the inside of the machine physically cleaned. It is the right first step when a machine has slowed gradually over years rather than suddenly over days.",
+      ],
+    },
+    {
+      heading: "How do you tell a slow computer from an infected one?",
+      paragraphs: [
+        "Malware slows a computer in a different pattern than clutter does. Clutter makes a machine slow from the moment it starts. An infection often makes it slow while you are using it: the fan spins up when the machine should be idle, the browser grows toolbars or redirects searches, pop-ups appear outside the browser, and things you did not install appear in the programs list.",
+        "The distinction matters because the fixes are different. A tune-up does not remove an infection, and an antivirus scan does not undo years of startup clutter. Diagnosing before fixing is the whole reason the two are separate services at the TechBrotherz Store: virus removal deals with the infection and leaves security software running, and the tune-up deals with everything else.",
+        "One honest warning from the bench: a machine that suddenly demands payment to unlock your files is not slow, it is held hostage by ransomware. Power it off and bring it in. Paying rarely restores the files, and continuing to use the machine can make recovery harder.",
+      ],
+    },
+    {
+      heading: "Is the hard drive failing? The one cause that cannot wait",
+      paragraphs: [
+        "A mechanical hard drive that is beginning to fail produces a distinctive kind of slowness: programs freeze for seconds at a time, files take oddly long to open, the machine hangs at boot some days and not others, and you may hear clicking or grinding that was not there before. This is the one cause of slowness that is also an emergency, because a failing drive does not recover; it fails.",
+        "The rule is simple: back up first, diagnose second. The moment a drive is suspected, everything that matters on it should be copied somewhere else, because every hour of continued use is wear on a component that is already dying. TechBrotherz offers data recovery, and recovery from a drive that was backed up in time is trivial compared with recovery from one that was run until it stopped.",
+        "The repair itself is often good news. Replacing a worn mechanical drive with a solid-state drive is the single largest speed improvement most older computers can receive, because a solid-state drive has no moving parts to wear or wait on. Machines that felt ready for replacement routinely come back feeling new after the swap.",
+      ],
+      table: {
+        caption: "The five causes of a slow computer, and how each one shows itself.",
+        columns: ["Cause", "The tell", "The fix"],
+        rows: [
+          [
+            "Startup clutter",
+            "Slow from power-on, gradual over years",
+            "Tune-up: startup review and clean-up",
+          ],
+          [
+            "Malware",
+            "Slow in use, pop-ups, redirects, busy when idle",
+            "Virus removal, with protection left running",
+          ],
+          [
+            "Failing hard drive",
+            "Freezes, clicking, some days worse than others",
+            "Back up now, then replace the drive",
+          ],
+          ["Dust and heat", "Loud fan, hot case, slow under load", "Physical clean, new thermal paste"],
+          ["Too little memory", "Slow only with many tabs or big programs", "Memory upgrade after diagnosis"],
+        ],
+      },
+    },
+    {
+      heading: "Can dust really slow a computer down?",
+      paragraphs: [
+        "Yes, mechanically and measurably. A processor protects itself from overheating by slowing down, a behaviour called thermal throttling. When years of dust blanket the cooling fins and clog the fan, the processor reaches its temperature limit under modest load and cuts its own speed to survive. The computer is not broken; it is hot.",
+        "The signs are physical: a fan that runs loud and often, a case that feels hot, a laptop that slows dramatically ten minutes into anything demanding and recovers after a rest. Gaming computers show it first, because they run closest to their thermal limits, and a gaming machine that stutters in games it once handled is the classic case.",
+        "The fix is unglamorous: open the machine, remove the dust properly, and renew the thermal paste between the processor and its cooler where it has dried out. It is part of the tune-up at the TechBrotherz Store, and on a throttling machine the before-and-after difference is not subtle.",
+      ],
+    },
+    {
+      heading: "When is a slow computer just an old computer?",
+      paragraphs: [
+        "Sometimes the machine is fine and the workload grew. Browsers, video calls and modern software use more memory every year, and a computer that was comfortable five years ago can be genuinely short of memory for the same person's use today. The tell is that the machine is fine with one thing open and slows as tabs and programs stack up.",
+        "That is a diagnosis, not a guess, and it is worth making properly, because the upgrade decision depends on it. More memory helps a machine that is short of memory; it does nothing for a machine that is throttling on dust or dying at the drive. The TechBrotherz Store names the actual bottleneck before quoting anything, which is what stops people paying for the wrong fix.",
+        "And sometimes the honest answer is that repair money is better spent on replacement, particularly where several causes overlap on a machine that was modest to begin with. TechBrotherz sells tested computers and takes trade-ins, so the conversation about fixing the old machine and the conversation about replacing it can happen at the same bench.",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "What is the most common reason a computer runs slow?",
+      answer:
+        "Accumulated startup programs. Software that installs itself to launch at power-on builds up over years until the machine spends its first minutes loading things nobody asked for. A computer tune-up at TechBrotherz in Calgary reviews the startup list, removes the accumulation and physically cleans the machine.",
+    },
+    {
+      question: "How do I know if my slow computer has a virus?",
+      answer:
+        "An infected machine tends to be slow while you use it rather than just at startup: the fan runs when the machine should be idle, the browser redirects or grows toolbars, and pop-ups appear outside the browser. TechBrotherz in Calgary diagnoses whether slowness is infection or clutter before quoting either fix.",
+    },
+    {
+      question: "Does upgrading to a solid-state drive make an old computer faster?",
+      answer:
+        "Usually it is the single biggest improvement available. A solid-state drive has no moving parts, so everything that waited on the old mechanical drive, booting, opening programs, loading files, happens dramatically faster. TechBrotherz in Calgary fits solid-state drives and moves your files across as part of the job.",
+    },
+    {
+      question: "Should I fix a slow computer or replace it?",
+      answer:
+        "It depends on which fault is causing the slowness, which is why TechBrotherz diagnoses before quoting. A dusty or cluttered machine is usually well worth reviving. A machine with several overlapping faults may not be, and the Store sells tested computers and takes trade-ins, so both options sit on the same counter.",
+    },
+  ],
+  about: ["Slow computer causes", "Computer tune-up", "Hard drive failure"],
+  related: [
+    { label: "Computer tune-up", href: "/repairs/computer-tune-up" },
+    { label: "Virus removal", href: "/services/virus-removal" },
+    { label: "Computer repair in Calgary", href: "/computer-repair-calgary" },
+    { label: "Computer diagnostics", href: "/repairs/computer-diagnostics" },
+  ],
+  sources: [],
+};
+
+const consoleFaults: BlogPost = {
+  slug: "common-xbox-and-playstation-faults",
+  title: "Common Xbox and PlayStation Faults, and Which Are Worth Repairing",
+  seoTitle: "Common Xbox & PlayStation Faults Worth Repairing",
+  seoDescription:
+    "HDMI ports, overheating, drives and drift: the faults that actually bring Xbox, PS4, PS5 and Switch consoles to a repair bench, and which repairs make sense.",
+  datePublished: "2026-08-20",
+  summary:
+    "Most dead consoles have one of five faults, and most of those five are repairable. What actually fails on Xbox, PlayStation and Switch, and when repair beats replacement.",
+  lead: "Gaming consoles fail in patterns. TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, sees the same handful of faults across Xbox One, Xbox Series X and S, PS4, PS5 and Nintendo Switch, and most of them are mechanical, predictable and fixable. Every console is diagnosed first, with the fault named and the price agreed before any work starts.",
+  answer:
+    "The gaming console faults that reach a repair bench are consistent: broken HDMI ports from cable strain, overheating from dust and dried thermal paste, failing disc drives, controllers with stick drift, and consoles that power on but show nothing. TechBrotherz in Calgary diagnoses Xbox, PlayStation and Nintendo Switch consoles first, and quotes before any repair.",
+  keyFacts: [
+    { label: "Consoles", value: "Xbox One, Xbox Series X and S, PS4, PS5, Nintendo Switch" },
+    { label: "Most common fault", value: "A damaged HDMI port on a console that otherwise works" },
+    { label: "Process", value: "Diagnosed first, price agreed before any work" },
+    { label: "Warranty", value: "60 days on the part and the work" },
+    { label: "Appointment", value: "Not needed, walk in during opening hours" },
+  ],
+  sections: [
+    {
+      heading: "Why do HDMI ports fail on consoles so often?",
+      paragraphs: [
+        "The HDMI port is the most repaired part on modern consoles, and the reason is mechanical rather than electronic. A console lives in a media cabinet where the cable is plugged, unplugged, yanked by a vacuum cleaner and strained sideways by the door, and the port is a small soldered component taking all of that leverage on its pins.",
+        "The symptom is a console that sounds alive with a screen that says no signal, or a picture that flickers and cuts out when the cable is nudged. Bent pins inside the port are sometimes visible with a torch. The console itself is usually fine, which is exactly why this repair is worth doing: everything works except one connector.",
+        "Replacing the port means board-level soldering rather than a plug-in part, which is why it is a bench job. It is also the clearest case in console repair of a fault where fixing beats replacing, because the machine attached to the broken port is otherwise healthy, along with everything installed on it.",
+      ],
+    },
+    {
+      heading: "Is an overheating console dying, or just dirty?",
+      paragraphs: [
+        "Usually dirty. A console that roars like a jet, runs hot to the touch and shuts itself down mid-game is almost always choked with dust, with thermal paste that dried out years ago. Consoles are worked hard in enclosed cabinets and cleaned less often than any other electronics in the house, and PS4 and Xbox One machines are now old enough that their factory paste has simply expired.",
+        "The shutdowns are the console protecting itself from heat, the same thermal throttling a laptop does, taken one step further. Left alone the problem compounds: heat stresses the solder joints and the power supply, so a dirty console that was cheap to clean becomes a damaged console that is not.",
+        "The repair is a full disassembly, a proper clean and fresh thermal paste, and it is diagnose-first at the TechBrotherz Store like every console job: if the shutdowns turn out to be something other than heat, the diagnosis says so before the quote does.",
+      ],
+      table: {
+        caption:
+          "The common console faults seen at the repair bench, and what each usually means.",
+        columns: ["Fault", "What you see", "Usually worth repairing?"],
+        rows: [
+          [
+            "Broken HDMI port",
+            "Powers on, no signal, or picture cuts when the cable moves",
+            "Yes: the console behind the port is healthy",
+          ],
+          [
+            "Overheating",
+            "Loud fan, hot case, shuts down mid-game",
+            "Yes: usually dust and dried paste, not damage",
+          ],
+          [
+            "Disc drive failure",
+            "Discs not accepted, not read, or grinding noises",
+            "Yes on current consoles; weigh it on the oldest",
+          ],
+          [
+            "Stick drift",
+            "Character or cursor moves on its own",
+            "Yes: a controller repair, not a console repair",
+          ],
+          [
+            "No power at all",
+            "Nothing happens, or a click then silence",
+            "Diagnosis first: causes range from trivial to terminal",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "What about disc drives, stick drift and consoles that will not power on?",
+      paragraphs: [
+        "Disc drive faults announce themselves: discs refused, discs accepted but never read, or grinding where there should be a quiet spin. On a current console the drive is worth repairing, because the alternative is abandoning the disc library that goes with it. On the oldest machines it becomes a judgment call, which is what the diagnosis is for.",
+        "Stick drift, where a character or menu cursor creeps on its own, is a controller fault rather than a console fault, caused by wear inside the thumbstick module. It is one of the smaller repairs in the whole catalogue, and fixing a drifting controller is almost always more sensible than replacing it.",
+        "A console that does nothing at all is the one case where honest answers start with a bench, not a list. No power can be a failed power supply, which is repairable, or deep board damage, which may not be worth it. TechBrotherz diagnoses first precisely so that nobody pays for open-ended exploratory work: the fault is named, then the price, then the decision is yours.",
+      ],
+    },
+    {
+      heading: "When is a console repair worth it, and when is it not?",
+      paragraphs: [
+        "The repair-or-replace question has a structure. In favour of repair: the fault is one of the mechanical ones above, the console is a current or recent generation, and the machine carries installed games, saves and accessories that replacement would strand or cost time to rebuild. A repaired console keeps everything exactly as it was.",
+        "In favour of replacement: the console is the oldest generation, several faults overlap, or the fault is deep board damage on a machine that was inexpensive secondhand to begin with. A repair store that never says replace is not diagnosing honestly, and the TechBrotherz diagnosis exists to make that call visible before money moves.",
+        "The practical route is to bring the console to 3317 17 Ave SE and let the bench name the fault. The diagnosis is the product: what is wrong, what fixing it costs, and whether the store would fix it if the machine were theirs. No appointment is needed, and the quote commits you to nothing.",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "Can a broken HDMI port on a PS5 or Xbox be repaired?",
+      answer:
+        "Yes. A damaged HDMI port is the most common console repair at TechBrotherz in Calgary, on PS4, PS5 and both Xbox generations. The port is soldered to the board, so replacement is bench work rather than a plug-in part, and the console behind the port is usually completely healthy.",
+    },
+    {
+      question: "Why does my console keep turning itself off while gaming?",
+      answer:
+        "Almost always heat. Dust builds up in the cooling system and the factory thermal paste dries out, so the console shuts down to protect itself under load. A full clean and fresh thermal paste at TechBrotherz in Calgary usually resolves it, and the diagnosis confirms heat is the cause before anything is quoted.",
+    },
+    {
+      question: "Does TechBrotherz repair Nintendo Switch consoles?",
+      answer:
+        "Yes. TechBrotherz at 3317 17 Ave SE in Calgary takes the Nintendo Switch alongside Xbox One, Xbox Series X and S, PS4 and PS5. Every console is diagnosed first, with the fault and the price named before any repair work starts, and repairs carry a 60-day warranty.",
+    },
+    {
+      question: "Is it worth fixing a controller with stick drift?",
+      answer:
+        "Usually yes. Stick drift is wear inside the thumbstick module, and replacing the module is one of the smaller repairs in the catalogue, far cheaper than replacing the controller. Bring the controller to the TechBrotherz Store in Calgary and it is diagnosed and quoted the same way a console is.",
+    },
+  ],
+  about: ["Gaming console repair", "HDMI port replacement", "Console overheating"],
+  related: [
+    { label: "Gaming console repair", href: "/services/game-console-repair" },
+    { label: "Computer diagnostics", href: "/repairs/computer-diagnostics" },
+    { label: "Buy, sell and trade devices", href: "/buy-sell-trade" },
+    { label: "Contact and directions", href: "/contact" },
+  ],
+  sources: [],
+};
+
+/**
+ * Order is the /blog index order. The three 2026-08-20 articles lead on the
+ * client's instruction; the unlocking article moved down the list rather than
+ * being deleted, because "how to unlock a cell phone" is one of the five
+ * topics on the client's own AI-visibility tracking list and this is the only
+ * piece covering the CRTC rule. Flagged to the client before any removal.
+ */
+export const BLOG_POSTS: BlogPost[] = [
+  screenRepairTime,
+  slowComputer,
+  consoleFaults,
+  laptopSigns,
+  waterDamage,
+  unlockCanada,
+];
 
 const BY_SLUG = new Map(BLOG_POSTS.map((post) => [post.slug, post]));
 

@@ -1,7 +1,7 @@
-import { type ReactNode } from "react";
+import { Children, type ReactNode } from "react";
 
 import { Eyebrow } from "@/components/primitives/Eyebrow";
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export interface HeadingProps {
   /** 1 for the page H1. Exactly one per page. Never skip a level. */
@@ -43,7 +43,10 @@ export function Heading({
       {eyebrow ? <Eyebrow className="mb-4">{eyebrow}</Eyebrow> : null}
 
       <Tag id={id} className={cn(LEVEL_CLASS[level], "text-tb-text on-dark:text-tb-white")}>
-        {children}
+        {/* Title Case at render, string nodes only, so headings holding JSX
+            (the home H1's coloured span) keep their markup. The heading rule
+            lives in titleCase(); prose surfaces never pass through here. */}
+        {Children.map(children, (child) => (typeof child === "string" ? titleCase(child) : child))}
       </Tag>
 
       {lead ? (

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 
 import { Card } from "@/components/primitives/Card";
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export interface IconCardProps {
   icon: LucideIcon;
@@ -25,7 +25,7 @@ export function IconCard({ icon: Icon, title, description, link, className }: Ic
         <Icon size={28} strokeWidth={1.5} className="text-tb-green-deep" />
       </span>
 
-      <h3 className="type-h3 text-tb-text mt-6">{title}</h3>
+      <h3 className="type-h3 text-tb-text mt-6">{titleCase(title)}</h3>
       <p className="type-body text-tb-muted mt-3">{description}</p>
 
       {link ? (
@@ -33,7 +33,7 @@ export function IconCard({ icon: Icon, title, description, link, className }: Ic
           href={link.href}
           className="group text-tb-green-deep mt-6 inline-flex items-center gap-1.5 font-medium hover:underline"
         >
-          {link.label}
+          {titleCase(link.label)}
           <ArrowRight
             aria-hidden="true"
             size={16}

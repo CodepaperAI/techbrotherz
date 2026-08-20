@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Cracked front glass on the OLED panel, dearer than the larger standard iPhone 11",
+    "Cracked front glass on the OLED panel, dearer to replace than the standard iPhone 11's LCD",
     "Battery health well below 80 percent on a phone of this age",
     "Charging port worn",
     "One of the three rear cameras failing while the others work",

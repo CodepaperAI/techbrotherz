@@ -11,7 +11,7 @@ import { Container } from "@/components/primitives/Container";
 import { PillButton } from "@/components/primitives/PillButton";
 import { headerLinks } from "@/lib/nav";
 import { SITE, TEL_HREF } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 /**
  * Links come from the route registry. A route still marked pending renders only
@@ -135,7 +135,7 @@ export function Nav() {
                       active ? "text-tb-text font-medium" : "text-tb-muted",
                     )}
                   >
-                    {link.label}
+                    {titleCase(link.label)}
                     {link.pending ? <PendingFlag /> : null}
                   </Link>
                 </li>
@@ -213,7 +213,7 @@ export function Nav() {
                       href={link.href}
                       className="type-h3 text-tb-white hover:text-tb-green flex items-center gap-2 py-5"
                     >
-                      {link.label}
+                      {titleCase(link.label)}
                       {link.pending ? <PendingFlag /> : null}
                     </Link>
                   </li>

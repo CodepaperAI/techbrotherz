@@ -51,7 +51,7 @@ const content: ModelContent = {
   ],
   "repairNotes": null,
   "lastSupportedOs": null,
-  "stillReceivesUpdates": false
+  "stillReceivesUpdates": null
 } as ModelContent;
 
 export default content;

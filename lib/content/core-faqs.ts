@@ -28,19 +28,9 @@ export interface CoreFaqCtx {
   updatedAt?: string | null;
 }
 
-function updatedPhrase(iso?: string | null): string {
-  if (!iso) return "The list is maintained in the store's own system and updated as prices change.";
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) {
-    return "The list is maintained in the store's own system and updated as prices change.";
-  }
-  const formatted = date.toLocaleDateString("en-CA", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  return `This price list was last updated on ${formatted}.`;
-}
+/* pricesFaqs and updatedPhrase were removed 2026-08: /repair-prices 301s to
+   /contact and nothing imported them, and dead copy describing a price list
+   that no longer exists is a wrong page waiting to be re-wired. */
 
 export function homeFaqs(c: CoreFaqCtx): PageFaq[] {
   return [
@@ -50,7 +40,7 @@ export function homeFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "How much do repairs at TechBrotherz cost?",
-      answer: `Every repair at TechBrotherz in Calgary is quoted at the Store, free of charge, before any work starts, and the quote covers the part and the labour together. What a repair comes to follows the part the device takes, which is why an older handset and a current one are not the same job. Phone ${c.phone} with your device model for a firm figure.`,
+      answer: `Every repair at TechBrotherz in Calgary is quoted at the Store, free of charge, before any work starts, and the quote covers the part and the labour together. What a repair costs depends on the part the device takes, which is why an older handset and a current one are not the same job. Phone ${c.phone} with your device model for a firm figure.`,
     },
     {
       question: "Can TechBrotherz fix my phone the same day?",
@@ -72,23 +62,6 @@ export function servicesFaqs(c: CoreFaqCtx): PageFaq[] {
     {
       question: "Which TechBrotherz service do I need for my device?",
       answer: `Choose by device: phone repair for handsets, tablet repair for iPads and Android tablets, laptop repair for screens, keyboards and charging sockets, and computer repair for desktops, Windows installation and tune-ups. If you are not sure, bring the device to ${c.street} in ${c.city} and TechBrotherz will diagnose it at the Store.`,
-    },
-  ];
-}
-
-export function pricesFaqs(c: CoreFaqCtx): PageFaq[] {
-  return [
-    {
-      question: "How many devices does TechBrotherz repair?",
-      answer: `TechBrotherz in Calgary repairs ${c.modelCount} device models across ${c.brandCount} brands, each listed with its own figures rather than a single blanket rate. Every published price includes the part and the labour together.`,
-    },
-    {
-      question: "What is the cheapest repair on this price list?",
-      answer: `A battery on an older handset is usually the smallest job TechBrotherz in Calgary does, and a bonded curved screen on a recent flagship the largest. The spread is driven by what the replacement part costs, which is why an older handset is cheaper to repair than a current one. Phone ${c.phone} with your model and the figure is free.`,
-    },
-    {
-      question: "How current is this repair price list?",
-      answer: `${updatedPhrase(c.updatedAt)} Prices on this page are read directly from the TechBrotherz catalogue rather than typed into the page, so a price change in the store's system appears here without the page being rewritten.`,
     },
   ];
 }
@@ -139,7 +112,7 @@ export function contactFaqs(c: CoreFaqCtx): PageFaq[] {
     },
     {
       question: "Can I get a price from TechBrotherz before coming in?",
-      answer: `Yes. Published prices for ${c.modelCount} device models are on the TechBrotherz repair price list, and phoning ${c.phone} with your model gets a firm figure before you travel. Where a price is not published, the part is ordered in and TechBrotherz will quote it once the cost is known.`,
+      answer: `Yes. Phoning ${c.phone} with your exact model gets a firm figure before you travel, free of charge. For less common models the part is ordered in, and TechBrotherz quotes it once the cost is known, so the figure you agree to is one the store can stand behind.`,
     },
   ];
 }

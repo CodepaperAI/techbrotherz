@@ -42,7 +42,7 @@ const content: ModelContent = {
           "_key": "model.ipad-air-4-verdict-s0",
           "_type": "span",
           "marks": [],
-          "text": "Yes, but check the price against what an Air 4 now fetches secondhand. Its A14 processor has aged, values have dropped further than the Air 5, and the display repair is the same cost as its newer sibling. If the tablet is doing a light job well, fix it. If it already feels slow, spending on glass will not fix that."
+          "text": "Yes, but check the price against what an Air 4 now fetches secondhand. Its A14 processor has aged, values have dropped further than the Air 5's, and the display repair costs the same as its newer sibling's. If the tablet is doing a light job well, fix it. If it already feels slow, spending on glass will not fix that."
         }
       ],
       "markDefs": [],

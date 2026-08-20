@@ -139,7 +139,7 @@ export default async function AccessoriesPage() {
           </Card>
           <Card>
             <Shield aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Tempered glass</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Tempered Glass</h3>
             <p className="type-body text-tb-muted mt-2">
               A hardened glass layer that takes the impact and shatters instead of the screen
               underneath. The strongest of the three protector types.
@@ -147,7 +147,7 @@ export default async function AccessoriesPage() {
           </Card>
           <Card>
             <Layers aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Screen protectors</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Screen Protectors</h3>
             <p className="type-body text-tb-muted mt-2">
               Thin film protectors that guard against the scratches from keys, coins and grit in a
               pocket or a bag.
@@ -155,7 +155,7 @@ export default async function AccessoriesPage() {
           </Card>
           <Card>
             <Eye aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Privacy protectors</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Privacy Protectors</h3>
             <p className="type-body text-tb-muted mt-2">
               Tempered glass with a filter that narrows the viewing angle, so the screen reads
               clearly to you and goes dark to the person beside you.
@@ -163,7 +163,7 @@ export default async function AccessoriesPage() {
           </Card>
           <Card>
             <Cable aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Cables and chargers</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Cables and Chargers</h3>
             <p className="type-body text-tb-muted mt-2">
               Charging cables and wall chargers for phones and tablets, MacBook chargers, and HDMI
               cables, all stocked at the Store.
@@ -317,21 +317,21 @@ export default async function AccessoriesPage() {
             </Heading>
             <div className="mt-8 space-y-5">
               <Card>
-                <h3 className="type-h3 text-tb-text">No online stock list</h3>
+                <h3 className="type-h3 text-tb-text">No Online Stock List</h3>
                 <p className="type-body text-tb-muted mt-2">
                   Accessory stock changes faster than a website should pretend to track. The phone
                   call is the stock check, and it takes a minute.
                 </p>
               </Card>
               <Card>
-                <h3 className="type-h3 text-tb-text">No online ordering</h3>
+                <h3 className="type-h3 text-tb-text">No Online Ordering</h3>
                 <p className="type-body text-tb-muted mt-2">
                   TechBrotherz is a walk-in Store, not a web store. Accessories are bought at the
                   store, where the fit on your actual device can be checked before you pay.
                 </p>
               </Card>
               <Card>
-                <h3 className="type-h3 text-tb-text">A protector is not invincibility</h3>
+                <h3 className="type-h3 text-tb-text">A Protector Is Not Invincibility</h3>
                 <p className="type-body text-tb-muted mt-2">
                   Glass and cases improve the odds when a device is dropped. They do not make it
                   indestructible, and a hard enough impact can still reach the screen. When it

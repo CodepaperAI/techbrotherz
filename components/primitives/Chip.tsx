@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export type ChipVariant = "soft" | "solid" | "dark";
 
@@ -26,7 +26,7 @@ export function Chip({ children, variant = "soft", className }: ChipProps) {
         className,
       )}
     >
-      {children}
+      {typeof children === "string" ? titleCase(children) : children}
     </span>
   );
 }

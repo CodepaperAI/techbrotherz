@@ -89,6 +89,18 @@ const CHECKS: Check[] = [
     why: "No question and answer pair appears in structured data on two URLs.",
   },
   {
+    name: "copy",
+    script: "scripts/audit-copy.ts",
+    needsServer: false,
+    why: "One brand spelling, one NAP format, no misspellings, no em dashes, en-CA throughout.",
+  },
+  {
+    name: "service-areas",
+    script: "scripts/test-service-areas.ts",
+    needsServer: true,
+    why: "The full Google Business Profile area list renders on /locations; a filter once silently cut 21 areas to 1.",
+  },
+  {
     name: "similarity",
     script: "scripts/content-similarity.ts",
     needsServer: true,

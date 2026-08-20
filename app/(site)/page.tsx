@@ -13,6 +13,7 @@ import { MapReveal } from "@/components/blocks/MapReveal";
 import { NumberedList } from "@/components/blocks/NumberedList";
 import { OpenNowBadge } from "@/components/blocks/OpenNowBadge";
 import { RatingBadge } from "@/components/blocks/RatingBadge";
+import { DemoImage } from "@/components/blocks/DemoImage";
 import { PageShell } from "@/components/blocks/PageShell";
 import { ServiceCard } from "@/components/blocks/ServiceCard";
 import type { RepairSubject } from "@/components/blocks/RepairIllustration";
@@ -338,8 +339,9 @@ export default async function HomePage() {
       layout="hero"
       eyebrow="Walk-in repair store · No appointment"
       title={
+        // JSX bypasses the h1's titleCase pass, so the Title Case is written in.
         <>
-          Phone and computer repair in <span className="text-tb-green">SE Calgary</span>
+          Phone and Computer Repair in <span className="text-tb-green">SE Calgary</span>
         </>
       }
       lead={
@@ -359,6 +361,17 @@ export default async function HomePage() {
         </>
       }
       heroBackground={heroBackground}
+      answerAside={
+        /* The client asked for a phone repair photograph beside the AnswerBox
+           (2026-08). The home-hero slot, a phone in a repair jig under a
+           precision screwdriver, has been unused since the skyline took the
+           hero background, so it moves here rather than a new download. */
+        <DemoImage
+          slot="home-hero"
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="h-full min-h-56 lg:aspect-auto"
+        />
+      }
       heroOverlap={
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {[
@@ -698,7 +711,7 @@ export default async function HomePage() {
 
         {/* Every tile navigates somewhere real: a page, or an anchored section
             on /locations/calgary that the link audit verifies. */}
-        <h3 className="type-h3 text-tb-ink mt-12">Areas we serve from SE Calgary</h3>
+        <h3 className="type-h3 text-tb-ink mt-12">Areas We Serve From SE Calgary</h3>
         <TileGrid className="mt-5">
           {CALGARY_AREAS.map((area) => (
             <Tile key={area.name} href={area.href}>
@@ -729,7 +742,7 @@ export default async function HomePage() {
         variant="light"
         aside={
           <Card>
-            <h3 className="type-h3 text-tb-text">Still not sure?</h3>
+            <h3 className="type-h3 text-tb-text">Still Not Sure?</h3>
             <p className="type-body text-tb-muted mt-3">
               Call {SITE.phone} and describe the fault. We will tell you what it is likely to be,
               what it costs and whether the part is in stock, before you travel.

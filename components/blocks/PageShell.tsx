@@ -10,6 +10,7 @@ import { Section } from "@/components/primitives/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbsFor } from "@/lib/routes";
 import { breadcrumbs, buildGraph, type JsonLdNode } from "@/lib/seo/schema";
+import { titleCase } from "@/lib/utils";
 
 export interface PageShellProps {
   /** Registry path. Drives the breadcrumb trail and the BreadcrumbList node. */
@@ -54,6 +55,14 @@ export interface PageShellProps {
    * Static layout, so it costs nothing in CLS.
    */
   heroOverlap?: ReactNode;
+  /**
+   * Hero layout only: fills the space beside the AnswerBox, added 2026-08 on
+   * the client's instruction (a photograph on the home page). The AnswerBox
+   * keeps its full width on mobile and stacks first; the aside sits to its
+   * right from lg up and never shrinks the answer text, which is load-bearing
+   * for AEO.
+   */
+  answerAside?: ReactNode;
   children: ReactNode;
 }
 
@@ -78,6 +87,7 @@ export function PageShell({
   heroImage,
   heroBackground,
   heroOverlap,
+  answerAside,
   children,
 }: PageShellProps) {
   const crumbs = breadcrumbsFor(path, crumbLabel);
@@ -155,7 +165,7 @@ export function PageShell({
                 {/* Slightly under the type-h1 ceiling so the H1 holds two
                     lines in the seven-column hero. 40px -> 62px. */}
                 <h1 className="type-h1 text-tb-on-black mt-5 [font-size:clamp(2.5rem,1.75rem+2.9vw,3.875rem)]">
-                  {title}
+                  {typeof title === "string" ? titleCase(title) : title}
                 </h1>
 
                 {lead ? <p className="type-lead measure text-tb-muted-dark mt-5">{lead}</p> : null}
@@ -195,7 +205,16 @@ export function PageShell({
           <Container className="relative z-10 -mt-16 md:-mt-20">{heroOverlap}</Container>
         ) : null}
 
-        <Section className="pt-10 md:pt-12 lg:pt-14">{answer}</Section>
+        <Section className="pt-10 md:pt-12 lg:pt-14">
+          {answerAside ? (
+            <div className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-7">{answer}</div>
+              <div className="lg:col-span-5">{answerAside}</div>
+            </div>
+          ) : (
+            answer
+          )}
+        </Section>
 
         {children}
       </>

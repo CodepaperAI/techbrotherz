@@ -92,7 +92,7 @@ const iphoneScreen: RepairDef = {
   brandSlug: "apple-iphone",
   minutes: 30,
   lead: (c) =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The table below lists the price for every iPhone model in the catalogue, and each price includes the part and the labour.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces iPhone screens in about ${c.waitMinutes} minutes while you wait. The list below shows every iPhone model the store replaces screens on, and every quote includes the part and the labour in one figure.`,
   answer: (c) =>
     `iPhone screen replacement at TechBrotherz in Calgary fits a complete front assembly, with the glass and the display already bonded together, because that is how Apple builds them. Most iPhone screen replacements take about ${c.waitMinutes} minutes at the Store. Every one carries a ${c.warrantyDays}-day warranty, and the quote is free and given before any work starts.`,
   symptoms: [
@@ -152,9 +152,9 @@ const iphoneScreen: RepairDef = {
     {
       heading: "How much does an iPhone screen replacement cost in Calgary?",
       paragraphs: [
-        `What an iPhone screen replacement comes to follows the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the Store, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
-        "The pattern in that table is worth understanding. Older LCD models are the cheapest, because those panels have been in production for years and supply is plentiful. The OLED models cost more, and the recent Pro models with the largest displays cost the most, because that is what the assemblies cost to buy.",
-        "Apple publishes its own out-of-warranty screen service pricing for each model on its support site, which is worth comparing against before you decide where to take a repair. Models showing Call for quote in the table are ones where we order the part in and price it once we know the cost.",
+        `What an iPhone screen replacement costs depends on the panel the handset takes. An older iPhone with an LCD panel is the cheaper repair, a Pro model with an OLED panel is the dearer one, and the gap between the two ends of the range is wide. TechBrotherz gives the figure for your handset at the Store, free of charge, and each quote covers the part, the labour, the testing and the ${c.warrantyDays}-day warranty together.`,
+        "The pattern across models is worth understanding. Older LCD models are the cheapest, because those panels have been in production for years and supply is plentiful. The OLED models cost more, and the recent Pro models with the largest displays cost the most, because that is what the assemblies cost to buy.",
+        "Apple publishes its own out-of-warranty screen service pricing for each model on its support site, which is worth comparing against before you decide where to take a repair. For less common models, the part is ordered in and priced once we know the cost.",
       ],
     },
   ],
@@ -414,7 +414,7 @@ const iphonePort: RepairDef = {
   modelNotes: [
     {
       model: "iPhone 15 and later",
-      note: "These use USB-C rather than Lightning. The repair is the same shape of job, and the part is a different assembly.",
+      note: "These use USB-C rather than Lightning. The repair is the same shape of job, but the part is a different assembly.",
     },
     {
       model: "iPhone 8 and later",
@@ -433,7 +433,7 @@ const iphonePort: RepairDef = {
   faqs: () => [
     {
       question: "How much does iPhone charging port repair cost in Calgary?",
-      answer: `iPhone charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced and without anything being charged for.`,
+      answer: `iPhone charging port replacement at TechBrotherz in Calgary is quoted per model, free of charge, before any work starts. TechBrotherz checks for compacted pocket lint in the socket first, because clearing that solves a good proportion of charging faults without any part being replaced and at no charge.`,
     },
     {
       question: "Why does my iPhone only charge when I hold the cable at an angle?",
@@ -534,9 +534,9 @@ const iphoneCamera: RepairDef = {
     {
       heading: "How much does an iPhone camera repair cost in Calgary?",
       paragraphs: [
-        "iPhone camera repair at TechBrotherz in Calgary is priced per model in the table above, and each price includes the part and the labour. Rear camera modules on recent Pro models cost more than the single camera in an older iPhone, because those phones carry three separate modules and each is a distinct part.",
+        "iPhone camera repair at TechBrotherz in Calgary is quoted per model, with the part and the labour in one figure. Rear camera modules on recent Pro models cost more than the single camera in an older iPhone, because those phones carry three separate modules and each is a distinct part.",
         "Cracked lens glass over the rear camera is a smaller job than a module replacement, and it is worth asking about specifically if that is what you have. Bringing the phone in is the fastest way to find out which repair you need, and the check costs nothing.",
-        "Models showing Call for quote in the table are ones where the part is ordered in and priced once we know the cost. We do not publish a price we cannot stand behind.",
+        "For less common models, the part is ordered in and priced once we know the cost. We do not give a quote we cannot stand behind.",
       ],
     },
   ],
@@ -649,7 +649,7 @@ const iphoneBackGlass: RepairDef = {
       paragraphs: [
         "From the iPhone 12 onwards, Apple changed the internal design so the rear glass can be removed more cleanly, which makes the repair meaningfully less laborious than it is on the iPhone 8 through 11 generation. It is one of the few cases where a newer phone is easier to repair than an older one.",
         "This shows up in the pricing. On the models where the glass has to be taken off in pieces, the labour is the dominant cost rather than the part, which is why an older iPhone can cost as much for back glass as a newer one despite the part being cheaper.",
-        "If you are weighing up whether to have back glass done, the model matters more here than on almost any other repair, and the table above reflects that rather than smoothing it into one price.",
+        "If you are weighing up whether to have back glass done, the model matters more here than on almost any other repair, and the quote reflects that rather than smoothing every model into one figure.",
       ],
     },
     {
@@ -792,7 +792,7 @@ const samsungScreen: RepairDef = {
       paragraphs: [
         `A Galaxy screen is quoted per model at the Store, and the quote covers the part and the labour together. The spread across the Galaxy range is wider than it is for iPhone, because the range runs from small flat A-series displays to large curved Note panels, and a curved panel is a different part entirely.`,
         "The repair takes about 45 minutes rather than the 30 minutes a typical iPhone screen takes, because of the frame transfer described above. Most Galaxy screen repairs are still done while you wait.",
-        "Models showing Call for quote in the table are ones where the assembly is ordered in and priced once we know the cost. Samsung's own service pricing for its current models is published on its Canadian support site and is worth comparing before deciding.",
+        "For less common models, the assembly is ordered in and priced once we know the cost. Samsung's own service pricing for its current models is published on its Canadian support site and is worth comparing before deciding.",
       ],
     },
   ],
@@ -1182,7 +1182,7 @@ const samsungPort: RepairDef = {
     },
     {
       model: "Galaxy S7 and earlier",
-      note: "These use micro-USB rather than USB-C. The connector is different and the part is different, and the repair is the same shape of job.",
+      note: "These use micro-USB rather than USB-C. The connector is different and the part is different, but the repair is the same shape of job.",
     },
     {
       model: "Models with reverse wireless charging",
@@ -1411,7 +1411,7 @@ const laptopScreen: RepairDef = {
     {
       heading: "What decides the price of a laptop screen?",
       paragraphs: [
-        `Where a specific machine lands depends entirely on the panel it takes. Four things drive that: the physical size, the resolution, whether the panel is touch-enabled, and in some cases the refresh rate and colour specification on machines built for gaming or design work.`,
+        `What a specific machine's screen costs to replace depends entirely on the panel it takes. Four things drive that: the physical size, the resolution, whether the panel is touch-enabled, and in some cases the refresh rate and colour specification on machines built for gaming or design work.`,
         "A standard HD panel in a mainstream 15-inch laptop is the common case and sits at the bottom of the range. A high-resolution panel, a touch panel, or a high-refresh gaming panel costs substantially more, because those are more expensive parts to buy rather than more expensive work to fit.",
         "The labour is broadly the same across all of them, which is why the model number matters so much for a firm quote. Bring the laptop or the number from the sticker underneath and the price stops being an estimate.",
       ],
@@ -1458,7 +1458,7 @@ const laptopScreen: RepairDef = {
     rows: [
       [
         "Standard HD, non-touch",
-        "The most widely produced panel type, and the bottom of our price range",
+        "The most widely produced panel type, and the cheapest kind to replace",
         "Mainstream 15-inch home and office laptops",
       ],
       [
@@ -1518,7 +1518,7 @@ const laptopKeyboard: RepairDef = {
   siblings: ["/repairs/laptop-screen-replacement", "/repairs/laptop-charging-port-repair"],
   minutes: 45,
   lead: () =>
-    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job comes to reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
+    `TechBrotherz, a walk-in repair store at 3317 17 Ave SE in Calgary, Alberta, replaces laptop keyboards. What the job costs reflects how the machine is built rather than how bad the keyboard is: some lift out after a few screws, and others are riveted into the palm rest.`,
   answer: () =>
     `Laptop keyboard replacement at TechBrotherz in Calgary is quoted after we have seen how the keyboard is fitted, because that is what the job turns on. On some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly. Most keyboard work is finished the same day.`,
   symptoms: [
@@ -1587,7 +1587,7 @@ const laptopKeyboard: RepairDef = {
   modelNotes: [
     {
       model: "Business laptops",
-      note: "Frequently designed with a serviceable keyboard module that lifts out from the top, which puts them at the lower end of the price range.",
+      note: "Frequently designed with a serviceable keyboard module that lifts out from the top, which makes them the quickest kind to replace.",
     },
     {
       model: "Thin-and-light consumer laptops",
@@ -1604,7 +1604,7 @@ const laptopKeyboard: RepairDef = {
     "When a spill has reached the board, because the keyboard is then the smaller of two problems.",
   ],
   comparison: {
-    caption: "What decides where a laptop keyboard falls in the price range",
+    caption: "What decides how big a job a laptop keyboard replacement is",
     columns: ["Construction", "What the repair involves", "Where it lands"],
     rows: [
       [
@@ -1642,7 +1642,7 @@ const laptopKeyboard: RepairDef = {
     {
       question: "Can one broken key be replaced instead of the whole keyboard?",
       answer:
-        "Sometimes. A keycap that has popped off clips back on if the scissor mechanism underneath is intact, which is a Store job rather than a repair. If the mechanism is broken, individual replacements exist for some models. If the key does not respond when pressed directly on the rubber dome, the membrane has failed and the keyboard needs replacing.",
+        "Sometimes. A keycap that has popped off clips back on if the scissor mechanism underneath is intact, which is a bench job rather than a repair. If the mechanism is broken, individual replacements exist for some models. If the key does not respond when pressed directly on the rubber dome, the membrane has failed and the keyboard needs replacing.",
     },
     {
       question: "Should I just use an external keyboard instead?",
@@ -1776,7 +1776,7 @@ const laptopPort: RepairDef = {
       [
         "Socket area warm, discoloured or scorched",
         "A failing joint generating heat, needs prompt attention",
-        "Nothing to look, and worth doing sooner",
+        "Nothing to look at, and worth doing sooner",
       ],
     ],
   },
@@ -2185,7 +2185,7 @@ const computerDiagnostics: RepairDef = {
     {
       heading: "What if the machine is not worth repairing?",
       paragraphs: [
-        "We will tell you, and that is a legitimate outcome of a diagnostic rather than a failure of it. You paid a small fee to find out, and knowing not to spend three hundred dollars on a machine that will not last the year is worth more than the fee.",
+        "We will tell you, and that is a legitimate outcome of a diagnostic rather than a failure of it. You paid a small fee to find out, and knowing not to put a major repair into a machine that will not last the year is worth more than the fee.",
         "The judgement is usually about the ratio of the repair to the machine's remaining useful life and value. A board fault on an eight-year-old laptop is rarely worth fixing. The same fault on a two-year-old machine usually is. We will show you the arithmetic rather than just the verdict.",
         "Since Microsoft ended Windows 10 support on 14 October 2025, whether a machine can run Windows 11 is now part of that calculation, and it is checked as part of the diagnostic. A computer that cannot be updated keeps working, and it is a different proposition to spend money on.",
       ],

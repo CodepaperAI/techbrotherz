@@ -27,7 +27,7 @@ const content: ModelContent = {
     }
   ],
   "commonIssues": [
-    "Crease line across the inner display has become a dead band",
+    "A crease line across the inner display that has become a dead band",
     "Inner screen cracked or delaminating along the fold",
     "Outer cover screen cracked while the inner display is fine",
     "Hinge stiff, gritty or no longer holding position",
@@ -36,7 +36,7 @@ const content: ModelContent = {
   "verdict": null,
   "repairNotes": null,
   "lastSupportedOs": null,
-  "stillReceivesUpdates": false
+  "stillReceivesUpdates": null
 } as ModelContent;
 
 export default content;

@@ -19,7 +19,7 @@ const content: ModelContent = {
           "_key": "model.galaxy-note-9-intro-s0",
           "_type": "span",
           "marks": [],
-          "text": "The Galaxy Note 9 was the last Note with a headphone socket and the first with a Bluetooth S Pen that worked as a remote shutter. It has the largest battery Samsung had fitted to a Note at the time, which is why Note 9 handsets often still hold a usable charge when their contemporaries do not."
+          "text": "The Galaxy Note 9 was the last Note with a headphone socket and the first with a Bluetooth S Pen that worked as a remote shutter. It had the largest battery Samsung had fitted to a Note at the time, which is why Note 9 handsets often still hold a usable charge when their contemporaries do not."
         }
       ],
       "markDefs": [],

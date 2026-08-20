@@ -1,3 +1,4 @@
+import { titleCase } from "@/lib/utils";
 import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 
@@ -113,7 +114,7 @@ export function Footer() {
             </nav>
             {columns.map((column) => (
               <nav key={column.heading} aria-label={column.heading}>
-                <h2 className="type-eyebrow text-tb-silver">{column.heading}</h2>
+                <h2 className="type-eyebrow text-tb-silver">{titleCase(column.heading)}</h2>
                 <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => (
                     <li key={link.href}>
@@ -121,7 +122,7 @@ export function Footer() {
                         href={link.href}
                         className="text-tb-muted-dark hover:text-tb-white inline-flex items-center gap-1.5 transition-colors duration-[180ms] ease-out"
                       >
-                        {link.label}
+                        {titleCase(link.label)}
                         {link.pending ? (
                           <span
                             title="Ships in a later phase. Hidden in production."
@@ -155,7 +156,7 @@ export function Footer() {
             {legalLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-tb-muted-dark hover:text-tb-white">
-                  {link.label}
+                  {titleCase(link.label)}
                 </Link>
               </li>
             ))}

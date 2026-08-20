@@ -127,7 +127,7 @@ export default async function BuySellTradePage() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Card>
             <Banknote aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Sell a device</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Sell a Device</h3>
             <p className="type-body text-tb-muted mt-2">
               Bring your phone, computer or laptop to the Store. It is looked over with you there,
               and the offer is made on the spot. Take it or keep your device; there is no charge for
@@ -136,7 +136,7 @@ export default async function BuySellTradePage() {
           </Card>
           <Card>
             <Smartphone aria-hidden="true" size={24} strokeWidth={1.5} className="text-tb-green-deep" />
-            <h3 className="type-h3 text-tb-text mt-4">Buy a device</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Buy a Device</h3>
             <p className="type-body text-tb-muted mt-2">
               The phones and computers on sale change with what comes in, so phone ahead and ask
               what is in today. Every device sold has been through the same bench that repairs
@@ -150,7 +150,7 @@ export default async function BuySellTradePage() {
               strokeWidth={1.5}
               className="text-tb-green-deep"
             />
-            <h3 className="type-h3 text-tb-text mt-4">Trade one in</h3>
+            <h3 className="type-h3 text-tb-text mt-4">Trade One In</h3>
             <p className="type-body text-tb-muted mt-2">
               Your old device is valued exactly as a sale would be, and the figure goes against
               whatever you are at the Store for. You see both numbers before committing to either.
@@ -192,7 +192,7 @@ export default async function BuySellTradePage() {
             </Heading>
             <div className="mt-8 space-y-5">
               <Card>
-                <h3 className="type-h3 text-tb-text">No online valuations</h3>
+                <h3 className="type-h3 text-tb-text">No Online Valuations</h3>
                 <p className="type-body text-tb-muted mt-2">
                   A used device is worth what it is worth with the device in hand: its condition,
                   its battery, its history. A number quoted sight unseen would be a guess dressed
@@ -200,14 +200,14 @@ export default async function BuySellTradePage() {
                 </p>
               </Card>
               <Card>
-                <h3 className="type-h3 text-tb-text">No published stock list</h3>
+                <h3 className="type-h3 text-tb-text">No Published Stock List</h3>
                 <p className="type-body text-tb-muted mt-2">
                   What is for sale changes weekly. The phone call is the stock check, and it takes
                   a minute: {SITE.phone}.
                 </p>
               </Card>
               <Card>
-                <h3 className="type-h3 text-tb-text">Locked devices are not bought</h3>
+                <h3 className="type-h3 text-tb-text">Locked Devices Are Not Bought</h3>
                 <p className="type-body text-tb-muted mt-2">
                   A phone still signed into someone&apos;s Apple or Google account cannot honestly be
                   resold, and the Store does not buy devices that cannot be shown to be the

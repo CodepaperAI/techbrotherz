@@ -113,3 +113,51 @@ function toMinutes(time24: string): number {
   const [h, m] = time24.split(":");
   return Number(h) * 60 + Number(m ?? 0);
 }
+
+/* ------------------------------------------------------------- title case */
+
+/**
+ * The heading capitalisation rule, 2026-08 on the client's instruction.
+ *
+ * Title Case for headings, card titles, nav labels, buttons and chips:
+ * principal words capitalised, articles, conjunctions and short prepositions
+ * left lowercase unless first or last. Two properties matter more than the
+ * word list:
+ *
+ * 1. **It only ever raises case, never lowers it.** A word already carrying a
+ *    capital anywhere (iPhone, MacBook, FRP, TechBrotherz, SE) passes through
+ *    untouched, so brand and device casing can never be mangled.
+ * 2. **It is applied at render, in the display components only.** AnswerBox
+ *    copy, FAQ answers, plainAnswer, meta descriptions and JSON-LD never pass
+ *    through it, so the prose surfaces answer engines read stay sentence
+ *    case. CLAUDE.md Section 8.7.
+ */
+const TITLE_SMALL_WORDS = new Set([
+  "a", "an", "and", "as", "at", "but", "by", "for", "in", "nor",
+  "of", "on", "or", "so", "the", "to", "up", "via", "vs",
+]);
+
+export function titleCase(input: string): string {
+  const words = input.split(" ");
+  return words
+    .map((word, index) => {
+      if (!word) return word;
+      // Already cased (iPhone, MacBook, SE, FRP, TechBrotherz): hands off.
+      if (/[A-Z]/.test(word)) return word;
+      const bare = word.replace(/[^a-z']/g, "");
+      const isEdge = index === 0 || index === words.length - 1;
+      if (!isEdge && TITLE_SMALL_WORDS.has(bare)) return word;
+      // Capitalise the first letter of each hyphen segment, small words aside:
+      // "walk-in" becomes "Walk-in", "tune-up" as the last word "Tune-Up".
+      return word
+        .split("-")
+        .map((segment, segmentIndex) => {
+          if (segmentIndex > 0 && TITLE_SMALL_WORDS.has(segment) && !isEdge) return segment;
+          const at = segment.search(/[a-z]/);
+          if (at === -1) return segment;
+          return segment.slice(0, at) + segment.charAt(at).toUpperCase() + segment.slice(at + 1);
+        })
+        .join("-");
+    })
+    .join(" ");
+}

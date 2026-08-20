@@ -152,7 +152,7 @@ export default async function AboutPage() {
 
           <div className="lg:col-span-5">
             <Card>
-              <h3 className="type-h3 text-tb-text">The store in numbers</h3>
+              <h3 className="type-h3 text-tb-text">The Store in Numbers</h3>
               <dl className="type-body mt-5 space-y-3">
                 {[
                   ["Open", "7 days a week"],

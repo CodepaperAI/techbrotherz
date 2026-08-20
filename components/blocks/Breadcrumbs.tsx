@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 import type { Crumb } from "@/lib/routes";
 
 export type { Crumb };
@@ -29,17 +29,17 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
           const isLast = index === crumbs.length - 1;
 
           return (
-            <li key={`${crumb.label}-${index}`} className="flex items-center gap-2">
+            <li key={`${titleCase(crumb.label)}-${index}`} className="flex items-center gap-2">
               {crumb.href && !isLast ? (
                 <Link
                   href={crumb.href}
                   className="text-tb-muted hover:text-tb-text on-dark:text-tb-muted-dark on-dark:hover:text-tb-white hover:underline"
                 >
-                  {crumb.label}
+                  {titleCase(crumb.label)}
                 </Link>
               ) : (
                 <span aria-current="page" className="text-tb-text on-dark:text-tb-white">
-                  {crumb.label}
+                  {titleCase(crumb.label)}
                 </span>
               )}
 

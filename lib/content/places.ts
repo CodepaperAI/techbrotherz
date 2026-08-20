@@ -62,7 +62,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     verified: true,
     paragraphs: [
       "This is the store's own community. Albert Park/Radisson Heights sits immediately north of 17 Avenue SE, bounded by Memorial Drive to the north, 36 Street SE to the east and Barlow Trail to the west, and TechBrotherz is on its southern edge at 33 Street.",
-      "For anyone living here the store is a walk rather than a drive, which is unusual for a repair Store and is the main reason to know it exists. There is no route to work out and no parking question to solve.",
+      "For anyone living here the store is a walk rather than a drive, which is unusual for a repair store and is the main reason to know it exists. There is no route to work out and no parking question to solve.",
     ],
   },
   {
@@ -133,7 +133,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Penbrooke Meadows",
     verified: false,
     paragraphs: [
-      "Penbrooke Meadows sits in the same corner of southeast Calgary as the store, and its residents are exactly who a walk-in Store on 17 Avenue SE exists for.",
+      "Penbrooke Meadows sits in the same corner of southeast Calgary as the store, and its residents are exactly who a walk-in store on 17 Avenue SE exists for.",
       "What is certain is short: the store is at 3317 17 Ave SE, every quote is free and given before any work starts, and most phone repairs take about 30 minutes while you wait.",
     ],
   },
@@ -142,7 +142,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     name: "Marlborough",
     verified: false,
     paragraphs: [
-      "Marlborough is north of the store, across Memorial Drive around Marlborough Mall and 36 Street NE. Customers make the trip down because the Store quotes before working and most phone repairs finish in about 30 minutes.",
+      "Marlborough is north of the store, across Memorial Drive around Marlborough Mall and 36 Street NE. Customers make the trip down because the Store quotes the price before any work starts and most phone repairs finish in about 30 minutes.",
       "A repair from Marlborough is usually a single visit: bring the device in, get the quote at the Store, and wait while the work is done.",
     ],
   },
@@ -161,7 +161,7 @@ const CALGARY_NEIGHBOURHOODS: NeighbourhoodSection[] = [
     verified: true,
     paragraphs: [
       "Ramsay sits beside Inglewood in the inner southeast, and the trip out is the same one Inglewood makes: east along 17 Avenue SE, across Deerfoot Trail and Barlow Trail, to the store at 33 Street.",
-      "MAX Purple runs that corridor in its own median lanes, so from this end of the avenue the bus is often the simpler answer than parking twice.",
+      "MAX Purple runs that corridor in its own median lanes, so from this end of the avenue the bus is often a simpler answer than parking twice.",
     ],
   },
   {
@@ -243,7 +243,7 @@ const calgary: PlaceDef = {
       paragraphs: [
         "33 Street SE Station is on the 17 Avenue Transitway, a dedicated bus-only corridor running down the middle of the avenue, and it is outside the store. MAX Purple, route 307, serves it, running from downtown Calgary east to the eastern city limits. The line opened on 19 November 2018.",
         "Because the transitway is a median corridor separated from general traffic, MAX Purple is not held up by the congestion on 17 Avenue that a normal bus route would sit in. The stations have heated shelters and real-time arrival displays, which matters in a Calgary February more than it does in July.",
-        "For most of the communities along the avenue this makes the store reachable without a car at all, which is unusual for a repair Store. Southview is directly across the avenue, Albert Park and Radisson Heights are immediately north, and downtown is a straight run west on the same line.",
+        "For most of the communities along the avenue this makes the store reachable without a car at all, which is unusual for a repair store. Southview is directly across the avenue, Albert Park and Radisson Heights are immediately north, and downtown is a straight run west on the same line.",
       ],
     },
     {
@@ -265,7 +265,7 @@ const calgary: PlaceDef = {
     {
       heading: "What can you get repaired at the Calgary store?",
       paragraphs: [
-        "Everything TechBrotherz does happens at this one Store: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
+        "Everything TechBrotherz does happens at this one store: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is no second location and no mail-in service.",
         "That means the same technicians see a device from diagnosis to hand-back, and it means a household can bring several devices in one trip. Phones are usually finished while you wait; tablets and computers are same-day drop-offs.",
         "Every repair is quoted free at the Store before any work starts, with the part and the labour in one figure, and nothing begins until you agree to it. Phone the store with your exact model and the fault and you will have the figure before you travel.",
       ],
@@ -365,9 +365,9 @@ const forestLawn: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Forest Lawn customers?",
       paragraphs: [
-        "The same range as for everyone: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one set of published prices.",
+        "The same range as for everyone: cell phones, iPads, Android and Windows tablets, laptops and desktop computers, plus carrier unlocking, virus removal and Windows password resets. There is one Store and one way of quoting: free, with the device in front of us.",
         "Phone repairs are the ones worth walking in for without planning, because screens and batteries on stocked models are finished while you wait. Tablets and computers are same-day drop-offs, which suits a neighbourhood close enough to make two short trips.",
-        "Prices are published per device model rather than quoted on arrival, so you can check the figure for your exact handset before coming down. Nothing about the price or the warranty changes based on which neighbourhood you are travelling from.",
+        "Every repair is quoted free with the device in front of us, and the figure is agreed before any work starts. Nothing about the quote or the warranty changes based on which neighbourhood you are travelling from.",
       ],
     },
     {
@@ -449,7 +449,7 @@ const chestermere: PlaceDef = {
     {
       heading: "What does TechBrotherz repair for Chestermere customers?",
       paragraphs: [
-        "Cell phones, iPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one Store, so a household making the trip can bring several devices at once rather than making separate journeys.",
+        "Cell phones, iPads, Android and Windows tablets, laptops and desktop computers, along with carrier unlocking, virus removal and Windows password resets. It is one store, so a household making the trip can bring several devices at once rather than making separate journeys.",
         "Phone repairs are the ones finished while you wait. Tablet and computer work is a same-day drop-off, which is worth knowing before driving in: that is two trips rather than one, or a long wait in Calgary.",
         "Prices do not change based on where you travel from. There is no out-of-city rate, no travel surcharge, and the warranty is identical.",
       ],

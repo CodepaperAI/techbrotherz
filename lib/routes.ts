@@ -530,7 +530,21 @@ export const ROUTES: RouteDef[] = [
     path: "/blog/how-long-does-a-phone-screen-repair-take",
     label: "How long does a phone screen repair take",
     tier: "guide",
-    status: "pending",
+    status: "built",
+    parent: "/blog",
+  },
+  {
+    path: "/blog/why-is-my-computer-running-slow",
+    label: "Why is my computer running slow",
+    tier: "guide",
+    status: "built",
+    parent: "/blog",
+  },
+  {
+    path: "/blog/common-xbox-and-playstation-faults",
+    label: "Common Xbox and PlayStation faults",
+    tier: "guide",
+    status: "built",
     parent: "/blog",
   },
   {

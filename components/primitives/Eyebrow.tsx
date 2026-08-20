@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export interface EyebrowProps {
   /** One word or two. Never a sentence. */
@@ -31,7 +31,7 @@ export function Eyebrow({ children, className, align = "left" }: EyebrowProps) {
       )}
     >
       <span aria-hidden="true" className="bg-tb-green h-[3px] w-8 shrink-0" />
-      <span className="type-eyebrow text-tb-green-deep on-dark:text-tb-green">{children}</span>
+      <span className="type-eyebrow text-tb-green-deep on-dark:text-tb-green">{titleCase(children)}</span>
     </p>
   );
 }

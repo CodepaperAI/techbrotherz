@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ReactNode } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export type PillButtonVariant = "primary" | "ghost" | "dark" | "ghostOnDark";
 export type PillButtonSize = "md" | "sm";
@@ -88,7 +88,7 @@ export function PillButton(props: PillButtonProps) {
 
   const content = (
     <>
-      {children}
+      {typeof children === "string" ? titleCase(children) : children}
       {withArrow ? (
         <ArrowRight
           aria-hidden="true"

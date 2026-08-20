@@ -371,7 +371,7 @@ export default async function ModelPage({ params }: PageProps) {
 
         {model.priceGroup?.models && model.priceGroup.models.length > 1 ? (
           <Card className="mt-6">
-            <h3 className="type-h3 text-tb-text">A shared price, not a shared repair</h3>
+            <h3 className="type-h3 text-tb-text">A Shared Price, Not a Shared Repair</h3>
             <p className="type-body text-tb-muted mt-3">
               {model.priceGroup.note ??
                 `The ${model.priceGroup.name} share a printed price for this repair.`}{" "}
@@ -429,7 +429,7 @@ export default async function ModelPage({ params }: PageProps) {
 
           <div className="lg:col-span-5">
             <Card>
-              <h3 className="type-h3 text-tb-text">What every repair includes</h3>
+              <h3 className="type-h3 text-tb-text">What Every Repair Includes</h3>
               <ul className="type-body text-tb-muted mt-4 space-y-3">
                 <li>The part itself, whatever this device needs.</li>
                 <li>The labour to fit it. No separate bench fee on a phone repair.</li>

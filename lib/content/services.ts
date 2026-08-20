@@ -146,14 +146,14 @@ const phoneRepair: ServiceDef = {
       paragraphs: [
         `TechBrotherz repairs the five things that account for almost every phone that comes through the door: cracked screens, worn batteries, charging ports that have stopped holding a cable, cameras that will not focus or show a black frame, and back glass that has shattered. Screen replacement is the most common repair by a wide margin, and on most models it is finished in about ${c.waitMinutes} minutes.`,
         "Beyond those five, we replace earpieces, loudspeakers, power buttons, volume buttons and home buttons. Those are smaller jobs, and on most handsets they take under an hour. If a phone has a fault that is not on the list, bring it in and we will tell you honestly whether it is something we can fix or something that needs the manufacturer.",
-        "We work on iPhone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same Store. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the Store once we have the model in front of us and know what the part costs.",
+        "We work on iPhone, Samsung Galaxy and Google Pixel handsets, and take Motorola, LG and other Android phones at the same store. Apple and Samsung make up most of the volume, which is why the model catalogue on this site is deepest on those two. Everything else is quoted at the Store once we have the model in front of us and know what the part costs.",
       ],
     },
     {
       heading: "What is the difference between a cracked screen and a broken LCD?",
       paragraphs: [
         "A phone screen is two layers bonded together: the digitizer, which is the touch-sensitive glass you press, and the LCD or OLED panel underneath, which produces the picture. A cracked screen means the glass is broken. A broken LCD means the panel underneath has failed, which shows up as black patches, coloured lines, a bleeding white glow or a display that stays dark.",
-        "The distinction matters because it is the single biggest driver of what a repair costs. On almost every modern phone the two layers are laminated together at the factory and have to be replaced as one assembly, so a cracked glass and a dead panel cost the same to fix. On some older iPads and a handful of older Android phones the layers are separate, and replacing just the glass is much cheaper.",
+        "The distinction matters because it is the single biggest driver of what a repair costs. On almost every modern phone the two layers are laminated together at the factory and have to be replaced as one assembly, so cracked glass and a dead panel cost the same to fix. On some older iPads and a handful of older Android phones the layers are separate, and replacing just the glass is much cheaper.",
         "You do not need to work out which one you have before you come in. Bring the phone to the Store and we will tell you in a minute, because the price we quote depends on it and we would rather show you than guess.",
       ],
     },
@@ -186,7 +186,7 @@ const phoneRepair: ServiceDef = {
     "Anyone with a cracked or black screen who wants it fixed today rather than booked for next week.",
     "People whose phone battery no longer lasts a working day, or shuts down when it still shows charge left.",
     "Anyone whose charging cable has to be held at an angle, or has stopped charging altogether.",
-    "People who would rather pay a published price agreed up front than send a phone away for an estimate.",
+    "People who would rather have the price agreed up front than send a phone away for an estimate.",
   ],
   limits: () => [
     {
@@ -214,7 +214,7 @@ const phoneRepair: ServiceDef = {
     {
       question: "Which phone brands does TechBrotherz repair?",
       answer:
-        "TechBrotherz in Calgary repairs iPhone, Samsung Galaxy and Google Pixel phones. Apple and Samsung models are priced individually on the published price list. Pixel repairs are quoted at the Store once the model is identified, because the part cost drives the price.",
+        "TechBrotherz in Calgary repairs iPhone, Samsung Galaxy and Google Pixel phones. Every model is quoted individually at the Store, free and before any work starts, because the part cost drives the price.",
     },
     {
       question: "Do I need to back up my phone before a repair?",
@@ -249,7 +249,7 @@ const ipadRepair: ServiceDef = {
   localPath: "/ipad-repair-calgary",
   siblings: ["/services/phone-repair", "/services/laptop-repair"],
   lead: () =>
-    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same Store.`,
+    `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, repairs every iPad generation, replacing cracked glass, failed display panels, worn batteries and charging ports, and takes Android and Windows tablets at the same store.`,
   answer: (c) =>
     `TechBrotherz in Calgary repairs iPads of every generation. On older iPads the touch glass is a separate layer from the display panel, so a cracked front with a working picture is often a smaller repair than people expect. iPad repairs take longer than phone repairs because the glass is bonded to the frame with adhesive that has to be heated and cut. Every repair carries a ${c.warrantyDays}-day warranty.`,
   keyFacts: (c) => [
@@ -299,7 +299,7 @@ const ipadRepair: ServiceDef = {
       heading: "How long does an iPad repair take?",
       paragraphs: [
         "An iPad repair takes longer than a phone repair, and it is worth knowing why before you decide to wait for it. The glass on a tablet is held down by a continuous band of adhesive around the entire perimeter, and that adhesive has to be warmed until it softens, cut through carefully, and then scraped off the frame before a new panel can go on. Rushing that step is how frames get bent.",
-        "In practice most iPad work is a same-day repair rather than a wait-at-the-Store one. Bring it in during the day, and in most cases it is ready before we close. We will give you a realistic time when you drop it off, and we will call you when it is done.",
+        "In practice most iPad work is done the same day rather than while you wait. Bring it in during the day, and in most cases it is ready before we close. We will give you a realistic time when you drop it off, and we will call you when it is done.",
         "If the part for your model is not in stock, we order it, which usually adds a day or two. Older iPad glass is generally on the shelf. Laminated assemblies for recent iPad Air and iPad Pro models are more often ordered in.",
       ],
     },
@@ -314,7 +314,7 @@ const ipadRepair: ServiceDef = {
     {
       heading: "Does TechBrotherz repair Android and Windows tablets?",
       paragraphs: [
-        "TechBrotherz repairs Android and Windows tablets as well as iPads, but those are quoted at the Store rather than published in advance. Android tablet parts vary enormously between manufacturers and model years, and unlike iPads there is no small set of models that covers most of the market, so a published price list would be misleading more often than it was useful.",
+        "TechBrotherz repairs Android and Windows tablets as well as iPads, but those are quoted at the Store rather than published in advance. Android tablet parts vary enormously between manufacturers and model years, and unlike iPads there is no small set of models that covers most of the market, so quoting with the device in front of us is the only honest way to price them.",
         "Bring the tablet in with its model number, which is normally printed on the back or listed in the settings under About. We will identify the part, tell you what it costs and how long it will take, and you can decide from there. If the part is not available at a sensible price, we will tell you that too rather than take the job.",
         "The repairs themselves are the same work: cracked glass, failed panels, batteries that no longer hold charge, and charging ports that have worn out from years of cable insertion.",
       ],
@@ -441,7 +441,7 @@ const laptopRepair: ServiceDef = {
     {
       heading: "How much does a laptop screen replacement cost in Calgary?",
       paragraphs: [
-        `Laptop panels differ by size, resolution and panel type, so a standard HD screen on a mainstream 15-inch machine sits at the bottom of the range, while a high-resolution or touch-enabled panel sits well above it. TechBrotherz confirms the exact part and what it comes to before any work starts.`,
+        `Laptop panels differ by size, resolution and panel type, so a standard HD screen on a mainstream 15-inch machine sits at the bottom of the range, while a high-resolution or touch-enabled panel sits well above it. TechBrotherz confirms the exact part and what it costs before any work starts.`,
         "Unlike phones, laptop screens are usually a single panel that is not bonded to a separate touch layer, which makes the replacement itself a cleaner job. The panel unclips from the lid, a ribbon cable comes off, and a new one goes on. The work is straightforward. The variation is entirely in what the specific panel costs.",
         "Bring the laptop with its model number, which is normally on a sticker on the underside. That number tells us the exact panel the machine takes, and it is the difference between a firm price and an estimate.",
       ],
@@ -457,7 +457,7 @@ const laptopRepair: ServiceDef = {
     {
       heading: "Can a laptop keyboard be replaced, or does the whole laptop need fixing?",
       paragraphs: [
-        `A laptop keyboard can almost always be replaced on its own. What the work comes to reflects how the machine is built rather than how bad the keyboard is: on some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly.`,
+        `A laptop keyboard can almost always be replaced on its own. What the work costs reflects how the machine is built rather than how bad the keyboard is: on some laptops the keyboard lifts out from the top after a handful of screws, and on others it is riveted into the upper case, which means replacing the whole palm rest assembly.`,
         "Spilled liquid is the most common reason a keyboard needs replacing, and it is the case where time matters most. If something has been spilled on a laptop, shut it down immediately, unplug it, and bring it in rather than trying to dry it out and carry on. Liquid that has reached the board is a different and more serious problem than liquid that has only reached the keyboard.",
         "Individual keys that have come off can sometimes be reseated rather than replaced, and that is worth asking about at the Store before you pay for a whole keyboard. If the clip underneath is intact, a key often goes back on.",
       ],
@@ -515,7 +515,7 @@ const laptopRepair: ServiceDef = {
     {
       question: "Should I bring my laptop charger in with the laptop?",
       answer:
-        "Yes. Bring the charger with the laptop to TechBrotherz. A laptop that will not power on is sometimes a failed adapter rather than a fault in the machine, and that is a two-minute check when the charger is on the Store. Without it, the same question needs a paid diagnostic to answer.",
+        "Yes. Bring the charger with the laptop to TechBrotherz. A laptop that will not power on is sometimes a failed adapter rather than a fault in the machine, and that is a two-minute check when the charger is at the Store. Without it, the same question needs a paid diagnostic to answer.",
     },
   ],
   globalCategories: ["walkin", "warranty"],
@@ -662,7 +662,7 @@ const computerRepair: ServiceDef = {
     },
     {
       question: "What is included in a computer tune-up at TechBrotherz?",
-      answer: `A clean-up and tune-up at TechBrotherz in Calgary is quoted as one flat figure and covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Those four causes account for most computers that have become slow.`,
+      answer: `A clean-up and tune-up at TechBrotherz in Calgary is quoted as one flat figure and covers cutting the startup list back, clearing temporary files, bringing updates current, physically cleaning the cooling so the processor stops throttling, and checking the storage for early signs of failure. Those five jobs cover the most common causes of a computer that has become slow.`,
     },
     {
       question: "Do I need to bring my monitor and keyboard in with my desktop?",
@@ -1004,11 +1004,10 @@ const virusRemoval: ServiceDef = {
   lead: () =>
     `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, removes viruses, malware, adware and browser hijackers from Windows computers, and leaves security software in place so the same thing does not come straight back.`,
   answer: () =>
-    `TechBrotherz in Calgary removes viruses and malware from a computer, including security software left installed and running afterwards. Pop-ups that will not close, a browser that opens on a page you did not choose, and fake warnings telling you to call a support number are the three most common symptoms. Most virus removals are finished the same day, and your files stay on the machine.`,
+    `TechBrotherz in Calgary removes viruses and malware from a computer, and leaves security software installed and running afterwards. Pop-ups that will not close, a browser that opens on a page you did not choose, and fake warnings telling you to call a support number are the three most common symptoms. Most virus removals are finished the same day, and your files stay on the machine.`,
   keyFacts: () => [
     { label: "Your files", value: "Documents and photos stay on the machine" },
     { label: "Included", value: "Security software installed and running" },
-    { label: "Your files", value: "Left on the machine" },
     { label: "Time", value: "Usually the same day" },
     {
       label: "If it is too far gone",
@@ -1071,7 +1070,7 @@ const virusRemoval: ServiceDef = {
       heading: "When is a clean install better than removing the infection?",
       paragraphs: [
         "Most infections are removable, and removal is the right answer because it keeps everything on the machine where it is. Adware, browser hijackers, unwanted extensions and the common families of malware all come off cleanly.",
-        `Some do not. If an infection has been present for a long time, if there are several stacked on top of each other, or if what is there has burrowed into the system deeply enough that removing it risks leaving pieces behind, a clean Windows installation is the more honest answer. You end up with a machine you can trust rather than one you are hoping about.`,
+        `Some do not. If an infection has been present for a long time, if there are several stacked on top of each other, or if what is there has burrowed into the system deeply enough that removing it risks leaving pieces behind, a clean Windows installation is the more honest answer. You end up with a machine you can trust rather than one you have to hope about.`,
         "We will tell you which case you are in before doing the work, and we will not quietly upsell the more expensive option. If removal will do the job, removal is what you should pay for.",
       ],
     },
@@ -1101,7 +1100,7 @@ const virusRemoval: ServiceDef = {
     },
     {
       title: "We cannot undo money already sent to a scammer",
-      body: "If someone was given remote access or paid a fake support line, tell your bank immediately. We can clean the machine and check what was left behind, and the financial side has to go through your bank.",
+      body: "If someone was given remote access or paid a fake support line, tell your bank immediately. We can clean the machine and check what was left behind, but the financial side has to go through your bank.",
     },
   ],
   faqs: () => [
@@ -1196,7 +1195,7 @@ const gameConsoleRepair: ServiceDef = {
       heading: "Which gaming consoles does TechBrotherz repair?",
       paragraphs: [
         "TechBrotherz in Calgary takes in the consoles people actually own: the Xbox One family, the Xbox Series X and Series S, the PlayStation 4 in its original, Slim and Pro versions, the PlayStation 5 in both disc and digital editions, and the Nintendo Switch, including the Switch Lite and the OLED model.",
-        "Console repair works differently from phone repair at the same Store. Phone repairs are published as fixed prices per model because the same screen goes into the same handset every time. Console faults vary more, so a console is diagnosed first and quoted as one figure before any work starts, rather than priced off a list.",
+        "Console repair works differently from phone repair at the same store. Phone repairs are quoted per model because the same screen goes into the same handset every time. Console faults vary more, so a console is diagnosed first and quoted as one figure before any work starts.",
         "If your console is older than the ones named here, phone the store before you travel. Whether an older console can be repaired depends on the fault and on whether the part can still be sourced, and that is a two-minute conversation rather than a wasted trip.",
       ],
     },
@@ -1213,7 +1212,7 @@ const gameConsoleRepair: ServiceDef = {
       paragraphs: [
         "A console repair at TechBrotherz is diagnosed first and quoted as one figure that includes the part and the labour, agreed with you before any work starts. There is no list of console prices on this site because publishing one honestly is not possible: the same symptom can have faults at very different costs behind it.",
         "No picture on the screen is the clearest example. That symptom can be a bent HDMI port, a failed component behind the port, or a fault elsewhere on the board, and those are different amounts of work. Quoting after diagnosis means the figure you agree to is for the fault your console actually has.",
-        "If the diagnosis shows the repair costs more than the console is sensibly worth, you will be told that plainly, with the diagnosis explained, and you decide what happens next. A shop that talks someone into repairing a console they should replace is not one they come back to.",
+        "If the diagnosis shows the repair costs more than the console is sensibly worth, you will be told that plainly, with the diagnosis explained, and you decide what happens next. A store that talks someone into repairing a console they should replace does not see that customer again.",
       ],
     },
     {
@@ -1262,7 +1261,7 @@ const gameConsoleRepair: ServiceDef = {
     {
       question: "How much does a gaming console repair cost in Calgary?",
       answer:
-        "TechBrotherz quotes console repairs after diagnosis rather than from a price list, because the same symptom can have faults at very different costs behind it. The quote is one figure covering the part and the labour, agreed before any work starts. If the repair is not worth the console's value, that is the answer given.",
+        "TechBrotherz quotes console repairs after diagnosis rather than from a price list, because the same symptom can have faults at very different costs behind it. The quote is one figure covering the part and the labour, agreed before any work starts. If the repair would cost more than the console is worth, that is the answer given.",
     },
     {
       question: "Can a broken HDMI port on a PS5 or Xbox be fixed?",

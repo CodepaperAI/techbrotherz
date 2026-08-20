@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 /**
  * The neighbourhood row from the reference screenshot.
@@ -43,7 +43,7 @@ function Arrow() {
 }
 
 export function Tile({ children, href, className }: TileProps) {
-  const label = <span className="text-tb-ink type-body font-medium">{children}</span>;
+  const label = <span className="text-tb-ink type-body font-medium">{typeof children === "string" ? titleCase(children) : children}</span>;
 
   if (!href) {
     return (

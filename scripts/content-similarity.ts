@@ -42,7 +42,7 @@ const CORE_PATHS = [
 const THRESHOLD = 0.7;
 const SHINGLE = 5;
 
-type Tier = "core" | "service" | "repair" | "brand" | "model" | "local" | "place";
+type Tier = "core" | "service" | "repair" | "brand" | "model" | "local" | "place" | "guide";
 
 interface Page {
   path: string;
@@ -136,6 +136,10 @@ Content similarity across every tier, ${BASE}
     // shop was the differentiation risk this tier was cut down to answer.
     ...LOCAL_PAGES.map((entry) => ({ path: `/${entry.slug}`, tier: "local" as Tier })),
     ...PLACES.map((entry) => ({ path: entry.path, tier: "place" as Tier })),
+    // The guide tier, added 2026-08 when the blog reached six articles.
+    ...ROUTES.filter((entry) => entry.tier === "guide" && entry.status === "built").map(
+      (entry) => ({ path: entry.path, tier: "guide" as Tier }),
+    ),
   ];
 
   console.log(`Fetching ${targets.length} content pages...`);
@@ -202,7 +206,7 @@ Content similarity across every tier, ${BASE}
   console.log("  tier      pages   median   highest   worst pair");
   console.log("  " + "-".repeat(78));
 
-  for (const tier of ["core", "service", "repair", "brand", "model", "local", "place"] as Tier[]) {
+  for (const tier of ["core", "service", "repair", "brand", "model", "local", "place", "guide"] as Tier[]) {
     const inTier = pages.filter((page) => page.tier === tier);
     if (inTier.length < 2) continue;
 

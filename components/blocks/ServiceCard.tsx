@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { RepairIllustration, type RepairSubject } from "@/components/blocks/RepairIllustration";
 import { Card } from "@/components/primitives/Card";
 import { blurFor, demoImage } from "@/lib/content/images";
-import { cn } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
 
 export interface ServiceCardProps {
   title: string;
@@ -74,7 +74,7 @@ export function ServiceCard({
         <RepairIllustration subject={illustration} ratio="3:2" className="w-full" />
       )}
 
-      <h3 className="type-h3 text-tb-text mt-6">{title}</h3>
+      <h3 className="type-h3 text-tb-text mt-6">{titleCase(title)}</h3>
       <p className="type-body text-tb-muted mt-3">{description}</p>
 
       {tags && tags.length > 0 ? (
@@ -99,7 +99,7 @@ export function ServiceCard({
             href={link.href}
             className="group text-tb-green-deep inline-flex items-center gap-1.5 font-medium hover:underline"
           >
-            {link.label}
+            {titleCase(link.label)}
             <ArrowRight
               aria-hidden="true"
               size={16}
