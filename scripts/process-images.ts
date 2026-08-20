@@ -167,6 +167,19 @@ export const SLOTS: SlotSpec[] = [
     position: "centre",
   },
   /*
+   * The blog set, 2026-08: one topic-matched photograph per article, chosen
+   * from unsplash.com and reviewed by eye against Section 8.9. The controller
+   * teardown and SIM flat lay carry incidental marks (Xbox, HTC, ASUS) on
+   * real products, which the revised rule allows. The two portrait originals
+   * crop to 3:2 on their subject.
+   */
+  { slot: "blog-screen-repair", source: "U46ib4fUniY", ratio: "3:2", position: "centre" },
+  { slot: "blog-slow-computer", source: "xdzhM0LeTt8", ratio: "3:2", position: "centre" },
+  { slot: "blog-console-faults", source: "NG_a-z0ScM0", ratio: "3:2", position: "attention" },
+  { slot: "blog-laptop-signs", source: "KhnRiIAgvsI", ratio: "3:2", position: "centre" },
+  { slot: "blog-water-damage", source: "kU7Hp3fdyhs", ratio: "3:2", position: "attention" },
+  { slot: "blog-unlock-canada", source: "TCyYbnFBIIw", ratio: "3:2", position: "centre" },
+  /*
    * The hero skyline, client-supplied and used on explicit instruction with
    * provenance unconfirmed (question 26). 1600x900 native, never upscaled.
    */

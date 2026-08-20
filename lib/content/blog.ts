@@ -60,7 +60,7 @@ export interface BlogPost {
 
 const unlockCanada: BlogPost = {
   slug: "how-to-unlock-a-cell-phone-in-canada",
-  image: "service-phone-unlocking",
+  image: "blog-unlock-canada",
   title: "How to Unlock a Cell Phone in Canada",
   seoTitle: "How to Unlock a Cell Phone in Canada | Free by Law",
   seoDescription:
@@ -160,7 +160,7 @@ const unlockCanada: BlogPost = {
 
 const laptopSigns: BlogPost = {
   slug: "signs-your-laptop-needs-repair",
-  image: "service-laptop-repair",
+  image: "blog-laptop-signs",
   title: "Signs Your Laptop Needs Repair",
   seoTitle: "Signs Your Laptop Needs Repair | What to Watch For",
   seoDescription:
@@ -263,7 +263,7 @@ const laptopSigns: BlogPost = {
 
 const waterDamage: BlogPost = {
   slug: "phone-water-damage-what-to-do-first",
-  image: "home-process-1",
+  image: "blog-water-damage",
   title: "Phone Water Damage: What to Do First",
   seoTitle: "Phone Water Damage: What to Do First | Skip the Rice",
   seoDescription:
@@ -379,7 +379,7 @@ const waterDamage: BlogPost = {
 
 const screenRepairTime: BlogPost = {
   slug: "how-long-does-a-phone-screen-repair-take",
-  image: "home-process-2",
+  image: "blog-screen-repair",
   title: "How Long Does a Phone Screen Repair Take?",
   seoTitle: "How Long Does a Phone Screen Repair Take?",
   seoDescription:
@@ -488,7 +488,7 @@ const screenRepairTime: BlogPost = {
 
 const slowComputer: BlogPost = {
   slug: "why-is-my-computer-running-slow",
-  image: "service-computer-repair",
+  image: "blog-slow-computer",
   title: "Why Is My Computer Running Slow?",
   seoTitle: "Why Is My Computer Running Slow? Causes & Real Fixes",
   seoDescription:
@@ -605,7 +605,7 @@ const slowComputer: BlogPost = {
 
 const consoleFaults: BlogPost = {
   slug: "common-xbox-and-playstation-faults",
-  image: "service-game-console-repair",
+  image: "blog-console-faults",
   title: "Common Xbox and PlayStation Faults, and Which Are Worth Repairing",
   seoTitle: "Common Xbox & PlayStation Faults Worth Repairing",
   seoDescription:
