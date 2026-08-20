@@ -133,10 +133,16 @@ export const SLOTS: SlotSpec[] = [
     pad: "#ffffff",
     maxWidth: 1010,
   },
-  /* Buy, sell and trade: a pile of assorted handsets, no logos, no faces. */
+  /*
+   * Buy, sell and trade: replaced 2026-08 with a render the client supplied,
+   * assorted phones, a laptop, tablets and a watch on a plain backdrop. The
+   * small Apple mark on one handset is incidental to a product lineup, per
+   * the revised Section 8.9 rule. Native 2724x1568; the 3:2 crop trims the
+   * sides slightly. The Unsplash original (WcYeiHMexR0) stays in _source/.
+   */
   {
     slot: "buy-sell-trade",
-    source: "WcYeiHMexR0",
+    source: "supplied-buy-sell-trade",
     ratio: "3:2",
     position: "centre",
   },

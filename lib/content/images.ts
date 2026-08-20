@@ -201,12 +201,10 @@ export const IMAGES: Record<string, DemoImage> = {
     "3:2",
     "Two phone screens showing Google's account verification step after a factory reset, with an unlocked padlock graphic",
   ),
-  "buy-sell-trade": image(
+  "buy-sell-trade": supplied(
     "buy-sell-trade",
     "3:2",
-    "A pile of assorted smartphones and a tablet stacked on a plain surface",
-    "Hal Gatewood",
-    "WcYeiHMexR0",
+    "A lineup of devices on a plain surface: two phones, a laptop, a smartwatch and three tablets",
   ),
   "service-accessories": image(
     "service-accessories",
