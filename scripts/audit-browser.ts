@@ -216,6 +216,22 @@ async function runLighthouse(path: string) {
 
 /* ------------------------------------------------------------ the form */
 
+/**
+ * Waits for the Turnstile gate to open before a submit.
+ *
+ * The submit button carries aria-disabled while a token is outstanding, and
+ * the form's onSubmit refuses to send until it clears. With Turnstile switched
+ * off, or once Cloudflare's always-passes test key has solved itself, the
+ * attribute is absent and this returns at once.
+ */
+async function awaitVerification(page: Page) {
+  await page.waitForFunction(
+    () =>
+      document.querySelector('button[type="submit"]')?.getAttribute("aria-disabled") !== "true",
+    { timeout: 30_000 },
+  );
+}
+
 async function testContactForm(browser: Browser) {
   console.log("\nContact form");
 
@@ -226,6 +242,7 @@ async function testContactForm(browser: Browser) {
     await page.type("#contact-name", "A");
     await page.type("#contact-contact", "x");
     await page.type("#contact-message", "short");
+    await awaitVerification(page);
     await page.click('button[type="submit"]');
     await page.waitForSelector('[role="status"]', { timeout: 30_000 });
     const text = await page.$eval('[role="status"]', (el) => el.textContent ?? "");
@@ -247,6 +264,7 @@ async function testContactForm(browser: Browser) {
       const honeypot = document.querySelector<HTMLInputElement>("#contact-website");
       if (honeypot) honeypot.value = "https://spam.example";
     });
+    await awaitVerification(page);
     await page.click('button[type="submit"]');
     await page.waitForSelector('[role="status"]', { timeout: 30_000 });
     const text = await page.$eval('[role="status"]', (el) => el.textContent ?? "");
@@ -267,6 +285,7 @@ async function testContactForm(browser: Browser) {
       "#contact-message",
       "The screen is cracked across the top corner but the display still works. What does a replacement cost?",
     );
+    await awaitVerification(page);
     await page.click('button[type="submit"]');
     await page.waitForSelector('[role="status"]', { timeout: 30_000 });
     const text = await page.$eval('[role="status"]', (el) => el.textContent ?? "");

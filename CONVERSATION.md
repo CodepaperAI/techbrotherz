@@ -2,6 +2,26 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-25 — Cloudflare Turnstile on the contact form
+
+**Asked:** add Turnstile spam protection to every public form, discovery first.
+
+**Done:** discovery found exactly one form that submits to a server. The site has no `app/api/` directory and no route handlers, so the contact form's server action is the only server-side entry point in the repo: no newsletter, booking, callback or wholesale form exists, and /get-a-quote was never built (it 301s to /contact, which carries the quote intent through this same form).
+
+`lib/turnstile.ts` is the server half: one form-encoded POST to Cloudflare's siteverify endpoint, no wrapper package. A missing token, a non-200, a malformed body, a network failure and an explicit `success: false` all return false, and Cloudflare's error codes go to the server log rather than the page. The unconfigured case is the exception and throws in production, because a deployment that has lost its secret would otherwise wave every bot through silently; in development it warns and passes so a local checkout still has a working form.
+
+`components/turnstile-widget.tsx` loads the script once through next/script (`lazyOnload`, deduplicated on id) and renders explicitly rather than by class, because implicit mode scans the DOM on load and misses a form arriving with a client navigation. Callbacks are held in a ref so the parent re-rendering on every keystroke never tears down the challenge iframe. The widget's 65px is reserved before the script loads, and the parent bumps a reset signal after each submit because tokens are single use.
+
+Verification order on the action is honeypot, rate limit, Turnstile, zod, send. Turnstile sits behind the two free checks deliberately: it is an outbound request to Cloudflare, so letting a script trigger it before the rate limit would turn the form into a way to hammer someone else. It is still ahead of validation and of every side effect, so a bot never reaches the mailer and never learns which field it got wrong.
+
+The submit button carries `aria-disabled` rather than `disabled` while a token is outstanding. A truly disabled button leaves the tab order, which would give a keyboard or screen-reader user a button they cannot reach and no way to hear why; the form's onSubmit is what actually blocks the send.
+
+**The cost, recorded rather than buried:** the form no longer submits without JavaScript. Turnstile is JS-only, so the progressive enhancement the component was built around is gone. Every failure path ends with the phone number, which is the store's primary contact route anyway.
+
+**Verified:** typecheck and lint clean. Build passes with both variables absent and /contact still prerenders static, so the throw is a request-time failure only. Against a production server with Cloudflare's always-passes test keys: keyboard-only submit succeeds end to end (the widget is in the tab order), all three audit-browser form paths pass, zero hydration warnings, zero axe violations on /contact, CLS 0.001. Against the always-fails secret: a forged token is rejected, no email is sent, and no error code or stack trace reaches the visitor. With the secret unset in production: the submission is refused, the visitor gets the phone number, the misconfiguration is logged loudly server-side, and the server stays up. `scripts/audit-browser.ts` and `scripts/test-keyboard.ts` now wait for the gate to open before submitting; with Turnstile switched off the attribute is absent and they return at once.
+
+**Note for whoever runs `pnpm verify` next:** the behavioural checks need the two variables in .env.local, because the audits run a production server and an unset secret refuses every submission by design. .env.example carries Cloudflare's published test keys as its defaults so a fresh checkout works. Four of the touched files already failed `prettier --check` at HEAD, so they were left unformatted rather than reformatted into a large unrelated diff.
+
 ## Session 2026-08-21 (second) — Resend swapped for Brevo
 
 **Asked:** replace Resend with Brevo (the domain's DNS is on Wix, which cannot host the MX record Resend requires; Brevo authenticates with TXT records only), with the from/to split settled: enquiries land at the store's Gmail, sent from noreply@techbrotherz.com, reply-to the customer.

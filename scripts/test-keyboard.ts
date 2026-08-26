@@ -206,6 +206,16 @@ async function main() {
       check("Tab order reaches the submit button", reachedSubmit !== null);
       check("submit button shows a focus ring", reachedSubmit?.visibleOutline ?? false);
 
+      /* The submit button carries aria-disabled while a Turnstile token is
+         outstanding, and the form refuses to send until it clears. With
+         Turnstile switched off the attribute is absent and this returns at
+         once. */
+      await page.waitForFunction(
+        () =>
+          document.querySelector('button[type="submit"]')?.getAttribute("aria-disabled") !== "true",
+        { timeout: 30_000 },
+      );
+
       await page.keyboard.press("Enter");
       await page.waitForSelector('[role="status"]', { timeout: 30_000 });
       const status = await page.$eval('[role="status"]', (el) => el.textContent ?? "");

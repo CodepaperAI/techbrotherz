@@ -1,21 +1,34 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState, type FormEvent } from "react";
 import { useFormStatus } from "react-dom";
 import { CheckCircle2, AlertCircle } from "lucide-react";
 
 import { submitContact } from "@/app/(site)/contact/actions";
 import { CONTACT_INITIAL_STATE, type ContactState } from "@/app/(site)/contact/form-state";
+import { TURNSTILE_SITE_KEY, TurnstileWidget } from "@/components/turnstile-widget";
 import { cn } from "@/lib/utils";
 
-function SubmitButton() {
+/**
+ * `aria-disabled` rather than `disabled` while the verification is
+ * outstanding, deliberately. A truly disabled button is removed from the tab
+ * order, which would leave a keyboard or screen-reader user with a button they
+ * cannot reach and no way to hear why it will not work. This one stays
+ * focusable and announces its reason through contact-verify-note; the form's
+ * onSubmit is what actually stops the send. `disabled` still applies while a
+ * submit is in flight, which is the existing behaviour and needs no
+ * explanation to anyone.
+ */
+function SubmitButton({ awaitingVerification }: { awaitingVerification: boolean }) {
   const { pending } = useFormStatus();
 
   return (
     <button
       type="submit"
       disabled={pending}
-      className="rounded-chip bg-tb-green text-tb-ink hover:bg-tb-green-press inline-flex h-12 items-center justify-center px-7 font-medium transition-colors duration-[180ms] ease-out disabled:pointer-events-none disabled:opacity-60 md:h-13"
+      aria-disabled={awaitingVerification || undefined}
+      aria-describedby={awaitingVerification ? "contact-verify-note" : undefined}
+      className="rounded-chip bg-tb-green text-tb-ink hover:bg-tb-green-press aria-disabled:hover:bg-tb-green inline-flex h-12 items-center justify-center px-7 font-medium transition-colors duration-[180ms] ease-out disabled:pointer-events-none disabled:opacity-60 aria-disabled:opacity-60 md:h-13"
     >
       {pending ? "Sending..." : "Send the message"}
     </button>
@@ -107,10 +120,14 @@ function Field({
 /**
  * The contact form.
  *
- * Submits through a server action, so it works before hydration and without
- * client-side JavaScript. Validation, the honeypot and the rate limit all live
- * on the server in app/(site)/contact/actions.ts, because a check that only
- * runs in the browser is not a check.
+ * Submits through a server action. Validation, the honeypot, the rate limit
+ * and the Turnstile check all live on the server in
+ * app/(site)/contact/actions.ts, because a check that only runs in the browser
+ * is not a check.
+ *
+ * Turnstile needs JavaScript, so the form no longer submits before hydration.
+ * Every failure path here and on the server ends with the phone number, which
+ * is the store's primary contact route anyway.
  */
 export function ContactForm() {
   const [state, formAction] = useActionState<ContactState, FormData>(
@@ -118,10 +135,32 @@ export function ContactForm() {
     CONTACT_INITIAL_STATE,
   );
 
+  const [token, setToken] = useState("");
+  const [resetSignal, setResetSignal] = useState(0);
+
+  /* No site key means Turnstile is not configured for this build, so the form
+     behaves exactly as it did before. The server makes the matching decision
+     on the secret, and refuses to be lenient in production. */
+  const turnstileRequired = Boolean(TURNSTILE_SITE_KEY);
+  const awaitingVerification = turnstileRequired && token === "";
+
+  /* Tokens are single use. After every submit, successful or not, the spent
+     token is dropped and the widget is reset so a second message can be sent
+     without reloading the page. */
+  useEffect(() => {
+    if (state.status === "idle") return;
+    setToken("");
+    setResetSignal((count) => count + 1);
+  }, [state]);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    if (awaitingVerification) event.preventDefault();
+  }
+
   const fieldErrors = state.status === "error" ? (state.fieldErrors ?? {}) : {};
 
   return (
-    <form action={formAction} className="space-y-6" noValidate>
+    <form action={formAction} onSubmit={handleSubmit} className="space-y-6" noValidate>
       {state.status !== "idle" ? (
         <div
           role="status"
@@ -195,8 +234,29 @@ export function ContactForm() {
         <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      {/* The token travels with the rest of the form data, so the server action
+          reads it the same way it reads every other field. */}
+      <input type="hidden" name="turnstileToken" value={token} />
+
+      {turnstileRequired ? (
+        <div>
+          <TurnstileWidget
+            onVerify={setToken}
+            onExpire={() => setToken("")}
+            onError={() => setToken("")}
+            resetSignal={resetSignal}
+            action="contact"
+          />
+          <p id="contact-verify-note" aria-live="polite" className="type-caption text-tb-muted mt-2">
+            {awaitingVerification
+              ? "Please complete the verification check above before sending."
+              : "Verification complete."}
+          </p>
+        </div>
+      ) : null}
+
       <div className="flex flex-wrap items-center gap-4">
-        <SubmitButton />
+        <SubmitButton awaitingVerification={awaitingVerification} />
         <p className="type-caption text-tb-muted">Fields marked with a star are required.</p>
       </div>
     </form>

@@ -6,12 +6,16 @@ import { ContactSchema, type ContactState } from "@/app/(site)/contact/form-stat
 import { sendContactEmail } from "@/lib/email/contact";
 import { pruneRateLimit, rateLimit } from "@/lib/rate-limit";
 import { SITE } from "@/lib/site";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 /**
  * Contact form handling.
  *
- * Four defences, in order of cost: a honeypot field that a human never fills,
- * a per-address rate limit, zod validation, and only then the send. The send
+ * Five defences, in order of cost: a honeypot field that a human never fills,
+ * a per-address rate limit, a Cloudflare Turnstile check, zod validation, and
+ * only then the send. Turnstile sits behind the two free checks on purpose: it
+ * is an outbound request to Cloudflare, so letting a script trigger it before
+ * the rate limit would turn our form into a way to hammer someone else. The send
  * itself lives in lib/email/contact.ts (Brevo, plain fetch) so the
  * behavioural check can exercise it without a request context. The form
  * degrades gracefully when the Brevo configuration is absent: the submission
@@ -57,7 +61,33 @@ export async function submitContact(
     };
   }
 
-  /* 3. Validation. */
+  /* 3. Turnstile. Before validation and before the send, so a bot never
+     reaches the mailer and never learns which field it got wrong. */
+  const turnstileToken = String(formData.get("turnstileToken") ?? "");
+
+  let verified: boolean;
+
+  try {
+    verified = await verifyTurnstile(turnstileToken, ip);
+  } catch (error) {
+    /* The secret is missing on a production deployment. That is our problem,
+       not the visitor's, so it is logged loudly and they are given the phone
+       number rather than an error they can do nothing about. */
+    console.error("[contact] Turnstile is not configured.", error);
+    return {
+      status: "error",
+      message: `Sorry, the message could not be sent just now. Please call ${SITE.phone} and we will pick up.`,
+    };
+  }
+
+  if (!verified) {
+    return {
+      status: "error",
+      message: `Verification failed. Please try again, or call ${SITE.phone} and we will pick up.`,
+    };
+  }
+
+  /* 4. Validation. */
   const parsed = ContactSchema.safeParse(raw);
 
   if (!parsed.success) {
@@ -76,7 +106,7 @@ export async function submitContact(
 
   const { name, contact, device, message } = parsed.data;
 
-  /* 4. Send through Brevo, or degrade gracefully. The customer is never
+  /* 5. Send through Brevo, or degrade gracefully. The customer is never
      shown a stack trace or a configuration problem: every failure path
      confirms receipt of the message and offers the phone number, and the
      detail goes to the server log. */
