@@ -29,6 +29,7 @@
  * last build, which `dynamicParams` renders on first request.
  */
 
+import { deadImages, imageUrlsIn, stripDeadImages } from "@/lib/uplift/images";
 import { htmlToText, toHtml } from "@/lib/uplift/render";
 import type {
   Article,
@@ -288,7 +289,25 @@ export interface LoadedArticle extends Article {
  * the token is unset, because a build must not depend on a third party being
  * up. The warning in the log is the signal.
  */
-export async function listArticles(): Promise<LoadedArticle[]> {
+let inFlight: Promise<LoadedArticle[]> | null = null;
+
+export function listArticles(): Promise<LoadedArticle[]> {
+  /*
+   * Memoised for the life of the process. A build renders the index and 26
+   * article pages, and every one of them asks for the whole blog; without this
+   * the payload is normalised 27 times and every image is checked 27 times.
+   * Next's fetch cache covers the API call itself but not the HEAD requests in
+   * lib/uplift/images.ts, so the memo has to live here.
+   *
+   * Safe because nothing mutates the result: pages read it and render. A long
+   * running server picks up new articles through the route-level `revalidate`,
+   * which re-renders in a fresh render pass rather than reusing this promise.
+   */
+  inFlight ??= load();
+  return inFlight;
+}
+
+async function load(): Promise<LoadedArticle[]> {
   const collected: UpliftBlog[] = [];
 
   for (let page = 1; page <= 20; page += 1) {
@@ -313,6 +332,19 @@ export async function listArticles(): Promise<LoadedArticle[]> {
     .sort((a, b) => b.datePublished.localeCompare(a.datePublished));
 
   /*
+   * Images the CDN no longer serves. Checked once per build across the whole
+   * blog rather than per article, because the same file is often both a
+   * featured image and the hero inside its own body. See lib/uplift/images.ts
+   * for why only a definite 4xx counts.
+   */
+  const dead = await deadImages(
+    articles.flatMap((entry) => [
+      ...(entry.featuredImage ? [entry.featuredImage] : []),
+      ...imageUrlsIn(entry.html),
+    ]),
+  );
+
+  /*
    * The cross-URL half of the FAQ scoping rule. The same question and answer
    * pair must never appear in structured data on two URLs, so a question is
    * kept by the first article that carries it, newest first, and dropped from
@@ -322,6 +354,9 @@ export async function listArticles(): Promise<LoadedArticle[]> {
 
   return articles.map((entry) => ({
     ...entry,
+    featuredImage:
+      entry.featuredImage && !dead.has(entry.featuredImage) ? entry.featuredImage : null,
+    html: stripDeadImages(entry.html, dead),
     faqs: entry.faqs
       .filter((faq) => {
         const key = faq.question.trim().toLowerCase();
@@ -351,7 +386,20 @@ export async function getArticle(slug: string): Promise<LoadedArticle | null> {
   if (!blog || (blog.status ?? "PUBLISH").toUpperCase() !== "PUBLISH") return null;
 
   const article = normalise(blog);
-  return article ? { ...article, faqs: [] } : null;
+  if (!article) return null;
+
+  const dead = await deadImages([
+    ...(article.featuredImage ? [article.featuredImage] : []),
+    ...imageUrlsIn(article.html),
+  ]);
+
+  return {
+    ...article,
+    featuredImage:
+      article.featuredImage && !dead.has(article.featuredImage) ? article.featuredImage : null,
+    html: stripDeadImages(article.html, dead),
+    faqs: [],
+  };
 }
 
 /** The three most recent articles other than this one, for the related block. */

@@ -2,6 +2,24 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-30 (second) — Four blog cards were showing broken images
+
+**Asked:** the first four cards on /blog show a broken image. Check it.
+
+**Cause is upstream.** Uplift serves blog images from two Cloudinary accounts, and one of them is switched off: every URL under `res.cloudinary.com/jse5fsui/` answers `401 cloud_name jse5fsui is disabled`. Seven images across five articles, while the other sixty-nine load fine. Nothing on our side can bring those files back, and **the client should ask Uplift to re-enable that account or re-upload those five articles' images**.
+
+**What was ours to fix:** the page rendered them anyway, so four cards carried an empty frame with the alt text sprawled across it. `lib/uplift/images.ts` now asks for each distinct image once at build time and drops the ones that are genuinely gone, which is the same rule DemoImage already applies to local files. Only a 401, 403, 404 or 410 counts: a timeout or a 5xx keeps the image, because stripping every picture off the blog because a build ran during a CDN wobble would be a worse bug than the one being fixed. An article with no featured image renders a shorter card, not an empty frame.
+
+**Three Next traps, in the order they bit, all worth knowing:**
+
+1. **Next's fetch cache does not round-trip a HEAD request.** With `next: { revalidate }` on the probe the check came back clean and the dead URLs shipped anyway.
+2. **`cache: "no-store"` throws inside a static-generation worker.** Symptom: three articles kept a dead image while a fourth lost it, because only the one process that rendered the index got real answers. Instrumenting the probe with the pid is what found it: three of four workers threw on every single call before the request left the machine. **The fix is `node:https` rather than `fetch`** — Next patches the global fetch, and a raw request is not instrumented, so every worker now sees the same 401.
+3. **A dynamic `import()` still pulls a module into the bundle.** The `guideRoutes()` helper added in the previous session was never called by anything, and it dragged `lib/uplift/client.ts` into `lib/routes.ts`, which `lib/nav.ts` imports, which the Nav client component imports. The whole CMS client and its Node-only probe were being sent to the browser, which is how the `node:https` change surfaced as `UnhandledSchemeError` rather than as bloat nobody noticed. The helper is gone and a comment marks the spot. (The token was never exposed: it is not `NEXT_PUBLIC_`, so Next inlines it as undefined on the client. Asserted against `.next/static` now.)
+
+`listArticles()` is also memoised per process. A build renders an index and 27 article pages and every one of them asks for the whole blog, so without it the payload was normalised and every image probed 28 times.
+
+**Verified:** typecheck, lint, build clean. All four build workers now report the same seven dead images and **zero dead URLs survive into the build**, checked by grepping the prerendered HTML rather than by trusting the log. `pnpm test:uplift` grew an image check: it HEADs every image the pages will render and fails on any definite refusal. 27 articles, 93 unique FAQ questions, 69 live images.
+
 ## Session 2026-08-30 — The blog moves to the Uplift CMS
 
 **Asked:** manage /blog from Uplift, remove the hand-written articles, wire up the public blog API, verify and deploy.

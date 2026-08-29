@@ -281,9 +281,40 @@ article already claimed, and emits it in the page's single `@graph`. The
 questions are already visible in the article's FAQ section, so the visible set
 and the structured set are one set, which is what Section 8.8 requires.
 
+**Images are checked before they are rendered.** Uplift serves from a CDN we do
+not control, and on 2026-08-30 one of its two Cloudinary accounts was disabled:
+every URL under `res.cloudinary.com/jse5fsui/` answers `401 cloud_name jse5fsui
+is disabled`, which put a broken frame on four cards.
+`lib/uplift/images.ts` asks for each distinct image once per build and drops the
+ones that are genuinely gone, the same rule DemoImage applies to local files.
+**Only a 401, 403, 404 or 410 counts**: a timeout or a 5xx keeps the image,
+because emptying the blog because a build ran during a CDN wobble is worse than
+the bug it fixes. **Open with the client: ask Uplift to re-enable that account
+or re-upload those five articles' images.**
+
+**Three Next traps this tier hit. Do not undo any of them.**
+
+1. **The fetch cache does not round-trip a HEAD.** `next: { revalidate }` on the
+   image probe made the check pass and shipped the dead URLs anyway.
+2. **`cache: "no-store"` throws inside a static-generation worker**, so the
+   probe uses `node:https`, not `fetch`. Next patches the global fetch; a raw
+   request is not instrumented. The symptom was three articles keeping a dead
+   image while a fourth lost it, because only the process that rendered the
+   index got real answers. **If this ever needs debugging again,
+   `UPLIFT_DEBUG_IMAGES=1` logs the pid, attempt and status per URL.** That is
+   what found it.
+3. **A dynamic `import()` still pulls a module into the bundle.** An unused
+   `guideRoutes()` helper in `lib/routes.ts` dragged the whole CMS client into
+   the browser through `lib/nav.ts` and Nav. `lib/routes.ts` must not import
+   anything from `lib/uplift/`; a comment in the file marks the spot.
+
+`listArticles()` is memoised per process, because a build renders an index plus
+27 article pages and every one asks for the whole blog.
+
 **`pnpm test:uplift` is the guard.** Thirteen attack fixtures plus every live
 article: nothing executable survives, no body carries an H1, every table keeps
-scoped headers, and no FAQ pair reaches two URLs.
+scoped headers, no FAQ pair reaches two URLs, and every image the pages render
+actually resolves.
 
 **Two things the CMS carries that this repository's copy rules forbid**, both
 the client's to fix in Uplift rather than ours to rewrite: em dashes, and

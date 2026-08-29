@@ -21,6 +21,7 @@
  */
 
 import { listArticles } from "../lib/uplift/client";
+import { imageUrlsIn } from "../lib/uplift/images";
 import { toHtml } from "../lib/uplift/render";
 
 let failures = 0;
@@ -99,6 +100,7 @@ async function main(): Promise<void> {
   }
 
   const seenFaqs = new Map<string, string>();
+  const images = new Set<string>();
 
   for (const post of articles) {
     const label = `/blog/${post.slug}`;
@@ -134,11 +136,42 @@ async function main(): Promise<void> {
     }
 
     check(`${label} caps FAQs at six`, post.faqs.length <= 6, `${post.faqs.length}`);
+
+    /*
+     * Every image the page will render has to actually load. Uplift serves
+     * from a CDN we do not control, and on 2026-08-30 one of its two
+     * Cloudinary accounts was disabled, which put a broken frame on four
+     * cards. lib/uplift/images.ts drops those; this is what proves it.
+     */
+    for (const src of [post.featuredImage, ...imageUrlsIn(html)].filter(
+      (url): url is string => Boolean(url) && /^https?:/i.test(String(url)),
+    )) {
+      images.add(src);
+    }
+  }
+
+  const statuses = await Promise.all(
+    [...images].map(async (src) => {
+      try {
+        const response = await fetch(src, { method: "HEAD", signal: AbortSignal.timeout(8000) });
+        return { src, status: response.status };
+      } catch {
+        return { src, status: 0 };
+      }
+    }),
+  );
+
+  for (const { src, status } of statuses) {
+    check(
+      `image resolves ${src.slice(-46)}`,
+      status !== 401 && status !== 403 && status !== 404 && status !== 410,
+      `HTTP ${status}`,
+    );
   }
 
   console.log(
     failures === 0
-      ? `\nPASS: ${articles.length} articles, ${seenFaqs.size} unique FAQ questions, no unsafe markup.`
+      ? `\nPASS: ${articles.length} articles, ${seenFaqs.size} unique FAQ questions, ${images.size} live images, no unsafe markup.`
       : `\nFAIL: ${failures} problems.`,
   );
 

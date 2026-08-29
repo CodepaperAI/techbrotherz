@@ -580,23 +580,6 @@ export function isBuilt(path: string): boolean {
 }
 
 /**
- * The blog article paths that exist right now, for the audits and the HTML
- * sitemap. Async, because the answer lives in the CMS rather than in this
- * file, which is the one place the registry is not the source of truth.
- */
-export async function guideRoutes(): Promise<RouteDef[]> {
-  const { listArticles } = await import("@/lib/uplift/client");
-
-  return (await listArticles()).map((entry) => ({
-    path: `/blog/${entry.slug}`,
-    label: entry.title,
-    tier: "guide" as const,
-    status: "built" as const,
-    parent: "/blog",
-  }));
-}
-
-/**
  * Should this link be rendered at all?
  *
  * Production hides pending links entirely, so the live site never emits an
@@ -606,6 +589,17 @@ export async function guideRoutes(): Promise<RouteDef[]> {
 export function shouldRenderLink(path: string): boolean {
   return isBuilt(path) || process.env.NODE_ENV !== "production";
 }
+
+/*
+ * There is deliberately no guideRoutes() helper here.
+ *
+ * One existed for a few hours and pulled lib/uplift/client.ts into this module,
+ * which lib/nav.ts imports, which the Nav client component imports. That put
+ * the whole CMS client and its Node-only image probe into the browser bundle
+ * and failed the build with an unresolvable "node:https". The audits that need
+ * the article list crawl /blog for it instead, which is also the only way to
+ * get an answer that is true at the time of asking.
+ */
 
 export function routesByTier(tier: RouteTier): RouteDef[] {
   return ROUTES.filter((entry) => entry.tier === tier);
