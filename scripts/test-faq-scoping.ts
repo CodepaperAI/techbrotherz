@@ -67,6 +67,29 @@ function faqQuestions(html: string): Question[] {
   return out;
 }
 
+
+/**
+ * The blog article paths, discovered by crawling /blog.
+ *
+ * They are not in the route registry: articles are published in the Uplift CMS
+ * and their slugs change without this repository being touched. Reading them
+ * off the index is what keeps this audit covering the tier without a list that
+ * goes stale the first time the client publishes.
+ */
+async function discoverGuides(base: string): Promise<string[]> {
+  const response = await fetch(`${base}/blog`);
+  if (!response.ok) return [];
+
+  const html = await response.text();
+  const found = new Set<string>();
+
+  for (const match of html.matchAll(/href="(\/blog\/[a-z0-9-]+)"/g)) {
+    if (match[1]) found.add(match[1]);
+  }
+
+  return [...found].sort();
+}
+
 async function main() {
   console.log(`\nFAQ scoping, ${BASE}\n`);
 
@@ -78,6 +101,8 @@ async function main() {
       .map((entry) => entry.path),
     ...SERVICES.map((entry) => `/services/${entry.slug}`),
     ...REPAIRS.map((entry) => `/repairs/${entry.slug}`),
+    // The blog, which lives in the Uplift CMS rather than in the registry.
+    ...(await discoverGuides(BASE)),
   ];
 
   /* Plus every model page, discovered from the price list. */

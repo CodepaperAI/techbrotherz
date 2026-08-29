@@ -356,6 +356,191 @@
 }
 
 /* ==========================================================================
+   Article prose
+   The blog body arrives from the Uplift CMS as sanitised HTML, so it cannot
+   carry component classes the way authored pages do. These rules give it the
+   same typography as the rest of the site from the outside.
+
+   The heading scale is deliberately not .type-h2. A 3,000 word article carries
+   up to twenty H2s, and the shopfront display size that works for one section
+   heading per screen reads as shouting twenty times over. This sits between
+   .type-h3 and .type-h2, in the same face, so the article still looks like the
+   site without fighting it.
+   ========================================================================== */
+
+@layer components {
+  .article-prose {
+    font-size: clamp(1rem, 0.974rem + 0.11vw, 1.0625rem);
+    line-height: 1.65;
+    text-wrap: pretty;
+    color: var(--color-tb-ink-2);
+  }
+
+  .article-prose > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .article-prose h2,
+  .article-prose h3,
+  .article-prose h4 {
+    font-family: var(--font-display);
+    color: var(--color-tb-ink);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .article-prose h2 {
+    font-size: clamp(1.5rem, 1.293rem + 0.88vw, 2rem); /* 24px -> 32px */
+    font-weight: 900;
+    font-stretch: 87.5%;
+    margin-top: 3rem;
+  }
+
+  .article-prose h3 {
+    font-size: clamp(1.1875rem, 1.136rem + 0.22vw, 1.375rem); /* 19px -> 22px */
+    font-weight: 800;
+    font-stretch: 92.5%;
+    margin-top: 2.25rem;
+  }
+
+  .article-prose h4 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin-top: 1.75rem;
+  }
+
+  .article-prose p,
+  .article-prose ul,
+  .article-prose ol,
+  .article-prose blockquote,
+  .article-prose dl {
+    max-width: 68ch;
+  }
+
+  .article-prose strong,
+  .article-prose b {
+    color: var(--color-tb-ink);
+    font-weight: 700;
+  }
+
+  .article-prose a {
+    color: var(--color-tb-green-deep);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-prose a:hover {
+    color: var(--color-tb-green-press);
+  }
+
+  .article-prose ul,
+  .article-prose ol {
+    padding-left: 1.35rem;
+  }
+
+  .article-prose ul {
+    list-style: disc;
+  }
+
+  .article-prose ol {
+    list-style: decimal;
+  }
+
+  .article-prose li + li {
+    margin-top: 0.5rem;
+  }
+
+  .article-prose li::marker {
+    color: var(--color-tb-green-deep);
+  }
+
+  /* The table of contents Uplift emits as a <nav>, which the sanitiser
+     unwraps to its list. Kept unstyled as a plain list rather than dressed up
+     as something it is not. */
+  .article-prose blockquote {
+    border-left: 4px solid var(--color-tb-green);
+    padding-left: 1.25rem;
+    font-size: clamp(1.0625rem, 1.011rem + 0.22vw, 1.1875rem);
+    color: var(--color-tb-ink);
+  }
+
+  .article-prose figure {
+    margin-top: 2rem;
+  }
+
+  .article-prose img {
+    border-radius: var(--radius-image, 24px);
+    height: auto;
+    max-width: 100%;
+  }
+
+  .article-prose figcaption {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+  }
+
+  .article-prose pre {
+    background: var(--color-tb-paper-2);
+    border-radius: 12px;
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .article-prose code {
+    font-size: 0.9em;
+  }
+
+  .article-prose hr {
+    border: 0;
+    border-top: 1px solid var(--color-tb-rule);
+    margin-top: 2.5rem;
+  }
+
+  /* Real <table> markup, which CLAUDE.md Section 8.3 requires wherever the
+     content is tabular. wrapTables() in lib/uplift/render.ts puts each one in
+     this scroll container, so a wide comparison table scrolls inside itself
+     and never scrolls the page body sideways. */
+  .article-prose .table-scroll {
+    overflow-x: auto;
+  }
+
+  .article-prose table {
+    border-collapse: collapse;
+    min-width: 32rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .article-prose caption {
+    color: var(--color-tb-ink-2);
+    font-size: 0.8125rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+  }
+
+  .article-prose th,
+  .article-prose td {
+    border-bottom: 1px solid var(--color-tb-rule);
+    padding: 0.75rem 1.5rem 0.75rem 0;
+    vertical-align: top;
+  }
+
+  .article-prose thead th {
+    border-bottom-width: 2px;
+    color: var(--color-tb-ink);
+    font-weight: 700;
+  }
+
+  .article-prose tbody th {
+    color: var(--color-tb-ink);
+    font-weight: 500;
+  }
+}
+
+/* ==========================================================================
    Utilities
    ========================================================================== */
 

@@ -88,6 +88,29 @@ function jaccard(a: Set<string>, b: Set<string>): number {
   return intersection / (a.size + b.size - intersection);
 }
 
+
+/**
+ * The blog article paths, discovered by crawling /blog.
+ *
+ * They are not in the route registry: articles are published in the Uplift CMS
+ * and their slugs change without this repository being touched. Reading them
+ * off the index is what keeps this audit covering the tier without a list that
+ * goes stale the first time the client publishes.
+ */
+async function discoverGuides(base: string): Promise<string[]> {
+  const response = await fetch(`${base}/blog`);
+  if (!response.ok) return [];
+
+  const html = await response.text();
+  const found = new Set<string>();
+
+  for (const match of html.matchAll(/href="(\/blog\/[a-z0-9-]+)"/g)) {
+    if (match[1]) found.add(match[1]);
+  }
+
+  return [...found].sort();
+}
+
 async function main() {
   console.log(`
 Content similarity across every tier, ${BASE}
@@ -136,10 +159,9 @@ Content similarity across every tier, ${BASE}
     // shop was the differentiation risk this tier was cut down to answer.
     ...LOCAL_PAGES.map((entry) => ({ path: `/${entry.slug}`, tier: "local" as Tier })),
     ...PLACES.map((entry) => ({ path: entry.path, tier: "place" as Tier })),
-    // The guide tier, added 2026-08 when the blog reached six articles.
-    ...ROUTES.filter((entry) => entry.tier === "guide" && entry.status === "built").map(
-      (entry) => ({ path: entry.path, tier: "guide" as Tier }),
-    ),
+    // The guide tier. Since 2026-08 the blog is published from the Uplift CMS,
+    // so its paths are crawled off /blog rather than read from the registry.
+    ...(await discoverGuides(BASE)).map((path) => ({ path, tier: "guide" as Tier })),
   ];
 
   console.log(`Fetching ${targets.length} content pages...`);

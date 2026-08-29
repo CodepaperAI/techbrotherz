@@ -29,7 +29,8 @@
     "images:process": "tsx scripts/process-images.ts",
     "images:manifest": "tsx scripts/build-image-manifest.ts",
     "audit:weight": "tsx scripts/measure-weight.ts",
-    "test:placeholders": "tsx scripts/test-no-placeholders.ts"
+    "test:placeholders": "tsx scripts/test-no-placeholders.ts",
+    "test:uplift": "tsx --env-file=.env.local scripts/test-uplift-render.ts"
   },
   "engines": {
     "node": ">=20.9.0"

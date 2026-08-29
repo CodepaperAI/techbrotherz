@@ -2,18 +2,23 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
-import { DemoImage } from "@/components/blocks/DemoImage";
+import { ArticleImage } from "@/components/blocks/ArticleImage";
 import { PageShell } from "@/components/blocks/PageShell";
 import { RelatedLinks } from "@/components/blocks/RelatedLinks";
 import { Card } from "@/components/primitives/Card";
 import { Heading } from "@/components/primitives/Heading";
 import { Section } from "@/components/primitives/Section";
-import { BLOG_POSTS } from "@/lib/content/blog";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { localBusiness, organization, webPage, website } from "@/lib/seo/schema";
-import { SITE } from "@/lib/site";
+import { SITE, TEL_HREF } from "@/lib/site";
 import { getReviewSummary, getSiteSettings } from "@/lib/data";
+import { listArticles } from "@/lib/uplift/client";
+import { formatArticleDate } from "@/lib/uplift/format";
 
+/**
+ * Matches the revalidate window in lib/uplift/client.ts. An article published
+ * in Uplift appears here within the hour, with no redeploy.
+ */
 export const revalidate = 3600;
 
 const PATH = "/blog";
@@ -21,21 +26,16 @@ const PATH = "/blog";
 export const metadata: Metadata = buildMetadata({
   title: "Repair Guides and Answers | TechBrotherz Blog",
   description:
-    "Straight answers on phone, laptop and computer problems from the TechBrotherz Store in Calgary: unlocking, water damage, laptop faults and when repair beats replacement.",
+    "Straight answers on phone, laptop and computer problems from the TechBrotherz Store in Calgary: repairs, unlocking, water damage, tablets and when a repair is worth it.",
   path: PATH,
 });
 
-/** en-CA long date from an ISO string, rendered server-side so it never shifts. */
-function formatDate(iso: string): string {
-  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-CA", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default async function BlogIndexPage() {
-  const [settings, reviews] = await Promise.all([getSiteSettings(), getReviewSummary()]);
+  const [settings, reviews, articles] = await Promise.all([
+    getSiteSettings(),
+    getReviewSummary(),
+    listArticles(),
+  ]);
 
   const schema = [
     organization(settings ?? {}),
@@ -45,10 +45,12 @@ export default async function BlogIndexPage() {
       type: "CollectionPage",
       name: "Repair guides and answers from TechBrotherz",
       description:
-        "Guides on phone, laptop and computer problems, written by the TechBrotherz repair Store in Calgary.",
+        "Guides on phone, laptop and computer problems, published by the TechBrotherz repair Store in Calgary.",
       path: PATH,
     }),
   ];
+
+  const [newest] = articles;
 
   return (
     <PageShell
@@ -65,13 +67,17 @@ export default async function BlogIndexPage() {
       }
       answerBox={{
         answer:
-          "The TechBrotherz blog answers the questions customers actually ask at the Calgary Store: how to unlock a phone in Canada, which laptop symptoms mean repair, and what to do first with a wet phone. Every article is written by the store itself, under the same no-invented-facts rule as the rest of this site.",
+          "The TechBrotherz blog answers the questions customers actually ask at the Calgary Store: what a repair involves, which symptoms mean a device is worth fixing, how unlocking works in Canada, and what to do first with a wet phone. Every article is published by the store itself under the same no-invented-facts rule as the rest of this site.",
         keyFacts: [
-          { label: "Written by", value: "The TechBrotherz Store, not generated filler" },
-          { label: "Articles", value: `${BLOG_POSTS.length} published, more from the planned list follow` },
+          { label: "Published by", value: "The TechBrotherz Store" },
+          {
+            label: "Articles",
+            value: articles.length > 0 ? `${articles.length} published` : "Publishing shortly",
+          },
           { label: "Sponsored content", value: "None, ever" },
           { label: "A question the blog does not answer", value: `Call ${SITE.phone}` },
         ],
+        lastUpdated: newest?.dateModified ?? null,
       }}
       schema={schema}
     >
@@ -80,43 +86,63 @@ export default async function BlogIndexPage() {
           What would you like to know?
         </Heading>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
-            <Card key={post.slug} className="flex flex-col">
-              <DemoImage
-                slot={post.image}
-                sizes="(min-width: 1024px) 30vw, 100vw"
-                className="mb-5"
-              />
-              <p className="type-caption text-tb-muted">{formatDate(post.datePublished)}</p>
-              <h3 className="type-h3 text-tb-text mt-3">
-                <Link href={`/blog/${post.slug}`} className="hover:text-tb-green-deep">
-                  {post.title}
-                </Link>
-              </h3>
-              <p className="type-body text-tb-muted mt-3">{post.summary}</p>
-              <div className="mt-auto pt-6">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group text-tb-green-deep inline-flex items-center gap-1.5 font-medium hover:underline"
-                >
-                  Read {post.title}
-                  <ArrowRight
-                    aria-hidden="true"
-                    size={16}
-                    strokeWidth={1.5}
-                    className="transition-transform duration-[180ms] ease-out group-hover:translate-x-0.5"
-                  />
-                </Link>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        <p className="type-body measure text-tb-muted mt-10">
-          More guides from the planned list follow. Every article is written by the store rather
-          than generated filler, which is why the list grows a few at a time.
-        </p>
+        {articles.length === 0 ? (
+          /*
+           * The honest empty state. The blog is the one part of this site whose
+           * content lives outside the repository, so it is the one part that
+           * can be temporarily unavailable. Saying so beats an empty grid.
+           */
+          <p className="type-body measure text-tb-muted mt-10">
+            The guides are not loading at the moment. Everything they cover is answered at the
+            counter: call{" "}
+            <a href={TEL_HREF} className="text-tb-green-deep hover:underline">
+              {SITE.phone}
+            </a>{" "}
+            or walk in to {SITE.street} in {SITE.city}, or read the{" "}
+            <Link href="/faq" className="text-tb-green-deep hover:underline">
+              frequently asked questions
+            </Link>
+            .
+          </p>
+        ) : (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {articles.map((article, index) => (
+              <Card key={article.slug} className="flex flex-col">
+                <ArticleImage
+                  src={article.featuredImage}
+                  alt={article.title}
+                  sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
+                  priority={index === 0}
+                  className="mb-5"
+                />
+                <p className="type-caption text-tb-muted">
+                  {formatArticleDate(article.datePublished)}
+                  {article.readingTime ? ` · ${article.readingTime}` : ""}
+                </p>
+                <h3 className="type-h3 text-tb-text mt-3">
+                  <Link href={`/blog/${article.slug}`} className="hover:text-tb-green-deep">
+                    {article.title}
+                  </Link>
+                </h3>
+                <p className="type-body text-tb-muted mt-3">{article.excerpt}</p>
+                <div className="mt-auto pt-6">
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="group text-tb-green-deep inline-flex items-center gap-1.5 font-medium hover:underline"
+                  >
+                    Read {article.title}
+                    <ArrowRight
+                      aria-hidden="true"
+                      size={16}
+                      strokeWidth={1.5}
+                      className="shrink-0 transition-transform duration-[180ms] ease-out group-hover:translate-x-0.5"
+                    />
+                  </Link>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
       </Section>
 
       <Section variant="tint" aria-labelledby="blog-related-heading">

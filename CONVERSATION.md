@@ -2,6 +2,30 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-30 — The blog moves to the Uplift CMS
+
+**Asked:** manage /blog from Uplift, remove the hand-written articles, wire up the public blog API, verify and deploy.
+
+**Done:** the six authored articles in `lib/content/blog.ts` are gone, and /blog now renders 26 published articles read from Uplift's public blog API. This is the one deliberate exception to Section 6: every other fact on the site is a constant compiled into the build, and the blog is not, because the client writes and publishes there and a CMS the owner actually uses is worth more than a file they never open.
+
+`lib/uplift/client.ts` is the boundary. The list endpoint returns the full body, so the whole blog is one request per build; the detail endpoint is the fallback for a slug published since the last build, which `dynamicParams` renders on first request. Both pages revalidate hourly, so an article published in Uplift appears without a redeploy. **A build still needs no credentials:** an unset token or an unreachable API means an empty blog, one loud warning in the build log and an honest empty state on the page, never a failed build.
+
+`lib/uplift/render.ts` is the part worth reading. The `content` field is the only HTML on this site that goes through `dangerouslySetInnerHTML`, so it runs through a tag and attribute allowlist: script, style, iframe, object, embed and form go with their content, unknown tags are unwrapped and their text kept, `javascript:` and stray `data:` URLs are refused, and every external link gets `rel="noopener nofollow"`. No dependency: a Markdown parser plus a DOM sanitiser is two packages and jsdom on the server, which is a lot of surface for one template. Markdown is handled too, because Uplift's documentation only promises "full blog content" and the format is not guaranteed.
+
+Three things the renderer fixes rather than passes through. The body's own H1 is demoted to H2, because PageShell owns the single H1. The article's own hero figure is stripped, because the template renders the featured image. And bare `<th>` gets a derived `scope` (30 of 142 headers carried one), which Sections 8.3 and 8.7 require and a screen reader needs. Each table is also wrapped in its own scroll container so a wide comparison table never scrolls the page body sideways.
+
+**The FAQ scoping rule survived the move.** Uplift embeds FAQPage JSON-LD inside the article body, which would have been a second script tag on every page and a schema audit failure. The client lifts those questions out, caps them at six, drops any question an earlier article already claimed, and emits them in the page's single `@graph`. The questions are already visible in each article's own FAQ section, so the visible set and the structured set are the same set. `pnpm test:faq` over 80 pages: 233 pairs, 233 distinct, zero on two URLs.
+
+Blog routes left the registry. Sixteen hand-written `/blog/*` rows would go stale the first time the client published, so `/blog/<slug>` is matched by shape in `isGuideRoute()` the way model pages are, and `route()` synthesises the entry breadcrumbs need. `content-similarity` and `test-faq-scoping` crawl /blog to discover the tier instead of reading it from the registry.
+
+**Verified:** typecheck, lint and build clean, 26 articles prerendered. `pnpm test:uplift` (new, in package.json) runs thirteen attack fixtures plus every live article: no script, style, iframe, event handler or `javascript:` URL survives, no body carries an H1, every table keeps scoped headers and its scroll wrapper, and no FAQ pair appears twice. audit:pages, audit:schema, test:faq, audit:copy and test:placeholders all pass. **The similarity audit is the headline number: the guide tier is now the least duplicated tier on the site at 2.5% median and 5.1% worst pair**, against a 70% threshold and a model tier sitting at 31%. The old hand-written blog never had a per-tier figure that good.
+
+**Two things carried over rather than fixed, both the client's to decide in Uplift.** One article title, "Tablet Repair Costs: Know What Drives the Price 2026", contains the word "Price", which `scripts/test-no-prose-prices.ts` flags on any anchor; no article contains a dollar figure, so the launch-blocker guard's price check itself stays clean. And several articles use em dashes and Apple's own "iPhone"/"iPad" casing, both of which the client's own rules forbid in authored copy; `audit-copy` is source-level so it does not see CMS content, and rewriting the client's published articles from here was not the job.
+
+**Env:** `UPLIFT_API_TOKEN` set in .env.local and on Vercel. `UPLIFT_API_URL` and `UPLIFT_IMAGE_HOSTS` are overrides only. Uplift serves images from res.cloudinary.com, which is named in `images.remotePatterns`; an image from any other host still renders, unoptimised, rather than failing a prerender. **That host list is duplicated between next.config.ts and lib/uplift/image-hosts.ts on purpose** — importing an app module into next.config crashes Next's page-data worker with a `Cannot find module for page: /_document` that names nothing useful, and cost half an hour to find. Change one, change both.
+
+The six old article slugs 301 to /blog. Their six demo photographs and the image slots that fed them are deleted, and the manifest is regenerated.
+
 ## Session 2026-08-25 — Cloudflare Turnstile on the contact form
 
 **Asked:** add Turnstile spam protection to every public form, discovery first.

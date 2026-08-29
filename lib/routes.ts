@@ -490,119 +490,15 @@ export const ROUTES: RouteDef[] = [
     parent: "/locations",
   },
 
-  /* --- Tier 7, guides -------------------------------------------------- */
-  {
-    path: "/blog/how-to-unlock-a-cell-phone-in-canada",
-    label: "How to unlock a cell phone in Canada",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/ipad-repair-vs-replacement-cost",
-    label: "IPad repair vs replacement cost",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/signs-your-laptop-needs-repair",
-    label: "Signs your laptop needs repair",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/walk-in-phone-repair-no-appointment",
-    label: "Walk-in phone repair, no appointment",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/iphone-screen-repair-cost-calgary",
-    label: "Iphone screen repair cost in Calgary",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/how-long-does-a-phone-screen-repair-take",
-    label: "How long does a phone screen repair take",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/why-is-my-computer-running-slow",
-    label: "Why is my computer running slow",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/common-xbox-and-playstation-faults",
-    label: "Common Xbox and PlayStation faults",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/is-it-worth-repairing-an-older-iphone",
-    label: "Is it worth repairing an older Iphone",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/how-to-choose-a-phone-repair-shop-in-calgary",
-    label: "How to choose a phone repair shop in Calgary",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/phone-water-damage-what-to-do-first",
-    label: "Phone water damage, what to do first",
-    tier: "guide",
-    status: "built",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/laptop-wont-turn-on-troubleshooting",
-    label: "Laptop will not turn on, troubleshooting",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/iphone-battery-replacement-when-to-do-it",
-    label: "Iphone battery replacement, when to do it",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/third-party-vs-apple-store-repair-canada",
-    label: "Third-party vs Apple store repair in Canada",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/how-to-back-up-your-phone-before-a-repair",
-    label: "How to back up your phone before a repair",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
-  {
-    path: "/blog/cracked-screen-vs-broken-lcd-difference",
-    label: "Cracked screen vs broken LCD",
-    tier: "guide",
-    status: "pending",
-    parent: "/blog",
-  },
+  /* --- Tier 7, guides --------------------------------------------------
+   *
+   * Blog articles are not listed here. They come from the Uplift CMS, are
+   * written and published by the client rather than in a pull request, and
+   * their slugs change without this file being touched. Sixteen hand-written
+   * rows would go stale the first time the client published, so /blog/<slug>
+   * is treated the way model pages are: matched by shape, in `isGuideRoute`,
+   * with `route()` synthesising the entry breadcrumbs need.
+   */
 
   /* --- Utility --------------------------------------------------------- */
   { path: "/robots.txt", label: "robots.txt", tier: "utility", status: "built" },
@@ -642,7 +538,20 @@ export const ROUTES: RouteDef[] = [
 const BY_PATH = new Map(ROUTES.map((entry) => [entry.path, entry]));
 
 export function route(path: string): RouteDef | undefined {
-  return BY_PATH.get(path);
+  const known = BY_PATH.get(path);
+  if (known) return known;
+
+  /*
+   * A blog article. Synthesised rather than registered, so breadcrumbsFor()
+   * can walk up to /blog and the BreadcrumbList matches the visible trail.
+   * The label is a placeholder: the page passes its real title as the
+   * crumbLabel override, because only the page knows it.
+   */
+  if (isGuideRoute(path)) {
+    return { path, label: "Article", tier: "guide", status: "built", parent: "/blog" };
+  }
+
+  return undefined;
 }
 
 /**
@@ -655,10 +564,36 @@ export function isModelRoute(path: string): boolean {
 
 export const MODEL_ROUTES_BUILT = true;
 
+/**
+ * Blog articles are published in the Uplift CMS, so they cannot be listed in
+ * the registry: the client adds one and this file does not change. They are
+ * matched by shape instead, exactly as model pages are.
+ */
+export function isGuideRoute(path: string): boolean {
+  return /^\/blog\/[^/]+$/.test(path);
+}
+
 /** Whether a link to this path resolves to a real page today. */
 export function isBuilt(path: string): boolean {
   if (isModelRoute(path)) return MODEL_ROUTES_BUILT;
   return route(path)?.status === "built";
+}
+
+/**
+ * The blog article paths that exist right now, for the audits and the HTML
+ * sitemap. Async, because the answer lives in the CMS rather than in this
+ * file, which is the one place the registry is not the source of truth.
+ */
+export async function guideRoutes(): Promise<RouteDef[]> {
+  const { listArticles } = await import("@/lib/uplift/client");
+
+  return (await listArticles()).map((entry) => ({
+    path: `/blog/${entry.slug}`,
+    label: entry.title,
+    tier: "guide" as const,
+    status: "built" as const,
+    parent: "/blog",
+  }));
 }
 
 /**

@@ -246,6 +246,59 @@ Change the file, commit, deploy. A price edit is one number in `content/data/mod
 
 **The conventions that survived the move, both on purpose.** `slug` is still an object with a `current` string, because that is how every consumer already reads it. And an absent field still means the fact is not known, never blank: there is no postal code, no geo, no founding year and no payment methods in `site-settings.ts`, `compact()` drops absent fields from the structured data, and no page invents them.
 
+### 6.1 The blog, and why it is the one exception
+
+**Everything on this site is a constant compiled into the build, except the
+blog.** Since 2026-08-30 `/blog` and `/blog/<slug>` read from the Uplift AI
+public blog API. The reason is the same one that emptied Sanity: the rule is
+"if the shop owner will not edit it, it does not belong in a CMS", and the
+blog is the one thing the owner does edit. They write and publish in Uplift.
+
+| Concern | Answer |
+| --- | --- |
+| Where | `lib/uplift/client.ts` is the only place that talks to the API |
+| Auth | `UPLIFT_API_TOKEN`, in an Authorization header, never in a URL |
+| Freshness | `revalidate = 3600` on both pages, so a new article is live within the hour with no redeploy |
+| Missing token | Empty blog, one warning in the build log, honest empty state. **A build still needs no credentials** |
+| New slugs | `dynamicParams` is on, so an article published since the last build renders on first request |
+| Routes | Not in the registry. `isGuideRoute()` matches `/blog/<slug>` by shape, as model routes do |
+| Images | Uplift's CDN, `res.cloudinary.com`. Named in `images.remotePatterns`; an unknown host renders unoptimised rather than failing the prerender |
+
+**The body is third-party HTML, so it goes through an allowlist.**
+`lib/uplift/render.ts` is the only sanitiser on the site and the only reason a
+`dangerouslySetInnerHTML` call exists in it. Script, style, iframe, object,
+embed and form are dropped with their content; unknown tags are unwrapped and
+their text kept; `javascript:` and stray `data:` URLs are refused; external
+links get `rel="noopener nofollow"`. Markdown is handled as well as HTML,
+because Uplift promises only "full blog content" and the format is not
+guaranteed. It also demotes the body's H1 (PageShell owns the only H1), strips
+the article's duplicate hero figure, derives the missing `scope` on table
+headers, and wraps each table in its own scroll container.
+
+**The FAQ scoping rule holds.** Uplift embeds its own FAQPage JSON-LD in the
+body. The client lifts it out, caps it at six, drops any question an earlier
+article already claimed, and emits it in the page's single `@graph`. The
+questions are already visible in the article's FAQ section, so the visible set
+and the structured set are one set, which is what Section 8.8 requires.
+
+**`pnpm test:uplift` is the guard.** Thirteen attack fixtures plus every live
+article: nothing executable survives, no body carries an H1, every table keeps
+scoped headers, and no FAQ pair reaches two URLs.
+
+**Two things the CMS carries that this repository's copy rules forbid**, both
+the client's to fix in Uplift rather than ours to rewrite: em dashes, and
+Apple's own "iPhone" and "iPad" casing against the client's own override in
+Section 8.7. `audit-copy` is source-level and does not see CMS content. No
+article contains a dollar figure, so the price guard stays clean; one title
+contains the word "Price", which `test-no-prose-prices` flags on anchors.
+
+**The image host list is duplicated on purpose**, between `next.config.ts` and
+`lib/uplift/image-hosts.ts`. Importing an app module into next.config crashes
+Next's page-data worker with `Cannot find module for page: /_document`, which
+names nothing useful and cost half an hour. Change one, change both.
+
+---
+
 ## 7. URL map
 
 Status legend: `built` / `pending`. Update this table as pages ship.
@@ -267,7 +320,7 @@ Status legend: `built` / `pending`. Update this table as pages ship.
 | `/accessories`    | built, added 2026-08 on the client's instruction |
 | `/privacy-policy` | built, **needs a lawyer's review before launch** |
 | `/terms`          | built, **needs a lawyer's review before launch** |
-| `/blog`           | built 2026-08 with the first three articles; the guides tier ships here, at the client's word for it |
+| `/blog`           | built. **Content comes from the Uplift CMS since 2026-08-30**, not from this repository. See Section 6.1 |
 | `/sitemap` (HTML) | pending, Phase 8                                 |
 
 ### The four templates and what each one answers
@@ -950,6 +1003,7 @@ pnpm images:process    # Crop, resize and encode the demo set, plus blur placeho
 pnpm images:manifest   # Regenerate content/image-manifest.md from lib/content/images.ts
 pnpm audit:weight      # Transfer weight per page, with a before-and-after comparison
 pnpm test:placeholders # No rendered page reaches the placeholder image
+pnpm test:uplift       # The blog sanitiser, against fixtures and every live article
 pnpm verify            # Every behavioural check above, in order
 ```
 
@@ -968,6 +1022,9 @@ Never commit real values. `.env.example` is committed, `.env.local` is git-ignor
 | `BREVO_FROM_EMAIL`             | The sender, on the authenticated domain (noreply@techbrotherz.com). **Never the Gmail address**: Brevo cannot authenticate gmail.com, and third-party mail from a Gmail address fails alignment and lands in spam. It need not be a real mailbox; the reply-to carries the conversation. | no       |
 | `BREVO_FROM_NAME`              | The sender display name, TechBrotherz.                                                                                                                              | no       |
 | `CONTACT_TO_EMAIL`             | Where contact submissions are delivered.                                                                                                                            | no       |
+| `UPLIFT_API_TOKEN`             | The blog, and only the blog. Read-only token for the Uplift public blog API. **Server-side only, never `NEXT_PUBLIC_`.** Without it /blog renders an honest empty state and the build still succeeds. See Section 6.1. | no       |
+| `UPLIFT_API_URL`               | Override only. Defaults to `https://api.upliftai.co/api/public/v1`.                                                                                                                                            | no       |
+| `UPLIFT_IMAGE_HOSTS`           | Override only. Extra hostnames next/image may optimise blog images from. Defaults to `res.cloudinary.com`.                                                                                                     | no       |
 | `NEXT_PUBLIC_GA_ID`            | GA4 measurement id. Analytics is skipped if unset.                                                                                                                  | no       |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console meta verification token.                                                                                                                      | no       |
 
