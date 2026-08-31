@@ -17,9 +17,9 @@ import { formatArticleDate } from "@/lib/uplift/format";
 
 /**
  * Matches the revalidate window in lib/uplift/client.ts. An article published
- * in Uplift appears here within the hour, with no redeploy.
+ * in Uplift joins this index within five minutes, with no redeploy.
  */
-export const revalidate = 3600;
+export const revalidate = 300;
 
 const PATH = "/blog";
 

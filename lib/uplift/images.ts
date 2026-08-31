@@ -90,6 +90,19 @@ async function resolves(url: string): Promise<boolean> {
 }
 
 /**
+ * Probe results, cached per process and keyed by URL.
+ *
+ * Separate from the article memo in lib/uplift/client.ts, and much longer
+ * lived, because the two answer different questions. Whether a file is on the
+ * CDN barely changes; whether a new article exists changes all the time. Kept
+ * apart, the article list can be re-read every minute without re-probing
+ * eighty images every time.
+ */
+const seen = new Map<string, { alive: boolean; at: number }>();
+
+const PROBE_TTL_MS = 30 * 60 * 1000;
+
+/**
  * Checks every URL once and returns the set that is definitely gone.
  *
  * Deduplicated first: the same file is often both an article's featured image
@@ -99,16 +112,30 @@ export async function deadImages(urls: string[]): Promise<Set<string>> {
   const distinct = [...new Set(urls.filter((url) => /^https?:/i.test(url)))];
   const dead = new Set<string>();
 
-  for (let i = 0; i < distinct.length; i += CONCURRENCY) {
-    const batch = distinct.slice(i, i + CONCURRENCY);
+  const now = Date.now();
+  const unknown: string[] = [];
+
+  for (const url of distinct) {
+    const cached = seen.get(url);
+    if (cached && now - cached.at < PROBE_TTL_MS) {
+      if (!cached.alive) dead.add(url);
+      continue;
+    }
+    unknown.push(url);
+  }
+
+  for (let i = 0; i < unknown.length; i += CONCURRENCY) {
+    const batch = unknown.slice(i, i + CONCURRENCY);
     const results = await Promise.all(batch.map((url) => resolves(url)));
 
     batch.forEach((url, index) => {
-      if (!results[index]) dead.add(url);
+      const alive = results[index] ?? true;
+      seen.set(url, { alive, at: now });
+      if (!alive) dead.add(url);
     });
   }
 
-  if (dead.size > 0) {
+  if (dead.size > 0 && unknown.length > 0) {
     console.warn(
       `[uplift] ${dead.size} of ${distinct.length} blog images no longer resolve and are not rendered. First: ${[...dead][0]}`,
     );

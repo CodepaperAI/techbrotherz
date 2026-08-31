@@ -44,11 +44,19 @@ const API_BASE = (process.env.UPLIFT_API_URL ?? "https://api.upliftai.co/api/pub
 );
 
 /**
- * Kept in step with the page-level `revalidate`. Uplift has no webhook, so an
- * article published there appears on the site within the hour without a
- * redeploy, which is what makes the CMS worth having.
+ * Kept in step with the page-level `revalidate`.
+ *
+ * Uplift has no webhook, so polling is the only way a published article
+ * reaches the site, and this interval is the whole delay between the client
+ * pressing publish and seeing it live. Five minutes rather than an hour: the
+ * cost is one small API call per interval per instance, and an hour of "I
+ * published it, where is it?" is not worth saving that.
+ *
+ * An individual article does not wait even this long. `dynamicParams` renders
+ * an unknown slug on first request, so a new article's own URL works
+ * immediately; this interval governs when it joins the index.
  */
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 300;
 
 /** Uplift's own cap. */
 const PAGE_LIMIT = 100;
@@ -339,17 +347,20 @@ let memoisedAt = 0;
 /**
  * How long one process reuses its copy of the blog.
  *
- * Long enough to cover a build, where the index and every article page ask for
- * the whole blog and would otherwise normalise the payload and re-probe every
- * image once per page. Next's fetch cache covers the API call but not the
- * probes in lib/uplift/images.ts, so the memo has to live here.
+ * Covers the burst: a build, or one revalidation pass, where the index and
+ * every article page ask for the whole blog at once and would otherwise
+ * normalise the payload once per page.
  *
- * **Short enough to expire well inside the hourly `revalidate`.** The first
- * version never expired, and on a warm server that quietly defeated the whole
- * point of the CMS: an article published in Uplift could not appear until the
- * process was replaced.
+ * **It must stay well inside `REVALIDATE_SECONDS`.** The first version never
+ * expired at all, and on a warm server that quietly defeated the whole point
+ * of the CMS: an article published in Uplift could not appear until the
+ * process was replaced. A minute is enough for the burst and short enough that
+ * it is never the thing holding an article back.
+ *
+ * The expensive half, probing every image, is cached separately and for much
+ * longer in lib/uplift/images.ts, so expiring this often costs almost nothing.
  */
-const MEMO_MS = 5 * 60 * 1000;
+const MEMO_MS = 60 * 1000;
 
 export function listArticles(): Promise<LoadedArticle[]> {
   const now = Date.now();

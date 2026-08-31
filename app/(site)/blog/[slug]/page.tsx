@@ -17,7 +17,7 @@ import { getArticle, listArticles, relatedArticles } from "@/lib/uplift/client";
 import { formatArticleDate } from "@/lib/uplift/format";
 
 /** Matches the revalidate window in lib/uplift/client.ts. */
-export const revalidate = 3600;
+export const revalidate = 300;
 
 /**
  * On, deliberately. An article published in Uplift after the last build renders

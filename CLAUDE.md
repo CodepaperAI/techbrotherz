@@ -258,7 +258,7 @@ blog is the one thing the owner does edit. They write and publish in Uplift.
 | --- | --- |
 | Where | `lib/uplift/client.ts` is the only place that talks to the API |
 | Auth | `UPLIFT_API_TOKEN`, in an Authorization header, never in a URL |
-| Freshness | `revalidate = 3600` on both pages, so a new article is live within the hour with no redeploy. `listArticles()` is memoised for 5 minutes per process; **that memo must stay well inside the revalidate window** or a warm server never sees a new article |
+| Freshness | `revalidate = 300` on both pages: Uplift has no webhook, so polling is the whole route from publish to live. A new article's own URL works immediately (`dynamicParams`); this is how long it waits to join the index. `listArticles()` is memoised for 60s per process, and **that memo must stay well inside the revalidate window** or a warm server never sees a new article. Image probe results are cached separately for 30 minutes, so re-reading the list every minute costs one API call, not eighty HEAD requests |
 | Scheduling | An article whose publish instant has not arrived is held back, even though the list endpoint marks it `PUBLISH`. Uplift's own detail endpoint 404s it. **`publishDate` and `publishTime` carry no timezone**, so America/Edmonton is assumed: the store's own |
 | Missing token | Empty blog, one warning in the build log, honest empty state. **A build still needs no credentials** |
 | New slugs | `dynamicParams` is on, so an article published since the last build renders on first request |
