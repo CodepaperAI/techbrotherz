@@ -198,6 +198,50 @@ function extractAnswer(html: string): { answer: string; body: string } {
   return { answer: "", body: html };
 }
 
+/**
+ * The UTC instant a wall-clock date and time falls on in a given zone.
+ *
+ * Uplift returns `publishDate` and `publishTime` with no timezone at all, so
+ * one has to be assumed. The store's own is the only defensible choice: a
+ * Calgary shop scheduling a post for 08:00 means 08:00 in Calgary, and it is
+ * the zone the rest of this site already computes opening hours in.
+ */
+function instantIn(date: string, time: string, timeZone: string): number {
+  const naive = Date.parse(`${date}T${time}Z`);
+  if (Number.isNaN(naive)) return Number.NaN;
+
+  const label = new Intl.DateTimeFormat("en-US", { timeZone, timeZoneName: "longOffset" })
+    .formatToParts(new Date(naive))
+    .find((part) => part.type === "timeZoneName")?.value;
+
+  const match = /GMT([+-])(\d{2}):(\d{2})/.exec(label ?? "");
+  if (!match) return naive;
+
+  const minutes = Number(match[2]) * 60 + Number(match[3]);
+  return naive + (match[1] === "-" ? minutes : -minutes) * 60_000;
+}
+
+/**
+ * Whether this article's publish time has actually arrived.
+ *
+ * The list endpoint returns a post scheduled for later today with
+ * `status: "PUBLISH"`, while the detail endpoint answers "Blog not found" for
+ * the same slug. Uplift does not consider it live yet, and neither should the
+ * site: publishing a scheduled article early is the kind of thing a client
+ * notices. An unparseable date is treated as live, because dropping an article
+ * over a date format we did not expect would be worse.
+ */
+function isLive(blog: UpliftBlog, now: number): boolean {
+  const date = blog.publishDate?.trim();
+  if (!date || !/^\d{4}-\d{2}-\d{2}/.test(date)) return true;
+
+  const time = blog.publishTime?.trim() || "00:00";
+  const padded = /^\d{2}:\d{2}$/.test(time) ? `${time}:00` : time;
+  const at = instantIn(date.slice(0, 10), padded, "America/Edmonton");
+
+  return Number.isNaN(at) || at <= now;
+}
+
 /** ISO 8601 from the publishDate and publishTime Uplift returns separately. */
 function publishedAt(blog: UpliftBlog): string | null {
   const date = blog.publishDate?.trim();
@@ -290,20 +334,31 @@ export interface LoadedArticle extends Article {
  * up. The warning in the log is the signal.
  */
 let inFlight: Promise<LoadedArticle[]> | null = null;
+let memoisedAt = 0;
+
+/**
+ * How long one process reuses its copy of the blog.
+ *
+ * Long enough to cover a build, where the index and every article page ask for
+ * the whole blog and would otherwise normalise the payload and re-probe every
+ * image once per page. Next's fetch cache covers the API call but not the
+ * probes in lib/uplift/images.ts, so the memo has to live here.
+ *
+ * **Short enough to expire well inside the hourly `revalidate`.** The first
+ * version never expired, and on a warm server that quietly defeated the whole
+ * point of the CMS: an article published in Uplift could not appear until the
+ * process was replaced.
+ */
+const MEMO_MS = 5 * 60 * 1000;
 
 export function listArticles(): Promise<LoadedArticle[]> {
-  /*
-   * Memoised for the life of the process. A build renders the index and 26
-   * article pages, and every one of them asks for the whole blog; without this
-   * the payload is normalised 27 times and every image is checked 27 times.
-   * Next's fetch cache covers the API call itself but not the HEAD requests in
-   * lib/uplift/images.ts, so the memo has to live here.
-   *
-   * Safe because nothing mutates the result: pages read it and render. A long
-   * running server picks up new articles through the route-level `revalidate`,
-   * which re-renders in a fresh render pass rather than reusing this promise.
-   */
-  inFlight ??= load();
+  const now = Date.now();
+
+  if (!inFlight || now - memoisedAt > MEMO_MS) {
+    memoisedAt = now;
+    inFlight = load();
+  }
+
   return inFlight;
 }
 
@@ -327,6 +382,8 @@ async function load(): Promise<LoadedArticle[]> {
     // The status filter is a query parameter, so it is also asserted here:
     // a draft reaching the live site is the failure this guards against.
     .filter((blog) => (blog.status ?? "PUBLISH").toUpperCase() === "PUBLISH")
+    // And an article scheduled for later today is not published yet.
+    .filter((blog) => isLive(blog, Date.now()))
     .map(normalise)
     .filter((entry): entry is LoadedArticle => entry !== null)
     .sort((a, b) => b.datePublished.localeCompare(a.datePublished));

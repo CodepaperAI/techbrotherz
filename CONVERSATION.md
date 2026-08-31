@@ -2,6 +2,20 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-08-31 — Blog source audit: only Uplift, and all of it
+
+**Asked:** confirm the blog comes only from Uplift, and that everything in Uplift is visible.
+
+**Only Uplift: confirmed.** `lib/content/blog.ts` is gone, nothing in the repository exports blog content, and both routes import from `lib/uplift/client.ts` and nothing else. Comparing the live index against the API: **zero articles on the site that are not in Uplift.**
+
+**All of it: three real bugs found, all fixed.**
+
+1. **A warm server could never see a new article.** The per-process memo added yesterday never expired, so on a long-lived Vercel instance `listArticles()` returned the same promise forever and the hourly `revalidate` had nothing to re-read. That quietly defeated the entire point of putting the blog on a CMS. The memo now expires after five minutes: long enough to cover a build, well inside the revalidate window.
+2. **Uplift added a second CDN.** The whole payload was Cloudinary on 2026-08-30; twelve images were on `uplift-ai-images.b-cdn.net` the next day. The ArticleImage fallback meant they still rendered, unoptimised, rather than failing a prerender, which is the fallback doing its job. Both hosts are now named in the allowlist and the build half.
+3. **A scheduled article was being treated as published.** The list endpoint returns a post scheduled for 08:00 today with `status: "PUBLISH"` while the detail endpoint answers "Blog not found" for the same slug, which is why the direct URL 404'd. Uplift does not consider it live and neither should the site. Articles are now filtered on their publish instant. **Uplift sends `publishDate` and `publishTime` with no timezone at all**, so one has to be assumed: America/Edmonton, because a Calgary shop scheduling 08:00 means 08:00 in Calgary, and it is the zone the site already computes opening hours in. An unparseable date is treated as live rather than dropped.
+
+**Result:** 29 published in Uplift, 1 scheduled for 08:00 today and correctly held back, 28 on the site. The held article appears on the next revalidation after its publish time, with no redeploy.
+
 ## Session 2026-08-30 (second) — Four blog cards were showing broken images
 
 **Asked:** the first four cards on /blog show a broken image. Check it.

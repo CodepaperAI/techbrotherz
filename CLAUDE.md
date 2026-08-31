@@ -258,11 +258,12 @@ blog is the one thing the owner does edit. They write and publish in Uplift.
 | --- | --- |
 | Where | `lib/uplift/client.ts` is the only place that talks to the API |
 | Auth | `UPLIFT_API_TOKEN`, in an Authorization header, never in a URL |
-| Freshness | `revalidate = 3600` on both pages, so a new article is live within the hour with no redeploy |
+| Freshness | `revalidate = 3600` on both pages, so a new article is live within the hour with no redeploy. `listArticles()` is memoised for 5 minutes per process; **that memo must stay well inside the revalidate window** or a warm server never sees a new article |
+| Scheduling | An article whose publish instant has not arrived is held back, even though the list endpoint marks it `PUBLISH`. Uplift's own detail endpoint 404s it. **`publishDate` and `publishTime` carry no timezone**, so America/Edmonton is assumed: the store's own |
 | Missing token | Empty blog, one warning in the build log, honest empty state. **A build still needs no credentials** |
 | New slugs | `dynamicParams` is on, so an article published since the last build renders on first request |
 | Routes | Not in the registry. `isGuideRoute()` matches `/blog/<slug>` by shape, as model routes do |
-| Images | Uplift's CDN, `res.cloudinary.com`. Named in `images.remotePatterns`; an unknown host renders unoptimised rather than failing the prerender |
+| Images | More than one CDN, and Uplift adds to the set without warning: `res.cloudinary.com` and `uplift-ai-images.b-cdn.net` so far. Both named in `images.remotePatterns`; an unknown host renders unoptimised rather than failing the prerender, which is how the second one was survived rather than discovered by an outage |
 
 **The body is third-party HTML, so it goes through an allowlist.**
 `lib/uplift/render.ts` is the only sanitiser on the site and the only reason a

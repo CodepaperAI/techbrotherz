@@ -16,6 +16,7 @@ import type { NextConfig } from "next";
 const OPTIMISED_IMAGE_HOSTS = [
   ...new Set([
     "res.cloudinary.com",
+    "uplift-ai-images.b-cdn.net",
     ...(process.env.UPLIFT_IMAGE_HOSTS ?? "")
       .split(",")
       .map((host) => host.trim().toLowerCase())

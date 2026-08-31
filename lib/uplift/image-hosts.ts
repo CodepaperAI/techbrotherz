@@ -20,8 +20,13 @@
  * `UPLIFT_IMAGE_HOSTS` extends it without a code change, comma separated.
  */
 
-/** Every image in the payload as of 2026-08 comes from Uplift's Cloudinary. */
-const DEFAULT_HOSTS = ["res.cloudinary.com"];
+/**
+ * Uplift uses more than one CDN and adds to the set without warning: the whole
+ * payload was Cloudinary on 2026-08-30 and a BunnyCDN host appeared the next
+ * day. Both are named, and `UPLIFT_IMAGE_HOSTS` covers the next one without a
+ * code change.
+ */
+const DEFAULT_HOSTS = ["res.cloudinary.com", "uplift-ai-images.b-cdn.net"];
 
 export const OPTIMISED_IMAGE_HOSTS: string[] = [
   ...new Set([
