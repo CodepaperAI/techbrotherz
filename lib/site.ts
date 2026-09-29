@@ -127,6 +127,19 @@ export const SITE_URL = siteUrl();
 export const TEL_HREF = `tel:${SITE.phoneRaw}`;
 
 /**
+ * WhatsApp click-to-chat, on the client's instruction 2026-09.
+ *
+ * **Derived from `phoneRaw`, never written out again.** The client asked for
+ * WhatsApp on the store number, and NAP consistency is absolute (CLAUDE.md
+ * Section 2): a second copy of the number is a second thing to forget when it
+ * changes. If the shop ever wants WhatsApp on a different line, this is the
+ * one line that changes, and it becomes a field on SITE at that point.
+ *
+ * wa.me wants digits only, no plus and no punctuation.
+ */
+export const WHATSAPP_HREF = `https://wa.me/${SITE.phoneRaw.replace(/\D/g, "")}`;
+
+/**
  * The entity string that must open the first paragraph of every important
  * page. Repeating it verbatim across the site is what builds the entity in an
  * answer engine's index. CLAUDE.md Section 8.4.

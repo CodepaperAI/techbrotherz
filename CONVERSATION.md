@@ -2,6 +2,31 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-09-29 — WhatsApp on the store number, every page
+
+**Asked (client, WhatsApp 2026-09-08):** "Could u please add what's app to the website with store number +1403-273-8324, which shows on each page."
+
+**Done:** two placements, because one of them is JavaScript-free and crawlable and the other is the thing a thumb reaches for.
+
+A floating action button, bottom right, on all 156 prerendered pages. It is a plain anchor in a server component: no state, no scroll listener, and it works with scripting disabled, which the sticky call bar does not. **It sits above the mobile sticky call bar rather than beside it** (`bottom-24`, `lg:bottom-6`): that bar already owns the bottom edge below `lg`, and two fixed elements competing for the same 56px is how a thumb hits the wrong one. Verified by screenshot at 390px and 1440px.
+
+A second link in the footer contact block, under the phone number. Real crawlable markup that survives print and a blocked script, and the footer is where people look for a way to make contact.
+
+**The number is derived, not written down again.** `WHATSAPP_HREF` in `lib/site.ts` is built from `SITE.phoneRaw` with the punctuation stripped, because NAP consistency is absolute and a second copy of the number is a second thing to forget when it changes. If the shop ever wants WhatsApp on a different line, that is the one line that changes.
+
+**Two things this turned up that are worth keeping:**
+
+1. **Site-wide chrome has two mounting points.** `app/not-found.tsx` sits outside the `(site)` route group and composes Nav and Footer itself, so the first build shipped the button to 155 of 156 pages. The count is now asserted against the prerendered HTML rather than assumed.
+2. **A fixed element as a direct child of `<body>` is an axe `region` violation on every page at once.** The site had zero violations before this button and briefly had 156. The fix is the labelled `<aside>` wrapper, which is load-bearing rather than decoration.
+
+The colour is the site's own `--tb-green` with an ink glyph, not WhatsApp's brand green: DESIGN.md forbids raw hex in components, and the contrast rule puts ink on a green fill, never white. The focus ring is overridden to ink, because the global `--tb-green-deep` ring on a green fill is the one place that rule has nothing to contrast against. The glyph is drawn inline, following the SocialLinks precedent, since lucide removed its brand icons.
+
+**Verified:** typecheck, lint and build clean. 156 of 156 pages carry both the button and the footer link, counted off the prerendered HTML. axe **0 violations**, 0 console errors and 0 hydration warnings across the seven audited templates, with accessibility, best practices and SEO at 100. Keyboard pass, contrast test, audit-pages and audit-copy all green. Lighthouse performance on localhost is the usual `next start` noise and was not treated as a signal, per Section 8.6.
+
+**Half an hour lost to a stale server**, recorded because it cost real time and looked like two genuine regressions: a surviving `next start` process kept port 3100 and served an older build, so axe reported the violation I had just fixed and a CSS 404 appeared out of nowhere. `taskkill /IM node.exe` did not kill it. `Get-NetTCPConnection -LocalPort 3100 | Stop-Process -Force` did. **Check the served CSS hash against `.next/static/css/` before believing any browser-driven result.**
+
+**Open with the client:** the message came from +1 (587) 718-5786, and the link points at the store number they gave, (403) 273-8324. **If that line is not itself registered on WhatsApp, wa.me shows an error page to every visitor who taps it.** One tap from a phone that does not have the store's WhatsApp account confirms it either way, and switching the link to another number is a one-line change.
+
 ## Session 2026-08-31 — Blog source audit: only Uplift, and all of it
 
 **Asked:** confirm the blog comes only from Uplift, and that everything in Uplift is visible.

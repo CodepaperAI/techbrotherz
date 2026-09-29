@@ -9,7 +9,8 @@ import { Container } from "@/components/primitives/Container";
 import { SERVICE_AREAS } from "@/lib/content/service-areas";
 import { footerColumns, footerLegalLinks } from "@/lib/nav";
 import { shouldRenderLink } from "@/lib/routes";
-import { ADDRESS_LINE, SITE, TEL_HREF, groupedHours } from "@/lib/site";
+import { WhatsAppIcon } from "@/components/layout/WhatsAppButton";
+import { ADDRESS_LINE, SITE, TEL_HREF, WHATSAPP_HREF, groupedHours } from "@/lib/site";
 
 /**
  * The footer link matrix is what gives every important page a site-wide inbound
@@ -54,6 +55,24 @@ export function Footer() {
                 />
                 <a href={TEL_HREF} className="text-tb-white hover:text-tb-green">
                   {SITE.phone}
+                </a>
+              </p>
+              {/* The same number on WhatsApp, client instruction 2026-09. In
+                  the footer as well as the floating button because this one is
+                  real crawlable markup that survives print and a blocked
+                  script, and because the footer is where people look for a way
+                  to make contact. */}
+              <p className="mt-2 flex items-start gap-2">
+                <span className="text-tb-green mt-1 shrink-0">
+                  <WhatsAppIcon size={18} />
+                </span>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-tb-white hover:text-tb-green"
+                >
+                  WhatsApp {SITE.phone}
                 </a>
               </p>
             </address>

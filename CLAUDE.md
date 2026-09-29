@@ -74,6 +74,7 @@ These live in `content/data/site-settings.ts`. Code reads them from there. The t
 | Postal code                  | TODO(client)                                                      |
 | Phone (display)              | (403) 273-8324                                                    |
 | Phone (raw, tel: and schema) | +14032738324                                                      |
+| WhatsApp                     | The same store number. `WHATSAPP_HREF` in `lib/site.ts` is **derived from `phoneRaw`**, never written out again, so it cannot drift from the NAP. Client instruction 2026-09 |
 | Locale                       | en-CA                                                             |
 | Currency                     | CAD                                                               |
 | Hours Mon to Fri             | 10:00 AM to 7:00 PM                                               |
@@ -1218,6 +1219,21 @@ Consistent off-site data is what makes the entity resolve in Google's and the an
 - **Default to server components.** Every page, every data-fetching component.
 - `"use client"` only for: `Nav` (scroll state and mobile sheet), `StickyCallBar` (scroll threshold), `FaqAccordion` (disclosure state), `Reveal` (IntersectionObserver), `PriceTable` filters on `/repair-prices`, and form components.
 - Never put `"use client"` on a layout or a page.
+
+### Site-wide chrome has two mounting points, not one
+
+`app/(site)/layout.tsx` wraps every marketing page, and **`app/not-found.tsx`
+sits outside that route group** and composes `Nav` and `Footer` itself. Anything
+that must appear on every page has to be added in both, or the 404 is the one
+page missing it. That is how the WhatsApp button shipped to 155 of 156 pages on
+its first build; the count is checked against the prerendered HTML now rather
+than assumed.
+
+**A fixed element that is a direct child of `<body>` is an accessibility
+regression.** Page content outside every landmark is an axe `region` violation
+on every page at once. The floating WhatsApp action is wrapped in a labelled
+`<aside>` for exactly this reason. The site was at zero axe violations before it
+existed and is again; do not unwrap it.
 
 ### Sizing a change before starting it
 

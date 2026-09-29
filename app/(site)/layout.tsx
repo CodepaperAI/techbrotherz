@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { Nav } from "@/components/layout/Nav";
 import { StickyCallBar } from "@/components/layout/StickyCallBar";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 /**
  * Site chrome for every public marketing page. /studio and /api sit outside
@@ -25,6 +26,10 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
       <Footer />
       <StickyCallBar />
+      {/* Client instruction 2026-09: WhatsApp on the store number, on every
+          page. Mounted here rather than per page so a new page cannot ship
+          without it. */}
+      <WhatsAppButton />
     </>
   );
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Footer } from "@/components/layout/Footer";
 import { Nav } from "@/components/layout/Nav";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { NotFoundSuggestions } from "@/components/blocks/NotFoundSuggestions";
 import { Card } from "@/components/primitives/Card";
 import { Heading } from "@/components/primitives/Heading";
@@ -83,6 +84,10 @@ export default async function NotFound() {
       </main>
 
       <Footer />
+      {/* This page composes its own chrome, because it sits outside the (site)
+          route group and so never runs that layout. The WhatsApp button has to
+          be added by hand here or a 404 is the one page missing it. */}
+      <WhatsAppButton />
     </>
   );
 }
