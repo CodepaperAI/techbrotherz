@@ -19,8 +19,16 @@
  * `NEXT_PUBLIC_SITE_URL` still overrides when it is set, which is how the local
  * audits point the whole site at `http://localhost:3100`. It is optional
  * everywhere, and nothing needs it in production.
+ *
+ * **It is the www host, because that is the host Vercel serves.** The apex
+ * 308s to www at the edge. Until 2026-10 this constant named the apex, so the
+ * live host was not the canonical one, and middleware.ts treated production as
+ * staging: noindex on every page and a disallow-all robots.txt, found by an
+ * outside SEO audit rather than by anything here. If the primary domain is
+ * ever flipped to the apex in Vercel, change this line to match; middleware
+ * keeps both hosts indexable either way, so the flip cannot noindex the site.
  */
-export const CANONICAL_ORIGIN = "https://techbrotherz.com";
+export const CANONICAL_ORIGIN = "https://www.techbrotherz.com";
 
 /** The canonical origin, no trailing slash. Override with NEXT_PUBLIC_SITE_URL. */
 export function siteUrl(): string {

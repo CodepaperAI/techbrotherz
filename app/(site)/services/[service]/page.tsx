@@ -278,8 +278,8 @@ export default async function ServicePage({ params }: PageProps) {
           <Heading
             level={2}
             id="prices-heading"
-            eyebrow="Prices"
-            lead="Every price includes the part and the labour. Prices that vary by model link through to the full list."
+            eyebrow="Quotes"
+            lead="Every repair is quoted free before any work starts, and every quote includes the part and the labour."
           >
             How much does this service cost?
           </Heading>
@@ -287,15 +287,13 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="border-tb-border bg-tb-white rounded-card mt-10 overflow-x-auto border">
             <table className="w-full min-w-[36rem] border-collapse text-left">
               <caption className="sr-only-caption">
-                {content.serviceType} prices at TechBrotherz in Calgary, part and labour included
+                {content.serviceType} repairs at TechBrotherz in Calgary, with typical times. Every
+                quote includes the part and the labour
               </caption>
               <thead>
                 <tr className="tb-thead">
                   <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                     Repair
-                  </th>
-                  <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
-                    Price
                   </th>
                   <th scope="col" className="type-eyebrow text-tb-green-deep px-6 py-3">
                     Typical time
@@ -330,9 +328,9 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
 
           <p className="type-body measure text-tb-muted mt-8">
-            Prices for every device TechBrotherz repairs are published on{" "}
+            Ask for a quote on any device through{" "}
             <Link href="/contact" className="text-tb-green-deep hover:underline">
-              how quoting works
+              the free repair quote form
             </Link>
             , and the terms of the {warrantyDays}-day cover are set out on{" "}
             <Link href="/warranty" className="text-tb-green-deep hover:underline">
@@ -350,7 +348,7 @@ export default async function ServicePage({ params }: PageProps) {
             level={2}
             id="repairs-heading"
             eyebrow="By repair"
-            lead="Each page below lists that one repair across every model TechBrotherz does it on, with prices."
+            lead="Each page below lists every model TechBrotherz carries out that one repair on."
           >
             Which repair do you need?
           </Heading>
@@ -380,7 +378,7 @@ export default async function ServicePage({ params }: PageProps) {
             level={2}
             id="devices-heading"
             eyebrow="Devices"
-            lead="Each brand page lists every model in that range with its own published prices."
+            lead="Each brand page lists every model in that range that TechBrotherz repairs."
           >
             Which devices does TechBrotherz repair?
           </Heading>

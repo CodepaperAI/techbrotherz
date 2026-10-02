@@ -209,9 +209,9 @@ export default async function TermsPage() {
 
         <div className="type-body measure text-tb-muted mt-6 space-y-4">
           <p>
-            Prices on this website are kept current from the store&rsquo;s own price list and are
-            shown in Canadian dollars including the part and the labour. TechBrotherz aims to keep
-            every figure accurate, and the price confirmed at the Store is the price that applies.
+            This website does not publish repair prices. Every repair is quoted in Canadian dollars,
+            including the part and the labour, and the quote agreed at the Store before any work
+            starts is the price that applies.
           </p>
           <p>
             The content of this website is provided so you can decide whether a repair is worth

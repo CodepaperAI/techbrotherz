@@ -167,7 +167,7 @@ Target is Vercel.
 
 1. Import the repository into Vercel.
 2. Add every environment variable from the table above to the Vercel project.
-3. Set the production domain to `techbrotherz.com`, with `www.techbrotherz.com` redirecting to the apex.
+3. Set the production domain to `www.techbrotherz.com`, with the apex `techbrotherz.com` redirecting to it. This must match `CANONICAL_ORIGIN` in `lib/site-url.ts`.
 4. From Phase 2, add a Sanity webhook pointing at `https://techbrotherz.com/api/revalidate` with the `SANITY_REVALIDATE_SECRET` value, so a price change goes live immediately instead of waiting for the hourly revalidation.
 
 ---

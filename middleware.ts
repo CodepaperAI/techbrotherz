@@ -27,10 +27,20 @@ import { siteUrl } from "@/lib/site-url";
  * it. See lib/site-url.ts.
  */
 
-/** The one host allowed to be indexed, taken from the canonical origin. */
-function canonicalHost(): string | null {
+/**
+ * The hosts allowed to be indexed: the canonical host and its www or apex
+ * sibling. The production domain answers on both, and which one Vercel treats
+ * as primary is a dashboard setting this file cannot see. Until 2026-10 only
+ * the canonical host passed, the canonical named the apex while Vercel served
+ * www, and the live site went out noindexed with a disallow-all robots.txt.
+ * The sibling redirects to the primary at the edge, so allowing it never
+ * creates a second indexable copy.
+ */
+function productionHosts(): Set<string> | null {
   try {
-    return new URL(siteUrl()).host.toLowerCase();
+    const host = new URL(siteUrl()).host.toLowerCase();
+    const apex = host.replace(/^www\./, "");
+    return new Set([apex, `www.${apex}`]);
   } catch {
     return null;
   }
@@ -47,11 +57,11 @@ function isLocal(host: string): boolean {
 
 export function middleware(request: NextRequest) {
   const host = (request.headers.get("host") ?? "").toLowerCase();
-  const canonical = canonicalHost();
+  const production = productionHosts();
 
   // With no canonical origin configured we cannot tell staging from production,
   // and guessing in either direction is worse than doing nothing.
-  if (!canonical || !host || isLocal(host) || host === canonical) {
+  if (!production || !host || isLocal(host) || production.has(host)) {
     return NextResponse.next();
   }
 

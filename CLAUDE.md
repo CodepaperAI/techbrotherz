@@ -444,6 +444,8 @@ So **each shared fact has exactly one page that carries it in full**, and every 
 
 `/sitemap.xml` · `/robots.txt` · `/llms.txt` · `/llms-full.txt` · `/opensearch.xml` (optional).
 
+`/sitemap.xml` is **built** (2026-10, `app/sitemap.ts`): registered built routes, published indexable models, and Uplift articles, revalidating every 300s.
+
 ### Internal
 
 | URL                                     | Status | Notes                                                                                                        |
@@ -477,7 +479,7 @@ Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. The
 ### 8.2 Structured data (via the typed `<JsonLd>` component)
 
 - [ ] Every page: `Organization` + `WebSite` with `SearchAction`, plus `BreadcrumbList`.
-- [ ] Home, `/contact`, all local pages: `LocalBusiness`, `additionalType: ["MobilePhonestore","Computerstore"]`, `@id: https://techbrotherz.com/#business`, full `address`, `geo`, `telephone`, `openingHoursSpecification`, `areaServed` (Calgary, Chestermere, Airdrie), `priceRange: "$$"`, `hasMap`, `paymentAccepted`, `currenciesAccepted: "CAD"`.
+- [ ] Home, `/contact`, all local pages: `LocalBusiness`, `additionalType: ["https://schema.org/MobilePhoneStore","https://schema.org/ComputerStore"]`, `@id: https://www.techbrotherz.com/#business`, full `address`, `geo`, `telephone`, `openingHoursSpecification`, `areaServed` (Calgary, Chestermere, Airdrie), `priceRange: "$$"`, `hasMap`, `paymentAccepted`, `currenciesAccepted: "CAD"`.
 - [ ] Service hubs and repair-type pages: `Service` with `provider: {"@id": "...#business"}`, `serviceType`, `areaServed`, `hasOfferCatalog`.
 - [ ] Model pages: `ItemList` of `Offer`, each `priceCurrency: "CAD"`, `price`, `availability`, `warranty: { durationOfWarranty: "P60D" }`. `quoteOnly` entries emit the Offer with no `price`, `availability: InStock`, plus a `potentialAction` of type `ContactAction`.
 - [ ] Every FAQ block: `FAQPage` built from `plainAnswer`. **Never duplicate the same question in two FAQPage blocks on one page.**
@@ -618,6 +620,8 @@ Phase 6.5b took three median-of-five samples against one deployment and got 84, 
 ### Staging must never be indexable
 
 Phase 5 set `NEXT_PUBLIC_SITE_URL` to the production domain on the deployment, which was right for canonical correctness and left the staging host serving a fully crawlable copy of the site whose canonicals name a domain currently hosting the client's old Wix site.
+
+**The canonical host is `www.techbrotherz.com`** (2026-10), because that is what Vercel serves; the apex 308s to it. Until then the constant named the apex and production itself was noindexed. Middleware allows both apex and www, so a primary-domain flip in Vercel cannot repeat that.
 
 `middleware.ts` closes it. Any host that is not the canonical host, derived from `lib/site-url.ts` rather than named in this file, gets `X-Robots-Tag: noindex, nofollow` on every response and a `robots.txt` that disallows everything. localhost is exempt, because it is neither canonical nor reachable by Google, and marking it noindex would make every local audit disagree with production.
 

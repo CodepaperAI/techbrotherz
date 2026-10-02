@@ -25,9 +25,9 @@ const RUNS = Number(process.argv[3] ?? 5);
  */
 const CANONICAL_HOST = (() => {
   try {
-    return new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://techbrotherz.com").host;
+    return new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.techbrotherz.com").host;
   } catch {
-    return "techbrotherz.com";
+    return "www.techbrotherz.com";
   }
 })();
 const IS_NOINDEXED_HOST = (() => {

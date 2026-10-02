@@ -427,7 +427,7 @@ export default async function RepairPage({ params }: PageProps) {
             level={2}
             id="models-heading"
             eyebrow="Popular models"
-            lead="Each page below lists every repair TechBrotherz does on that handset, with prices."
+            lead="Each page below lists every repair TechBrotherz does on that handset, with typical times."
           >
             The models people ask about most
           </Heading>

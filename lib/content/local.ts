@@ -107,7 +107,7 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "Which phones does TechBrotherz repair in Calgary?",
       paragraphs: [
-        "TechBrotherz repairs Iphone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why the published price list is deepest on those two ranges and priced model by model rather than at one blanket rate.",
+        "TechBrotherz repairs Iphone, Samsung Galaxy and Google Pixel handsets at its Calgary Store. Apple and Samsung account for most of the volume, which is why every model in those two ranges is quoted on its own parts rather than at one blanket rate.",
         `The five repairs that account for nearly every phone brought in are the same across all three brands: cracked screens, worn battery, charging ports that no longer hold a cable, cameras that will not focus, and shattered back glass. Screen replacement is the most common by a wide margin and takes about ${c.waitMinutes} minutes.`,
         "Phones from brands outside that list are quoted at the Store once the model is in front of us and we know what the part costs. If a part cannot be sourced at a sensible price, we will say so rather than take the job and disappoint you a week later.",
       ],
@@ -139,7 +139,7 @@ const phoneRepairCalgary: LocalDef = {
     {
       heading: "What is included, and what the warranty actually covers",
       paragraphs: [
-        "Every published price covers four things: the replacement part, the labour to fit it, testing before the phone is handed back, and a 60-day warranty on both the part and the workmanship. There is no separate bench fee, and no diagnostic charge on a repair we go on to carry out.",
+        "Every quote covers four things: the replacement part, the labour to fit it, testing before the phone is handed back, and a 60-day warranty on both the part and the workmanship. There is no separate bench fee, and no diagnostic charge on a repair we go on to carry out.",
         "Testing is the part people do not see and the part that matters. After a screen replacement we check touch across the whole panel, both cameras, the earpiece, the loudspeaker, the microphone and charging, because a screen that looks right and has a dead earpiece is a repair that failed quietly.",
         "The warranty covers a part that fails and work that was not done properly. It does not cover a new drop or new water damage, because a phone damaged again is a fresh repair rather than a failure of the last one. Bring the phone back with the receipt and that is all we need to see.",
       ],

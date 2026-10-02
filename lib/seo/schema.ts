@@ -188,7 +188,10 @@ export function localBusiness(
   return compact({
     "@type": "LocalBusiness",
     "@id": BUSINESS_ID,
-    additionalType: ["MobilePhonestore", "Computerstore"],
+    // Full schema.org URLs, correctly cased. The bare "MobilePhonestore" and
+    // "Computerstore" this carried until 2026-10 are not schema.org types, and
+    // validators flagged them.
+    additionalType: ["https://schema.org/MobilePhoneStore", "https://schema.org/ComputerStore"],
     name: settings.brandName,
     legalName: settings.legalName,
     url: SITE_URL,

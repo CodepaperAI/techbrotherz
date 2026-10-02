@@ -502,7 +502,7 @@ export const ROUTES: RouteDef[] = [
 
   /* --- Utility --------------------------------------------------------- */
   { path: "/robots.txt", label: "robots.txt", tier: "utility", status: "built" },
-  { path: "/sitemap.xml", label: "XML sitemap", tier: "utility", status: "pending" },
+  { path: "/sitemap.xml", label: "XML sitemap", tier: "utility", status: "built" },
   { path: "/llms.txt", label: "llms.txt", tier: "utility", status: "pending" },
   { path: "/llms-full.txt", label: "llms-full.txt", tier: "utility", status: "pending" },
   { path: "/api/revalidate", label: "Revalidation webhook", tier: "utility", status: "built" },

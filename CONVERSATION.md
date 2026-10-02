@@ -2,6 +2,29 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-10-02 — The live site was noindexed: canonical host, sitemap, stale price copy
+
+**Asked:** fix the findings of an outside SEO audit of the live site, dated 2026-10-02.
+
+**The critical one, root cause:** Vercel serves `www.techbrotherz.com` and 308s the apex to it, but `CANONICAL_ORIGIN` named the apex. `middleware.ts` treats any host that is not the canonical one as staging, so **production went out with `X-Robots-Tag: noindex, nofollow` on every response and a `Disallow: /` robots.txt**. Confirmed with curl against the live host before touching anything. `pnpm test:noindex` could not catch it, because it only ever ran against the host named in the constant.
+
+**Done:**
+
+1. `CANONICAL_ORIGIN` is now `https://www.techbrotherz.com`, matching the host Vercel serves. Canonicals, sitemap URLs, robots `Host`/`Sitemap` and every JSON-LD `@id` follow. www was chosen over flipping Vercel to apex because it is the live state, needs no dashboard change, and the old Wix site's indexed URLs were most likely on www. `NEXT_PUBLIC_SITE_URL` is confirmed unset on the Vercel project, so the constant governs.
+2. **Middleware now allows both the apex and www** of the canonical domain. Flipping the primary domain in Vercel can therefore never noindex the site again; it only leaves the canonical pointing through one redirect until the constant is changed to match. `*.vercel.app` and every other host is still noindexed. `test-staging-noindex.ts` treats both hosts as production.
+3. **`app/sitemap.ts` built.** It never existed, which is why `/sitemap.xml` 404'd. Registered built routes, plus models from `getAllSlugsForSitemap()` (published, not noindexed), plus Uplift articles; `revalidate = 300` to match the blog. `lastModified` is set on articles only: the model `_updatedAt` values are migration stamps (97 models share one second) and a wrong lastmod is worse than none. 152 URLs, every one checked to return 200.
+4. **Service hub table fixed.** It had three headers and two cells per row, a leftover from the price strip: typical times sat under a "Price" header. The Price column is gone and the section is framed as free quotes. Stale "published prices" / "with prices" copy rewritten on the service hubs, the brand-model lead on repair pages, two paragraphs in `lib/content/local.ts`, and **the website-terms clause on `/terms`, which still claimed prices were published**. That page is already on the lawyer list.
+5. `additionalType` on `LocalBusiness` now uses real, correctly cased schema.org URLs (`MobilePhoneStore`, `ComputerStore`); the bare `MobilePhonestore`/`Computerstore` were not types.
+
+**Verified:** typecheck and lint clean; production build with no URL override; Host-header requests as www and apex return no `X-Robots-Tag` and an allow-all robots.txt naming the sitemap, a vercel.app Host still gets noindex. `test:noindex`, `test-no-prose-prices` and `audit:schema` all pass.
+
+**Not changed, deliberately:**
+- **Blog "Publishing shortly":** the live /blog lists articles today. The auditor caught a render from a moment the Uplift fetch returned nothing; the honest empty state is the designed degradation (Section 6.1).
+- **Postal code T2A 0R2:** the audit found it on YellowPages too, a second source after the GBP. Still question 29: NAP needs the client's word, not ours.
+- **`AggregateRating`:** real, dated data the client supplied (question 8). Google does not show stars for a business's own LocalBusiness rating; that makes it ineligible for stars, not penalised. Left in.
+
+**Client actions after deploy:** submit `https://www.techbrotherz.com/sitemap.xml` in Search Console (the www property), and URL-inspect the home page to request indexing.
+
 ## Session 2026-09-29 — WhatsApp on the store number, every page
 
 **Asked (client, WhatsApp 2026-09-08):** "Could u please add what's app to the website with store number +1403-273-8324, which shows on each page."

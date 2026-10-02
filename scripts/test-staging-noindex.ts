@@ -16,7 +16,7 @@
  */
 
 const BASE = process.argv[2] ?? "http://localhost:3100";
-const CANONICAL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://techbrotherz.com";
+const CANONICAL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.techbrotherz.com";
 
 const PATHS = ["/", "/repair-prices", "/services/laptop-repair"];
 
@@ -28,7 +28,9 @@ async function main() {
   const host = hostOf(BASE);
   const canonicalHost = hostOf(CANONICAL);
   const isLocal = host.startsWith("localhost") || host.startsWith("127.0.0.1");
-  const isCanonical = host === canonicalHost;
+  // The production domain answers on www and the apex; middleware.ts allows both.
+  const apex = canonicalHost.replace(/^www\./, "");
+  const isCanonical = host === apex || host === `www.${apex}`;
 
   console.log(`\nStaging noindex, ${BASE}`);
   console.log(`  canonical host : ${canonicalHost}`);
