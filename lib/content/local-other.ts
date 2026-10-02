@@ -24,7 +24,7 @@ const unlockingCalgary: LocalDef = {
   eyebrow: "Calgary",
     seoTitle: "Phone Unlocking Calgary | Ask Your Carrier First",
   seoDescription:
-        "Phone unlocking in Calgary at TechBrotherz, 3317 17 Ave SE, any Canadian carrier. Since December 2017 carriers must unlock free on request. Usually same day.",
+        "Phone unlocking in Calgary at TechBrotherz, 3317 17 Ave SE, any Canadian carrier, usually same day. Carriers must also unlock free on request.",
   serviceType: "Phone unlocking",
   city: "Calgary",
   priceSource: { kind: "flat", flatSlugs: [] },
@@ -135,7 +135,7 @@ const walkInCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Walk-In Phone Repair Calgary | No Appointment Needed",
   seoDescription:
-    "Walk-in phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. No appointment, most repairs done in about 30 minutes while you wait. Same-day on stocked parts.",
+    "Walk-in phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. No appointment, most repairs about 30 minutes while you wait, same day on stocked parts.",
   serviceType: "Walk-in phone repair",
   city: "Calgary",
   priceSource: {
@@ -249,7 +249,7 @@ const chestermerePhones: LocalDef = {
   eyebrow: "Chestermere",
   seoTitle: "Cell Phone Repair Chestermere | Straight Down 17 Ave",
   seoDescription:
-    "Phone repair for Chestermere at TechBrotherz, 3317 17 Ave SE Calgary. Chestermere Boulevard becomes 17 Avenue SE, so it is one road the whole way. Walk in, 60-day warranty.",
+    "Cell phone repair for Chestermere at TechBrotherz, 3317 17 Ave SE Calgary: one road the whole way, as Chestermere Boulevard becomes 17 Avenue SE.",
   serviceType: "Cell phone repair",
   city: "Chestermere",
   priceSource: {

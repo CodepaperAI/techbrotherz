@@ -455,7 +455,7 @@ So **each shared fact has exactly one page that carries it in full**, and every 
 
 ### 7.1 Cannibalisation guard
 
-Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. They must never share a primary keyword, an H1 or an AnswerBox. Tier 5 carries NAP, map, directions, drive times, parking, transit and walk-in policy. Tier 2 carries process, parts, symptoms, what is included and device coverage. They link to each other reciprocally.
+Tier 2 pages are about **the repair**. Tier 5 pages are about **the place**. They must never share a primary keyword, an H1 or an AnswerBox. **That includes the SEO title**: a hub title leading with "Laptop Repair Calgary" is the Tier 5 keyword. Five hubs broke this until 2026-10; hub H1s and titles now name the service without the city, except where no Tier 5 twin exists (game console, FRP, password reset, virus removal). Tier 5 carries NAP, map, directions, drive times, parking, transit and walk-in policy. Tier 2 carries process, parts, symptoms, what is included and device coverage. They link to each other reciprocally.
 
 ---
 

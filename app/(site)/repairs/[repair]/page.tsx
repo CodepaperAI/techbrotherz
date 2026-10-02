@@ -517,7 +517,7 @@ export default async function RepairPage({ params }: PageProps) {
                 Call {SITE.phone}
               </PillButton>
               <PillButton href={content.parentService} variant="ghostOnDark">
-                {parent ? parent.h1.replace(" in Calgary", "") : "All services"}
+                {parent ? parent.serviceType : "All services"}
               </PillButton>
             </div>
           </div>

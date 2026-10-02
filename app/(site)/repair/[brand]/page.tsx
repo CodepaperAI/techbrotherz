@@ -199,8 +199,8 @@ export default async function BrandHubPage({ params }: PageProps) {
       lead={
         <>
           TechBrotherz, a walk-in cell phone and computer repair store at {SITE.street} in{" "}
-          {SITE.city}, {SITE.region}, publishes a price for every {brand.name} model it holds parts
-          for. Pick your model below for its full price table.
+          {SITE.city}, {SITE.region}, repairs every {brand.name} model listed below. Pick your model
+          for its repairs, typical times and warranty, all quoted free at the Store.
         </>
       }
       answerBox={{
@@ -376,7 +376,7 @@ export default async function BrandHubPage({ params }: PageProps) {
         <div className="grid gap-6 lg:grid-cols-2">
           {repairPages.length > 0 ? (
             <RelatedLinks
-              title={`${brand.name} repairs, priced across every model`}
+              title={`${brand.name} repairs, across every model`}
               links={repairPages.map((repair) => ({
                 label: repair.h1.replace(" Prices", ""),
                 href: `/repairs/${repair.slug}`,

@@ -212,7 +212,7 @@ const calgary: PlaceDef = {
   eyebrow: "Calgary",
   seoTitle: "Repair Shop Calgary | 3317 17 Ave SE, International Ave",
   seoDescription:
-    "TechBrotherz is at 3317 17 Ave SE on International Avenue in southeast Calgary, beside 33 Street SE Station. Walk in, no appointment, 60-day warranty on every repair.",
+    "TechBrotherz is at 3317 17 Ave SE on International Avenue in southeast Calgary, by 33 Street SE Station. Walk in, no appointment, 60-day warranty.",
   crumbLabel: "Calgary",
   facts: checkFactUse("/locations/calgary", [
     { fact: "transitway", treatment: "full" },
@@ -415,7 +415,7 @@ const chestermere: PlaceDef = {
   eyebrow: "Chestermere",
   seoTitle: "Repair Shop Near Chestermere | One Road, 17 Ave SE",
   seoDescription:
-    "TechBrotherz serves Chestermere from 3317 17 Ave SE Calgary. Chestermere Boulevard becomes 17 Avenue SE at the city limit, so it is one road the whole way in.",
+    "TechBrotherz serves Chestermere from 3317 17 Ave SE Calgary. Chestermere Boulevard becomes 17 Avenue SE at the city limit: one road the whole way.",
   crumbLabel: "Chestermere",
   facts: checkFactUse("/locations/chestermere", [{ fact: "chestermere-road", treatment: "full" }]),
   lead: () =>

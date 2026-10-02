@@ -494,6 +494,9 @@ export default async function ServicePage({ params }: PageProps) {
                     },
                   ]
                 : [{ label: "Areas we serve around Calgary", href: "/locations" }]),
+              ...(content.extraLocalPaths ?? [])
+                .filter((href) => shouldRenderLink(href))
+                .map((href) => ({ label: route(href)?.label ?? href, href })),
             ]}
           />
         </div>

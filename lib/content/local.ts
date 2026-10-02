@@ -67,7 +67,7 @@ const phoneRepairCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Phone Repair Calgary | Walk In, 60-Day Warranty",
   seoDescription:
-    "Cell phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, battery, charging ports and cameras. Parts and labour included, 60-day warranty, walk in.",
+    "Cell phone repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, batteries, charging ports and cameras, part and labour included, 60-day warranty.",
   serviceType: "Cell phone repair",
   city: "Calgary",
   priceSource: {
@@ -184,7 +184,7 @@ const iphoneScreenCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Iphone Screen Repair Calgary | About 30 Minutes",
   seoDescription:
-    "Iphone screen repair in Calgary at TechBrotherz, 3317 17 Ave SE. Priced per model, part and labour included, about 30 minutes while you wait, 60-day warranty.",
+    "Iphone screen repair in Calgary at TechBrotherz, 3317 17 Ave SE. Quoted per model, part and labour included, about 30 minutes, 60-day warranty.",
   serviceType: "Iphone screen repair",
   city: "Calgary",
   priceSource: {
@@ -294,11 +294,11 @@ const iphoneScreenCalgary: LocalDef = {
 
 const samsungCalgary: LocalDef = {
   slug: "samsung-repair-calgary",
-  h1: "Samsung Galaxy Repair in Calgary",
+  h1: "Samsung Phone Repair in Calgary",
   eyebrow: "Calgary",
   seoTitle: "Samsung Repair Calgary | Galaxy Screens and Battery",
   seoDescription:
-    "Samsung Galaxy repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, battery and charging ports priced per model, 60-day warranty, no appointment needed.",
+    "Samsung Galaxy repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, batteries and charging ports quoted per model, 60-day warranty, walk in.",
   serviceType: "Samsung Galaxy repair",
   city: "Calgary",
   priceSource: {

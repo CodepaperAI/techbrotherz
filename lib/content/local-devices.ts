@@ -132,7 +132,7 @@ const laptopCalgary: LocalDef = {
   eyebrow: "Calgary",
   seoTitle: "Laptop Repair Calgary | Screens, Keyboards, Charging",
   seoDescription:
-        "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, keyboards and charging sockets, quoted free at the Store. Diagnostics deducted from the repair.",
+        "Laptop repair in Calgary at TechBrotherz, 3317 17 Ave SE. Screens, keyboards and charging sockets, quoted free. Diagnostics deducted from the repair.",
   serviceType: "Laptop repair",
   city: "Calgary",
   priceSource: {

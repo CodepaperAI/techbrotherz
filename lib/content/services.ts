@@ -61,6 +61,12 @@ export interface ServiceDef {
   deviceTypes: ("phone" | "tablet" | "laptop")[];
   /** The Tier 5 page for this service, gated by the registry until Phase 6. */
   localPath: string;
+  /**
+   * Further local pages for the same service, linked after localPath. Without
+   * them the phone hub linked one of its five phone landing pages, and the
+   * Chestermere page had two inbound links in body content site-wide.
+   */
+  extraLocalPaths?: string[];
   /** Two sibling services. */
   siblings: string[];
   lead: (c: ServiceCtx) => string;
@@ -80,9 +86,9 @@ export interface ServiceDef {
 
 const phoneRepair: ServiceDef = {
   slug: "phone-repair",
-  h1: "Cell Phone Repair in Calgary",
+  h1: "Cell Phone Repair: Screens, Batteries, Ports and Cameras",
   eyebrow: "Phone repair",
-  seoTitle: "Cell Phone Repair Calgary | Walk In, No Appointment",
+  seoTitle: "Cell Phone Repair | Screens, Batteries, Ports, Cameras",
   seoDescription:
     "Cell phone repair at TechBrotherz in Calgary. Screens, battery, charging ports and cameras, parts and labour included, 60-day warranty. Walk in, no appointment.",
   serviceType: "Cell phone repair",
@@ -101,6 +107,12 @@ const phoneRepair: ServiceDef = {
   flatSlugs: [],
   deviceTypes: ["phone"],
   localPath: "/phone-repair-calgary",
+  extraLocalPaths: [
+    "/iphone-screen-repair-calgary",
+    "/samsung-repair-calgary",
+    "/walk-in-phone-repair-calgary",
+    "/cell-phone-repair-chestermere",
+  ],
   siblings: ["/services/ipad-repair", "/services/phone-unlocking"],
   lead: (c) =>
     `TechBrotherz, a walk-in cell phone and computer repair store at 3317 17 Ave SE in Calgary, Alberta, replaces phone screens, battery, charging ports, cameras and buttons on Iphone, Samsung Galaxy and Google Pixel handsets. Most phone repairs are finished in about ${c.waitMinutes} minutes while you wait.`,
@@ -236,9 +248,9 @@ const phoneRepair: ServiceDef = {
  */
 const ipadRepair: ServiceDef = {
   slug: "ipad-repair",
-  h1: "IPad Repair in Calgary",
+  h1: "IPad and Tablet Repair",
   eyebrow: "IPad repair",
-  seoTitle: "IPad Repair Calgary | Glass, Screens and Battery",
+  seoTitle: "IPad and Tablet Repair | Glass, Screens and Battery",
   seoDescription:
     "IPad repair at TechBrotherz in Calgary. Cracked glass, screens, battery and charging ports, parts and labour included, 60-day warranty, walk in.",
   serviceType: "IPad repair",
@@ -377,9 +389,9 @@ const ipadRepair: ServiceDef = {
 
 const laptopRepair: ServiceDef = {
   slug: "laptop-repair",
-  h1: "Laptop Repair in Calgary",
+  h1: "Laptop Repair: What Gets Fixed and How",
   eyebrow: "Laptop repair",
-  seoTitle: "Laptop Repair Calgary | Screens, Keyboards, Charging Ports",
+  seoTitle: "Laptop and Notebook Repair | What Gets Fixed and How",
   seoDescription:
         "Laptop repair at TechBrotherz in Calgary. Screens, keyboards and charging sockets, quoted free at the Store. Parts and labour included, 60-day warranty.",
   serviceType: "Laptop repair",
@@ -532,9 +544,9 @@ const laptopRepair: ServiceDef = {
 
 const computerRepair: ServiceDef = {
   slug: "computer-repair",
-  h1: "Computer Repair in Calgary",
+  h1: "Desktop and Computer Repair",
   eyebrow: "Computer repair",
-  seoTitle: "Computer Repair Calgary | Diagnostics, Windows, Tune-Ups",
+  seoTitle: "Computer Repair | Desktop PC Diagnostics, Windows, Tune-Ups",
   seoDescription:
         "Computer repair at TechBrotherz in Calgary. Diagnostics, Windows installation, clean-up and tune-up. Quoted per job and agreed before work starts.",
   serviceType: "Computer repair",
@@ -689,9 +701,9 @@ const computerRepair: ServiceDef = {
 
 const phoneUnlocking: ServiceDef = {
   slug: "phone-unlocking",
-  h1: "Phone Unlocking in Calgary",
+  h1: "How to Unlock a Cell Phone in Canada",
   eyebrow: "Unlocking",
-    seoTitle: "Phone Unlocking Calgary | Any Canadian Carrier",
+    seoTitle: "How to Unlock a Cell Phone in Canada | Any Carrier",
   seoDescription:
         "Carrier unlocking for any Canadian carrier at TechBrotherz in Calgary, usually the same day. Ask your carrier first: they must unlock free on request by CRTC rule.",
   serviceType: "Phone unlocking",

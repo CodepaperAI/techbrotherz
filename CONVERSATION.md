@@ -2,6 +2,26 @@
 
 Newest entry at the top. Append after every working session and before every context compaction.
 
+## Session 2026-10-03 — Local SEO pass: hub and city pages stop competing
+
+**Asked:** make sure the local SEO is right, city-wise service pages and all.
+
+**Method:** crawled every URL in the sitemap off a production build and checked the local tier for H1 and title collisions, LocalBusiness completeness, inbound and outbound links, and meta lengths. **No new city pages were added**: the local-fact rule (Section 7) cut Airdrie for having fewer than four distinct facts, and nothing has changed that answer.
+
+**Found and fixed:**
+
+1. **Section 7.1 was being broken five times.** `/services/{ipad,laptop,computer}-repair` and `/services/phone-unlocking` had the same H1 as their Tier 5 twin ("Laptop Repair in Calgary" on both), and `/repair/samsung-galaxy` matched `/samsung-repair-calgary`. The hub SEO titles also led with the Tier 5 primary keyword ("Laptop Repair Calgary | ..."). Hub H1s and titles now target the hub keywords from Section 8.5, about the service rather than the place: "IPad and Tablet Repair", "Laptop Repair: What Gets Fixed and How", "Desktop and Computer Repair", "How to Unlock a Cell Phone in Canada", "Cell Phone Repair: Screens, Batteries, Ports and Cameras". The Samsung Tier 5 H1 is "Samsung Phone Repair in Calgary". Game console, FRP, password reset and virus removal keep "Calgary": they have no Tier 5 twin and their primary keyword is local.
+2. The repair-type page's back-to-hub button read the hub H1 minus " in Calgary"; it now reads `serviceType`, so H1 wording can change freely.
+3. **Brand hub intro still said it "publishes a price for every model ... full price table"**, and its related block said "priced across every model". Both reworded. Missed by the price scrub because it is JSX, not content.
+4. **Phone hub linked one of its five phone landing pages.** `ServiceDef.extraLocalPaths` added; the phone hub now links the iPhone, Samsung, walk-in and Chestermere pages too. `/cell-phone-repair-chestermere` had two inbound body links site-wide.
+5. **Ten local meta descriptions were 157 to 172 characters**; all now 155 or fewer. "Priced per model" became "quoted per model" in the iPhone and Samsung ones.
+
+**Checked and already right:** LocalBusiness on all 152 pages under one `@id`, with address, geo, hours, hasMap and an `areaServed` of 19 places; every Tier 5 page carries a `Service` node with `provider` and `areaServed`; every local page links `/locations` and `/contact`.
+
+**Verified:** typecheck, lint, build; `audit:local-facts`, `test:faq`, `audit:pages`, `audit-copy`, `test-no-prose-prices`, `audit:similarity` all pass. Zero duplicate titles or H1s across 152 URLs.
+
+**Left:** 11 non-local descriptions are 156 to 168 characters (about, accessories, blog, five hubs). Postal code still question 29. MacBook repair, data recovery and gaming PC repair have no page of their own yet; "macbook repair calgary" is the strongest of the three and would need a keyword-map row first.
+
 ## Session 2026-10-02 — The live site was noindexed: canonical host, sitemap, stale price copy
 
 **Asked:** fix the findings of an outside SEO audit of the live site, dated 2026-10-02.

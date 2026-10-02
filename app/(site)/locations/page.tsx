@@ -27,7 +27,7 @@ const PATH = "/locations";
 export const metadata: Metadata = buildMetadata({
   title: "Phone Repair Near Me in Calgary",
   description:
-    "TechBrotherz is at 3317 17 Ave SE on International Avenue in Calgary, serving Forest Lawn, southeast Calgary, Chestermere and Airdrie. Walk in, no appointment.",
+    "TechBrotherz is at 3317 17 Ave SE on International Avenue, serving Forest Lawn, southeast Calgary, Chestermere and Airdrie. Walk in, no appointment.",
   path: PATH,
 });
 
